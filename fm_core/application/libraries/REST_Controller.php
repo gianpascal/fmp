@@ -552,11 +552,12 @@ abstract class REST_Controller extends CI_Controller {
 
         // Checking for keys? GET TO WorK!
         // Skip keys test for $config['auth_override_class_method']['class'['method'] = 'none'
+        
         if ($this->config->item('rest_enable_keys') && $this->auth_override !== TRUE)
         {
             $this->_allow = $this->_detect_api_key();
         }
-
+             
         // Only allow ajax requests
         if ($this->input->is_ajax_request() === FALSE && $this->config->item('rest_ajax_only'))
         {
@@ -663,7 +664,7 @@ abstract class REST_Controller extends CI_Controller {
      * @throws Exception
      */
     public function _remap($object_called, $arguments = [])
-    {
+    { 
         // Should we answer if not over SSL?
         if ($this->config->item('force_https') && $this->request->ssl === FALSE)
         {
@@ -698,7 +699,7 @@ abstract class REST_Controller extends CI_Controller {
             {
                 $this->_log_request();
             }
-
+            
             // fix cross site to option request error
             if($this->request->method == 'options') {
                 exit;
@@ -729,6 +730,7 @@ abstract class REST_Controller extends CI_Controller {
         }
 
         // Sure it exists, but can they do anything with it?
+        //var_dump($this);
         if (! method_exists($this, $controller_method))
         {
             $this->response([
@@ -1076,10 +1078,10 @@ abstract class REST_Controller extends CI_Controller {
     {
         // Get the api key name variable set in the rest config file
         $api_key_variable = $this->config->item('rest_key_name');
-
+      
         // Work out the name of the SERVER entry based on config
         $key_name = 'HTTP_' . strtoupper(str_replace('-', '_', $api_key_variable));
-
+       
         $this->rest->key = NULL;
         $this->rest->level = NULL;
         $this->rest->user_id = NULL;
@@ -1088,8 +1090,13 @@ abstract class REST_Controller extends CI_Controller {
         // Find the key from server or arguments
         if (($key = isset($this->_args[$api_key_variable]) ? $this->_args[$api_key_variable] : $this->input->server($key_name)))
         {
+            
+           // var_dump($this->rest->db->where($this->config->item('rest_key_column'), '123456')->get($this->config->item('rest_keys_table')));
+          //  echo $this->rest->db->last_query();
             if ( ! ($row = $this->rest->db->where($this->config->item('rest_key_column'), $key)->get($this->config->item('rest_keys_table'))->row()))
             {
+              //  echo $this->rest->db->last_query();
+             //   echo "A1";
                 return FALSE;
             }
 
@@ -1100,7 +1107,7 @@ abstract class REST_Controller extends CI_Controller {
             isset($row->ignore_limits) && $this->rest->ignore_limits = $row->ignore_limits;
 
             $this->_apiuser = $row;
-
+           
             /*
              * If "is private key" is enabled, compare the ip address with the list
              * of valid ip addresses stored in the database
@@ -1123,12 +1130,13 @@ abstract class REST_Controller extends CI_Controller {
                             break;
                         }
                     }
-
+                   // echo "B";
                     return $found_address;
                 }
                 else
                 {
                     // There should be at least one IP address for this private key
+                    //echo "C";
                     return FALSE;
                 }
             }
@@ -1137,6 +1145,7 @@ abstract class REST_Controller extends CI_Controller {
         }
 
         // No key has been sent
+        //echo "E";
         return FALSE;
     }
 
@@ -2032,7 +2041,7 @@ abstract class REST_Controller extends CI_Controller {
      * @return void
      */
     protected function _prepare_basic_auth()
-    {
+    {   
         // If whitelist is enabled it has the first chance to kick them out
         if ($this->config->item('rest_ip_whitelist_enabled'))
         {
