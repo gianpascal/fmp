@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<tree id="0" radio="1">
+<item text="Hospital Municipal Los Olivos" open="1" id="0100000000" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+<item text="Concejo Directivo - Presidencia Ejecutiva" open="1" id="0101000000" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Direccion Hospitalaria" open="1" id="0102000000" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+<item text="Oficina de Administracion" open="1" id="0102010000" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+<item text="Unidad de Imagen, Aseguramiento y Atencion Personalizada" open="1" id="0102010100" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Unidad de Informatica, Admision e Historias Clinicas" open="1" id="0102010200" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Unidad de Mantenimiento y Servicios Generales" open="1" id="0102010300" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Unidad de Logistica, Patrimonio y Almacen" open="1" id="0102010400" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Unidad de Economia y Finanzas" open="1" id="0102010500" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Unidad de Personal - Humanos" open="1" id="0102010600" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Contabilidad" open="1" id="0102010700" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="SOAT-Seguros" open="1" id="0102010800" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+</item>
+<item text="Oficina de Coordinacion Tecnica y Garantia de la Calidad" open="1" id="0102020000" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Oficina de Epidemiologia Estadistica, Capacitación" open="1" id="0102030000" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Oficina de Red Periferica Municipal de Salud" open="1" id="0102040000" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Departamento Medico Quirurgico" open="1" id="0102060000" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+<item text="Servicio de Consulta Externa" open="1" id="0102060900" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+<item text="Medicina General" open="1" id="0102060904" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Medicina Interna" open="1" id="0102060905" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Geriatria" open="1" id="0102060906" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Cardiologia" open="1" id="0102060907" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Neumologia" open="1" id="0102060908" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Neurologia" open="1" id="0102060909" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Psiquiatria" open="1" id="0102060910" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Oncologia" open="1" id="0102060911" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Gastroenterologia" open="1" id="0102060912" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Endocrinologia" open="1" id="0102060913" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Dermatologia" open="1" id="0102060914" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Reumatologia" open="1" id="0102060915" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Cirugia" open="1" id="0102060916" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Traumatologia" open="1" id="0102060917" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Psicologia" open="1" id="0102060918" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Neurocirugia" open="1" id="0102060919" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Oftalmologia" open="1" id="0102060920" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Otorrinolaringologia" open="1" id="0102060921" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Odontologia" open="1" id="0102060923" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Urologia" open="1" id="0102060924" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Cirugia Plastica" open="1" id="0102060925" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Gineco Obstetricia" open="1" id="0102060943" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Pediatria" open="1" id="0102060944" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Cirugia de Cabeza, Cuello y Maxilo Facial" open="1" id="0102060945" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Nefrologia" open="1" id="0102060947" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Neurologia Pediatrica" open="1" id="0102060951" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Medicina Fisica y Rehabitalización" open="1" id="0102060955" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Gastroenterologia Pediatrica" open="1" id="0102060958" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Vacunación" open="1" id="0102060961" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Crecimiento y Desarrollo" open="1" id="0102060962" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Talleres" open="1" id="0102060968" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Topico (Essalud -Trebol)" open="1" id="0102060969" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+</item>
+<item text="Servicio de Emergencia" open="1" id="0102061000" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+<item text="M.General - Topico Cx" open="1" id="0102061024" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="E. Medicina" open="1" id="0102061025" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="E. Cirugia" open="1" id="0102061026" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Trauma Shock" open="1" id="0102061027" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="E. Pediatria" open="1" id="0102061028" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="E. Gineco Obstetricia" open="1" id="0102061029" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Sala de Observación Adultos" open="1" id="0102061030" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Sala de Observacion Pediatrico" open="1" id="0102061031" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="E. Neurocirugia" open="1" id="0102061032" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="E. Traumatologia" open="1" id="0102061033" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+</item>
+<item text="Servicio de Centro Quirurgico" open="1" id="0102061100" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+<item text="Anestesiologia" open="1" id="0102061132" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Uci Neonatos" open="1" id="0102061133" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Uci Adultos" open="1" id="0102061134" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Recuperacion" open="1" id="0102061135" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="GASTROENTEROLOGIA PROCEDIMIENTOS" open="1" id="0102061137" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Hospitalizacion 3 Piso" open="1" id="0102061303" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Hospitalizacion 4 Piso" open="1" id="0102061304" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Hospitalizacion 4 Piso Zona VIP" open="1" id="0102061305" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+</item>
+</item>
+<item text="Departamento de Apoyo al Diagnostico y Tratamiento" open="1" id="0102070000" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+<item text="Servicio de Farmacia" open="1" id="0102071200" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+<item text="Farmacia Consulta Externa" open="1" id="0102071236" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Farmacia Hospitalizacion y Emergencia" open="1" id="0102071237" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+</item>
+<item text="Servicio de Enfermeria" open="1" id="0102071300" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Servicio de Imagenologia" open="1" id="0102071400" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+<item text="Radiologia" open="1" id="0102071438" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Ecografia." open="1" id="0102071439" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Tomografia." open="1" id="0102071440" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+</item>
+<item text="Servicio de Laboratorio y Anatomia Patologica" open="1" id="0102071500" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+<item text="Laboratorio Clinico Central" open="1" id="0102071541" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Anatomia Patologica" open="1" id="0102071542" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+</item>
+</item>
+</item>
+</item>
+
+</tree>

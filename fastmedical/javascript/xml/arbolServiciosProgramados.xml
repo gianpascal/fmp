@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<tree id="0" radio="1">
+    <item text="Servicio de Consulta Externa" open="1" id="0102060900" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+    <item text="Cardiologia" id="0102060907" open="1" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+    <item text="C. CARDIOLOGIA" id="XXXX500401" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+    <item text="CARDIOLOGIA** ELECTROCARDIOGRAMA" id="CAR5004003" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+    <item text="CARDIOLOGIA*** PROCEDIMIENTOS (ESSALUD)" id="CEX0000057" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+    <item text="CAMPAÑA CONSULTAS CARDIOLOGIA" id="PME0000037" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+    <item text="CAMPAÑA PROCEDIMIENTO CARDILOGICO" id="PME0000038" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+    </item>
+    <!--<item text="Cardiologia Pediatrica" id="0102060952" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >-->
+    <item text="C. CARDIOLOGIA PEDIATRICA" id="XXXX503105" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+    <!--</item>-->
+    <item text="Centro Obstetrico" open="1" id="0102061301" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+    <item text="PSICOPROFILAXIS X SESION" id="OBS0000001" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+    <item text="PROCEDIMIENTO OBSTETRICO (ESSALUD)" id="OBS0000002" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+    </item>
+    <!--<item text="Cirugia" id="0102060916" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >-->
+    <item text="C. CIRUGIA" id="XXXX501301" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+    <!--</item>-->
+        <!--<item text="Cirugia Cardio Vascular" id="0102060948" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >-->
+    <item text="C. CIRUGIA CARDIO VASCULAR" id="XXXX503102" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+    <!--</item>-->
+        <!--<item text="Cirugia de Cabeza,Cuello y M.F." id="0102060945" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >-->
+    <item text="C. CABEZA CUELLO Y M.F." id="XXXX502301" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+    <!--</item>-->
+        <!--<item text="Cirugia Pediatrica" id="0102060950" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >-->
+    <item text="C. CIRUGIA PEDIATRICA" id="XXXX503103" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+    <!--</item>-->
+        <!--<item text="Cirugia Plastica" id="0102060925" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >-->
+    <item text="C. CIRUGIA PLASTICA" id="XXXX502401" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+    <!--</item>-->
+        <!--<item text="Crecimiento y Desarrollo" id="0102060962" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >-->
+    <item text="C. CONTROL DEL CRECIMIENTO Y DESARROLLO" id="CEX0000036" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+    <!--</item>-->
+        <!--<item text="Densitometria" id="0102060957" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >-->
+    <item text="DENSITOMETRIA OSEA" id="RM00000001" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+    <!--</item>-->
+        <!--<item text="Dermatologia" id="0102060914" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >-->
+    <item text="C. DERMATOLOGIA" id="XXXX500601" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+    <!--</item>-->
+        <!--<item text="Endocrinologia" id="0102060913" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >-->
+    <item text="C. ENDOCRINOLOGIA" id="XXXX501401" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+    <!--</item>-->
+        <!--<item text="Flebologia" id="0102060953" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >-->
+    <item text="C. Flebologia" id="XXXX503106" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+    <!--</item>-->
+        <!--<item text="Gastroenterologia" id="0102060912" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >-->
+    <item text="C. GASTROENTEROLOGIA" id="XXXX501501" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+    <!--</item>-->
+    <item text="C. GASTROENTEROLOGIA PEDIATRICA" id="XXXX503110" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+    <!--<item text="Geriatria" id="0102060906" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >-->
+    <item text="C. GERIATRIA" id="XXXX501601" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+    <!--</item>-->
+    <item text="Gineco Obstetricia" open="1" id="0102060943" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+    <item text="C. GINECO OBSTETRICIA" id="XXXX500901" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+    <item text="CONSULTA CAMPAÑA" id="YYXXXXX001" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+    </item>
+    <!--<item text="Hematologia" id="0102060946" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >-->
+    <item text="C. HEMATOLOGIA" id="XXXX502501" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+    <!--</item>-->
+    <item text="Medicina Fisica y Rehabitalización" open="1" id="0102060955" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+    <item text="C. MEDICINA FISICA" id="XXXX503108" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+    <item text="TERAPIA FISICA (TARIFA A)" id="MEDF000005" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+    <item text="TERAPIA DE LENGUAJE (TARIFA A)" id="PME0000012" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+    </item>
+    <item text="Medicina General" open="1" id="0102060904" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+    <item text="C. MEDICINA GENERAL" id="XXXX503111" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+    <item text="CONSULTA CAMPAÑA" id="YYXXXXX001" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+    </item>
+    <!--<item text="Medicina Interna" id="0102060905" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >-->
+    <item text="C. MEDICINA INTERNA" id="XXXX501201" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+    <!--</item>-->
+        <!--<item text="Nefrologia" id="0102060947" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >-->
+    <item text="C. NEFROLOGIA" id="XXXX503101" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+    <!--</item>-->
+        <!--<item text="Neumologia" id="0102060908" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >-->
+    <item text="C. NEUMOLOGIA" id="XXXX501001" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+    <!--</item>-->
+        <!--<item text="Neumologia Pediatrica" id="0102060954" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >-->
+    <item text="C. NEUMOLOGIA PEDIATRICA" id="XXXX503107" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+    <!--</item>-->
+        <!--<item text="Neurocirugia" id="0102060919" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >-->
+    <item text="C. NEUROCIRUGIA" id="XXXX500101" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+    <!--</item>-->
+        <!--<item text="Neurologia" id="0102060909" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >-->
+    <item text="C. NEUROLOGIA" id="XXXX500301" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+    <!--</item>-->
+        <!--<item text="Neurologia Pediatrica" id="0102060951" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >-->
+    <item text="C. NEUROLOGIA PEDIATRICA" id="XXXX503104" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+    <!--</item>-->
+        <!--<item text="Nutricion" id="0102060956" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >-->
+    <item text="C. NUTRICION" id="XXXX503109" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+    <!--</item>-->
+        <!--<item text="Odontologia" id="0102060923" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >-->
+    <item text="C. ODONTOLOGIA (INCLUYE ODONTOGRAMA)" id="XXXX500701" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+    <!--</item>-->
+    <item text="Oftalmologia" open="1" id="0102060920" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+    <item text="C. OFTALMOLOGIA" id="XXXX500801" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+    <item text="OFTALMOLOGIA*** PROCEDIMIENTOS (ESSALUD)" id="CEX0000058" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+    </item>
+    <!--<item text="Oncologia" id="0102060911" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >-->
+    <item text="C. ONCOLOGIA" id="XXXX501701" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+    <!--</item>-->
+        <!--<item text="Otorrinolaringologia" id="0102060921" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >-->
+    <item text="C. OTORRINOLARINGOLOGIA" id="XXXX501801" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+    <!--</item>-->
+    <item text="Pediatria" id="0102060944" open="1" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+    <item text="C. PEDIATRIA" id="XXXX500201" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+    <!--<item text="C. MEDICINA GENERAL" id="XXXX503111" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />-->
+    <item text="PEDIATRIA** CONTROL DE NIÑO SANO" id="PED5002002" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+    </item>
+    <item text="Psicologia" open="1" id="0102060918" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+    <item text="C. PSICOLOGIA" id="XXXX502001" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+    <item text="EVALUACION PSICOLOGICA" id="PS00000003" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+    <item text="ORIENTACION FAMILIAR" id="PS00000001" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+    </item>
+    <!--<item text="Psiquiatria" id="0102060910" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >-->
+    <item text="C. PSIQUIATRIA" id="XXXX501901" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+    <!--</item>-->
+    <item text="Reumatologia" open="1" id="0102060915" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+    <item text="C. REUMATOLOGIA" id="XXXX502101" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+    <item text="C. REUMATOLOGIA ESSALUD" id="CEX0000051" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+    </item>
+    <item text="Talleres" open="1" id="0102060968" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+    <item text="TALL. ALIMENTACION Y NUTRICION" id="CEX0000042" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+    <item text="TALL. HIGIENE Y AMBIENTE" id="CEX0000043" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+    <item text="TALL. SALUD SEXUAL Y REPRODUCTIVO" id="CEX0000045" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+    </item>
+    <!--<item text="Traumatologia" id="0102060917" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >-->
+    <item text="C. TRAUMATOLOGIA" id="XXXX502201" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+    <!--</item>-->
+        <!--<item text="Uci Neonatos" id="0102061133" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >-->
+    <item text="PEDIATRIA** CONSULTA MEDICA POR PACIENTE HOSPITALIZADO" id="PED5002003" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+    <!--</item>-->
+        <!--<item text="Urologia" id="0102060924" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >-->
+    <item text="C. UROLOGIA" id="XXXX500501" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+        <!--</item>-->
+    </item>
+</tree>

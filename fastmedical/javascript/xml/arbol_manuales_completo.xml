@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<tree id="0" radio="1">
+<item text="Manuales de Ayuda" open="1" id="1" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+<item text="ADMISIÓN" open="1" id="2" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+<item text="Busqueda de Pacientes" open="1" id="22" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Registro de Pacientes" open="1" id="23" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Acreditación con Essalud" open="1" id="68" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="arroba" open="1" id="72" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="estado inactivo" open="1" id="76" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="manual 2222" open="1" id="77" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+</item>
+<item text="CITAS" open="1" id="3" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+<item text="Busqueda de Citas" open="1" id="13" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Reserva de Citas" open="1" id="14" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+</item>
+<item text="ÓRDENES" open="1" id="4" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+<item text="Consulta de ordenes" open="1" id="15" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+</item>
+<item text="TESORERÍA" open="1" id="5" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+<item text="Consulta de Tarifas" open="1" id="7" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="otro manual" open="1" id="84" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+</item>
+<item text="Manual 5" open="1" id="6" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+<item text="Manual 5.1" open="1" id="11" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="rrrwqrwqrwq" open="1" id="86" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="rrrwqrwqrwq" open="1" id="87" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="rrrwqrwqrwq" open="1" id="88" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="rrrwqrwqrwq" open="1" id="89" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="manual rerer" open="1" id="85" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+</item>
+</item>
+
+</tree>

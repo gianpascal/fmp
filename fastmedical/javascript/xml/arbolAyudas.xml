@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<tree id="0" radio="1">
+    <item text="MANUALES DE AYUDA" open="1" id="0102060900" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+        <item text="ADMISIÓN" id="0102060907" open="1" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+        <item text="Búsqueda de Pacientes" id="0102060001" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+        <item text="Registro de Pacientes" id="0102060002" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+        <item text="Acreditación con Essalud" id="0102060003" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+        </item>
+
+         <item text="CITAS" open="1" id="0102060925" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+            <item text="Búsqueda de Citas" id="XXXX500001" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+            <item text="Reserva de Citas" id="XXXX500002" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+         </item>
+        <item text="TESORERÍA" open="1" id="0102060943" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+            <item text="Consulta de Tarifas" id="XXXX400001" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+        </item>
+         <item text="ÓRDENES" open="1" id="0102060946" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+            <item text="Consulta de órdenes" id="XXXX300001" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+         </item>
+     </item>        
+             
+</tree>

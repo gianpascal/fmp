@@ -1,0 +1,8 @@
+Options -indexes
+php_flag display_errors 1
+#php_value error_reporting 5
+php_flag register_globals 0
+php_value max_execution_time 90000
+php_value max_input_time 90000
+php_value memory_limit 2048M
+php_value upload_max_filesize 10M

@@ -1,0 +1,915 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Historia_Clinica_0_4" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" whenResourceMissingType="Empty" uuid="7a7cfc4a-bedc-4e71-b5ee-4ca1e1c9ffc9">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="377"/>
+	<parameter name="PV_LOGO" class="java.lang.String"/>
+	<parameter name="PV_FOTO" class="java.lang.String"/>
+	<parameter name="PV_HOSP_CLI" class="java.lang.String"/>
+	<parameter name="PV_DIR_HOSP_CLI" class="java.lang.String"/>
+	<parameter name="PV_HIST_CLI" class="java.lang.String"/>
+	<parameter name="PD_FECHA" class="java.util.Date">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+		<defaultValueExpression><![CDATA[new java.util.Date()]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PV_NOMBRE" class="java.lang.String"/>
+	<parameter name="PV_DOC_IDENT" class="java.lang.String"/>
+	<parameter name="PV_SEXO" class="java.lang.String"/>
+	<parameter name="PV_FEC_NAC" class="java.lang.String"/>
+	<parameter name="PV_DIR_PAC" class="java.lang.String"/>
+	<parameter name="PV_TLF_PAC" class="java.lang.String"/>
+	<parameter name="PV_NOTA" class="java.lang.String"/>
+	<parameter name="PV_PESO" class="java.lang.String"/>
+	<parameter name="PV_TALLA" class="java.lang.String"/>
+	<parameter name="PV_PC" class="java.lang.String"/>
+	<parameter name="PV_SUENHO" class="java.lang.String"/>
+	<parameter name="PV_DEPOSICIONES" class="java.lang.String"/>
+	<parameter name="PV_ENFERMEDADES" class="java.lang.String"/>
+	<parameter name="PV_MEDICACION" class="java.lang.String"/>
+	<parameter name="PV_LM" class="java.lang.String"/>
+	<parameter name="PV_FORMULA" class="java.lang.String"/>
+	<parameter name="PI_HOJA_ALIM" class="java.lang.Integer"/>
+	<parameter name="PI_EMI_OTO" class="java.lang.Integer"/>
+	<parameter name="PI_FIJA_MIR" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[0]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PI_ESC_1" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[0]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PI_LEV_CAB" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[0]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PI_MOV_SIM" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[0]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PI_SIGUE_90" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[0]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PI_ESC_2" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[0]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PI_LEV_CAB_45" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[0]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PI_SON_ESP" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[0]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PI_VOCA" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[0]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PI_SONR_SOC" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[0]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PI_ALEG" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[0]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PI_AGA_COS" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[0]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PI_JUNT_MANO" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[0]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PI_CAB_EST" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[0]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PV_T" class="java.lang.String"/>
+	<parameter name="PV_FC" class="java.lang.String"/>
+	<parameter name="PV_FR" class="java.lang.String"/>
+	<parameter name="PI_PIEL_GANG" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[0]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PI_CAB_CUE" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[0]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PI_OJOS" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[0]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PI_NARIZ" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[0]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PI_OIDOS" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[0]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PI_ORO" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[0]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PI_TORAX" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[0]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PI_CARDIO" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[0]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PI_ABDO" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[0]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PI_GENIT" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[0]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PI_SIST_NERV" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[0]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PI_SIST_ESQ" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[0]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PV_EG" class="java.lang.String"/>
+	<parameter name="PI_DTAP_1" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[0]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PI_HIB_1" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[0]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PI_IPV_1" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[0]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PI_HEP_B_1" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[0]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PI_NEUMO_1" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[0]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PI_ROTAV_1" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[0]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PI_DTAP_2" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[0]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PI_HIB_2" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[0]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PI_IPV_2" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[0]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PI_HEP_B_2" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[0]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PI_NEUMO_2" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[0]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PI_ROTAV_2" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[0]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PV_PLAN" class="java.lang.String"/>
+	<parameter name="PV_IMP_DX" class="java.lang.String"/>
+	<parameter name="PV_CHECK" class="java.lang.String"/>
+	<parameter name="PV_UNCHECK" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT convert(date, GETDATE()) as FECHA1]]>
+	</queryString>
+	<field name="FECHA" class="java.sql.Date"/>
+	<title>
+		<band height="177" splitType="Stretch">
+			<image onErrorType="Blank">
+				<reportElement x="0" y="0" width="113" height="65" uuid="8b88f579-c408-40cc-9e81-2b88b0115484"/>
+				<imageExpression><![CDATA[$P{PV_LOGO}]]></imageExpression>
+			</image>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="123" y="0" width="219" height="20" uuid="8ed37e47-ded0-48d7-a78a-2f07e6492aa8"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($P{PV_HOSP_CLI} == null ? "" : $P{PV_HOSP_CLI})]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="123" y="20" width="268" height="20" uuid="8ed37e47-ded0-48d7-a78a-2f07e6492aa8"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($P{PV_DIR_HOSP_CLI} == null ? "" : $P{PV_DIR_HOSP_CLI})]]></textFieldExpression>
+			</textField>
+			<image onErrorType="Blank">
+				<reportElement x="470" y="0" width="85" height="101" uuid="639ac009-4265-4046-a728-b139eccfe861"/>
+				<graphicElement>
+					<pen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</graphicElement>
+				<imageExpression><![CDATA[$P{PV_FOTO}]]></imageExpression>
+			</image>
+			<rectangle radius="10">
+				<reportElement x="113" y="65" width="328" height="35" uuid="dff60aaa-3bc4-4565-83f4-b0886bff4cae"/>
+			</rectangle>
+			<textField>
+				<reportElement x="126" y="65" width="303" height="35" uuid="23f7aa3f-f083-4e6c-8387-eacd652df709"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="18" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Historia Clínica: " +
+(($P{PV_HIST_CLI} == null) ? "--------" : ($P{PV_HIST_CLI}.trim()))]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="115" width="363" height="20" uuid="524ccc2d-65a4-4771-b2b1-e3f990594ebb"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>Nombre: </b> " + ($P{PV_NOMBRE} == null ? "" : $P{PV_NOMBRE}.trim())]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="375" y="115" width="180" height="20" uuid="7944c722-8249-40cc-86f9-24e83360a22d"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>Fecha:</b> " + ($P{FECHA})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="135" width="155" height="20" uuid="8ed37e47-ded0-48d7-a78a-2f07e6492aa8"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>DNI:</b> " + ($P{PV_DOC_IDENT} == null ? "" : $P{PV_DOC_IDENT})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="165" y="135" width="202" height="20" uuid="6e332760-ff0a-4854-b694-5b4f2ab378ef"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>Fecha de Nacimiento:    </b> " + ($P{PV_FEC_NAC} == null ? "" : $P{PV_FEC_NAC})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="375" y="135" width="180" height="20" uuid="17d9c9bc-0ca1-425e-865e-94c240a5b974"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>Sexo: </b> " + ($P{PV_SEXO} == null ? "" : $P{PV_SEXO})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="155" width="363" height="20" uuid="1294942b-f0d5-4f4a-a6ee-a089dda2c3a7"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>Dirección: </b> " + ($P{PV_DIR_PAC} == null ? "" : $P{PV_DIR_PAC}.trim())]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="375" y="155" width="180" height="20" uuid="eceaf75b-01d3-45c3-b368-4205b2b0bfe6"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>Teléfono:   </b> " + ($P{PV_TLF_PAC} == null ? "" : $P{PV_TLF_PAC}.trim())]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="175" width="555" height="1" uuid="c1ce45f7-3c94-4240-9a87-2823db4a142d"/>
+				<graphicElement>
+					<pen lineWidth="2.25"/>
+				</graphicElement>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="563" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="4a202590-37a0-4a39-863a-931fbc4bc0be"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>Peso:</b> " + ($P{PV_PESO} == null ? "" : $P{PV_PESO})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="227" y="0" width="100" height="20" uuid="9c552ff6-3da7-4c82-929e-b7c683f28b51"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>Talla:</b> " + ($P{PV_TALLA} == null ? "" : $P{PV_TALLA})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="375" y="0" width="100" height="20" uuid="1b9843eb-accc-41f8-81d8-2656355cb8ed"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>PC:</b> " + ($P{PV_PC} == null ? "" : $P{PV_PC})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="21" width="555" height="30" isRemoveLineWhenBlank="true" uuid="47355cb5-360f-4eff-b09f-ef05909d6c6d"/>
+				<textElement markup="html">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>Nota:</b> " + ($P{PV_NOTA} == null ? "" : $P{PV_NOTA})]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="53" width="555" height="1" uuid="4b7d0ff8-9490-4d18-8ca6-502c2c9a45c3"/>
+				<graphicElement>
+					<pen lineWidth="2.25"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="0" y="57" width="180" height="15" uuid="dffd403f-b9a8-4105-8795-9122c4f1d4fe"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Historia actual:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="280" y="57" width="180" height="15" uuid="44499c57-c865-40ef-b23c-a99c5686c46f"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nutrición:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="72" width="275" height="76" uuid="57de2c87-a9cb-4887-842a-e0cac94c0c5f"/>
+				<textFieldExpression><![CDATA["Sueño: " + ($P{PV_SUENHO} == null ? "" : $P{PV_SUENHO}.trim()) + "\n" + "Deposiciones:  " + ($P{PV_DEPOSICIONES} == null ? "" : $P{PV_DEPOSICIONES}.trim()) + "\n" + "Enfermedades:  " + ($P{PV_ENFERMEDADES} == null ? "" : $P{PV_ENFERMEDADES}.trim()) + "\n" + "Medicación:  " + ($P{PV_MEDICACION} == null ? "" : $P{PV_MEDICACION}.trim())]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="280" y="72" width="275" height="15" uuid="f499621f-b1c5-463f-bf12-1ace16ce31f3"/>
+				<textFieldExpression><![CDATA["Leche Materna: " + ($P{PV_LM} == null ? "" : $P{PV_LM})]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="280" y="87" width="275" height="15" uuid="19fa53ad-ea53-4eaa-b688-24f463a3c58b"/>
+				<textFieldExpression><![CDATA["Fórmula: " + ($P{PV_FORMULA} == null ? "" : $P{PV_FORMULA})]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="280" y="102" width="275" height="15" uuid="214a4431-61b5-44ea-85c2-7c1223bf90ba"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Solidos (a partir del 4° mes)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="280" y="117" width="125" height="15" uuid="fec32f74-84a3-43dd-8adb-495c7a928e9a"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Hoja de Alimentación:]]></text>
+			</staticText>
+			<image isUsingCache="true" onErrorType="Blank">
+				<reportElement x="407" y="119" width="10" height="10" uuid="4ab55b37-0e93-44f2-bbf8-72ca0460c4e5"/>
+				<imageExpression><![CDATA[$P{PI_HOJA_ALIM} == null ? $P{PV_UNCHECK} : ($P{PI_HOJA_ALIM} == 1 ? $P{PV_CHECK} : $P{PV_UNCHECK})]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="280" y="133" width="125" height="15" uuid="ffd24276-fa43-42a3-b436-a8710e42746f"/>
+				<textElement verticalAlignment="Middle" markup="none"/>
+				<text><![CDATA[Emisiones otoacústicas:]]></text>
+			</staticText>
+			<image isUsingCache="true" onErrorType="Blank">
+				<reportElement x="407" y="135" width="10" height="10" uuid="f1b9f9df-a443-4ccb-b105-903cc2834a28"/>
+				<imageExpression><![CDATA[$P{PI_EMI_OTO} == null ? $P{PV_UNCHECK} : ($P{PI_EMI_OTO} == 1 ? $P{PV_CHECK} : $P{PV_UNCHECK})]]></imageExpression>
+			</image>
+			<line>
+				<reportElement x="276" y="54" width="1" height="96" uuid="73688ffc-da20-4680-aea7-98eafd30fb76"/>
+			</line>
+			<line>
+				<reportElement x="0" y="149" width="555" height="1" uuid="51cfee89-6c35-4a7b-80df-0fb290c97b6f"/>
+				<graphicElement>
+					<pen lineWidth="2.25"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="0" y="151" width="140" height="15" uuid="abdf89ab-0a2e-4e7a-9071-93a9ac448377"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Crecimiento y Desarrollo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="166" width="180" height="15" uuid="e81b0bd5-9cfb-4e51-9c49-ecf496ba9161"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[1 mes]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="187" y="166" width="180" height="15" uuid="b4de12ad-a2e3-45d3-a5cb-eeaeebe6b3e2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[2 meses]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="375" y="166" width="180" height="15" uuid="57354b51-36a6-4ed9-8fd7-e9700d585d27"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[4 meses]]></text>
+			</staticText>
+			<image isUsingCache="true" onErrorType="Blank">
+				<reportElement x="2" y="183" width="10" height="10" uuid="37b6a929-f428-4b52-859e-111583562a28"/>
+				<imageExpression><![CDATA[$P{PI_FIJA_MIR} == null ? $P{PV_UNCHECK} : ($P{PI_FIJA_MIR} == 1 ? $P{PV_CHECK} : $P{PV_UNCHECK})]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="15" y="181" width="164" height="15" uuid="83797722-c90e-45f6-b477-07a1e2efbb8b"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Fija la mirada (caras)]]></text>
+			</staticText>
+			<image isUsingCache="true" onErrorType="Blank">
+				<reportElement x="189" y="183" width="10" height="10" uuid="0fc9fa7a-9739-48f2-94b5-d069e908060e"/>
+				<imageExpression><![CDATA[$P{PI_SIGUE_90} == null ? $P{PV_UNCHECK} : ($P{PI_SIGUE_90} == 1 ? $P{PV_CHECK} : $P{PV_UNCHECK})]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="203" y="181" width="164" height="15" uuid="8e16db4e-50ac-4b26-98b7-d269aa5c146a"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Sigue +90°]]></text>
+			</staticText>
+			<image isUsingCache="true" onErrorType="Blank">
+				<reportElement x="377" y="183" width="10" height="10" uuid="fde5afe8-c933-48ab-a171-ba4a87415e6f"/>
+				<imageExpression><![CDATA[$P{PI_SONR_SOC} == null ? $P{PV_UNCHECK} : ($P{PI_SONR_SOC} == 1 ? $P{PV_CHECK} : $P{PV_UNCHECK})]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="391" y="181" width="164" height="15" uuid="2291f0b5-73f7-4707-97ed-4003d1ef00fb"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Sonrisa social]]></text>
+			</staticText>
+			<image isUsingCache="true" onErrorType="Blank">
+				<reportElement x="2" y="198" width="10" height="10" uuid="1cba4a32-bd2f-4ed5-942a-c38214d799ac"/>
+				<imageExpression><![CDATA[$P{PI_ESC_1} == null ? $P{PV_UNCHECK} : ($P{PI_ESC_1} == 1 ? $P{PV_CHECK} : $P{PV_UNCHECK})]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="15" y="196" width="164" height="15" uuid="08b67de6-d7fa-4fe3-8eee-53be28b7a09c"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Escucha]]></text>
+			</staticText>
+			<image isUsingCache="true" onErrorType="Blank">
+				<reportElement x="189" y="198" width="10" height="10" uuid="4d0cd869-d30b-4460-9206-14e513a586c1"/>
+				<imageExpression><![CDATA[$P{PI_ESC_2} == null ? $P{PV_UNCHECK} : ($P{PI_ESC_2} == 1 ? $P{PV_CHECK} : $P{PV_UNCHECK})]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="203" y="196" width="164" height="15" uuid="a632fcd5-0bc1-4c8c-9a30-fc2cdb594672"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Escucha]]></text>
+			</staticText>
+			<image isUsingCache="true" onErrorType="Blank">
+				<reportElement x="377" y="198" width="10" height="10" uuid="100dba2e-9676-4866-a181-3110454a220b"/>
+				<imageExpression><![CDATA[$P{PI_ALEG} == null ? $P{PV_UNCHECK} : ($P{PI_ALEG} == 1 ? $P{PV_CHECK} : $P{PV_UNCHECK})]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="391" y="196" width="164" height="15" uuid="823eb825-0663-49d8-bdd4-380ff9271acb"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Ríe, da gritos de alegría]]></text>
+			</staticText>
+			<image isUsingCache="true" onErrorType="Blank">
+				<reportElement x="2" y="213" width="10" height="10" uuid="d830e304-1963-4502-9716-5632b44c17f0"/>
+				<imageExpression><![CDATA[$P{PI_LEV_CAB} == null ? $P{PV_UNCHECK} : ($P{PI_LEV_CAB} == 1 ? $P{PV_CHECK} : $P{PV_UNCHECK})]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="15" y="211" width="164" height="15" uuid="444ac679-9822-440a-949c-fe3e698b2ae6"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Levanta la cabeza]]></text>
+			</staticText>
+			<image isUsingCache="true" onErrorType="Blank">
+				<reportElement x="189" y="213" width="10" height="10" uuid="ce25798a-d445-43be-9a99-2dfc288044b1"/>
+				<imageExpression><![CDATA[$P{PI_LEV_CAB_45} == null ? $P{PV_UNCHECK} : ($P{PI_LEV_CAB_45} == 1 ? $P{PV_CHECK} : $P{PV_UNCHECK})]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="203" y="211" width="164" height="15" uuid="77cc062f-b5d2-43e3-b8da-d563a507e5c7"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Levanta la cabeza +45°]]></text>
+			</staticText>
+			<image isUsingCache="true" onErrorType="Blank">
+				<reportElement x="377" y="213" width="10" height="10" uuid="cc99185c-cb79-4fc3-924b-15cdd516252c"/>
+				<imageExpression><![CDATA[$P{PI_AGA_COS} == null ? $P{PV_UNCHECK} : ($P{PI_AGA_COS} == 1 ? $P{PV_CHECK} : $P{PV_UNCHECK})]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="391" y="211" width="164" height="24" uuid="e03134b0-0b5d-4a5a-9587-a8bae4c4874b"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Agarra cosas y las lleva a la boca]]></text>
+			</staticText>
+			<image isUsingCache="true" onErrorType="Blank">
+				<reportElement x="2" y="237" width="10" height="10" uuid="123875ac-fdad-48ef-b19f-b06f276f6f20"/>
+				<imageExpression><![CDATA[$P{PI_MOV_SIM} == null ? $P{PV_UNCHECK} : ($P{PI_MOV_SIM} == 1 ? $P{PV_CHECK} : $P{PV_UNCHECK})]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="15" y="235" width="164" height="15" uuid="cd6d40db-3186-4207-8dca-fbc2526e9aef"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Movimientos simétricos]]></text>
+			</staticText>
+			<image isUsingCache="true" onErrorType="Blank">
+				<reportElement x="189" y="237" width="10" height="10" uuid="36571362-26f1-474c-8dd0-5af8bd11df1d"/>
+				<imageExpression><![CDATA[$P{PI_SON_ESP} == null ? $P{PV_UNCHECK} : ($P{PI_SON_ESP} == 1 ? $P{PV_CHECK} : $P{PV_UNCHECK})]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="203" y="235" width="164" height="15" uuid="a21c31e3-347c-4024-a7bb-50f703cdacdb"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Sonrisa espontánea]]></text>
+			</staticText>
+			<image isUsingCache="true" onErrorType="Blank">
+				<reportElement x="377" y="237" width="10" height="10" uuid="addd88e7-ab6f-4232-a1c5-20ea724d51da"/>
+				<imageExpression><![CDATA[$P{PI_JUNT_MANO} == null ? $P{PV_UNCHECK} : ($P{PI_JUNT_MANO} == 1 ? $P{PV_CHECK} : $P{PV_UNCHECK})]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="391" y="235" width="164" height="15" uuid="e0cc75a9-74c1-42ee-a658-c9e544a4e448"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Junta las manos]]></text>
+			</staticText>
+			<image isUsingCache="true" onErrorType="Blank">
+				<reportElement x="189" y="252" width="10" height="10" uuid="e52794a2-54bc-47c4-b0d2-390820ab2ba4"/>
+				<imageExpression><![CDATA[$P{PI_VOCA} == null ? $P{PV_UNCHECK} : ($P{PI_VOCA} == 1 ? $P{PV_CHECK} : $P{PV_UNCHECK})]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="203" y="250" width="164" height="15" uuid="1aaff6a5-ee5e-4e21-b33a-9f85907f06b5"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Vocaliza (agú)]]></text>
+			</staticText>
+			<image isUsingCache="true" onErrorType="Blank">
+				<reportElement x="377" y="252" width="10" height="10" uuid="b9ff57fc-adbc-43a8-9a69-12f50c079181"/>
+				<imageExpression><![CDATA[$P{PI_CAB_EST} == null ? $P{PV_UNCHECK} : ($P{PI_CAB_EST} == 1 ? $P{PV_CHECK} : $P{PV_UNCHECK})]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="391" y="250" width="164" height="24" uuid="8aa5a78b-bd8b-4b9d-9b99-004e9ce446b9"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Cabeza estable cuando está sentado]]></text>
+			</staticText>
+			<line>
+				<reportElement x="183" y="166" width="1" height="108" uuid="60db0056-2f35-43b8-9220-558ce7515f4d"/>
+			</line>
+			<line>
+				<reportElement x="370" y="166" width="1" height="108" uuid="1e386e54-2a7e-4ccd-9627-af424ff36550"/>
+			</line>
+			<line>
+				<reportElement x="0" y="274" width="555" height="1" uuid="f929bc80-38ca-4ce0-b59c-9cb9a534dc70"/>
+				<graphicElement>
+					<pen lineWidth="2.25"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="0" y="276" width="180" height="15" uuid="921f237f-f6d9-4119-b256-02856162299e"/>
+				<textElement verticalAlignment="Middle" markup="html"/>
+				<textFieldExpression><![CDATA["<b>Examen Físico: </b> T: " + ($P{PV_T} == null ? "" : $P{PV_T}.trim())]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="187" y="276" width="81" height="15" uuid="b62405ef-0281-4d8b-80ed-d2ebe179420d"/>
+				<textElement verticalAlignment="Middle" markup="html"/>
+				<textFieldExpression><![CDATA["FC: " + ($P{PV_FC} == null ? "" : $P{PV_FC})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="286" y="276" width="81" height="15" uuid="b367b5a7-79a6-4761-a274-b63e8727e7f9"/>
+				<textElement verticalAlignment="Middle" markup="html"/>
+				<textFieldExpression><![CDATA["FR: " + ($P{PV_FR} == null ? "" : $P{PV_FR})]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="292" width="105" height="15" uuid="ba18250c-0636-4932-998d-9d9e4e8dd8de"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Piel y ganglios:]]></text>
+			</staticText>
+			<image isUsingCache="true" onErrorType="Blank">
+				<reportElement x="107" y="294" width="10" height="10" uuid="4a79e7ba-2db4-4f9f-9a00-83a66ed15d53"/>
+				<imageExpression><![CDATA[$P{PI_PIEL_GANG} == null ? $P{PV_UNCHECK} : ($P{PI_PIEL_GANG} == 1 ? $P{PV_CHECK} : $P{PV_UNCHECK})]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="0" y="307" width="105" height="15" uuid="16a8a641-2353-4239-a7b4-d0f78b169517"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Cabeza y cuello:]]></text>
+			</staticText>
+			<image isUsingCache="true" onErrorType="Blank">
+				<reportElement x="107" y="309" width="10" height="10" uuid="d0cba3dd-a16b-4827-9de4-4f0a6ebb472f"/>
+				<imageExpression><![CDATA[$P{PI_CAB_CUE} == null ? $P{PV_UNCHECK} : ($P{PI_CAB_CUE} == 1 ? $P{PV_CHECK} : $P{PV_UNCHECK})]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="0" y="322" width="105" height="15" uuid="2ea64c13-01c9-471d-814e-eedbaca36a50"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Ojos:]]></text>
+			</staticText>
+			<image isUsingCache="true" onErrorType="Blank">
+				<reportElement x="107" y="324" width="10" height="10" uuid="1412da16-cc36-48f9-971e-3a310ba1d6b9"/>
+				<imageExpression><![CDATA[$P{PI_OJOS} == null ? $P{PV_UNCHECK} : ($P{PI_OJOS} == 1 ? $P{PV_CHECK} : $P{PV_UNCHECK})]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="0" y="337" width="105" height="15" uuid="25ee5164-f6a0-41f2-b383-1ec3ec2c844a"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Nariz:]]></text>
+			</staticText>
+			<image isUsingCache="true" onErrorType="Blank">
+				<reportElement x="107" y="339" width="10" height="10" uuid="5c2ba5e4-3e5b-4f6c-9cf7-f8303308ef50"/>
+				<imageExpression><![CDATA[$P{PI_NARIZ} == null ? $P{PV_UNCHECK} : ($P{PI_NARIZ} == 1 ? $P{PV_CHECK} : $P{PV_UNCHECK})]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="0" y="352" width="105" height="15" uuid="70a681c4-fe79-45d4-a964-9a55cc620a47"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Oídos:]]></text>
+			</staticText>
+			<image isUsingCache="true" onErrorType="Blank">
+				<reportElement x="107" y="354" width="10" height="10" uuid="a331a819-d685-4e37-b3fe-30f0b2e672c2"/>
+				<imageExpression><![CDATA[$P{PI_OIDOS} == null ? $P{PV_UNCHECK} : ($P{PI_OIDOS} == 1 ? $P{PV_CHECK} : $P{PV_UNCHECK})]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="0" y="367" width="105" height="15" uuid="8b1ddd01-ea6a-4428-b29d-bff39c5c3542"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Orofaringe:]]></text>
+			</staticText>
+			<image isUsingCache="true" onErrorType="Blank">
+				<reportElement x="107" y="369" width="10" height="10" uuid="bf84ad63-5ad5-48c2-8e79-1b04d88587f7"/>
+				<imageExpression><![CDATA[$P{PI_ORO} == null ? $P{PV_UNCHECK} : ($P{PI_ORO} == 1 ? $P{PV_CHECK} : $P{PV_UNCHECK})]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="0" y="382" width="105" height="15" uuid="e48e0498-ec71-4e4c-8ae4-724f537feae6"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Tórax y Pulm:]]></text>
+			</staticText>
+			<image isUsingCache="true" onErrorType="Blank">
+				<reportElement x="107" y="384" width="10" height="10" uuid="287dcb4f-44f3-465d-9ef8-faf08d7905aa"/>
+				<imageExpression><![CDATA[$P{PI_TORAX} == null ? $P{PV_UNCHECK} : ($P{PI_TORAX} == 1 ? $P{PV_CHECK} : $P{PV_UNCHECK})]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="0" y="397" width="105" height="15" uuid="e553c491-5cb8-40d7-bc75-19d5fa65e905"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Cardiovascular:]]></text>
+			</staticText>
+			<image isUsingCache="true" onErrorType="Blank">
+				<reportElement x="107" y="399" width="10" height="10" uuid="bbe5c41f-d577-40c1-b63d-61ff6fa960df"/>
+				<imageExpression><![CDATA[$P{PI_CARDIO} == null ? $P{PV_UNCHECK} : ($P{PI_CARDIO} == 1 ? $P{PV_CHECK} : $P{PV_UNCHECK})]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="0" y="412" width="105" height="15" uuid="8fd1c922-ed26-49af-8b8b-5e8976af56dd"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Abdomen y GI:]]></text>
+			</staticText>
+			<image isUsingCache="true" onErrorType="Blank">
+				<reportElement x="107" y="414" width="10" height="10" uuid="5e7c11eb-c5d8-4f71-93f3-536b83f14e5a"/>
+				<imageExpression><![CDATA[$P{PI_ABDO} == null ? $P{PV_UNCHECK} : ($P{PI_ABDO} == 1 ? $P{PV_CHECK} : $P{PV_UNCHECK})]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="0" y="427" width="105" height="15" uuid="dab42d5c-abc4-47ee-8088-3a3df874d14a"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Genitourinario:]]></text>
+			</staticText>
+			<image isUsingCache="true" onErrorType="Blank">
+				<reportElement x="107" y="429" width="10" height="10" uuid="145e1adf-d6da-4907-a347-1a3d7e18b3ff"/>
+				<imageExpression><![CDATA[$P{PI_GENIT} == null ? $P{PV_UNCHECK} : ($P{PI_GENIT} == 1 ? $P{PV_CHECK} : $P{PV_UNCHECK})]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="0" y="442" width="105" height="15" uuid="ef56e3c4-1873-4c56-ae8c-a99b2e1e13b1"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Sist. Nervioso:]]></text>
+			</staticText>
+			<image isUsingCache="true" onErrorType="Blank">
+				<reportElement x="107" y="444" width="10" height="10" uuid="87b5c85b-2024-4e63-8c5f-12516fb0402b"/>
+				<imageExpression><![CDATA[$P{PI_SIST_NERV} == null ? $P{PV_UNCHECK} : ($P{PI_SIST_NERV} == 1 ? $P{PV_CHECK} : $P{PV_UNCHECK})]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="0" y="457" width="105" height="15" uuid="b905192b-7bfb-4bd3-8b6f-b097937f6977"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Sist. Esquelét:]]></text>
+			</staticText>
+			<image isUsingCache="true" onErrorType="Blank">
+				<reportElement x="107" y="459" width="10" height="10" uuid="557785f4-53c6-4995-94f9-ebe7470dbbe3"/>
+				<imageExpression><![CDATA[$P{PI_SIST_ESQ} == null ? $P{PV_UNCHECK} : ($P{PI_SIST_ESQ} == 1 ? $P{PV_CHECK} : $P{PV_UNCHECK})]]></imageExpression>
+			</image>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="126" y="292" width="241" height="180" uuid="5ac6f26a-55ea-4db4-bd5b-99ae3919192c"/>
+				<textFieldExpression><![CDATA["EG: " + ($P{PV_EG} == null ? "" : $P{PV_EG}.trim())]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="375" y="276" width="180" height="15" uuid="a06c24a6-4191-47de-afcf-0b940bd0adb3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Vacunas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="375" y="292" width="60" height="15" uuid="b8d078be-4270-4489-a43d-ab21868443d3"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[2 meses:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="435" y="292" width="105" height="15" uuid="52379ff1-033a-4d48-ac87-b7b1c1467558"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[DTaP (1)]]></text>
+			</staticText>
+			<image isUsingCache="true" onErrorType="Blank">
+				<reportElement x="542" y="294" width="10" height="10" uuid="f3f151fd-9de4-4e01-b5e2-0fb2b9f54b9e"/>
+				<imageExpression><![CDATA[$P{PI_DTAP_1} == null ? $P{PV_UNCHECK} : ($P{PI_DTAP_1} == 1 ? $P{PV_CHECK} : $P{PV_UNCHECK})]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="435" y="307" width="105" height="15" uuid="ab1aef6a-14e5-402a-87b9-db5dc5833411"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Hib (1)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="435" y="322" width="105" height="15" uuid="3e54900f-72ae-46d3-ab8a-630365f258f4"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[IPV (1)]]></text>
+			</staticText>
+			<image isUsingCache="true" onErrorType="Blank">
+				<reportElement x="542" y="324" width="10" height="10" uuid="833db367-bdad-4ee1-bafd-238982dd7a26"/>
+				<imageExpression><![CDATA[$P{PI_IPV_1} == null ? $P{PV_UNCHECK} : ($P{PI_IPV_1} == 1 ? $P{PV_CHECK} : $P{PV_UNCHECK})]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="435" y="337" width="105" height="15" uuid="b510f0bd-c5a0-49b1-8bf1-d1518719b5f8"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Hep B (1)]]></text>
+			</staticText>
+			<image isUsingCache="true" onErrorType="Blank">
+				<reportElement x="542" y="339" width="10" height="10" uuid="f0fa389a-273f-4c4c-9cf3-9c3ff4998261"/>
+				<imageExpression><![CDATA[$P{PI_HEP_B_1} == null ? $P{PV_UNCHECK} : ($P{PI_HEP_B_1} == 1 ? $P{PV_CHECK} : $P{PV_UNCHECK})]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="435" y="352" width="105" height="15" uuid="f93a70fa-3921-4369-8f4f-00e95bc2cc03"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Neumococo (1)]]></text>
+			</staticText>
+			<image isUsingCache="true" onErrorType="Blank">
+				<reportElement x="542" y="354" width="10" height="10" uuid="a87ae6ae-798a-40a7-8dcc-15de093ccfa6"/>
+				<imageExpression><![CDATA[$P{PI_NEUMO_1} == null ? $P{PV_UNCHECK} : ($P{PI_NEUMO_1} == 1 ? $P{PV_CHECK} : $P{PV_UNCHECK})]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="435" y="367" width="105" height="15" uuid="b3bdb3ed-735e-4ca4-a6a3-2f116a691017"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Rotavirus (1)]]></text>
+			</staticText>
+			<image isUsingCache="true" onErrorType="Blank">
+				<reportElement x="542" y="369" width="10" height="10" uuid="facc617a-6897-41c5-8203-69d9fbb579fd"/>
+				<imageExpression><![CDATA[$P{PI_ROTAV_1} == null ? $P{PV_UNCHECK} : ($P{PI_ROTAV_1} == 1 ? $P{PV_CHECK} : $P{PV_UNCHECK})]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="375" y="382" width="60" height="15" uuid="31e9204b-6f63-41f1-9396-c4f7d2ddd26e"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[4 meses:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="435" y="382" width="105" height="15" uuid="7c09c7dd-1633-41bc-a606-957a24f496d3"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[DTaP (2)]]></text>
+			</staticText>
+			<image isUsingCache="true" onErrorType="Blank">
+				<reportElement x="542" y="384" width="10" height="10" uuid="1ee05ba8-a1ea-4cba-8476-88300cf9a922"/>
+				<imageExpression><![CDATA[$P{PI_DTAP_2} == null ? $P{PV_UNCHECK} : ($P{PI_DTAP_2} == 1 ? $P{PV_CHECK} : $P{PV_UNCHECK})]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="435" y="397" width="105" height="15" uuid="a21ff077-066d-46f1-93f4-5622e7760499"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Hib (2)]]></text>
+			</staticText>
+			<image isUsingCache="true" onErrorType="Blank">
+				<reportElement x="542" y="399" width="10" height="10" uuid="4b5f58ea-8045-437c-a6f4-239cbfc4d41e"/>
+				<imageExpression><![CDATA[$P{PI_HIB_2} == null ? $P{PV_UNCHECK} : ($P{PI_HIB_2} == 1 ? $P{PV_CHECK} : $P{PV_UNCHECK})]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="435" y="412" width="105" height="15" uuid="cfa33ac7-5fc8-4db5-ad52-94b15828ff1d"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[IPV (2)]]></text>
+			</staticText>
+			<image isUsingCache="true" onErrorType="Blank">
+				<reportElement x="542" y="414" width="10" height="10" uuid="c6510267-3b11-49a7-8883-57eb55804fc9"/>
+				<imageExpression><![CDATA[$P{PI_IPV_2} == null ? $P{PV_UNCHECK} : ($P{PI_IPV_2} == 1 ? $P{PV_CHECK} : $P{PV_UNCHECK})]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="435" y="427" width="105" height="15" uuid="7b5f0b3f-0feb-41a9-ba46-2568603af9c8"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Hep B (2)]]></text>
+			</staticText>
+			<image isUsingCache="true" onErrorType="Blank">
+				<reportElement x="542" y="429" width="10" height="10" uuid="e596df82-c03f-4d75-83e6-0347fd9f588e"/>
+				<imageExpression><![CDATA[$P{PI_HEP_B_2} == null ? $P{PV_UNCHECK} : ($P{PI_HEP_B_2} == 1 ? $P{PV_CHECK} : $P{PV_UNCHECK})]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="435" y="442" width="105" height="15" uuid="07923d22-1f62-4ec2-85a8-76d5351ce529"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Neumococo (2)]]></text>
+			</staticText>
+			<image isUsingCache="true" onErrorType="Blank">
+				<reportElement x="542" y="444" width="10" height="10" uuid="016490e5-0800-47ee-9e04-c3ed4d2b7c2f"/>
+				<imageExpression><![CDATA[$P{PI_NEUMO_2} == null ? $P{PV_UNCHECK} : ($P{PI_NEUMO_2} == 1 ? $P{PV_CHECK} : $P{PV_UNCHECK})]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="435" y="457" width="105" height="15" uuid="7839c7d8-8ad7-42e0-9b49-e4564647ddd9"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Rotavirus (2)]]></text>
+			</staticText>
+			<image isUsingCache="true" onErrorType="Blank">
+				<reportElement x="542" y="459" width="10" height="10" uuid="c739f313-8098-4e45-8228-8fd1e4bc7191"/>
+				<imageExpression><![CDATA[$P{PI_ROTAV_2} == null ? $P{PV_UNCHECK} : ($P{PI_ROTAV_2} == 1 ? $P{PV_CHECK} : $P{PV_UNCHECK})]]></imageExpression>
+			</image>
+			<image isUsingCache="true" onErrorType="Blank">
+				<reportElement x="542" y="309" width="10" height="10" uuid="f4aebc57-6ec0-44df-96a6-c2c7a69caf47"/>
+				<imageExpression><![CDATA[$P{PI_HIB_1} == null ? $P{PV_UNCHECK} : ($P{PI_HIB_1} == 1 ? $P{PV_CHECK} : $P{PV_UNCHECK})]]></imageExpression>
+			</image>
+			<line>
+				<reportElement x="370" y="291" width="185" height="1" uuid="b4ff1928-34d2-42ae-b86f-27faacc1f086"/>
+			</line>
+			<line>
+				<reportElement x="122" y="291" width="1" height="183" uuid="6d760f77-b88c-46db-bbe4-605850e4e5b9"/>
+			</line>
+			<line>
+				<reportElement x="370" y="275" width="1" height="277" uuid="aedfb710-2d8b-4da9-b6ee-15f6196ffc33"/>
+			</line>
+			<line>
+				<reportElement x="0" y="474" width="555" height="1" uuid="679637f2-d0f7-4595-8a84-d57b84584d27"/>
+				<graphicElement>
+					<pen lineWidth="2.25"/>
+				</graphicElement>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="477" width="367" height="67" uuid="57d376fe-494f-487e-889e-ff078e1a3a7b"/>
+				<textFieldExpression><![CDATA["IMP. DX.: " + ($P{PV_IMP_DX} == null ? "" : $P{PV_IMP_DX}.trim()) + "\n" +
+"PLAN: " + ($P{PV_PLAN} == null ? "" : $P{PV_PLAN}.trim())]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="375" y="476" width="180" height="15" uuid="25e84e11-bde4-4144-8e37-506b36eb2836"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Comentario:
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="375" y="491" width="180" height="15" uuid="4e538273-0f0e-4128-813d-682e85d243e6"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[- Hoja: chupón]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="375" y="506" width="180" height="15" uuid="a111a733-860a-4d43-9b5e-3eac2895d86c"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[- Hoja: fiebre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="375" y="521" width="180" height="15" uuid="7fe5529a-d66e-4bac-87b2-c0306c50f3a1"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[- Hoja: resfrío]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="375" y="536" width="180" height="15" uuid="74f5cf8c-89a1-4567-97b5-7df0c9da7b0d"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[- Hoja: prev. probl. sueño ]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="552" width="555" height="1" uuid="20377c9a-8874-40bf-a596-fcdcac5b2662"/>
+				<graphicElement>
+					<pen lineWidth="2.25"/>
+				</graphicElement>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="34" width="253" height="20" uuid="a3d9e925-2f79-4afe-a319-9cd71da65ef8"/>
+				<textElement verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[Pediatras Asociados 0-4 meses 23/11/2016]]></text>
+			</staticText>
+			<line>
+				<reportElement x="363" y="13" width="157" height="1" uuid="6ac078b5-6e2f-4b5e-b78e-4198a7ff6bf3"/>
+			</line>
+			<staticText>
+				<reportElement x="391" y="14" width="100" height="20" uuid="c81a764c-7765-4864-b14a-059e2a24359d"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Firma]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,179 @@
+
+.dhtmlxcalendar{background: url(../imagen/dhtmlxCalendar/cal_bg_single.gif) no-repeat; border: 0px solid green; font-family: Arial; z-index:99; height:178px; width:178px; overflow: hidden}
+.dhtmlxcalendar_ifr,
+.dhtmlxcalendar_mini_ifr,
+.dhtmlxcalendar_maxi_ifr,
+.dhtmlxcalendar_long_ifr {height:173px; width:178px}
+ 
+.dhtmlxcalendar_maxi_ifr {height: 176px}
+.dhtmlxcalendar_long {background: url(../imagen/dhtmlxCalendar/cal_bg_single_long.gif) no-repeat; height: 190px}
+.dhtmlxcalendar_long_ifr{height: 190px}
+.dhtmlxcalendar_mini{background: url(../imagen/dhtmlxCalendar/cal_bg_single_mini.gif) no-repeat; height:25px; width:146px}
+.dhtmlxcalendar_mini_ifr{height: 25px}
+.dhtmlxcalendar_mini .winHeader{margin-top:0px; -moz-user-select:none}
+.dhtmlxcalendar .winHeader {height: 13px; width:146px; -moz-user-select:none; border: 0; margin-left: 16px; margin-top: 5px; margin-bottom: -4px}
+.dhtmlxcalendar .winTitle {color:black; font-size:11px; float:left; cursor: move; 
+ width: 100px}
+.dhtmlxcalendar .btn_maxi, 
+.dhtmlxcalendar .btn_mini,
+.dhtmlxcalendar .btn_close,
+.dhtmlxcalendar .btn_today,
+.dhtmlxcalendar .btn_clear {background: url(../imagen/dhtmlxCalendar/btns.gif); float:right; height:12px; width:12px;
+ margin-left: 1px; font-size: 0}
+.dhtmlxcalendar .btn_close {background-position: 0 0}
+.dhtmlxcalendar .btn_today {background-position: -12px 0}
+.dhtmlxcalendar .btn_clear {background-position: -24px 0}
+.dhtmlxcalendar .btn_maxi {background-position: -36px 0}
+.dhtmlxcalendar .btn_mini {background-position: -48px 0}
+.dhtmlxcalendar .entbox{width:145px; clear:both; margin:16px}
+.dhtmlxcalendar td {font-size: 10px; font-family: Tahoma; text-align:center}
+.dhtmlxcalendar .dxcalmonth td.month_btn_left,
+.dhtmlxcalendar .dxcalmonth td.month_btn_right {background: url(../imagen/dhtmlxCalendar/btns.gif) no-repeat; background-position:-60px; width:8px}
+.dhtmlxcalendar .dxcalmonth td.month_btn_right {background-position:-68px}
+.dhtmlxcalendar .dxcalmonth td.month_btn_left span,
+.dhtmlxcalendar .dxcalmonth td.month_btn_right span{visibility: hidden}
+.dhtmlxcalendar .dxcalmonth table {margin: auto}
+.dhtmlxcalendar .dxcaldlabel {border-bottom: 1px solid #7e7e7e; color:#7e7e7e; border-top: 0px; padding-left:2px}
+.dhtmlxcalendar .dxcaldlabel td,
+.dhtmlxcalendar .dxcaldays td,
+.dhtmlxcalendar .dxcaldays_ie td{font-size: 10px; font-family: Tahoma; text-align: center; vertical-align: middle; width: 18px; height: 18px; color: #7e7e7e}
+.dhtmlxcalendar .dxcaldays td,
+.dhtmlxcalendar .dxcaldays_ie td{border: 0px; cursor: pointer}
+.dhtmlxcalendar .dxcaldays_ie td{height:16px}
+.dhtmlxcalendar td.comma{visibility:visible}
+.dhtmlxcalendar div.planeMonth,
+.dhtmlxcalendar div.planeYear {height: auto; overflow: hidden; text-decoration: underline;font-weight: bold}
+div.dhtmlxcalendar div.planeYear{display:inline; width:28px;text-decoration: underline; font-weight: bold }
+.dhtmlxcalendar td.thismonth{color:black; padding:1px}
+.dhtmlxcalendar td.othermonth{visibility:hidden; 
+}
+.dhtmlxcalendar td.weekend{color:#a70000; padding:1px}
+.dhtmlxcalendar td.insensitive{color:#b5b5b5; cursor: default; padding:1px}
+.dhtmlxcalendar td.selected{background-color: #36b1df; color:white !important}
+.dhtmlxcalendar td.current{font-weight:bold !important; color:black}
+.dhtmlxcalendar td.hover{border:1px solid #b5b5b5; color: #000000; padding:0px}
+.dhtmlxcalendar td.holiday{
+ font-weight:bold; color:#a70000}
+.dhtmlxdblcalendar {background: url(../imagen/dhtmlxCalendar/cal_bg_double.gif) no-repeat; z-index:100; padding: 0px}
+.dhtmlxdblcalendar .dhtmlxcalendar {background-image: url(../imagen/dhtmlxCalendar/blank.gif)}
+.dhtmlxcalendar div.dhtmlxRichSelector {position: relative; background-color:#ffffff; display: block; width: 1px; height: 1px}
+.dhtmlxcalendar textarea.dhtmlxRichSelector,
+.dhtmlxcalendar select.dhtmlxRichSelector {font-family: Tahoma; position: absolute; font-size: 10px; overflow: hidden; border-width: 0px; z-index:100; left: 0px; top: 0px}
+.dhtmlxcalendar select.dhtmlxRichSelector {border: 1px solid #555555}
+.dhtmlxcalendar_yahoolike {background: url(../imagen/dhtmlxCalendar//__dhxCal_skin_Yahoolike/cal_bg_single.gif) no-repeat; border: 1px solid gray; font-family: Arial, Helvetica, sans-serif; font-size:small; background-color: #f7f9fb; width:178px; height:166px; padding:5px; z-index:99}
+.dhtmlxcalendar_yahoolike_mini {background-color: #f7f9fb; height:13px}
+.dhtmlxcalendar_yahoolike_maxi {height:178px}
+.dhtmlxcalendar_yahoolike_ifr,
+.dhtmlxcalendar_yahoolike_mini_ifr,
+.dhtmlxcalendar_yahoolike_maxi_ifr {height:184px; width:188px
+}
+.dhtmlxcalendar_yahoolike_maxi_ifr {height:195px}
+.dhtmlxcalendar_yahoolike_mini_ifr {height:26px}
+.dhtmlxcalendar_yahoolike_mini .winHeader{-moz-user-select: none}
+.dhtmlxcalendar_yahoolike .winHeader {height: 16px; margin-bottom: 3px; width:178px; -moz-user-select:none}
+.dhtmlxcalendar_yahoolike .winTitle {color:#575757; font-size:12px; float:left; cursor: move; 
+ width: 100px; margin-top: -1px; overflow: hidden}
+.dhtmlxcalendar_yahoolike .btn_mini,
+.dhtmlxcalendar_yahoolike .btn_maxi,
+.dhtmlxcalendar_yahoolike .btn_close,
+.dhtmlxcalendar_yahoolike .btn_today,
+.dhtmlxcalendar_yahoolike .btn_clear {background: url(../imagen/dhtmlxCalendar//__dhxCal_skin_Yahoolike/btns.gif) no-repeat; float:right; height:12px; width:12px;
+ margin-left: 1px}
+.dhtmlxcalendar_yahoolike .btn_close {background-position: 0 0}
+.dhtmlxcalendar_yahoolike .btn_today {background-position: -12px 0}
+.dhtmlxcalendar_yahoolike .btn_clear {background-position: -24px 0}
+.dhtmlxcalendar_yahoolike .btn_maxi {background-position: -36px 0}
+.dhtmlxcalendar_yahoolike .btn_mini {background-position: -48px 0}
+.dhtmlxcalendar_yahoolike .entbox{margin:3px 3px 3px 3px; width:172px}
+.dhtmlxcalendar_yahoolike td {font-size: 9px; font-family: Arial, Helvetica, sans-serif}
+.dhtmlxcalendar_yahoolike .dxcalmonth {background-color: #f7f9fb; border: 0px solid #e0e0e0; height: 16px}
+.dhtmlxcalendar_yahoolike .dxcalmonth td.month_btn_left,
+.dhtmlxcalendar_yahoolike .dxcalmonth td.month_btn_right {background: url(../imagen/dhtmlxCalendar//__dhxCal_skin_Yahoolike/btns.gif) no-repeat; background-position: -60px 0; width: 9px}
+.dhtmlxcalendar_yahoolike .dxcalmonth td.month_btn_right {background-position: -69px 0}
+.dhtmlxcalendar_yahoolike .dxcaldlabel {border-width: 0px}
+.dhtmlxcalendar_yahoolike .dxcaldlabel td,
+.dhtmlxcalendar_yahoolike .dxcaldays td,
+.dhtmlxcalendar_yahoolike .dxcaldays_ie td{font-size: 10pt; text-align: left; vertical-align: middle; width: 20px; height: 17px; color: #666; padding: 1px}
+.dhtmlxcalendar_yahoolike .dxcaldays_ie td{height: 18px}
+.dhtmlxcalendar_yahoolike .dxcaldays td,
+.dhtmlxcalendar_yahoolike .dxcaldays_ie td{border: 1px solid #e0e0e0; background-color: #fff; text-align: center; cursor: pointer}
+.dhtmlxcalendar_yahoolike td.comma{visibility:hidden}
+.dhtmlxcalendar_yahoolike .dxcalmonth table {margin: auto}
+.dhtmlxcalendar_yahoolike div.planeMonth,
+.dhtmlxcalendar_yahoolike div.planeYear {height: auto; overflow: auto; font-size:12px; font-weight: bold}
+.dhtmlxcalendar_yahoolike td.thismonth{color:#003db8}
+.dhtmlxcalendar_yahoolike td.othermonth{color:#999; background-color:#eee; visibility: visible}
+.dhtmlxcalendar_yahoolike td.weekend{color:#003db8}
+.dhtmlxcalendar_yahoolike td.insensitive{color:#ccc; font-style:italic; cursor: default}
+.dhtmlxcalendar_yahoolike td.selected{border:1px solid white; background-color: lightblue; color: #ffffff}
+.dhtmlxcalendar_yahoolike td.current{color: #00c; font-weight:bold !important}
+.dhtmlxcalendar_yahoolike td.hover{border:1px solid #426FD9; background-color: #426FD9; color: white}
+.dhtmlxcalendar_yahoolike td.holiday{
+ font-weight:bold; color:#00c; text-decoration:underline}
+.dhtmlxcalendar_yahoolike div.dhtmlxRichSelector {position: relative; background-color:#ffffff; display: block; width: 1px; height: 1px}
+.dhtmlxcalendar_yahoolike textarea.dhtmlxRichSelector,
+.dhtmlxcalendar_yahoolike select.dhtmlxRichSelector {position: absolute; font-family: Arial; font-size: 10pt; overflow: hidden; border-width: 0px; z-index:100; left: 0px; top: 0px}
+.dhtmlxcalendar_yahoolike select.dhtmlxRichSelector {border: 1px solid #7b9ebd}
+.dhtmlxcalendar_dhx_skyblue{background: #fff; font: 12px Tahoma; color: #000; z-index:99; height:153px; padding-top:14px; width:193px; 
+ border: 1px solid #a4bed4}
+.dhtmlxcalendar_dhx_skyblue_mini{height:25px; padding-top: 0px}
+.dhtmlxcalendar_dhx_skyblue_maxi{height:179px !important; height:193px}
+.dhtmlxcalendar_dhx_skyblue_ifr,
+.dhtmlxcalendar_dhx_skyblue_mini_ifr,
+.dhtmlxcalendar_dhx_skyblue_maxi_ifr {height:173px; width:193px}
+.dhtmlxcalendar_dhx_skyblue_mini_ifr {height:25px}
+.dhtmlxcalendar_dhx_skyblue_maxi_ifr {height:185px}
+.dhtmlxcalendar_dhx_skyblue_mini .winHeader {margin:0 !important; border-bottom: 0 !important}
+.dhtmlxcalendar_dhx_skyblue .winHeader {background:url('../imagen/dhtmlxCalendar//__dhxCal_skin_Skyblue/cal_header_bg.gif'); border-style: solid; border-width: 0 1px 1px 1px; border-color: #fff #fff #a4bed4 #fff; padding: 9px 5px 0; height: 16px;
+ 
+ margin: -14px 0 12px; -moz-user-select:none; 
+}
+.dhtmlxcalendar_dhx_skyblue .winTitle {font-size:11px; font-weight: bold; float:left; cursor: move; 
+ width: 105px; margin-top: -2px}
+.dhtmlxcalendar_dhx_skyblue .btn_maxi,
+.dhtmlxcalendar_dhx_skyblue .btn_mini,
+.dhtmlxcalendar_dhx_skyblue .btn_close,
+.dhtmlxcalendar_dhx_skyblue .btn_today,
+.dhtmlxcalendar_dhx_skyblue .btn_clear {background: url(../imagen/dhtmlxCalendar//__dhxCal_skin_Skyblue/btns.gif) no-repeat; float:right; height:12px; width:12px;
+ margin-left: 3px}
+.dhtmlxcalendar_dhx_skyblue .btn_mini {background-position: -48px 0}
+.dhtmlxcalendar_dhx_skyblue .btn_maxi {background-position: -36px 0}
+.dhtmlxcalendar_dhx_skyblue .btn_close {background-position: 0 0}
+.dhtmlxcalendar_dhx_skyblue .btn_today {background-position: -12px 0}
+.dhtmlxcalendar_dhx_skyblue .btn_clear {background-position: -24px 0}
+.dhtmlxcalendar_dhx_skyblue .entbox{width:161px; height: 114px; clear:both; margin: 0 15px}
+.dhtmlxcalendar_dhx_skyblue td {text-align:center}
+.dhtmlxcalendar_dhx_skyblue .dxcalmonth td{font-size: 11px; font-weight: bold}
+.dhtmlxcalendar_dhx_skyblue .dxcalmonth td.month_btn_left,
+.dhtmlxcalendar_dhx_skyblue .dxcalmonth td.month_btn_right {background: url(../imagen/dhtmlxCalendar//__dhxCal_skin_Skyblue/btns.gif) no-repeat; background-position: -60px; width: 4px}
+.dhtmlxcalendar_dhx_skyblue .dxcalmonth td.month_btn_right {background-position: -64px}
+.dhtmlxcalendar_dhx_skyblue .dxcalmonth td.month_btn_left span,
+.dhtmlxcalendar_dhx_skyblue .dxcalmonth td.month_btn_right span{visibility: hidden}
+.dhtmlxcalendar_dhx_skyblue .dxcalmonth table {margin: auto}
+.dhtmlxcalendar_dhx_skyblue .dxcaldlabel {font-size: 11px; font-weight: bold; border-top: 0px; padding-left:2px; margin-top: 4px}
+.dhtmlxcalendar_dhx_skyblue .dxcaldays{margin-top:5px}
+.dhtmlxcalendar_dhx_skyblue .dxcaldays_ie{width: 161px; margin-top:5px}
+.dhtmlxcalendar_dhx_skyblue .dxcaldlabel td,
+.dhtmlxcalendar_dhx_skyblue .dxcaldays td,
+.dhtmlxcalendar_dhx_skyblue .dxcaldays_ie td{text-align: center; vertical-align: middle}
+.dhtmlxcalendar_dhx_skyblue .dxcaldays td,
+.dhtmlxcalendar_dhx_skyblue .dxcaldays_ie td{height: 19px; width: 21px; font-size:12px; border: 0px; cursor: pointer; padding: 0px}
+.dhtmlxcalendar_dhx_skyblue .dxcaldays_ie td{height:19px}
+.dhtmlxcalendar_dhx_skyblue td.comma{visibility:visible; padding-right: 3px}
+.dhtmlxcalendar_dhx_skyblue div.planeMonth,
+.dhtmlxcalendar_dhx_skyblue div.planeYear {height: auto; overflow: auto}
+div.dhtmlxcalendar_dhx_skyblue div.planeYear{display:inline; width:28px}
+.dhtmlxcalendar_dhx_skyblue td.othermonth{visibility: visible; color: #ccc}
+.dhtmlxcalendar_dhx_skyblue td.weekend{}
+.dhtmlxcalendar_dhx_skyblue td.insensitive{color:#ccc; cursor: default}
+.dhtmlxcalendar_dhx_skyblue td.selected{background: url(../imagen/dhtmlxCalendar//__dhxCal_skin_Skyblue/cell_select.gif) center no-repeat}
+.dhtmlxcalendar_dhx_skyblue td.current{font-weight:bold !important}
+.dhtmlxcalendar_dhx_skyblue td.hover{}
+.dhtmlxcalendar_dhx_skyblue td.holiday{
+ font-weight:bold; color:#ed3a64}
+.dhtmlxdblcalendar_dhx_skyblue {background: url(_dhx_blue/cal_bg_double.png) no-repeat; padding: 0px}
+.dhtmlxdblcalendar_dhx_skyblue .dhtmlxcalendar {background-image: url(../imagen/dhtmlxCalendar//blank.gif)}
+.dhtmlxcalendar_dhx_skyblue div.dhtmlxRichSelector {position: absolute; background-color:#ffffff; display: block}
+.dhtmlxcalendar_dhx_skyblue textarea.dhtmlxRichSelector,
+.dhtmlxcalendar_dhx_skyblue select.dhtmlxRichSelector {font-family: verdana; position: absolute; font-size: 9px; overflow: hidden; border-width: 0px; z-index:100}
+.dhtmlxcalendar_dhx_skyblue select.dhtmlxRichSelector {border: 1px solid #555555}

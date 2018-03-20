@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<tree id="0" radio="1">	
+    <item text="HOSPITAL MUNICIPAL DE LOS OLIVOS" id="hdmlo" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+    <item text="CONSEJO DIRECTIVO" id="001" im0="folderClosed.gif" im1="folderOpen.gif" im2="folderClosed.gif"/>
+    <item text="OFICINA DE CONTROL INSTITUCIONAL" id="002" im0="folderClosed.gif" im1="folderOpen.gif" im2="folderClosed.gif"/>
+    <item text="DIRECTOR GENERAL" id="003" im0="folderClosed.gif" im1="folderOpen.gif" im2="folderClosed.gif"/>
+    <item text="OFICINA DE ADMINISTRACION Y CONTROL" id="004" im0="folderClosed.gif" im1="folderOpen.gif" im2="folderClosed.gif"/>
+    <item text="CONTABILIDAD" id="005" im0="folderClosed.gif" im1="folderOpen.gif" im2="folderClosed.gif"/>
+    <item text="TESORERIA AT. PERSONALIZADA" id="006" im0="folderClosed.gif" im1="folderOpen.gif" im2="folderClosed.gif"/>
+    <item text="RECURSOS HUMANOS" id="007" im0="folderClosed.gif" im1="folderOpen.gif" im2="folderClosed.gif"/>
+    <item text="INFORMATICA Y ARCHIVOS" id="008" im0="folderClosed.gif" im1="folderOpen.gif" im2="folderClosed.gif"/>
+    <item text="LOGISTICA, PATRIMONIO Y ALMACEN" id="009" im0="folderClosed.gif" im1="folderOpen.gif" im2="folderClosed.gif"/>
+    <item text="IMAGEN INSTITUCIONAL" id="010" im0="folderClosed.gif" im1="folderOpen.gif" im2="folderClosed.gif"/>
+    <item text="SOAT" id="011" im0="folderClosed.gif" im1="folderOpen.gif" im2="folderClosed.gif"/>
+    <item text="RED PERIFERICA MUNICIPAL DE SALUD" id="012" im0="folderClosed.gif" im1="folderOpen.gif" im2="folderClosed.gif"/>
+    <item text="DEPARTAMENTO DE ASISTENCIA" id="013" im0="folderClosed.gif" im1="folderOpen.gif" im2="folderClosed.gif"/>
+    <item text="EMERGENCIA" id="014" im0="folderClosed.gif" im1="folderOpen.gif" im2="folderClosed.gif">
+    <item text="E. MEDICINA" id="108" im0="books_close.gif" im1="books_open.gif" im2="books_close.gif" />
+    <item text="E. CIRUGIA" id="109" im0="books_close.gif" im1="books_open.gif" im2="books_close.gif" />
+    <item text="TRAUMA SHOCK" id="110" im0="books_close.gif" im1="books_open.gif" im2="books_close.gif" />
+    <item text="E. PEDIATRIA " id="111" im0="books_close.gif" im1="books_open.gif" im2="books_close.gif" />
+    <item text="E. GINECO OBSTETRICIA" id="112" im0="books_close.gif" im1="books_open.gif" im2="books_close.gif" />
+    <item text="SALA DE OBSERVACIONES ADULTOS" id="113" im0="books_close.gif" im1="books_open.gif" im2="books_close.gif" />
+    <item text="SALA DE OBSERVACIONES PEDIATRICO" id="114" im0="books_close.gif" im1="books_open.gif" im2="books_close.gif" />
+    <item text="E. NEUROCIRUGIA" id="115" im0="books_close.gif" im1="books_open.gif" im2="books_close.gif" />
+    <item text="E. TRUMATOLOGIA" id="116" im0="books_close.gif" im1="books_open.gif" im2="books_close.gif" />
+    <item text="E. GASTROENTEROLOGIA" id="117" im0="books_close.gif" im1="books_open.gif" im2="books_close.gif" />
+    </item>
+    <item text="CENTRAL DE ESTERILIZACION" id="015" im0="folderClosed.gif" im1="folderOpen.gif" im2="folderClosed.gif">
+    <item text="CENTRO OBSTETRICO" id="124" im0="books_close.gif" im1="books_open.gif" im2="books_close.gif" />
+    <item text="UCI NEONATOLOGIA" id="125" im0="books_close.gif" im1="books_open.gif" im2="books_close.gif" />
+    <item text="HOSPITALIZACION 3 PISO" id="126" im0="books_close.gif" im1="books_open.gif" im2="books_close.gif" /> </item>
+    <item text="CENTRO QUIRURJICO" id="016" im0="folderClosed.gif" im1="folderOpen.gif" im2="folderClosed.gif">
+    <item text="ANESTESIOLOGIA" id="118" im0="books_close.gif" im1="books_open.gif" im2="books_close.gif" />
+    <item text="UCI NEONATOS" id="119" im0="books_close.gif" im1="books_open.gif" im2="books_close.gif" />
+    <item text="UCI ADULTOS" id="120" im0="books_close.gif" im1="books_open.gif" im2="books_close.gif" />
+    <item text="RECUPERACION" id="121" im0="books_close.gif" im1="books_open.gif" im2="books_close.gif" />
+    <item text="MEDICO EXTERNO " id="122" im0="books_close.gif" im1="books_open.gif" im2="books_close.gif" />
+    <item text="GASTROENTEROLOGIA PROCEDIMIENTOS" id="123" im0="books_close.gif" im1="books_open.gif" im2="books_close.gif" /> </item>
+    <item text="CONSULTA EXTERNA" id="017" im0="folderClosed.gif" im1="folderOpen.gif" im2="folderClosed.gif">
+    <item text="MEDICINA GENERAL" id="062" im0="books_close.gif" im1="books_open.gif" im2="books_close.gif" />
+    <item text="MEDICINA INTERNA" id="063" im0="books_close.gif" im1="books_open.gif" im2="books_close.gif" />
+    <item text="GERIATRIA" id="064" im0="books_close.gif" im1="books_open.gif" im2="books_close.gif" />
+    <item text="CARDIOLOGIA" id="065" im0="books_close.gif" im1="books_open.gif" im2="books_close.gif" />
+    <item text="NEUMOLOGIA" id="066" im0="books_close.gif" im1="books_open.gif" im2="books_close.gif" />
+    <item text="NEUROLOGIA" id="067" im0="books_close.gif" im1="books_open.gif" im2="books_close.gif" />
+    <item text="PSIQUIATRIA" id="068" im0="books_close.gif" im1="books_open.gif" im2="books_close.gif" />
+    <item text="ONCOLOGIA" id="069" im0="books_close.gif" im1="books_open.gif" im2="books_close.gif" />
+    <item text="GASTROENTEROLOGIA" id="070" im0="books_close.gif" im1="books_open.gif" im2="books_close.gif" />
+    <item text="ENDOCRINOLOGIA" id="071" im0="books_close.gif" im1="books_open.gif" im2="books_close.gif" />
+    <item text="DERMATOLOGIA" id="072" im0="books_close.gif" im1="books_open.gif" im2="books_close.gif" />
+    <item text="REUMATOLOGIA" id="073" im0="books_close.gif" im1="books_open.gif" im2="books_close.gif" />
+    <item text="CIRUGIA" id="074" im0="books_close.gif" im1="books_open.gif" im2="books_close.gif" />
+    <item text="TRAUMATOLOGIA" id="075" im0="books_close.gif" im1="books_open.gif" im2="books_close.gif" />
+    <item text="PSICOLOGIA" id="076" im0="books_close.gif" im1="books_open.gif" im2="books_close.gif" />
+    <item text="NEUROCIRUGIA" id="077" im0="books_close.gif" im1="books_open.gif" im2="books_close.gif" />
+    <item text="OFTALMOLOGIA" id="078" im0="books_close.gif" im1="books_open.gif" im2="books_close.gif" />
+    <item text="OTORRINOLARINGOLOGIA" id="079" im0="books_close.gif" im1="books_open.gif" im2="books_close.gif" />
+    <item text="ODONTOLOGIA" id="080" im0="books_close.gif" im1="books_open.gif" im2="books_close.gif" />
+    <item text="UROLOGIA" id="081" im0="books_close.gif" im1="books_open.gif" im2="books_close.gif" />
+    <item text="CIRUGIA PLASTICA" id="082" im0="books_close.gif" im1="books_open.gif" im2="books_close.gif" />
+    <item text="GINECO OBSTETRICA" id="083" im0="books_close.gif" im1="books_open.gif" im2="books_close.gif" />
+    <item text="PEDIATRIA" id="084" im0="books_close.gif" im1="books_open.gif" im2="books_close.gif" />
+    <item text="CIRUGIA DE CABEZA, CUELLO Y MAXILO FACIAL" id="085" im0="books_close.gif" im1="books_open.gif" im2="books_close.gif" />
+    <item text="HEMATOLOGIA" id="086" im0="books_close.gif" im1="books_open.gif" im2="books_close.gif" />
+    <item text="NEFROLOGIA" id="087" im0="books_close.gif" im1="books_open.gif" im2="books_close.gif" />
+    <item text="CIRUGIA CARDIO VASCULAR" id="088" im0="books_close.gif" im1="books_open.gif" im2="books_close.gif" />
+    <item text="FERTILIDAD" id="089" im0="books_close.gif" im1="books_open.gif" im2="books_close.gif" />
+    <item text="CIRUGIA PEDIATRICA" id="090" im0="books_close.gif" im1="books_open.gif" im2="books_close.gif" />
+    <item text="NEUROLOGIA PEDIATRICA" id="091" im0="books_close.gif" im1="books_open.gif" im2="books_close.gif" />
+    <item text="CARDIOLOGIA PEDIATRICA" id="092" im0="books_close.gif" im1="books_open.gif" im2="books_close.gif" />
+    <item text="FLEBOLOGIA" id="093" im0="books_close.gif" im1="books_open.gif" im2="books_close.gif" />
+    <item text="NEUMOLOGIA PEDIATRICA" id="094" im0="books_close.gif" im1="books_open.gif" im2="books_close.gif" />
+    <item text="MEDICINA FISICA Y REHABILITACION" id="095" im0="books_close.gif" im1="books_open.gif" im2="books_close.gif" />
+    <item text="NUTRICION" id="096" im0="books_close.gif" im1="books_open.gif" im2="books_close.gif" />
+    <item text="DENSITOMETRIA" id="097" im0="books_close.gif" im1="books_open.gif" im2="books_close.gif" />
+    <item text="GASTROENTEROLOGIA PEDIATRICA" id="098" im0="books_close.gif" im1="books_open.gif" im2="books_close.gif" />
+    <item text="MEDICINA GENERAL TREBOL" id="099" im0="books_close.gif" im1="books_open.gif" im2="books_close.gif" />
+    <item text="VACUNACION" id="100" im0="books_close.gif" im1="books_open.gif" im2="books_close.gif" />
+    <item text="CRECIMIENTO Y DESARROLLO" id="101" im0="books_close.gif" im1="books_open.gif" im2="books_close.gif" />
+    <item text="CRECIMIENTO Y DESARROLLO TREBOL" id="102" im0="books_close.gif" im1="books_open.gif" im2="books_close.gif" />
+    <item text="VACUNACION TREBOL" id="103" im0="books_close.gif" im1="books_open.gif" im2="books_close.gif" />
+    <item text="PEDIATRIA TREBOL" id="104" im0="books_close.gif" im1="books_open.gif" im2="books_close.gif" />
+    <item text="GINECOLOGIA TREBOL" id="105" im0="books_close.gif" im1="books_open.gif" im2="books_close.gif" />
+    <item text="PSICOLOGIA TREBOL" id="106" im0="books_close.gif" im1="books_open.gif" im2="books_close.gif" />
+    <item text="TALLERES" id="107" im0="books_close.gif" im1="books_open.gif" im2="books_close.gif" />
+    <item text="SERVICIO DE ENFERMERIA" id="131" im0="books_close.gif" im1="books_open.gif" im2="books_close.gif" /> </item>
+    <item text="INMUNRACIONES" id="018" im0="folderClosed.gif" im1="folderOpen.gif" im2="folderClosed.gif"/>
+    <item text="HOSPITALIZACION 3º" id="019" im0="folderClosed.gif" im1="folderOpen.gif" im2="folderClosed.gif"/>
+    <item text="LABORATORIO" id="020" im0="folderClosed.gif" im1="folderOpen.gif" im2="folderClosed.gif">
+    <item text="SERVICIO DE LABORATORIO Y ANATOMIA PATOLOGICA" id="136" im0="books_close.gif" im1="books_open.gif" im2="books_close.gif" />
+    <item text="LABORATORIO CLINICO CENTRAL" id="137" im0="books_close.gif" im1="books_open.gif" im2="books_close.gif" />
+    <item text="ANATOMIA PATOLOGICA" id="138" im0="books_close.gif" im1="books_open.gif" im2="books_close.gif" /> </item>
+    <item text="FARMACIA" id="021" im0="folderClosed.gif" im1="folderOpen.gif" im2="folderClosed.gif"> <item text="FARMACIA CONSULTA EXTERNA" id="129" im0="books_close.gif" im1="books_open.gif" im2="books_close.gif" /> <item text="FARMACIA HOSPITALIZACION Y EMERGENCIA" id="130" im0="books_close.gif" im1="books_open.gif" im2="books_close.gif" /> </item> <item text="DIAGNOSTICO POR IMAGENES" id="022" im0="folderClosed.gif" im1="folderOpen.gif" im2="folderClosed.gif">
+    <item text="SERVICIO DE IMAGENOLOGIA" id="132" im0="books_close.gif" im1="books_open.gif" im2="books_close.gif" />
+    <item text="RADIOLOGIA" id="133" im0="books_close.gif" im1="books_open.gif" im2="books_close.gif" />
+    <item text="ECOGRAFIA" id="134" im0="books_close.gif" im1="books_open.gif" im2="books_close.gif" />
+    <item text="TOMOGRAFIA" id="135" im0="books_close.gif" im1="books_open.gif" im2="books_close.gif" /> </item>
+    <item text="NEONATOLOGIA" id="051" im0="folderClosed.gif" im1="folderOpen.gif" im2="folderClosed.gif"/>
+    <item text="CENTRO OBSTETRICO" id="052" im0="folderClosed.gif" im1="folderOpen.gif" im2="folderClosed.gif"/>
+    <item text="UCI-UCIN" id="053" im0="folderClosed.gif" im1="folderOpen.gif" im2="folderClosed.gif"/>
+    <item text="DEPARTAMENTO DE APOYO AL DIAGNOSTICO Y TRATAMIENTO" id="054" im0="folderClosed.gif" im1="folderOpen.gif" im2="folderClosed.gif"/>
+    <item text="NUTRICION" id="058" im0="folderClosed.gif" im1="folderOpen.gif" im2="folderClosed.gif"/>
+    <item text="HOSPITALIZACION 4º" id="059" im0="folderClosed.gif" im1="folderOpen.gif" im2="folderClosed.gif">
+    <item text="HOSPITALIZACION 4 PISO" id="127" im0="books_close.gif" im1="books_open.gif" im2="books_close.gif" />
+    <item text="HOSPITALIZACION 4 PISO ZONA VIP" id="128" im0="books_close.gif" im1="books_open.gif" im2="books_close.gif" />
+    </item>
+    <item text="PLANEAMIENTO Y PRESUPUESTO" id="060" im0="folderClosed.gif" im1="folderOpen.gif" im2="folderClosed.gif"/>
+    <item text="LUIS ALEJANDRO" id="061" im0="folderClosed.gif" im1="folderOpen.gif" im2="folderClosed.gif" />
+    <item text="MANTTOYSG" id="062" im0="folderClosed.gif" im1="folderOpen.gif" im2="folderClosed.gif"/> </item>
+
+	
+</tree>

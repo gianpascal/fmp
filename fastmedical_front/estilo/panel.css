@@ -1,0 +1,163 @@
+/*****************************************************************/
+/****tabla orden*****/
+.tablaOrden{
+	font-family:Arial, Helvetica, sans-serif;
+	border:1px solid #D9E0CA;
+	width:100%;
+	height:100%;
+	-moz-border-radius-topleft:10px;
+	-moz-border-radius-topright:10px;
+}
+.tablaOrden thead{
+	width:100%;
+        height: 5%;
+	min-height:15px;
+	max-height:15px;
+}
+.tablaOrden thead tr{
+
+}
+.tablaOrden thead tr th{
+	background-image:url(../../medifacil_front/imagen/fondo/bg_foot.gif);
+	white-space:nowrap;
+	border-top:none;
+	border-bottom:none;
+	border-right:#A9C1D8 solid 1px;
+	padding:0px;
+	margin:0px;
+	font-size:12px;
+	border-bottom:solid #E0E0E0 1px;
+}
+.tablaOrden tbody{
+	width:99%;
+	height:95%;
+	max-height:88%;
+	min-height:95%;
+	overflow-y:auto;
+	overflow-x:hidden;
+}
+.tablaOrden tbody tr{
+	font-family:Arial, Helvetica, sans-serif normal;
+	font-size:12px;
+}
+.tablaOrden  .e1{
+	background-color:#FFFFFF;
+	color:#000000;
+}
+.tablaOrden .e2{
+	background-color: #88FFA6;
+	color:#004080;
+}
+.tablaOrden .e3{
+	background-color:#fefbda;
+	color:#660033;
+}
+.tablaOrden .e4{
+	background-color:#deedf8;
+	color:#004080;
+}
+.tablaOrden .e5{
+	background-color:#fed8d8;
+	color:#000000;
+}
+.tablaOrden .e6{
+	background-color:#FF3300;
+        color:#ffffff;
+}
+.tablaOrden .e7{
+	background-color:#cfcfcf;
+	color:#5d5d5d;
+}
+.tablaOrden .e8{
+	background-color:#ececff;
+	color:#400040;
+}
+.tablaOrden .e9{
+	background-color:#ececff;
+	color:#400040;
+}
+.tablaOrden .e10{
+	background-color:#acc1fe;
+
+}
+.tablaOrden .e10 td{
+	 border-color: #999999;
+
+}
+.tablaOrden .e11{
+	background-color:#000000;
+}
+.tablaOrden .e12{
+	background-color:#000000;
+}
+.tablaOrden .e13{
+	background-color:#000000;
+}
+.tablaOrden .e14{
+	background-color:#000000;
+}
+.tablaOrden .e15{
+	background-color:#000000;
+}
+.tablaOrden tbody tr td{
+	padding:1px;
+	margin:0px;
+	border-bottom:solid #ADC5CC 1px;
+	border-right:solid #ADC5CC 1px;
+	cursor:pointer;
+	/*text-transform:uppercase;*/
+}
+.tablaOrden tbody tr td td{
+	padding:1px;
+	margin:0px;
+	border-bottom:solid #ADC5CC 1px;
+	border-right:solid #ADC5CC 1px;
+	cursor:pointer;
+	text-transform:uppercase;
+	background-color:#004080;
+}
+.tablaOrden tbody tr td td td{
+	padding:1px;
+	margin:0px;
+	border-bottom:solid #ADC5CC 1px;
+	border-right:solid #ADC5CC 1px;
+	cursor:pointer;
+	text-transform:uppercase;
+	background-color:#0099CC;
+}
+.tablaOrden tbody tr td input{
+	border:none;
+	margin:0px;
+	padding:0px;
+	font-size:11px;
+	width:100%;
+	height:100%;
+	text-transform:uppercase;
+}
+.tablaOrden .filaSeleccionada{
+	background-color:#FAC783;
+}
+.tablaOrden .fila1{
+	background-color:#A8DCC6;
+}
+.tablaOrden .fila2{
+	background-color:#F2F9F6;
+}
+.tablaOrden .filax{
+	background-color:#A8DCC6;
+}
+.tablaOrden .filay{
+	background-color:#F2F9F6;
+}
+.tablaOrden .filaxp{
+	background-color:#CCCCCC;
+}
+.tablaOrden .filayp{
+	background-color:#fffff;
+}
+.checkboxOrden{
+	border:none;
+	margin:0px;
+	background-color:#0066FF;
+}
+

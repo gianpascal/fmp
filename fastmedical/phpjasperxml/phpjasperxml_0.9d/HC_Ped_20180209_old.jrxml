@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Historia_Clinica" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" whenResourceMissingType="Empty" uuid="7a7cfc4a-bedc-4e71-b5ee-4ca1e1c9ffc9">
+	<property name="ireport.zoom" value="1.2100000000000006"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="144"/>
+	<parameter name="PV_RUTA_LOGO" class="java.lang.String"/>
+	<parameter name="PV_HOSP_CLI" class="java.lang.String"/>
+	<parameter name="PV_DIR_HOSP_CLI" class="java.lang.String"/>
+	<parameter name="PV_HIST_CLI" class="java.lang.String"/>
+	<parameter name="PD_FECHA" class="java.util.Date">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+		<defaultValueExpression><![CDATA[new java.util.Date()]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PV_NOMBRE" class="java.lang.String"/>
+	<parameter name="PV_DOC_IDENT" class="java.lang.String"/>
+	<parameter name="PV_SEXO" class="java.lang.String"/>
+	<parameter name="PV_FEC_NAC" class="java.lang.String"/>
+	<parameter name="PV_DIR_PAC" class="java.lang.String"/>
+	<parameter name="PV_TLF_PAC" class="java.lang.String"/>
+	<parameter name="PV_NOTA" class="java.lang.String"/>
+	<parameter name="PV_PESO" class="java.lang.String"/>
+	<parameter name="PV_TALLA" class="java.lang.String"/>
+	<parameter name="PV_PC" class="java.lang.String"/>
+	<parameter name="PV_SUENHO" class="java.lang.String"/>
+	<parameter name="PV_DEPOSICIONES" class="java.lang.String"/>
+	<parameter name="PV_ENFERMEDADES" class="java.lang.String"/>
+	<parameter name="PV_MEDICACION" class="java.lang.String"/>
+	<parameter name="PV_LM" class="java.lang.String"/>
+	<parameter name="PV_FORMULA" class="java.lang.String"/>
+	<parameter name="PV_HOJA_ALIM" class="java.lang.String"/>
+	<parameter name="PV_EMI_OTO" class="java.lang.String"/>
+	<parameter name="PV_FIJA_MIR" class="java.lang.String"/>
+	<parameter name="PV_SIGUE_90" class="java.lang.String"/>
+	<parameter name="PV_SONR_SOC" class="java.lang.String"/>
+	<parameter name="PV_ESC_1" class="java.lang.String"/>
+	<parameter name="PV_ESC_2" class="java.lang.String"/>
+	<parameter name="PV_ALEG" class="java.lang.String"/>
+	<parameter name="PV_LEV_CAB" class="java.lang.String"/>
+	<parameter name="PV_LEV_CAB_45" class="java.lang.String"/>
+	<parameter name="PV_AGA_COS" class="java.lang.String"/>
+	<parameter name="PV_MOV_SIM" class="java.lang.String"/>
+	<parameter name="PV_SON_ESP" class="java.lang.String"/>
+	<parameter name="PV_JUNT_MANO" class="java.lang.String"/>
+	<parameter name="PV_VOCA" class="java.lang.String"/>
+	<parameter name="PV_CAB_EST" class="java.lang.String"/>
+	<parameter name="PV_PLAN" class="java.lang.String"/>
+	<parameter name="PV_IMP_DX" class="java.lang.String"/>
+	<parameter name="PV_T" class="java.lang.String"/>
+	<parameter name="PV_FC" class="java.lang.String"/>
+	<parameter name="PV_FR" class="java.lang.String"/>
+	<parameter name="PV_PIEL_GANG" class="java.lang.String"/>
+	<parameter name="PV_CAB_CUE" class="java.lang.String"/>
+	<parameter name="PV_OJOS" class="java.lang.String"/>
+	<parameter name="PV_NARIZ" class="java.lang.String"/>
+	<parameter name="PV_OIDOS" class="java.lang.String"/>
+	<parameter name="PV_ORO" class="java.lang.String"/>
+	<parameter name="PV_TORAX" class="java.lang.String"/>
+	<parameter name="PV_CARDIO" class="java.lang.String"/>
+	<parameter name="PV_ABDO" class="java.lang.String"/>
+	<parameter name="PV_GENIT" class="java.lang.String"/>
+	<parameter name="PV_SIST_NERV" class="java.lang.String"/>
+	<parameter name="PV_SIST_ESQ" class="java.lang.String"/>
+	<parameter name="PV_EG" class="java.lang.String"/>
+	<parameter name="PV_DTAP_1" class="java.lang.String"/>
+	<parameter name="PV_HIB_1" class="java.lang.String"/>
+	<parameter name="PV_IPV_1" class="java.lang.String"/>
+	<parameter name="PV_HEP_B_1" class="java.lang.String"/>
+	<parameter name="PV_NEUMO_1" class="java.lang.String"/>
+	<parameter name="PV_ROTAV_1" class="java.lang.String"/>
+	<parameter name="PV_DTAP_2" class="java.lang.String"/>
+	<parameter name="PV_HIB_2" class="java.lang.String"/>
+	<parameter name="PV_IPV_2" class="java.lang.String"/>
+	<parameter name="PV_HEP_B_2" class="java.lang.String"/>
+	<parameter name="PV_NEUMO_2" class="java.lang.String"/>
+	<parameter name="PV_ROTAV_2" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select pe.vApellidoPaterno+' '+pe.vApellidoMaterno+' '+pe.vNombre as nombre_completo,
+	pa.dFechaHoraRegistro,
+	dpp.vNumeroDocumento,
+	pe.dFechaNacimiento,
+	CASE
+      WHEN bSexo= 1 THEN 'M'
+      WHEN bSexo= 2 THEN 'F'
+   	END as sexo,
+   	u.vDescripcion,
+   	cpp.vCodigoContacto
+
+   	from dbweb.nsmPacientes pa
+	inner join dbweb.nsmProgramacionPacientes pp on pp.iCodigoPaciente=pa.iCodigoPaciente
+	inner join dbweb.nsmPersonas pe on pe.c_cod_per=pa.cCodigoPersona
+
+	left join dbweb.nsdDocumentoPersonas dpp on dpp.c_cod_per=pe.c_cod_per and dpp.cTipoDocumento='0001'
+	left join dbweb.nsdContactoPersonas cpp on cpp.c_cod_per=pe.c_cod_per and cpp.cTipoContacto='0001'
+	left join dbweb.nsdDireccionPersonas rp on rp.c_cod_per=pe.c_cod_per and rp.cTipoDireccion='01'
+	left join dbweb.nsmUbigeo u on u.cIdUbigeo=rp.cUbigeo
+	left join dbweb.nsmTriajes tp on tp.iCodigoProgramacion=pp.iCodigoProgramacion
+	left join dbweb.nsmCabeceraDiagnosticos cd on cd.iCodigoProgramacion=pp.iCodigoProgramacion
+	left join dbweb.nsdDiagnosticos d on d.idcDiagnostico=cd.idcDiagnostico
+	left join dbweb.nsmCabeceraDiagnosticos b on d.idcDiagnostico = b.idcDiagnostico
+    left join dbweb.nsmCieUsado c on d.idCie = c.idCie
+
+	where pa.iCodigoPaciente=$P{idPaciente} and d.iEstado=1
+		GROUP by pa.cNumeroHC,pe.vApellidoPaterno,pe.vApellidoMaterno,pe.vNombre,pa.dFechaHoraRegistro
+	,dpp.vNumeroDocumento,pe.dFechaNacimiento,bSexo,u.vDescripcion,cpp.vCodigoContacto;]]>
+	</queryString>
+	<!--<field name="cNumeroHC" class="java.lang.String"/>-->
+	<field name="nombre_completo" class="java.lang.String"/>
+	<field name="dFechaHoraRegistro" class="java.sql.Timestamp"/>
+	<field name="vNumeroDocumento" class="java.lang.String"/>
+	<field name="dFechaNacimiento" class="java.sql.Timestamp"/>
+	<field name="sexo" class="java.lang.String"/>
+	<field name="vDescripcion" class="java.lang.String"/>
+	<field name="vCodigoContacto" class="java.lang.String"/>
+		
+	<title>
+		<band splitType="Stretch"/>
+		<frame>
+				<reportElement x="0" y="0" width="407" height="65" uuid="02ea29f1-1929-409d-bb78-ef592b561e72">
+					<printWhenExpression><![CDATA[$P{logo} == null || ($P{logo}.trim()).equals("")]]></printWhenExpression>
+				</reportElement>
+				<textField>
+					<reportElement x="0" y="0" width="219" height="20" uuid="8d2157e0-bd98-4d5d-b9c5-c324df4d24e7">
+						<printWhenExpression><![CDATA[($P{nombre_hospital} != null) && !($P{nombre_hospital}.trim().equals(""))]]></printWhenExpression>
+					</reportElement>
+					<textElement verticalAlignment="Middle">
+						<font size="12" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[(($P{nombre_hospital} == null || ($P{nombre_hospital}.trim()).equals("")) ? "" : ($P{nombre_hospital}.trim()))]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="0" y="20" width="268" height="20" uuid="82c9ef79-a381-4056-96dc-ca9f39874f00">
+						<printWhenExpression><![CDATA[($P{direccion_hospital} != null) && !($P{direccion_hospital}.trim().equals(""))]]></printWhenExpression>
+					</reportElement>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[(($P{direccion_hospital} == null || ($P{direccion_hospital}.trim()).equals("")) ? "" : ($P{direccion_hospital}.trim()))]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement x="0" y="0" width="407" height="65" uuid="f2e9d860-6403-4531-9f3c-7e3ac3a79ac4">
+					<printWhenExpression><![CDATA[($P{logo} != null) && !(($P{logo}.trim()).equals(""))]]></printWhenExpression>
+				</reportElement>
+				<image onErrorType="Blank">
+					<reportElement x="0" y="0" width="113" height="65" uuid="8b88f579-c408-40cc-9e81-2b88b0115484"/>
+					<imageExpression><![CDATA[$P{logo}]]></imageExpression>
+				</image>
+				<textField>
+					<reportElement x="123" y="0" width="219" height="20" uuid="bf906082-a0ee-4861-ab97-4364b8cc8461">
+						<printWhenExpression><![CDATA[($P{nombre_hospital} != null) && !($P{nombre_hospital}.trim().equals(""))]]></printWhenExpression>
+					</reportElement>
+					<textElement verticalAlignment="Middle">
+						<font size="12" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[(($P{nombre_hospital} == null || ($P{nombre_hospital}.trim()).equals("")) ? "" : ($P{nombre_hospital}.trim()))]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="123" y="20" width="268" height="20" uuid="29d22cf9-0ae3-4036-9bfe-2c196e7fff88"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[(($P{direccion_hospital} == null || ($P{direccion_hospital}.trim()).equals("")) ? "" : ($P{direccion_hospital}.trim()))]]></textFieldExpression>
+				</textField>
+			</frame>
+			<image onErrorType="Blank">
+				<reportElement x="470" y="0" width="85" height="101" uuid="639ac009-4265-4046-a728-b139eccfe861"/>
+				<graphicElement>
+					<pen lineWidth="1.0"/>
+				</graphicElement>
+			</image>
+			<rectangle radius="10">
+				<reportElement x="113" y="65" width="328" height="35" uuid="dff60aaa-3bc4-4565-83f4-b0886bff4cae"/>
+			</rectangle>
+			<textField>
+				<reportElement x="126" y="65" width="303" height="35" uuid="23f7aa3f-f083-4e6c-8387-eacd652df709"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="18" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Historia Clínica: " +
+(($P{num_hc} == null || ($P{num_hc}.trim()).equals("")) ? "--------" : ($P{num_hc}.trim()))]]></textFieldExpression>
+			</textField>
+	</title>
+	<pageHeader>
+		<band height="131" splitType="Stretch">
+			
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="557" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="4a202590-37a0-4a39-863a-931fbc4bc0be"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>Peso:</b> " + ($P{peso} == null ? "" : $P{peso})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="227" y="0" width="100" height="20" uuid="9c552ff6-3da7-4c82-929e-b7c683f28b51"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>Talla:</b> " + ($P{talla} == null ? "" : $P{talla})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="375" y="0" width="100" height="20" uuid="1b9843eb-accc-41f8-81d8-2656355cb8ed"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>PC:</b> " + ($P{pc} == null ? "" : $P{pc})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="21" width="555" height="30" isRemoveLineWhenBlank="true" uuid="47355cb5-360f-4eff-b09f-ef05909d6c6d"/>
+				<textElement markup="html">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>Nota:</b> " + ($P{nota} == null ? "" : $P{nota}.trim())]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="53" width="555" height="1" uuid="4b7d0ff8-9490-4d18-8ca6-502c2c9a45c3"/>
+				<graphicElement>
+					<pen lineWidth="2.25"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="0" y="57" width="275" height="80" uuid="57de2c87-a9cb-4887-842a-e0cac94c0c5f"/>
+				<textElement markup="html"/>
+				<textFieldExpression><![CDATA["<b>Historia Actual:</b>" + "<br>" + "<b>Sueño:</b> " + ($P{sueno} == null ? "" : $P{sueno}.trim()) + "<br>" + "<b>Deposiciones:</b> " + ($P{deposiciones} == null ? "" : $P{deposiciones}.trim()) + "<br>" + "<b>Enfermedades:</b> " + ($P{enfermedades} == null ? "" : $P{enfermedades}.trim()) + "<br>" + "<b>Medicación:</b> " + ($P{medicacion} == null ? "" : $P{medicacion}.trim())]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="140" width="555" height="1" uuid="51cfee89-6c35-4a7b-80df-0fb290c97b6f"/>
+				<graphicElement>
+					<pen lineWidth="2.25"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="280" y="57" width="275" height="80" uuid="f499621f-b1c5-463f-bf12-1ace16ce31f3"/>
+				<textElement markup="html"/>
+				<textFieldExpression><![CDATA["<b>Nutrición:</b>" + "<br>" +
+				"Leche Materna: " + ($P{lm} == null ? "" : $P{lm}) + "<br>" +
+				"Fórmula: " + ($P{formula} == null ? "" : $P{formula}) + "<br>" +
+				"Solidos (a partir del 4° mes)" + "<br>" +
+				"Hoja de Alimentación: " + ($P{solidos} == null ? "" : $P{solidos}) + "<br>" +
+				"Emisiones otoacústicas: " + ($P{emisiones} == null ? "" : $P{emisiones})]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="144" width="140" height="20" uuid="abdf89ab-0a2e-4e7a-9071-93a9ac448377"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Crecimiento y Desarrollo]]></text>
+			</staticText>
+			<textField>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="179" width="180" height="90" uuid="ac93941b-77ee-4eb3-b670-5b03f3580fc3"/>
+				<textElement markup="html"/>
+				<textFieldExpression><![CDATA["Fija la mirada: " + ($P{fija_mirada} == null ? "" : $P{fija_mirada})
++ "<br>" +
+"Escucha: " + ($P{escucha_primer_mes} == null ? "" : $P{escucha_primer_mes})
++ "<br>" +
+"Levanta la cabeza: " + ($P{levanta_cabeza} == null ? "" : $P{levanta_cabeza})
++ "<br>" +
+"Moimientos Simétricos: " + ($P{mov_simetrico} == null ? "" : $P{mov_simetrico})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement stretchType="RelativeToBandHeight" x="187" y="179" width="180" height="90" uuid="829afc1b-a78e-4ea7-80b7-14b6139318bd"/>
+				<textElement markup="html"/>
+				<textFieldExpression><![CDATA["Sigue +90°: " + ($P{sigue} == null ? "" : $P{sigue}.trim())
++ "<br>" +
+"Escucha: " + ($P{escucha_segundo_mes} == null ? "" : $P{escucha_segundo_mes})
++ "<br>" +
+"Levanta la cabeza +45°: " + ($P{levanta_cabeza_45} == null ? "" : $P{levanta_cabeza_45})
++ "<br>" +
+"Sonrisa Espontánea: " + ($P{sonrisa_espontanea} == null ? "" : $P{sonrisa_espontanea})
++ "<br>" +
+"Vocaliza (agú): " + ($P{vocaliza} == null ? "" : $P{vocaliza})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement stretchType="RelativeToBandHeight" x="375" y="179" width="180" height="90" isPrintWhenDetailOverflows="true" uuid="54f40af0-9be9-41ce-9444-45cce3779c6c"/>
+				<textElement markup="html"/>
+				<textFieldExpression><![CDATA["Sonrisa Social: " + ($P{sonrisa_social} == null ? "" : $P{sonrisa_social})
++ "<br>" +
+"Ríe, da gritos de alegría: " + ($P{rie_grito_alegria} == null ? "" : $P{rie_grito_alegria})
++ "<br>" +
+"Agarra cosas y las lleva a la boca: " + ($P{agarra} == null ? "" : $P{agarra})
++ "<br>" +
+"Junta las manos: " + ($P{junta_manos} == null ? "" : $P{junta_manos})
++ "<br>" +
+"Cabeza estable cuando está sentado: " + ($P{cabeza_estable} == null ? "" : $P{cabeza_estable})]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="164" width="180" height="15" uuid="e81b0bd5-9cfb-4e51-9c49-ecf496ba9161"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[1 mes]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="375" y="164" width="180" height="15" uuid="57354b51-36a6-4ed9-8fd7-e9700d585d27"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[4 meses]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="187" y="164" width="180" height="15" uuid="b4de12ad-a2e3-45d3-a5cb-eeaeebe6b3e2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[2 meses]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="274" width="555" height="1" uuid="f929bc80-38ca-4ce0-b59c-9cb9a534dc70"/>
+				<graphicElement>
+					<pen lineWidth="2.25"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="0" y="466" width="367" height="67" uuid="57d376fe-494f-487e-889e-ff078e1a3a7b"/>
+				<textElement markup="html"/>
+				<textFieldExpression><![CDATA["IMP. DX.: " + ($P{imp_dx} == null ? "" : $P{imp_dx}.trim()) + "<br>" +
+"PLAN: " + ($P{tratamiento} == null ? "" : $P{tratamiento}.trim())]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="277" width="180" height="20" uuid="921f237f-f6d9-4119-b256-02856162299e"/>
+				<textElement markup="html"/>
+				<textFieldExpression><![CDATA["<b>Examen Físico:</b> T: " + ($P{temperatura} == null ? "" : $P{temperatura})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="187" y="277" width="81" height="20" uuid="b62405ef-0281-4d8b-80ed-d2ebe179420d"/>
+				<textElement markup="html"/>
+				<textFieldExpression><![CDATA["FC: " + ($P{frec_cardiaca} == null ? "" : $P{frec_cardiaca})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="375" y="277" width="180" height="186" uuid="198cbfe3-c9ca-40d5-be76-4dbaffa6e3bc"/>
+				<textElement markup="html"/>
+				<textFieldExpression><![CDATA["<b>Vacunas:</b>" + "<br>" +
+				"<b>2 meses:</b> " + "<br>" +
+				"DTaP (1): " + ($P{dtap1} == null ? "" : $P{dtap1}) + "<br>" +
+				"Hib (1): " + ($P{hib1} == null ? "" : $P{hib1}) + "<br>" +
+				"IPV (1): " + ($P{ipv1} == null ? "" : $P{ipv1}) + "<br>" +
+				"Hep B (1): " + ($P{hepb1} == null ? "" : $P{hepb1}) + "<br>" +
+				"Neumococo (1): " + ($P{neumococo1} == null ? "" : $P{neumococo1}) + "<br>" +
+				"Rotavirus (1): " + ($P{rotavirus1} == null ? "" : $P{rotavirus1}) + "<br>" +
+				"<b>4 meses:</b> " + "<br>" +
+				"DTaP (2): " + ($P{dtap2} == null ? "" : $P{dtap2}) + "<br>" +
+				"Hib (2): " + ($P{hib2} == null ? "" : $P{hib2}) + "<br>" +
+				"IPV (2): " + ($P{ipv2} == null ? "" : $P{ipv2}) + "<br>" +
+				"Hep B (2): " + ($P{hepb2} == null ? "" : $P{hepb2}) + "<br>" +
+				"Neumococo (2): " + ($P{neumococo2} == null ? "" : $P{neumococo2}) + "<br>" +
+				"Rotavirus (2): " + ($P{rotavirus2} == null ? "" : $P{rotavirus2})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="286" y="277" width="81" height="20" uuid="b367b5a7-79a6-4761-a274-b63e8727e7f9"/>
+				<textElement markup="html"/>
+				<textFieldExpression><![CDATA["FR: " + ($P{frec_respiratoria} == null ? "" : $P{frec_respiratoria}.trim())]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="187" y="297" width="180" height="166" uuid="5ac6f26a-55ea-4db4-bd5b-99ae3919192c"/>
+				<textElement markup="html"/>
+				<textFieldExpression><![CDATA["EG: " + ($P{eg} == null ? "" : $P{eg}.trim())]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="297" width="180" height="166" uuid="65e41583-8719-449e-8b25-f910b1485361"/>
+				<textElement markup="html"/>
+				<textFieldExpression><![CDATA["Piel y ganglios: " + ($P{piel_ganglios} == null ? "" : $P{piel_ganglios}.trim()) + "<br>" +
+				"Cabeza y cuello: " + ($P{cabeza_cuello} == null ? "" : $P{cabeza_cuello}.trim()) + "<br>" +
+				"Ojos: " + ($P{ojos} == null ? "" : $P{ojos}.trim()) + "<br>" +
+				"Nariz: " + ($P{nariz} == null ? "" : $P{nariz}.trim()) + "<br>" +
+				"Oídos: " + ($P{oidos} == null ? "" : $P{oidos}.trim()) + "<br>" +
+				"Orofaringe: " + ($P{orofaringe} == null ? "" : $P{orofaringe}.trim()) + "<br>" +
+				"Tórax y Pulm: " + ($P{torax_pulmon} == null ? "" : $P{torax_pulmon}.trim()) + "<br>" +
+				"Cardiovascular: " + ($P{cardiovascular} == null ? "" : $P{cardiovascular}.trim()) + "<br>" +
+				"Abdomen y GI: " + ($P{abdomen_gi} == null ? "" : $P{abdomen_gi}.trim()) + "<br>" +
+				"Genitourinario: " + ($P{genitourinario} == null ? "" : $P{genitourinario}.trim()) + "<br>" +
+				"Sist. Nervioso: " + ($P{sist_nervioso} == null ? "" : $P{sist_nervioso}.trim()) + "<br>" +
+				"Sist. Esquelét: " + ($P{sist_esqueletico} == null ? "" : $P{sist_esqueletico}.trim())]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="375" y="466" width="180" height="67" uuid="c0ab9dda-bcda-4ada-8601-9e641b393f87"/>
+				<textElement markup="html"/>
+				<text><![CDATA[<b>Comentario:</b>
+<br>
+- Hoja: chupón
+<br>
+- Hoja: fiebre
+<br>
+- Hoja: resfrío
+<br>
+- Hoja: prev. probl. sueño ]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="34" width="253" height="20" uuid="a3d9e925-2f79-4afe-a319-9cd71da65ef8"/>
+				<textElement verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[Pediatras Asociados 0-4 meses 23/11/2016]]></text>
+			</staticText>
+			<line>
+				<reportElement x="363" y="13" width="157" height="1" uuid="6ac078b5-6e2f-4b5e-b78e-4198a7ff6bf3"/>
+			</line>
+			<staticText>
+				<reportElement x="391" y="14" width="100" height="20" uuid="c81a764c-7765-4864-b14a-059e2a24359d"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Firma]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<tree id="0" radio="1">
+    <item text="DATOS DEL EMPLEADO" open="1" id="RRHH0001" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+        <item text="Datos Personales" id="RRHH0002" open="1" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+        </item>
+        <item text="Puesto HMLO" open="1" id="RRHH0003" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+        </item>
+        <item text="Experiencia Laboral" open="1" id="RRHH0004" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+        </item>
+        <item text="Estudios Superiores" open="1" id="RRHH0005" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+        </item>
+        <item text="Idiomas" id="RRHH0006" open="1" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+        </item>
+        <item text="Conocimientos" open="1" id="RRHH0007" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+        </item>       
+        <item text="Investigación" open="1" id="RRHH0009" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+        </item>        
+        <item text="Logros" open="1" id="RRHH0011" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+        </item>
+        <item text="Referencias Personales" open="1" id="RRHH0012" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+        </item>
+        <item text="Legajo" open="1" id="RRHH0013" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+        </item>
+        <item text="Usuario" id="RRHH0014"  open="1" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >   
+        </item>
+         <item text="Asignacion Caja" id="RRHH0015"  open="1" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+        </item>
+        <item text="Horarios Programados" id="RRHH0016"  open="1" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+        </item>
+    </item>
+
+</tree>

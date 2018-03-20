@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<tree id="0" radio="1">
+<item text="ADMISIÓN" open="1" id="2" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+<item text="CITAS" open="1" id="3" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+<item text="ÓRDENES" open="1" id="4" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+<item text="TESORERIA" open="1" id="5" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+<item text="Consulta de Tarifas" open="1" id="6" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+<item text="Busqueda de Citas" open="1" id="7" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+<item text="Reserva de Citas" open="1" id="8" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+<item text="Consulta de ordenes" open="1" id="9" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+<item text="Busqueda de Pacientes" open="1" id="10" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+<item text="Registro de Pacientes" open="1" id="11" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+<item text="Busqueda de Pacientes" open="1" id="12" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+<item text="Admisi?n" open="1" id="16" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+<item text="Registro de Datos del Paciente" open="1" id="17" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+<item text="CITAS" open="1" id="22" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+<item text="Acreditaci?n" open="1" id="13" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+<item text="RRHH" open="1" id="15" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+<item text="Programacion" open="1" id="27" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+<item text="Acreditación" open="1" id="24" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="CITAS" open="1" id="19" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="CITAS" open="1" id="20" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="CITAS" open="1" id="21" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="citas 2" open="1" id="23" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Programación" open="1" id="45" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Citas" open="1" id="25" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="RR.HH" open="1" id="28" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Tesoreria" open="1" id="29" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Configuraciones" open="1" id="30" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Reportes" open="1" id="31" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Usuario" open="1" id="32" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="ORDENES" open="1" id="38" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="TESORERIA" open="1" id="40" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+<item text="Manuales de Ayuda" open="1" id="1" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+<item text="ADMISION" open="1" id="26" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+<item text="Registrar Datos del Paciente" open="1" id="33" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Acreditaci?n" open="1" id="34" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="peche" open="1" id="44" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+</item>
+<item text="PROGRAMACION" open="1" id="36" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+<item text="Reserva de Citas" open="1" id="37" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Medicos" open="1" id="48" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Llamada Paciente" open="1" id="50" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Emergencia" open="1" id="51" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Personal" open="1" id="52" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+<item text="Registros de Horarios" open="1" id="55" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Empleados por Subareas" open="1" id="56" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+</item>
+<item text="Medicos" open="1" id="70" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+</item>
+</item>
+<item text="RRHH" open="1" id="46" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+<item text="Registro de Personal" open="1" id="47" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Puestos por CCostos" open="1" id="57" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Puestos por Servicios" open="1" id="58" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Documentos por Puestos" open="1" id="59" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Area por Centro de Costo" open="1" id="60" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Registro de Personal" open="1" id="78" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Programacion de Personal" open="1" id="61" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+<item text="Mto. Turnos por Área" open="1" id="62" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Regularizar Asistencia" open="1" id="63" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Regularizar Horario" open="1" id="64" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+</item>
+</item>
+<item text="TESORERIA" open="1" id="41" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+<item text="Consulta de Tarifas" open="1" id="42" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Consulta de Ordenes" open="1" id="43" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+</item>
+<item text="CONFIGURACIONES" open="1" id="49" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+<item text="Ambientes Lógicos" open="1" id="65" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Ambientes Físicos" open="1" id="66" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Centro Costos" open="1" id="67" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Turnos" open="1" id="68" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Documentos" open="1" id="69" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Areas" open="1" id="76" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Mantenimiento de Historias" open="1" id="73" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+<item text="Examenes Fisicos" open="1" id="74" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Mantenimiento de Pruebas" open="1" id="75" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+</item>
+<item text="Areas" open="1" id="77" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+</item>
+</item>
+<item text="REPORTES" open="1" id="53" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="USUARIO" open="1" id="54" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="ACTO MEDICO" open="1" id="71" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+<item text="Consultorio" open="1" id="72" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+<item text="Uso del controlador panel" open="1" id="80" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+</item>
+</item>
+<item text="PANEL DE CONTROL" open="1" id="79" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+<item text="Controlador Panel" open="1" id="81" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+<item text="Usuarios" open="1" id="82" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Permisos" open="1" id="83" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Herramientas" open="1" id="84" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+</item>
+<item text="Controlador Simedh" open="1" id="85" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+<item text="Usuarios" open="1" id="87" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Permisos" open="1" id="88" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Herramientas" open="1" id="89" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Usuarios por formulario" open="1" id="91" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Usuario por Servicio" open="1" id="92" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+</item>
+<item text="Consulta de Ordenes" open="1" id="39" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+</item>
+<item text="Citas" open="1" id="35" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+</item>
+</item>
+</item>
+</item>
+</item>
+</item>
+</item>
+</item>
+</item>
+</item>
+</item>
+</item>
+</item>
+</item>
+</item>
+</item>
+</item>
+
+</tree>

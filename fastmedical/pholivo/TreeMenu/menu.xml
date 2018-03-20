@@ -1,0 +1,13 @@
+<?xml version='1.0'?>
+<menu width="300" target="_blank" indent="2">
+	<option length="2" value="option 1">
+	  <option value="option 1.1" url="file1.htm"></option>
+	  <option value="option 1.2" url="file2.htm"></option>
+	</option>
+	<option length="2" value="option 2">
+	  <option value="option 2.1" length="1">
+	    <option value="option 2.1.1" url="file3.htm"></option>
+	  </option>
+	  <option value="option 2.2" url="file3.htm"></option>
+	</option>
+</menu>

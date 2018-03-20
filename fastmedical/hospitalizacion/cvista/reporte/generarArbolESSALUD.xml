@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='iso-8859-1'?>
+<tree id="0">
+    <item text="Reportes" id="rpt" open="1" im0="tombs.gif" im1="tombs.gif" im2="iconSafe.gif" call="1" select="1">             
+        <item text="Partes Diario" id="1|vistaPartesDiariasReporte.php" im0="folderClosed.gif" im1="folderOpen.gif" im2="folderClosed.gif">
+        </item>
+        <item text="NSIG" id="2|vistaNSIGReporte.php" im0="folderClosed.gif" im1="folderOpen.gif" im2="folderClosed.gif">
+        </item>
+        <item text="Produccion de paquetes" id="3|vistaPaquetesEtareoReporte.php" im0="folderClosed.gif" im1="folderOpen.gif" im2="folderClosed.gif">
+        </item>
+        <item text="Mamografia" id="4|vistaMamografiaPapanicolaouReporte.php" im0="folderClosed.gif" im1="folderOpen.gif" im2="folderClosed.gif"  >
+        </item>
+        <item text="HC Preventivas" id="5|vistaPreventivasReporte.php" im0="folderClosed.gif" im1="folderOpen.gif" im2="folderClosed.gif">
+        </item>
+        <item text="Papanicolaou" id="6|vistaMamografiaPapanicolaouReporte.php" im0="folderClosed.gif" im1="folderOpen.gif" im2="folderClosed.gif">
+        </item>
+        <item text="Operacional TBC" id="7|vistaOperacionalTBCReporte.php" im0="folderClosed.gif" im1="folderOpen.gif" im2="folderClosed.gif">
+        </item>
+        <item text="Operacional VIH" id="8|vistaOperacionalVIHReporte.php" im0="folderClosed.gif" im1="folderOpen.gif" im2="folderClosed.gif">
+        </item>
+        <item text="Programacion UBAP" id="9|vistaProgramacionUBAP.php" im0="folderClosed.gif" im1="folderOpen.gif" im2="folderClosed.gif">
+        </item>
+    </item>
+</tree> 

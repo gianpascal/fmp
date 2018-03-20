@@ -1,0 +1,26 @@
+<!-- MENU.DTD : Menu format definition -->
+
+<!-- COMMON ENTITY DATA -->		
+<!ENTITY lt     "&#38;#60;">
+<!ENTITY gt     "&#62;">
+<!ENTITY amp    "&#38;#38;">
+<!ENTITY apos   "&#39;">
+<!ENTITY quot   "&#34;">
+
+<!-- ROOT ELEMENT -->
+<!ELEMENT menu (option+)>
+<!ATTLIST menu    
+    indent			CDATA		"1"
+    nodewidth		CDATA		"15"
+    style			CDATA		"menutxt"
+    target			CDATA		"_self"
+    width			CDATA		"200"
+  	>
+  	
+<!-- OPTION ELEMENT -->
+<!ELEMENT option (option*)>
+<!ATTLIST option
+	length			CDATA		"0"
+	url				CDATA		#IMPLIED
+	value			CDATA		#REQUIRED
+	>  	

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<tree id="0" radio="1">
+<item text="Servicio de Consulta Externa" open="1" id="0102060900" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+<item text="Medicina General" id="0102060904" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+<item text="Medicina Interna" id="0102060905" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+<item text="Geriatria" id="0102060906" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+<item text="Cardiologia" id="0102060907" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+<item text="Neumologia" id="0102060908" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+<item text="Neurologia" id="0102060909" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+<item text="Psiquiatria" id="0102060910" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+<item text="Oncologia" id="0102060911" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+<item text="Gastroenterologia" id="0102060912" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+<item text="Endocrinologia" id="0102060913" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+<item text="Dermatologia" id="0102060914" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+<item text="Reumatologia" id="0102060915" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+<item text="Cirugia" id="0102060916" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+<item text="Traumatologia" id="0102060917" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+<item text="Psicologia" id="0102060918" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+<item text="Neurocirugia" id="0102060919" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+<item text="Oftalmologia" id="0102060920" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+<item text="Otorrinolaringologia" id="0102060921" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+<item text="Odontologia" id="0102060923" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+<item text="Urologia" id="0102060924" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+<item text="Cirugia Plastica" id="0102060925" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+<item text="Gineco Obstetricia" id="0102060943" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+<item text="Pediatria" id="0102060944" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+<item text="Cirugia de Cabeza, Cuello y Maxilo Facial" id="0102060945" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+<item text="Nefrologia" id="0102060947" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+<item text="Neurologia Pediatrica" id="0102060951" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+<item text="Medicina Fisica y Rehabitalización" id="0102060955" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+<item text="Gastroenterologia Pediatrica" id="0102060958" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+<item text="Vacunación" id="0102060961" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+<item text="Crecimiento y Desarrollo" id="0102060962" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+<item text="Talleres" id="0102060968" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+<item text="Topico (Essalud -Trebol)" id="0102060969" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" />
+</item>
+</tree>
