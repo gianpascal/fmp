@@ -22,7 +22,8 @@ class DLogin extends Adophp {
 		parent::SetParameterSP("$6",$tcaduca);
                 parent::SetParameterSP("$7",$idusuario);
                 parent::SetParameterSP("$8",$id);
-		$resultado=parent::executeSPArrayX();
+		//$resultado=parent::executeSPArrayX();
+                $resultado=parent::executeSPArrayX();
                 parent::Close();
                 return $resultado;
 	}
@@ -34,6 +35,7 @@ class DLogin extends Adophp {
             parent::SetParameterSP("vclave_usuario", $clave);
             
             $resultado=parent::executeSPArrayX();
+         //  var_dump($resultado);
             parent::Close();
             return $resultado;
         }

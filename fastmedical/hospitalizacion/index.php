@@ -7,11 +7,11 @@
         <title>.: Sistema M&eacute;dico Hospitalario :: FASTMEDICAL :.</title>
 
         <style type="text/css">
-            @import url("../../medifacil_front/estilo/simedh.css");
+            @import url("../../fastmedical_front/estilo/simedh.css");
 
         </style>
         <style type="text/css" media="all">
-            @import url("../../medifacil_front/estilo/simedh.css");
+            @import url("../../fastmedical_front/estilo/simedh.css");
             /*body {font-size:12px}*/
             h1 {cursor:hand;font-size:16px;margin-left:10px;line-height:10px}
             xmp {color:green;font-size:12px;margin:0px;font-family:courier;background-color:#e6e6fa;padding:2px}
@@ -31,7 +31,7 @@
                     height: 500px;
             }
         </style>
-        <link rel="icon" type="image/png" href="../../medifacil_front/fotos/icono.png" />
+        <link rel="icon" type="image/png" href="../../fastmedical_front/fotos/icono.png" />
          <script type="text/javascript" src="../javascript/windowsprotoype/prototype.js"></script>
          <script type="text/javascript" src="../javascript/usuario/usuarios.js"></script>
 
@@ -78,7 +78,7 @@
                     <td height="159">&nbsp;</td>
                     <td>
                         <a href="#">
-                            <img src="../../medifacil_front/imagen/inicio/logo_medical.ico" style="width:181px; height:68px;"">
+                            <img src="../../fastmedical_front/imagen/inicio/logo_medical.ico" style="width:181px; height:68px;"">
                         </a>
                     </td>
                 </tr>-->
@@ -91,7 +91,7 @@
                         color: #ff0000;
                         font-size: 33px;">Bienvenido</h1>-->
                          <a href="#" style="width:342px; height:72px; padding: 5px;">
-                            <img style="margin-top: 5px;;" src="../../medifacil_front/imagen/inicio/logo_fast_medical.png"">
+                            <img style="margin-top: 5px;;" src="../../fastmedical_front/imagen/inicio/logo_fast_medical.png"">
                         </a>   
                         <hr>
                         <form id="formLogin" name="formLogin" action="" method="post" style="border:0; margin:0; padding:56px">

@@ -13,12 +13,16 @@ class ActionLogin{
 	{
 		$oLLogin = new LLogin();
 		$respuesta = $oLLogin->getArrayUsuario1($parametros);
-		
+		echo "<br>Paso 1";
                 if($respuesta=='ok'){
                     $this->getUsuarioOficina();
+                    echo "<br>Paso 2";
                     $this->getDatosInstitucion();
+                    echo "<br>Paso 3";
                     $this->getUsuarioPermiso();
+                    echo "<br>Paso 4";
                     $isLogin=1;
+                    echo "<br>Paso 5";
                     $accion='INSERTAR';
                     
                    // $sesion=session_id();
@@ -31,6 +35,7 @@ class ActionLogin{
                     $ip=$_SESSION['host'];
                     $rs=$oLLogin->verificaSesion($accion,$sesion, $tiempo, $sistema,$contenido,$idusuario,$tcaduca,$ip,'');
                     //print_r($rs);
+                    echo "<br>Paso 6";
                     $_SESSION['id']=$rs[0]['respuesta'];
 // print_r($_SESSION);
                     //header("location: ../../cvista/inicio/inicio.php");
