@@ -106,7 +106,7 @@ class Conexion {
       
         $arrayDsnMSSQL['dbuser'] = 'sa';
         $arrayDsnMSSQL['dbpasw'] = '123456';
-        $arrayDsnMSSQL['dbhost'] = '192.168.1.116';
+        $arrayDsnMSSQL['dbhost'] = '192.168.1.116';//peche
         $arrayDsnMSSQL['dbdriv'] = 'sqlsrv';
         return $arrayDsnMSSQL;
     }
