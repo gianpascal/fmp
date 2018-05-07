@@ -94,20 +94,21 @@ class Conexion {
     public static function getInitDsnMSSQLAuditoria() {
         $arrayDsnMSSQL['dbname'] = 'Auditoria';
         $arrayDsnMSSQL['dbuser'] = 'sa'; //simedhgranja';
-        $arrayDsnMSSQL['dbpasw'] = '12345'; //p3ch3';
+        $arrayDsnMSSQL['dbpasw'] = '123456'; //p3ch3';
 //        $arrayDsnMSSQL['dbhost'] = '192.168.88.51';
-        $arrayDsnMSSQL['dbhost'] = '192.168.1.116';
-        $arrayDsnMSSQL['dbdriv'] = 'sqlsrv';
+        $arrayDsnMSSQL['dbhost'] = '192.168.1.109';
+        $arrayDsnMSSQL['dbdriv'] = 'SQLSRV';
         return $arrayDsnMSSQL;
     }
 
     public static function getInitDsnMSSQLAuditoriaWeb() {
-        $arrayDsnMSSQL['dbname'] = 'FastMedical';
+        $arrayDsnMSSQL['dbname'] = 'yachayPanel';
       
         $arrayDsnMSSQL['dbuser'] = 'sa';
         $arrayDsnMSSQL['dbpasw'] = '123456';
-        $arrayDsnMSSQL['dbhost'] = '192.168.1.116';//peche
-        $arrayDsnMSSQL['dbdriv'] = 'sqlsrv';
+        $arrayDsnMSSQL['dbhost'] = '192.168.1.109';
+    //    $arrayDsnMSSQL['dbhost'] = 'DESKTOP-FRC01VR\gianp';
+        $arrayDsnMSSQL['dbdriv'] = 'SQLSRV';
         return $arrayDsnMSSQL;
     }
 
@@ -116,8 +117,8 @@ class Conexion {
        
         $arrayDsnMSSQL['dbuser'] = 'sa';
         $arrayDsnMSSQL['dbpasw'] = '123456';
-        $arrayDsnMSSQL['dbhost'] = '192.168.1.116';
-        $arrayDsnMSSQL['dbdriv'] = 'sqlsrv';
+        $arrayDsnMSSQL['dbhost'] = '192.168.1.109';
+        $arrayDsnMSSQL['dbdriv'] = 'SQLSRV';
         return $arrayDsnMSSQL;
     }
 
