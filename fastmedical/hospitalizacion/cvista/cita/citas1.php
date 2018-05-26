@@ -28,9 +28,9 @@ require_once("../../../pholivo/Html.php");
 	$o_Toolbar = new ToollBar('left','btns');
         //SetBoton($pboton,$pbotonname,$style,$evento,$funcionjava,$image,$ancho="",$title="",$activo=true)
         //function selOpcionBusquedaProgMedicos(opcBusqueda,objeto,evento,escuchador) se llama desde citas.js
-	$o_Toolbar->SetBoton('1',"Fecha",'btn','onClick,KeyPress,onDblClick','selOpcionBusquedaProgMedicos','../../../../medifacil_front/imagen/icono/hos_calendar.png','','','48');
-        $o_Toolbar->SetBoton("2","Especialidad","btn","onclick,onkeypress",'cargar_tree_ccostos',"../../../../medifacil_front/imagen/icono/b_tree.gif");
-        $o_Toolbar->SetBoton('3',"M&eacute;dico",'btn','onClick,KeyPress,onDblClick','selOpcionBusquedaProgMedicos','../../../../medifacil_front/imagen/icono/hos_medico.png','','','48');
+	$o_Toolbar->SetBoton('1',"Fecha",'btn','onClick,KeyPress,onDblClick','selOpcionBusquedaProgMedicos','../../../../fastmedical_front/imagen/icono/hos_calendar.png','','','48');
+        $o_Toolbar->SetBoton("2","Especialidad","btn","onclick,onkeypress",'cargar_tree_ccostos',"../../../../fastmedical_front/imagen/icono/b_tree.gif");
+        $o_Toolbar->SetBoton('3',"M&eacute;dico",'btn','onClick,KeyPress,onDblClick','selOpcionBusquedaProgMedicos','../../../../fastmedical_front/imagen/icono/hos_medico.png','','','48');
 
         //$cb_combohorariospermitidos = $o_actionCita->listaTurnosLibres('0');
 
@@ -39,8 +39,8 @@ require_once("../../../pholivo/Html.php");
         $cb_radio = $o_actionCita->listaRadioFiltro('1','','0');
         $cb_combo_sede = $o_actionCita->listaDatosSede();
         $o_ToolbarCita = new ToollBar('left','btns');
-        $o_ToolbarCita->SetBoton('4',"Nueva Cita",'btn','onClick','irnuevaCita','../../../../medifacil_front/imagen/icono/nuevo.png','','','48');
-        //$o_ToolbarCita->SetBoton('5',"Lista de Citas",'btn','onClick','irDetalleCitas','../../../../medifacil_front/imagen/icono/demo.png','','','48');
+        $o_ToolbarCita->SetBoton('4',"Nueva Cita",'btn','onClick','irnuevaCita','../../../../fastmedical_front/imagen/icono/nuevo.png','','','48');
+        //$o_ToolbarCita->SetBoton('5',"Lista de Citas",'btn','onClick','irDetalleCitas','../../../../fastmedical_front/imagen/icono/demo.png','','','48');
 ?>
 
 <link href="../../css/style_hosp.css"/>

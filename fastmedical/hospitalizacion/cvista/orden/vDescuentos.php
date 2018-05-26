@@ -1,9 +1,9 @@
 <?php
 
     $botonBuscar = new ToollBar("right");
-    $botonBuscar->SetBoton("Buscar", "Buscar", "btn", "onclick,onkeypress", "ventanaBuscarAutoriza()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/kappfinder.png");
+    $botonBuscar->SetBoton("Buscar", "Buscar", "btn", "onclick,onkeypress", "ventanaBuscarAutoriza()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/kappfinder.png");
     $botonAceptar = new ToollBar("right");
-    $botonAceptar->SetBoton("Aceptar", "Aceptar", "btn", "onclick,onkeypress", "aceptarDescuento()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/button_ok.png");
+    $botonAceptar->SetBoton("Aceptar", "Aceptar", "btn", "onclick,onkeypress", "aceptarDescuento()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/button_ok.png");
     
     
 ?>

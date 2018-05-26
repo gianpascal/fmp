@@ -71,14 +71,14 @@ if((trim($datos["filaTurno"])+1)<10) {
                     <table>
                         <tr>
                             <td>
-                                <a href="javascript:modificarTurnoProgramadoIndividuar();"> <img border="0" title="Modificar" alt="" src="../../../../medifacil_front/imagen/btn/b_actualizar_on.gif"/></a>
+                                <a href="javascript:modificarTurnoProgramadoIndividuar();"> <img border="0" title="Modificar" alt="" src="../../../../fastmedical_front/imagen/btn/b_actualizar_on.gif"/></a>
                             </td>
                             <td>
-                                <a href="javascript:EliminarTurnoProgramadoIndividuar();"> <img border="0" title="Eliminar" alt="" src="../../../../medifacil_front/imagen/btn/EliminarProgramacion.gif"/></a>
+                                <a href="javascript:EliminarTurnoProgramadoIndividuar();"> <img border="0" title="Eliminar" alt="" src="../../../../fastmedical_front/imagen/btn/EliminarProgramacion.gif"/></a>
 
                             </td>
                             <td>
-                                <a href="javascript:programacionPorDiaSinTurno(<?php echo $datos["filaArea"] ?>,<?php echo $datos["filaEmpleado"] ?>,<?php echo $datos["filaTurno"] ?>);"> <img border="0" title="Otro Turno" alt="" src="../../../../medifacil_front/imagen/btn/nbtn_nuevo.gif"/></a>
+                                <a href="javascript:programacionPorDiaSinTurno(<?php echo $datos["filaArea"] ?>,<?php echo $datos["filaEmpleado"] ?>,<?php echo $datos["filaTurno"] ?>);"> <img border="0" title="Otro Turno" alt="" src="../../../../fastmedical_front/imagen/btn/nbtn_nuevo.gif"/></a>
                             </td>
                         </tr>
                     </table>

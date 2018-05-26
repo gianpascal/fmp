@@ -37,7 +37,7 @@ $toolbarz=new ToollBar("left");
                         <div style="width: 75px;" align="center">
                         <?php
                             if (isset($_SESSION["permiso_formulario_servicio"][232]["GRABAR_HOR_FIJO_EMP"]) && ($_SESSION["permiso_formulario_servicio"][232]["GRABAR_HOR_FIJO_EMP"]==1)){
-                                $toolbarz->SetBoton("grabarHorarioFijo","Grabar","btn","onclick,onkeypress","grabarHorarioFijo()",$_SESSION['path_principal']."../medifacil_front/imagen/icono/grabar.png","","",1);
+                                $toolbarz->SetBoton("grabarHorarioFijo","Grabar","btn","onclick,onkeypress","grabarHorarioFijo()",$_SESSION['path_principal']."../fastmedical_front/imagen/icono/grabar.png","","",1);
                                 $toolbarz->Mostrar();
                             }
                         ?>

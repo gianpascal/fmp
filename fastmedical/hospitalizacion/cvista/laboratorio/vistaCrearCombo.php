@@ -79,20 +79,20 @@ $toolbar2 = new ToollBar("center");
                 <td align="center">
                     <div id="div_guardarItemCombo">
                         <?php
-                        $toolbar->SetBoton("Guardar Item Combo", "Guardar", "btn", "onclick,onkeypress", "guardarItemCombo()", "../../../../medifacil_front/imagen/icono/grabar.png", "", "", true);
+                        $toolbar->SetBoton("Guardar Item Combo", "Guardar", "btn", "onclick,onkeypress", "guardarItemCombo()", "../../../../fastmedical_front/imagen/icono/grabar.png", "", "", true);
                         $toolbar->Mostrar();
                         ?>
                     </div>
                     <div id="div_modificarItemCombo">
                         <?php
-                        $toolbar2->SetBoton("Nuevo Item Combo", "Modificar", "btn", "onclick,onkeypress", "ModificarItemCombo()", "../../../../medifacil_front/imagen/icono/nuevo.png", "", "", true);
+                        $toolbar2->SetBoton("Nuevo Item Combo", "Modificar", "btn", "onclick,onkeypress", "ModificarItemCombo()", "../../../../fastmedical_front/imagen/icono/nuevo.png", "", "", true);
                         $toolbar2->Mostrar();
                         ?>
                     </div>
                 </td>
                 <td colspan="2" align="center">
                     <?php
-                    $toolbar1->SetBoton("Cancelar combo", "Cancelar", "btn", "onclick,onkeypress", "cancelarCombo()", "../../../../medifacil_front/imagen/icono/i_icq_dnd.png", "", "", true);
+                    $toolbar1->SetBoton("Cancelar combo", "Cancelar", "btn", "onclick,onkeypress", "cancelarCombo()", "../../../../fastmedical_front/imagen/icono/i_icq_dnd.png", "", "", true);
                     $toolbar1->Mostrar();
                     ?>
                 </td>

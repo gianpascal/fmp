@@ -127,7 +127,7 @@
         <br><br>
         <?php $toolbar = new ToollBar(); ?>
         <?php
-        $toolbar->SetBoton("Buscar", "Ver Estadisticas", "btn", "onclick,onkeypress", "verGraficosEstadisticosLaboratorioClinico()", "../../../../medifacil_front/imagen/icono/estadisticas.jpg", "", "", true);
+        $toolbar->SetBoton("Buscar", "Ver Estadisticas", "btn", "onclick,onkeypress", "verGraficosEstadisticosLaboratorioClinico()", "../../../../fastmedical_front/imagen/icono/estadisticas.jpg", "", "", true);
         $toolbar->Mostrar();
         ?> 
     </div>
@@ -224,7 +224,7 @@
         <div style="padding-left:15%;">
             <?php $toolbar1 = new ToollBar(); ?>
             <?php
-            $toolbar1->SetBoton("Cambiar", "Cambiar Grafico", "btn", "onclick,onkeypress", "cambiarGraficoLaboratorioClinico()", "../../../../medifacil_front/imagen/icono/Download.png", "", "", true);
+            $toolbar1->SetBoton("Cambiar", "Cambiar Grafico", "btn", "onclick,onkeypress", "cambiarGraficoLaboratorioClinico()", "../../../../fastmedical_front/imagen/icono/Download.png", "", "", true);
             $toolbar1->Mostrar();
             ?> 
         </div>
@@ -259,9 +259,9 @@
             echo "<table border='0' cellspacing='0' id='" . contenedorgraficotabla . $x . "' >
                 <tr>
                 <td>
-                    <a href='javascript:eliminarContenedorGrafico($x);'><img src='../../../../medifacil_front/imagen/icono/btn_cerrar_layer.png'></a>
+                    <a href='javascript:eliminarContenedorGrafico($x);'><img src='../../../../fastmedical_front/imagen/icono/btn_cerrar_layer.png'></a>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <a href='javascript:guargarContenedorGrafico($x);'><img src='../../../../medifacil_front/imagen/icono/filesave-48.png' id=guargar></a>
+                    <a href='javascript:guargarContenedorGrafico($x);'><img src='../../../../fastmedical_front/imagen/icono/filesave-48.png' id=guargar></a>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type='text' id='TituloGrafico.$x' style='width:400;font-size: 16px;'>
                     </td>
                 <td>
@@ -334,7 +334,7 @@
     <br><br>
 <?php // $toolbar = new ToollBar(); ?>
 <?php
-// $toolbar->SetBoton("Buscarrr", "Ver Estadisticas", "btn", "onclick,onkeypress", "cargarArbolodontologia()", "../../../../medifacil_front/imagen/icono/estadisticas.jpg", "", "", true);
+// $toolbar->SetBoton("Buscarrr", "Ver Estadisticas", "btn", "onclick,onkeypress", "cargarArbolodontologia()", "../../../../fastmedical_front/imagen/icono/estadisticas.jpg", "", "", true);
 // $toolbar->Mostrar();
 ?> 
 </div>

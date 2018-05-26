@@ -103,7 +103,7 @@ $hdnMenuActivo="";
                                                     <div style="width: 10%; float: right;">
                                                         <?php
                                                             if (isset($_SESSION["permiso_formulario_servicio"][221]["VER_MAS_TURNOS_POR_AREA"]) && ($_SESSION["permiso_formulario_servicio"][221]["VER_MAS_TURNOS_POR_AREA"]==1)){
-                                                                $toolbar6->SetBoton("nuevoHorario","M&aacute;s Turnos","btn","onclick,onkeypress","masTurnosProgramar()",$_SESSION['path_principal']."../medifacil_front/imagen/icono/asig_fte.gif","","",1);
+                                                                $toolbar6->SetBoton("nuevoHorario","M&aacute;s Turnos","btn","onclick,onkeypress","masTurnosProgramar()",$_SESSION['path_principal']."../fastmedical_front/imagen/icono/asig_fte.gif","","",1);
                                                                 $toolbar6->Mostrar();
                                                             }
                                                         ?>
@@ -115,7 +115,7 @@ $hdnMenuActivo="";
                                                     <div style="width: 80px;">
                                                         <?php
                                                             if (isset($_SESSION["permiso_formulario_servicio"][221]["ASIG_TURNO_POR_AREA"]) && ($_SESSION["permiso_formulario_servicio"][221]["ASIG_TURNO_POR_AREA"]==1)){
-                                                                $toolbar5->SetBoton("AsignarTurnoArea","Asignar","btn","onclick,onkeypress","asignarTurnoArea()",$_SESSION['path_principal']."../medifacil_front/imagen/icono/button_ok.png","","",1);
+                                                                $toolbar5->SetBoton("AsignarTurnoArea","Asignar","btn","onclick,onkeypress","asignarTurnoArea()",$_SESSION['path_principal']."../fastmedical_front/imagen/icono/button_ok.png","","",1);
                                                                 $toolbar5->Mostrar();
                                                             }
                                                         ?>
@@ -142,7 +142,7 @@ $hdnMenuActivo="";
                         <div style="width: 120px;" align="center">
                             <?Php
                                 if (isset($_SESSION["permiso_formulario_servicio"][221]["VER_COORDINADOR_AREA"]) && ($_SESSION["permiso_formulario_servicio"][221]["VER_COORDINADOR_AREA"]==1)){
-                                    $toolbar7->SetBoton("verCoordinador","Ver Coordinador","btn","onclick,onkeypress","listaEncargadosPorArea()",$_SESSION['path_principal']."../medifacil_front/imagen/icono/mac.png","","",1);
+                                    $toolbar7->SetBoton("verCoordinador","Ver Coordinador","btn","onclick,onkeypress","listaEncargadosPorArea()",$_SESSION['path_principal']."../fastmedical_front/imagen/icono/mac.png","","",1);
                                     $toolbar7->Mostrar();
                                 }
                             ?>
@@ -184,11 +184,11 @@ $hdnMenuActivo="";
                                                 <?php
                                                     $hayBotones=0;
                                                     if (isset($_SESSION["permiso_formulario_servicio"][221]["NUEVO_ENCARGADO_REALIZAR_PROG_HOR"]) && ($_SESSION["permiso_formulario_servicio"][221]["NUEVO_ENCARGADO_REALIZAR_PROG_HOR"]==1)){
-                                                        $toolbar1->SetBoton("Nuevo","Nuevo","btn","onclick,onkeypress","nuevaPersonaEncargada()",$_SESSION['path_principal']."../medifacil_front/imagen/icono/nuevo.png","","",1);
+                                                        $toolbar1->SetBoton("Nuevo","Nuevo","btn","onclick,onkeypress","nuevaPersonaEncargada()",$_SESSION['path_principal']."../fastmedical_front/imagen/icono/nuevo.png","","",1);
                                                         $hayBotones=1;
                                                     }
                                                     if (isset($_SESSION["permiso_formulario_servicio"][221]["EDITAR_ENCARGADO_REALIZAR_PROG_HOR"]) && ($_SESSION["permiso_formulario_servicio"][221]["EDITAR_ENCARGADO_REALIZAR_PROG_HOR"]==1)){
-                                                        $toolbar1->SetBoton("Editar","Editar","btn","onclick,onkeypress","editarPersonaEncargada()",$_SESSION['path_principal']."../medifacil_front/imagen/icono/editar.png","","",1);
+                                                        $toolbar1->SetBoton("Editar","Editar","btn","onclick,onkeypress","editarPersonaEncargada()",$_SESSION['path_principal']."../fastmedical_front/imagen/icono/editar.png","","",1);
                                                         $hayBotones=1;
                                                     }
                                                     if($hayBotones==1){
@@ -199,7 +199,7 @@ $hdnMenuActivo="";
                                             <div id="divGraba" style="display: block; width: 100px">
                                                 <?php
                                                     if (isset($_SESSION["permiso_formulario_servicio"][221]["GRABAR_ENCARGADO_REALIZAR_PROG_HOR"]) && ($_SESSION["permiso_formulario_servicio"][221]["GRABAR_ENCARGADO_REALIZAR_PROG_HOR"]==1)){
-                                                        $toolbar2->SetBoton("GRABAR","Grabar","btn","onclick,onkeypress","grabarPersonaEncargada('grabar')",$_SESSION['path_principal']."../medifacil_front/imagen/icono/grabar.png","","",1);
+                                                        $toolbar2->SetBoton("GRABAR","Grabar","btn","onclick,onkeypress","grabarPersonaEncargada('grabar')",$_SESSION['path_principal']."../fastmedical_front/imagen/icono/grabar.png","","",1);
                                                         $toolbar2->Mostrar();
                                                     }
                                                 ?>
@@ -207,7 +207,7 @@ $hdnMenuActivo="";
                                             <div id="divActualiza" style="display: none; width: 100px">
                                                 <?php
                                                     if (isset($_SESSION["permiso_formulario_servicio"][221]["MODIFICAR_ENCARGADO_REALIZAR_PROG_HOR"]) && ($_SESSION["permiso_formulario_servicio"][221]["MODIFICAR_ENCARGADO_REALIZAR_PROG_HOR"]==1)){
-                                                        $toolbar3->SetBoton("MODIFICAR","Modificar","btn","onclick,onkeypress","grabarPersonaEncargada('modificar')",$_SESSION['path_principal']."../medifacil_front/imagen/icono/grabar.png","","",1);
+                                                        $toolbar3->SetBoton("MODIFICAR","Modificar","btn","onclick,onkeypress","grabarPersonaEncargada('modificar')",$_SESSION['path_principal']."../fastmedical_front/imagen/icono/grabar.png","","",1);
                                                         $toolbar3->Mostrar();
                                                     }
                                                 ?>

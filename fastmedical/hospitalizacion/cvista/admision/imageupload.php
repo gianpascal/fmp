@@ -38,7 +38,7 @@ echo "<table border='0' cellpadding='0' cellspacing='0'>".
      "<img src='$uploadFile' alt='DNI' width='150px' height='180px'/>".
      "</td><td>".
      //"<a href='#' onclick=\"myajax.Link('../admision/deletefile.php?filename=".$uploadFile."','foto')\">".
-     //"<img src='../../../../medifacil_front/imagen/icono/editdelete.png' title='ELIMINAR FOTO'/></a>".
+     //"<img src='../../../../fastmedical_front/imagen/icono/editdelete.png' title='ELIMINAR FOTO'/></a>".
      "</td></tr></table>";
 ?>
 
@@ -72,7 +72,7 @@ else {
 				"<img src='$uploadFile' alt='DNI' />".
 				"</td><td>".
 				"<a href='#' onclick=\"myajax.Link('../admision/deletefile.php?filename=".$uploadFile."','msg_foto')\">".
-				"<img src='../../../../medifacil_front/imagen/icono/editdelete.png' title='ELIMINAR FOTO'/></a>".
+				"<img src='../../../../fastmedical_front/imagen/icono/editdelete.png' title='ELIMINAR FOTO'/></a>".
 				"</td></tr></table>";	
 */
 ?>

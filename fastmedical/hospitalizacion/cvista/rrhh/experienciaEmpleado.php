@@ -22,15 +22,15 @@
                 
                 <div  id ="DivEliminar" style=" float:right;width:33%; visibility: hidden;" align="center">
                         <a href="javascript:enableAccion(3);">
-                        <img border="0" title="" alt="" src="../../../../medifacil_front/imagen/btn/b_eliminar_on.gif"/></a>
+                        <img border="0" title="" alt="" src="../../../../fastmedical_front/imagen/btn/b_eliminar_on.gif"/></a>
                 </div>
                 <div  id ="DivAgregar" style=" float:right;width:33%;" align="center">
                         <a href="javascript:enableAccion(2);">
-                        <img border="0" title="" alt="" src="../../../../medifacil_front/imagen/btn/b_agregar_on.gif"/></a>
+                        <img border="0" title="" alt="" src="../../../../fastmedical_front/imagen/btn/b_agregar_on.gif"/></a>
                </div>
                <div  id ="DivEditar" style=" float:right;width:33%; visibility: hidden;" align="center">
                         <a href="javascript:enableAccion(1);">
-                        <img border="0" title="" alt="" src="../../../../medifacil_front/imagen/btn/b_editar_on.gif"/></a>
+                        <img border="0" title="" alt="" src="../../../../fastmedical_front/imagen/btn/b_editar_on.gif"/></a>
                </div>                            
                 
       </fieldset>
@@ -70,7 +70,7 @@
                 </div>
                <div style="width: 28%; float: left; visibility: hidden" id="DivBtnGrabar">
                     <a href="javascript:validaAccionCategoria();">
-                     <img border="0" id="btnGrabar" alt="" src="../../../../medifacil_front/imagen/btn/b_grabar__on.gif"/> </a>
+                     <img border="0" id="btnGrabar" alt="" src="../../../../fastmedical_front/imagen/btn/b_grabar__on.gif"/> </a>
                 </div>
                
          </div>
@@ -83,7 +83,7 @@
                 </div>
                <div style="width: 32%; float: left; visibility: hidden" id="DivBtnCancelar">
                     <a href="javascript:disableAccion();">
-                    <img border="0" id="btnCancelar" alt="" src="../../../../medifacil_front/imagen/btn/b_cancelar_on.gif"/> </a>
+                    <img border="0" id="btnCancelar" alt="" src="../../../../fastmedical_front/imagen/btn/b_cancelar_on.gif"/> </a>
                 </div>
          </div>
            <div id="tres" style="width: 100%; height: 15%; margin-left: 6%; visibility: hidden">

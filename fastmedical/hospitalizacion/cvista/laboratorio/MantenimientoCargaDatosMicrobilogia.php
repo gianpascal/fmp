@@ -107,7 +107,7 @@ switch ($iOpcion) {
                                     <table border="0">
                                         <tr>
                                             <td valign="middle" width="25">
-                                                <a title="Abrir Archivo Excel" href="<?php echo '../../../../carpetaDocumentos/materialesLaboratorio/microBilogiaActivo/' . $scanarray[$i] ?>"><img src="../../../../medifacil_front/imagen/icono/grid.png" style="width:25px;"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                                                <a title="Abrir Archivo Excel" href="<?php echo '../../../../carpetaDocumentos/materialesLaboratorio/microBilogiaActivo/' . $scanarray[$i] ?>"><img src="../../../../fastmedical_front/imagen/icono/grid.png" style="width:25px;"></a>&nbsp;&nbsp;&nbsp;&nbsp;
                                             </td>
                                             <td>
                                                 <table class="<?php echo $class2; ?>" title="Datos del Archivo">
@@ -186,7 +186,7 @@ switch ($iOpcion) {
                                     <table style="float:left">
                                         <tr>
                                             <td>
-                                                <img src="../../../../medifacil_front/imagen/icono/grid.png" style="width:100px;">
+                                                <img src="../../../../fastmedical_front/imagen/icono/grid.png" style="width:100px;">
                                             </td>
                                             <td>
                                                 <table style="color:white;" title="Datos del Archivo">
@@ -218,10 +218,10 @@ switch ($iOpcion) {
                                         <table heigth="40">
                                             <tr>
                                                 <td style="padding-top:25px;">
-                                                    <a title="Subir Datos" href="javascript:aceptarArchivoGuardarDatosEnBaseDatos('<?php echo $vArchivo; ?>','<?php echo $dFechaCreacion; ?>','<?php echo $dFechaModificacion; ?>')"><img src="../../../../medifacil_front/imagen/icono/checked.png" class="imagenOpcion"  ></a>
+                                                    <a title="Subir Datos" href="javascript:aceptarArchivoGuardarDatosEnBaseDatos('<?php echo $vArchivo; ?>','<?php echo $dFechaCreacion; ?>','<?php echo $dFechaModificacion; ?>')"><img src="../../../../fastmedical_front/imagen/icono/checked.png" class="imagenOpcion"  ></a>
                                                 </td>
                                                 <td style="padding-top:25px;">
-                                                    <a title="Cancelar" href="javascript:cancelarSeleccionarXLS()">  <img src="../../../../medifacil_front/imagen/icono/nochecked.png" class="imagenOpcion"  ></a>
+                                                    <a title="Cancelar" href="javascript:cancelarSeleccionarXLS()">  <img src="../../../../fastmedical_front/imagen/icono/nochecked.png" class="imagenOpcion"  ></a>
                                                 </td>
                                             </tr>
                                         </table>

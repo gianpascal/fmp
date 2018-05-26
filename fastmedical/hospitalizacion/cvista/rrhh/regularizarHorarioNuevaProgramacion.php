@@ -65,7 +65,7 @@
             <td valign="top" style="width: 100px; height: 25px"> 
                 <div id="div_PopapbotonBuscarAreaRegularizar">
                     <a href="javascript:verBuscadorAreasRegularizar();" >
-                        <img border="0" src="../../../../medifacil_front/imagen/icono/window_new.png" alt="" title="Otra Area">
+                        <img border="0" src="../../../../fastmedical_front/imagen/icono/window_new.png" alt="" title="Otra Area">
                     </a>
                 </div>
             </td>
@@ -86,7 +86,7 @@
             </td>
             <td><div id="div_PopapbotonBuscarAreaTurnoRegularizar">
                     <a href="javascript:agregarTurnoEmporesaArea();" >
-                        <img border="0" src="../../../../medifacil_front/imagen/icono/window_new.png" alt="" title="Otra Turno">
+                        <img border="0" src="../../../../fastmedical_front/imagen/icono/window_new.png" alt="" title="Otra Turno">
                     </a>
                 </div></td> 
         </tr> 
@@ -120,7 +120,7 @@
         <tr> 
             <td height="25">Guardar: </td> 
             <td><a href="javascript:guardarPersonalTurnoRegularizar();">
-                    <img border="0" src="../../../../medifacil_front/imagen/btn/b_grabar_on.gif" alt="" title="Ocultar">
+                    <img border="0" src="../../../../fastmedical_front/imagen/btn/b_grabar_on.gif" alt="" title="Ocultar">
                 </a>
             </td> 
             <td></td> 

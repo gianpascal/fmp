@@ -12,7 +12,7 @@ foreach ($arrayFilas as $row) {
         }
     }
     echo "<row id='" . $row['iIdIndicadorTBC'] . "' open='1'>";
-    echo "<cell image='../../../medifacil_front/imagen/csh_bluebooks_simedh/book.gif'>" . htmlspecialchars(utf8_encode($row['vIndicador'])) . "</cell>";
+    echo "<cell image='../../../fastmedical_front/imagen/csh_bluebooks_simedh/book.gif'>" . htmlspecialchars(utf8_encode($row['vIndicador'])) . "</cell>";
     echo "<cell>" . $row['iGrupo0_9'] . "</cell>";
     echo "<cell>" . $row['iGrupo10_14'] . "</cell>";
     echo "<cell>" . $row['iGrupo15_19'] . "</cell>";

@@ -1073,7 +1073,7 @@ function cargaArbolCCostoCS(){
     divMostrar.innerHTML = " ";
     treeCentroCostos=new dhtmlXTreeObject("divCCostos","100%","100%",0);
     treeCentroCostos.setSkin('dhx_skyblue');
-    treeCentroCostos.setImagePath("../../../../medifacil_front/imagen/csh_bluebooks_simedh/");
+    treeCentroCostos.setImagePath("../../../../fastmedical_front/imagen/csh_bluebooks_simedh/");
     treeCentroCostos.attachEvent("onClick", function(){
         //  buscarEmpleadosCentroCostos();
         //  buscarEmpleadosCentroCostos(treeCentroCostos.getSelectedItemId(),treeCentroCostos.getSelectedItemText());
@@ -1092,7 +1092,7 @@ function cargarArbolPopad(){
 
 function recargarArbolCCostosPuestosPopad(){    
     tree2=new dhtmlXTreeObject("divCCostosPopad","100%","100%",0);
-    tree2.setImagePath("../../../../medifacil_front/imagen/icono/tree/");
+    tree2.setImagePath("../../../../fastmedical_front/imagen/icono/tree/");
     tree2.attachEvent("onClick", function(){
         funcionArbolPopad(tree2.getSelectedItemId());
         return true;

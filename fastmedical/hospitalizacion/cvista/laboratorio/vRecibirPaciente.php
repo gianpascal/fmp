@@ -26,13 +26,13 @@ $toolbar2 = new ToollBar("center");
                     <tr>
                         <td>
                             <?php
-                            $toolbar1->SetBoton("recibir", "Recibir", "btn", "onclick,onkeypress", "verificarRecibirPacientePuntoControl('click','')", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/Drawer-Open.png", "", "", 1);
+                            $toolbar1->SetBoton("recibir", "Recibir", "btn", "onclick,onkeypress", "verificarRecibirPacientePuntoControl('click','')", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/Drawer-Open.png", "", "", 1);
                             $toolbar1->Mostrar();
                             ?>
                         </td>
                         <td>
                             <?php
-                            $toolbar2->SetBoton("cancelar", "Recibir", "btn", "onclick,onkeypress", "cancelarRecibirPuntoControl()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/agt_action_fail.png", "", "", 1);
+                            $toolbar2->SetBoton("cancelar", "Recibir", "btn", "onclick,onkeypress", "cancelarRecibirPuntoControl()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/agt_action_fail.png", "", "", 1);
                             $toolbar2->Mostrar();
                             ?>
                         </td>

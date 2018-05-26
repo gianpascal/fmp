@@ -22,13 +22,13 @@ echo utf8_encode($arrayDatosUnidad[0][0]);
     $toolbar2 = new ToollBar();
     ?>
     <?php
-    $toolbar1->SetBoton("grabarTipoUnidadMedida", "Guardar", "btn", "onclick,onkeypress", "grabarTipoUnidadMedida()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/grabar.png", "", "", 1);
+    $toolbar1->SetBoton("grabarTipoUnidadMedida", "Guardar", "btn", "onclick,onkeypress", "grabarTipoUnidadMedida()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/grabar.png", "", "", 1);
     $toolbar1->Mostrar();
     ?> 
 </div>
 <div style="float:left; padding-left: 15px;">
     <?php
-    $toolbar2->SetBoton("cerrarMantenimientoTipoUnidadMedida()", "Cerrar  ", "btn", "onclick,onkeypress", "cerrarMantenimientoTipoUnidadMedida()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/cerrar1.gif", "", "", 1);
+    $toolbar2->SetBoton("cerrarMantenimientoTipoUnidadMedida()", "Cerrar  ", "btn", "onclick,onkeypress", "cerrarMantenimientoTipoUnidadMedida()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/cerrar1.gif", "", "", 1);
     $toolbar2->Mostrar();
     ?> 
 </div>  

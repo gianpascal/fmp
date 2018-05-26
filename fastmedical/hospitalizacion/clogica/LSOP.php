@@ -145,7 +145,7 @@ class LSOP {
         $resultado = $oDSOP->spListaCieDxPreOperatorio($accion,$token);
         /*$j=0;
         foreach($resultado as $fila) {
-            $imagen="../../../../medifacil_front/imagen/icono/nuevo_item.png ^ Agregar";
+            $imagen="../../../../fastmedical_front/imagen/icono/nuevo_item.png ^ Agregar";
             array_push($resultado[$j],$imagen);
             $j++;
         }*/
@@ -189,8 +189,8 @@ class LSOP {
 
         foreach ($rs as $f) {
             $f['edad']=utf8_decode($this->calcularEdadPersona(trim($f['dFechaNacimientoPaciente']),1));
-            $imagenVerDetalle="../../../../medifacil_front/imagen/icono/b_ver_on.gif ^ Ver detalle";
-            $imagenAceptar="../../../../medifacil_front/imagen/icono/agt_action_success.png ^ Aceptar";
+            $imagenVerDetalle="../../../../fastmedical_front/imagen/icono/b_ver_on.gif ^ Ver detalle";
+            $imagenAceptar="../../../../fastmedical_front/imagen/icono/agt_action_success.png ^ Aceptar";
             $imagenRechazar="../../../imagen/inicio/eliminar.gif ^ Rechazar";
             $f['btnVerDetalle']=$imagenVerDetalle;
             $f['btnAceptar']=$imagenAceptar;
@@ -257,8 +257,8 @@ class LSOP {
         $resultadoArray = array();
 
         foreach ($rs as $f) {
-            $imagenEditar="../../../../medifacil_front/imagen/icono/editar.png ^ Editar";
-            $imagenAtender="../../../../medifacil_front/imagen/icono/hos_medico.png ^ Atender";
+            $imagenEditar="../../../../fastmedical_front/imagen/icono/editar.png ^ Editar";
+            $imagenAtender="../../../../fastmedical_front/imagen/icono/hos_medico.png ^ Atender";
             $f['btnAtender']=$imagenAtender;
             $f['btnEditar']=$imagenEditar;
             array_push($resultadoArray,$f);
@@ -286,7 +286,7 @@ class LSOP {
         $resultadoArray = array();
 
         foreach ($rs as $f) {
-            $imagenBuscarCirujano="../../../../medifacil_front/imagen/icono/add_user.png ^ Buscar Cirujano";
+            $imagenBuscarCirujano="../../../../fastmedical_front/imagen/icono/add_user.png ^ Buscar Cirujano";
             $imagenEliminarCirujano="../../../imagen/inicio/eliminar.gif ^ Quitar Cirujano";
             $f['btnBuscarCirujano']=$imagenBuscarCirujano;
             $f['btnEliminarCirujano']=$imagenEliminarCirujano;
@@ -303,7 +303,7 @@ class LSOP {
         $resultadoArray = array();
 
         foreach ($rs as $f) {
-            $imagenBuscarPerResp="../../../../medifacil_front/imagen/icono/add_user.png ^ Buscar Responsable";
+            $imagenBuscarPerResp="../../../../fastmedical_front/imagen/icono/add_user.png ^ Buscar Responsable";
             $imagenEliminarPerResp="../../../imagen/inicio/eliminar.gif ^ Quitar Responsable";
             $f['btnBuscarResponsable']=$imagenBuscarPerResp;
             $f['btnEliminarResponsable']=$imagenEliminarPerResp;

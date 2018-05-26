@@ -6,7 +6,7 @@ function recargarArbolAyuda()
     myDiv=document.getElementById('divOpcAyuda');
     myDiv.innerHTML = " ";
     tree=new dhtmlXTreeObject("divOpcAyuda","100%","100%",0);
-    tree.setImagePath("../../../../medifacil_front/imagen/icono/tree/");
+    tree.setImagePath("../../../../fastmedical_front/imagen/icono/tree/");
     tree.attachEvent("onClick", function(){
         clickCargaManual(tree.getSelectedItemId(),tree.getSelectedItemText());
         return true;
@@ -170,7 +170,7 @@ function seleccionarArbolManual()
     myDiv=document.getElementById('divOpcAyuda');
     myDiv.innerHTML = " ";
     tree=new dhtmlXTreeObject("divOpcAyuda","100%","100%",0);
-    tree.setImagePath("../../../../medifacil_front/imagen/icono/tree/");
+    tree.setImagePath("../../../../fastmedical_front/imagen/icono/tree/");
     tree.attachEvent("onClick", function(){
         generaManual(tree.getSelectedItemId(),tree.getSelectedItemText(),'s');
         return true;
@@ -203,7 +203,7 @@ function seleccionarArbolManualCompleto()
     myDiv=document.getElementById('divOpcAyuda');
     myDiv.innerHTML = " ";
     tree=new dhtmlXTreeObject("divOpcAyuda","100%","100%",0);
-    tree.setImagePath("../../../../medifacil_front/imagen/icono/tree/");
+    tree.setImagePath("../../../../fastmedical_front/imagen/icono/tree/");
     tree.attachEvent("onClick", function(){
         generaManual(tree.getSelectedItemId(),tree.getSelectedItemText(),'c');
         //            document.getElementById("divBotonNew").style.visibility='visible';
@@ -408,7 +408,7 @@ function arbolAsignarPadre()
     myDiv=document.getElementById('divAsignarPadre');
     myDiv.innerHTML = " ";
     tree=new dhtmlXTreeObject("divAsignarPadre","100%","100%",0);
-    tree.setImagePath("../../../../medifacil_front/imagen/icono/tree/");
+    tree.setImagePath("../../../../fastmedical_front/imagen/icono/tree/");
     tree.attachEvent("onClick", function(){
         capturarPadre(tree.getSelectedItemId(),tree.getSelectedItemText());
         return true;

@@ -216,7 +216,7 @@ class LUsuario {
         $o_DTesoreria = new DTesoreria();
         $respuesta = $o_DTesoreria->dcargarTablaPacientes();
         foreach ($respuesta as $key => $value) {
-            array_push($respuesta[$key], "../../../../medifacil_front/imagen/icono/edit2.png ^ Accion");
+            array_push($respuesta[$key], "../../../../fastmedical_front/imagen/icono/edit2.png ^ Accion");
         }
         return $respuesta;
     }

@@ -3,17 +3,17 @@
         <div id="toolbar">
             <div style="float:left;">
                 <a href="javascript:formateaOpcionBuscadorPersona('nombre');">
-                    <img src="../../../../medifacil_front/imagen/btn/btn_nombres_persona.gif" title="Nombres y Apellidos" border="0" alt="Nombre"/>
+                    <img src="../../../../fastmedical_front/imagen/btn/btn_nombres_persona.gif" title="Nombres y Apellidos" border="0" alt="Nombre"/>
                 </a>
             </div>
             <div style="float:left;">
                 <a href="javascript:formateaOpcionBuscadorPersona('documento');">
-                    <img src="../../../../medifacil_front/imagen/btn/btn_dni_persona.gif" title="Documento de Identidad" border="0" alt="Documento"/>
+                    <img src="../../../../fastmedical_front/imagen/btn/btn_dni_persona.gif" title="Documento de Identidad" border="0" alt="Documento"/>
                 </a>
             </div>
             <div style="float:left;">
                 <a href="javascript:formateaOpcionBuscadorPersona('codigo');">
-                    <img src="../../../../medifacil_front/imagen/btn/btn_cod_persona.gif" title="Codigo de Persona" border="0" alt="Codigo"/>
+                    <img src="../../../../fastmedical_front/imagen/btn/btn_cod_persona.gif" title="Codigo de Persona" border="0" alt="Codigo"/>
                 </a>
             </div>
             <div style="float:left;">

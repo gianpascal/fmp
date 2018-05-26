@@ -10,6 +10,6 @@
 
     </div>
     <div id="Div_botonproyectar" style="width:100%;height: 10%;margin-bottom: 10px; overflow: auto;">
-        <a href="#" onclick="agregarAmbienteFisicoaPantalla()"><img src="../../../../medifacil_front/imagen/btn/b_agregar_on.gif" alt="PROYECTAR" title="PROYECTAR"/></a>
+        <a href="#" onclick="agregarAmbienteFisicoaPantalla()"><img src="../../../../fastmedical_front/imagen/btn/b_agregar_on.gif" alt="PROYECTAR" title="PROYECTAR"/></a>
     </div>
 </div>

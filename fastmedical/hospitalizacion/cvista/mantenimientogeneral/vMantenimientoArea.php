@@ -49,8 +49,8 @@
                             } else {
                                 $verBotonEditarAsignar = 0;
                             }
-                            $toolbar1->SetBoton("btnNuevaArea", "Nueva Área", "btn", "onclick,onkeypress", "nuevaAreaCatalogo()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/nuevo.png", "", "", $verBotonNuevaArea);
-                            $toolbar1->SetBoton("btnEditarArea", "Editar/Asignación", "btn", "onclick,onkeypress", "editarAreaCatalogo()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/op_atendido.gif", "", "", $verBotonEditarAsignar);
+                            $toolbar1->SetBoton("btnNuevaArea", "Nueva Área", "btn", "onclick,onkeypress", "nuevaAreaCatalogo()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/nuevo.png", "", "", $verBotonNuevaArea);
+                            $toolbar1->SetBoton("btnEditarArea", "Editar/Asignación", "btn", "onclick,onkeypress", "editarAreaCatalogo()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/op_atendido.gif", "", "", $verBotonEditarAsignar);
                             $toolbar1->Mostrar();
                             ?>
                         </div>
@@ -82,8 +82,8 @@
                                 <?php } ?>
                             </form>
                             <?php
-                            $toolbar9->SetBoton("btnSeleccionaTodasSucurles", "Seleccionar Todas", "btn", "onclick,onkeypress", "opcionCkbSucursales(1)", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/op_atendido.gif", "", "", 1);
-                            $toolbar9->SetBoton("btnLimpiaCkbSucursales", "Limpiar", "btn", "onclick,onkeypress", "opcionCkbSucursales(0)", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/limpiar.png", "", "", 1);
+                            $toolbar9->SetBoton("btnSeleccionaTodasSucurles", "Seleccionar Todas", "btn", "onclick,onkeypress", "opcionCkbSucursales(1)", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/op_atendido.gif", "", "", 1);
+                            $toolbar9->SetBoton("btnLimpiaCkbSucursales", "Limpiar", "btn", "onclick,onkeypress", "opcionCkbSucursales(0)", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/limpiar.png", "", "", 1);
                             $toolbar9->Mostrar();
                             ?>
                         </div>
@@ -150,7 +150,7 @@
                                         } else {
                                             $verBotonEditarArea = 0;
                                         }
-                                        $toolbar2->SetBoton("Editar", "Editar", "btn", "onclick,onkeypress", "editaArea()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/editar.png", "", "", $verBotonEditarArea);
+                                        $toolbar2->SetBoton("Editar", "Editar", "btn", "onclick,onkeypress", "editaArea()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/editar.png", "", "", $verBotonEditarArea);
                                         $toolbar2->Mostrar();
                                         ?>
                                     </div>
@@ -161,20 +161,20 @@
                                         } else {
                                             $verBotonGrabarArea = 0;
                                         }
-                                        $toolbar3->SetBoton("GRABAR", "Grabar", "btn", "onclick,onkeypress", "nuevaArea('nuevo')", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/grabar.png", "", "", $verBotonGrabarArea);
+                                        $toolbar3->SetBoton("GRABAR", "Grabar", "btn", "onclick,onkeypress", "nuevaArea('nuevo')", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/grabar.png", "", "", $verBotonGrabarArea);
                                         $toolbar3->Mostrar();
                                         ?>
                                     </div>
                                     <div id="divActualiza" style="display: none;">
                                         <?php
-                                        $toolbar4->SetBoton("ACTUALIZAR", "Actualizar", "btn", "onclick,onkeypress", "nuevaArea('actualizar')", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/reload3.png", "", "", 1);
+                                        $toolbar4->SetBoton("ACTUALIZAR", "Actualizar", "btn", "onclick,onkeypress", "nuevaArea('actualizar')", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/reload3.png", "", "", 1);
                                         $toolbar4->Mostrar();
                                         ?>
                                     </div>
                                 <td width="33%">
                                     <div id="divElimina" style="display: none;">
                                         <?php
-                                        $toolbar5->SetBoton("ELIMINAR", "Eliminar", "btn", "onclick,onkeypress", "eliminarArea()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/delete.png", "", "", 1);
+                                        $toolbar5->SetBoton("ELIMINAR", "Eliminar", "btn", "onclick,onkeypress", "eliminarArea()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/delete.png", "", "", 1);
                                         $toolbar5->Mostrar();
                                         ?>
                                     </div>
@@ -183,8 +183,8 @@
                                     <div id="btnAsignarArea" style="display: none;">
                                         <?php
                                         if (isset($_SESSION["permiso_formulario_servicio"][237]["ABRIR_POPPAP_ASIGNAR_AREA_A_SEDE"]) && ($_SESSION["permiso_formulario_servicio"][237]["ABRIR_POPPAP_ASIGNAR_AREA_A_SEDE"] == 1)) {
-//                                          $toolbar0->SetBoton("btnAsignarArea", "Asignar Área a Sede", "btn", "onclick,onkeypress", "asignarAreaASucursal('nuevo')", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/clean.png", "", "", 1);
-                                            $toolbar0->SetBoton("btnAsignarArea", "Asignar Área a Sede", "btn", "onclick,onkeypress", "podpadAsignacionAreaSede", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/clean.png", "", "", 1);
+//                                          $toolbar0->SetBoton("btnAsignarArea", "Asignar Área a Sede", "btn", "onclick,onkeypress", "asignarAreaASucursal('nuevo')", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/clean.png", "", "", 1);
+                                            $toolbar0->SetBoton("btnAsignarArea", "Asignar Área a Sede", "btn", "onclick,onkeypress", "podpadAsignacionAreaSede", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/clean.png", "", "", 1);
                                             $toolbar0->Mostrar();
                                         }
                                         ?>
@@ -279,20 +279,20 @@
                                     <div id="divEditaAreaXSede">
                                         <?php
                                         if (isset($_SESSION["permiso_formulario_servicio"][237]["EDITAR_AREA_X_SEDE"]) && ($_SESSION["permiso_formulario_servicio"][237]["EDITAR_AREA_X_SEDE"] == 1)) {
-                                            $toolbar6->SetBoton("Editar", "Editar", "btn", "onclick,onkeypress", "editaAreaXSede()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/editar.png", "", "", 1);
+                                            $toolbar6->SetBoton("Editar", "Editar", "btn", "onclick,onkeypress", "editaAreaXSede()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/editar.png", "", "", 1);
                                             $toolbar6->Mostrar();
                                         }?>
                                         </div>
                                         <div id="divActualizaAreaXSede" style="display: none;">
                                             <?php
-                                            $toolbar7->SetBoton("ACTUALIZAR", "Actualizar", "btn", "onclick,onkeypress", "actualizarAreaXSede", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/reload3.png", "", "", 1);
+                                            $toolbar7->SetBoton("ACTUALIZAR", "Actualizar", "btn", "onclick,onkeypress", "actualizarAreaXSede", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/reload3.png", "", "", 1);
                                             $toolbar7->Mostrar();
                                             ?>
                                         </div>
                                     <td width="33%">
                                         <div id="divEliminaAreaXSede" style="display: none;">
                                             <?php
-                                            $toolbar8->SetBoton("ELIMINAR", "Eliminar", "btn", "onclick,onkeypress", "eliminarAreaXSede()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/delete.png", "", "", 1);
+                                            $toolbar8->SetBoton("ELIMINAR", "Eliminar", "btn", "onclick,onkeypress", "eliminarAreaXSede()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/delete.png", "", "", 1);
                                             $toolbar8->Mostrar();
                                             ?>
                                     </div>

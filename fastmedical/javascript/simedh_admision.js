@@ -1154,13 +1154,13 @@ function agrega_filiacion(idAfiliacion, vAfiliacion, bDerHab) {
                                                     deshabilita_agrega_fila_derhabiente();\n\
                                                     btnAgregaDerHab2.disabled=false;\n\
                                                     btnAgregaDerHab2.style.cursor='pointer';\n\
-                                                    btnAgregaDerHab2.style.background='url(../../../../medifacil_front/imagen/icono/add_user.png) no-repeat;width:18px;border:0px';\n\
+                                                    btnAgregaDerHab2.style.background='url(../../../../fastmedical_front/imagen/icono/add_user.png) no-repeat;width:18px;border:0px';\n\
                                                     document.getElementById('dh_filiacion').value ='" + idAfiliacion + "';\n\
                                                     myajax.Link('../../ccontrol/control/control.php?p1=derecho_habiente&p2=" + idAfiliacion + "&p3=" + vAfiliacion + "&p4=&p5=" + c_cod_per + "&p6=&p7=" + c_cod_per + "&p8=&p9=&p10=&p11=" + c_cod_per + "','der_hab');\"\n\
                                                 \"/>";
         myNewCell = myNewRow.insertCell(-1);
         myNewCell.innerHTML = "<input type='button' name='btnAgregaDerHab[" + idAfiliacion + "]' id='btnAgregaDerHab[" + idAfiliacion + "]' \n\
-                                                    style='background:url(../../../../medifacil_front/imagen/icono/add_user.png) no-repeat;width:18px;border:0px;background-color:transparent;cursor:pointer;' \n\
+                                                    style='background:url(../../../../fastmedical_front/imagen/icono/add_user.png) no-repeat;width:18px;border:0px;background-color:transparent;cursor:pointer;' \n\
                                                     onclick=\"agrega_fila_derhabiente('tblDerHab');ventana_busca_persona('setDatosDerechoHabiente');\" title='Filiacion Derecho Habiente'>";
     }
     else {
@@ -1198,7 +1198,7 @@ function agrega_fila_derhabiente() {
     myNewCell = myNewRow.insertCell(-1);
     myNewCell.innerHTML = "<select name='relacion[" + ii + "]' id='relacion[" + ii + "]' style='width:135px;font-size:11px'></select>";
     myNewCell = myNewRow.insertCell(-1);
-    myNewCell.innerHTML = "<img src='../../../../medifacil_front/imagen/btn/b_eliminar_on.gif' title='Eliminar Derecho Habiente' onclick=\"idfila=this.parentNode.parentNode.rowIndex;elimina_fila_derhabiente(idfila);\"/>";
+    myNewCell.innerHTML = "<img src='../../../../fastmedical_front/imagen/btn/b_eliminar_on.gif' title='Eliminar Derecho Habiente' onclick=\"idfila=this.parentNode.parentNode.rowIndex;elimina_fila_derhabiente(idfila);\"/>";
     data = 'p1=seleccionarParentesco&p2=0013';
     new Ajax.Request('../../ccontrol/control/control.php', {
         method: 'get',
@@ -1242,7 +1242,7 @@ function deshabilita_agrega_fila_derhabiente() {
      boton=document.getElementById(btn);
      boton.disabled=true;
      boton.style.cursor = 'default';
-     boton.style.background='url(../../../../medifacil_front/imagen/icono/add_user_black.png) no-repeat';
+     boton.style.background='url(../../../../fastmedical_front/imagen/icono/add_user_black.png) no-repeat';
      }
      }
      */
@@ -1263,7 +1263,7 @@ function habilita_derhabiente() {
             $(idNombre).disabled = false;
             $(idRelacion).disabled = false;
             $(idBoton).disabled = false;
-            $(idBoton).style.background = 'url(../../../../medifacil_front/imagen/btn/b_eliminar_on.gif) no-repeat';
+            $(idBoton).style.background = 'url(../../../../fastmedical_front/imagen/btn/b_eliminar_on.gif) no-repeat';
         }
     }
 }
@@ -1285,7 +1285,7 @@ function habilita_filiacion() {
                 boton = document.getElementById(btn);
                 boton.disabled = id2 == afiliacion ? false : true;
                 boton.style.cursor = id2 == afiliacion ? 'pointer' : 'default';
-                boton.style.background = id2 == afiliacion ? 'url(../../../../medifacil_front/imagen/icono/add_user.png) no-repeat' : 'url(../../../../medifacil_front/imagen/icono/add_user_black.png) no-repeat';
+                boton.style.background = id2 == afiliacion ? 'url(../../../../fastmedical_front/imagen/icono/add_user.png) no-repeat' : 'url(../../../../fastmedical_front/imagen/icono/add_user_black.png) no-repeat';
             }
         }
     }
@@ -1297,7 +1297,7 @@ function habilita_filiacion() {
             boton = document.getElementById(btn);
             boton.disabled = id2 == afiliacion ? false : true;
             boton.style.cursor = id2 == afiliacion ? 'pointer' : 'default';
-            boton.style.background = id2 == afiliacion ? 'url(../../../../medifacil_front/imagen/icono/add_user.png) no-repeat' : 'url(../../../../medifacil_front/imagen/icono/add_user_black.png) no-repeat';
+            boton.style.background = id2 == afiliacion ? 'url(../../../../fastmedical_front/imagen/icono/add_user.png) no-repeat' : 'url(../../../../fastmedical_front/imagen/icono/add_user_black.png) no-repeat';
         }
     }
 }
@@ -1307,7 +1307,7 @@ function habilita_Nofiliacion() {
     for (i = 0; i < table.rows.length; i++) {
         idbtn = "btnNoAfiliado[" + i + "]";
         if (document.getElementById(idbtn)) {
-            $(idbtn).style.background = 'url(../../../../medifacil_front/imagen/icono/db_add.png) no-repeat';
+            $(idbtn).style.background = 'url(../../../../fastmedical_front/imagen/icono/db_add.png) no-repeat';
             $(idbtn).disabled = false;
         }
     }
@@ -1366,7 +1366,7 @@ function habilita_btnIdentidad() {
         if (document.getElementById(a)) {
             $(a).disabled = false;
             $(a).style.cursor = 'pointer';
-            $(a).style.background = i == 1 ? "url(../../../../medifacil_front/imagen/icono/nuevo_item.png) no-repeat" : "url(../../../imagen/inicio/eliminar.gif) no-repeat";
+            $(a).style.background = i == 1 ? "url(../../../../fastmedical_front/imagen/icono/nuevo_item.png) no-repeat" : "url(../../../imagen/inicio/eliminar.gif) no-repeat";
         }
     }
 }
@@ -1377,7 +1377,7 @@ function deshabilita_btnIdentidad() {
         if (document.getElementById(a)) {
             $(a).disabled = true;
             $(a).style.cursor = 'pointer';
-            $(a).style.background = i == 1 ? "url(../../../../medifacil_front/imagen/icono/nuevo_item_black.png) no-repeat" : "url(../../../imagen/inicio/eliminar.gif) no-repeat";
+            $(a).style.background = i == 1 ? "url(../../../../fastmedical_front/imagen/icono/nuevo_item_black.png) no-repeat" : "url(../../../imagen/inicio/eliminar.gif) no-repeat";
         }
     }
 }
@@ -3708,7 +3708,7 @@ function MostrarDetalleOrden() {
 
 
     tablaVerDetalleOrden = new dhtmlXGridObject('divVerDetalleExamenes');
-    tablaVerDetalleOrden.setImagePath("../../../../medifacil_front/imagen/icono/");
+    tablaVerDetalleOrden.setImagePath("../../../../fastmedical_front/imagen/icono/");
     tablaVerDetalleOrden.setSkin("dhx_skyblue");
     /*tablaVerDetalleOrden.attachEvent("onRowSelect", function(fila,columna){
      var CodProgramacion=tablaVerDetalleOrden.cells(fila,7).getValue();
@@ -3752,7 +3752,7 @@ function MostrarUsuarioRegistro() { // muestra a el usuario que realizo el regis
     parametros += '&p4=' + codPersona;
 
     tablaMostrarUsuarioRegistro = new dhtmlXGridObject('divUsuarioRegistra');
-    tablaMostrarUsuarioRegistro.setImagePath("../../../../medifacil_front/imagen/icono/");
+    tablaMostrarUsuarioRegistro.setImagePath("../../../../fastmedical_front/imagen/icono/");
     tablaMostrarUsuarioRegistro.setSkin("dhx_skyblue");
     tablaMostrarUsuarioRegistro.attachEvent("onRowSelect", function() {
         });
@@ -3775,7 +3775,7 @@ function MostrarUsuarioCofirma() { // muestra a el usuario que realizo el regist
     parametros += '&p4=' + codPersona;
 
     tablaMostrarUsuarioCofirma = new dhtmlXGridObject('divUsuarioConfirma');
-    tablaMostrarUsuarioCofirma.setImagePath("../../../../medifacil_front/imagen/icono/");
+    tablaMostrarUsuarioCofirma.setImagePath("../../../../fastmedical_front/imagen/icono/");
     tablaMostrarUsuarioCofirma.setSkin("dhx_skyblue");
     tablaMostrarUsuarioCofirma.attachEvent("onRowSelect", function() {
         });
@@ -3791,7 +3791,7 @@ function MostrarUsuarioPaga(){ // pago en fox
     parametros+='&p2='+nroOrden;
     
     tablaMostrarUsuarioPaga = new dhtmlXGridObject('divUsuarioPaga');
-    tablaMostrarUsuarioPaga.setImagePath("../../../../medifacil_front/imagen/icono/");
+    tablaMostrarUsuarioPaga.setImagePath("../../../../fastmedical_front/imagen/icono/");
     tablaMostrarUsuarioPaga.setSkin("dhx_skyblue");
     tablaMostrarUsuarioPaga.attachEvent("onRowSelect", function(){
         });
@@ -3813,7 +3813,7 @@ function MostrarAtencionInicio() {
     parametros += '&p4=' + codPersona;
 
     tablaMostrarAtencionInicio = new dhtmlXGridObject('divAtencionInicio');
-    tablaMostrarAtencionInicio.setImagePath("../../../../medifacil_front/imagen/icono/");
+    tablaMostrarAtencionInicio.setImagePath("../../../../fastmedical_front/imagen/icono/");
     tablaMostrarAtencionInicio.setSkin("dhx_skyblue");
     tablaMostrarAtencionInicio.attachEvent("onRowSelect", function() {
         });
@@ -3835,7 +3835,7 @@ function MostrarAtencionFin() {
     parametros += '&p4=' + codPersona;
 
     tablaMostrarAtencionFin = new dhtmlXGridObject('divAtencionFin');
-    tablaMostrarAtencionFin.setImagePath("../../../../medifacil_front/imagen/icono/");
+    tablaMostrarAtencionFin.setImagePath("../../../../fastmedical_front/imagen/icono/");
     tablaMostrarAtencionFin.setSkin("dhx_skyblue");
     tablaMostrarAtencionFin.attachEvent("onRowSelect", function() {
         });
@@ -3852,7 +3852,7 @@ function MostrarReceta() { // muestra la receta del paciente
     parametros += 'p1=' + patronModulo;
     parametros += '&p2=' + CodProgramacion;
     tablaMostrarReceta = new dhtmlXGridObject('divVerRecetas');
-    tablaMostrarReceta.setImagePath("../../../../medifacil_front/imagen/icono/");
+    tablaMostrarReceta.setImagePath("../../../../fastmedical_front/imagen/icono/");
     tablaMostrarReceta.setSkin("dhx_skyblue");
     tablaMostrarReceta.attachEvent("onRowSelect", function() {
         });

@@ -3,7 +3,7 @@ $ubigeo = '150117';
 $pais='9589';
 $cb_combo = $this->listaDatosComboUbigeo($pais,substr($ubigeo, 0, 2), substr($ubigeo, 2, 2), substr($ubigeo, 4, 2), "disabled");
 $toolbar = new ToollBar("right");
-$toolbar->SetBoton("Adscripcion Departamental", "Ads.Depart.", "btn", "onclick,onkeypress", "habilitaradscripciondepartamental()", "../../../../medifacil_front/imagen/icono/apply.png", "", "", true);
+$toolbar->SetBoton("Adscripcion Departamental", "Ads.Depart.", "btn", "onclick,onkeypress", "habilitaradscripciondepartamental()", "../../../../fastmedical_front/imagen/icono/apply.png", "", "", true);
 ?>
 <input id="hcadena" type="hidden" value="">
 <div align="center" style="width:1020; margin:1px auto; border: #006600 solid; height: 750px">
@@ -98,9 +98,9 @@ $toolbar->SetBoton("Adscripcion Departamental", "Ads.Depart.", "btn", "onclick,o
                     <div style="width:100%;height:auto;background:white" id="DivBuscar" align="center">
                         <?php
                         if ($_SESSION["permiso_formulario_servicio"][177]["BUSCAR_ACRE"] == 1)
-                            echo "<a href=\"javascript:acreditar('','','04');\"><img border=\"0\" title=\"Codigo de Persona\" alt=\"\" src=\"../../../../medifacil_front/imagen/btn/nbtn_buscar.gif\"/></a>"
+                            echo "<a href=\"javascript:acreditar('','','04');\"><img border=\"0\" title=\"Codigo de Persona\" alt=\"\" src=\"../../../../fastmedical_front/imagen/btn/nbtn_buscar.gif\"/></a>"
                             ?>
-                        <a href="javascript:limpiarCamposBusquedaEssalud();" onkeypress="javascript:limpiarCamposBusquedaEssalud();"><img border="0" title="Limpiar" alt="Limpiar" src="../../../../medifacil_front/imagen/btn/btn_limpiar.gif"/></a>
+                        <a href="javascript:limpiarCamposBusquedaEssalud();" onkeypress="javascript:limpiarCamposBusquedaEssalud();"><img border="0" title="Limpiar" alt="Limpiar" src="../../../../fastmedical_front/imagen/btn/btn_limpiar.gif"/></a>
                     </div>
                 </div>
 
@@ -134,7 +134,7 @@ $toolbar->SetBoton("Adscripcion Departamental", "Ads.Depart.", "btn", "onclick,o
                                         <?php
                                         if (isset($_SESSION["permiso_formulario_servicio"][177]["HABILITAR_ADSCRIPCION_DEPARTAMENTAL"]) && ($_SESSION["permiso_formulario_servicio"][177]["HABILITAR_ADSCRIPCION_DEPARTAMENTAL"] == 1))
                                             $toolbar->Mostrar();
-//echo"<a href=\"javascript:habilitaradscripciondepartamental();\"><img src=\"../../../../medifacil_front/imagen/btn/b_imprimir_on.gif\"></a>";
+//echo"<a href=\"javascript:habilitaradscripciondepartamental();\"><img src=\"../../../../fastmedical_front/imagen/btn/b_imprimir_on.gif\"></a>";
                                         ?>
                                     </div>                     
                                 </td>                                

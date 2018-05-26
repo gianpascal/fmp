@@ -12,49 +12,49 @@ if (!isset($_SESSION)) {
         <!--<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">-->
         <!-- ================ ESTILOS CSS   ========================== -->
         <style type="text/css">
-            @import url("../../../../medifacil_front/estilo/simedh.css");
-            @import url("../../../../medifacil_front/estilo/default.css");
-            @import url("../../../../medifacil_front/estilo/alphacube.css");
-            @import url("../../../../medifacil_front/estilo/dhtmlxtree.css");
-            @import url("../../../../medifacil_front/estilo/dhtmlxtabbar.css");
-            @import url("../../../../medifacil_front/estilo/dhtmlxcalendar.css");
-            @import url("../../../../medifacil_front/estilo/dhtmlgoodies_calendar.css");
-            @import url("../../../../medifacil_front/estilo/tabs.css");
-            @import url("../../../../medifacil_front/estilo/dhtmlxcombo.css");
-            @import url("../../../../medifacil_front/estilo/autocomplete.css");
-            @import url("../../../../medifacil_front/estilo/dhtmlxgrid/dhtmlxgrid.css");
-            @import url("../../../../medifacil_front/estilo/dhtmlxgrid/dhtmlxgrid_pgn_bricks.css");
-            @import url("../../../../medifacil_front/estilo/dhtmlxgrid/dhtmlxgrid_dhx_skyblue1.css");
-            @import url("../../../../medifacil_front/estilo/dhtmlxgrid/dhtmlxgrid_dhx_blue.css");
-            @import url("../../../../medifacil_front/estilo/dhtmlxgrid/dhtmlxgrid_dhx_black.css");
-            @import url("../../../../medifacil_front/estilo/dhtmlxaccordion/dhtmlxaccordion_dhx_skyblue.css");
-            @import url("../../../../medifacil_front/estilo/dhtmlxvault.css");/*para upload*/
-            @import url("../../../../medifacil_front/estilo/dhtmlxcolorpicker.css");
+            @import url("../../../../fastmedical_front/estilo/simedh.css");
+            @import url("../../../../fastmedical_front/estilo/default.css");
+            @import url("../../../../fastmedical_front/estilo/alphacube.css");
+            @import url("../../../../fastmedical_front/estilo/dhtmlxtree.css");
+            @import url("../../../../fastmedical_front/estilo/dhtmlxtabbar.css");
+            @import url("../../../../fastmedical_front/estilo/dhtmlxcalendar.css");
+            @import url("../../../../fastmedical_front/estilo/dhtmlgoodies_calendar.css");
+            @import url("../../../../fastmedical_front/estilo/tabs.css");
+            @import url("../../../../fastmedical_front/estilo/dhtmlxcombo.css");
+            @import url("../../../../fastmedical_front/estilo/autocomplete.css");
+            @import url("../../../../fastmedical_front/estilo/dhtmlxgrid/dhtmlxgrid.css");
+            @import url("../../../../fastmedical_front/estilo/dhtmlxgrid/dhtmlxgrid_pgn_bricks.css");
+            @import url("../../../../fastmedical_front/estilo/dhtmlxgrid/dhtmlxgrid_dhx_skyblue1.css");
+            @import url("../../../../fastmedical_front/estilo/dhtmlxgrid/dhtmlxgrid_dhx_blue.css");
+            @import url("../../../../fastmedical_front/estilo/dhtmlxgrid/dhtmlxgrid_dhx_black.css");
+            @import url("../../../../fastmedical_front/estilo/dhtmlxaccordion/dhtmlxaccordion_dhx_skyblue.css");
+            @import url("../../../../fastmedical_front/estilo/dhtmlxvault.css");/*para upload*/
+            @import url("../../../../fastmedical_front/estilo/dhtmlxcolorpicker.css");
             /*agregado 09 Octubre 2012*/
-            @import url("../../../../medifacil_front/estilo/dhtmlxlayout/dhtmlxlayout.css");
-            @import url("../../../../medifacil_front/estilo/dhtmlxlayout/dhtmlxlayout_dhx_black.css");
-            @import url("../../../../medifacil_front/estilo/dhtmlxlayout/dhtmlxlayout_dhx_skyblue.css");
-            @import url("../../../../medifacil_front/estilo/dhtmlxlayout/dhtmlxlayout_dhx_web.css");
-            @import url("../../../../medifacil_front/estilo/dhtmlxlayout/dhtmlxlayout_dhx_blue.css");
-            @import url("../../../../medifacil_front/estilo/dhtmlxgrid/dhtmlxgrid_dhx_terrace.css");
+            @import url("../../../../fastmedical_front/estilo/dhtmlxlayout/dhtmlxlayout.css");
+            @import url("../../../../fastmedical_front/estilo/dhtmlxlayout/dhtmlxlayout_dhx_black.css");
+            @import url("../../../../fastmedical_front/estilo/dhtmlxlayout/dhtmlxlayout_dhx_skyblue.css");
+            @import url("../../../../fastmedical_front/estilo/dhtmlxlayout/dhtmlxlayout_dhx_web.css");
+            @import url("../../../../fastmedical_front/estilo/dhtmlxlayout/dhtmlxlayout_dhx_blue.css");
+            @import url("../../../../fastmedical_front/estilo/dhtmlxgrid/dhtmlxgrid_dhx_terrace.css");
 
 
-            @import url("../../../../medifacil_front/estilo/dhtmlxlayout/dhtmlx_custom.css");
+            @import url("../../../../fastmedical_front/estilo/dhtmlxlayout/dhtmlx_custom.css");
 
             /*agregado 11 Octubre 2012*/
 
-            @import url("../../../../medifacil_front/estilo/dhtmlxchart/dhtmlxchart.css");
-            @import url("../../../../medifacil_front/estilo/dhtmlxchart/dhtmlxchart_debug.css");
+            @import url("../../../../fastmedical_front/estilo/dhtmlxchart/dhtmlxchart.css");
+            @import url("../../../../fastmedical_front/estilo/dhtmlxchart/dhtmlxchart_debug.css");
 
             /*agregado 22 Octubre 2012*/
-            @import url("../../../../medifacil_front/estilo/dhtmlxwindows/dhtmlxwindows.css");
-            @import url("../../../../medifacil_front/estilo/dhtmlxwindows/dhtmlxwindows_dhx_black.css");
-            @import url("../../../../medifacil_front/estilo/dhtmlxwindows/dhtmlxwindows_dhx_blue.css");
-            @import url("../../../../medifacil_front/estilo/dhtmlxwindows/dhtmlxwindows_dhx_skyblue.css");
-            @import url("../../../../medifacil_front/estilo/dhtmlxwindows/dhtmlxwindows_dhx_terrace.css");
-            @import url("../../../../medifacil_front/estilo/dhtmlxwindows/dhtmlxwindows_dhx_web.css");
+            @import url("../../../../fastmedical_front/estilo/dhtmlxwindows/dhtmlxwindows.css");
+            @import url("../../../../fastmedical_front/estilo/dhtmlxwindows/dhtmlxwindows_dhx_black.css");
+            @import url("../../../../fastmedical_front/estilo/dhtmlxwindows/dhtmlxwindows_dhx_blue.css");
+            @import url("../../../../fastmedical_front/estilo/dhtmlxwindows/dhtmlxwindows_dhx_skyblue.css");
+            @import url("../../../../fastmedical_front/estilo/dhtmlxwindows/dhtmlxwindows_dhx_terrace.css");
+            @import url("../../../../fastmedical_front/estilo/dhtmlxwindows/dhtmlxwindows_dhx_web.css");
             /*modulo niño sano
-            @import url("../../../../medifacil_front/estilo/ninosano.css");*/
+            @import url("../../../../fastmedical_front/estilo/ninosano.css");*/
 
         </style>
         <style>
@@ -257,7 +257,7 @@ if (!isset($_SESSION)) {
                 myajax.Link('default.php?rand=' + myRand, 'Contenido');
             }
         </script>
-        <link rel="icon" type="image/png" href="../../../../medifacil_front/fotos/icono.png" />
+        <link rel="icon" type="image/png" href="../../../../fastmedical_front/fotos/icono.png" />
     </head>
     <!-----------       VENTANA DE CARGA DE DATOS    --------- -->
     <div id="VentanaTransparente">
@@ -300,9 +300,9 @@ if (!isset($_SESSION)) {
                 <div id="user">
 
                     <p><span>
-                            <a href='#' onclick="abrirotraventana();"><img src="../../../../medifacil_front/../medifacil_front/imagen/icono/icono_mundo.png" title="Abrir otra ventana" border="0"></a>
-                            <a href='#' onclick="menuDatosUsuario();"><img src="../../../../medifacil_front/../medifacil_front/imagen/icono/kuser.png" alt='Opciones de Usuarios' title='Opciones de Usuarios' border='0'/></a>
-                            <a href='#' onclick="CargarVentana('popupManteUsuario', 'Cambiar Contraseña', '../usuario/manteUsuario.php', '265', '150', false, true, '', 1, '', 10, 10, 10, 10);"><img src="../../../../medifacil_front/../medifacil_front/imagen/icono/decrypted.png" alt='Cambiar contraseña' title='Cambiar contraseña' border='0'/></a>USUARIO :<?php echo strtoupper($_SESSION["login_user"]); ?></span></p>
+                            <a href='#' onclick="abrirotraventana();"><img src="../../../../fastmedical_front/../fastmedical_front/imagen/icono/icono_mundo.png" title="Abrir otra ventana" border="0"></a>
+                            <a href='#' onclick="menuDatosUsuario();"><img src="../../../../fastmedical_front/../fastmedical_front/imagen/icono/kuser.png" alt='Opciones de Usuarios' title='Opciones de Usuarios' border='0'/></a>
+                            <a href='#' onclick="CargarVentana('popupManteUsuario', 'Cambiar Contraseña', '../usuario/manteUsuario.php', '265', '150', false, true, '', 1, '', 10, 10, 10, 10);"><img src="../../../../fastmedical_front/../fastmedical_front/imagen/icono/decrypted.png" alt='Cambiar contraseña' title='Cambiar contraseña' border='0'/></a>USUARIO :<?php echo strtoupper($_SESSION["login_user"]); ?></span></p>
 
                 </div>
 

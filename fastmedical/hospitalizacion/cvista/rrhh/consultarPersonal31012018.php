@@ -78,16 +78,16 @@
 
 
                         <div  id ="divEtiquetaBuscar" style="width:65px;  float:left;" align="center">
-                            <a href="javascript:buscarEmpleados(document.getElementById('txtCodigo').value,document.getElementById('comboTipoEstados').value,document.getElementById('comboTipoDocumentos').value,document.getElementById('nroDoc').value,document.getElementById('apellidoPaterno').value,document.getElementById('apellidoMaterno').value,document.getElementById('nombres').value);"><img id="imgbusqueda" border="0" title="Codigo de Persona" alt="" src="../../../../medifacil_front/imagen/btn/nbtn_buscar.gif"/></a>
+                            <a href="javascript:buscarEmpleados(document.getElementById('txtCodigo').value,document.getElementById('comboTipoEstados').value,document.getElementById('comboTipoDocumentos').value,document.getElementById('nroDoc').value,document.getElementById('apellidoPaterno').value,document.getElementById('apellidoMaterno').value,document.getElementById('nombres').value);"><img id="imgbusqueda" border="0" title="Codigo de Persona" alt="" src="../../../../fastmedical_front/imagen/btn/nbtn_buscar.gif"/></a>
                         </div>
                         <div  id ="divEtiquetaLimpiar" style="width:65px;  float:left;" align="center">
-                            <a href="javascript:limpiaBusquedas('0','','');"><img border="0" title="Limpia" alt="" src="../../../../medifacil_front/imagen/btn/btn_limpiar.gif"/></a>
+                            <a href="javascript:limpiaBusquedas('0','','');"><img border="0" title="Limpia" alt="" src="../../../../fastmedical_front/imagen/btn/btn_limpiar.gif"/></a>
                         </div> 
                         <div  id ="Divnuevo" style=" float:left;width:65px; " align="center">
                             <?php
                             if (isset($_SESSION["permiso_formulario_servicio"][121]["NUEVO_EMPLEADO"]) && ($_SESSION["permiso_formulario_servicio"][121]["NUEVO_EMPLEADO"] == 1)) {
                                 ?>
-                                <a href="javascript:ventana_formulario_empleado();"><img border="0" title="Codigo de Persona" alt="" src="../../../../medifacil_front/imagen/btn/nbtn_nuevo.gif"/></a>
+                                <a href="javascript:ventana_formulario_empleado();"><img border="0" title="Codigo de Persona" alt="" src="../../../../fastmedical_front/imagen/btn/nbtn_nuevo.gif"/></a>
                                 <?php
                             }
                             ?>
@@ -140,7 +140,7 @@
 
 
                 <div  id ="divIzqInf" style=" width:40%; float: left;" >
-                    <a href="javascript:regresarBuscarEmpleado();"><img border="0" title="Codigo de Persona" alt="" src="../../../../medifacil_front/imagen/btn/b_regresar_on.gif"/></a>
+                    <a href="javascript:regresarBuscarEmpleado();"><img border="0" title="Codigo de Persona" alt="" src="../../../../fastmedical_front/imagen/btn/b_regresar_on.gif"/></a>
                 </div>
             </div>
         </div>

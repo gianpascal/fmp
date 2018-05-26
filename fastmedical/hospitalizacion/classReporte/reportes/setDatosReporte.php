@@ -772,7 +772,7 @@ try {
                     $nota_old=$medicamentoso[0]['vComentario'];*/
 
                 //$PV_FOTO=$labelCabecera[3][3];
-                //$PV_FOTO="http://172.24.64.226/medifacil_front/imagen/logo/".$PV_RUTA_LOGO;
+                //$PV_FOTO="http://172.24.64.226/fastmedical_front/imagen/logo/".$PV_RUTA_LOGO;
 
                 //$PV_FOTO=$datosPaciente[0][11];
                 //var_dump($PV_RUTA_LOGO);exit();
@@ -788,11 +788,11 @@ try {
                 //var_dump($PV_LOGO);exit();
                 session_start();
                 //var_dump($_SESSION['base_url']);exit();
-                $PV_CHECK=$_SESSION['base_url']."medifacil_front/imagen/icono/checkbox-checked.png";
-                $PV_UNCHECK=$_SESSION['base_url']."medifacil_front/imagen/icono/checkbox-unchecked.png";
-                //$checked="smb://172.24.64.226/www/medifacil_front/imagen/icono/checkbox-checked.png";
-                //$checked="../../../../medifacil_front/imagen/icono/checkbox_checked_old.png";
-                //$unchecked="../../../..//medifacil_front/imagen/icono/checkbox-unchecked.png";
+                $PV_CHECK=$_SESSION['base_url']."fastmedical_front/imagen/icono/checkbox-checked.png";
+                $PV_UNCHECK=$_SESSION['base_url']."fastmedical_front/imagen/icono/checkbox-unchecked.png";
+                //$checked="smb://172.24.64.226/www/fastmedical_front/imagen/icono/checkbox-checked.png";
+                //$checked="../../../../fastmedical_front/imagen/icono/checkbox_checked_old.png";
+                //$unchecked="../../../..//fastmedical_front/imagen/icono/checkbox-unchecked.png";
                 if($codigo_servicio=='PED0000001'){
 
                     $server="172.24.64.200";

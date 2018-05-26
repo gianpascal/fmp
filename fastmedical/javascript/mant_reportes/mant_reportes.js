@@ -117,7 +117,7 @@ function generarArbolx(div,parametros,funcionClick)
     divMostrar.innerHTML = " ";
     treex=new dhtmlXTreeObject(div,"100%","100%",0);
     treex.setSkin('dhx_skyblue');
-    treex.setImagePath("../../../../medifacil_front/imagen/csh_bluebooks_simedh/");
+    treex.setImagePath("../../../../fastmedical_front/imagen/csh_bluebooks_simedh/");
     treex.attachEvent("onClick", function(){
         selectTree(treex.getSelectedItemId(),treex.getSelectedItemText(),funcionClick);
         return true;
@@ -2606,7 +2606,7 @@ function cargaraFiltro(id , desc , cont){
         else {
             var para = document.getElementById("contenedorfiltros1");
             $('con1').show();
-            var s ='<table cellSpacing="0" border="0" width="220" id='+id+'><tr><td width="120"><font size="2"><UL type = square><LI>'+desc+'</UL></font></td><td><center><a href="javascript:eliminarFiltroEstados(\''+id+'\')"><img src="../../../../medifacil_front/imagen/icono/cancelarAngel.png"></a></center></td></tr></table>';
+            var s ='<table cellSpacing="0" border="0" width="220" id='+id+'><tr><td width="120"><font size="2"><UL type = square><LI>'+desc+'</UL></font></td><td><center><a href="javascript:eliminarFiltroEstados(\''+id+'\')"><img src="../../../../fastmedical_front/imagen/icono/cancelarAngel.png"></a></center></td></tr></table>';
             var range = document.createRange();
             range.selectNode(document.body);
             var documentFragment = range.createContextualFragment(s);
@@ -2635,7 +2635,7 @@ function cargaraFiltro(id , desc , cont){
         else {
             var para = document.getElementById("contenedorfiltros2");
             $('con2').show();
-            var s ='<table cellSpacing="0" border="0" width="220" id='+id+'><tr><td width="120"><font size="2"><UL type = square><LI>'+desc+'</UL></font></td><td><center><a href="javascript:eliminarFiltroAtencion(\''+id+'\')"><img src="../../../../medifacil_front/imagen/icono/cancelarAngel.png"></a></center></td></tr></table>';
+            var s ='<table cellSpacing="0" border="0" width="220" id='+id+'><tr><td width="120"><font size="2"><UL type = square><LI>'+desc+'</UL></font></td><td><center><a href="javascript:eliminarFiltroAtencion(\''+id+'\')"><img src="../../../../fastmedical_front/imagen/icono/cancelarAngel.png"></a></center></td></tr></table>';
             var range = document.createRange();
             range.selectNode(document.body);
             var documentFragment = range.createContextualFragment(s);
@@ -2664,7 +2664,7 @@ function cargaraFiltro(id , desc , cont){
         else {
             var para = document.getElementById("contenedorfiltros3");
             $('con3').show();
-            var s ='<table cellSpacing="0" border="0" width="220" id='+id+'><tr><td width="120"><font size="2"><UL type = square><LI>'+desc+'</UL></font></td><td><center><a href="javascript:eliminarFiltroProgramacion(\''+id+'\')"><img src="../../../../medifacil_front/imagen/icono/cancelarAngel.png"></a></center></td></tr></table>';
+            var s ='<table cellSpacing="0" border="0" width="220" id='+id+'><tr><td width="120"><font size="2"><UL type = square><LI>'+desc+'</UL></font></td><td><center><a href="javascript:eliminarFiltroProgramacion(\''+id+'\')"><img src="../../../../fastmedical_front/imagen/icono/cancelarAngel.png"></a></center></td></tr></table>';
             var range = document.createRange();
             range.selectNode(document.body);
             var documentFragment = range.createContextualFragment(s);
@@ -2681,7 +2681,7 @@ function cargaraFiltro(id , desc , cont){
 //        else {
 //            var para = document.getElementById("contenedorfiltros9");
 //            $('con9').show();
-//            var s ='<table cellSpacing="0" border="0" width="220" id='+id+'><tr><td width="120"><font size="2"><UL type = square><LI>'+desc+'</UL></font></td><td><center><a href="javascript:eliminarFiltroTurnos(\''+id+'\')"><img src="../../../../medifacil_front/imagen/icono/cancelarAngel.png"></a></center></td></tr></table>';
+//            var s ='<table cellSpacing="0" border="0" width="220" id='+id+'><tr><td width="120"><font size="2"><UL type = square><LI>'+desc+'</UL></font></td><td><center><a href="javascript:eliminarFiltroTurnos(\''+id+'\')"><img src="../../../../fastmedical_front/imagen/icono/cancelarAngel.png"></a></center></td></tr></table>';
 //            var range = document.createRange();
 //            range.selectNode(document.body);
 //            var documentFragment = range.createContextualFragment(s);
@@ -2906,7 +2906,7 @@ function cargarTablaPersonal(){
                 $('con4').show();
                 if ($('ContadorMedicos').value<=3){
                     $('Medicos').value+= Codigo + '|';
-                    var s ='<table cellSpacing="0" border="0" width="220" id='+Codigo+'><tr><td width="120"><font size="1"><UL type = square><LI>'+Nombre+'</UL></font></td><td><center><a href="javascript:eliminarFiltroMedicos(\''+Codigo+'\')"><img src="../../../../medifacil_front/imagen/icono/cancelarAngel.png"></a></center></td></tr></table>';
+                    var s ='<table cellSpacing="0" border="0" width="220" id='+Codigo+'><tr><td width="120"><font size="1"><UL type = square><LI>'+Nombre+'</UL></font></td><td><center><a href="javascript:eliminarFiltroMedicos(\''+Codigo+'\')"><img src="../../../../fastmedical_front/imagen/icono/cancelarAngel.png"></a></center></td></tr></table>';
                     var range = document.createRange();
                     range.selectNode(document.body);
                     var documentFragment = range.createContextualFragment(s);
@@ -2959,7 +2959,7 @@ function ListarActividades(){
                 var para = document.getElementById("contenedorfiltros11");
                 $('con11').show();
                 $('Actividades').value+= Codigo + '|';
-                var s ='<table cellSpacing="0" border="0" width="220" id='+Codigo+'><tr><td width="120"><font size="1"><UL type = square><LI>'+Nombre+'</UL></font></td><td><center><a href="javascript:eliminarFiltroServicios(\''+Codigo+'\')"><img src="../../../../medifacil_front/imagen/icono/cancelarAngel.png"></a></center></td></tr></table>';
+                var s ='<table cellSpacing="0" border="0" width="220" id='+Codigo+'><tr><td width="120"><font size="1"><UL type = square><LI>'+Nombre+'</UL></font></td><td><center><a href="javascript:eliminarFiltroServicios(\''+Codigo+'\')"><img src="../../../../fastmedical_front/imagen/icono/cancelarAngel.png"></a></center></td></tr></table>';
                 var range = document.createRange();
                 range.selectNode(document.body);
                 var documentFragment = range.createContextualFragment(s);
@@ -3005,7 +3005,7 @@ function  cargarTablaServicio(){
                 $('con5').show();
                 if ($('ContadorServicios').value<=1){
                     $('Servicios').value+= Codigo + '|';
-                    var s ='<table cellSpacing="0" border="0" width="220" id='+Codigo+'><tr><td width="120"><font size="1"><UL type = square><LI>'+Nombre+'</UL></font></td><td><center><a href="javascript:eliminarFiltroServicios(\''+Codigo+'\')"><img src="../../../../medifacil_front/imagen/icono/cancelarAngel.png"></a></center></td></tr></table>';
+                    var s ='<table cellSpacing="0" border="0" width="220" id='+Codigo+'><tr><td width="120"><font size="1"><UL type = square><LI>'+Nombre+'</UL></font></td><td><center><a href="javascript:eliminarFiltroServicios(\''+Codigo+'\')"><img src="../../../../fastmedical_front/imagen/icono/cancelarAngel.png"></a></center></td></tr></table>';
                     var range = document.createRange();
                     range.selectNode(document.body);
                     var documentFragment = range.createContextualFragment(s);
@@ -3064,7 +3064,7 @@ function cargarTablaSedes(){
                 $('con8').show();
                 
                 $('Sedes').value+= idSede + '|';
-                var s ='<table cellSpacing="0" border="0" width="220" id='+idSede+'><tr><td width="120"><font size="1"><UL type = square><LI>'+Nombre+'</UL></font></td><td><center><a href="javascript:eliminarFiltroSedes(\''+idSede+'\')"><img src="../../../../medifacil_front/imagen/icono/cancelarAngel.png"></a></center></td></tr></table>';
+                var s ='<table cellSpacing="0" border="0" width="220" id='+idSede+'><tr><td width="120"><font size="1"><UL type = square><LI>'+Nombre+'</UL></font></td><td><center><a href="javascript:eliminarFiltroSedes(\''+idSede+'\')"><img src="../../../../fastmedical_front/imagen/icono/cancelarAngel.png"></a></center></td></tr></table>';
                 var range = document.createRange();
                 range.selectNode(document.body);
                 var documentFragment = range.createContextualFragment(s);
@@ -3109,7 +3109,7 @@ function cargarTablaAmbiFi(){
                 $('con7').show();
                 if ($('ContadorAfiliaciones').value<=3){
                     $('AmbiFi').value+= Codigo + '|';
-                    var s ='<table cellSpacing="0" border="0" width="220" id='+Codigo+'><tr><td width="120"><font size="1"><UL type = square><LI>'+Nombre+'</UL></font></td><td><center><a href="javascript:eliminarFiltroAmbiFi(\''+Codigo+'\')"><img src="../../../../medifacil_front/imagen/icono/cancelarAngel.png"></a></center></td></tr></table>';
+                    var s ='<table cellSpacing="0" border="0" width="220" id='+Codigo+'><tr><td width="120"><font size="1"><UL type = square><LI>'+Nombre+'</UL></font></td><td><center><a href="javascript:eliminarFiltroAmbiFi(\''+Codigo+'\')"><img src="../../../../fastmedical_front/imagen/icono/cancelarAngel.png"></a></center></td></tr></table>';
                     var range = document.createRange();
                     range.selectNode(document.body);
                     var documentFragment = range.createContextualFragment(s);
@@ -3158,7 +3158,7 @@ function cargarTablaAmbiLo(){
                 $('con6').show();
                 if ($('ContadorAmbientesLo').value<=3){
                     $('AmbiLo').value+= Codigo + '|';
-                    var s ='<table cellSpacing="0" border="0" width="220" id='+Codigo+'><tr><td width="120"><font size="1"><UL type = square><LI>'+Nombre+'</UL></font></td><td><center><a href="javascript:eliminarFiltroAmbiLo(\''+Codigo+'\')"><img src="../../../../medifacil_front/imagen/icono/cancelarAngel.png"></a></center></td></tr></table>';
+                    var s ='<table cellSpacing="0" border="0" width="220" id='+Codigo+'><tr><td width="120"><font size="1"><UL type = square><LI>'+Nombre+'</UL></font></td><td><center><a href="javascript:eliminarFiltroAmbiLo(\''+Codigo+'\')"><img src="../../../../fastmedical_front/imagen/icono/cancelarAngel.png"></a></center></td></tr></table>';
                     var range = document.createRange();
                     range.selectNode(document.body);
                     var documentFragment = range.createContextualFragment(s);
@@ -3932,7 +3932,7 @@ function buscarReporteGruposEtareos(){
     parametros += 'p1=' + patronModulo;
     // parametros += '&p2=' + iIdCPT;
     tablaBuscarReporteGruposEtareos = new dhtmlXGridObject('div_TablaGrupoEtareo');
-    tablaBuscarReporteGruposEtareos.setImagePath("../../../../medifacil_front/imagen/icono/");
+    tablaBuscarReporteGruposEtareos.setImagePath("../../../../fastmedical_front/imagen/icono/");
     tablaBuscarReporteGruposEtareos.setSkin("dhx_skyblue");
     tablaBuscarReporteGruposEtareos.attachEvent("onRowSelect", function(fila, columna) {
         var iIdGrupoEtareo = tablaBuscarReporteGruposEtareos.cells(fila, 1).getValue();
@@ -3953,7 +3953,7 @@ function buscarPersonasGrupoEtareo(iIdGrupoEtareo,ServComple){
     parametros += '&p2=' + iIdGrupoEtareo;
     parametros += '&p3=' + ServComple;
     tablaBuscarPersonasGrupoEtareo = new dhtmlXGridObject('div_TablaPersonasGrupoEtareo');
-    tablaBuscarPersonasGrupoEtareo.setImagePath("../../../../medifacil_front/imagen/icono/");
+    tablaBuscarPersonasGrupoEtareo.setImagePath("../../../../fastmedical_front/imagen/icono/");
     tablaBuscarPersonasGrupoEtareo.setSkin("dhx_skyblue");
     tablaBuscarPersonasGrupoEtareo.attachEvent("onRowSelect", function(fila, columna) {
         var c_cod_per = tablaBuscarPersonasGrupoEtareo.cells(fila, 0).getValue();
@@ -4028,7 +4028,7 @@ function buscarMedicamento(evento){
             parametros += 'p1=' + patronModulo;
             parametros += '&p2=' + medicamento;
             tablabuscarMedicamento = new dhtmlXGridObject('contenedorGraficos');
-            tablabuscarMedicamento.setImagePath("../../../../medifacil_front/imagen/icono/");
+            tablabuscarMedicamento.setImagePath("../../../../fastmedical_front/imagen/icono/");
             tablabuscarMedicamento.setSkin("dhx_skyblue");
             tablabuscarMedicamento.attachEvent("onRowSelect", function(fila, columna) {
                 var c_cod_ser = tablabuscarMedicamento.cells(fila, 0).getValue();
@@ -4056,7 +4056,7 @@ function buscarMEdico(evento){
             parametros += 'p1=' + patronModulo;
             parametros += '&p2=' + medico;
             tablabuscarMedico = new dhtmlXGridObject('contenedorGraficos');
-            tablabuscarMedico.setImagePath("../../../../medifacil_front/imagen/icono/");
+            tablabuscarMedico.setImagePath("../../../../fastmedical_front/imagen/icono/");
             tablabuscarMedico.setSkin("dhx_skyblue");
             tablabuscarMedico.attachEvent("onRowSelect", function(fila, columna) {
                 var c_cod_per = tablabuscarMedico.cells(fila, 0).getValue();
@@ -4125,7 +4125,7 @@ function mostrarReportesEstadisticosREcetaMedica(){
 function cargarArbolListaReportesESSALUD(){
     treeEssalud = new dhtmlXTreeObject("divContenedorArbolESSALUD", "100%", "100%", 0);
     treeEssalud.setSkin('dhx_skyblue');
-    treeEssalud.setImagePath("../../../../medifacil_front/imagen/csh_bluebooks_simedh/");
+    treeEssalud.setImagePath("../../../../fastmedical_front/imagen/csh_bluebooks_simedh/");
     treeEssalud.attachEvent("onClick", function() {
         clickCargarVistaReportesEssalud(treeEssalud.getSelectedItemId(), treeEssalud.getSelectedItemText());
     });
@@ -4226,7 +4226,7 @@ function cargarArbolNSIG(){
     parametros+='p1='+patronModulo;
     treeEssaludNISG = new dhtmlXTreeObject("divContenedorArbolESSALUDNSIG", "100%", "100%", 0);
     treeEssaludNISG.setSkin('dhx_skyblue');
-    treeEssaludNISG.setImagePath("../../../../medifacil_front/imagen/csh_bluebooks_simedh/");
+    treeEssaludNISG.setImagePath("../../../../fastmedical_front/imagen/csh_bluebooks_simedh/");
     treeEssaludNISG.attachEvent("onClick", function() {
        
         });
@@ -4370,7 +4370,7 @@ function cargarArbolOperacionalTBC(){
     mygrid = new dhtmlXGridObject('gridbox');
     //alert("Cabeza");
     //mygrid.setImagePath('../../../dhtmlxGrid/codebase/imgs/');
-    mygrid.setImagePath('../../../../medifacil_front/imagen/csh_bluebooks_simedh/');
+    mygrid.setImagePath('../../../../fastmedical_front/imagen/csh_bluebooks_simedh/');
     mygrid.setSkin('dhx_skyblue');
     mygrid.setHeader("Servicio, [0-9],[10-14],[15-19],[20-44],[45-59],[60-mas],total");
     mygrid.setInitWidths("500,*,*,*,*,*,*,*")
@@ -4391,7 +4391,7 @@ function cargarArbolGridNSIG(){
     var parametros='';
     parametros+='p1='+patronModulo;   
     dhtmlx_tree_grid_AngelSayes = new dhtmlXGridObject('divContenedorArbolESSALUDNSIG');
-    dhtmlx_tree_grid_AngelSayes.setImagePath('../../../../medifacil_front/imagen/csh_bluebooks_simedh/');
+    dhtmlx_tree_grid_AngelSayes.setImagePath('../../../../fastmedical_front/imagen/csh_bluebooks_simedh/');
     dhtmlx_tree_grid_AngelSayes.setSkin('dhx_skyblue');
     dhtmlx_tree_grid_AngelSayes.setHeader("Item, Enero,Frebrero,Marzo,Abril,Mayo,Junio,Julio,Agosto,Setiembre,Octubre,Noviembre,Diciembre,Año");
     dhtmlx_tree_grid_AngelSayes.setInitWidths("350,*,*,*,*,*,*,*,*,*,*,*,*,*")

@@ -62,7 +62,7 @@
                 &nbsp; &nbsp; &nbsp;
             </div>
             <div style="float:left;">
-                <a href="javascript:agregarTipoComprobante();"><img src="../../../../medifacil_front/imagen/icono/abrir16.png" title="Agregar" alt="Agregar"/></a>
+                <a href="javascript:agregarTipoComprobante();"><img src="../../../../fastmedical_front/imagen/icono/abrir16.png" title="Agregar" alt="Agregar"/></a>
             </div>
             <div style="float:left;">
                 &nbsp; &nbsp; &nbsp;
@@ -76,7 +76,7 @@
     <div id="divAccionesyBotonesAperturaDeDocumentos" align="right" style="width: 100%; height: 50px; background: white">
         <div style="float:right;">
             <a href="javascript:salirVentanaTesoreriaAperturaDeDocumentos();">
-                <img src="../../../../medifacil_front/imagen/btn/b_Salir.gif" title="Salir" alt="Salir"/>
+                <img src="../../../../fastmedical_front/imagen/btn/b_Salir.gif" title="Salir" alt="Salir"/>
             </a>
         </div>
     </div>

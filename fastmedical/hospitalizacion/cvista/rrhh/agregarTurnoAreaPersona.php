@@ -83,7 +83,7 @@
                     if (1==1) {
                         echo "<tr align=center>
                                 <td align=center>
-                                    <a href=\"javascript:javascript:asignarTurnoDisponibleAlAreaPersona();\"><img  id=\"imgagenGuardar\" src=\"../../../../medifacil_front/imagen/icono/b_adelante.gif\" width=25px height=25px/></a>
+                                    <a href=\"javascript:javascript:asignarTurnoDisponibleAlAreaPersona();\"><img  id=\"imgagenGuardar\" src=\"../../../../fastmedical_front/imagen/icono/b_adelante.gif\" width=25px height=25px/></a>
                                   </td>
                                   </tr>
                                     ";
@@ -97,7 +97,7 @@
                     if (1==1) {
                         echo "<tr align=center>
                                 <td align=center>
-                                    <a href=\"javascript:javascript:quitarTurnoSeleccionadoAlAreaPersona();\"><img  id=\"imgagenGuardar\" src=\"../../../../medifacil_front/imagen/icono/b_atras.gif\" width=25px height=25px/></a>
+                                    <a href=\"javascript:javascript:quitarTurnoSeleccionadoAlAreaPersona();\"><img  id=\"imgagenGuardar\" src=\"../../../../fastmedical_front/imagen/icono/b_atras.gif\" width=25px height=25px/></a>
                                   </td>
                                   </tr>
                                     ";

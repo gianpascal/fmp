@@ -28,7 +28,7 @@
                             </tr>
                         </table>
                         <table>
-                             <?php if($_SESSION["permiso_formulario_servicio"][119]["GENERAR_COD_AUTOR_REPROG_MED"]==1) echo "<tr><td><a href=\"#\" onclick=\"javascript:generarCodigoAutorizacionProgramacionMedicos()\"><img src='../../../../medifacil_front/imagen/btn/b_generar_on.gif' title='Generar Código Autorización' alt=\"Generar Código Autorización\"/></a></td></tr>"?>
+                             <?php if($_SESSION["permiso_formulario_servicio"][119]["GENERAR_COD_AUTOR_REPROG_MED"]==1) echo "<tr><td><a href=\"#\" onclick=\"javascript:generarCodigoAutorizacionProgramacionMedicos()\"><img src='../../../../fastmedical_front/imagen/btn/b_generar_on.gif' title='Generar Código Autorización' alt=\"Generar Código Autorización\"/></a></td></tr>"?>
                         </table>
 
                     </div>

@@ -7,7 +7,7 @@
                     <h1>Historia</h1>
                 </td>
                 <td style="width:3%">
-                    <img id="divHC_cuerpoicono" src='../../../../medifacil_front/imagen/icono/desplegar.png' title='desplegar' alt=""/>
+                    <img id="divHC_cuerpoicono" src='../../../../fastmedical_front/imagen/icono/desplegar.png' title='desplegar' alt=""/>
                 </td>
             </tr>
         </table>

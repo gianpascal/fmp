@@ -160,7 +160,7 @@ foreach ($dataTest as $value) {
         $table.='<tr>';
     }
     $params = $pdf->serializeTCPDFtagParameters(array($dataTest[$contador], 'C39', '', '', $separador, $altura, $largo, array('position' => 'l', 'border' => false, 'padding' => 1, 'fgcolor' => array(0, 0, 0), 'bgcolor' => array(255, 255, 255), 'text' => true, 'font' => 'helvetica', 'fontsize' => $tamañoLetra, 'stretchtext' => 4), 'N'));
-        $table.='<td width="' . $anchoColumna . '">&nbsp;&nbsp;<img src="../../../../medifacil_front/imagen/logo/logo.jpg" width="' . $tamañoImagen . '"> &nbsp;&nbsp;<B><font size="' . $tamañoLetraLaboratorio . '">LABORATORIO</font></B><br>&nbsp;&nbsp;<tcpdf method="write1DBarcode" params="' . $params . '" /></td>';
+        $table.='<td width="' . $anchoColumna . '">&nbsp;&nbsp;<img src="../../../../fastmedical_front/imagen/logo/logo.jpg" width="' . $tamañoImagen . '"> &nbsp;&nbsp;<B><font size="' . $tamañoLetraLaboratorio . '">LABORATORIO</font></B><br>&nbsp;&nbsp;<tcpdf method="write1DBarcode" params="' . $params . '" /></td>';
     if ($resto == ($columna - 1)) {
         $table.='</tr>';
     }

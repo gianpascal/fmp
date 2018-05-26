@@ -54,7 +54,7 @@ $toolbarz=new ToollBar("center");
                                                 <div id="btnGrabar" style="width: 50px;">
                                                     <?php
                                                         if (isset($_SESSION["permiso_formulario_servicio"][226]["GRABAR_SUBAREA"]) && ($_SESSION["permiso_formulario_servicio"][226]["GRABAR_SUBAREA"]==1)){
-                                                            $toolbarx->SetBoton("grabarSubAreas","Grabar","btn","onclick,onkeypress","grabarSubArea('grabar')",$_SESSION['path_principal']."../medifacil_front/imagen/icono/grabar.png","","",1);
+                                                            $toolbarx->SetBoton("grabarSubAreas","Grabar","btn","onclick,onkeypress","grabarSubArea('grabar')",$_SESSION['path_principal']."../fastmedical_front/imagen/icono/grabar.png","","",1);
                                                             $toolbarx->Mostrar();
                                                         }
                                                     ?>
@@ -62,7 +62,7 @@ $toolbarz=new ToollBar("center");
                                                 <div id="btnModificar" style="width: 50px;display: none;">
                                                     <?php
                                                         if (isset($_SESSION["permiso_formulario_servicio"][226]["MODIFICAR_SUBAREA"]) && ($_SESSION["permiso_formulario_servicio"][226]["MODIFICAR_SUBAREA"]==1)){
-                                                            $toolbarz->SetBoton("modificarSubAreas","Modificar","btn","onclick,onkeypress","grabarSubArea('modificar')",$_SESSION['path_principal']."../medifacil_front/imagen/icono/grabar.png","","",1);
+                                                            $toolbarz->SetBoton("modificarSubAreas","Modificar","btn","onclick,onkeypress","grabarSubArea('modificar')",$_SESSION['path_principal']."../fastmedical_front/imagen/icono/grabar.png","","",1);
                                                             $toolbarz->Mostrar();
                                                         }
                                                     ?>
@@ -124,7 +124,7 @@ $toolbarz=new ToollBar("center");
                                                 <div style="width: 50px;">
                                                     <?php
                                                         if (isset($_SESSION["permiso_formulario_servicio"][226]["GRABAR_CAT_POR_AREA"]) && ($_SESSION["permiso_formulario_servicio"][226]["GRABAR_CAT_POR_AREA"]==1)){
-                                                            $toolbary->SetBoton("grabarCategoriaSubArea","Grabar","btn","onclick,onkeypress","grabarCategoriaSubArea()",$_SESSION['path_principal']."../medifacil_front/imagen/icono/grabar.png","","",1);
+                                                            $toolbary->SetBoton("grabarCategoriaSubArea","Grabar","btn","onclick,onkeypress","grabarCategoriaSubArea()",$_SESSION['path_principal']."../fastmedical_front/imagen/icono/grabar.png","","",1);
                                                             $toolbary->Mostrar();
                                                         }
                                                     ?>

@@ -6,14 +6,14 @@
                     <h1>Odontograma</h1>
                 </td>
                 <td style="width:3%">
-                    <img id="Div_OdontogramaCuerpoicono" src='../../../../medifacil_front/imagen/icono/desplegar.png' title='desplegar' alt=""/>
+                    <img id="Div_OdontogramaCuerpoicono" src='../../../../fastmedical_front/imagen/icono/desplegar.png' title='desplegar' alt=""/>
                 </td>
             </tr>
         </table>
     </div>
     <div id="Div_OdontogramaCuerpo" style="width:100%;">
         <div id="canvas" style="width: 800px;height:400px;  float: left;  ">
-<!--            <img src="../../../../medifacil_front/imagen/odontograma/odontograma.png" width="800" height="400" usemap="#Map"/>-->
+<!--            <img src="../../../../fastmedical_front/imagen/odontograma/odontograma.png" width="800" height="400" usemap="#Map"/>-->
             <canvas id="canvas1"   width="800" height="400" >
 
             </canvas>
@@ -23,10 +23,10 @@
             <input type="hidden" name="hicolor" id="hicolor" value="" />
             <input type="hidden" name="hdientes" id="hdientes" value="" />
             <a href="javascript:;" onclick="javascript:nuevoAgregarNuevoantecedenteOdontograma();">
-                <img src="../../../../medifacil_front/imagen/btn/b_nuevo_on.gif" />
+                <img src="../../../../fastmedical_front/imagen/btn/b_nuevo_on.gif" />
             </a>
             <a href="javascript:;" onclick="javascript:mostrarLeyenda();">
-                <img src="../../../../medifacil_front/imagen/btn/b_ver_on.gif" />
+                <img src="../../../../fastmedical_front/imagen/btn/b_ver_on.gif" />
             </a>
             <div id="div_foto1">
             </div>  

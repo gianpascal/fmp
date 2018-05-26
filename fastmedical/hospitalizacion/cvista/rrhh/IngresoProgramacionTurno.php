@@ -76,7 +76,7 @@ $o_Cal01 = new Calendario('cal02','botonAccionCalendario','cabeceraCalendario','
                     </tr>
                     <tr>
                         <td>
-                            <a href="javascript:guardarTurnoProgramadoGrupo();"> <img border="0" title="Turno" alt="" src="../../../../medifacil_front/imagen/btn/b_grabar_on.gif"/></a>
+                            <a href="javascript:guardarTurnoProgramadoGrupo();"> <img border="0" title="Turno" alt="" src="../../../../fastmedical_front/imagen/btn/b_grabar_on.gif"/></a>
                         </td>
                     </tr>
                     <tr>

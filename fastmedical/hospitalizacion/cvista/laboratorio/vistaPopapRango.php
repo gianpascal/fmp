@@ -164,13 +164,13 @@ $toolbar1 = new ToollBar("center");
             <tr align="center" bgcolor="#C1E69D">
                 <td colspan="2" align="center">
                     <?php
-                    $toolbar->SetBoton("Modificar Rangos", "Modificar", "btn", "onclick,onkeypress", "modificarRangos()", "../../../../medifacil_front/imagen/icono/apply.png", "", "", true);
+                    $toolbar->SetBoton("Modificar Rangos", "Modificar", "btn", "onclick,onkeypress", "modificarRangos()", "../../../../fastmedical_front/imagen/icono/apply.png", "", "", true);
                     $toolbar->Mostrar();
                     ?>
                 </td>
                 <td colspan="2" align="center">
                     <?php
-                    $toolbar1->SetBoton("Cerrar Rangos", "Cerrar", "btn", "onclick,onkeypress", "cerrarRangos()", "../../../../medifacil_front/imagen/icono/i_icq_dnd.png", "", "", true);
+                    $toolbar1->SetBoton("Cerrar Rangos", "Cerrar", "btn", "onclick,onkeypress", "cerrarRangos()", "../../../../fastmedical_front/imagen/icono/i_icq_dnd.png", "", "", true);
                     $toolbar1->Mostrar();
                     ?>
                 </td>

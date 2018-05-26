@@ -37,7 +37,7 @@ function mostrarprogramacionMedicosActoMedico() {
     parametros += '&p3=' + anio;
 
     tablaProgramacionMedico = new dhtmlXGridObject('Div_programacionMedicosActoMedico');//crea la tabla
-    tablaProgramacionMedico.setImagePath("../../../../medifacil_front/imagen/icono/");
+    tablaProgramacionMedico.setImagePath("../../../../fastmedical_front/imagen/icono/");
     tablaProgramacionMedico.setSkin("dhx_skyblue");
 
     tablaProgramacionMedico.attachEvent("onRowSelect", mostrarPacientes);//seleccionamos la fila
@@ -125,7 +125,7 @@ function motrarTodasAtencionesProgramados(cadenaCronogramas) {
 
 
     tablaPacienteProgramados = new dhtmlXGridObject('Div_pacientesprogramados');
-    tablaPacienteProgramados.setImagePath("../../../../medifacil_front/imagen/icono/");
+    tablaPacienteProgramados.setImagePath("../../../../fastmedical_front/imagen/icono/");
     tablaPacienteProgramados.setSkin("dhx_skyblue");
     tablaPacienteProgramados.attachEvent("onRowSelect", eventoPacienteProgramado);
     //eventos segun iconos de pacientes adicionales
@@ -182,7 +182,7 @@ function mostrarTodosPacientesAdicionales(cadenaCronogramas) {
     //parametros+='&p3='+codigoactividad;
 
     tablaPacienteAdicionales = new dhtmlXGridObject('Div_pacientesadicionales');
-    tablaPacienteAdicionales.setImagePath("../../../../medifacil_front/imagen/icono/");
+    tablaPacienteAdicionales.setImagePath("../../../../fastmedical_front/imagen/icono/");
     tablaPacienteAdicionales.setSkin("dhx_skyblue");
     tablaPacienteAdicionales.attachEvent("onRowSelect", eventoPacienteAdicional);
     //////////para cargador peche////////////////
@@ -237,7 +237,7 @@ function mostrarPacientesProgramados(codigocronograma) {
 
 
     tablaPacienteProgramados = new dhtmlXGridObject('Div_pacientesprogramados');
-    tablaPacienteProgramados.setImagePath("../../../../medifacil_front/imagen/icono/");
+    tablaPacienteProgramados.setImagePath("../../../../fastmedical_front/imagen/icono/");
     tablaPacienteProgramados.setSkin("dhx_skyblue");
     tablaPacienteProgramados.enableMultiline(true);
     tablaPacienteProgramados.attachEvent("onRowSelect", eventoPacienteProgramado);
@@ -285,7 +285,7 @@ function mostrarPacientesAdicionales(codigocronograma) {
     //parametros+='&p3='+codigoactividad;
 
     tablaPacienteAdicionales = new dhtmlXGridObject('Div_pacientesadicionales');
-    tablaPacienteAdicionales.setImagePath("../../../../medifacil_front/imagen/icono/");
+    tablaPacienteAdicionales.setImagePath("../../../../fastmedical_front/imagen/icono/");
     tablaPacienteAdicionales.setSkin("dhx_skyblue");
     tablaPacienteAdicionales.attachEvent("onRowSelect", eventoPacienteAdicional);//seleccionamos la fila
     //////////para cargador peche////////////////
@@ -815,7 +815,7 @@ function tablaSintomas() {
     parametros = '';
     parametros += 'p1=' + patronModulo;
     miTablaSintoma = new dhtmlXGridObject('divTblSintomas');
-    miTablaSintoma.setImagePath("../../../../medifacil_front/imagen/icono/");//miTablaSintoma.setImagePath("../../codebase/imgs/");
+    miTablaSintoma.setImagePath("../../../../fastmedical_front/imagen/icono/");//miTablaSintoma.setImagePath("../../codebase/imgs/");
     miTablaSintoma.attachEvent("onRowSelect", agregarMotivoDeConsulta);
     miTablaSintoma.setSkin("dhx_skyblue");
     miTablaSintoma.init();
@@ -891,7 +891,7 @@ function agregarMotivoDeConsulta(rowId, cellInd) {
 }
 
 function cambiarMotivoDeConsulta(n) {
-    //$('imgPreguardarMotivoDeConsulta').src='../../../../medifacil_front/imagen/btn/btn_preguardar.gif';
+    //$('imgPreguardarMotivoDeConsulta').src='../../../../fastmedical_front/imagen/btn/btn_preguardar.gif';
     if ($('hdnEstadoSintoma_' + n).value == '2') {
         $('hdnEstadoSintoma_' + n).value = 4;
     }
@@ -901,7 +901,7 @@ function cambiarMotivoDeConsulta(n) {
 function verMotivoConsultaAnteriores() {
     if ($('hdnAbiertoMotivoConsultaAnteriores').value == 0) {
         $('hdnAbiertoMotivoConsultaAnteriores').value = 1;
-        $('icono_abrirMotivoConsultaAnteriores').src = '../../../../medifacil_front/imagen/icono/cerrarVentana.png';
+        $('icono_abrirMotivoConsultaAnteriores').src = '../../../../fastmedical_front/imagen/icono/cerrarVentana.png';
         codigoProgramacion = $('hcodigoProgramacion').value;
         var codigoPaciente = $('htxtcodigopaciente').value;
         patronModulo = 'verMotivoConsultaAnteriores';
@@ -911,7 +911,7 @@ function verMotivoConsultaAnteriores() {
         $('divMotivoConsultaAnteriores').show();
 
         miTablaMotivoConsulta = new dhtmlXGridObject('divMotivoConsultaAnteriores');
-        miTablaMotivoConsulta.setImagePath("../../../../medifacil_front/imagen/icono/");
+        miTablaMotivoConsulta.setImagePath("../../../../fastmedical_front/imagen/icono/");
         // miTablaAntecedente.attachEvent("onRowSelect", agregarAntecedente);
         //////////para cargador peche////////////////
         contadorCargador++;
@@ -929,12 +929,12 @@ function verMotivoConsultaAnteriores() {
     } else {
         $('hdnAbiertoMotivoConsultaAnteriores').value = 0;
         $('divMotivoConsultaAnteriores').hide();
-        $('icono_abrirMotivoConsultaAnteriores').src = '../../../../medifacil_front/imagen/icono/abrir.png';
+        $('icono_abrirMotivoConsultaAnteriores').src = '../../../../fastmedical_front/imagen/icono/abrir.png';
     }
 }
 
 function preguardarMotivoDeConsulta() {
-    // $('imgPreguardarMotivoDeConsulta').src='../../../../medifacil_front/imagen/btn/btn_preguardar_off.gif';
+    // $('imgPreguardarMotivoDeConsulta').src='../../../../fastmedical_front/imagen/btn/btn_preguardar_off.gif';
     var numeroSintomas = parseInt($('hdnNumSintomas').value);
     var patron = new Array();
     var parametros = new Array();
@@ -1027,7 +1027,7 @@ function buscarSintomaNombre(evento) {
     if (numero == 4 || tecla == 13) {
         sn = 0;
         miTablaSintoma = new dhtmlXGridObject('divTblSintomas');
-        miTablaSintoma.setImagePath("../../../../medifacil_front/imagen/icono/");
+        miTablaSintoma.setImagePath("../../../../fastmedical_front/imagen/icono/");
         miTablaSintoma.attachEvent("onRowSelect", agregarMotivoDeConsulta);
         //////////para cargador peche////////////////
         contadorCargador++;
@@ -1079,7 +1079,7 @@ function buscarSintomaCodigo() {
     if (numero == 2) {
         sc = 0;
         miTablaSintoma = new dhtmlXGridObject('divTblSintomas');
-        miTablaSintoma.setImagePath("../../../../medifacil_front/imagen/icono/");
+        miTablaSintoma.setImagePath("../../../../fastmedical_front/imagen/icono/");
         miTablaSintoma.attachEvent("onRowSelect", agregarMotivoDeConsulta);
         //////////para cargador peche////////////////
         contadorCargador++;
@@ -1476,7 +1476,7 @@ function mostrarTablaAmbientesFisicosxPantalla() {
 //    parametros+='p1='+patronModulo;
 //
 //    mygrid = new dhtmlXGridObject('tablaCie');
-//    mygrid.setImagePath("../../../../medifacil_front/imagen/icono/");
+//    mygrid.setImagePath("../../../../fastmedical_front/imagen/icono/");
 //    mygrid.setHeader("Column A, Column B,Columna C");
 //    mygrid.setInitWidths("100,100,*");
 //    mygrid.setColAlign("right,left,left");
@@ -1493,7 +1493,7 @@ function tablaCie() {
     parametros = '';
     parametros += 'p1=' + patronModulo;
     miTablaCie = new dhtmlXGridObject('tablaCie');
-    miTablaCie.setImagePath("../../../../medifacil_front/imagen/icono/");
+    miTablaCie.setImagePath("../../../../fastmedical_front/imagen/icono/");
     miTablaCie.attachEvent("onRowSelect", agregarAntecedente);
     miTablaCie.setSkin("dhx_skyblue");
     miTablaCie.init();
@@ -1501,7 +1501,7 @@ function tablaCie() {
 }
 
 function agregarAntecedente(rowId, cellInd) {
-    // $('imgPreguardarAntecedentes').src='../../../../medifacil_front/imagen/btn/btn_preguardar.gif';
+    // $('imgPreguardarAntecedentes').src='../../../../fastmedical_front/imagen/btn/btn_preguardar.gif';
     //  $('div_botonPreguardar').show();
 
     var idCieAntecedente = rowId;//var idCieSintoma = miTablaSintoma.getSelectedId();
@@ -1619,7 +1619,7 @@ function buscarCieNombre(evento) {
     if (numero == 4 || tecla == 13) {
         cn = 0;
         miTablaCie = new dhtmlXGridObject('tablaCie');
-        miTablaCie.setImagePath("../../../../medifacil_front/imagen/icono/");
+        miTablaCie.setImagePath("../../../../fastmedical_front/imagen/icono/");
         miTablaCie.attachEvent("onRowSelect", agregarAntecedente);
         //////////para cargador peche////////////////
         contadorCargador++;
@@ -1669,7 +1669,7 @@ function buscarCieCodigo() {
     if (numero == 2) {
         cc = 0;
         miTablaCie = new dhtmlXGridObject('tablaCie');
-        miTablaCie.setImagePath("../../../../medifacil_front/imagen/icono/");
+        miTablaCie.setImagePath("../../../../fastmedical_front/imagen/icono/");
         miTablaCie.attachEvent("onRowSelect", agregarAntecedente);
         //////////para cargador peche////////////////
         contadorCargador++;
@@ -1694,7 +1694,7 @@ function buscarCieCodigo() {
 }
 
 function preguardarAntecedente() {
-    //$('imgPreguardarAntecedentes').src='../../../../medifacil_front/imagen/btn/btn_preguardar_off.gif';
+    //$('imgPreguardarAntecedentes').src='../../../../fastmedical_front/imagen/btn/btn_preguardar_off.gif';
     var numeroAntecedentes = parseInt($('hNumeroAntecedentes').value);
     var patron = new Array();
     var parametros = new Array();
@@ -1749,7 +1749,7 @@ function preguardarAntecedente() {
 
 }
 function cambiarAntecedente(n) {
-    // $('imgPreguardarAntecedentes').src='../../../../medifacil_front/imagen/btn/btn_preguardar.gif';
+    // $('imgPreguardarAntecedentes').src='../../../../fastmedical_front/imagen/btn/btn_preguardar.gif';
     if ($('hEstadoAgregar_' + n).value == '2') {
         $('hEstadoAgregar_' + n).value = 4;
     }
@@ -1758,7 +1758,7 @@ function cambiarAntecedente(n) {
 function verAntecedentesAnteriores() {
     if ($('habierto').value == 0) {
         $('habierto').value = 1;
-        $('icono_abrir').src = '../../../../medifacil_front/imagen/icono/cerrarVentana.png';
+        $('icono_abrir').src = '../../../../fastmedical_front/imagen/icono/cerrarVentana.png';
         var codigoPaciente = $('htxtcodigopaciente').value;
         patronModulo = 'verAntecedentesAnteriores';
         parametros = '';
@@ -1767,7 +1767,7 @@ function verAntecedentesAnteriores() {
         $('divAntecedentesAnteriores').show();
 
         miTablaAntecedente = new dhtmlXGridObject('divAntecedentesAnteriores');
-        miTablaAntecedente.setImagePath("../../../../medifacil_front/imagen/icono/");
+        miTablaAntecedente.setImagePath("../../../../fastmedical_front/imagen/icono/");
         // miTablaAntecedente.attachEvent("onRowSelect", agregarAntecedente);
         miTablaAntecedente.setSkin("dhx_skyblue");
         miTablaAntecedente.init();
@@ -1775,7 +1775,7 @@ function verAntecedentesAnteriores() {
     } else {
         $('habierto').value = 0;
         $('divAntecedentesAnteriores').hide();
-        $('icono_abrir').src = '../../../darxAtencionCompletada../medifacil_front/imagen/icono/abrir.png';
+        $('icono_abrir').src = '../../../darxAtencionCompletada../fastmedical_front/imagen/icono/abrir.png';
     }
 
 }
@@ -2021,7 +2021,7 @@ function preguardarPruebaCorregido(idPrueba) {
             alert("Ingrese como m\xEDnimo 50 caracteres\nen la evoluci\xF3n");
         }
         else {
-            // $('imgPreguardarPrueba'+idPrueba).src='../../../../medifacil_front/imagen/btn/btn_preguardar_off.gif';
+            // $('imgPreguardarPrueba'+idPrueba).src='../../../../fastmedical_front/imagen/btn/btn_preguardar_off.gif';
             iCodigoProgramacion = $('hcodigoProgramacion').value;
             numeroCampos = parseInt($('numeroCampos_' + idPrueba).value);
             cadenaCampos = '';
@@ -2089,7 +2089,7 @@ function preguardarPruebaCorregido(idPrueba) {
         }
     }
     else {
-        // $('imgPreguardarPrueba'+idPrueba).src='../../../../medifacil_front/imagen/btn/btn_preguardar_off.gif';
+        // $('imgPreguardarPrueba'+idPrueba).src='../../../../fastmedical_front/imagen/btn/btn_preguardar_off.gif';
         iCodigoProgramacion = $('hcodigoProgramacion').value;
         numeroCampos = parseInt($('numeroCampos_' + idPrueba).value);
         cadenaCampos = '';
@@ -2166,7 +2166,7 @@ function preguardarPrueba(idPrueba) {
             alert("Ingrese como m\xEDnimo 50 caracteres\nen la evoluci\xF3n");
         }
         else {
-            //$('imgPreguardarPrueba'+idPrueba).src='../../../../medifacil_front/imagen/btn/btn_preguardar_off.gif';
+            //$('imgPreguardarPrueba'+idPrueba).src='../../../../fastmedical_front/imagen/btn/btn_preguardar_off.gif';
             iCodigoProgramacion = $('hcodigoProgramacion').value;
             numeroCampos = parseInt($('numeroCampos_' + idPrueba).value);
             cadenaCampos = '';
@@ -2234,7 +2234,7 @@ function preguardarPrueba(idPrueba) {
         }
     }
     else {
-        //$('imgPreguardarPrueba'+idPrueba).src='../../../../medifacil_front/imagen/btn/btn_preguardar_off.gif';
+        //$('imgPreguardarPrueba'+idPrueba).src='../../../../fastmedical_front/imagen/btn/btn_preguardar_off.gif';
         iCodigoProgramacion = $('hcodigoProgramacion').value;
         numeroCampos = parseInt($('numeroCampos_' + idPrueba).value);
         cadenaCampos = '';
@@ -2309,7 +2309,7 @@ function cambioEstado(idCampoEstado) {
     var m = idCampoEstado.lastIndexOf('_');
     var idPrueba = idCampoEstado.substring(12, m);
 
-    //$('imgPreguardarPrueba'+idPrueba).src='../../../../medifacil_front/imagen/btn/btn_preguardar.gif';
+    //$('imgPreguardarPrueba'+idPrueba).src='../../../../fastmedical_front/imagen/btn/btn_preguardar.gif';
     var estado = $(idCampoEstado).value;
     if (estado == 2) {
         $(idCampoEstado).value = 4;
@@ -2510,12 +2510,12 @@ function cargaFechaVencimientoRecetaMedica() {
 function abrirDiv(nombreDiv) {
     if (document.getElementById(nombreDiv).style.display == 'none') {
         $(nombreDiv).show();
-        $(nombreDiv + "icono").src = '../../../../medifacil_front/imagen/icono/plegar.png';
+        $(nombreDiv + "icono").src = '../../../../fastmedical_front/imagen/icono/plegar.png';
         $(nombreDiv + "icono").title = 'Desplegar';
     }
     else {
         $(nombreDiv).hide();
-        $(nombreDiv + "icono").src = '../../../../medifacil_front/imagen/icono/desplegar.png';
+        $(nombreDiv + "icono").src = '../../../../fastmedical_front/imagen/icono/desplegar.png';
         $(nombreDiv + "icono").title = 'Plegar';
     }
 }
@@ -2596,7 +2596,7 @@ function tablaProductosTratamientosHC() {
     parametros += '&p2=' + parametronombremedicamento;
 
     tablaProductosTratamientos = new dhtmlXGridObject('Div_TablaTratamientoMedicamentosoHC');
-    tablaProductosTratamientos.setImagePath("../../../../medifacil_front/imagen/icono/");
+    tablaProductosTratamientos.setImagePath("../../../../fastmedical_front/imagen/icono/");
     tablaProductosTratamientos.setSkin("dhx_skyblue");
     //tablaProductosTratamientos.attachEvent("onRowSelect", agregarMedicamentoHC);
     tablaProductosTratamientos.attachEvent("onRowSelect", function(rId, cInd) {
@@ -2901,7 +2901,7 @@ function tablaPracticasMedicasTratamientosHC() {
     parametros += '&p2=' + parametronombrepracticamedica;
 
     tablaPracticasMedicasTratamientos = new dhtmlXGridObject('Div_TablaTratamientoPracticasMedicasHC');
-    tablaPracticasMedicasTratamientos.setImagePath("../../../../medifacil_front/imagen/icono/");
+    tablaPracticasMedicasTratamientos.setImagePath("../../../../fastmedical_front/imagen/icono/");
     tablaPracticasMedicasTratamientos.setSkin("dhx_skyblue");
     tablaPracticasMedicasTratamientos.attachEvent("onRowSelect", agregarPracticaMedicaHC);
     tablaPracticasMedicasTratamientos.init();
@@ -2909,7 +2909,7 @@ function tablaPracticasMedicasTratamientosHC() {
 }
 
 function agregarPracticaMedicaHC(rowId, cellInd, data) {
-    //$('imgPreguardarTratatamientoPracticasMedicas').src='../../../../medifacil_front/imagen/btn/btn_preguardar.gif';
+    //$('imgPreguardarTratatamientoPracticasMedicas').src='../../../../fastmedical_front/imagen/btn/btn_preguardar.gif';
     if (data == undefined) {
         codigopracticamedica = tablaPracticasMedicasTratamientos.cells(rowId, 0).getValue();
         descripcionpracticamedica = tablaPracticasMedicasTratamientos.cells(rowId, 1).getValue();
@@ -3057,7 +3057,7 @@ function tablaPreciosTratamientoAtencionMedica(codigo) {
     parametros += 'p1=' + patronModulo;
     parametros += '&p2=' + codigo;
     tablaPreciosAtencionMedicaTratamiento = new dhtmlXGridObject('Div_tablapreciosProductosServicios');
-    tablaPreciosAtencionMedicaTratamiento.setImagePath("../../../../medifacil_front/imagen/icono/");
+    tablaPreciosAtencionMedicaTratamiento.setImagePath("../../../../fastmedical_front/imagen/icono/");
     tablaPreciosAtencionMedicaTratamiento.setSkin("dhx_skyblue");
     //tablaPreciosAtencionMedicaTratamiento.attachEvent("onRowSelect", agregarPracticaMedicaHC);
     tablaPreciosAtencionMedicaTratamiento.init();
@@ -3364,7 +3364,7 @@ function preguardarTratatamientoMedicamentosoCorregido() {
         }
     }
 //preguardarFechaVencimientoReceta();
-// $('imgPreguardarTratatamientoMedicamentoso').src='../../../../medifacil_front/imagen/btn/btn_preguardar_off.gif';
+// $('imgPreguardarTratatamientoMedicamentoso').src='../../../../fastmedical_front/imagen/btn/btn_preguardar_off.gif';
 }
 
 function preguardarTratatamientoMedicamentoso() {
@@ -3460,7 +3460,7 @@ function preguardarTratatamientoMedicamentoso() {
         }
     }
 // preguardarFechaVencimientoReceta();
-//$('imgPreguardarTratatamientoMedicamentoso').src='../../../../medifacil_front/imagen/btn/btn_preguardar_off.gif';
+//$('imgPreguardarTratatamientoMedicamentoso').src='../../../../fastmedical_front/imagen/btn/btn_preguardar_off.gif';
 }
 
 function preguardarFechaVencimientoReceta() {
@@ -3486,7 +3486,7 @@ function preguardarFechaVencimientoReceta() {
 }
 
 function preguardarTratatamientoPracticasMedicas(estado) {
-    //$('imgPreguardarTratatamientoPracticasMedicas').src='../../../../medifacil_front/imagen/btn/btn_preguardar_off.gif';
+    //$('imgPreguardarTratatamientoPracticasMedicas').src='../../../../fastmedical_front/imagen/btn/btn_preguardar_off.gif';
 
     if (estado == undefined) {
         estado = 0;
@@ -3556,7 +3556,7 @@ function preguardarTratatamientoPracticasMedicas(estado) {
 //}
 }
 function cambiarEstadoTratamientoMedicamentoso(n) {
-    // $('imgPreguardarTratatamientoMedicamentoso').src='../../../../medifacil_front/imagen/btn/btn_preguardar.gif';
+    // $('imgPreguardarTratatamientoMedicamentoso').src='../../../../fastmedical_front/imagen/btn/btn_preguardar.gif';
 
     if ($('hEstadoAgregarTratamientoMedicamentoso_' + n).value == '2') {
         $('hEstadoAgregarTratamientoMedicamentoso_' + n).value = 4;
@@ -3564,7 +3564,7 @@ function cambiarEstadoTratamientoMedicamentoso(n) {
     preguardarTratatamientoMedicamentosoCorregido();
 }
 function cambiarEstadoTratamientoPracticasMedicas(n) {
-    // $('imgPreguardarTratatamientoPracticasMedicas').src='../../../../medifacil_front/imagen/btn/btn_preguardar.gif';
+    // $('imgPreguardarTratatamientoPracticasMedicas').src='../../../../fastmedical_front/imagen/btn/btn_preguardar.gif';
 
     if ($('hEstadoAgregarTratamientoPracticaMedica_' + n).value == '2') {
         $('hEstadoAgregarTratamientoPracticaMedica_' + n).value = 4;
@@ -3573,7 +3573,7 @@ function cambiarEstadoTratamientoPracticasMedicas(n) {
 
 }
 function cambiarFechaVencimientoRecetaUnica() {
-// $('imgPreguardarTratatamientoMedicamentoso').src='../../../../medifacil_front/imagen/btn/btn_preguardar.gif';
+// $('imgPreguardarTratatamientoMedicamentoso').src='../../../../fastmedical_front/imagen/btn/btn_preguardar.gif';
 }
 /*----------busquedas---------*/
 
@@ -3593,7 +3593,7 @@ function busquedaTratamientoMedicamentosoNombre(evento) {
     if (numero == 4 || tecla == 13) {
         tmn = 0;
         tablaProductosTratamientos = new dhtmlXGridObject('Div_TablaTratamientoMedicamentosoHC');
-        tablaProductosTratamientos.setImagePath("../../../../medifacil_front/imagen/icono/");
+        tablaProductosTratamientos.setImagePath("../../../../fastmedical_front/imagen/icono/");
         //tablaProductosTratamientos.attachEvent("onRowSelect", agregarMedicamentoHC);
         tablaProductosTratamientos.attachEvent("onRowSelect", function(rId, cInd) {
             agregarMedicamentoHC(rId, cInd, '');
@@ -3645,7 +3645,7 @@ function buscarTratamientoMedicamentosoCodigo() {
     if (numero == 3) {
         tmc = 0;
         tablaProductosTratamientos = new dhtmlXGridObject('Div_TablaTratamientoMedicamentosoHC');
-        tablaProductosTratamientos.setImagePath("../../../../medifacil_front/imagen/icono/");
+        tablaProductosTratamientos.setImagePath("../../../../fastmedical_front/imagen/icono/");
         //tablaProductosTratamientos.attachEvent("onRowSelect", agregarMedicamentoHC);
         tablaProductosTratamientos.attachEvent("onRowSelect", function(rId, cInd) {
             agregarMedicamentoHC(rId, cInd, '');
@@ -3687,7 +3687,7 @@ function busquedaTratamientoPracticaNombre(evento) {                            
     if (numero == 4 || tecla == 13) {
         tmp = 0;
         tablaPracticasMedicasTratamientos = new dhtmlXGridObject('Div_TablaTratamientoPracticasMedicasHC');
-        tablaPracticasMedicasTratamientos.setImagePath("../../../../medifacil_front/imagen/icono/");
+        tablaPracticasMedicasTratamientos.setImagePath("../../../../fastmedical_front/imagen/icono/");
         tablaPracticasMedicasTratamientos.attachEvent("onRowSelect", agregarPracticaMedicaHC);
         //////////para cargador peche////////////////
         contadorCargador++;
@@ -3738,7 +3738,7 @@ function buscarTratamientoPracticaCodigo() {
     if (numero == 3) {
         tmpc = 0;
         tablaPracticasMedicasTratamientos = new dhtmlXGridObject('Div_TablaTratamientoPracticasMedicasHC');
-        tablaPracticasMedicasTratamientos.setImagePath("../../../../medifacil_front/imagen/icono/");
+        tablaPracticasMedicasTratamientos.setImagePath("../../../../fastmedical_front/imagen/icono/");
         tablaPracticasMedicasTratamientos.attachEvent("onRowSelect", agregarPracticaMedicaHC);
         //////////para cargador peche////////////////
         contadorCargador++;
@@ -3817,7 +3817,7 @@ function cargaTratamientosPracticasMedicasPreguardados() {
 function verRecetasAnteriores() {
     if ($('habiertoRecetasAnteriores').value == 0) {
         $('habiertoRecetasAnteriores').value = 1;
-        $('icono_abrirRecetasAnteriores').src = '../../../../medifacil_front/imagen/icono/cerrarVentana.png';
+        $('icono_abrirRecetasAnteriores').src = '../../../../fastmedical_front/imagen/icono/cerrarVentana.png';
         var codigopaciente = $('htxtcodigopaciente').value;
         var tipotratamiento = '1';
         var patronModulo = 'verTratamientosAnteriores';
@@ -3828,7 +3828,7 @@ function verRecetasAnteriores() {
         $('Div_RecetasAnteriores').show();
 
         tablaRecetasAnteriores = new dhtmlXGridObject('Div_RecetasAnteriores');
-        tablaRecetasAnteriores.setImagePath("../../../../medifacil_front/imagen/icono/");
+        tablaRecetasAnteriores.setImagePath("../../../../fastmedical_front/imagen/icono/");
         tablaRecetasAnteriores.attachEvent("onRowSelect", verReceta);
         tablaRecetasAnteriores.setSkin("dhx_skyblue");
         tablaRecetasAnteriores.init();
@@ -3837,7 +3837,7 @@ function verRecetasAnteriores() {
     else {
         $('habiertoRecetasAnteriores').value = 0;
         $('Div_RecetasAnteriores').hide();
-        $('icono_abrirRecetasAnteriores').src = '../../../../medifacil_front/imagen/icono/abrir.png';
+        $('icono_abrirRecetasAnteriores').src = '../../../../fastmedical_front/imagen/icono/abrir.png';
     }
 
 }
@@ -3851,7 +3851,7 @@ function verReceta(rowId, cellInd) {
 function verPracticasMedicasAnteriores() {
     if ($('habiertoPracticasMedicasAnteriores').value == 0) {
         $('habiertoPracticasMedicasAnteriores').value = 1;
-        $('icono_abrirPracticasMedicasAnteriores').src = '../../../../medifacil_front/imagen/icono/cerrarVentana.png';
+        $('icono_abrirPracticasMedicasAnteriores').src = '../../../../fastmedical_front/imagen/icono/cerrarVentana.png';
         codigopaciente = $('htxtcodigopaciente').value;
         tipotratamiento = '2';
         patronModulo = 'verTratamientosAnteriores';
@@ -3862,7 +3862,7 @@ function verPracticasMedicasAnteriores() {
         $('Div_PracticasMedicasAnteriores').show();
 
         tablaPracticasMedicasAnteriores = new dhtmlXGridObject('Div_PracticasMedicasAnteriores');
-        tablaPracticasMedicasAnteriores.setImagePath("../../../../medifacil_front/imagen/icono/");
+        tablaPracticasMedicasAnteriores.setImagePath("../../../../fastmedical_front/imagen/icono/");
         tablaPracticasMedicasAnteriores.attachEvent("onRowSelect", verReceta);
         tablaPracticasMedicasAnteriores.setSkin("dhx_skyblue");
         tablaPracticasMedicasAnteriores.init();
@@ -3870,7 +3870,7 @@ function verPracticasMedicasAnteriores() {
     } else {
         $('habiertoPracticasMedicasAnteriores').value = 0;
         $('Div_PracticasMedicasAnteriores').hide();
-        $('icono_abrirPracticasMedicasAnteriores').src = '../../../../medifacil_front/imagen/icono/abrir.png';
+        $('icono_abrirPracticasMedicasAnteriores').src = '../../../../fastmedical_front/imagen/icono/abrir.png';
     }
 }
 
@@ -3954,7 +3954,7 @@ function cargaDiagnosticos() {
     parametros += '&p2=' + parametronombrediagnostico;
 
     tablaDiagnosticos = new dhtmlXGridObject('Div_TablaDiagnosticoHC');
-    tablaDiagnosticos.setImagePath("../../../../medifacil_front/imagen/icono/");
+    tablaDiagnosticos.setImagePath("../../../../fastmedical_front/imagen/icono/");
     tablaDiagnosticos.setSkin("dhx_skyblue");
     tablaDiagnosticos.attachEvent("onRowSelect", agregarDiagnosticoHC);
     //////////para cargador peche////////////////
@@ -4032,7 +4032,7 @@ function agregarOtroMotivoDeConsultaDesdeBoton() {
 }
 
 function agregarOtroMotivoDeConsultaEnVista(idCieSintoma, cCodigoCie, vDescripcion) {
-    $('imgPreguardarMotivoDeConsulta').src = '../../../../medifacil_front/imagen/btn/btn_preguardar.gif';
+    $('imgPreguardarMotivoDeConsulta').src = '../../../../fastmedical_front/imagen/btn/btn_preguardar.gif';
     //alert('Fila: '+rowId+'Columna: '+cellInd);
     //$('Div_btnPreguardar').style.display="block";
     //var idCieSintoma = rowId;//var idCieSintoma = miTablaSintoma.getSelectedId();
@@ -4071,7 +4071,7 @@ function agregarOtroMotivoDeConsultaEnVista(idCieSintoma, cCodigoCie, vDescripci
 
 function agregarOtroDiagnostico(rowId, cellInd, data) {
     alert(rowId + '------' + cellInd + '------' + data);
-    //$('imgPreguardarDiagnosticos').src='../../../../medifacil_front/imagen/btn/btn_preguardar.gif';
+    //$('imgPreguardarDiagnosticos').src='../../../../fastmedical_front/imagen/btn/btn_preguardar.gif';
     /*if(data==undefined){
      
      if($('hNumeroDiagnostico').value == '0'){
@@ -4256,7 +4256,7 @@ function agregarDiagnosticoHC(rowId, cellInd, data) {
 }
 function agregarDiagnosticoPreguardadoHC(rowId, cellInd, data) {
 
-    //$('imgPreguardarDiagnosticos').src='../../../../medifacil_front/imagen/btn/btn_preguardar.gif';
+    //$('imgPreguardarDiagnosticos').src='../../../../fastmedical_front/imagen/btn/btn_preguardar.gif';
     //    alert(1);
     if (data == undefined) {
         if ($('hNumeroDiagnostico').value == '0') {
@@ -4481,7 +4481,7 @@ function validarLlenadoTiposDiagnosticosCorregido() {
 }
 
 function preguardarDiagnosticosCorregido() {
-    //$('imgPreguardarDiagnosticos').src='../../../../medifacil_front/imagen/btn/btn_preguardar_off.gif';
+    //$('imgPreguardarDiagnosticos').src='../../../../fastmedical_front/imagen/btn/btn_preguardar_off.gif';
     var cantidadCies = parseInt($("hNumeroDiagnostico").value);
     var observacion = $("txtareaObservacionDiagnostico").value;
     var hEstado = "hEstadoAgregarDiagnostico";
@@ -4625,7 +4625,7 @@ function validarLlenadoTiposDiagnosticos() {
 }
 function preguardarDiagnosticos() {
 
-    // $('imgPreguardarDiagnosticos').src='../../../../medifacil_front/imagen/btn/btn_preguardar_off.gif';
+    // $('imgPreguardarDiagnosticos').src='../../../../fastmedical_front/imagen/btn/btn_preguardar_off.gif';
     opcionpreguardarDiagnosticos = validarLlenadoTiposDiagnosticos();
     if (opcionpreguardarDiagnosticos == 0) {
         cantidadCies = parseInt($("hNumeroDiagnostico").value);
@@ -4736,7 +4736,7 @@ function preguardarDiagnosticos() {
 }
 
 function cambiarEstadoDiagnostico() {
-    //$('imgPreguardarDiagnosticos').src='../../../../medifacil_front/imagen/btn/btn_preguardar.gif';
+    //$('imgPreguardarDiagnosticos').src='../../../../fastmedical_front/imagen/btn/btn_preguardar.gif';
     if ($('hEstadoAgregarDiagnostico').value == '2') {
         $('hEstadoAgregarDiagnostico').value = 4;
     }
@@ -4758,7 +4758,7 @@ function busquedaDiagnosticoNombre(evento) {
     if (numero == 3 || tecla == 13) {
         dn = 0;
         tablaDiagnosticos = new dhtmlXGridObject('Div_TablaDiagnosticoHC');
-        tablaDiagnosticos.setImagePath("../../../../medifacil_front/imagen/icono/");
+        tablaDiagnosticos.setImagePath("../../../../fastmedical_front/imagen/icono/");
         tablaDiagnosticos.attachEvent("onRowSelect", verificarPaqueteEtaero);
         //////////para cargador peche////////////////
         contadorCargador++;
@@ -4908,7 +4908,7 @@ function buscarDiagnosticoCodigo() {
     if (numero == 2) {
         dc = 0;
         tablaDiagnosticos = new dhtmlXGridObject('Div_TablaDiagnosticoHC');
-        tablaDiagnosticos.setImagePath("../../../../medifacil_front/imagen/icono/");
+        tablaDiagnosticos.setImagePath("../../../../fastmedical_front/imagen/icono/");
         tablaDiagnosticos.attachEvent("onRowSelect", agregarDiagnosticoHC);
         tablaDiagnosticos.setSkin("dhx_skyblue");
         tablaDiagnosticos.init();
@@ -4951,7 +4951,7 @@ function cargaDiagnosticosPreguardados() {
 function verDiagnosticosAnteriores() {
     if ($('habiertoDiagnosticosAnteriores').value == 0) {
         $('habiertoDiagnosticosAnteriores').value = 1;
-        $('icono_abrirDiagnosticosAnteriores').src = '../../../../medifacil_front/imagen/icono/cerrarVentana.png';
+        $('icono_abrirDiagnosticosAnteriores').src = '../../../../fastmedical_front/imagen/icono/cerrarVentana.png';
         codigopaciente = $('htxtcodigopaciente').value;
         patronModulo = 'verDiagnosticosAnteriores';
         parametros = '';
@@ -4960,7 +4960,7 @@ function verDiagnosticosAnteriores() {
         $('Div_DiagnosticosAnteriores').show();
 
         tablaDiagnosticosAnteriores = new dhtmlXGridObject('Div_DiagnosticosAnteriores');
-        tablaDiagnosticosAnteriores.setImagePath("../../../../medifacil_front/imagen/icono/");
+        tablaDiagnosticosAnteriores.setImagePath("../../../../fastmedical_front/imagen/icono/");
         tablaDiagnosticosAnteriores.attachEvent("onRowSelect", verDiagnostico);
         tablaDiagnosticosAnteriores.setSkin("dhx_skyblue");
         tablaDiagnosticosAnteriores.init();
@@ -4969,7 +4969,7 @@ function verDiagnosticosAnteriores() {
     else {
         $('habiertoDiagnosticosAnteriores').value = 0;
         $('Div_DiagnosticosAnteriores').hide();
-        $('icono_abrirDiagnosticosAnteriores').src = '../../../../medifacil_front/imagen/icono/abrir.png';
+        $('icono_abrirDiagnosticosAnteriores').src = '../../../../fastmedical_front/imagen/icono/abrir.png';
     }
 }
 function verDiagnostico(rowId, cellInd) {
@@ -5017,7 +5017,7 @@ function tablaDiagnosticoAnteriorPopUp(codigoprogramacion) {
     parametros += 'p1=' + patronModulo;
     parametros += '&p2=' + codigoprogramacion;
     tablaDiagnosticoAnterior = new dhtmlXGridObject('Div_TablaDiagnosticoCIEPopUp');
-    tablaDiagnosticoAnterior.setImagePath("../../../../medifacil_front/imagen/icono/");
+    tablaDiagnosticoAnterior.setImagePath("../../../../fastmedical_front/imagen/icono/");
     tablaDiagnosticoAnterior.setSkin("dhx_skyblue");
     //tablaPreciosAtencionMedicaTratamiento.attachEvent("onRowSelect", agregarPracticaMedicaHC);
     tablaDiagnosticoAnterior.init();
@@ -5432,7 +5432,7 @@ function arbolExamenFisico()
     divMostrar.innerHTML = " ";
     treex = new dhtmlXTreeObject("divTreeExamen", "100%", "100%", 0);
     treex.setSkin('dhx_skyblue');
-    treex.setImagePath("../../../../medifacil_front/imagen/csh_bluebooks_simedh/");
+    treex.setImagePath("../../../../fastmedical_front/imagen/csh_bluebooks_simedh/");
     treex.attachEvent("onClick", function() {
         preeditaExamenFisico(treex.getSelectedItemId(), treex.getSelectedItemText());
         return true;
@@ -5449,7 +5449,7 @@ function asignarPadreExamenFisico() {
     divMostrar.innerHTML = " ";
     tree = new dhtmlXTreeObject("divAsignarPadre", "100%", "100%", 0);
     tree.setSkin('dhx_skyblue');
-    tree.setImagePath("../../../../medifacil_front/imagen/csh_bluebooks_simedh/");
+    tree.setImagePath("../../../../fastmedical_front/imagen/csh_bluebooks_simedh/");
     tree.attachEvent("onClick", function() {
         capturarPadreExamenFisico(tree.getSelectedItemId(), tree.getSelectedItemText());
         return true;
@@ -6857,7 +6857,7 @@ function recargarArbolCCostosActividadServicio() {
     divArbol = document.getElementById('divArbolCCostos');
     divArbol.innerHTML = " ";
     arbolCentroCosto = new dhtmlXTreeObject("divArbolCCostos", "100%", "100%", 0);
-    arbolCentroCosto.setImagePath("../../../../medifacil_front/imagen/icono/tree/");
+    arbolCentroCosto.setImagePath("../../../../fastmedical_front/imagen/icono/tree/");
     arbolCentroCosto.attachEvent("onClick", function() {
         //funcionArbolCentroCosto(funcion,arbolCentroCosto.getSelectedItemId());
         var idNodo = arbolCentroCosto.getSelectedItemId();
@@ -7031,7 +7031,7 @@ function recargarArbolCCostosActividadServicios(funcion) {
     divArbol = document.getElementById('divArbolCCostos');
     divArbol.innerHTML = " ";
     arbolCentroCosto = new dhtmlXTreeObject("divArbolCCostos", "100%", "100%", 0);
-    arbolCentroCosto.setImagePath("../../../../medifacil_front/imagen/icono/tree/");
+    arbolCentroCosto.setImagePath("../../../../fastmedical_front/imagen/icono/tree/");
     arbolCentroCosto.attachEvent("onClick", function() {
         //funcionArbolCentroCosto(funcion,arbolCentroCosto.getSelectedItemId());
         var idNodo = arbolCentroCosto.getSelectedItemId();
@@ -8000,7 +8000,7 @@ function buscarTablaCPT(a, b, evento) {
     if (numero == 4 || tecla == 13) {
         vcpt = 0;
         tablaCPT = new dhtmlXGridObject('div_TablaCPT');
-        tablaCPT.setImagePath("../../../../medifacil_front/imagen/icono/");
+        tablaCPT.setImagePath("../../../../fastmedical_front/imagen/icono/");
         tablaCPT.attachEvent("onRowSelect", function(fila, columna) {
             $('txtiIdCPT').value = tablaCPT.cells(fila, 0).getValue();
             reporteEquivalenciaCPT(fila, columna);
@@ -8115,7 +8115,7 @@ function buscarMxserpro(a, b, evento) {
     if (numero == 4 || tecla == 13) {
         vmxserpro = 0;
         tablaMxserpro = new dhtmlXGridObject('div_TablaMxserpro');
-        tablaMxserpro.setImagePath("../../../../medifacil_front/imagen/icono/");
+        tablaMxserpro.setImagePath("../../../../fastmedical_front/imagen/icono/");
         tablaMxserpro.attachEvent("onRowSelect", function(fila, columna) {
             actualizarTablaEquivalente(fila, columna);
         //        reporteEquivalenciaMxserpro(codCPT);
@@ -8279,7 +8279,7 @@ function examenesRelacionados() {
     parametros += 'p1=' + patronModulo;
     parametros += '&p2=' + iIdCPT;
     tablaexamenesRelacionados = new dhtmlXGridObject('div_Equivalencias');
-    tablaexamenesRelacionados.setImagePath("../../../../medifacil_front/imagen/icono/");
+    tablaexamenesRelacionados.setImagePath("../../../../fastmedical_front/imagen/icono/");
     tablaexamenesRelacionados.setSkin("dhx_skyblue");
     tablaexamenesRelacionados.attachEvent("onRowSelect", function(fila, columna) {
         var iIdRelacion = tablaexamenesRelacionados.cells(fila, 0).getValue();
@@ -8778,7 +8778,7 @@ function cargarArbolDiagnostico() {
     divMostrar.innerHTML = " ";
     arbolOdontograma = new dhtmlXTreeObject("arbolOdontologia", "100%", "100%", 0);
     arbolOdontograma.setSkin('dhx_skyblue');
-    arbolOdontograma.setImagePath("../../../../medifacil_front/imagen/csh_bluebooks_simedh/");
+    arbolOdontograma.setImagePath("../../../../fastmedical_front/imagen/csh_bluebooks_simedh/");
     arbolOdontograma.enableMultiLineItems("250px");
     arbolOdontograma.enableTreeLines(true);
     arbolOdontograma.attachEvent("onDblClick", function() {
@@ -8871,7 +8871,7 @@ function buscarTablaOdontologia(evento) {
     if (numero == 3 || tecla == 13) {
         tod = 0;
         tablaProcedimientoOdontologico = new dhtmlXGridObject('tablaOdontologia');
-        tablaProcedimientoOdontologico.setImagePath("../../../../medifacil_front/imagen/icono/");
+        tablaProcedimientoOdontologico.setImagePath("../../../../fastmedical_front/imagen/icono/");
         tablaProcedimientoOdontologico.attachEvent("onRowSelect", function(fila, columna) {
             var nombre = tablaProcedimientoOdontologico.cells(fila, 1).getValue();
             diagnosticoOdontogramaSeleccionado(fila, nombre)
@@ -10050,13 +10050,13 @@ function animacionHistoria(processing) {
 
     processing.setup = function() {
         processing.size(800, 400);
-        imgHistorial = processing.loadImage("../../../../medifacil_front/imagen/odontograma/odontograma.png");
+        imgHistorial = processing.loadImage("../../../../fastmedical_front/imagen/odontograma/odontograma.png");
         var numeroSimbolos = arraySimbolosHistoria.length;
         arrayImagenAzulesHistoria = new Array();
         arrayImagenRojasHistoria = new Array();
         for (var i = 0; i < numeroSimbolos; i++) {
-            arrayImagenAzulesHistoria[i] = processing.loadImage("../../../../medifacil_front/imagen/odontograma/Azules/" + arraySimbolosHistoria[i][2]);
-            arrayImagenRojasHistoria[i] = processing.loadImage("../../../../medifacil_front/imagen/odontograma/Rojos/" + arraySimbolosHistoria[i][2]);
+            arrayImagenAzulesHistoria[i] = processing.loadImage("../../../../fastmedical_front/imagen/odontograma/Azules/" + arraySimbolosHistoria[i][2]);
+            arrayImagenRojasHistoria[i] = processing.loadImage("../../../../fastmedical_front/imagen/odontograma/Rojos/" + arraySimbolosHistoria[i][2]);
         }
         var numeroCaras = arrayCaraDientesHistoria.length;
         for (i = 0; i < numeroCaras; i++) {
@@ -10904,13 +10904,13 @@ function animacion2(processing) {
     }
     processing.setup = function() {
         processing.size(800, 400);
-        img = processing.loadImage("../../../../medifacil_front/imagen/odontograma/odontograma.png");
+        img = processing.loadImage("../../../../fastmedical_front/imagen/odontograma/odontograma.png");
         var numeroSimbolos = arraySimbolos.length;
         arrayImagenAzules = new Array();
         arrayImagenRojas = new Array();
         for (var i = 0; i < numeroSimbolos; i++) {
-            arrayImagenAzules[i] = processing.loadImage("../../../../medifacil_front/imagen/odontograma/Azules/" + arraySimbolos[i][2]);
-            arrayImagenRojas[i] = processing.loadImage("../../../../medifacil_front/imagen/odontograma/Rojos/" + arraySimbolos[i][2]);
+            arrayImagenAzules[i] = processing.loadImage("../../../../fastmedical_front/imagen/odontograma/Azules/" + arraySimbolos[i][2]);
+            arrayImagenRojas[i] = processing.loadImage("../../../../fastmedical_front/imagen/odontograma/Rojos/" + arraySimbolos[i][2]);
         }
 
         var numeroCaras = arrayCaraDientes.length;
@@ -12244,7 +12244,7 @@ function cargarTablaHistoriaOdontograma() {
     contadorCargador++;
     var idCargador = contadorCargador;
     rHistoriaOdontogramaXAtencion = new dhtmlXGridObject('contenedorTablaHistoria');
-    rHistoriaOdontogramaXAtencion.setImagePath("../../../../medifacil_front/imagen/icono/");
+    rHistoriaOdontogramaXAtencion.setImagePath("../../../../fastmedical_front/imagen/icono/");
     rHistoriaOdontogramaXAtencion.attachEvent("onRowSelect", function(fila, columna) {
         var fecha = rHistoriaOdontogramaXAtencion.cells(fila, 0).getValue();
         var diagnostico = rHistoriaOdontogramaXAtencion.cells(fila, 1).getValue();

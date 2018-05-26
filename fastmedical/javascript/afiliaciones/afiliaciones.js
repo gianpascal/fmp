@@ -152,7 +152,7 @@ contribuyentepuntual = {
         parametros+='&p4='+encodeURIComponent(strstring);
 
         tablaContribuyentes = new dhtmlXGridObject('Div_gridContribuyentes');
-        tablaContribuyentes.setImagePath("../../../../medifacil_front/imagen/icono/");
+        tablaContribuyentes.setImagePath("../../../../fastmedical_front/imagen/icono/");
         tablaContribuyentes.setSkin("dhx_skyblue");
 
         tablaContribuyentes.attachEvent("onRowSelect", contribuyentepuntual.consultaestado_contrib);

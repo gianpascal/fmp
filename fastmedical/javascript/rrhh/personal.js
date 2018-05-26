@@ -7,7 +7,7 @@ function seleccionarArbolCCostos()
     myDiv=document.getElementById('menuActCCostos');
     myDiv.innerHTML = " ";
     tree=new dhtmlXTreeObject("menuActCCostos","100%","100%",0);
-    tree.setImagePath("../../../../medifacil_front/imagen/icono/tree/");
+    tree.setImagePath("../../../../fastmedical_front/imagen/icono/tree/");
     tree.attachEvent("onClick", function(){
         clickVerCcostos(tree.getSelectedItemId(),tree.getSelectedItemText());
         document.getElementById("divBotonNew").style.visibility='visible';
@@ -28,7 +28,7 @@ function seleccionarArbolCCostosCompleto()
     myDiv=document.getElementById('menuActCCostos');
     myDiv.innerHTML = " ";
     tree=new dhtmlXTreeObject("menuActCCostos","100%","100%",0);
-    tree.setImagePath("../../../../medifacil_front/imagen/icono/tree/");
+    tree.setImagePath("../../../../fastmedical_front/imagen/icono/tree/");
     tree.attachEvent("onClick", function(){
         clickVerCcostos(tree.getSelectedItemId(),tree.getSelectedItemText());
         document.getElementById("divBotonNew").style.visibility='visible';
@@ -50,7 +50,7 @@ function actualizarArbolCCostos()
     myDiv=document.getElementById('menuActCCostos');
     myDiv.innerHTML = " ";
     tree=new dhtmlXTreeObject("menuActCCostos","100%","100%",0);
-    tree.setImagePath("../../../../medifacil_front/imagen/icono/tree/");
+    tree.setImagePath("../../../../fastmedical_front/imagen/icono/tree/");
     tree.loadXML("../../../../carpetaDocumentos/arbol_centroCostos.xml");
     tree.openAllItems(0);
 }
@@ -764,7 +764,7 @@ function cargaArbolAreaBusqueda(){
     //    alert('paso3');
     treex.setSkin('dhx_skyblue');
     //   alert('paso4');
-    treex.setImagePath("../../../../medifacil_front/imagen/csh_bluebooks_simedh/");
+    treex.setImagePath("../../../../fastmedical_front/imagen/csh_bluebooks_simedh/");
     //   alert('paso5');
     treex.attachEvent("onClick", function(){
         buscarEmpleadosAreas(treex.getSelectedItemId(),treex.getSelectedItemText());
@@ -787,7 +787,7 @@ function cargaArbolAreaBusquedaHorarios(){
     //    alert('paso3');
     treex.setSkin('dhx_skyblue');
     //   alert('paso4');
-    treex.setImagePath("../../../../medifacil_front/imagen/csh_bluebooks_simedh/");
+    treex.setImagePath("../../../../fastmedical_front/imagen/csh_bluebooks_simedh/");
     //   alert('paso5');
     treex.attachEvent("onClick", function(){
         buscarEmpleadosAreasHorarios(treex.getSelectedItemId(),treex.getSelectedItemText());
@@ -811,7 +811,7 @@ function cargaArbolCCosto(){
     divMostrar.innerHTML = " ";
     treeCentroCostos=new dhtmlXTreeObject("divCCostos","100%","100%",0);
     treeCentroCostos.setSkin('dhx_skyblue');
-    treeCentroCostos.setImagePath("../../../../medifacil_front/imagen/csh_bluebooks_simedh/");
+    treeCentroCostos.setImagePath("../../../../fastmedical_front/imagen/csh_bluebooks_simedh/");
     treeCentroCostos.attachEvent("onClick", function(){
         //  buscarEmpleadosCentroCostos();
         buscarEmpleadosCentroCostos(treeCentroCostos.getSelectedItemId(),treeCentroCostos.getSelectedItemText());
@@ -832,7 +832,7 @@ function cargaArbolCCostoHorarios(){
     divMostrar.innerHTML = " ";
     treeCentroCostos=new dhtmlXTreeObject("divCCostos","100%","100%",0);
     treeCentroCostos.setSkin('dhx_skyblue');
-    treeCentroCostos.setImagePath("../../../../medifacil_front/imagen/csh_bluebooks_simedh/");
+    treeCentroCostos.setImagePath("../../../../fastmedical_front/imagen/csh_bluebooks_simedh/");
     treeCentroCostos.attachEvent("onClick", function(){
         //  buscarEmpleadosCentroCostos();
         buscarEmpleadosCentroCostosHorarios(treeCentroCostos.getSelectedItemId(),treeCentroCostos.getSelectedItemText());
@@ -1365,7 +1365,7 @@ function recargarArbolCCostos()
     myDiv=document.getElementById('divOpcPersonal');
     myDiv.innerHTML = " ";
     tree1=new dhtmlXTreeObject("divOpcPersonal","100%","100%",0);
-    tree1.setImagePath("../../../../medifacil_front/imagen/icono/tree/");
+    tree1.setImagePath("../../../../fastmedical_front/imagen/icono/tree/");
     tree1.attachEvent("onClick", function(){
         clickCargaCcostos(tree1.getSelectedItemId(),tree1.getSelectedItemText());
         return true;
@@ -1447,14 +1447,14 @@ function recargarArbolMenuRegistro()
     myDiv=document.getElementById('divIzqSupRegistroP');
     myDiv.innerHTML = " ";
     tree=new dhtmlXTreeObject("divIzqSupRegistroP","100%","100%",0);
-    tree.setImagePath("../../../../medifacil_front/imagen/icono/tree/");
+    tree.setImagePath("../../../../fastmedical_front/imagen/icono/tree/");
     tree.attachEvent("onClick", function(){
         clickMenuRegistro(tree.getSelectedItemId(),tree.getSelectedItemText());
         return true;
     })
     tree.loadXML("../../../javascript/xml/arbolRegistraEmpleado.xml");
     //    myDiv=document.getElementById('divIzqInf');
-    //    myDiv.innerHTML ="<a href='javascript:registroDatosPersonal();'><img border='0' title='Búsqueda Personal' style='width: 10px;' src='../../../../medifacil_front/imagen/btn/b_regresar_on.gif'/></a>";
+    //    myDiv.innerHTML ="<a href='javascript:registroDatosPersonal();'><img border='0' title='Búsqueda Personal' style='width: 10px;' src='../../../../fastmedical_front/imagen/btn/b_regresar_on.gif'/></a>";
 
     tree.openAllItems(0);
 }
@@ -1932,7 +1932,7 @@ function cargarArbolHMLO(sede){
     divMostrar.innerHTML = " ";
     treeArbolAreaSede=new dhtmlXTreeObject("divArbolAreasSedes","100%","100%",0);
     treeArbolAreaSede.setSkin('dhx_skyblue');
-    treeArbolAreaSede.setImagePath("../../../../medifacil_front/imagen/csh_bluebooks_simedh/");
+    treeArbolAreaSede.setImagePath("../../../../fastmedical_front/imagen/csh_bluebooks_simedh/");
     treeArbolAreaSede.attachEvent("onClick", function(idArea,nombre){
         
         asignarAreaSedePuestoEmpleado(idArea,sede,$('hPuestoEmpleado').value);
@@ -4425,7 +4425,7 @@ function cargarArbolCCostoPtoDoc()
     myDiv=document.getElementById('divOpcPtoDocumento');
     myDiv.innerHTML = " ";
     tree1=new dhtmlXTreeObject("divOpcPtoDocumento","100%","100%",0);
-    tree1.setImagePath("../../../../medifacil_front/imagen/icono/tree/");
+    tree1.setImagePath("../../../../fastmedical_front/imagen/icono/tree/");
     tree1.attachEvent("onClick", function(){
         verPuestosDocumento(tree1.getSelectedItemId(),'','detallePuestoCentro');
         return true;
@@ -5964,7 +5964,7 @@ function buscarAreaModCoordinadoresTurnos(){
         //        alert("Nº de teclas presionadas: "+numero);
         dn=0;
         mygridxcor = new dhtmlXGridObject('Div_listadoTodosCordinadores');
-        mygridxcor.setImagePath("../../../../medifacil_front/imagen/icono/");
+        mygridxcor.setImagePath("../../../../fastmedical_front/imagen/icono/");
   
         mygridxcor.attachEvent("onRowSelect",ClickCargarlistadoTodosCordinadores );
         
@@ -6007,7 +6007,7 @@ function buscarAreaModCoordinadoresTurnos(){
 //        //         alert("esta vacio ");
 //        dn=0;
 //        mygridxcor = new dhtmlXGridObject('Div_listadoTodosCordinadores');
-//        mygridxcor.setImagePath("../../../../medifacil_front/imagen/icono/");
+//        mygridxcor.setImagePath("../../../../fastmedical_front/imagen/icono/");
 //  
 //        mygridxcor.attachEvent("onRowSelect",ClickCargarlistadoTodosCordinadores );
 //        //////////para cargador peche////////////////
@@ -6190,7 +6190,7 @@ function cargarArbolenPopPupArbolAreasConCoordinador(){
     //    alert('paso3');
     treex.setSkin('dhx_skyblue');
     //   alert('paso4');
-    treex.setImagePath("../../../../medifacil_front/imagen/csh_bluebooks_simedh/");
+    treex.setImagePath("../../../../fastmedical_front/imagen/csh_bluebooks_simedh/");
     //   alert('paso5');
     treex.attachEvent("onClick", function(){
 
@@ -6280,7 +6280,7 @@ function  buscarAreasArbol(){
  
     
         mygridxcor = new dhtmlXGridObject('Div_listadoTodosCordinadores');
-        mygridxcor.setImagePath("../../../../medifacil_front/imagen/icono/");
+        mygridxcor.setImagePath("../../../../fastmedical_front/imagen/icono/");
   
         mygridxcor.attachEvent("onRowSelect",ClickCargarlistadoTodosCordinadores );
         
@@ -6321,7 +6321,7 @@ function  buscarAreasArbol(){
  
     
         mygridx = new dhtmlXGridObject('Div_listadoTodasAreasSinCoordinador');
-        mygridx.setImagePath("../../../../medifacil_front/imagen/icono/");
+        mygridx.setImagePath("../../../../fastmedical_front/imagen/icono/");
   
         mygridx.attachEvent("onRowSelect",ClickCargarlistadoTodasAreasSinCoordinador );
         
@@ -6416,7 +6416,7 @@ function cargarArbolenPopPupArbolAreasSinCoordinador(){
     //    alert('paso3');
     treex.setSkin('dhx_skyblue');
     //   alert('paso4');
-    treex.setImagePath("../../../../medifacil_front/imagen/csh_bluebooks_simedh/");
+    treex.setImagePath("../../../../fastmedical_front/imagen/csh_bluebooks_simedh/");
     //   alert('paso5');
     treex.attachEvent("onClick", function(){
         alert("click en arbol")
@@ -6456,7 +6456,7 @@ function buscarAreaModSinCoordinadoresTurnos(){
         //        alert("Nº de teclas presionadas: "+numero);
         dn=0;
         mygridx = new dhtmlXGridObject('Div_listadoTodasAreasSinCoordinador');
-        mygridx.setImagePath("../../../../medifacil_front/imagen/icono/");
+        mygridx.setImagePath("../../../../fastmedical_front/imagen/icono/");
   
         mygridx.attachEvent("onRowSelect",ClickCargarlistadoTodasAreasSinCoordinador );
         
@@ -6498,7 +6498,7 @@ function buscarAreaModSinCoordinadoresTurnos(){
         //         alert("esta vacio ");
         //        dn=0;
         mygridx = new dhtmlXGridObject('Div_listadoTodasAreasSinCoordinador');
-        mygridx.setImagePath("../../../../medifacil_front/imagen/icono/");
+        mygridx.setImagePath("../../../../fastmedical_front/imagen/icono/");
   
         mygridx.attachEvent("onRowSelect",ClickCargarlistadoTodasAreasSinCoordinador );
         //////////para cargador peche////////////////
@@ -7798,8 +7798,8 @@ function sumarHorasProgramadas(fil,col){
 
 
 function canbiarIconoHorariosProgramados(opt,fil,col){
-    var modificar="../../../../medifacil_front/imagen/icono/modificar.png ^ Modificar";
-    var editar="../../../../medifacil_front/imagen/icono/editar.png ^ Editar";
+    var modificar="../../../../fastmedical_front/imagen/icono/modificar.png ^ Modificar";
+    var editar="../../../../fastmedical_front/imagen/icono/editar.png ^ Editar";
     switch (opt) {
         case 1://cambiar a editar
             mygridSplitAt.cells(fil,0).setValue(editar);
@@ -7859,15 +7859,15 @@ function colorTablaProgramacionHorarios(){
         cadenaImg=mygridSplitAt.cells(i,0).getValue();
         cadenaImg2=mygridSplitAt.cells(i,2).getValue();
         if(cadenaImg.indexOf('Editar')!=-1)
-            mygridSplitAt.cells(i,0).setValue("../../../../medifacil_front/imagen/icono/editar.png ^ Editar");
+            mygridSplitAt.cells(i,0).setValue("../../../../fastmedical_front/imagen/icono/editar.png ^ Editar");
         else if(cadenaImg.indexOf('Grabar')!=-1)
-            mygridSplitAt.cells(i,0).setValue("../../../../medifacil_front/imagen/icono/modificar.png ^ Modificar");
+            mygridSplitAt.cells(i,0).setValue("../../../../fastmedical_front/imagen/icono/modificar.png ^ Modificar");
         if(cadenaImg2.indexOf('no_add.png')!=-1)
-            mygridSplitAt.cells(i,2).setValue("../../../../medifacil_front/imagen/icono/no_add.png ^ ...");
+            mygridSplitAt.cells(i,2).setValue("../../../../fastmedical_front/imagen/icono/no_add.png ^ ...");
         else
-            mygridSplitAt.cells(i,2).setValue("../../../../medifacil_front/imagen/icono/abrir16.png ^ Agragar otro turno");
+            mygridSplitAt.cells(i,2).setValue("../../../../fastmedical_front/imagen/icono/abrir16.png ^ Agragar otro turno");
             
-        mygridSplitAt.cells(i,1).setValue("../../../../medifacil_front/imagen/icono/timer.png ^ Ver total Horas");
+        mygridSplitAt.cells(i,1).setValue("../../../../fastmedical_front/imagen/icono/timer.png ^ Ver total Horas");
         
     //----------------------------------------
     }
@@ -8745,7 +8745,7 @@ function LimpiaTablansdHorarioRealesAsistenciaRefrescar(){
 //    parametros+='&p2='+codigosede;
 //    parametros+='&p3='+codigoarea;
 //    tablaSubAreas = new dhtmlXGridObject('Div_TablaSubAreas');
-//    tablaSubAreas.setImagePath("../../../../medifacil_front/imagen/icono/");
+//    tablaSubAreas.setImagePath("../../../../fastmedical_front/imagen/icono/");
 //    tablaSubAreas.setSkin("dhx_skyblue");
 //    tablaSubAreas.attachEvent("onRowSelect", function(rowId,cellInd){
 //        $('hCodigoSubArea').value = rowId;
@@ -8801,7 +8801,7 @@ function eliminacionFisicaPuestoArea(fil,col){
 //    parametros+='&p3='+codigoarea;
 //
 //    tablaEmpleadosAreas = new dhtmlXGridObject('Div_TablaEmpleadosArea');
-//    tablaEmpleadosAreas.setImagePath("../../../../medifacil_front/imagen/icono/");
+//    tablaEmpleadosAreas.setImagePath("../../../../fastmedical_front/imagen/icono/");
 //    tablaEmpleadosAreas.setSkin("dhx_skyblue");
 //    tablaEmpleadosAreas.attachEvent("onRowSelect", function(rowId,cellInd){
 //        $('hCodigoEmpleado').value = rowId;
@@ -8820,7 +8820,7 @@ function cargarTablaEmpleadosSubArea(codigosede,codigoarea){
     parametros+='&p3='+codigoarea;
 
     tablaEmpleadosAreas = new dhtmlXGridObject('Div_TablaEmpleadosSubArea');
-    tablaEmpleadosAreas.setImagePath("../../../../medifacil_front/imagen/icono/");
+    tablaEmpleadosAreas.setImagePath("../../../../fastmedical_front/imagen/icono/");
     tablaEmpleadosAreas.setSkin("dhx_skyblue");
     tablaEmpleadosAreas.attachEvent("onRowSelect", function(rowId,cellInd){
         $('$hCodigoEmpleadoSubArea').value = tablaEmpleadosAreas.cells(rowId,0).getValue();
@@ -10470,7 +10470,7 @@ function cargarArbolAreas2(){
     divMostrar.innerHTML = " ";
     treex=new dhtmlXTreeObject("arbolAreas","100%","100%",0);
     treex.setSkin('dhx_skyblue');
-    treex.setImagePath("../../../../medifacil_front/imagen/csh_bluebooks_simedh/");
+    treex.setImagePath("../../../../fastmedical_front/imagen/csh_bluebooks_simedh/");
     treex.attachEvent("onClick", function(){
         sede1="";
         area1="";
@@ -12542,7 +12542,7 @@ function  reporteBusquedaMedico(){
     else{
         //        generarTablaz(div,parametros,funcionClick,funcionDblClick,funcionLoad);
         misMedicos = new dhtmlXGridObject('div_tablaXmedicos');
-        misMedicos.setImagePath("../../../../medifacil_front/imagen/icono/");
+        misMedicos.setImagePath("../../../../fastmedical_front/imagen/icono/");
         //miTablaCie.attachEvent("onRowSelect", '');
         //////////para cargador peche////////////////
         contadorCargador++;
@@ -12688,7 +12688,7 @@ function listaMedicosPorParteAdelante(){
         }else{
                            
             misMedicos1 = new dhtmlXGridObject('div_tablaXmedicos');
-            misMedicos1.setImagePath("../../../../medifacil_front/imagen/icono/");
+            misMedicos1.setImagePath("../../../../fastmedical_front/imagen/icono/");
             misMedicos1.attachEvent("onRowSelect", '');
             //////////para cargador peche////////////////
             contadorCargador++;
@@ -12722,7 +12722,7 @@ function listaMedicosPorParteAdelante(){
 //    if(numero==4){
 //        cn=0;
 //        miTablaCie = new dhtmlXGridObject('tablaCie');
-//        miTablaCie.setImagePath("../../../../medifacil_front/imagen/icono/");
+//        miTablaCie.setImagePath("../../../../fastmedical_front/imagen/icono/");
 //        miTablaCie.attachEvent("onRowSelect", agregarAntecedente);
 //        //////////para cargador peche////////////////
 //        contadorCargador++;
@@ -12778,7 +12778,7 @@ function listaMedicosPorParteAtras(){
             alert("Ingrese las fechas")
         }else{
             misMedicos = new dhtmlXGridObject('div_tablaXmedicos');
-            misMedicos.setImagePath("../../../../medifacil_front/imagen/icono/");
+            misMedicos.setImagePath("../../../../fastmedical_front/imagen/icono/");
             misMedicos.attachEvent("onRowSelect", '');
             //////////para cargador peche////////////////
             contadorCargador++;
@@ -14033,7 +14033,7 @@ function cargaArbolCCostoHorariosMedicos(){
     divMostrar.innerHTML = " ";
     treeCentroCostos=new dhtmlXTreeObject("divCCostosMedicos","100%","100%",0);
     treeCentroCostos.setSkin('dhx_skyblue');
-    treeCentroCostos.setImagePath("../../../../medifacil_front/imagen/csh_bluebooks_simedh/");
+    treeCentroCostos.setImagePath("../../../../fastmedical_front/imagen/csh_bluebooks_simedh/");
     treeCentroCostos.attachEvent("onClick", function(){
         //  buscarEmpleadosCentroCostos();
         buscarMedicosCentroCostosHorarios(treeCentroCostos.getSelectedItemId(),treeCentroCostos.getSelectedItemText());
@@ -14277,7 +14277,7 @@ function cargarArbolHMLORegularizar(id){
     divMostrar.innerHTML = " ";
     treeArbolAreaSedeNuevo=new dhtmlXTreeObject("divArbolAreasSedes","100%","100%",0);
     treeArbolAreaSedeNuevo.setSkin('dhx_skyblue');
-    treeArbolAreaSedeNuevo.setImagePath("../../../../medifacil_front/imagen/csh_bluebooks_simedh/");
+    treeArbolAreaSedeNuevo.setImagePath("../../../../fastmedical_front/imagen/csh_bluebooks_simedh/");
     treeArbolAreaSedeNuevo.attachEvent("onClick", function(){
         actualizarLaSede(sede);
         actualizarSedeAreaNuevo1(sede,treeArbolAreaSedeNuevo.getSelectedItemId());
@@ -14614,7 +14614,7 @@ function cargarArbolHMLORegularizar2(id){
     divMostrar.innerHTML = " ";
     treeArbolAreaSedeNuevo1=new dhtmlXTreeObject("divArbolAreasSedes","100%","100%",0);
     treeArbolAreaSedeNuevo1.setSkin('dhx_skyblue');
-    treeArbolAreaSedeNuevo1.setImagePath("../../../../medifacil_front/imagen/csh_bluebooks_simedh/");
+    treeArbolAreaSedeNuevo1.setImagePath("../../../../fastmedical_front/imagen/csh_bluebooks_simedh/");
     treeArbolAreaSedeNuevo1.attachEvent("onClick", function(){
         actualizarLaSedeEmpleado(sede);
         actualizarSedeAreaNuevo2(sede,treeArbolAreaSedeNuevo1.getSelectedItemId(),3);

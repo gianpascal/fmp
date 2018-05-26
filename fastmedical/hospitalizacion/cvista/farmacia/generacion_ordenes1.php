@@ -1,13 +1,13 @@
 <?php
 require_once("../../../pholivo/Html.php");
     $oToolbarBusqueda = new ToollBar('left','btns');
-    $oToolbarBusqueda->SetBoton('btnBuscarxOrden',"B. Orden",'btn','onClick,KeyPress,onDblClick','pruebaOrden()','../../../../medifacil_front/imagen/icono/kappfinder.png','','','85');
-    $oToolbarBusqueda->SetBoton('btnCambioEstado',"C. Estado",'btn','onClick,KeyPress,onDblClick','alert','../../../../medifacil_front/imagen/icono/actividad3.png','','','80');
-	$oToolbarBusqueda->SetBoton('btnCartas',"Cartas y Depositos",'btn','onClick,KeyPress,onDblClick','alert','../../../../medifacil_front/imagen/icono/min_mail_generic.png','','','80');
-	$oToolbarBusqueda->SetBoton('btnCitas',"Citas",'btn','onClick,KeyPress,onDblClick','alert','../../../../medifacil_front/imagen/icono/eventos.png','','','80');
-	$oToolbarBusqueda->SetBoton('btnNuevo',"Nuevo",'btn','onClick,KeyPress,onDblClick',"nuevaOrden()",'../../../../medifacil_front/imagen/icono/filenew.png','','','80');
-	$oToolbarBusqueda->SetBoton('btnCancelar',"Cancelar",'btn','onClick,KeyPress,onDblClick','alert','../../../../medifacil_front/imagen/icono/santaRosita.png','','','80');
-	$oToolbarBusqueda->SetBoton('btnDevolucion',"Devolucion",'btn','onClick,KeyPress,onDblClick','alert','../../../../medifacil_front/imagen/icono/ark2.png','','','80');
+    $oToolbarBusqueda->SetBoton('btnBuscarxOrden',"B. Orden",'btn','onClick,KeyPress,onDblClick','pruebaOrden()','../../../../fastmedical_front/imagen/icono/kappfinder.png','','','85');
+    $oToolbarBusqueda->SetBoton('btnCambioEstado',"C. Estado",'btn','onClick,KeyPress,onDblClick','alert','../../../../fastmedical_front/imagen/icono/actividad3.png','','','80');
+	$oToolbarBusqueda->SetBoton('btnCartas',"Cartas y Depositos",'btn','onClick,KeyPress,onDblClick','alert','../../../../fastmedical_front/imagen/icono/min_mail_generic.png','','','80');
+	$oToolbarBusqueda->SetBoton('btnCitas',"Citas",'btn','onClick,KeyPress,onDblClick','alert','../../../../fastmedical_front/imagen/icono/eventos.png','','','80');
+	$oToolbarBusqueda->SetBoton('btnNuevo',"Nuevo",'btn','onClick,KeyPress,onDblClick',"nuevaOrden()",'../../../../fastmedical_front/imagen/icono/filenew.png','','','80');
+	$oToolbarBusqueda->SetBoton('btnCancelar',"Cancelar",'btn','onClick,KeyPress,onDblClick','alert','../../../../fastmedical_front/imagen/icono/santaRosita.png','','','80');
+	$oToolbarBusqueda->SetBoton('btnDevolucion',"Devolucion",'btn','onClick,KeyPress,onDblClick','alert','../../../../fastmedical_front/imagen/icono/ark2.png','','','80');
 ?>
 <input type="text" value="0" id="auxOrden"/>
 

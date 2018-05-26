@@ -110,7 +110,7 @@
             </div>
             <?php
             $toolbar1=new ToollBar("center");
-            $toolbar1->SetBoton("DNI","Adjuntar Fotografia","btn","onclick,onkeypress","ventana_add_dni()","../../../../medifacil_front/imagen/icono/adjunto.gif","","",$btndeshabil);
+            $toolbar1->SetBoton("DNI","Adjuntar Fotografia","btn","onclick,onkeypress","ventana_add_dni()","../../../../fastmedical_front/imagen/icono/adjunto.gif","","",$btndeshabil);
             $toolbar1->Mostrar();
             ?>
             <input type="hidden" name="txtFotografia" id="txtFotografia" style="width:90px;" value="<?php echo $dni_fondo;?>"/>
@@ -135,7 +135,7 @@
                 <td  valign="bottom">
                     <?php
                     $toolbar3=new ToollBar("center");
-                    $toolbar3->SetBoton("HUELLA","Adjuntar","btn","onclick,onkeypress","ventana_add_dni()","../../../../medifacil_front/imagen/icono/adjunto.gif","","",$btndeshabil);
+                    $toolbar3->SetBoton("HUELLA","Adjuntar","btn","onclick,onkeypress","ventana_add_dni()","../../../../fastmedical_front/imagen/icono/adjunto.gif","","",$btndeshabil);
                     $toolbar3->Mostrar();
                     ?>
                 </td>
@@ -226,9 +226,9 @@
                 <div id="toolbar">
                     <?php
                     $toolbar=new ToollBar("left");
-                    $toolbar->SetBoton("EDITAR","Editar","btn","onclick,onkeypress","editar_persona()","../../../../medifacil_front/imagen/icono/editar.png","","",$btnhabil);
-                    $toolbar->SetBoton("GRABAR","Guardar","btn","onclick,onkeypress","guardar_persona()","../../../../medifacil_front/imagen/icono/grabar.png","","",$btndeshabil);
-                    $toolbar->SetBoton("RESTAURAR","Restaurar","btn","onclick,onkeypress","restauraCambios()","../../../../medifacil_front/imagen/icono/undo.png","","",($accion=='inserted'?0:$btndeshabil));
+                    $toolbar->SetBoton("EDITAR","Editar","btn","onclick,onkeypress","editar_persona()","../../../../fastmedical_front/imagen/icono/editar.png","","",$btnhabil);
+                    $toolbar->SetBoton("GRABAR","Guardar","btn","onclick,onkeypress","guardar_persona()","../../../../fastmedical_front/imagen/icono/grabar.png","","",$btndeshabil);
+                    $toolbar->SetBoton("RESTAURAR","Restaurar","btn","onclick,onkeypress","restauraCambios()","../../../../fastmedical_front/imagen/icono/undo.png","","",($accion=='inserted'?0:$btndeshabil));
                     $toolbar->Mostrar();
                     ?>
                 </div>

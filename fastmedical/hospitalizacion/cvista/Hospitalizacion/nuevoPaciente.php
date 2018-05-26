@@ -34,7 +34,7 @@ $exti = $resultadoHora[0][2];
 
 <!--                        <td colspan="4" align="center" >-->
                     <a href="javascript:nuevoPacienteHospitalizacion();">
-                        <img border="0" title="Buscar" alt="" src="../../../../medifacil_front/imagen/btn/b_buscar_on.gif"/></a>
+                        <img border="0" title="Buscar" alt="" src="../../../../fastmedical_front/imagen/btn/b_buscar_on.gif"/></a>
                 </td>
             </tr>
             <tr>
@@ -245,26 +245,26 @@ $exti = $resultadoHora[0][2];
                         <tr>
 <!--                            <td align="center">
                                 <a href="javascript:PacienteGuardarHospitalizacion();">
-                                    <img border="0" title="Buscar" alt="" src="../../../../medifacil_front/imagen/btn/b_grabar__on.gif"/></a>   
+                                    <img border="0" title="Buscar" alt="" src="../../../../fastmedical_front/imagen/btn/b_grabar__on.gif"/></a>   
                             </td>-->
 
                             <td>
                                 <?php
                                 $toolbar3 = new ToollBar("left");
-                                $toolbar3->SetBoton("GRABAR", "GRABAR", "btn", "onclick,onkeypress", "PacienteGuardarHospitalizacion()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/grabar.png");
+                                $toolbar3->SetBoton("GRABAR", "GRABAR", "btn", "onclick,onkeypress", "PacienteGuardarHospitalizacion()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/grabar.png");
                                 $toolbar3->Mostrar();
                                 ?>
                             </td>
                             <td>
                                 <?php
                                 $toolbar3 = new ToollBar("left");
-                                $toolbar3->SetBoton("ELIMINAR", "SALIR", "btn", "onclick,onkeypress", "cerrarPaciente()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/salir.gif");
+                                $toolbar3->SetBoton("ELIMINAR", "SALIR", "btn", "onclick,onkeypress", "cerrarPaciente()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/salir.gif");
                                 $toolbar3->Mostrar();
                                 ?>
                             </td>
 <!--                        <td>-->
                             <!--                            <a href="javascript:cerrarPaciente();">
-                                                            <img border="0" title="Buscar" alt="" src="../../../../medifacil_front/imagen/icono/salir.gif"/></a>
+                                                            <img border="0" title="Buscar" alt="" src="../../../../fastmedical_front/imagen/icono/salir.gif"/></a>
                                                     </td>-->
                         </tr>
                     </table>

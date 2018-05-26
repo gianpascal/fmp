@@ -19,7 +19,7 @@
                                             <tr>
         <!--                                        <td>< ?php
 //$toolbar3 = new ToollBar("left");
-//$toolbar3->SetBoton("REFRESCAR", "REFRESCAR", "btn", "onclick,onkeypress", "refrescarTablaPaciente()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/actividad3.png");
+//$toolbar3->SetBoton("REFRESCAR", "REFRESCAR", "btn", "onclick,onkeypress", "refrescarTablaPaciente()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/actividad3.png");
 //$toolbar3->Mostrar();
 //
 ?>
@@ -67,13 +67,13 @@
                                             <tr>
                                                 <td id="trBotonPisos" style="display: none" align ="center"  colspan="2">
                                                     <a href="javascript:BuscarHospitalizacion();">
-                                                        <img border="0" title="Buscar" alt="" src="../../../../medifacil_front/imagen/btn/b_buscar_off.gif"/></a>
+                                                        <img border="0" title="Buscar" alt="" src="../../../../fastmedical_front/imagen/btn/b_buscar_off.gif"/></a>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td id="trBotonFecha" style="display: none" colspan="2" align="center">
                                                     <a href="javascript:BuscarHospitalizacion();">
-                                                        <img border="0" title="Buscar" alt="" src="../../../../medifacil_front/imagen/btn/b_buscar_off.gif"/></a>
+                                                        <img border="0" title="Buscar" alt="" src="../../../../fastmedical_front/imagen/btn/b_buscar_off.gif"/></a>
                                                 </td>
                                                 <td>
                                                 </td>
@@ -103,7 +103,7 @@
                                                 </td>
                                                 <td id="trBotonPaciente" style="display: none">
                                                     <a href="javascript:BuscarHospitalizacion();">
-                                                        <img border="0" title="Buscar" alt="" src="../../../../medifacil_front/imagen/btn/b_buscar_off.gif"/></a>
+                                                        <img border="0" title="Buscar" alt="" src="../../../../fastmedical_front/imagen/btn/b_buscar_off.gif"/></a>
                                                 </td>
 
                                             </tr>

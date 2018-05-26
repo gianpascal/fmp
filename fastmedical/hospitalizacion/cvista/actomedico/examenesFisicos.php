@@ -39,7 +39,7 @@ $cboEstado = array(1 => "Activar", 0 => "Desactivar");
                         </div>
                         <div id="divAcciones" style="display: block;  float: right;">
                             <?php
-                            $toolbar10->SetBoton("Acciones", "Acciones", "btn", "onclick,onkeypress", "accionesExamenes()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/generar.png", "", "", 1);
+                            $toolbar10->SetBoton("Acciones", "Acciones", "btn", "onclick,onkeypress", "accionesExamenes()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/generar.png", "", "", 1);
                             $toolbar10->Mostrar();
                             ?>
                         </div>
@@ -49,15 +49,15 @@ $cboEstado = array(1 => "Activar", 0 => "Desactivar");
                     <div  id ="divTreeExamen" style="float:left;width:100%; height:270px;"></div>
                     <div id="divBtnNuevo" style="display: block; float: left;">
                         <?php
-                        $toolbar0->SetBoton("Nuevo", "Nuevo Examen", "btn", "onclick,onkeypress", "nuevoExamen()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/nuevo.png", "", "", 1);
+                        $toolbar0->SetBoton("Nuevo", "Nuevo Examen", "btn", "onclick,onkeypress", "nuevoExamen()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/nuevo.png", "", "", 1);
                         $toolbar0->Mostrar();
                         ?>
                     </div>
                     <div id="vistaPrevia" style="display: block;  float: left;">
                         <?php
-                        //$toolbar6->SetBoton("Nueva Versión","Nueva Versión","btn","onclick,onkeypress","clonarExamenes()",$_SESSION['path_principal']."../medifacil_front/imagen/icono/wizard.png","","",1);
+                        //$toolbar6->SetBoton("Nueva Versión","Nueva Versión","btn","onclick,onkeypress","clonarExamenes()",$_SESSION['path_principal']."../fastmedical_front/imagen/icono/wizard.png","","",1);
                         //$toolbar6->Mostrar();
-                        $toolbar11->SetBoton("Vista Previa", "Vista Previa", "btn", "onclick,onkeypress", "vistaPreviaExamenes()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/mac.png", "", "", 1);
+                        $toolbar11->SetBoton("Vista Previa", "Vista Previa", "btn", "onclick,onkeypress", "vistaPreviaExamenes()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/mac.png", "", "", 1);
                         $toolbar11->Mostrar();
                         ?>
                     </div>
@@ -120,26 +120,26 @@ $cboEstado = array(1 => "Activar", 0 => "Desactivar");
                                 <td width="33%">
                                     <div id="divEdita" style="display: none;">
                                         <?php
-                                        $toolbar1->SetBoton("Editar", "Editar", "btn", "onclick,onkeypress", "editaExamenFisico()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/editar.png", "", "", 1);
+                                        $toolbar1->SetBoton("Editar", "Editar", "btn", "onclick,onkeypress", "editaExamenFisico()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/editar.png", "", "", 1);
                                         $toolbar1->Mostrar();
                                         ?>
                                     </div>
                                     <div id="divGraba" style="display: block;">
                                         <?php
-                                        $toolbar2->SetBoton("GRABAR", "Grabar", "btn", "onclick,onkeypress", "nue_actExamenFisico('nuevo')", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/grabar.png", "", "", 1);
+                                        $toolbar2->SetBoton("GRABAR", "Grabar", "btn", "onclick,onkeypress", "nue_actExamenFisico('nuevo')", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/grabar.png", "", "", 1);
                                         $toolbar2->Mostrar();
                                         ?>
                                     </div>
                                     <div id="divActualiza" style="display: none;">
                                         <?php
-                                        $toolbar3->SetBoton("ACTUALIZAR", "Actualizar", "btn", "onclick,onkeypress", "nue_actExamenFisico('actualizar')", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/reload3.png", "", "", 1);
+                                        $toolbar3->SetBoton("ACTUALIZAR", "Actualizar", "btn", "onclick,onkeypress", "nue_actExamenFisico('actualizar')", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/reload3.png", "", "", 1);
                                         $toolbar3->Mostrar();
                                         ?>
                                     </div>
                                 <td width="33%">
                                     <div id="divElimina" style="display: none;">
                                         <?php
-                                        $toolbar4->SetBoton("ELIMINAR", "Eliminar", "btn", "onclick,onkeypress", "eliminaExamenFisico()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/delete.png", "", "", 1);
+                                        $toolbar4->SetBoton("ELIMINAR", "Eliminar", "btn", "onclick,onkeypress", "eliminaExamenFisico()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/delete.png", "", "", 1);
                                         $toolbar4->Mostrar();
                                         ?>
                                     </div>
@@ -199,7 +199,7 @@ $cboEstado = array(1 => "Activar", 0 => "Desactivar");
                                                     <td align="left" width="30%">
                                                         <div id="divAsignar">
                                                             <?php
-                                                            $toolbar5->SetBoton("Asignar", "Asignar", "btn", "onclick,onkeypress", "asignarExamenPrueba()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/lassists.png", "", "", 1);
+                                                            $toolbar5->SetBoton("Asignar", "Asignar", "btn", "onclick,onkeypress", "asignarExamenPrueba()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/lassists.png", "", "", 1);
                                                             $toolbar5->Mostrar();
                                                             ?>
                                                         </div>
@@ -247,13 +247,13 @@ $cboEstado = array(1 => "Activar", 0 => "Desactivar");
                                                     <td align="left" width="30%">
                                                         <div id="divXXX">
                                                             <?php
-                                                            $toolbar12->SetBoton("Otros Servicios", "Otros Servicios", "btn", "onclick,onkeypress", "mostrarServiciosPorCCostos()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/lassists.png", "", "", 1);
+                                                            $toolbar12->SetBoton("Otros Servicios", "Otros Servicios", "btn", "onclick,onkeypress", "mostrarServiciosPorCCostos()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/lassists.png", "", "", 1);
                                                             $toolbar12->Mostrar();
                                                             ?>
                                                         </div>
                                                         <div id="divAsignar">
                                                             <?php
-                                                            $toolbar8->SetBoton("Asignar", "Asignar", "btn", "onclick,onkeypress", "asignarExamenServicio()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/lassists.png", "", "", 1);
+                                                            $toolbar8->SetBoton("Asignar", "Asignar", "btn", "onclick,onkeypress", "asignarExamenServicio()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/lassists.png", "", "", 1);
                                                             $toolbar8->Mostrar();
                                                             ?>
                                                         </div>

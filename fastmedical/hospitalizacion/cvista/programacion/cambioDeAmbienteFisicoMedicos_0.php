@@ -31,7 +31,7 @@
                             </select>  
                         </div>
                     </td>
-                    <td><a href="javascript:verCruces();"><img src="../../../../medifacil_front/imagen/btn/b_ver_on.gif"></a></td>
+                    <td><a href="javascript:verCruces();"><img src="../../../../fastmedical_front/imagen/btn/b_ver_on.gif"></a></td>
                 </tr>
                 <tr>
                     <td><b>Observaci&oacute;n</b></td>
@@ -41,9 +41,9 @@
                     <td colspan="3"> 
                         <table align="center">
                             <tr>
-                                <td><a href="javascript:actualizarAmbienteFisico()"><img src="../../../../medifacil_front/imagen/btn/b_actualizar_on.gif"></a>
+                                <td><a href="javascript:actualizarAmbienteFisico()"><img src="../../../../fastmedical_front/imagen/btn/b_actualizar_on.gif"></a>
                                 </td>
-                                <td><a href="javascript:CancelarCambiodeAmbienteFisico()"><img src="../../../../medifacil_front/imagen/btn/b_cancelar_on.gif"></a>
+                                <td><a href="javascript:CancelarCambiodeAmbienteFisico()"><img src="../../../../fastmedical_front/imagen/btn/b_cancelar_on.gif"></a>
                                 </td>
 
                             </tr>

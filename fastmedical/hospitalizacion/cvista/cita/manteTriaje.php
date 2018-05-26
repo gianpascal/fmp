@@ -103,7 +103,7 @@ else{
 <fieldset>
     <div id="divBotonesTriaje" align="center" style="width:100%;height:auto;background:white">
         <?php
-            echo "<a href=\"javascript:manteTriaje('$accion','$horaProgramacion','$codCronograma');\" onkeypress=\"javascript:manteTriaje('$accion','$horaProgramacion','$codCronograma');\"><img src=\"../../../../medifacil_front/imagen/btn/b_grabar_on.gif\"></a>";
+            echo "<a href=\"javascript:manteTriaje('$accion','$horaProgramacion','$codCronograma');\" onkeypress=\"javascript:manteTriaje('$accion','$horaProgramacion','$codCronograma');\"><img src=\"../../../../fastmedical_front/imagen/btn/b_grabar_on.gif\"></a>";
         ?>
     </div>
 </fieldset>

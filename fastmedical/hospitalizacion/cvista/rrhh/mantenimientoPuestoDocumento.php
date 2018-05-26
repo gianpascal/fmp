@@ -43,7 +43,7 @@ require_once("../../ccontrol/control/ActionRrhh.php");
                                     </select>
                                 </div>
                                 <div style=" width: 30%; float: left; margin-left: 20px;" id="DivBuscar" >
-                                        <a href="javascript:verPuestosDocumento('x','','detallePuestoCentro');"><img border="0" title="Codigo de Persona" alt="" src="../../../../medifacil_front/imagen/btn/nbtn_buscar.gif"/></a>
+                                        <a href="javascript:verPuestosDocumento('x','','detallePuestoCentro');"><img border="0" title="Codigo de Persona" alt="" src="../../../../fastmedical_front/imagen/btn/nbtn_buscar.gif"/></a>
                                 </div>
                          </div>
                 </div>
@@ -81,7 +81,7 @@ require_once("../../ccontrol/control/ActionRrhh.php");
                   </fieldset>
                    <fieldset style="margin:1px;width:30%;height:30px;padding: 0px; font-size:14px">
                         <a href="javascript:agregarDocumentoPuesto();">
-                        <img border="0" title="Agregar Documentos" alt="" src="../../../../medifacil_front/imagen/btn/b_agregar_on.gif"/></a>
+                        <img border="0" title="Agregar Documentos" alt="" src="../../../../fastmedical_front/imagen/btn/b_agregar_on.gif"/></a>
                     </fieldset>
                    <fieldset style="margin:1px;width:95%;height:230px;padding: 0px; font-size:14px">
 

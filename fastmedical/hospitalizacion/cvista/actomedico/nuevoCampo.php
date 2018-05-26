@@ -13,7 +13,7 @@ $toolbar1_5 = new ToollBar("right");
             <div  id ="divCampo1_2" style=" float:left;width:100%; height:auto;">
                 <?php
                 $cantidad = 1;
-                $imagen = $disabled == '' ? '../../../../medifacil_front/imagen/icono/nuevo_item.png' : '../../../../medifacil_front/imagen/icono/nuevo_item_black.png';
+                $imagen = $disabled == '' ? '../../../../fastmedical_front/imagen/icono/nuevo_item.png' : '../../../../fastmedical_front/imagen/icono/nuevo_item_black.png';
                 $cursor = $disabled == '' ? 'cursor:pointer;' : 'cursor:default;';
                 echo "<script>$('divCampo').innerHTML=" . $cantidad . "</script>";
                 ?>
@@ -137,31 +137,31 @@ $toolbar1_5 = new ToollBar("right");
                         <td>
                             <div id="divGrabar1" style="display:none; width: 100px;float:left;" align="center">
                                 <?php
-                                $toolbar1_1->SetBoton("Grabar1", "Grabar campo", "btn", "onclick,onkeypress", "grabarCampo('formNuevoCampo','nuevo')", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/grabar.png", "", "", 1);
+                                $toolbar1_1->SetBoton("Grabar1", "Grabar campo", "btn", "onclick,onkeypress", "grabarCampo('formNuevoCampo','nuevo')", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/grabar.png", "", "", 1);
                                 $toolbar1_1->Mostrar();
                                 ?>
                             </div>
                             <div id="divEditar1" style="display:none; width: 100px; float:left;">
                                 <?php
-                                $toolbar1_2->SetBoton("Editar1", "Editar", "btn", "onclick,onkeypress", "postEditarCampo()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/editar.png", "", "", 1);
+                                $toolbar1_2->SetBoton("Editar1", "Editar", "btn", "onclick,onkeypress", "postEditarCampo()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/editar.png", "", "", 1);
                                 $toolbar1_2->Mostrar();
                                 ?>
                             </div>
                             <div id="divAgregar1" style="display:none; width: 80px; float:right;">
                                 <?php
-                                $toolbar1_3->SetBoton("Agregar1", "Agregar", "btn", "onclick,onkeypress", "agregaMasCampo('tbl_doc',++kk)", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/nuevo_item.png", "", "", 1);
+                                $toolbar1_3->SetBoton("Agregar1", "Agregar", "btn", "onclick,onkeypress", "agregaMasCampo('tbl_doc',++kk)", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/nuevo_item.png", "", "", 1);
                                 $toolbar1_3->Mostrar();
                                 ?>
                             </div>
                             <div id="divActualizar1" style="display:none; width: 100px; float:left;" >
                                 <?php
-                                $toolbar1_4->SetBoton("Actualizar1", "Actualizar", "btn", "onclick,onkeypress", "grabarCampo('formNuevoCampo','modificar')", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/grabar.png", "", "", 1);
+                                $toolbar1_4->SetBoton("Actualizar1", "Actualizar", "btn", "onclick,onkeypress", "grabarCampo('formNuevoCampo','modificar')", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/grabar.png", "", "", 1);
                                 $toolbar1_4->Mostrar();
                                 ?>
                             </div>
                             <div id="divRestaurar1" style="display:none; width: 100px; float:right;">
                                 <?php
-                                $toolbar1_5->SetBoton("Restaurar1", "Restaurar", "btn", "onclick,onkeypress", "restaurarCampo()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/undo.png", "", "", 1);
+                                $toolbar1_5->SetBoton("Restaurar1", "Restaurar", "btn", "onclick,onkeypress", "restaurarCampo()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/undo.png", "", "", 1);
                                 $toolbar1_5->Mostrar();
                                 ?>
                             </div>

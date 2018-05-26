@@ -7,7 +7,7 @@ $toolbar01 = new ToollBar("center");
         <td style="width: 225px"></td>
         <td align="center">
             <?php
-            $toolbar01->SetBoton("Cerrar", "Cerrar", "btn", "onclick,onkeypress", "CerrarVentanaListaCaducidadContrato()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/agt_action_success.png", "", "", 1);
+            $toolbar01->SetBoton("Cerrar", "Cerrar", "btn", "onclick,onkeypress", "CerrarVentanaListaCaducidadContrato()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/agt_action_success.png", "", "", 1);
             $toolbar01->Mostrar();
             ?>  
         </td>

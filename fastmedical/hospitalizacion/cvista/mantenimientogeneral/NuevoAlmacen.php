@@ -57,7 +57,7 @@ echo utf8_encode($arrayDatosAlmacen[0][7]);
     </div>
     <div style="float:left;">
         <?php
-        $toolbar2->SetBoton("asignarAlmacenFisico()", "Buscar", "btn", "onclick,onkeypress", "asignarAlmacenFisico()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/Search.png", "", "", 1);
+        $toolbar2->SetBoton("asignarAlmacenFisico()", "Buscar", "btn", "onclick,onkeypress", "asignarAlmacenFisico()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/Search.png", "", "", 1);
         $toolbar2->Mostrar();
         ?>
     </div>
@@ -71,13 +71,13 @@ echo utf8_encode($arrayDatosAlmacen[0][7]);
     <br><br><br><br>
     <div style="float:left; padding-left: 150px; padding-top: 35px;">
         <?php
-        $toolbar1->SetBoton("grabarMantenimientoAlmacenEvento", "Guardar", "btn", "onclick,onkeypress", "grabarMantenimientoAlmacenEvento()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/grabar.png", "", "", 1);
+        $toolbar1->SetBoton("grabarMantenimientoAlmacenEvento", "Guardar", "btn", "onclick,onkeypress", "grabarMantenimientoAlmacenEvento()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/grabar.png", "", "", 1);
         $toolbar1->Mostrar();
         ?> 
     </div>
     <div style="float:left; padding-left: 15px; padding-top: 35px;">
         <?php
-        $toolbar3->SetBoton("cerrarMantenimientoAlmacenEvento()", "Cerrar  ", "btn", "onclick,onkeypress", "cerrarMantenimientoAlmacenEvento()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/cerrar1.gif", "", "", 1);
+        $toolbar3->SetBoton("cerrarMantenimientoAlmacenEvento()", "Cerrar  ", "btn", "onclick,onkeypress", "cerrarMantenimientoAlmacenEvento()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/cerrar1.gif", "", "", 1);
         $toolbar3->Mostrar();
         ?> 
     </div>

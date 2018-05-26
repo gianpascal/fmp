@@ -20,8 +20,8 @@
                 <td>
                     <table align="center" style="height:5px;background-color: #D6E9FE;">
                         <tr>
-                            <td><img border="0" src="../../../../medifacil_front/imagen/btn/aceptar_jc.bmp" title="Aceptar" onclick="procesarEntregaFrasco()"></td>
-                            <td><img border="0" src="../../../../medifacil_front/imagen/btn/cancelar_jc.bmp" alt="" title="Cancelar" onclick="cerrarPopupEntregaFrasco()"></td>
+                            <td><img border="0" src="../../../../fastmedical_front/imagen/btn/aceptar_jc.bmp" title="Aceptar" onclick="procesarEntregaFrasco()"></td>
+                            <td><img border="0" src="../../../../fastmedical_front/imagen/btn/cancelar_jc.bmp" alt="" title="Cancelar" onclick="cerrarPopupEntregaFrasco()"></td>
                         </tr>
                     </table>
                 </td>

@@ -472,7 +472,7 @@ class ActionCita {
       if($resultado[0]["cuposdisponibles"]>0) {
       if($_SESSION["permiso_formulario_servicio"][118]["AGREGAR_CITA_ADICIONAL"]==1) {
       $botones.="<td align=\"right\" style=\"width:50%\"><a href=\"javascript:nuevaCita('---','".$datos['codigoCronograma']."','1');\">
-      <img src=\"../../../../medifacil_front/imagen/btn/b_agregar_on1.gif\">
+      <img src=\"../../../../fastmedical_front/imagen/btn/b_agregar_on1.gif\">
       </a>&nbsp;&nbsp;&nbsp;&nbsp;</td>";
       }else{
       $botones.="<td align=\"right\" style=\"width:50%\">&nbsp;&nbsp;&nbsp;&nbsp;</td>";
@@ -482,7 +482,7 @@ class ActionCita {
       }
       if($_SESSION["permiso_formulario_servicio"][118]["CANCELAR_CITA_ADICIONAL"]==1) {
       $botones.="<td align=\"left\" style=\"width:50%\"><a href=\"javascript:cerrarVentanaAdicionales();\">
-      <img src=\"../../../../medifacil_front/imagen/btn/b_cancelar_on.gif\">
+      <img src=\"../../../../fastmedical_front/imagen/btn/b_cancelar_on.gif\">
       </a>&nbsp;&nbsp;&nbsp;&nbsp;</td>";
       }else{
       $botones.="<td align=\"left\" style=\"width:50%\">&nbsp;&nbsp;&nbsp;&nbsp;</td>";
@@ -561,10 +561,10 @@ class ActionCita {
                 //echo $resultado[0]["cuposdisponibles"];
                 $divtitle.="0 cupos para citas adicionales";
                 $botones.="<a href=\"javascript:nuevaCita('---','" . $datos['codigoCronograma'] . "','2');\">
-                        <img src=\"../../../../medifacil_front/imagen/btn/btn_adic_solicitadomedico.png\">
+                        <img src=\"../../../../fastmedical_front/imagen/btn/btn_adic_solicitadomedico.png\">
                         </a>&nbsp;&nbsp;&nbsp;&nbsp;";
                 if (isset($_SESSION["permiso_formulario_servicio"][118]["PAGAR_CITA_CARTA_VIRTUAL_PAC"]) && ($_SESSION["permiso_formulario_servicio"][118]["PAGAR_CITA_CARTA_VIRTUAL_PAC"] == 1)) {
-                    $botones.="<a href=\"javascript:cambiarEstadoConfirmacionCita();\"><img src=\"../../../../medifacil_front/imagen/btn/b_pago_cvirtual.png\"></a>
+                    $botones.="<a href=\"javascript:cambiarEstadoConfirmacionCita();\"><img src=\"../../../../fastmedical_front/imagen/btn/b_pago_cvirtual.png\"></a>
                         &nbsp;&nbsp;&nbsp;&nbsp;";
                 }
                 if (!empty($resultado[0]["turno"])) {
@@ -577,10 +577,10 @@ class ActionCita {
                 $divtitle.="<b>" . $resultado[0]["cuposdisponibles"] . "</b> cupos para citas adicionales <br> Turno <b>" . $resultado[0]["turno"] . " </b><br>  " . $datosCronograma[0][0] . "</div>";
                 if ($resultado[0]["cuposdisponibles"] > 0) {
                     $botones.="<a href=\"javascript:nuevaCita('---','" . $datos['codigoCronograma'] . "','2');\">
-                        <img src=\"../../../../medifacil_front/imagen/btn/btn_adic_solicitadomedico.png\">
+                        <img src=\"../../../../fastmedical_front/imagen/btn/btn_adic_solicitadomedico.png\">
                         </a>&nbsp;&nbsp;&nbsp;&nbsp;";
                     if (isset($_SESSION["permiso_formulario_servicio"][118]["PAGAR_CITA_CARTA_VIRTUAL_PAC"]) && ($_SESSION["permiso_formulario_servicio"][118]["PAGAR_CITA_CARTA_VIRTUAL_PAC"] == 1)) {
-                        $botones.="<a href=\"javascript:cambiarEstadoConfirmacionCita();\"><img src=\"../../../../medifacil_front/imagen/btn/b_pago_cvirtual.png\"></a>
+                        $botones.="<a href=\"javascript:cambiarEstadoConfirmacionCita();\"><img src=\"../../../../fastmedical_front/imagen/btn/b_pago_cvirtual.png\"></a>
                         &nbsp;&nbsp;&nbsp;&nbsp;";
                     }
                 } else {
@@ -595,12 +595,12 @@ class ActionCita {
 
         if (isset($_SESSION["permiso_formulario_servicio"][118]["EDITAR_CITA_VENT_PROG_DET"]) && ($_SESSION["permiso_formulario_servicio"][118]["EDITAR_CITA_VENT_PROG_DET"] == 1)) {
             $botones.="<a href=\"javascript:validaredicionCitaInformes('1');\">
-                        <img src=\"../../../../medifacil_front/imagen/btn/b_editar_on.gif\">
+                        <img src=\"../../../../fastmedical_front/imagen/btn/b_editar_on.gif\">
                         </a>&nbsp;&nbsp;&nbsp;&nbsp;";
         }
         if (isset($_SESSION["permiso_formulario_servicio"][118]["CANCELAR_CITA_ADICIONAL"]) && ($_SESSION["permiso_formulario_servicio"][118]["CANCELAR_CITA_ADICIONAL"] == 1)) {
             $botones.="<a href=\"javascript:cerrarVentanaAdicionales();\">
-                        <img src=\"../../../../medifacil_front/imagen/btn/b_cancelar_on.gif\">
+                        <img src=\"../../../../fastmedical_front/imagen/btn/b_cancelar_on.gif\">
                         </a>&nbsp;&nbsp;&nbsp;&nbsp;";
         }
         $botones.="</td></tr></table>";

@@ -21,7 +21,7 @@
     <div style="height: 15%;">
         <div style="width:30%; margin:0px auto;">
              <input type="hidden" id="hNombre" name="hNombre" size="12" value="<?php echo $profesion; ?>" >
-             <a href="javascript:grabarEspecialidad(document.getElementById('hNombre').value,document.getElementById('txtNombre').value);"><img  id="imgagenGuardar" src="../../../../medifacil_front/imagen/btn/b_grabar_on.gif"/></a>
+             <a href="javascript:grabarEspecialidad(document.getElementById('hNombre').value,document.getElementById('txtNombre').value);"><img  id="imgagenGuardar" src="../../../../fastmedical_front/imagen/btn/b_grabar_on.gif"/></a>
         </div>
 
     </div>

@@ -13,25 +13,25 @@ require_once('../../ccontrol/control/control.php');
                 border:1px solid #82A6C6 ;
             }
         </style>
-        <link rel="stylesheet" type="text/css" href="../../../../medifacil_front/estilo/panel.css" />
+        <link rel="stylesheet" type="text/css" href="../../../../fastmedical_front/estilo/panel.css" />
         <link rel="stylesheet" type="text/css" href="../../estilo/style.css" />
 
         <!-- ================ ESTILOS CSS   ========================== -->
         <style type="text/css">
-            @import url("../../../../medifacil_front/estilo/default.css");
-            @import url("../../../../medifacil_front/estilo/alphacube.css");
-            @import url("../../../../medifacil_front/estilo/dhtmlxtree.css");
-            @import url("../../../../medifacil_front/estilo/dhtmlxtabbar.css");
-            @import url("../../../../medifacil_front/estilo/dhtmlxcalendar.css");
-            @import url("../../../../medifacil_front/estilo/dhtmlxcombo.css");
-            @import url("../../../../medifacil_front/estilo/dhtmlxgrid/dhtmlxgrid.css");
-            @import url("../../../../medifacil_front/estilo/dhtmlxgrid/dhtmlxgrid_pgn_bricks.css");
-            @import url("../../../../medifacil_front/estilo/dhtmlxgrid/dhtmlxgrid_dhx_skyblue1.css");
-            @import url("../../../../medifacil_front/estilo/dhtmlxgrid/dhtmlxgrid_dhx_blue.css");
-            @import url("../../../../medifacil_front/estilo/dhtmlxgrid/dhtmlxgrid_dhx_black.css");
-            @import url("../../../../medifacil_front/estilo/dhtmlxaccordion/dhtmlxaccordion_dhx_skyblue.css");
-            @import url("../../../../medifacil_front/estilo/dhtmlxvault.css");/*para upload*/
-            @import url("../../../../medifacil_front/estilo/dhtmlxcolorpicker.css");
+            @import url("../../../../fastmedical_front/estilo/default.css");
+            @import url("../../../../fastmedical_front/estilo/alphacube.css");
+            @import url("../../../../fastmedical_front/estilo/dhtmlxtree.css");
+            @import url("../../../../fastmedical_front/estilo/dhtmlxtabbar.css");
+            @import url("../../../../fastmedical_front/estilo/dhtmlxcalendar.css");
+            @import url("../../../../fastmedical_front/estilo/dhtmlxcombo.css");
+            @import url("../../../../fastmedical_front/estilo/dhtmlxgrid/dhtmlxgrid.css");
+            @import url("../../../../fastmedical_front/estilo/dhtmlxgrid/dhtmlxgrid_pgn_bricks.css");
+            @import url("../../../../fastmedical_front/estilo/dhtmlxgrid/dhtmlxgrid_dhx_skyblue1.css");
+            @import url("../../../../fastmedical_front/estilo/dhtmlxgrid/dhtmlxgrid_dhx_blue.css");
+            @import url("../../../../fastmedical_front/estilo/dhtmlxgrid/dhtmlxgrid_dhx_black.css");
+            @import url("../../../../fastmedical_front/estilo/dhtmlxaccordion/dhtmlxaccordion_dhx_skyblue.css");
+            @import url("../../../../fastmedical_front/estilo/dhtmlxvault.css");/*para upload*/
+            @import url("../../../../fastmedical_front/estilo/dhtmlxcolorpicker.css");
         </style>
 
         <!-- ================ DHTML MENU   ========================== -->
@@ -112,7 +112,7 @@ require_once('../../ccontrol/control/control.php');
     <body style="background-color:white;" onLoad="myajax = new isiAJAX('contenido_inicio', 'cargador'); myajax2 = new isiAJAX('contenido_inicio', 'cargador'); cargar_form(); ">   
         <div id="cargador">
             Por Favor Espere &nbsp;&nbsp;&nbsp;&nbsp;
-            <img src="../../../../medifacil_front/imagen/icono/cargando.gif"  border="0" title="CARGANDO" alt="Cargador"/><a href="#" id="hider2"></a>
+            <img src="../../../../fastmedical_front/imagen/icono/cargando.gif"  border="0" title="CARGANDO" alt="Cargador"/><a href="#" id="hider2"></a>
         </div>
         <div id="VentanaTransparente" style="visibility: visible; display: none;">
             <div id="overlayPeche" class="overlay_absolute"></div>
@@ -152,7 +152,7 @@ require_once('../../ccontrol/control/control.php');
             </div>
             <!--<div style="clear:both"></div>-->
             <div id="footer">
-                &copy; Copyright <a href="#">Gr@njit@</a><img src="../../../../medifacil_front/imagen/icono/granjita.jpg" alt="Granjita" title="Gr@njit@"/> 2010 &middot;  Actualizado por <a href="#">SIMEDH</a> 2010 &middot; Resoluci&oacute;n de pantalla recomendada: 1024x768 p&iacute;xeles
+                &copy; Copyright <a href="#">Gr@njit@</a><img src="../../../../fastmedical_front/imagen/icono/granjita.jpg" alt="Granjita" title="Gr@njit@"/> 2010 &middot;  Actualizado por <a href="#">SIMEDH</a> 2010 &middot; Resoluci&oacute;n de pantalla recomendada: 1024x768 p&iacute;xeles
             </div>
         </div>
     </body>

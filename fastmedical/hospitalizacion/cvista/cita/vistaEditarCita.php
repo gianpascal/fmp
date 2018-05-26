@@ -38,12 +38,12 @@
             <div style="margin: 0 auto;">
                 <div id="divBotonGrabarEditarCita" style="float: left" id="">
                     <a href="javascript:grabarEditarCita();">
-                        <img src="../../../../medifacil_front/imagen/btn/b_grabar__on.gif">
+                        <img src="../../../../fastmedical_front/imagen/btn/b_grabar__on.gif">
                     </a>
                 </div>
                 <div style="float: left" id="">
                     <a href="javascript:cancelarEditarCita();">
-                        <img src="../../../../medifacil_front/imagen/btn/b_cancelar_on.gif">
+                        <img src="../../../../fastmedical_front/imagen/btn/b_cancelar_on.gif">
                     </a>
                 </div>
             </div> 

@@ -16,7 +16,7 @@ $toolbar04 = new ToollBar("right");
                 <td width="100">
                     <?php
                     if (isset($_SESSION["permiso_formulario_servicio"][218]["NUEVA_AREA"]) && ($_SESSION["permiso_formulario_servicio"][218]["NUEVA_AREA"] == 1)) {
-                        $toolbar00->SetBoton("NuevaSubArea", "Nueva Sub Area", "btn", "onclick,onkeypress", "nuevoDatosSubArea()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/filenew.png", "", "", 1);
+                        $toolbar00->SetBoton("NuevaSubArea", "Nueva Sub Area", "btn", "onclick,onkeypress", "nuevoDatosSubArea()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/filenew.png", "", "", 1);
                         $toolbar00->Mostrar();
                     }
                     ?>
@@ -61,7 +61,7 @@ $toolbar04 = new ToollBar("right");
                                 <div id="btnGrabar" style="width: 90px" align="center">
                                     <?php
                                     if (isset($_SESSION["permiso_formulario_servicio"][218]["GRABAR_NUEVA_AREA"]) && ($_SESSION["permiso_formulario_servicio"][218]["GRABAR_NUEVA_AREA"] == 1)) {
-                                        $toolbar01->SetBoton("GrabarSubArea", "Grabar", "btn", "onclick,onkeypress", "grabarSubArea('grabar')", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/grabar.png", "", "", 1);
+                                        $toolbar01->SetBoton("GrabarSubArea", "Grabar", "btn", "onclick,onkeypress", "grabarSubArea('grabar')", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/grabar.png", "", "", 1);
                                         $toolbar01->Mostrar();
                                     }
                                     ?>
@@ -69,7 +69,7 @@ $toolbar04 = new ToollBar("right");
                                 <div id="btnModificar" style="width: 90px; display: none" align="center">
                                     <?php
                                     if (isset($_SESSION["permiso_formulario_servicio"][218]["MODIFICAR_AREA"]) && ($_SESSION["permiso_formulario_servicio"][218]["MODIFICAR_AREA"] == 1)) {
-                                        $toolbar02->SetBoton("ModificarSubArea", "Modificar", "btn", "onclick,onkeypress", "grabarSubArea('modificar')", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/grabar.png", "", "", 1);
+                                        $toolbar02->SetBoton("ModificarSubArea", "Modificar", "btn", "onclick,onkeypress", "grabarSubArea('modificar')", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/grabar.png", "", "", 1);
                                         $toolbar02->Mostrar();
                                     }
                                     ?>
@@ -102,7 +102,7 @@ $toolbar04 = new ToollBar("right");
                             <div style="width: 150px;">
                                 <?php
                                 if (isset($_SESSION["permiso_formulario_servicio"][218]["ASIG_SEDE_AREA"]) && ($_SESSION["permiso_formulario_servicio"][218]["ASIG_SEDE_AREA"] == 1)) {
-                                    $toolbar03->SetBoton("AsignarSubArea", "Asignar Sub Área", "btn", "onclick,onkeypress", " AsignarSubArea()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/agt_action_success.png", "", "", 1);
+                                    $toolbar03->SetBoton("AsignarSubArea", "Asignar Sub Área", "btn", "onclick,onkeypress", " AsignarSubArea()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/agt_action_success.png", "", "", 1);
                                     $toolbar03->Mostrar();
                                     //asignarSede
                                 }

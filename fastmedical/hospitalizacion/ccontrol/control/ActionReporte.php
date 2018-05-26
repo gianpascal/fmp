@@ -2922,7 +2922,7 @@ class ActionReporte {
             if ($idGrupoEtareoAux != $idGrupoEtareo) {
                 $rs.="<h3>$codigoPersona - $value[3]</h3>";
                 $rs.= '<table cellspacing="1" style="border:0px solid;">
-                            <tr style="background-image:url(\'../../../../medifacil_front/imagen/icono/fondogrid.png\');height: 30px;">
+                            <tr style="background-image:url(\'../../../../fastmedical_front/imagen/icono/fondogrid.png\');height: 30px;">
                             <td style="width: 100px;border:0px solid #BBE796">
                             <center><p style="font-size:16px;font-family: segoe UI;color:#006631"><b>Nro</b></p></center>
                             </td>
@@ -2957,7 +2957,7 @@ class ActionReporte {
             $idGrupoEtareoAux = $idGrupoEtareo;
         }
         $rs1 = '<table cellspacing="1" style="border:0px solid;">
-                          <tr style="background-image:url(\'../../../../medifacil_front/imagen/icono/fondogrid.png\');height: 30px;">
+                          <tr style="background-image:url(\'../../../../fastmedical_front/imagen/icono/fondogrid.png\');height: 30px;">
                           <td style="width: 100px;border:0px solid #BBE796">
                           <center><p style="font-size:16px;font-family: segoe UI;color:#006631"><b>Nro</b></p></center>
                           </td>

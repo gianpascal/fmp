@@ -108,7 +108,7 @@ class generarMYPDF_RECIBODEPAGO {
                   <table>
                    <tr>
                    <td>
-                   <img src="../../../../medifacil_front/imagen/logo/Escudo_municipalidad_lima.JPG" alt="test alt attribute" width="50" height="50" border="0" />
+                   <img src="../../../../fastmedical_front/imagen/logo/Escudo_municipalidad_lima.JPG" alt="test alt attribute" width="50" height="50" border="0" />
                    </td>
                    </tr>
                    <tr>

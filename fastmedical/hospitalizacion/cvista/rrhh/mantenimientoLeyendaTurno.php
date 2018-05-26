@@ -37,13 +37,13 @@ $toolbar2=new ToollBar("right");
                                         <td height="30" align="center" colspan="4">
                                             <div id="btnGrabar" style="width: 100px">
                                                 <?php
-                                                $toolbar1->SetBoton("grabarLeyenda","Grabar","btn","onclick,onkeypress","grabarLeyendaTurno('grabar')",$_SESSION['path_principal']."../medifacil_front/imagen/icono/grabar.png","","",1);
+                                                $toolbar1->SetBoton("grabarLeyenda","Grabar","btn","onclick,onkeypress","grabarLeyendaTurno('grabar')",$_SESSION['path_principal']."../fastmedical_front/imagen/icono/grabar.png","","",1);
                                                 $toolbar1->Mostrar();
                                                 ?>
                                             </div>
                                             <div id="btnModificar" style="width: 100px; display: none;">
                                                 <?php
-                                                $toolbar2->SetBoton("modificarLeyenda","Modificar","btn","onclick,onkeypress","grabarLeyendaTurno('modificar')",$_SESSION['path_principal']."../medifacil_front/imagen/icono/modificar.png","","",1);
+                                                $toolbar2->SetBoton("modificarLeyenda","Modificar","btn","onclick,onkeypress","grabarLeyendaTurno('modificar')",$_SESSION['path_principal']."../fastmedical_front/imagen/icono/modificar.png","","",1);
                                                 $toolbar2->Mostrar();
                                                 ?>
                                             </div>

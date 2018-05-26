@@ -16,7 +16,7 @@
         </fieldset>
     </div>
     <div id="divAgregar" align="center"  style="width:100%;height:5%;display: block">
-        <?php if($_SESSION["permiso_formulario_servicio"][201]["AGREGAR_AMB_FISICO_X_AMB_LOGICO"]==1) echo "<a href=\"javascript:agregarAmbienteFisicoaAmbienteLogico()\"><img src=\"../../../../medifacil_front/imagen/btn/b_agregar_on.gif\" alt=\"\"></a>&nbsp;&nbsp;&nbsp;&nbsp;"; ?>
+        <?php if($_SESSION["permiso_formulario_servicio"][201]["AGREGAR_AMB_FISICO_X_AMB_LOGICO"]==1) echo "<a href=\"javascript:agregarAmbienteFisicoaAmbienteLogico()\"><img src=\"../../../../fastmedical_front/imagen/btn/b_agregar_on.gif\" alt=\"\"></a>&nbsp;&nbsp;&nbsp;&nbsp;"; ?>
     </div>
 </div>
 <div id="Div_TablaAsignacionAmbientesLogicos" align="center" style="width:100%;height:50%">

@@ -281,7 +281,7 @@ function verCronogramaMedicoMensual(codigo, nombre) {
     var Seleccionado = 0;
 
     tablaEmergenciaInformes = new dhtmlXGridObject('contenedorTablaCronogramaAtenciones');
-    tablaEmergenciaInformes.setImagePath("../../../../medifacil_front/imagen/icono/");
+    tablaEmergenciaInformes.setImagePath("../../../../fastmedical_front/imagen/icono/");
     tablaEmergenciaInformes.attachEvent("onRowSelect", function (rowId, colId) {
         var iActivo = tablaEmergenciaInformes.cells(rowId, 8).getValue()
         var dFecha = tablaEmergenciaInformes.cells(rowId, 9).getValue()
@@ -370,7 +370,7 @@ function mostrarProgramacionEmergenciaInformes(cronograma) {
     }
 
     tablaEmergenciaInformes = new dhtmlXGridObject('contenedorTablaCronogramaAtenciones');
-    tablaEmergenciaInformes.setImagePath("../../../../medifacil_front/imagen/icono/");
+    tablaEmergenciaInformes.setImagePath("../../../../fastmedical_front/imagen/icono/");
     tablaEmergenciaInformes.attachEvent("onRowSelect", function (rowId, colId) {
         var iActivo = tablaEmergenciaInformes.cells(rowId, 6).getValue();
         var dFecha = tablaEmergenciaInformes.cells(rowId, 7).getValue();
@@ -472,7 +472,7 @@ function recargarTablaServicios() {
     parametros += '&p3=' + $('hOpcionActividad').value;
 
     tablaServiciosProgramadosCitas = new dhtmlXGridObject('divBusCronogramaArbol');
-    tablaServiciosProgramadosCitas.setImagePath("../../../../medifacil_front/imagen/icono/");
+    tablaServiciosProgramadosCitas.setImagePath("../../../../fastmedical_front/imagen/icono/");
     tablaServiciosProgramadosCitas.attachEvent("onRowSelect", function () {
         var arregloId = this.getSelectedRowId().split("|");
 
@@ -944,7 +944,7 @@ function regresaracronogramacitas() {
         listarCronogramaMedicoEmergencia($('hcodigocronograma').value)
     }
 
-    $('divGuardaryRegresar').innerHTML = "<a href=\"javascript:validarCitaInformes()\"><img src=\"../../../../medifacil_front/imagen/btn/b_grabar__on.gif\"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"javascript:regresaracronogramacitas()\"><img src=\"../../../../medifacil_front/imagen/btn/b_regresar_on.gif\">";
+    $('divGuardaryRegresar').innerHTML = "<a href=\"javascript:validarCitaInformes()\"><img src=\"../../../../fastmedical_front/imagen/btn/b_grabar__on.gif\"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"javascript:regresaracronogramacitas()\"><img src=\"../../../../fastmedical_front/imagen/btn/b_regresar_on.gif\">";
     $('divDatosPersonaCitasInformes').update("<input id=hiCodigoPersona name =hiCodigoPersona value='' type=hidden /><input id=hiCodigoPaciente type=hidden />");
 
 }
@@ -1367,7 +1367,7 @@ function guardarCitaInformes(path, mensaje, c_cod_per) {
             }
         }
     })
-    $('divGuardaryRegresar').innerHTML = "<a href=\"javascript:regresaracronogramacitas()\"><img src=\"../../../../medifacil_front/imagen/btn/b_regresar_on.gif\">";
+    $('divGuardaryRegresar').innerHTML = "<a href=\"javascript:regresaracronogramacitas()\"><img src=\"../../../../fastmedical_front/imagen/btn/b_regresar_on.gif\">";
 
 
 }
@@ -1632,7 +1632,7 @@ function cargarMedicosEditarCita(fecha) {
         parametros += '&p4=' + $('servicioEditarCita').value;
 
         tablaMedicosEditarcita = new dhtmlXGridObject('divTablaMedicosEditarCita');
-        tablaMedicosEditarcita.setImagePath("../../../../medifacil_front/imagen/icono/");
+        tablaMedicosEditarcita.setImagePath("../../../../fastmedical_front/imagen/icono/");
         tablaMedicosEditarcita.attachEvent("onRowSelect", function (rId, cInd) {
             generarComoTurnos(rId, cInd);
         });
@@ -1910,9 +1910,9 @@ function cabeceranombreMedico(index, e) {
 function setPintarCabeceraCronograma(cabecera, subcabecera, datos, tipocabecera, alineamiento, idsColumnas, anchocolumna, estadopagos) {
     datos = datos.replace(/'/gi, "\"");
     estadopagos = estadopagos.replace(/'/gi, "\"");
-    datos = datos.replace(/citanueva/gi, "<img src='../../../../medifacil_front/imagen/icono/apply.png'>");
-    datos = datos.replace(/citapasada/gi, "<img src='../../../../medifacil_front/imagen/icono/noapply.png'>");
-    datos = datos.replace(/citaadicional/gi, "<img src='../../../../medifacil_front/imagen/icono/kdmconfig1.gif'>");
+    datos = datos.replace(/citanueva/gi, "<img src='../../../../fastmedical_front/imagen/icono/apply.png'>");
+    datos = datos.replace(/citapasada/gi, "<img src='../../../../fastmedical_front/imagen/icono/noapply.png'>");
+    datos = datos.replace(/citaadicional/gi, "<img src='../../../../fastmedical_front/imagen/icono/kdmconfig1.gif'>");
 
     mygrid = new dhtmlXGridObject('programacioncitas');
     mygrid.setHeader(cabecera);
@@ -1925,7 +1925,7 @@ function setPintarCabeceraCronograma(cabecera, subcabecera, datos, tipocabecera,
     mygrid.splitAt(1);
     mygrid.attachEvent("onRowSelect", acciondelasCitas);
     mygrid.attachEvent("onHeaderClick", cabeceranombreMedico);
-    mygrid.setImagePath("../../../../medifacil_front/imagen/icono/");
+    mygrid.setImagePath("../../../../fastmedical_front/imagen/icono/");
     //mygrid.setSkin("dhx_skyblue");
     mygrid.setSkin("dhx_skyblue");
     mygrid.init();
@@ -3256,7 +3256,7 @@ function crearTablaAsignacionMedicoPacientes() {
         //carga al iniciar la tabla 
         var y = tablaAsignacionMedicoPacientes.getRowsNum();
         for (var i = 0; i < y; i++) {
-            tablaAsignacionMedicoPacientes.cells(i, 2).setValue('../../../../medifacil_front/imagen/icono/borrar.png');
+            tablaAsignacionMedicoPacientes.cells(i, 2).setValue('../../../../fastmedical_front/imagen/icono/borrar.png');
         }
     });
     tablaAsignacionMedicoPacientes.attachEvent("onEditCell", function (stage, rId, cInd, nValue, oValue) {
@@ -3320,7 +3320,7 @@ function cargarMedicosEmpleados(fecha) {
         parametros += '&p4=' + fecha;
 
         var tablaMedicosEditarcitaPaciente = new dhtmlXGridObject('div_ListaDeMedicos');
-        tablaMedicosEditarcitaPaciente.setImagePath("../../../../medifacil_front/imagen/icono/");
+        tablaMedicosEditarcitaPaciente.setImagePath("../../../../fastmedical_front/imagen/icono/");
         tablaMedicosEditarcitaPaciente.attachEvent("onRowSelect", function (rId, cInd) {
             // capturar el codigo de la cronograma del medico
             $("iCodigoCronogramaMedicoSeleccionado").value = tablaMedicosEditarcitaPaciente.cells(rId, 0).getValue();
@@ -3411,7 +3411,7 @@ function eliminarRegistrodePacientes(rId, cInd) {
                             var nombrePaciente = tablaAsignacionMedicoPacientes.cells(j, 1).getValue();
                             tablaAsignacionMedicoPacientes.cells(i, 0).setValue(codigoPaciente);
                             tablaAsignacionMedicoPacientes.cells(i, 1).setValue(nombrePaciente);
-                            tablaAsignacionMedicoPacientes.cells(i, 2).setValue('../../../../medifacil_front/imagen/icono/borrar.png');
+                            tablaAsignacionMedicoPacientes.cells(i, 2).setValue('../../../../fastmedical_front/imagen/icono/borrar.png');
                             v = 1;
                         }
                         else {
@@ -3615,7 +3615,7 @@ function listarHistoriaCronogramaPaciente() {
     parametros += 'p1=' + patronModulo;
     parametros += '&p2=' + iCodigoCronograma;
     var listarHistoriaCronogramaPaciente = new dhtmlXGridObject('div_contenedorTblHistoriaCrongoramaPaciente');
-    listarHistoriaCronogramaPaciente.setImagePath("../../../../medifacil_front/imagen/icono/");
+    listarHistoriaCronogramaPaciente.setImagePath("../../../../fastmedical_front/imagen/icono/");
     listarHistoriaCronogramaPaciente.attachEvent("onRowSelect", function (rId, cInd) {
 
     });

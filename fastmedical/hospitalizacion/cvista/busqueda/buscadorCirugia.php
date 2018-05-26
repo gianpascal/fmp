@@ -10,7 +10,7 @@
     <input style=" width:70px; " type="text" name="txtCodigoServicioCirugia" value="" id="txtCodigoServicioCirugia" onkeyup='buscarServicioCodigoCirugia();'>
     &nbsp;&nbsp;&nbsp;&nbsp;
     <!--<a href="javascript:;" onclick="javascript:agregarOtro_ActoMedico('antecedentes');">
-        <img id="btn_agregarotro" src='../../../../medifacil_front/imagen/btn/btn_agregarotro.png' alt="">
+        <img id="btn_agregarotro" src='../../../../fastmedical_front/imagen/btn/btn_agregarotro.png' alt="">
     </a>-->
     <input type="hidden" id="hdnIdHidden" value="<?php echo $hidden; ?>" />
     <input type="hidden" id="hdnIdText" value="<?php echo $text; ?>" />

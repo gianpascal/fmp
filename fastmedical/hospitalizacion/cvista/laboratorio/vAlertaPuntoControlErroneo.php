@@ -59,7 +59,7 @@ $toolbar1 = new ToollBar("center");
                         
                          <td>
                             <?php
-                            $toolbar1->SetBoton("cerrar", "Cerrar", "btn", "onclick,onkeypress", "Windows.close('Div_alertaError', event)", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/agt_action_fail.png", "", "", 1);
+                            $toolbar1->SetBoton("cerrar", "Cerrar", "btn", "onclick,onkeypress", "Windows.close('Div_alertaError', event)", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/agt_action_fail.png", "", "", 1);
                             $toolbar1->Mostrar();
                             ?>
                              <input id="cerrarVentanaError" type="text" style="width:0px;" onkeypress="cerrarVentanaPeche('Div_alertaError',event)" /> 

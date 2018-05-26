@@ -94,7 +94,7 @@ $toolbar3 = new ToollBar("center");
                             <td colspan="2">
                                 <div id="div_EditarDetalleExamenLabo"  style="margin-left: 50% ">
                                     <?php
-                                    $toolbar1->SetBoton("EditarDetalleExamenLabo", "Editar", "btn", "onclick,onkeypress", "EditarDetalleExamenLabo()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/reload3.png", "", "", 1);
+                                    $toolbar1->SetBoton("EditarDetalleExamenLabo", "Editar", "btn", "onclick,onkeypress", "EditarDetalleExamenLabo()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/reload3.png", "", "", 1);
                                     $toolbar1->Mostrar();
                                     ?>
                                 </div>
@@ -104,7 +104,7 @@ $toolbar3 = new ToollBar("center");
                             <td colspan="2">
                                 <div id="div_ActualizarDetalleExamenLabo"  style="margin-left: 50%; display: none">
                                     <?php
-                                    $toolbar2->SetBoton("ActualizarDetalleExamenLabo", "Actualizar", "btn", "onclick,onkeypress", "ActualizarDetalleExamenLabo()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/reload3.png", "", "", 1);
+                                    $toolbar2->SetBoton("ActualizarDetalleExamenLabo", "Actualizar", "btn", "onclick,onkeypress", "ActualizarDetalleExamenLabo()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/reload3.png", "", "", 1);
                                     $toolbar2->Mostrar();
                                     ?>
                                 </div>

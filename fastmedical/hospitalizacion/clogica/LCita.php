@@ -29,11 +29,11 @@ class LCita {
                           $fila[10]=n_prog_pac
 
                          */
-                        $fila[46] = "<a href='#' onclick=\"irEditarCita('" . $fila[37] . "','" . $fila[33] . "','" . $fila[10] . "');\"><img src='../../../../medifacil_front/imagen/icono/editar.png' title='Editar cita'/></a>";
+                        $fila[46] = "<a href='#' onclick=\"irEditarCita('" . $fila[37] . "','" . $fila[33] . "','" . $fila[10] . "');\"><img src='../../../../fastmedical_front/imagen/icono/editar.png' title='Editar cita'/></a>";
                         if ($fila[24] + "" == "000")
-                            $fila[47] = "<a href='#' onclick=\"irEliminarCita('" . $fila[10] . "');\"><img src='../../../../medifacil_front/imagen/icono/editdelete.png' title='Eliminar cita'/></a>";
+                            $fila[47] = "<a href='#' onclick=\"irEliminarCita('" . $fila[10] . "');\"><img src='../../../../fastmedical_front/imagen/icono/editdelete.png' title='Eliminar cita'/></a>";
                         else
-                            $fila[47] = "<img src='../../../../medifacil_front/imagen/icono/editdelete_inactivo.png' title='Eliminar cita'/>";
+                            $fila[47] = "<img src='../../../../fastmedical_front/imagen/icono/editdelete_inactivo.png' title='Eliminar cita'/>";
                         array_push($resultadoArray, $fila);
                     }
                     break;
@@ -402,11 +402,11 @@ class LCita {
                 . "<table>"
                 . "<tr><td class=\"Estilo6_ReservaCita\">Filiación </td><td class=\"Estilo7\">" . ($resultadoArray[0]['vDescripcion']) . "</td>";
         if (isset($_SESSION["permiso_formulario_servicio"][118]["CAMBIAR_AFILIACION_AMB_PAC"]) && ($_SESSION["permiso_formulario_servicio"][118]["CAMBIAR_AFILIACION_AMB_PAC"] == 1))
-            $cadena .= "<td><a href='#' onclick=\"cambioaAmbulatorio('" . $datos["codigopersona"] . "');\"><img src='../../../../medifacil_front/imagen/icono/reload3.png' title='Ambulatorio'/></a><td>";
+            $cadena .= "<td><a href='#' onclick=\"cambioaAmbulatorio('" . $datos["codigopersona"] . "');\"><img src='../../../../fastmedical_front/imagen/icono/reload3.png' title='Ambulatorio'/></a><td>";
         else
             $cadena .= "</tr>";
         if (isset($_SESSION["permiso_formulario_servicio"][110]["CAMBIAR_AFILIACION_GENERAL_PAC"]) && ($_SESSION["permiso_formulario_servicio"][110]["CAMBIAR_AFILIACION_GENERAL_PAC"] == 1))
-        // $cadena .= "<td><a href='#' onclick=\"mostrarventanadecambiodeafiliacion('" . $datos["codigopersona"] . "');\"><img src='../../../../medifacil_front/imagen/icono/add_user2.png' title='Cambio Afiliacion'/></a><td></tr>";
+        // $cadena .= "<td><a href='#' onclick=\"mostrarventanadecambiodeafiliacion('" . $datos["codigopersona"] . "');\"><img src='../../../../fastmedical_front/imagen/icono/add_user2.png' title='Cambio Afiliacion'/></a><td></tr>";
             $cadena .= "</tr>";
         else
             $cadena .= "</tr>";
@@ -569,8 +569,8 @@ class LCita {
                 . " <tr>"
                 . "   <td width=\"40%\" align=\"center\" class=\"Estilo7\">Persona: " . utf8_encode($resultadoArray[0]['nombrePaciente'])
                 . "<input type=\"hidden\" name=\"hdnipaciente\" id=\"hdnipaciente\" value=\"" . utf8_encode($dniPaciente) . "\"/>"
-                . "  <a href='#' onclick=\"javascript:ventanaEditaPersona('" . utf8_encode($resultadoArray[0]['cCodigoPersona']) . "');\"><img src='../../../../medifacil_front/imagen/icono/editar.png' title='Editar'/></a>"
-                ."<a href='#' onclick=\"javascript:VerCPTfaltantes('" .utf8_encode($resultadoArray[0]['cCodigoPersona']) . "');\"><img src='../../../../medifacil_front/imagen/icono/hos_essalud.png' title='Cartera de servicios'/></a></td>"
+                . "  <a href='#' onclick=\"javascript:ventanaEditaPersona('" . utf8_encode($resultadoArray[0]['cCodigoPersona']) . "');\"><img src='../../../../fastmedical_front/imagen/icono/editar.png' title='Editar'/></a>"
+                ."<a href='#' onclick=\"javascript:VerCPTfaltantes('" .utf8_encode($resultadoArray[0]['cCodigoPersona']) . "');\"><img src='../../../../fastmedical_front/imagen/icono/hos_essalud.png' title='Cartera de servicios'/></a></td>"
                 . "   <td width=\"30%\" align=\"center\" class=\"Estilo7\">Médico: " . utf8_encode($resultadoArray[0]['nombreMedico']) . "</td>"
                 . "   <td width=\"30%\" align=\"center\" class=\"Estilo7\">Especialidad:" . utf8_encode($resultadoArray[0]['vDescripcionFormato']) . "</td>"//.htmlentities($resultadoArray[0]['cCodigoEspecialidad'])."</td>"
                 . " </tr>"
@@ -680,7 +680,7 @@ class LCita {
             $valor[1] = $dias[$valor[1]];
             $valor['dia'] = $dias[$valor['dia']];
             $Arrayresultado[$ind] = $valor;
-            $imagen = "../../../../medifacil_front/imagen/icono/ver.png ^ Agregar";
+            $imagen = "../../../../fastmedical_front/imagen/icono/ver.png ^ Agregar";
             array_push($Arrayresultado[$j], $imagen);
             $j++;
         }
@@ -710,8 +710,8 @@ class LCita {
       $blanco="";
       if(!empty($resultado[0]["estado"])) {
       foreach($resultado as $indice=>$fila) {
-      $imageneliminaractivado="<a href=\"javascript:eliminarCitaAdicionalInformes('".$resultado[$indice]['iCodigoProgramacion']."','".$datos["codigoCronograma"]."');\"><img src=\"../../../../medifacil_front/imagen/icono/editdelete.png\"></a>";
-      $imageneliminardesactivado="<a href=\"javascript:prohibidoeliminarAdicionalInformes('".$resultado[$indice]['estado']."');\"><img src=\"../../../../medifacil_front/imagen/icono/editdelete_inactivo.png\"></a>";
+      $imageneliminaractivado="<a href=\"javascript:eliminarCitaAdicionalInformes('".$resultado[$indice]['iCodigoProgramacion']."','".$datos["codigoCronograma"]."');\"><img src=\"../../../../fastmedical_front/imagen/icono/editdelete.png\"></a>";
+      $imageneliminardesactivado="<a href=\"javascript:prohibidoeliminarAdicionalInformes('".$resultado[$indice]['estado']."');\"><img src=\"../../../../fastmedical_front/imagen/icono/editdelete_inactivo.png\"></a>";
       if($resultado[$indice]['estado']=="RESERVADO") {
       array_push($resultado[$indice],$imageneliminaractivado);
       }else {
@@ -737,12 +737,12 @@ class LCita {
             foreach ($resultado as $indice => $fila) {
                 $resultado[$indice][1]=  utf8_encode($resultado[$indice][1]);
                 if (isset($_SESSION["permiso_formulario_servicio"][118]["ELIMINAR_CITA_TABLA_PROG_DET"]) && ($_SESSION["permiso_formulario_servicio"][118]["ELIMINAR_CITA_TABLA_PROG_DET"] == 1)) {
-                    $imageneliminaractivado = "<a href=\"javascript:eliminarCitaAdicionalInformes('" . $resultado[$indice]['iCodigoProgramacion'] . "','" . $datos["codigoCronograma"] . "');\"><img src=\"../../../../medifacil_front/imagen/icono/editdelete.png\"></a>";
+                    $imageneliminaractivado = "<a href=\"javascript:eliminarCitaAdicionalInformes('" . $resultado[$indice]['iCodigoProgramacion'] . "','" . $datos["codigoCronograma"] . "');\"><img src=\"../../../../fastmedical_front/imagen/icono/editdelete.png\"></a>";
                 } else {
                     $imageneliminaractivado = "-";
                 }
 
-                $imageneliminardesactivado = "<a href=\"javascript:prohibidoeliminarAdicionalInformes('" . $resultado[$indice]['estado'] . "');\"><img src=\"../../../../medifacil_front/imagen/icono/editdelete_inactivo.png\"></a>";
+                $imageneliminardesactivado = "<a href=\"javascript:prohibidoeliminarAdicionalInformes('" . $resultado[$indice]['estado'] . "');\"><img src=\"../../../../fastmedical_front/imagen/icono/editdelete_inactivo.png\"></a>";
 
                 if ($resultado[$indice]['estado'] == "RESERVADO") {
                     array_push($resultado[$indice], $imageneliminaractivado);
@@ -751,7 +751,7 @@ class LCita {
                 }
 
                 //if (isset($_SESSION["permiso_formulario_servicio"][118]["CAMBIAR_ESTADO_NO_ATENDIDO"]) && ($_SESSION["permiso_formulario_servicio"][118]["CAMBIAR_ESTADO_NO_ATENDIDO"] == 1)){
-                $imageneliminaractivadoAdicional = "<a href=\"javascript:CambiarEstadoNoAtendidoAdicional('" . $resultado[$indice]['estado'] . "','" . $resultado[$indice]['iCodigoProgramacion'] . "');\"><img src=\"../../../../medifacil_front/imagen/icono/reload3.png\" title='Cambiar de Estado'></a>";
+                $imageneliminaractivadoAdicional = "<a href=\"javascript:CambiarEstadoNoAtendidoAdicional('" . $resultado[$indice]['estado'] . "','" . $resultado[$indice]['iCodigoProgramacion'] . "');\"><img src=\"../../../../fastmedical_front/imagen/icono/reload3.png\" title='Cambiar de Estado'></a>";
                 // } else {
                 // $imageneliminaractivadoAdicional = "-";
                 // }
@@ -959,8 +959,8 @@ class LCita {
         $blanco = "";
         if (!empty($resultado[0]["estado"])) {
             foreach ($resultado as $indice => $fila) {
-                $imageneliminaractivado = "../../../../medifacil_front/imagen/icono/editdelete.png";
-                $imageneliminardesactivado = "../../../../medifacil_front/imagen/icono/editdelete_inactivo.png";
+                $imageneliminaractivado = "../../../../fastmedical_front/imagen/icono/editdelete.png";
+                $imageneliminardesactivado = "../../../../fastmedical_front/imagen/icono/editdelete_inactivo.png";
                 if ($resultado[$indice]['estado'] == "RESERVADO") {
                     array_push($resultado[$indice], $imageneliminaractivado);
                 } else {

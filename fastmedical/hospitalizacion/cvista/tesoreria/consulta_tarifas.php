@@ -4,7 +4,7 @@
 <table style="border:0px solid;width:100%;height:10%;padding:20px;">
     <tr>
         <td  style="width:5%">
-            <img src="../../../../medifacil_front/imagen/icono/tarifas.png" style="width:80px;">
+            <img src="../../../../fastmedical_front/imagen/icono/tarifas.png" style="width:80px;">
         </td>
         <td  style="width:5%">
 
@@ -37,7 +37,7 @@
                         <td>
                             <p style="font-size:14px;font-family: segoe ui;color:#024683;"><b>Productos y Servicios</b></p>
                             <div id="contenedorTablaServicios" style="width:100%; height: 90%;border:1px solid #D1BD9A">
-                                <img src="../../../../medifacil_front/imagen/fondo/almacen.jpg" style="width:100%;height: 100%">
+                                <img src="../../../../fastmedical_front/imagen/fondo/almacen.jpg" style="width:100%;height: 100%">
                             </div>    
                         </td>
                     </tr>

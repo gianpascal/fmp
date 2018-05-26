@@ -128,19 +128,19 @@ $toolbarx3=new ToollBar("left");
   <div id="divMsjEliminar" style="font-size: 11px;font-weight: lighter;color: #FF6600;"></div>
 <div id="divUsarx">
         <?php
-        $toolbarx1->SetBoton("Utilizar","Utilizar Versión","btn","onclick,onkeypress","accionesVersion('pasarproduccion')",$_SESSION['path_principal']."../medifacil_front/imagen/icono/lassists.png","","",true);
+        $toolbarx1->SetBoton("Utilizar","Utilizar Versión","btn","onclick,onkeypress","accionesVersion('pasarproduccion')",$_SESSION['path_principal']."../fastmedical_front/imagen/icono/lassists.png","","",true);
         $toolbarx1->Mostrar();
         ?>
     </div>
     <div id="divEditarx">
         <?php
-        $toolbarx2->SetBoton("GenerarEdicion","Generar Versión de Edición","btn","onclick,onkeypress","accionesVersion('pasardesarrollo')",$_SESSION['path_principal']."../medifacil_front/imagen/icono/restaurar.png","","",true);
+        $toolbarx2->SetBoton("GenerarEdicion","Generar Versión de Edición","btn","onclick,onkeypress","accionesVersion('pasardesarrollo')",$_SESSION['path_principal']."../fastmedical_front/imagen/icono/restaurar.png","","",true);
         $toolbarx2->Mostrar();
         ?>
     </div>
     <div id="divEliminarx">
         <?php
-        $toolbarx3->SetBoton("Desactivar","Desactivar Versión","btn","onclick,onkeypress","accionesVersion('desactivarversion')",$_SESSION['path_principal']."../medifacil_front/imagen/icono/anular.png","","",true);
+        $toolbarx3->SetBoton("Desactivar","Desactivar Versión","btn","onclick,onkeypress","accionesVersion('desactivarversion')",$_SESSION['path_principal']."../fastmedical_front/imagen/icono/anular.png","","",true);
         $toolbarx3->Mostrar();
         ?>
     </div>

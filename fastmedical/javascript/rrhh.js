@@ -7,7 +7,7 @@ function cargarArbolCentroCostos(funcion)
     myDiv=document.getElementById('divCentroCostos');
     myDiv.innerHTML = " ";
     tree=new dhtmlXTreeObject("divCentroCostos","100%","90%",0);
-    tree.setImagePath("../../../../medifacil_front/imagen/icono/tree/");
+    tree.setImagePath("../../../../fastmedical_front/imagen/icono/tree/");
     tree.attachEvent("onClick", function(){
 
         funcionArbol(funcion,tree.getSelectedItemId());
@@ -39,7 +39,7 @@ function recargarArbolCCostosPuestos(funcion)
     divMostrar.innerHTML = " ";
     treeCentroCostosBusqueda=new dhtmlXTreeObject("divOpcCCostos","100%","100%",0);
     treeCentroCostosBusqueda.setSkin('dhx_skyblue');
-    treeCentroCostosBusqueda.setImagePath("../../../../medifacil_front/imagen/csh_bluebooks_simedh/");
+    treeCentroCostosBusqueda.setImagePath("../../../../fastmedical_front/imagen/csh_bluebooks_simedh/");
     treeCentroCostosBusqueda.attachEvent("onClick", function(){
         verTablaPuestosCentroCostos(treeCentroCostosBusqueda.getSelectedItemId());
     } );
@@ -53,7 +53,7 @@ function verTablaPuestosCentroCostos(idCentroDeCosto){
     var divMostrar=document.getElementById('divResultadoPuestosCCostos');
     divMostrar.innerHTML = " ";
     tablaPuestosCentroCostos = new dhtmlXGridObject('divResultadoPuestosCCostos');
-    tablaPuestosCentroCostos.setImagePath("../../../../medifacil_front/imagen/icono/");
+    tablaPuestosCentroCostos.setImagePath("../../../../fastmedical_front/imagen/icono/");
     tablaPuestosCentroCostos.attachEvent("onRowSelect",function(fila,columna){
         var funcion=$('hfuncion').value; 
         funcion=funcion +'('+fila+','+columna+')';
@@ -386,7 +386,7 @@ function busquedaPuestoxCentroCostosFiltrado(){
     if(numero==3){
         dn=0;
         tablaBusquedaPuestoxCentroCostosFiltrado = new dhtmlXGridObject('divResultadoPuestosCCostos');
-        tablaBusquedaPuestoxCentroCostosFiltrado.setImagePath("../../../../medifacil_front/imagen/icono/");
+        tablaBusquedaPuestoxCentroCostosFiltrado.setImagePath("../../../../fastmedical_front/imagen/icono/");
         //        tablaBusquedaPuestosEnCentroCostos.attachEvent("onRowSelect", 
         //            function(){
         //                alert("letall");
@@ -743,7 +743,7 @@ function actualizarDatosPuestoenCentroCostos(fil, col){
 //                            }else if (respuesta.trim()=='existe') {
 //                                
 //                                $('cell52').show();
-//                                $('cell52').innerHTML='<CENTER><p style="color: red; font-weight: bold;"><img width=40 heigth=40  id=\"imgagenError\" src=\"../../../../medifacil_front/imagen/icono/alert_big.png\"/>El nombre del Puesto  "'+$('txtNombrePuesto').value+'"  ya existe, escoja otro nombre...</p></CENTER>';
+//                                $('cell52').innerHTML='<CENTER><p style="color: red; font-weight: bold;"><img width=40 heigth=40  id=\"imgagenError\" src=\"../../../../fastmedical_front/imagen/icono/alert_big.png\"/>El nombre del Puesto  "'+$('txtNombrePuesto').value+'"  ya existe, escoja otro nombre...</p></CENTER>';
 //                                
 //                            }else {
 //                                alert("hol")
@@ -1010,7 +1010,7 @@ function grabarDetallePuestoaCentroCosto(){
                                 //window.alert("No se pudo asignar un puesto al Centro de Costos escogido, Consulte con Informatica")
                                 $('cell52').show();
                                
-                                $('cell52').innerHTML='<CENTER><p style="color: red; font-weight: bold;"><img width=40 heigth=40  id=\"imgagenError\" src=\"../../../../medifacil_front/imagen/icono/alert_big.png\"/>El nombre del Puesto  "'+$('txtNombrePuesto').value+'"  ya existe, escoja otro nombre...</p></CENTER>';
+                                $('cell52').innerHTML='<CENTER><p style="color: red; font-weight: bold;"><img width=40 heigth=40  id=\"imgagenError\" src=\"../../../../fastmedical_front/imagen/icono/alert_big.png\"/>El nombre del Puesto  "'+$('txtNombrePuesto').value+'"  ya existe, escoja otro nombre...</p></CENTER>';
                                 
                             }else {
                                 alert("hol")

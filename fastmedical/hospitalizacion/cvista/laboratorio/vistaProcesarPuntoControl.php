@@ -26,7 +26,7 @@ $hoy = date("d/m/Y");
                 </td>
                 <td> 
                     <?php
-                    $toolbar3->SetBoton("Refrescar", "Refrescar", "btn", "onclick,onkeypress", "obtenerPersonasPuntoControl()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/kservices.png", "", "", 1);
+                    $toolbar3->SetBoton("Refrescar", "Refrescar", "btn", "onclick,onkeypress", "obtenerPersonasPuntoControl()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/kservices.png", "", "", 1);
                     $toolbar3->Mostrar();
                     ?>
                 </td>
@@ -42,13 +42,13 @@ $hoy = date("d/m/Y");
     </div>
     <div id="divBotonRecibir" align="center" style="width:200px; height:30px; float: left">
         <?php
-        $toolbar1->SetBoton("recibir", "Recibir", "btn", "onclick,onkeypress", "recibirPuntoControl()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/Drawer-Open.png", "", "", 1);
+        $toolbar1->SetBoton("recibir", "Recibir", "btn", "onclick,onkeypress", "recibirPuntoControl()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/Drawer-Open.png", "", "", 1);
         $toolbar1->Mostrar();
         ?>
     </div>
     <div id="divBotonRecibir" align="center" style="width:200px; height:30px; float: left;">
         <?php
-        $toolbar2->SetBoton("procesar", "Procesar", "btn", "onclick,onkeypress", "procesarPuntocontrol()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/kservices.png", "", "", 1);
+        $toolbar2->SetBoton("procesar", "Procesar", "btn", "onclick,onkeypress", "procesarPuntocontrol()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/kservices.png", "", "", 1);
         $toolbar2->Mostrar();
         ?>
     </div>

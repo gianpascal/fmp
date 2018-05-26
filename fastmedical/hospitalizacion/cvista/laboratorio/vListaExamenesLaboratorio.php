@@ -19,7 +19,7 @@ $toolbar1 = new ToollBar("center");
                         <td>
                             <div id="divBotonAsignarExamenAPerfil" align="center" style="width:9px; height:10px;margin-left: 45%">
                                 <?php
-                                $toolbar1->SetBoton("asignarExamenAPerfil", "Asignar Exámen", "btn", "onclick,onkeypress", "asignarExamenAPerfil()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/kopeteavailable.png", "", "", 1);
+                                $toolbar1->SetBoton("asignarExamenAPerfil", "Asignar Exámen", "btn", "onclick,onkeypress", "asignarExamenAPerfil()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/kopeteavailable.png", "", "", 1);
                                 $toolbar1->Mostrar();
                                 ?>
                             </div>

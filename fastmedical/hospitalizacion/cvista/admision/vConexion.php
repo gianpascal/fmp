@@ -2,7 +2,7 @@
     <legend>Essalud</legend>
     <div>
        <a onclick="abrirEssalud();" href="#">
-             <img src="../../../../medifacil_front/imagen/logo/essalud.jpg" />
+             <img src="../../../../fastmedical_front/imagen/logo/essalud.jpg" />
         </a>
         
        

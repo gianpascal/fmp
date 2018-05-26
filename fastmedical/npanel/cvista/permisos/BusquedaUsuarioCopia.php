@@ -46,10 +46,10 @@
 
 
                             <div  id ="divEtiquetaBuscar" style="width:100px;  float:left;" align="center">
-                                <img id="imgBuscar" border="0" src="../../../../medifacil_front/imagen/btn/nbtn_buscar.gif" alt="" title="Codigo de Persona" onclick="buscarUsuariosCopia()">
+                                <img id="imgBuscar" border="0" src="../../../../fastmedical_front/imagen/btn/nbtn_buscar.gif" alt="" title="Codigo de Persona" onclick="buscarUsuariosCopia()">
                             </div>
                             <div  id ="divEtiquetaLimpiar" style="width:100px;  float:left;" align="center">                                
-                                <img id="imgBuscar" border="0" src="../../../../medifacil_front/imagen/btn/btn_limpiar.gif" alt="" title="Codigo de Persona" onclick="limpiaBusquedaUsuarioCopiaTexto()">
+                                <img id="imgBuscar" border="0" src="../../../../fastmedical_front/imagen/btn/btn_limpiar.gif" alt="" title="Codigo de Persona" onclick="limpiaBusquedaUsuarioCopiaTexto()">
                             </div> 
                         </div>
                     </form>

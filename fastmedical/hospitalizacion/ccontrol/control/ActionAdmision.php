@@ -548,7 +548,7 @@ class ActionAdmision {
         $i = 1;
         if ($c_cod_per == '' || count($arrayFilas) == 0) {
             $cb_tipDc = $this->seleccionarTipoDocumento('0001');
-            $imagen = $disabled == '' ? '../../../../medifacil_front/imagen/icono/nuevo_item.png' : '../../../../medifacil_front/imagen/icono/nuevo_item_black.png';
+            $imagen = $disabled == '' ? '../../../../fastmedical_front/imagen/icono/nuevo_item.png' : '../../../../fastmedical_front/imagen/icono/nuevo_item_black.png';
             $cursor = $disabled == '' ? 'cursor:pointer;' : 'cursor:default;';
            // $tablaHTML.= "<tr>";
             $tablaHTML.="<td height='23'  >";
@@ -574,7 +574,7 @@ class ActionAdmision {
                 $tablaHTML.="</td>";
                 $tablaHTML.="<td>";
                 $tablaHTML.="<input name='txtNroDocIdent[" . $i . "]' onblur='valida_docIdentidad(" . $i . ");' onkeypress=\"return validFormSalt('nro',this,event,'txtApellidoPat')\" type='text' " . $readonly . " style='width:100px;' id='txtNroDocIdent[" . $i . "]' value='" . htmlentities(trim($arrayFilas[$i - 1]['vNumeroDocumento'])) . "'  title='Documento Identidad' maxlength='8'/>";
-              //  $tablaHTML.= $i == 1 ? "<input type='button' disabled='disabled' name='btnDni[" . $i . "]' id='btnDni[" . $i . "]' value='' style='background:url(../../../../medifacil_front/imagen/icono/nuevo_item_black.png) no-repeat;width:18px;height:18px;border:0px;cursor:default;' onclick='agrega_documento_identidad(\"tbl_doc\",++kk);'>" : "<input type='button' name='btnDni[" . $i . "]' id='btnDni[" . $i . "]' disabled='disabled' value='' style='background:url(../../../imagen/inicio/eliminar_black.gif) no-repeat;width:18px;height:18px;border:0px;cursor:default;' onclick='elimina_fila(" . $i . ");'>";
+              //  $tablaHTML.= $i == 1 ? "<input type='button' disabled='disabled' name='btnDni[" . $i . "]' id='btnDni[" . $i . "]' value='' style='background:url(../../../../fastmedical_front/imagen/icono/nuevo_item_black.png) no-repeat;width:18px;height:18px;border:0px;cursor:default;' onclick='agrega_documento_identidad(\"tbl_doc\",++kk);'>" : "<input type='button' name='btnDni[" . $i . "]' id='btnDni[" . $i . "]' disabled='disabled' value='' style='background:url(../../../imagen/inicio/eliminar_black.gif) no-repeat;width:18px;height:18px;border:0px;cursor:default;' onclick='elimina_fila(" . $i . ");'>";
                 $tablaHTML.="</td>";
                // $tablaHTML.="</tr>";
                 $i++;
@@ -1507,7 +1507,7 @@ class ActionAdmision {
             $i++;
             $arrayFilas[$key][$i] = date('Y-m-d');
             $i++;
-            $arrayFilas[$key][$i] = "../../../../medifacil_front/imagen/icono/editar.png ^ Ver";
+            $arrayFilas[$key][$i] = "../../../../fastmedical_front/imagen/icono/editar.png ^ Ver";
             $eps = $arrayFilas[$key][18];
             if ($eps == 1) {
                 $arrayFilas[$key][18] = 'EPS';

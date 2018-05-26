@@ -37,7 +37,7 @@
             <tr>
                 <td colspan="2" align="center">
                     <a href="javascript:busquedaPersonaMedicoTratante();">
-                        <img border="0" title="Buscar" alt="" src="../../../../medifacil_front/imagen/btn/b_buscar_on.gif"/></a>
+                        <img border="0" title="Buscar" alt="" src="../../../../fastmedical_front/imagen/btn/b_buscar_on.gif"/></a>
                 </td>
 
             </tr>  
@@ -47,7 +47,7 @@
             </div>
             <div align="center">
                 <a href="javascript:CerrarMedicoTratante();">
-                    <img border="0" title="Salir" alt="" src="../../../../medifacil_front/imagen/btn/b_Salir.gif"/></a>
+                    <img border="0" title="Salir" alt="" src="../../../../fastmedical_front/imagen/btn/b_Salir.gif"/></a>
             </div>
 
 

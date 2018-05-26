@@ -7,39 +7,39 @@
                 <table border="1" cellSpacing="0" width="300" style="">
                     <tr onMouseOver='this.style.background="#CDE596";'onMouseOut='this.style.background="white";'>
                         <td style="padding-left: 15px;font-size:16px;  font-family: Andale Mono, monospace;">Estados</td>
-                        <td id="1"><center><a href="javascript:abrirPopapOpciones('1')"><img src="../../../../medifacil_front/imagen/icono/abrir.png"></a></center></td>
+                        <td id="1"><center><a href="javascript:abrirPopapOpciones('1')"><img src="../../../../fastmedical_front/imagen/icono/abrir.png"></a></center></td>
                     </tr>
                     <tr onMouseOver='this.style.background="#CDE596";'onMouseOut='this.style.background="white";'>
                         <td style="padding-left: 15px;font-size:16px; font-family: Andale Mono, monospace;">Tipo Atención</td>
-                        <td id="8"><center><a href="javascript:abrirPopapOpciones('8')"><img src="../../../../medifacil_front/imagen/icono/abrir.png"></a></center></td>
+                        <td id="8"><center><a href="javascript:abrirPopapOpciones('8')"><img src="../../../../fastmedical_front/imagen/icono/abrir.png"></a></center></td>
                     </tr>
                     <tr onMouseOver='this.style.background="#CDE596";'onMouseOut='this.style.background="white";'>
                         <td style="padding-left: 15px;font-size:16px; font-family: Andale Mono, monospace;">Tipo Programacion</td>
-                        <td id="9"><center><a href="javascript:abrirPopapOpciones('9')"><img src="../../../../medifacil_front/imagen/icono/abrir.png"></a></center></td>
+                        <td id="9"><center><a href="javascript:abrirPopapOpciones('9')"><img src="../../../../fastmedical_front/imagen/icono/abrir.png"></a></center></td>
                     </tr>
                     <tr onMouseOver='this.style.background="#CDE596";'onMouseOut='this.style.background="white";'>
                         <td style="padding-left: 15px;font-size:16px; font-family: Andale Mono, monospace;">Médicos</td>
-                        <td id="2"><center><a href="javascript:abrirPopapOpciones('2')"><img src="../../../../medifacil_front/imagen/icono/abrir.png"></a></center></td>
+                        <td id="2"><center><a href="javascript:abrirPopapOpciones('2')"><img src="../../../../fastmedical_front/imagen/icono/abrir.png"></a></center></td>
                     </tr>
                     <tr onMouseOver='this.style.background="#CDE596";'onMouseOut='this.style.background="white";'>
                         <td style="padding-left: 15px;font-size:16px; font-family: Andale Mono, monospace;">Servicios</td>
-                        <td id="3"><center><a href="javascript:abrirPopapOpciones('3')"><img src="../../../../medifacil_front/imagen/icono/abrir.png"></a></center></td>
+                        <td id="3"><center><a href="javascript:abrirPopapOpciones('3')"><img src="../../../../fastmedical_front/imagen/icono/abrir.png"></a></center></td>
                     </tr>
                     <tr onMouseOver='this.style.background="#CDE596";'onMouseOut='this.style.background="white";'>
                         <td style="padding-left: 15px;font-size:16px; font-family: Andale Mono, monospace;">Ambientes L.</td>
-                        <td id="4"><center><a href="javascript:abrirPopapOpciones('4')"><img src="../../../../medifacil_front/imagen/icono/abrir.png"></a></center></td>
+                        <td id="4"><center><a href="javascript:abrirPopapOpciones('4')"><img src="../../../../fastmedical_front/imagen/icono/abrir.png"></a></center></td>
                     </tr>
                     <tr onMouseOver='this.style.background="#CDE596";'onMouseOut='this.style.background="white";'>
                         <td style="padding-left: 15px;font-size:16px; font-family: Andale Mono, monospace;">Ambientes F.</td>
-                        <td id="5"><center><a href="javascript:abrirPopapOpciones('5')"><img src="../../../../medifacil_front/imagen/icono/abrir.png"></a></center></td>
+                        <td id="5"><center><a href="javascript:abrirPopapOpciones('5')"><img src="../../../../fastmedical_front/imagen/icono/abrir.png"></a></center></td>
                     </tr>
                     <tr onMouseOver='this.style.background="#CDE596";'onMouseOut='this.style.background="white";'>
                         <td style="padding-left: 15px;font-size:16px; font-family: Andale Mono, monospace;">Sedes</td>
-                        <td id="6"><center><a href="javascript:abrirPopapOpciones('6')"><img src="../../../../medifacil_front/imagen/icono/abrir.png"></a></center></td>
+                        <td id="6"><center><a href="javascript:abrirPopapOpciones('6')"><img src="../../../../fastmedical_front/imagen/icono/abrir.png"></a></center></td>
                     </tr>
                     <tr onMouseOver='this.style.background="#CDE596";'onMouseOut='this.style.background="white";'>
                         <td style="padding-left: 15px;font-size:16px; font-family: Andale Mono, monospace;">Turno</td>
-                        <td id="7"><center><a href="javascript:abrirPopapOpciones('7')"><img src="../../../../medifacil_front/imagen/icono/abrir.png"></a></center></td>
+                        <td id="7"><center><a href="javascript:abrirPopapOpciones('7')"><img src="../../../../fastmedical_front/imagen/icono/abrir.png"></a></center></td>
                     </tr>
                 </table>
             </fieldset>
@@ -103,7 +103,7 @@
                 <div style="padding-left: 30%;">
                     <?php $toolbar1 = new ToollBar(); ?>
                     <?php
-                    $toolbar1->SetBoton("Cambiar", "Cambiar Grafico", "btn", "onclick,onkeypress", "cambiarGrafico()", "../../../../medifacil_front/imagen/icono/Download.png", "", "", true);
+                    $toolbar1->SetBoton("Cambiar", "Cambiar Grafico", "btn", "onclick,onkeypress", "cambiarGrafico()", "../../../../fastmedical_front/imagen/icono/Download.png", "", "", true);
                     $toolbar1->Mostrar();
                     ?> 
                 </div>
@@ -237,7 +237,7 @@
                 <br>
                 <?php $toolbar = new ToollBar(); ?>
                 <?php
-                $toolbar->SetBoton("Buscar", "Ver Estadisticas", "btn", "onclick,onkeypress", "verGraficosEstadisticos()", "../../../../medifacil_front/imagen/icono/estadisticas.jpg", "", "", true);
+                $toolbar->SetBoton("Buscar", "Ver Estadisticas", "btn", "onclick,onkeypress", "verGraficosEstadisticos()", "../../../../fastmedical_front/imagen/icono/estadisticas.jpg", "", "", true);
                 $toolbar->Mostrar();
                 ?> 
             </div>

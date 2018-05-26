@@ -112,7 +112,7 @@ else{
                     </div>
                     <div style="float:left; width:11%;">
                         <a href="javascript:mostrarBuscadorAmbienteLogico('hdnCodAmbienteLogico','txtNomAmbienteLogico')">
-                            <img border="0" title="Buscar Ambiente Logico" alt="Buscar" src="../../../../medifacil_front/imagen/btn/nbtn_buscar.gif">
+                            <img border="0" title="Buscar Ambiente Logico" alt="Buscar" src="../../../../fastmedical_front/imagen/btn/nbtn_buscar.gif">
                         </a>
                     </div>
                     <div style="float:left; width:11%;">
@@ -164,7 +164,7 @@ else{
                     <input type="text" name="txtCentroCostoProgSOP" id="txtCentroCostoProgSOP" size="50" readonly="true" value="<?php echo $centroCostoCirujano;?>" />
                 </div>
                 <div style="float:left; width:11%;">
-                    <!--<img border="0" title="Buscar Centro de Costo" alt="Buscar" src="../../../../medifacil_front/imagen/btn/nbtn_buscar.gif">-->
+                    <!--<img border="0" title="Buscar Centro de Costo" alt="Buscar" src="../../../../fastmedical_front/imagen/btn/nbtn_buscar.gif">-->
                     &nbsp;
                 </div>
                 <div style="float:left; width:11%;">&nbsp;</div>
@@ -193,16 +193,16 @@ else{
     </div>
     <br/>
     <div id="Div_btnSolProgSOP" align="center" style="width: 100%;background: bottom;display: block">
-        <?php //if($_SESSION["permiso_formulario_servicio"][119]["GRABAR_PROG_MED"]==1) echo "<a href=\"javascript:validarCronogramaProgramacionMedicos()\"><img src=\"../../../../medifacil_front/imagen/btn/b_grabar__on.gif\"></a>&nbsp;&nbsp;&nbsp;&nbsp;";?>
-        <?php //if($_SESSION["permiso_formulario_servicio"][119]["CANCELAR_GRABAR_PROG_MED"]==1) echo "<a href=\"javascript:regresarCronogramaProgramacionMedicos()\"><img src=\"../../../../medifacil_front/imagen/btn/b_cancelar_on.gif\"></a>&nbsp;&nbsp;&nbsp;&nbsp;";?>
-        <?php //echo "<a href=\"javascript:validarManteProgSOP('insertar')\"><img src=\"../../../../medifacil_front/imagen/btn/b_grabar__on.gif\"></a>&nbsp;&nbsp;&nbsp;&nbsp;";?>
-        <?php echo "<a href=\"javascript:regresarSolicitudesPendientesSOP()\"><img src=\"../../../../medifacil_front/imagen/icono/comment.png\"></a>";?>
-        <?php echo "<a href=\"javascript:regresarSolicitudesPendientesSOP()\"><img src=\"../../../../medifacil_front/imagen/icono/cama.jpg\"></a>";?>
-        <?php echo "<a href=\"javascript:regresarSolicitudesPendientesSOP()\"><img src=\"../../../../medifacil_front/imagen/icono/pendiente.gif\"></a>";?>
+        <?php //if($_SESSION["permiso_formulario_servicio"][119]["GRABAR_PROG_MED"]==1) echo "<a href=\"javascript:validarCronogramaProgramacionMedicos()\"><img src=\"../../../../fastmedical_front/imagen/btn/b_grabar__on.gif\"></a>&nbsp;&nbsp;&nbsp;&nbsp;";?>
+        <?php //if($_SESSION["permiso_formulario_servicio"][119]["CANCELAR_GRABAR_PROG_MED"]==1) echo "<a href=\"javascript:regresarCronogramaProgramacionMedicos()\"><img src=\"../../../../fastmedical_front/imagen/btn/b_cancelar_on.gif\"></a>&nbsp;&nbsp;&nbsp;&nbsp;";?>
+        <?php //echo "<a href=\"javascript:validarManteProgSOP('insertar')\"><img src=\"../../../../fastmedical_front/imagen/btn/b_grabar__on.gif\"></a>&nbsp;&nbsp;&nbsp;&nbsp;";?>
+        <?php echo "<a href=\"javascript:regresarSolicitudesPendientesSOP()\"><img src=\"../../../../fastmedical_front/imagen/icono/comment.png\"></a>";?>
+        <?php echo "<a href=\"javascript:regresarSolicitudesPendientesSOP()\"><img src=\"../../../../fastmedical_front/imagen/icono/cama.jpg\"></a>";?>
+        <?php echo "<a href=\"javascript:regresarSolicitudesPendientesSOP()\"><img src=\"../../../../fastmedical_front/imagen/icono/pendiente.gif\"></a>";?>
         
         <!--Si la orden no esta liquidada se muestra este boton-->
-        <?php echo "<a href=\"javascript:validarManteProgramacionSOP('actualizar')\"><img src=\"../../../../medifacil_front/imagen/btn/b_actualizardatos.gif\"></a>";?>
+        <?php echo "<a href=\"javascript:validarManteProgramacionSOP('actualizar')\"><img src=\"../../../../fastmedical_front/imagen/btn/b_actualizardatos.gif\"></a>";?>
 
-        <?php echo "<a href=\"javascript:regresarDeDetalleAprogramacionesSOP()\"><img src=\"../../../../medifacil_front/imagen/btn/b_cancelar_on.gif\"></a>";?>
+        <?php echo "<a href=\"javascript:regresarDeDetalleAprogramacionesSOP()\"><img src=\"../../../../fastmedical_front/imagen/btn/b_cancelar_on.gif\"></a>";?>
     </div>
 </div>

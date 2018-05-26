@@ -31,7 +31,7 @@ $NombreExamenLaboratorio = $datos["NombreExamenLaboratorio"];
                 <div id="idbBuscarCoordinadores" style="">;
 
                     <?php
-                    $toolbar01->SetBoton("NuevoTipoMuestra", "Nuevo", "btn", "onclick,onkeypress", "NuevoTipoMuestra()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/agt_action_success.png", "", "", 1);
+                    $toolbar01->SetBoton("NuevoTipoMuestra", "Nuevo", "btn", "onclick,onkeypress", "NuevoTipoMuestra()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/agt_action_success.png", "", "", 1);
                     $toolbar01->Mostrar();
                     ?>
 
@@ -58,7 +58,7 @@ $NombreExamenLaboratorio = $datos["NombreExamenLaboratorio"];
                 <div style="" id="modificardiv">
 
                     <?php
-                    $toolbar04->SetBoton("SeleccionarReciente", "Seleccionar", "btn", "onclick,onkeypress", " seleccionarRecipiente()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/agt_action_success.png", "", "", 1);
+                    $toolbar04->SetBoton("SeleccionarReciente", "Seleccionar", "btn", "onclick,onkeypress", " seleccionarRecipiente()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/agt_action_success.png", "", "", 1);
                     $toolbar04->Mostrar();
                     ?>
 

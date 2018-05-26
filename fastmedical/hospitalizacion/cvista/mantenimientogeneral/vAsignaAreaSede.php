@@ -24,8 +24,8 @@ $toolbar10 = new ToollBar("center");
                 } else {
                     $verBotonLimpiarTodasSedesSeleccionadas = 0;
                 }
-                $toolbar9->SetBoton("btnSeleccionaTodasSucurles", "Seleccionar Todas", "btn", "onclick,onkeypress", "opcionCkbSucursales(1)", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/op_atendido.gif", "", "", $verBotonSeleccionarTodasSedes);
-                $toolbar9->SetBoton("btnLimpiaCkbSucursales", "Limpiar", "btn", "onclick,onkeypress", "opcionCkbSucursales(0)", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/limpiar.png", "", "", $verBotonLimpiarTodasSedesSeleccionadas);
+                $toolbar9->SetBoton("btnSeleccionaTodasSucurles", "Seleccionar Todas", "btn", "onclick,onkeypress", "opcionCkbSucursales(1)", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/op_atendido.gif", "", "", $verBotonSeleccionarTodasSedes);
+                $toolbar9->SetBoton("btnLimpiaCkbSucursales", "Limpiar", "btn", "onclick,onkeypress", "opcionCkbSucursales(0)", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/limpiar.png", "", "", $verBotonLimpiarTodasSedesSeleccionadas);
                 $toolbar9->Mostrar();
                 ?>
             </div>
@@ -37,7 +37,7 @@ $toolbar10 = new ToollBar("center");
     <div align="center" style="margin-left: 45%">
         <?php
         if (isset($_SESSION["permiso_formulario_servicio"][237]["GRABAR_AREA_A_SEDES_MASIVAMENTE"]) && ($_SESSION["permiso_formulario_servicio"][237]["GRABAR_AREA_A_SEDES_MASIVAMENTE"] == 1)) {
-            $toolbar10->SetBoton("btnAsignarArea", "Asignar", "btn", "onclick,onkeypress", "asignarAreaASucursal('nuevo')", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/clean.png", "", "", 1);
+            $toolbar10->SetBoton("btnAsignarArea", "Asignar", "btn", "onclick,onkeypress", "asignarAreaASucursal('nuevo')", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/clean.png", "", "", 1);
             $toolbar10->Mostrar();
         }
         ?>

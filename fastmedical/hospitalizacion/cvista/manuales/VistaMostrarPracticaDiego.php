@@ -24,7 +24,7 @@
             <div style="padding: 100px;height: 100px;">
                 <?php
                 $toolbar = new ToollBar();
-                $toolbar->SetBoton("Guardar", "Guardar", "btn", "onclick,onkeypress", "GuarfarDatosPersona", "../../../../medifacil_front/imagen/icono/filesave.png", "", "", true);
+                $toolbar->SetBoton("Guardar", "Guardar", "btn", "onclick,onkeypress", "GuarfarDatosPersona", "../../../../fastmedical_front/imagen/icono/filesave.png", "", "", true);
                 $toolbar->Mostrar();
                 ?>
             </div>

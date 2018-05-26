@@ -12,8 +12,8 @@
             <div style="width:20%;height:25px; float:left; margin-left: 40%; max-height: 40%">
                 <?php
                 $toolbar=new ToollBar("right");
-                $toolbar->SetBoton("CERRAR","Cerrar","btn","onclick,onkeypress","cerrarPopap","../../../../medifacil_front/imagen/icono/cerrar1.gif","","",true);
-                //$toolbar->SetBoton("VER","Ver Datos","btn","onclick,onkeypress","ventana_formulario_persona('setDatosContribuyente')","../../../../medifacil_front/imagen/icono/add_user.png","","",true);
+                $toolbar->SetBoton("CERRAR","Cerrar","btn","onclick,onkeypress","cerrarPopap","../../../../fastmedical_front/imagen/icono/cerrar1.gif","","",true);
+                //$toolbar->SetBoton("VER","Ver Datos","btn","onclick,onkeypress","ventana_formulario_persona('setDatosContribuyente')","../../../../fastmedical_front/imagen/icono/add_user.png","","",true);
                 $toolbar->Mostrar();
                 ?>
             </div>

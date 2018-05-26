@@ -3,7 +3,7 @@
 //$pais='9589';
 //$cb_combo = $this->listaDatosComboUbigeo($pais,substr($ubigeo, 0, 2), substr($ubigeo, 2, 2), substr($ubigeo, 4, 2), "disabled");
 //$toolbar = new ToollBar("right");
-//$toolbar->SetBoton("Adscripcion Departamental", "Ads.Depart.", "btn", "onclick,onkeypress", "habilitaradscripciondepartamental()", "../../../../medifacil_front/imagen/icono/apply.png", "", "", true);
+//$toolbar->SetBoton("Adscripcion Departamental", "Ads.Depart.", "btn", "onclick,onkeypress", "habilitaradscripciondepartamental()", "../../../../fastmedical_front/imagen/icono/apply.png", "", "", true);
 ?>
 
 <fieldset>

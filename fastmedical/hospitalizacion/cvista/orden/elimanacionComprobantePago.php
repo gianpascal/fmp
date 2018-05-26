@@ -98,7 +98,7 @@
             <div style="float: left;">
                 <a href="javascript:anularComprobanteDePago(<?php echo $datos["numeroComprobante"] ?>,<?php echo $datos["codigoEmpleado"].''; ?>);"
                    style="border: red; border-color: red;background-color: red;background: red">
-                    <img src="../../../../medifacil_front/imagen/icono/anularComprobante.png" title="Anular" alt="Anular" border="1" 
+                    <img src="../../../../fastmedical_front/imagen/icono/anularComprobante.png" title="Anular" alt="Anular" border="1" 
                          style="border: red;border-bottom-color: red; background-color: red;background-image: inherit;color: red
                          ;background-image: url" />
                 </a>
@@ -108,12 +108,12 @@
             </div>
             <div style="float: left;">
                 <a href="javascript:imprimirComprobante('<?php echo $datos["numeroComprobante"] ?>','<?php echo $datos["codigoEmpleado"]; ?>');">
-                    <img src="../../../../medifacil_front/imagen/btn/Imprimir Receta.gif" title="Imprimir" alt="Imprimir"/>
+                    <img src="../../../../fastmedical_front/imagen/btn/Imprimir Receta.gif" title="Imprimir" alt="Imprimir"/>
                 </a>
             </div>
             <div style="float: left;">
                 <a href="javascript:salirVentanaAnulacionResibo();">
-                    <img src="../../../../medifacil_front/imagen/btn/b_Salir.gif" title="Salir" alt="Salir"/>
+                    <img src="../../../../fastmedical_front/imagen/btn/b_Salir.gif" title="Salir" alt="Salir"/>
                 </a>
             </div>
             <div style="float: left;">

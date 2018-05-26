@@ -25,6 +25,6 @@
     </div>
     <div style="clear:left;width:100%; height: 10%">&nbsp;</div>
     <div id="divAccionesMantCamaxAmbFisico" align="center" style="width:100%;height:10%;background: white;display: block">
-        <?php echo "<a href=\"javascript:mostrarMantCamaxAmbFisico2('insertar','$datos');\"><img src=\"../../../../medifacil_front/imagen/btn/b_nuevo_on.gif \"></a>"; ?>
+        <?php echo "<a href=\"javascript:mostrarMantCamaxAmbFisico2('insertar','$datos');\"><img src=\"../../../../fastmedical_front/imagen/btn/b_nuevo_on.gif \"></a>"; ?>
     </div>
 </div>

@@ -56,25 +56,25 @@
 
                         <div style="width: 100px; float: left; height: 200px;"id="Transacciones1">
                             <?php
-                            $toolbar1->SetBoton("agregarPuntoControl", "Nuevo", "btn", "onclick,onkeypress", "agregarPuntoControl()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/kopeteavailable.png", "", "", 0);
+                            $toolbar1->SetBoton("agregarPuntoControl", "Nuevo", "btn", "onclick,onkeypress", "agregarPuntoControl()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/kopeteavailable.png", "", "", 0);
                             $toolbar1->Mostrar();
                             ?> 
                         </div>
                         <div style="width: 100px; float: left; height: 100px;" id="Transacciones2">
                             <?php
-                            $toolbar2->SetBoton("habilitarFormularioPuntoControl", "Editar", "btn", "onclick,onkeypress", "habilitarFormularioPuntoControl()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/edit2.png", "", "", 0);
+                            $toolbar2->SetBoton("habilitarFormularioPuntoControl", "Editar", "btn", "onclick,onkeypress", "habilitarFormularioPuntoControl()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/edit2.png", "", "", 0);
                             $toolbar2->Mostrar();
                             ?>  
                         </div>
                         <div style="width: 100px; float: left; height: 100px;" id="Transacciones3">
                             <?php
-                            $toolbar3->SetBoton("guardarPuntoControl", "Guardar", "btn", "onclick,onkeypress", "guardarPuntoControl()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/filesave.png", "", "", 1);
+                            $toolbar3->SetBoton("guardarPuntoControl", "Guardar", "btn", "onclick,onkeypress", "guardarPuntoControl()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/filesave.png", "", "", 1);
                             $toolbar3->Mostrar();
                             ?>  
                         </div>    
                         <div style="width: 100px; float: left; height: 100px;" id="Transacciones4">
                             <?php
-                            $toolbar4->SetBoton("cancelarPuntoControl", "Cancelar", "btn", "onclick,onkeypress", "cancelarPuntoControl()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/button_cancel.png", "", "", 1);
+                            $toolbar4->SetBoton("cancelarPuntoControl", "Cancelar", "btn", "onclick,onkeypress", "cancelarPuntoControl()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/button_cancel.png", "", "", 1);
                             $toolbar4->Mostrar();
                             ?>  
                         </div>    
@@ -95,7 +95,7 @@
 
             <div style="width: 10px; float: left; height: 10px;" id="Transacciones9">
                 <?php
-                $toolbar1->SetBoton("BusquedaEmpleado", "Buscar Empleado", "btn", "onclick,onkeypress", "podpadBusquedaEmpleadoPuntoControl()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/kopeteavailable.png", "", "", 1);
+                $toolbar1->SetBoton("BusquedaEmpleado", "Buscar Empleado", "btn", "onclick,onkeypress", "podpadBusquedaEmpleadoPuntoControl()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/kopeteavailable.png", "", "", 1);
                 $toolbar1->Mostrar();
                 ?>  
             </div>    

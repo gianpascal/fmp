@@ -69,24 +69,24 @@ $opcionesCategoriaPuesto = $o_Combo->getOptionsHTML('', '');
                 <div id='cell51' style="float:left; width:100%;">
                     <?php
                     if (isset($_SESSION["permiso_formulario_servicio"][204]["GRABAR_PUESTO_X_CCOSTO"]) && ($_SESSION["permiso_formulario_servicio"][204]["GRABAR_PUESTO_X_CCOSTO"] == 1)) {
-                        //<a href="javascript:grabarDetallePuesto();"><img  style=" display: none;" id="imgagenGuardar" src="../../../../medifacil_front/imagen/btn/b_grabar_on.gif"/></a>
-                        echo "<a href=\"javascript:grabarDetallePuestoaCentroCosto();\"><img  style=\" display: none;\" id=\"imgagenGuardar\" src=\"../../../../medifacil_front/imagen/btn/b_grabar_on.gif\"/></a>";
+                        //<a href="javascript:grabarDetallePuesto();"><img  style=" display: none;" id="imgagenGuardar" src="../../../../fastmedical_front/imagen/btn/b_grabar_on.gif"/></a>
+                        echo "<a href=\"javascript:grabarDetallePuestoaCentroCosto();\"><img  style=\" display: none;\" id=\"imgagenGuardar\" src=\"../../../../fastmedical_front/imagen/btn/b_grabar_on.gif\"/></a>";
                     } else {
-                        echo "<img  style=\" display: none;\" id=\"imgagenGuardar\" src=\"../../../../medifacil_front/imagen/btn/b_grabar_on.gif\"/>";
+                        echo "<img  style=\" display: none;\" id=\"imgagenGuardar\" src=\"../../../../fastmedical_front/imagen/btn/b_grabar_on.gif\"/>";
                     }
 
                     if (isset($_SESSION["permiso_formulario_servicio"][204]["ACTUALIZAR_PUESTO_X_CCOSTO"]) && ($_SESSION["permiso_formulario_servicio"][204]["ACTUALIZAR_PUESTO_X_CCOSTO"] == 1)) {
-                        //<a href="javascript:cancelarGrabarDetallePuesto();"><img  style=" display: none;" id="imgagenCancelar" src="../../../../medifacil_front/imagen/btn/b_cancelar_on.gif"/></a>
-                        echo "<a href=\"javascript:actualizarDatosPuestoenCentroCostos();\"><img  style=\" display: none;\" id=\"imgagenActualizar\" src=\"../../../../medifacil_front/imagen/btn/b_actualizar_off.gif\"/></a>";
+                        //<a href="javascript:cancelarGrabarDetallePuesto();"><img  style=" display: none;" id="imgagenCancelar" src="../../../../fastmedical_front/imagen/btn/b_cancelar_on.gif"/></a>
+                        echo "<a href=\"javascript:actualizarDatosPuestoenCentroCostos();\"><img  style=\" display: none;\" id=\"imgagenActualizar\" src=\"../../../../fastmedical_front/imagen/btn/b_actualizar_off.gif\"/></a>";
                     } else {
-                        echo "<img  style=\" display: none;\" id=\"imgagenActualizar\" src=\"../../../../medifacil_front/imagen/btn/b_actualizar_off.gif\"/>";
+                        echo "<img  style=\" display: none;\" id=\"imgagenActualizar\" src=\"../../../../fastmedical_front/imagen/btn/b_actualizar_off.gif\"/>";
                     }
 
                     if (isset($_SESSION["permiso_formulario_servicio"][204]["CANCELAR_PUESTO_X_CCOSTO"]) && ($_SESSION["permiso_formulario_servicio"][204]["CANCELAR_PUESTO_X_CCOSTO"] == 1)) {
-                        //<a href="javascript:cancelarGrabarDetallePuesto();"><img  style=" display: none;" id="imgagenCancelar" src="../../../../medifacil_front/imagen/btn/b_cancelar_on.gif"/></a>
-                        echo "<a href=\"javascript:cancelarGrabarDetallePuesto123();\"><img  style=\" display: none;\" id=\"imgagenCancelar\" src=\"../../../../medifacil_front/imagen/btn/b_cancelar_on.gif\"/></a>";
+                        //<a href="javascript:cancelarGrabarDetallePuesto();"><img  style=" display: none;" id="imgagenCancelar" src="../../../../fastmedical_front/imagen/btn/b_cancelar_on.gif"/></a>
+                        echo "<a href=\"javascript:cancelarGrabarDetallePuesto123();\"><img  style=\" display: none;\" id=\"imgagenCancelar\" src=\"../../../../fastmedical_front/imagen/btn/b_cancelar_on.gif\"/></a>";
                     } else {
-                        echo "<img  style=\" display: none;\" id=\"imgagenCancelar\" src=\"../../../../medifacil_front/imagen/btn/b_cancelar_on.gif\"/>";
+                        echo "<img  style=\" display: none;\" id=\"imgagenCancelar\" src=\"../../../../fastmedical_front/imagen/btn/b_cancelar_on.gif\"/>";
                     }
                     
                     
@@ -97,10 +97,10 @@ $opcionesCategoriaPuesto = $o_Combo->getOptionsHTML('', '');
                 <div id='cell53' style="float:left; width:100%;">
                     <?php
 //                    if (isset($_SESSION["permiso_formulario_servicio"][204]["CANCELAR_PUESTO_X_CCOSTO"]) && ($_SESSION["permiso_formulario_servicio"][204]["CANCELAR_PUESTO_X_CCOSTO"] == 1)) {
-//                        //<a href="javascript:cancelarGrabarDetallePuesto();"><img  style=" display: none;" id="imgagenCancelar" src="../../../../medifacil_front/imagen/btn/b_cancelar_on.gif"/></a>
-//                        echo "<a href=\"javascript:actualizarDatosPuestoenCentroCostos();\"><img  style=\" display: none;\" id=\"imgagenActualizar\" src=\"../../../../medifacil_front/imagen/btn/b_actualizar_off.gif\"/></a>";
+//                        //<a href="javascript:cancelarGrabarDetallePuesto();"><img  style=" display: none;" id="imgagenCancelar" src="../../../../fastmedical_front/imagen/btn/b_cancelar_on.gif"/></a>
+//                        echo "<a href=\"javascript:actualizarDatosPuestoenCentroCostos();\"><img  style=\" display: none;\" id=\"imgagenActualizar\" src=\"../../../../fastmedical_front/imagen/btn/b_actualizar_off.gif\"/></a>";
 //                    } else {
-//                        echo "<img  style=\" display: none;\" id=\"imgagenActualizar\" src=\"../../../../medifacil_front/imagen/btn/b_actualizar_off.gif\"/>";
+//                        echo "<img  style=\" display: none;\" id=\"imgagenActualizar\" src=\"../../../../fastmedical_front/imagen/btn/b_actualizar_off.gif\"/>";
 //                    }
                     ?>
                 </div>

@@ -61,7 +61,7 @@ $anioFinal = $anio + 2;
                             } else {
                                 $verBotonDesactivarTotal = 0;
                             }
-                            $toolbar1->SetBoton("Desactivacion Total", "Desactivar Total", "btn", "onclick,onkeypress", "DesactivarCoordinador()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/filenew.png", "", "", $verBotonDesactivarTotal);
+                            $toolbar1->SetBoton("Desactivacion Total", "Desactivar Total", "btn", "onclick,onkeypress", "DesactivarCoordinador()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/filenew.png", "", "", $verBotonDesactivarTotal);
                             $toolbar1->Mostrar();
                             ?>
                         </td>
@@ -72,7 +72,7 @@ $anioFinal = $anio + 2;
                             } else {
                                 $verBotonActivarTotal = 0;
                             }
-                            $toolbar2->SetBoton("Activar Total", "Activar Total", "btn", "onclick,onkeypress", "ActivarCoordinador()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/filenew.png", "", "", $verBotonActivarTotal);
+                            $toolbar2->SetBoton("Activar Total", "Activar Total", "btn", "onclick,onkeypress", "ActivarCoordinador()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/filenew.png", "", "", $verBotonActivarTotal);
                             $toolbar2->Mostrar();
                             ?>
                         </td>
@@ -83,7 +83,7 @@ $anioFinal = $anio + 2;
                             } else {
                                 $verBotonReporte = 0;
                             }
-                            $toolbar3->SetBoton("Reporte Coordinadores", "Reporte Coordinadores", "btn", "onclick,onkeypress", "ActivarCordinadorXarea()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/kopeteavailable.png", "", "", $verBotonReporte);
+                            $toolbar3->SetBoton("Reporte Coordinadores", "Reporte Coordinadores", "btn", "onclick,onkeypress", "ActivarCordinadorXarea()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/kopeteavailable.png", "", "", $verBotonReporte);
                             $toolbar3->Mostrar();
                             ?>
                         </td>

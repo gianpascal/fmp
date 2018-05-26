@@ -7,7 +7,7 @@
                     <tr align="center"><td>A.paterno:</td><td><input class="textPatronNombre" name="textPatronAPaterno" type="text" id="txtApellidoPaterno" onkeypress="if(event.keyCode==13)getMedicosdhtmlx(event,this);"/></td></tr>
                     <tr align="center"><td>A.Materno:</td><td><input class="textPatronNombre" name="textPatronAMaterno" type="text" id="txtApellidoMaterno" onkeypress="if(event.keyCode==13)getMedicosdhtmlx(event,this);"/></td></tr>
                     <tr align="center"><td>Nombres:</td><td><input class="textPatronNombre" name="textPatronNombres" type="text" id="txtNombres" onkeypress="if(event.keyCode==13)getMedicosdhtmlx(event,this);"/></td></tr>
-                    <tr align="center"><td colspan="2" nowrap="nowrap" scope="row" align="center"><a href="#" onclick="getMedicosdhtmlx(event,this);"><img alt="" src="../../../../medifacil_front/imagen/btn/b_buscar_off.gif" /></a></td></tr>
+                    <tr align="center"><td colspan="2" nowrap="nowrap" scope="row" align="center"><a href="#" onclick="getMedicosdhtmlx(event,this);"><img alt="" src="../../../../fastmedical_front/imagen/btn/b_buscar_off.gif" /></a></td></tr>
                 </table>
             </div>
         </div>

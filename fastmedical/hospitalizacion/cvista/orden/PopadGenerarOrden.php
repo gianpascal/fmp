@@ -40,7 +40,7 @@ $toolbar3 = new ToollBar();
         </div>
         <div style="float:left; heigth:150px;">
             <?php
-            $toolbar3->SetBoton("Buscar", "Buscar", "btn", "onclick,onkeypress", "PopadBuscarActoMedico()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/Search.png", "", "", 1);
+            $toolbar3->SetBoton("Buscar", "Buscar", "btn", "onclick,onkeypress", "PopadBuscarActoMedico()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/Search.png", "", "", 1);
             $toolbar3->Mostrar();
             ?> 
         </div>
@@ -66,13 +66,13 @@ $toolbar3 = new ToollBar();
     
     <div style="padding-left: 280px; float:left;">
         <?php
-        $toolbar1->SetBoton("Aceptar", "Aceptar", "btn", "onclick,onkeypress", "grabarOrdenGenerada()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/apply.png", "", "", 1);
+        $toolbar1->SetBoton("Aceptar", "Aceptar", "btn", "onclick,onkeypress", "grabarOrdenGenerada()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/apply.png", "", "", 1);
         $toolbar1->Mostrar();
         ?>
     </div>
     <div style="padding-left: 30px; float:left;">
         <?php
-        $toolbar2->SetBoton("Cancelar", "Cancelar", "btn", "onclick,onkeypress", "cerrarPopapGenerarOrden()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/cancel.png", "", "", 1);
+        $toolbar2->SetBoton("Cancelar", "Cancelar", "btn", "onclick,onkeypress", "cerrarPopapGenerarOrden()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/cancel.png", "", "", 1);
         $toolbar2->Mostrar();
         ?> 
     </div>

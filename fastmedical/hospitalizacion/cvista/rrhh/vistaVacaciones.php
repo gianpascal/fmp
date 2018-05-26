@@ -17,7 +17,7 @@ $toolbar1 = new ToollBar("center");
                 <td>
                     <div id="idBtnNuevaVacacion" style="text-align: center;width: 912px;height: 20px;margin-left: 44%" align="center">
                         <?php
-                        $toolbar0->SetBoton("btnAsignarArea", "Nueva Vacación", "btn", "onclick,onkeypress", "nuevaVacacion(1)", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/filenew.png", "", "", 1);
+                        $toolbar0->SetBoton("btnAsignarArea", "Nueva Vacación", "btn", "onclick,onkeypress", "nuevaVacacion(1)", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/filenew.png", "", "", 1);
                         $toolbar0->Mostrar();
                         ?>
                     </div>

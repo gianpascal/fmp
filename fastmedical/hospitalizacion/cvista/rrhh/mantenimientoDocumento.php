@@ -26,16 +26,16 @@ $o_ActionRrhh	= new ActionRrhh();
             <fieldset style="margin:1px; margin-top:5px; width:99%;height:30px;padding: 0px; font-size:14px">
                       <div id="divBotonesDocumento1" style=" height:9%; width:50%; float: left; margin-left:5px;">
                           <a href="javascript:agregarDocumento();">
-                          <img id="btnAgregar" border="0" title="Agregar Documentos" align="right" alt="" src="../../../../medifacil_front/imagen/btn/b_agregar_on.gif"/></a>
+                          <img id="btnAgregar" border="0" title="Agregar Documentos" align="right" alt="" src="../../../../fastmedical_front/imagen/btn/b_agregar_on.gif"/></a>
                           <a href="javascript:editaDocumento();">
-                          <img id="btnActual" border="0" style=" visibility:hidden " align="right" src="../../../../medifacil_front/imagen/btn/b_editar_on.gif" alt="" title="Editar Documentos"/></a>
+                          <img id="btnActual" border="0" style=" visibility:hidden " align="right" src="../../../../fastmedical_front/imagen/btn/b_editar_on.gif" alt="" title="Editar Documentos"/></a>
                           
                       </div>
                       <div id="divBotonesDocumento2" style=" height:9%; width:40%; float: left; margin-left:5px;">
                           <a href="javascript:disableEditar(1);" onclick="">
-                          <img id="btnCancelar" border="0" style=" visibility:hidden " align="right" src="../../../../medifacil_front/imagen/btn/b_cancelar_on.gif" alt=""/></a>
+                          <img id="btnCancelar" border="0" style=" visibility:hidden " align="right" src="../../../../fastmedical_front/imagen/btn/b_cancelar_on.gif" alt=""/></a>
                           <a href="javascript:editarDocumento(document.getElementById('txtNombre').value);" onclick=" ">
-                          <img id="btnActualizar" border="0" style=" visibility:hidden " align="right" src="../../../../medifacil_front/imagen/btn/b_grabar__on.gif" alt="" title="Editar Documentos"/></a>
+                          <img id="btnActualizar" border="0" style=" visibility:hidden " align="right" src="../../../../fastmedical_front/imagen/btn/b_grabar__on.gif" alt="" title="Editar Documentos"/></a>
                       </div>
                </fieldset>
                <fieldset style="margin:1px;width:90%;height:22px;padding: 0px; font-size:14px">
@@ -74,7 +74,7 @@ $o_ActionRrhh	= new ActionRrhh();
                         </div>
                       <div id="divdetalleAtributo" style=" height:9%; width:99%; float: left; margin-left:5px; overflow: auto;">
                           <a href="javascript:agregarAtributo(document.getElementById('hDocumento').value);">
-                          <img border="0" title="Agregar Atributos" alt="" src="../../../../medifacil_front/imagen/btn/b_agregar_on.gif"/></a>
+                          <img border="0" title="Agregar Atributos" alt="" src="../../../../fastmedical_front/imagen/btn/b_agregar_on.gif"/></a>
                       </div>
                </fieldset>
               </div>

@@ -40,7 +40,7 @@ $toolbar2 = new ToollBar("center");
                         </td>
                         <td>
                             <?php
-                            $toolbar1->SetBoton("Reporte Empleado", "Reporte Empleado", "btn", "onclick,onkeypress", "reporteEmpleadoRRHH()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/kopeteavailable.png", "", "", 1);
+                            $toolbar1->SetBoton("Reporte Empleado", "Reporte Empleado", "btn", "onclick,onkeypress", "reporteEmpleadoRRHH()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/kopeteavailable.png", "", "", 1);
                             $toolbar1->Mostrar();
                             ?>
                         </td>

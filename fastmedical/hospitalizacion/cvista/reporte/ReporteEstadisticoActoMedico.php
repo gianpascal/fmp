@@ -212,7 +212,7 @@
                 <br><br>
                 <!--  <?php $toolbar = new ToollBar(); ?>
                 <?php
-                $toolbar->SetBoton("Buscar", "Ver Estadisticas", "btn", "onclick,onkeypress", "verGraficosEstadisticos()", "../../../../medifacil_front/imagen/icono/estadisticas.jpg", "", "", true);
+                $toolbar->SetBoton("Buscar", "Ver Estadisticas", "btn", "onclick,onkeypress", "verGraficosEstadisticos()", "../../../../fastmedical_front/imagen/icono/estadisticas.jpg", "", "", true);
                 $toolbar->Mostrar();
                 ?> -->
                 <div class="btnReportes" onClick="verGraficosEstadisticos()">
@@ -286,7 +286,7 @@
                 <div class="btnReportes" onClick="cambiarGrafico()">
                     <!-- <?php $toolbar1 = new ToollBar(); ?>
                     <?php
-                    $toolbar1->SetBoton("Cambiar", "Cambiar Grafico", "btn", "onclick,onkeypress", "cambiarGrafico()", "../../../../medifacil_front/imagen/icono/Download.png", "", "", true);
+                    $toolbar1->SetBoton("Cambiar", "Cambiar Grafico", "btn", "onclick,onkeypress", "cambiarGrafico()", "../../../../fastmedical_front/imagen/icono/Download.png", "", "", true);
                     $toolbar1->Mostrar();
                     ?> -->
                     Cambiar Grafico
@@ -404,8 +404,8 @@
                         <tr height='25'>
                 <td>
                     <input type='text' id='TituloGrafico.$x' style='width:400;font-size: 16px;height:25px;'>
-                    <a id='btnGuardar$x' href='javascript:guargarContenedorGrafico($x);'><img style='border:0px solid cadetblue ' width='25' title='Guardar'  src='../../../../medifacil_front/imagen/icono/guardarAngel.png' id=guargar></a> 
-                    <a href='javascript:eliminarContenedorGrafico($x);'><img  title='Borrar' style='border:0px solid cadetblue ' width='25' src='../../../../medifacil_front/imagen/icono/cancelarAngel.png'  ></a>
+                    <a id='btnGuardar$x' href='javascript:guargarContenedorGrafico($x);'><img style='border:0px solid cadetblue ' width='25' title='Guardar'  src='../../../../fastmedical_front/imagen/icono/guardarAngel.png' id=guargar></a> 
+                    <a href='javascript:eliminarContenedorGrafico($x);'><img  title='Borrar' style='border:0px solid cadetblue ' width='25' src='../../../../fastmedical_front/imagen/icono/cancelarAngel.png'  ></a>
                     <input type='button' class='btnReportesExportar' value='Exportar Reporte aExcel' onclick='aLeyenda$x.toExcel(\"../../../grid-excel-php/generate.php\");'>    
                 </td>
                 <td>

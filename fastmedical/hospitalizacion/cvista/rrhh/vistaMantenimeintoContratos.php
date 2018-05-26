@@ -139,7 +139,7 @@
                     
                     $grabar=0;
                 }
-                $toolbar->SetBoton("grabarContrato", "grabar", "btn", "onclick,onkeypress", "grabarContrato()", "../../../../medifacil_front/imagen/icono/grabar.png", "", "", $grabar);
+                $toolbar->SetBoton("grabarContrato", "grabar", "btn", "onclick,onkeypress", "grabarContrato()", "../../../../fastmedical_front/imagen/icono/grabar.png", "", "", $grabar);
                 $toolbar->Mostrar();
                 ?>
             </td>
@@ -153,14 +153,14 @@
                     
                     $anular=0;
                 }
-                $toolbar1->SetBoton("AnularContrato", "Anular", "btn", "onclick,onkeypress", "anularContrato()", "../../../../medifacil_front/imagen/icono/nosecurity.png", "", "", $anular);
+                $toolbar1->SetBoton("AnularContrato", "Anular", "btn", "onclick,onkeypress", "anularContrato()", "../../../../fastmedical_front/imagen/icono/nosecurity.png", "", "", $anular);
                 $toolbar1->Mostrar();
                 ?>
             </td>
             <td>
                 <?php
                 $toolbar1 = new ToollBar("Center");
-                $toolbar1->SetBoton("grabarAnularContrato", "Confirmar Anulación", "btn", "onclick,onkeypress", "confirmarAnulación()", "../../../../medifacil_front/imagen/icono/nosecurity.png", "", "", false);
+                $toolbar1->SetBoton("grabarAnularContrato", "Confirmar Anulación", "btn", "onclick,onkeypress", "confirmarAnulación()", "../../../../fastmedical_front/imagen/icono/nosecurity.png", "", "", false);
                 $toolbar1->Mostrar();
                 ?>
             </td>

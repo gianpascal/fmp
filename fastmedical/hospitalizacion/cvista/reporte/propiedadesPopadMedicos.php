@@ -37,7 +37,7 @@
             <div style="float:left ; width: 70px; padding-left: 100px;">
                <?php $toolbar = new ToollBar(); ?>
                     <?php
-                    $toolbar->SetBoton("Buscar", "Buscar", "btn", "onclick,onkeypress", "cargarTablaPersonal()", "../../../../medifacil_front/imagen/icono/kappfinder.png", "", "", true);
+                    $toolbar->SetBoton("Buscar", "Buscar", "btn", "onclick,onkeypress", "cargarTablaPersonal()", "../../../../fastmedical_front/imagen/icono/kappfinder.png", "", "", true);
                     $toolbar->Mostrar();
                     ?> 
             </div> 

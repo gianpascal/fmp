@@ -45,9 +45,9 @@
 <fieldset>
 <?php
     $toolbar=new ToollBar("left");
-    $toolbar->SetBoton("GRABAR","Grabar","btn","onclick,onkeypress","guardaUsuario()",$_SESSION['path_principal']."../medifacil_front/imagen/icono/grabar.png");
+    $toolbar->SetBoton("GRABAR","Grabar","btn","onclick,onkeypress","guardaUsuario()",$_SESSION['path_principal']."../fastmedical_front/imagen/icono/grabar.png");
     if($e!='nuevo')
-        $toolbar->SetBoton("NUEVO","Restaurar","btn","onclick,onkeypress","actualizaPwd()",$_SESSION['path_principal']."../medifacil_front/imagen/icono/restaurar.png");
+        $toolbar->SetBoton("NUEVO","Restaurar","btn","onclick,onkeypress","actualizaPwd()",$_SESSION['path_principal']."../fastmedical_front/imagen/icono/restaurar.png");
     $toolbar->Mostrar();
 ?>		
 </fieldset>

@@ -6,8 +6,8 @@ require_once("../../../pholivo/Html.php");
 //$o_ActionLaboratorio	= new ActionLaboratorio();
 //$listaDetResLab = $o_ActionLaboratorio->getArrayDetResLab($cadena);
 $nuevo01=new ToollBar("left");				  
-//$nuevo01->SetBoton("IMPRIMIR","Imprimir","btn","onclick,onkeypress","window.open('../laboratorio/impresion_resultados.php?'+myajax.DataForm($('form_resultados')),'Reporte Analisis','height=750,width=600,location=1,menubar=no,toolbar=no,scrollbars=yes,directories=no,resizable=yes,status=no')","../../../../medifacil_front/imagen/icono/printer.png");
-$nuevo01->SetBoton("IMPRIMIR","Vista Previa","btn","onclick,onkeypress","CargarVistaImpresion('grid_AddListResulLablm','Vista Previa Resultados','../laboratorio/impresion_resultados.php?'+myajax.DataForm($('form_resultados')),'580','630',false,true,'','','',10,10,80,10)","../../../../medifacil_front/imagen/icono/printer.png");
+//$nuevo01->SetBoton("IMPRIMIR","Imprimir","btn","onclick,onkeypress","window.open('../laboratorio/impresion_resultados.php?'+myajax.DataForm($('form_resultados')),'Reporte Analisis','height=750,width=600,location=1,menubar=no,toolbar=no,scrollbars=yes,directories=no,resizable=yes,status=no')","../../../../fastmedical_front/imagen/icono/printer.png");
+$nuevo01->SetBoton("IMPRIMIR","Vista Previa","btn","onclick,onkeypress","CargarVistaImpresion('grid_AddListResulLablm','Vista Previa Resultados','../laboratorio/impresion_resultados.php?'+myajax.DataForm($('form_resultados')),'580','630',false,true,'','','',10,10,80,10)","../../../../fastmedical_front/imagen/icono/printer.png");
 ?>
 <div style="min-height:350px;" align="left">
 	<div class="titleform">

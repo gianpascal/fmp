@@ -160,7 +160,7 @@ $toolbar6 = new ToollBar("center");
 
                                     <div align="center" style="width: 120px;margin-left:7%;">
                                         <?php
-                                        $toolbar5->SetBoton("AdjuntoFotoMaterialLaboratorio", "Adjuntar Foto", "btn", "onclick,onkeypress", "adjuntarOtroFilejc()", "../../../../medifacil_front/imagen/icono/adjunto.gif", "", "", 1);
+                                        $toolbar5->SetBoton("AdjuntoFotoMaterialLaboratorio", "Adjuntar Foto", "btn", "onclick,onkeypress", "adjuntarOtroFilejc()", "../../../../fastmedical_front/imagen/icono/adjunto.gif", "", "", 1);
                                         $toolbar5->Mostrar();
                                         ?>
                                     </div>
@@ -188,21 +188,21 @@ $toolbar6 = new ToollBar("center");
 
                             <div id="div_NuevoMaterialLaboratorio" align="center"  style="width:40%; float: left;margin-left: 20%;">
                                 <?php
-                                $toolbar1->SetBoton("NuevoMaterialLaboratorio", "Nuevo Material", "btn", "onclick,onkeypress", "agregarNuevoMaterialLaboratorio()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/reload3.png", "", "", 1);
+                                $toolbar1->SetBoton("NuevoMaterialLaboratorio", "Nuevo Material", "btn", "onclick,onkeypress", "agregarNuevoMaterialLaboratorio()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/reload3.png", "", "", 1);
                                 $toolbar1->Mostrar();
                                 ?>
                             </div>
 
                             <div id="div_GuardarDetalleMaterialLaboratorio"   align="center"  style="width:40%; float: left;margin-left: 0%; display:none">
                                 <?php
-                                $toolbar4->SetBoton("GuardarCambiosDetalleMaterialesdeLaboratorio", "Guardar Cambios", "btn", "onclick,onkeypress", "GuardarCambiosDetalleMaterialesdeLaboratorio()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/reload3.png", "", "", 1);
+                                $toolbar4->SetBoton("GuardarCambiosDetalleMaterialesdeLaboratorio", "Guardar Cambios", "btn", "onclick,onkeypress", "GuardarCambiosDetalleMaterialesdeLaboratorio()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/reload3.png", "", "", 1);
                                 $toolbar4->Mostrar();
                                 ?>
                             </div>
 
                             <div id="div_EditarDetalleMaterialLaboratorio"   style="width:40%; float: right;margin-left: 0%;">
                                 <?php
-                                $toolbar2->SetBoton("EditarDetalleMaterialLaboratorio", "Editar Detalle", "btn", "onclick,onkeypress", "EditarDetalleMaterialLaboratorio()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/reload3.png", "", "", 1);
+                                $toolbar2->SetBoton("EditarDetalleMaterialLaboratorio", "Editar Detalle", "btn", "onclick,onkeypress", "EditarDetalleMaterialLaboratorio()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/reload3.png", "", "", 1);
                                 $toolbar2->Mostrar();
                                 ?>
                             </div>
@@ -249,7 +249,7 @@ $toolbar6 = new ToollBar("center");
                     <td>
                         <div id="div_ActualizarDetalleExamenLabo"  style="margin-left: 40%;">
                             <?php
-                            $toolbar3->SetBoton("AgregarUnidadMedidaxMaterialLaboratorio", "Agregar Unidad Medida", "btn", "onclick,onkeypress", "AgregarUnidadMedidaxMaterialLaboratorio()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/reload3.png", "", "", 1);
+                            $toolbar3->SetBoton("AgregarUnidadMedidaxMaterialLaboratorio", "Agregar Unidad Medida", "btn", "onclick,onkeypress", "AgregarUnidadMedidaxMaterialLaboratorio()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/reload3.png", "", "", 1);
                             $toolbar3->Mostrar();
                             ?>
                         </div>

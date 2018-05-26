@@ -23,9 +23,9 @@
     <div style="height: 20%;">
         <div style="width:30%; margin:0px auto;">
             <?php if($accion==2){ ?>
-               <a href="javascript:grabarEntregaDocumento(document.getElementById('txtAccion').value,document.getElementById('txtIdEmpleado').value,document.getElementById('txtPuesto').value, document.getElementById('txtDocumento').value,document.getElementById('textInicio').value);"><img  id="imgagenGuardar" src="../../../../medifacil_front/imagen/btn/b_grabar_on.gif"/></a>
+               <a href="javascript:grabarEntregaDocumento(document.getElementById('txtAccion').value,document.getElementById('txtIdEmpleado').value,document.getElementById('txtPuesto').value, document.getElementById('txtDocumento').value,document.getElementById('textInicio').value);"><img  id="imgagenGuardar" src="../../../../fastmedical_front/imagen/btn/b_grabar_on.gif"/></a>
             <?php }else{ ?>
-               <a href="javascript:grabarEntregaDocumento(document.getElementById('txtAccion').value,document.getElementById('txtIdEmpleado').value,document.getElementById('txtPuesto').value, document.getElementById('txtDocumento').value,document.getElementById('textInicio').value);"><img  id="imgagenGuardar" src="../../../../medifacil_front/imagen/btn/b_eliminar_on.gif"/></a>
+               <a href="javascript:grabarEntregaDocumento(document.getElementById('txtAccion').value,document.getElementById('txtIdEmpleado').value,document.getElementById('txtPuesto').value, document.getElementById('txtDocumento').value,document.getElementById('textInicio').value);"><img  id="imgagenGuardar" src="../../../../fastmedical_front/imagen/btn/b_eliminar_on.gif"/></a>
             <?php } ?>
             
         </div>

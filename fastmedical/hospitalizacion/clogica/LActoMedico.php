@@ -38,11 +38,11 @@ class LActoMedico {
         $j = 0;
         $aux = array();
         foreach ($resultado as $fila) {
-            $imagen1 = "../../../../medifacil_front/imagen/icono/age_bell.png ^ Llamar al Paciente";
-            $imagen2 = "../../../../medifacil_front/imagen/icono/hos_medico.png ^ Atender";
-            $imagen3 = "../../../../medifacil_front/imagen/icono/timer.png ^ Atencion Inmediata";
-//            $imagen4="../../../../medifacil_front/imagen/icono/agt_action_fail.png ^ No Regularizado";
-//            $imagen5="../../../../medifacil_front/imagen/icono/add_user.png ^ Atender y Regularizar";
+            $imagen1 = "../../../../fastmedical_front/imagen/icono/age_bell.png ^ Llamar al Paciente";
+            $imagen2 = "../../../../fastmedical_front/imagen/icono/hos_medico.png ^ Atender";
+            $imagen3 = "../../../../fastmedical_front/imagen/icono/timer.png ^ Atencion Inmediata";
+//            $imagen4="../../../../fastmedical_front/imagen/icono/agt_action_fail.png ^ No Regularizado";
+//            $imagen5="../../../../fastmedical_front/imagen/icono/add_user.png ^ Atender y Regularizar";
             $aux = explode("|", $resultado[$j][0]);
 //            if($aux[2]=="0005") $imagen3=$imagen3;
 //            if($aux[2]=="0007") $imagen3=$imagen4;
@@ -79,9 +79,9 @@ class LActoMedico {
         $j = 0;
         $aux = array();
         foreach ($arrayResultado as $fila) {
-            $imagen1 = "../../../../medifacil_front/imagen/icono/age_bell.png ^ Llamar al Paciente";
-            $imagen2 = "../../../../medifacil_front/imagen/icono/hos_medico.png ^ Atender";
-            $imagen3 = "../../../../medifacil_front/imagen/icono/timer.png ^ Atencion Inmediata";
+            $imagen1 = "../../../../fastmedical_front/imagen/icono/age_bell.png ^ Llamar al Paciente";
+            $imagen2 = "../../../../fastmedical_front/imagen/icono/hos_medico.png ^ Atender";
+            $imagen3 = "../../../../fastmedical_front/imagen/icono/timer.png ^ Atencion Inmediata";
             $aux = explode("|", $arrayResultado[$j][0]);
             array_push($arrayResultado[$j], $imagen1);
             array_push($arrayResultado[$j], $imagen2);
@@ -110,9 +110,9 @@ class LActoMedico {
         $j = 0;
         $aux = array();
         foreach ($arrayResultado as $fila) {
-            $imagen1 = "../../../../medifacil_front/imagen/icono/age_bell.png ^ Llamar al Paciente";
-            $imagen2 = "../../../../medifacil_front/imagen/icono/hos_medico.png ^ Atender";
-            $imagen3 = "../../../../medifacil_front/imagen/icono/timer.png ^ Atencion Inmediata";
+            $imagen1 = "../../../../fastmedical_front/imagen/icono/age_bell.png ^ Llamar al Paciente";
+            $imagen2 = "../../../../fastmedical_front/imagen/icono/hos_medico.png ^ Atender";
+            $imagen3 = "../../../../fastmedical_front/imagen/icono/timer.png ^ Atencion Inmediata";
             $aux = explode("|", $arrayResultado[$j][0]);
             array_push($arrayResultado[$j], $imagen1);
             array_push($arrayResultado[$j], $imagen2);
@@ -130,11 +130,11 @@ class LActoMedico {
         $resultado = $o_DActoMedico->getArrayPacientesAdicionales($datos);
         $j = 0;
         foreach ($resultado as $fila) {
-            $imagen1 = "../../../../medifacil_front/imagen/icono/age_bell.png ^ Llamar al Paciente";
-            $imagen2 = "../../../../medifacil_front/imagen/icono/hos_medico.png ^ Atender";
-            $imagen3 = "../../../../medifacil_front/imagen/icono/timer.png ^ Atencion Inmediata";
-//            $imagen4="../../../../medifacil_front/imagen/icono/agt_action_fail.png ^ No Regularizado";
-//            $imagen5="../../../../medifacil_front/imagen/icono/add_user.png ^ Atender y Regularizar";
+            $imagen1 = "../../../../fastmedical_front/imagen/icono/age_bell.png ^ Llamar al Paciente";
+            $imagen2 = "../../../../fastmedical_front/imagen/icono/hos_medico.png ^ Atender";
+            $imagen3 = "../../../../fastmedical_front/imagen/icono/timer.png ^ Atencion Inmediata";
+//            $imagen4="../../../../fastmedical_front/imagen/icono/agt_action_fail.png ^ No Regularizado";
+//            $imagen5="../../../../fastmedical_front/imagen/icono/add_user.png ^ Atender y Regularizar";
             $aux = explode("|", $resultado[$j][0]);
 //            if($aux[2]=="0005") $imagen3=$imagen3;
 //            if($aux[2]=="0007") $imagen3=$imagen4;
@@ -437,7 +437,7 @@ class LActoMedico {
         $resultado = $o_DActoMedico->listaCie($nombreCie, $accion);
         $j = 0;
         foreach ($resultado as $fila) {
-            $imagen = "../../../../medifacil_front/imagen/icono/nuevo_item.png ^ Agregar";
+            $imagen = "../../../../fastmedical_front/imagen/icono/nuevo_item.png ^ Agregar";
             array_push($resultado[$j], $imagen);
             $j++;
         }
@@ -1015,8 +1015,8 @@ class LActoMedico {
         $resultado = $o_DActoMedico->getArrayProductosMedicamentosos($datos, $accion);
         $j = 0;
         foreach ($resultado as $fila) {
-            $imagen1 = "../../../../medifacil_front/imagen/icono/monedas.jpg ^ Precio";
-            $imagen2 = "../../../../medifacil_front/imagen/icono/window_new.png ^ Agregar";
+            $imagen1 = "../../../../fastmedical_front/imagen/icono/monedas.jpg ^ Precio";
+            $imagen2 = "../../../../fastmedical_front/imagen/icono/window_new.png ^ Agregar";
             array_push($resultado[$j], $imagen1);
             array_push($resultado[$j], $imagen2);
             $j++;
@@ -1081,8 +1081,8 @@ class LActoMedico {
         $resultado = $o_DActoMedico->getArrayPracticasMedicas($datos, $accion);
         $j = 0;
         foreach ($resultado as $fila) {
-            $imagen1 = "../../../../medifacil_front/imagen/icono/monedas.jpg ^ Precio";
-            $imagen2 = "../../../../medifacil_front/imagen/icono/window_new.png ^ Agregar";
+            $imagen1 = "../../../../fastmedical_front/imagen/icono/monedas.jpg ^ Precio";
+            $imagen2 = "../../../../fastmedical_front/imagen/icono/window_new.png ^ Agregar";
             array_push($resultado[$j], $imagen1);
             array_push($resultado[$j], $imagen2);
             $j++;
@@ -1262,7 +1262,7 @@ class LActoMedico {
                 $resultado[$ind][4] = $arreglo[0];
                 $resultado[$ind]["medicamento"] = $arreglo[0];
             }
-            $imagen1 = "../../../../medifacil_front/imagen/icono/display.png ^ Ver";
+            $imagen1 = "../../../../fastmedical_front/imagen/icono/display.png ^ Ver";
             array_push($resultado[$j], $imagen1);
             $j++;
         }
@@ -1398,7 +1398,7 @@ class LActoMedico {
         $resultado = $o_DActoMedico->getArrayDiagnosticosAnteriores($datos);
         $j = 0;
         foreach ($resultado as $fila) {
-            $imagen1 = "../../../../medifacil_front/imagen/icono/display.png ^ Ver";
+            $imagen1 = "../../../../fastmedical_front/imagen/icono/display.png ^ Ver";
             array_push($resultado[$j], $imagen1);
             $j++;
         }
@@ -1594,14 +1594,14 @@ class LActoMedico {
         $j = 0;
         foreach ($resultado as $fila) {
             //echo $resultado[$j][4];
-            $Editar = "../../../../medifacil_front/imagen/icono/edit2.png ^ Editar";
+            $Editar = "../../../../fastmedical_front/imagen/icono/edit2.png ^ Editar";
             array_push($resultado[$j], $Editar);
 
             if ($resultado[$j][4] == 1) {
-                $Eliminar = "../../../../medifacil_front/imagen/icono/cancel.png ^ Desactivar";
+                $Eliminar = "../../../../fastmedical_front/imagen/icono/cancel.png ^ Desactivar";
                 array_push($resultado[$j], $Eliminar);
             } else {
-                $Activar = "../../../../medifacil_front/imagen/icono/agt_action_success.png ^ Activar";
+                $Activar = "../../../../fastmedical_front/imagen/icono/agt_action_success.png ^ Activar";
                 array_push($resultado[$j], $Activar);
             }
             $j++;
@@ -1628,9 +1628,9 @@ class LActoMedico {
                 $resulx[$k][6] = "../../../imagen/inicio/eliminar.gif ^ Desactivar";
             } else if ($resultado[$k][3] == 0) {
                 $resulx[$k][4] = "Desactivado";
-                $resulx[$k][6] = "../../../../medifacil_front/imagen/icono/good.gif ^ Activar";
+                $resulx[$k][6] = "../../../../fastmedical_front/imagen/icono/good.gif ^ Activar";
             }
-            $resulx[$k][5] = "../../../../medifacil_front/imagen/icono/editar.png ^ Agregar";
+            $resulx[$k][5] = "../../../../fastmedical_front/imagen/icono/editar.png ^ Agregar";
         }
         return $resulx;
     }
@@ -1753,9 +1753,9 @@ class LActoMedico {
             }
             $tablaep[$i][9] = $resultado[$i][6];
             if ($resultado[$i][6] == 1) {
-                $tablaep[$i][10] = "../../../../medifacil_front/imagen/icono/eliminar.gif ^ Desactivar";
+                $tablaep[$i][10] = "../../../../fastmedical_front/imagen/icono/eliminar.gif ^ Desactivar";
             } else if ($resultado[$i][6] == 0) {
-                $tablaep[$i][10] = "../../../../medifacil_front/imagen/icono/good.gif ^ Activar";
+                $tablaep[$i][10] = "../../../../fastmedical_front/imagen/icono/good.gif ^ Activar";
             }
             $tablaep[$i][11] = $resultado[$i][7];
         }
@@ -1786,9 +1786,9 @@ class LActoMedico {
             }
             $tablaes[$i][9] = $resultado[$i][6];
             if ($resultado[$i][6] == 1) {
-                $tablaes[$i][10] = "../../../../medifacil_front/imagen/icono/eliminar.gif ^ Desactivar";
+                $tablaes[$i][10] = "../../../../fastmedical_front/imagen/icono/eliminar.gif ^ Desactivar";
             } else if ($resultado[$i][6] == 0) {
-                $tablaes[$i][10] = "../../../../medifacil_front/imagen/icono/good.gif ^ Activar";
+                $tablaes[$i][10] = "../../../../fastmedical_front/imagen/icono/good.gif ^ Activar";
             }
             $tablaes[$i][11] = $resultado[$i][7];
         }
@@ -1818,7 +1818,7 @@ class LActoMedico {
         $resultado = $o_DActoMedico->spListaSintomas($nombreSintoma, $accion);
         $j = 0;
         foreach ($resultado as $fila) {
-            $imagen = "../../../../medifacil_front/imagen/icono/nuevo_item.png ^ Agregar";
+            $imagen = "../../../../fastmedical_front/imagen/icono/nuevo_item.png ^ Agregar";
             array_push($resultado[$j], $imagen);
             // $resultado[$j][2]=utf8_decode($resultado[$j][2]);
             $j++;
@@ -1975,7 +1975,7 @@ class LActoMedico {
         $resultado = $o_DActoMedico->spListaServiciosPorActividadDeCCosto($opcion, $iidCentroCosto, $codActividad, $nomServicio);
         $j = 0;
         foreach ($resultado as $fila) {
-            $imagen = "../../../../medifacil_front/imagen/icono/nuevo_item.png ^ Agregar";
+            $imagen = "../../../../fastmedical_front/imagen/icono/nuevo_item.png ^ Agregar";
             array_push($resultado[$j], $imagen);
             $j++;
         }
@@ -2091,23 +2091,23 @@ class LActoMedico {
 
         if (count($respuestaServicio) > 1) {
             foreach ($respuestaServicio as $k => $value) {
-                // ../../../../medifacil_front/imagen/icono/blank.gif
-                $respuestaServicio[$k][8] = "../../../../medifacil_front/imagen/icono/agt_upgrade_misc.png ^ Abajo";
+                // ../../../../fastmedical_front/imagen/icono/blank.gif
+                $respuestaServicio[$k][8] = "../../../../fastmedical_front/imagen/icono/agt_upgrade_misc.png ^ Abajo";
                 if ($k == 0) {
-                    $respuestaServicio[$k][9] = "../../../../medifacil_front/imagen/icono/blank.gif ^ null";
+                    $respuestaServicio[$k][9] = "../../../../fastmedical_front/imagen/icono/blank.gif ^ null";
                 } else {
-                    $respuestaServicio[$k][9] = "../../../../medifacil_front/imagen/icono/arribaFecha.png ^ Arriba";
+                    $respuestaServicio[$k][9] = "../../../../fastmedical_front/imagen/icono/arribaFecha.png ^ Arriba";
                 }
 
-                $respuestaServicio[$k][10] = "../../../../medifacil_front/imagen/icono/i_icq_dnd.png ^ Eliminar";
-                $respuestaServicio[$k][12] = "../../../../medifacil_front/imagen/icono/editar.png ^ Eliminar";
+                $respuestaServicio[$k][10] = "../../../../fastmedical_front/imagen/icono/i_icq_dnd.png ^ Eliminar";
+                $respuestaServicio[$k][12] = "../../../../fastmedical_front/imagen/icono/editar.png ^ Eliminar";
             }
         } else {
             if (count($respuestaServicio) == 1) {
-                $respuestaServicio[0][9] = "../../../../medifacil_front/imagen/icono/blank.gif ^ null";
-                $respuestaServicio[0][8] = "../../../../medifacil_front/imagen/icono/blank.gif ^ null";
-                $respuestaServicio[0][10] = "../../../../medifacil_front/imagen/icono/i_icq_dnd.png ^ Eliminar";
-                $respuestaServicio[0][12] = "../../../../medifacil_front/imagen/icono/editar.png ^ Eliminar";
+                $respuestaServicio[0][9] = "../../../../fastmedical_front/imagen/icono/blank.gif ^ null";
+                $respuestaServicio[0][8] = "../../../../fastmedical_front/imagen/icono/blank.gif ^ null";
+                $respuestaServicio[0][10] = "../../../../fastmedical_front/imagen/icono/i_icq_dnd.png ^ Eliminar";
+                $respuestaServicio[0][12] = "../../../../fastmedical_front/imagen/icono/editar.png ^ Eliminar";
             }
         }
 
@@ -2162,9 +2162,9 @@ class LActoMedico {
         $j = 0;
         foreach ($resultado as $fila) {
             if ($fila[4] == 1) {
-                $imagen = "../../../../medifacil_front/imagen/icono/button_cancel.png ^ Desactivar";
+                $imagen = "../../../../fastmedical_front/imagen/icono/button_cancel.png ^ Desactivar";
             } else {
-                $imagen = "../../../../medifacil_front/imagen/icono/button_ok.png ^ Activar";
+                $imagen = "../../../../fastmedical_front/imagen/icono/button_ok.png ^ Activar";
             }
             array_push($resultado[$j], $imagen);
             $j++;

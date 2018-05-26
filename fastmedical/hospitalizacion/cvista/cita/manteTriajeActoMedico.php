@@ -101,6 +101,6 @@ else{
 <br>
     <div id="divBotonesTriaje" align="center" style="width:100%;height:auto;background:white">
         <?php
-            echo "<a href=\"javascript:manteTriajeActoMedico('$accion','$horaProgramacion','$codCronograma');\" onkeypress=\"javascript:manteTriajeActoMedico('$accion','$horaProgramacion','$codCronograma');\"><img src=\"../../../../medifacil_front/imagen/btn/b_grabar_on.gif\"></a>";
+            echo "<a href=\"javascript:manteTriajeActoMedico('$accion','$horaProgramacion','$codCronograma');\" onkeypress=\"javascript:manteTriajeActoMedico('$accion','$horaProgramacion','$codCronograma');\"><img src=\"../../../../fastmedical_front/imagen/btn/b_grabar_on.gif\"></a>";
         ?>
     </div>

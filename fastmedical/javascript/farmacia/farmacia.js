@@ -94,7 +94,7 @@ function cargarTablaPaqueteFarmaceuticosSOP(){
     parametros+='p1='+patronModulo;
 
     tablaPaquetesFarmaceuticosFarmaciaSOP = new dhtmlXGridObject('Div_TablaPaquetesFarmaceuticosCISOP');
-    tablaPaquetesFarmaceuticosFarmaciaSOP.setImagePath("../../../../medifacil_front/imagen/icono/");
+    tablaPaquetesFarmaceuticosFarmaciaSOP.setImagePath("../../../../fastmedical_front/imagen/icono/");
     tablaPaquetesFarmaceuticosFarmaciaSOP.setSkin("dhx_skyblue");
     tablaPaquetesFarmaceuticosFarmaciaSOP.attachEvent("onRowSelect", function(rowId,columna){
         $("txtcodigopaquete").value = rowId;
@@ -171,7 +171,7 @@ function mostrarTablaGeneracionPreOrdenFarmaciaSOP(){
     parametros+='&p3='+codigopersona;
 
     tablaControlInternoFarmaciaSOP = new dhtmlXGridObject('Div_tablamovimientosCIFarmaciaSOP');
-    tablaControlInternoFarmaciaSOP.setImagePath("../../../../medifacil_front/imagen/icono/");
+    tablaControlInternoFarmaciaSOP.setImagePath("../../../../fastmedical_front/imagen/icono/");
     tablaControlInternoFarmaciaSOP.setSkin("dhx_skyblue");
     tablaControlInternoFarmaciaSOP.attachEvent("onRowSelect", function(rowId,columna){
         nombreproducto = tablaControlInternoFarmaciaSOP.cellById(rowId,2).getValue();
@@ -270,7 +270,7 @@ function cargarTablaNuevosMedicamentosCISOP(){
     parametros+='&p3='+parametronombre;
 
     tablaAgregarNuevosMedicamentosFarmaciaSOP = new dhtmlXGridObject('Div_TablaProductosFarmaciaCISOP');
-    tablaAgregarNuevosMedicamentosFarmaciaSOP.setImagePath("../../../../medifacil_front/imagen/icono/");
+    tablaAgregarNuevosMedicamentosFarmaciaSOP.setImagePath("../../../../fastmedical_front/imagen/icono/");
     tablaAgregarNuevosMedicamentosFarmaciaSOP.setSkin("dhx_skyblue");
     tablaAgregarNuevosMedicamentosFarmaciaSOP.attachEvent("onRowSelect", function(rowId,columna){
         $("hCodigoProductoIndividual").value = rowId + "|" +tablaAgregarNuevosMedicamentosFarmaciaSOP.cellById(rowId,2).getValue();
@@ -292,7 +292,7 @@ function busquedaCodigoProductoFarmaciaCISOP(){
 
     tspc=0;
     tablaAgregarNuevosMedicamentosFarmaciaSOP = new dhtmlXGridObject('Div_TablaProductosFarmaciaCISOP');
-    tablaAgregarNuevosMedicamentosFarmaciaSOP.setImagePath("../../../../medifacil_front/imagen/icono/");
+    tablaAgregarNuevosMedicamentosFarmaciaSOP.setImagePath("../../../../fastmedical_front/imagen/icono/");
     tablaAgregarNuevosMedicamentosFarmaciaSOP.setSkin("dhx_skyblue");
     tablaAgregarNuevosMedicamentosFarmaciaSOP.attachEvent("onRowSelect", function(rowId,columna){
         $("hCodigoProductoIndividual").value = rowId + "|" +tablaAgregarNuevosMedicamentosFarmaciaSOP.cellById(rowId,2).getValue();
@@ -319,7 +319,7 @@ function busquedaNombreProductoFarmaciaCISOP(){
 
     tspc=0;
     tablaAgregarNuevosMedicamentosFarmaciaSOP = new dhtmlXGridObject('Div_TablaProductosFarmaciaCISOP');
-    tablaAgregarNuevosMedicamentosFarmaciaSOP.setImagePath("../../../../medifacil_front/imagen/icono/");
+    tablaAgregarNuevosMedicamentosFarmaciaSOP.setImagePath("../../../../fastmedical_front/imagen/icono/");
     tablaAgregarNuevosMedicamentosFarmaciaSOP.setSkin("dhx_skyblue");
     tablaAgregarNuevosMedicamentosFarmaciaSOP.attachEvent("onRowSelect", function(rowId,columna){
         $("hCodigoProductoIndividual").value = rowId + "|" +tablaAgregarNuevosMedicamentosFarmaciaSOP.cellById(rowId,2).getValue();

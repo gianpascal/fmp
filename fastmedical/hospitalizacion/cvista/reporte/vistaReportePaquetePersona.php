@@ -91,10 +91,10 @@
                                     />
                             </div>
                             <div id="divEtiquetaBuscar" style="width:17%;  float:left; ">
-                                <a href="javascript:buscarPersonasReporte();"><img src="../../../../medifacil_front/imagen/btn/nbtn_buscar.gif" alt=""  border="0" title="Buscar"/></a>
+                                <a href="javascript:buscarPersonasReporte();"><img src="../../../../fastmedical_front/imagen/btn/nbtn_buscar.gif" alt=""  border="0" title="Buscar"/></a>
                             </div>
                             <div id="DivLimpiar" style="width:16%; float:left; ">
-                                <a href="javascript:limpiarCampos('0');"><img src="../../../../medifacil_front/imagen/btn/btn_limpiar.gif" alt=""  border="0" title="Limpiar"/></a>
+                                <a href="javascript:limpiarCampos('0');"><img src="../../../../fastmedical_front/imagen/btn/btn_limpiar.gif" alt=""  border="0" title="Limpiar"/></a>
                             </div>
                         </div>
 

@@ -8,7 +8,7 @@ function cargarArbolCentroCostosServiciosxPuestos()
     myDiv=document.getElementById('Div_arbolServiciosxPuestos');
     myDiv.innerHTML = " ";
     tree=new dhtmlXTreeObject("Div_arbolServiciosxPuestos","100%","100%",0);
-    tree.setImagePath("../../../../medifacil_front/imagen/icono/tree/");
+    tree.setImagePath("../../../../fastmedical_front/imagen/icono/tree/");
     tree.attachEvent("onClick", function(){
         clickCargaCentroCostoPuestos(tree.getSelectedItemId(),tree.getSelectedItemText());
         return true;

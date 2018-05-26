@@ -58,13 +58,13 @@
                     <div class="inputDatosPaciente">
                         <input readonly="true" id="txtCodigoBarras" style="width:120px; " onkeypress="modificarCodigoBarras(event)" value="<?php echo $datos["codigoBarras"]; ?>" />
                         <a href="javascript:editarCodigoBarras();">
-                            <img id="iconoEditarCodigoBarras" border="0" src="../../../../medifacil_front/imagen/icono/editar.png" alt="" title="editar" />
+                            <img id="iconoEditarCodigoBarras" border="0" src="../../../../fastmedical_front/imagen/icono/editar.png" alt="" title="editar" />
                         </a>
                         <a href="javascript:modificarCodigoBarras1();">
-                            <img style="display: none;" id="iconoGrabarCodigoBarras" border="0" src="../../../../medifacil_front/imagen/icono/grabar.png" alt="" title="Guardar" />
+                            <img style="display: none;" id="iconoGrabarCodigoBarras" border="0" src="../../../../fastmedical_front/imagen/icono/grabar.png" alt="" title="Guardar" />
                         </a>
                         <a href="javascript:cancelarCodigoBarras();">
-                            <img style="display: none;" id="iconoCancelarCodigoBarras" border="0" src="../../../../medifacil_front/imagen/icono/cancel.png" alt="" title="cancelar" />
+                            <img style="display: none;" id="iconoCancelarCodigoBarras" border="0" src="../../../../fastmedical_front/imagen/icono/cancel.png" alt="" title="cancelar" />
                         </a>
                     </div>
                 </div>
@@ -118,13 +118,13 @@
                         echo $text33;
                         ?>
                         <a href="javascript:editarTelefonos();">
-                            <img id="iconoEditarTelefono" border="0" src="../../../../medifacil_front/imagen/icono/editar.png" alt="" title="editar" />
+                            <img id="iconoEditarTelefono" border="0" src="../../../../fastmedical_front/imagen/icono/editar.png" alt="" title="editar" />
                         </a>
                         <a href="javascript:modificarTelefonos();">
-                            <img style="display: none;" id="iconoGrabarTelefono" border="0" src="../../../../medifacil_front/imagen/icono/grabar.png" alt="" title="Guardar" />
+                            <img style="display: none;" id="iconoGrabarTelefono" border="0" src="../../../../fastmedical_front/imagen/icono/grabar.png" alt="" title="Guardar" />
                         </a>
                         <a href="javascript:cancelarTelefonos();">
-                            <img style="display: none;" id="iconoCancelarTelefono" border="0" src="../../../../medifacil_front/imagen/icono/cancel.png" alt="" title="cancelar" />
+                            <img style="display: none;" id="iconoCancelarTelefono" border="0" src="../../../../fastmedical_front/imagen/icono/cancel.png" alt="" title="cancelar" />
                         </a>
                     </div>
                 </div>
@@ -160,13 +160,13 @@ foreach ($arrayAuxPuntoControl as $value) {
                     <div class="inputDatosPaciente">
                         <input readonly="true" id="txtCodBarra2" style="width:120px; "  onkeypress="modificarCodigoBarras2(event)" value="<?php echo $datos["codigoBarras"]; ?>"/>
                         <a href="javascript:editarCodBarra2();">
-                            <img id="idtxtCodBarra2" border="0" src="../../../../medifacil_front/imagen/icono/editar.png" alt="" title="editar" />
+                            <img id="idtxtCodBarra2" border="0" src="../../../../fastmedical_front/imagen/icono/editar.png" alt="" title="editar" />
                         </a>
                         <a href="javascript:modificarCodigoBarras3();">
-                            <img style="display: none;" id="iconoGrabarCodigoBarras2" border="0" src="../../../../medifacil_front/imagen/icono/grabar.png" alt="" title="Guardar" />
+                            <img style="display: none;" id="iconoGrabarCodigoBarras2" border="0" src="../../../../fastmedical_front/imagen/icono/grabar.png" alt="" title="Guardar" />
                         </a>
                         <a href="javascript:cancelarCodigoBarras2();">
-                            <img style="display: none;" id="iconoCancelarCodigoBarras2" border="0" src="../../../../medifacil_front/imagen/icono/cancel.png" alt="" title="cancelar" />
+                            <img style="display: none;" id="iconoCancelarCodigoBarras2" border="0" src="../../../../fastmedical_front/imagen/icono/cancel.png" alt="" title="cancelar" />
                         </a>
                     </div>
                 </div>

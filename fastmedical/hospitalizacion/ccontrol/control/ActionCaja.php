@@ -76,7 +76,7 @@ class ActionCaja {
       $tablaHTML_ini = "<div style='height:100px; width:100%; overflow:auto'><table width='100%' border='0' cellpadding='0' cellspacing='1px' class='grid'>";
       $tablaHTML_fin= "</table></div>";
       $tablaInteriorHTML = '<table width="100%" cellpadding="0" cellspacing="1px">
-      <tr><td width="23%" align="center"><img src="'.$_SESSION['path_principal'].'../medifacil_front/imagen/icono/kuser_big.png" /></td>
+      <tr><td width="23%" align="center"><img src="'.$_SESSION['path_principal'].'../fastmedical_front/imagen/icono/kuser_big.png" /></td>
       <td width="77%">
       <table width="100%">
       <tr class="col1"><td width="50%">Nombre</td><td width="50%">'.$row['vnombre'].'&nbsp;</td></tr>

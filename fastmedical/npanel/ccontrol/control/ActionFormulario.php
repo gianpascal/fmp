@@ -520,21 +520,21 @@ class ActionFormulario{
             $val = $arrayMenu[1];
             //var_dump($cboHnos);
             $toolbar = new ToollBar("left");
-            $toolbar->SetBoton("GRABAR","Grabar","btn","onclick,onkeypress","nuevoMenuArbol()",$_SESSION['path_principal']."../medifacil_front/imagen/icono/grabar.png");
+            $toolbar->SetBoton("GRABAR","Grabar","btn","onclick,onkeypress","nuevoMenuArbol()",$_SESSION['path_principal']."../fastmedical_front/imagen/icono/grabar.png");
             //No funciona aún falta implementar
-            $toolbar->SetBoton("NUEVO","Restaurar","btn","onclick,onkeypress","actualizaPwd()",$_SESSION['path_principal']."../medifacil_front/imagen/icono/restaurar.png");
+            $toolbar->SetBoton("NUEVO","Restaurar","btn","onclick,onkeypress","actualizaPwd()",$_SESSION['path_principal']."../fastmedical_front/imagen/icono/restaurar.png");
             //Si funciona el evento
-            $toolbar->SetBoton("NUEVO","Nuevo Submenu","btn","onclick,onkeypress","eventoSubMenuArbol('m','$val[iid_formulario]','$val[inivel_formulario]')",$_SESSION['path_principal']."../medifacil_front/imagen/icono/restaurar.png");
+            $toolbar->SetBoton("NUEVO","Nuevo Submenu","btn","onclick,onkeypress","eventoSubMenuArbol('m','$val[iid_formulario]','$val[inivel_formulario]')",$_SESSION['path_principal']."../fastmedical_front/imagen/icono/restaurar.png");
             //No funciona aún falta implementar
-            $toolbar->SetBoton("NUEVO","Editar","btn","onclick,onkeypress","actualizaPwd()",$_SESSION['path_principal']."../medifacil_front/imagen/icono/restaurar.png");
+            $toolbar->SetBoton("NUEVO","Editar","btn","onclick,onkeypress","actualizaPwd()",$_SESSION['path_principal']."../fastmedical_front/imagen/icono/restaurar.png");
             require_once("../../cvista/permisos/edita_formulario.php");
 	}
         //Nuevo Submenu
 	public function datosSubMenuItem($val){
             $cboHnos = $this->cbo_lista_formulario_hijos($val["idsistema"],$val["idformulario"],'%');
             $toolbar = new ToollBar("left");
-            $toolbar->SetBoton("GRABAR","Grabar","btn","onclick,onkeypress","nuevoMenuArbol()",$_SESSION['path_principal']."../medifacil_front/imagen/icono/grabar.png");
-            $toolbar->SetBoton("NUEVO","Restaurar","btn","onclick,onkeypress","actualizaPwd()",$_SESSION['path_principal']."../medifacil_front/imagen/icono/restaurar.png");
+            $toolbar->SetBoton("GRABAR","Grabar","btn","onclick,onkeypress","nuevoMenuArbol()",$_SESSION['path_principal']."../fastmedical_front/imagen/icono/grabar.png");
+            $toolbar->SetBoton("NUEVO","Restaurar","btn","onclick,onkeypress","actualizaPwd()",$_SESSION['path_principal']."../fastmedical_front/imagen/icono/restaurar.png");
             require_once("../../cvista/permisos/edita_formulario.php");
 	}
 	//Falta implementar para grabar nuevo menu

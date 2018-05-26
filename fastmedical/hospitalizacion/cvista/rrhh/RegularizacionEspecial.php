@@ -45,7 +45,7 @@
         <tr> 
             <td colspan="3" align="center">
                 <a href="javascript:guardarEmpleadoRegularizar();">
-                    <img border="0" title="Buscar" alt="" src="../../../../medifacil_front/imagen/btn/b_grabar_off.gif"/></a>
+                    <img border="0" title="Buscar" alt="" src="../../../../fastmedical_front/imagen/btn/b_grabar_off.gif"/></a>
             </td>
         </tr>
 

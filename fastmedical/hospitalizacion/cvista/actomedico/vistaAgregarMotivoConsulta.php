@@ -5,7 +5,7 @@
                 <input type="hidden" id="hdnIdMotivoDeConsulta_<?php echo $numSintomas;?>" value="<?php echo $idMotivoDeConsulta;?>">
                 <div style="float: right; margin-top: -15px;">
                     <a href="javascript:;" onclick="javascript:cerrarMotivoDeConsulta(<?php echo $numSintomas;?>);">
-                        <img src='../../../../medifacil_front/imagen/icono/borrar.png' alt="Cerrar" title="Cerrar">
+                        <img src='../../../../fastmedical_front/imagen/icono/borrar.png' alt="Cerrar" title="Cerrar">
                     </a>
                 </div>
                 <fieldset style="margin:5px;">

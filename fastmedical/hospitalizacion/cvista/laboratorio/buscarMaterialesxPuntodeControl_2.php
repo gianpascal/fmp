@@ -31,7 +31,7 @@
                                 </td>
                                 <td>
                                     <div  id ="divEtiquetaBuscar" style=" float:left;width:16%;" align="center">
-                                        <a href="javascript:buscarMaterialesLaboratorioPopap_2(document.getElementById('NombreaBuscarMateriales').value);"><img border="0" title="Buscar de Materiales" alt="" src="../../../../medifacil_front/imagen/btn/nbtn_buscar.gif"/></a>
+                                        <a href="javascript:buscarMaterialesLaboratorioPopap_2(document.getElementById('NombreaBuscarMateriales').value);"><img border="0" title="Buscar de Materiales" alt="" src="../../../../fastmedical_front/imagen/btn/nbtn_buscar.gif"/></a>
                                     </div>
 
                                 </td>

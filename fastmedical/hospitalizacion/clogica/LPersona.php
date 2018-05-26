@@ -559,7 +559,7 @@ public function formatoEdadCitas($fecha_de_nacimiento = "") {
                                                             btnAgregaDerHab2=document.getElementById(btn);
                                                             deshabilita_agrega_fila_derhabiente();
                                                             btnAgregaDerHab2.disabled=false;
-                                                            btnAgregaDerHab2.style.background='url(../../../../medifacil_front/imagen/icono/add_user.png) no-repeat';
+                                                            btnAgregaDerHab2.style.background='url(../../../../fastmedical_front/imagen/icono/add_user.png) no-repeat';
                                                             btnAgregaDerHab2.style.cursor='pointer';
                                                             }else{
                                                                 deshabilita_agrega_fila_derhabiente();
@@ -567,7 +567,7 @@ public function formatoEdadCitas($fecha_de_nacimiento = "") {
                                                             document.getElementById('dh_filiacion').value = '" . $filiacion . "';
                                                             myajax.Link('../../ccontrol/control/control.php?p1=derecho_habiente&p2=" . $filiacion . "&p3=" . $vDescripcion . "&p4=&p5=" . $c_cod_per . "&p6=&p7=" . $c_cod_per . "&p8=&p9=&p10=&p11=" . $c_cod_per . "','der_hab');\"/>";
                 $der_hab = $fila[8] == "1" ? "<input type='button' id='btnAgregaDerHab[" . $filiacion . "]'
-                                                        style='border:0px;background:url(../../../../medifacil_front/imagen/icono/add_user.png) no-repeat;background-color:transparent;width:30px'
+                                                        style='border:0px;background:url(../../../../fastmedical_front/imagen/icono/add_user.png) no-repeat;background-color:transparent;width:30px'
                                                         onclick=\"agrega_fila_derhabiente('tblDerHab');
                                                                   ventana_busca_persona('setDatosDerechoHabiente');\">" : "&nbsp;";
                 $fila[5] = $der_hab;
@@ -616,14 +616,14 @@ public function formatoEdadCitas($fecha_de_nacimiento = "") {
             if ($c_cod_per != '') {
                 $filaX[0] = $fila[0];
                 $filaX[1] = $fila[1];
-                $filaX[2] = "<input type='button' disabled='disabled' name='btnNoAfiliado[" . $i . "]' id='btnNoAfiliado[" . $i . "]' style=\"background:url('../../../../medifacil_front/imagen/icono/db_add_black.png') no-repeat;width:18px;border:0px;cursor:default;\" title='Agregar Filiacion' onmouseover=\"this.style.cursor='pointer'\" onclick=\"agrega_filiacion('" . $idAfiliacion . "','" . $nombreAfiliacion . "','" . $flagDerechoHabiente . "');elimina_filiacion(this.parentNode.parentNode.rowIndex);\">";
+                $filaX[2] = "<input type='button' disabled='disabled' name='btnNoAfiliado[" . $i . "]' id='btnNoAfiliado[" . $i . "]' style=\"background:url('../../../../fastmedical_front/imagen/icono/db_add_black.png') no-repeat;width:18px;border:0px;cursor:default;\" title='Agregar Filiacion' onmouseover=\"this.style.cursor='pointer'\" onclick=\"agrega_filiacion('" . $idAfiliacion . "','" . $nombreAfiliacion . "','" . $flagDerechoHabiente . "');elimina_filiacion(this.parentNode.parentNode.rowIndex);\">";
                 array_push($resultadoArray, $filaX);
                 $i++;
             } else {
                 if ($idAfiliacion != '0001') {
                     $filaX[0] = $fila[0];
                     $filaX[1] = $fila[1];
-                    $filaX[2] = "<input type='button' name='btnNoAfiliado[" . $i . "]' id='btnNoAfiliado[" . $i . "]' style=\"background:url('../../../../medifacil_front/imagen/icono/db_add.png') no-repeat;width:18px;border:0px;cursor:pointer;\" title='Agregar Filiacion' onmouseover=\"this.style.cursor='pointer'\" onclick=\"agrega_filiacion('" . $idAfiliacion . "','" . $nombreAfiliacion . "','" . $flagDerechoHabiente . "');elimina_filiacion(this.parentNode.parentNode.rowIndex);\">";
+                    $filaX[2] = "<input type='button' name='btnNoAfiliado[" . $i . "]' id='btnNoAfiliado[" . $i . "]' style=\"background:url('../../../../fastmedical_front/imagen/icono/db_add.png') no-repeat;width:18px;border:0px;cursor:pointer;\" title='Agregar Filiacion' onmouseover=\"this.style.cursor='pointer'\" onclick=\"agrega_filiacion('" . $idAfiliacion . "','" . $nombreAfiliacion . "','" . $flagDerechoHabiente . "');elimina_filiacion(this.parentNode.parentNode.rowIndex);\">";
                     array_push($resultadoArray, $filaX);
                     $i++;
                 }
@@ -673,8 +673,8 @@ public function formatoEdadCitas($fecha_de_nacimiento = "") {
             $fila[0] = "<input disabled='disabled' type='text' name='codigo[" . $k . "]' id='codigo[" . $k . "]' value='" . $fila[0] . "' style='width:60px;font-size:11px;cursor:default;'>";
             $fila[2] = "<input disabled='disabled' type='text' name='nombre[" . $k . "]' id='nombre[" . $k . "]' value='" . $fila[2] . "' style='width:220px;font-size:11px;cursor:default;'>";
             $fila[8] = "<select disabled='disabled' name='relacion[" . $k . "]' id='relacion[" . $k . "]' style='cursor:default;'>" . $cbo_vinculoFam . "</select>";
-//$fila[9]="<a href='#' onclick=\"myajax.Link('../../ccontrol/control/control.php?p1=eliminar_derecho_habiente&p2=".$fila[1]."&p3=".$der_hab."&p4=0&p5=t&p6=".$der_hab."&p7=f&p8=t&p11=t&p12=eliminar&p13=vdh','fili_pac');\"><img src='../../../../medifacil_front/imagen/btn/b_eliminar_on.gif' title='Eliminar Derecho Habiente'/></a>";
-            $fila[9] = "<input disabled='disabled' type='button 'name='btnElimDerHab[" . $k . "]' id='btnElimDerHab[" . $k . "]' style='background:url(../../../../medifacil_front/imagen/btn/b_eliminar_on_black.gif) no-repeat;width:68px;height:25px;border:0px;cursor:default;' onmouseover=\"this.style.cursor='pointer'\" title='Eliminar Derecho Habiente' onclick=\"idfila=this.parentNode.parentNode.rowIndex;elimina_fila_derhabiente(idfila)\"/>";
+//$fila[9]="<a href='#' onclick=\"myajax.Link('../../ccontrol/control/control.php?p1=eliminar_derecho_habiente&p2=".$fila[1]."&p3=".$der_hab."&p4=0&p5=t&p6=".$der_hab."&p7=f&p8=t&p11=t&p12=eliminar&p13=vdh','fili_pac');\"><img src='../../../../fastmedical_front/imagen/btn/b_eliminar_on.gif' title='Eliminar Derecho Habiente'/></a>";
+            $fila[9] = "<input disabled='disabled' type='button 'name='btnElimDerHab[" . $k . "]' id='btnElimDerHab[" . $k . "]' style='background:url(../../../../fastmedical_front/imagen/btn/b_eliminar_on_black.gif) no-repeat;width:68px;height:25px;border:0px;cursor:default;' onmouseover=\"this.style.cursor='pointer'\" title='Eliminar Derecho Habiente' onclick=\"idfila=this.parentNode.parentNode.rowIndex;elimina_fila_derhabiente(idfila)\"/>";
             array_push($resultadoArray, $fila);
             $k++;
         }
@@ -920,7 +920,7 @@ public function formatoEdadCitas($fecha_de_nacimiento = "") {
 //echo htmlentities($nombre);
 // $precio=$array[$i][3];
             if ($editar == 'editar') {
-                $edid = "<a href='#' onclick=\"javascript:ventanaEditaPersona('" . $c_cod_per . "');\"><img src='../../../../medifacil_front/imagen/icono/edit2.png' title='Editar Persona'/></a>";
+                $edid = "<a href='#' onclick=\"javascript:ventanaEditaPersona('" . $c_cod_per . "');\"><img src='../../../../fastmedical_front/imagen/icono/edit2.png' title='Editar Persona'/></a>";
                 array_push($array[$i], $edid);
             }
             $blanco = '';
@@ -936,7 +936,7 @@ public function formatoEdadCitas($fecha_de_nacimiento = "") {
         $o_DPersona = new DPersonas();
         $rs = $o_DPersona->ListaPersonaCitas($c_cod_per);                
         foreach ($rs as $key=>$fila) {
-            array_push($rs[$key], $fila[5]=='PAGADO' || $fila[5]=='ATENDIDO'? "../../../../medifacil_front/imagen/icono/kappfinder.png ^ Placa":"../../../../medifacil_front/imagen/icono/kappfinder_off.png");            
+            array_push($rs[$key], $fila[5]=='PAGADO' || $fila[5]=='ATENDIDO'? "../../../../fastmedical_front/imagen/icono/kappfinder.png ^ Placa":"../../../../fastmedical_front/imagen/icono/kappfinder_off.png");            
         }
         return $rs;
     }
@@ -970,7 +970,7 @@ public function formatoEdadCitas($fecha_de_nacimiento = "") {
       $array[$i][2] = "<a href='#' onclick=\"javascript:" . $funcion . "('','','" . $array[$i][4] . "');\">" . htmlentities($array[$i][2]) . "</a>";
       //echo htmlentities($nombre);
       // $precio=$array[$i][3];
-      $ver = "<a href='#' onclick=\"javascript:verCronogramaMedicoMensual('" . $c_cod_per . "','" . $nombre . "');\"><img src='../../../../medifacil_front/imagen/icono/min_alarmd.png' title='Ver Cronograma'/></a>";
+      $ver = "<a href='#' onclick=\"javascript:verCronogramaMedicoMensual('" . $c_cod_per . "','" . $nombre . "');\"><img src='../../../../fastmedical_front/imagen/icono/min_alarmd.png' title='Ver Cronograma'/></a>";
       array_push($array[$i], $ver);
 
 
@@ -987,7 +987,7 @@ public function formatoEdadCitas($fecha_de_nacimiento = "") {
      //   $i = 0;
         
         foreach ($resultado as $i => $value) {
-            $resultado[$i][0] = "../../../../medifacil_front/imagen/icono/min_alarmd.png ^ Cronograma";
+            $resultado[$i][0] = "../../../../fastmedical_front/imagen/icono/min_alarmd.png ^ Cronograma";
            // $i++;
         }
         //print_r($resultado);
@@ -1102,7 +1102,7 @@ public function formatoEdadCitas($fecha_de_nacimiento = "") {
         $i = 0;
         foreach ($array as $fila) {
             $c_cod_per = $fila[0];
-            $edid = "<a href='#' onclick=\"javascript:ventanaEditaPersona('" . $c_cod_per . "');\"><img src='../../../../medifacil_front/imagen/icono/edit2.png' title='Editar Persona'/></a>";
+            $edid = "<a href='#' onclick=\"javascript:ventanaEditaPersona('" . $c_cod_per . "');\"><img src='../../../../fastmedical_front/imagen/icono/edit2.png' title='Editar Persona'/></a>";
             array_push($array[$i], $edid);
             array_push($array[$i], "$c_cod_per-$rId");
 
@@ -1176,10 +1176,10 @@ public function formatoEdadCitas($fecha_de_nacimiento = "") {
         $array = $o_DPersona->detalleAcredita($c_cod_per);
         foreach ($array as $i => $valor) {
             if ($array[$i][10] == '1') {
-                $edid = "<img src='../../../../medifacil_front/imagen/icono/agt_action_success.png' title='Activada'/>";
+                $edid = "<img src='../../../../fastmedical_front/imagen/icono/agt_action_success.png' title='Activada'/>";
             }
             if ($array[$i][10] == '2') {
-                $edid = "<img src='../../../../medifacil_front/imagen/icono/agt_action_fail.png' title='Desactivada'/>";
+                $edid = "<img src='../../../../fastmedical_front/imagen/icono/agt_action_fail.png' title='Desactivada'/>";
             }
             array_push($array[$i], $edid);
         }
@@ -1243,8 +1243,8 @@ public function formatoEdadCitas($fecha_de_nacimiento = "") {
         if (is_array($resultado)) {
             foreach ($resultado as $i => $value) {
                 $resultado[$i][5] = $resultado[$i][5] == "" ? "- Seleccionar -" : $resultado[$i][5];
-                $resultado[$i][7] = "../../../../medifacil_front/imagen/icono/eliminar.gif ^ Eliminar";
-                $resultado[$i][6] = "../../../../medifacil_front/imagen/icono/modificar.png ^ Grabar";
+                $resultado[$i][7] = "../../../../fastmedical_front/imagen/icono/eliminar.gif ^ Eliminar";
+                $resultado[$i][6] = "../../../../fastmedical_front/imagen/icono/modificar.png ^ Grabar";
             }
         }
         return $resultado;

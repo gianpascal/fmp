@@ -16,7 +16,7 @@
             <tr>
                 <td colspan="4" align="center" >
                     <a href="javascript:EmergenciaXFecha();">
-                        <img border="0" title="Buscar" alt="" src="../../../../medifacil_front/imagen/btn/b_buscar_on.gif"/></a>
+                        <img border="0" title="Buscar" alt="" src="../../../../fastmedical_front/imagen/btn/b_buscar_on.gif"/></a>
                 </td>
             </tr>
         </table>

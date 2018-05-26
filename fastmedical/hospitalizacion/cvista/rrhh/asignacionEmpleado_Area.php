@@ -117,8 +117,8 @@ $iCodEmpCoordinador = $_SESSION['iCodigoEmpleado'];
 
 <!--                        <td>
     <input id="txtNombreAreaAbuscar" name="txtNombreAreaAbuscar" type="text" size="20" onkeyup="buscarAreaModCoordinadoresTurnos();"/>
-<a href="javascript:buscarCoordinadoresPopap(document.getElementById('apellidoPaterno').value,document.getElementById('apellidoMaterno').value,document.getElementById('nombres').value);"><img border="0" title="Codigo de Persona" alt="" src="../../../../medifacil_front/imagen/btn/nbtn_buscar.gif"/></a>
-<a href="javascript:replicarPreProgramación();"><img border="0" title="Codigo de Persona" alt="" src="../../../../medifacil_front/imagen/btn/nbtn_buscar.gif"/></a>
+<a href="javascript:buscarCoordinadoresPopap(document.getElementById('apellidoPaterno').value,document.getElementById('apellidoMaterno').value,document.getElementById('nombres').value);"><img border="0" title="Codigo de Persona" alt="" src="../../../../fastmedical_front/imagen/btn/nbtn_buscar.gif"/></a>
+<a href="javascript:replicarPreProgramación();"><img border="0" title="Codigo de Persona" alt="" src="../../../../fastmedical_front/imagen/btn/nbtn_buscar.gif"/></a>
 </td>-->
 
                         <td align="center">
@@ -128,13 +128,13 @@ $iCodEmpCoordinador = $_SESSION['iCodigoEmpleado'];
                             if (isset($_SESSION["permiso_formulario_servicio"][226]["REPLICAR_PREPROGRAMADOS_AL_SGTE_MES"]) && ($_SESSION["permiso_formulario_servicio"][226]["REPLICAR_PREPROGRAMADOS_AL_SGTE_MES"] == 1)) {
 
 
-                                echo "<a href=\"javascript:replicarPreProgramación();\"><img  id=\"imgagenGuardar\" src=\"../../../../medifacil_front/imagen/icono/copia.jpg\" width=45px height=30px/></a>
+                                echo "<a href=\"javascript:replicarPreProgramación();\"><img  id=\"imgagenGuardar\" src=\"../../../../fastmedical_front/imagen/icono/copia.jpg\" width=45px height=30px/></a>
             
                                     ";
                             } else {
 
                                 echo "
-                                    <img  id=\"imgagenGuardar\" src=\"../../../../medifacil_front/imagen/icono/copia.jpg\" width=45px height=30px/>
+                                    <img  id=\"imgagenGuardar\" src=\"../../../../fastmedical_front/imagen/icono/copia.jpg\" width=45px height=30px/>
             
                                     ";
                             }
@@ -147,7 +147,7 @@ $iCodEmpCoordinador = $_SESSION['iCodigoEmpleado'];
 
                             <!--                            fin-->
 
-<!--                            <a href="javascript:replicarPreProgramación();"><img  id="imgagenGuardar" src="../../../../medifacil_front/imagen/icono/copia.jpg" width="45px" height="30px"/></a>-->
+<!--                            <a href="javascript:replicarPreProgramación();"><img  id="imgagenGuardar" src="../../../../fastmedical_front/imagen/icono/copia.jpg" width="45px" height="30px"/></a>-->
 
 
 
@@ -234,12 +234,12 @@ $iCodEmpCoordinador = $_SESSION['iCodigoEmpleado'];
 
 
                                 echo "
-                                <a href=\"javascript:javascript:asignarPreProgramacion();\"><img  id=\"imgagenGuardar\" src=\"../../../../medifacil_front/imagen/icono/b_adelante.gif\" width=25px height=25px/></a>
+                                <a href=\"javascript:javascript:asignarPreProgramacion();\"><img  id=\"imgagenGuardar\" src=\"../../../../fastmedical_front/imagen/icono/b_adelante.gif\" width=25px height=25px/></a>
                              ";
                             } else {
 
                                 echo "
-                                    <img  id=\"imgagenGuardar\" src=\"../../../../medifacil_front/imagen/icono/b_adelante.gif\" width=25px height=25px/>
+                                    <img  id=\"imgagenGuardar\" src=\"../../../../fastmedical_front/imagen/icono/b_adelante.gif\" width=25px height=25px/>
                         
                                     ";
                             }
@@ -267,12 +267,12 @@ $iCodEmpCoordinador = $_SESSION['iCodigoEmpleado'];
 
 
                                 echo "
-                                <a href=\"javascript:javascript:quitarPreProgramacion();\"><img  id=\"imgagenGuardar\" src=\"../../../../medifacil_front/imagen/icono/b_atras.gif\" width=25px height=25px/></a>
+                                <a href=\"javascript:javascript:quitarPreProgramacion();\"><img  id=\"imgagenGuardar\" src=\"../../../../fastmedical_front/imagen/icono/b_atras.gif\" width=25px height=25px/></a>
                              ";
                             } else {
 
                                 echo "
-                                    <img  id=\"imgagenGuardar\" src=\"../../../../medifacil_front/imagen/icono/b_atras.gif\" width=25px height=25px/>
+                                    <img  id=\"imgagenGuardar\" src=\"../../../../fastmedical_front/imagen/icono/b_atras.gif\" width=25px height=25px/>
                         
                                     ";
                             }
@@ -305,7 +305,7 @@ $iCodEmpCoordinador = $_SESSION['iCodigoEmpleado'];
 //
 //                        echo "<tr align=center>
 //                                <td align=center style=width:180px; height:50px;>
-//                                    <a href=\"javascript:javascript:quitarPreProgramacion();\"><img  id=\"imgagenGuardar\" src=\"../../../../medifacil_front/imagen/icono/b_atras.gif\" width=25px height=25px/></a>
+//                                    <a href=\"javascript:javascript:quitarPreProgramacion();\"><img  id=\"imgagenGuardar\" src=\"../../../../fastmedical_front/imagen/icono/b_atras.gif\" width=25px height=25px/></a>
 //                                  </td>
 //                                  </tr>
 //                                    ";
@@ -313,7 +313,7 @@ $iCodEmpCoordinador = $_SESSION['iCodigoEmpleado'];
 //
 //                        echo "<tr align=center>
 //                                    <td align=center>
-//                                    <img  id=\"imgagenGuardar\" src=\"../../../../medifacil_front/imagen/icono/b_atras.gif\" width=25px height=25px/>
+//                                    <img  id=\"imgagenGuardar\" src=\"../../../../fastmedical_front/imagen/icono/b_atras.gif\" width=25px height=25px/>
 //                                    
 //                                   
 //                                                                       
@@ -340,7 +340,7 @@ $iCodEmpCoordinador = $_SESSION['iCodigoEmpleado'];
 
 <!--//                        <td  align="center" style="width:180px; height:50px;">
 //
-//                            <a href="javascript:asignarPreProgramacion();"> <img  id="imgagenGuardar" src="../../../../medifacil_front/imagen/icono/b_adelante.gif" width="25px" height="25px"/></a>
+//                            <a href="javascript:asignarPreProgramacion();"> <img  id="imgagenGuardar" src="../../../../fastmedical_front/imagen/icono/b_adelante.gif" width="25px" height="25px"/></a>
 //
 //                        </td>
 //                        
@@ -359,7 +359,7 @@ $iCodEmpCoordinador = $_SESSION['iCodigoEmpleado'];
 <!--                    <tr align="center" style="width:180px; height:50px;">
     <td align="center">
 
-        <a href="javascript:quitarPreProgramacion();"><img  id="imgagenGuardar" src="../../../../medifacil_front/imagen/icono/b_atras.gif" width="25px" height="25px"/></a>
+        <a href="javascript:quitarPreProgramacion();"><img  id="imgagenGuardar" src="../../../../fastmedical_front/imagen/icono/b_atras.gif" width="25px" height="25px"/></a>
     </td>
 </tr>-->
 
@@ -400,13 +400,13 @@ $iCodEmpCoordinador = $_SESSION['iCodigoEmpleado'];
         if (isset($_SESSION["permiso_formulario_servicio"][226]["LISTAR_EMPLEADOS_PREPROGRAMADOS"]) && ($_SESSION["permiso_formulario_servicio"][226]["LISTAR_EMPLEADOS_PREPROGRAMADOS"] == 1)) {
 
 
-            echo "<a href=\"javascript:ListarEmpleadosPreProgramados();\">Refrescar<img  id=\"imgagenGuardar\" src=\"../../../../medifacil_front/imagen/icono/clean_big.png\" width=40px height=40px/></a>
+            echo "<a href=\"javascript:ListarEmpleadosPreProgramados();\">Refrescar<img  id=\"imgagenGuardar\" src=\"../../../../fastmedical_front/imagen/icono/clean_big.png\" width=40px height=40px/></a>
             
                                     ";
         } else {
 
             echo "
-                                    <center><img  id=\"imgagenGuardar\" src=\"../../../../medifacil_front/imagen/icono/clean_big.png\" width=40px height=40px/></center>
+                                    <center><img  id=\"imgagenGuardar\" src=\"../../../../fastmedical_front/imagen/icono/clean_big.png\" width=40px height=40px/></center>
             
                                     ";
         }
@@ -414,7 +414,7 @@ $iCodEmpCoordinador = $_SESSION['iCodigoEmpleado'];
 
 
 
-<!--        <a href="javascript:ListarEmpleadosPreProgramados();">Refrescar<img  id="imgagenGuardar" src="../../../../medifacil_front/imagen/icono/clean_big.png" width="40px" height="40px"/></a>-->
+<!--        <a href="javascript:ListarEmpleadosPreProgramados();">Refrescar<img  id="imgagenGuardar" src="../../../../fastmedical_front/imagen/icono/clean_big.png" width="40px" height="40px"/></a>-->
 
 
 

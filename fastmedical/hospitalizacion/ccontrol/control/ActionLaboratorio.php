@@ -454,14 +454,14 @@ class ActionLaboratorio {
                         <tr>
                                 <td>
                                     <div id="div_BotonEditar_Material_MDxE' . $i . '">
-                                      <a href="javascript:buscarMaterialesLaboratorioPopap();"><img border="0" title="Editar" alt="" src="../../../../medifacil_front/imagen/btn/nbtn_buscar.gif"/></a>
+                                      <a href="javascript:buscarMaterialesLaboratorioPopap();"><img border="0" title="Editar" alt="" src="../../../../fastmedical_front/imagen/btn/nbtn_buscar.gif"/></a>
             
                                     </div> 
 
                                  </td>
                                                                  <td>
                                     <div id="div_BotonEliminar_Material_MDxE' . $i . '">
-                                      <a href="javascript:buscarMaterialesLaboratorioPopap();"><img border="0" title="Eliminar" alt="" src="../../../../medifacil_front/imagen/btn/nbtn_buscar.gif"/></a>
+                                      <a href="javascript:buscarMaterialesLaboratorioPopap();"><img border="0" title="Eliminar" alt="" src="../../../../fastmedical_front/imagen/btn/nbtn_buscar.gif"/></a>
             
                                     </div> 
 

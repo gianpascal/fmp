@@ -68,11 +68,11 @@
                             <td colspan="4"  align="center">
                                 <?php
                                     if (isset($_SESSION["permiso_formulario_servicio"][223]["BUSCAR_REPORTE_ASISTENCIA_EMP"]) && ($_SESSION["permiso_formulario_servicio"][223]["BUSCAR_REPORTE_ASISTENCIA_EMP"]==1)){
-                                        //<a href="javascript:PresentarHorarioEmpleadoTrabjados();"><img border="0" title="Agregar Documentos" alt="" src="../../../../medifacil_front/imagen/btn/nbtn_buscar.gif"/></a>
-                                        echo "<a href=\"javascript:PresentarHorarioEmpleadoTrabjados();\"><img border=\"0\" title=\"Agregar Documentos\" alt=\"\" src=\"../../../../medifacil_front/imagen/btn/nbtn_buscar.gif\"/></a>";
+                                        //<a href="javascript:PresentarHorarioEmpleadoTrabjados();"><img border="0" title="Agregar Documentos" alt="" src="../../../../fastmedical_front/imagen/btn/nbtn_buscar.gif"/></a>
+                                        echo "<a href=\"javascript:PresentarHorarioEmpleadoTrabjados();\"><img border=\"0\" title=\"Agregar Documentos\" alt=\"\" src=\"../../../../fastmedical_front/imagen/btn/nbtn_buscar.gif\"/></a>";
                                     }
                                     else{
-                                        echo "<img border=\"0\" title=\"Agregar Documentos\" alt=\"\" src=\"../../../../medifacil_front/imagen/btn/nbtn_buscar.gif\"/>";
+                                        echo "<img border=\"0\" title=\"Agregar Documentos\" alt=\"\" src=\"../../../../fastmedical_front/imagen/btn/nbtn_buscar.gif\"/>";
                                     }
                                 ?>
                             </td>
@@ -90,11 +90,11 @@
             <div align="center">
                 <?php
                     if (isset($_SESSION["permiso_formulario_servicio"][223]["EXPORTAR_EXCEL_REPORTE_ASISTENCIA_EMP"]) && ($_SESSION["permiso_formulario_servicio"][223]["EXPORTAR_EXCEL_REPORTE_ASISTENCIA_EMP"]==1)){
-                        //<a href="javascript:ExportarExcelHorasTrabajadas();"><img border="0" title="Agregar Documentos" alt="" src="../../../../medifacil_front/imagen/btn/b_exportarexcel_on.gif"/></a>
-                        echo "<a href=\"javascript:ExportarExcelHorasTrabajadas();\"><img border=\"0\" title=\"Agregar Documentos\" alt=\"\" src=\"../../../../medifacil_front/imagen/btn/b_exportarexcel_on.gif\"/></a>";
+                        //<a href="javascript:ExportarExcelHorasTrabajadas();"><img border="0" title="Agregar Documentos" alt="" src="../../../../fastmedical_front/imagen/btn/b_exportarexcel_on.gif"/></a>
+                        echo "<a href=\"javascript:ExportarExcelHorasTrabajadas();\"><img border=\"0\" title=\"Agregar Documentos\" alt=\"\" src=\"../../../../fastmedical_front/imagen/btn/b_exportarexcel_on.gif\"/></a>";
                     }
                     else{
-                        echo "<img border=\"0\" title=\"Agregar Documentos\" alt=\"\" src=\"../../../../medifacil_front/imagen/btn/b_exportarexcel_on.gif\"/>";
+                        echo "<img border=\"0\" title=\"Agregar Documentos\" alt=\"\" src=\"../../../../fastmedical_front/imagen/btn/b_exportarexcel_on.gif\"/>";
                     }
                 ?>
             </div>

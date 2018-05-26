@@ -169,7 +169,7 @@ foreach ($arrayListaMuestrasxPuntoDeControlxExamen as $i => $value) {
                     <div class="filaMuestraDetalle" >
                         <div class="labelMuestraDetalle">
                             <div id="div_BotonEditar_Muestra_MDxE<?php echo trim($value[0]) ?>">
-                                <a href="javascript:EditarItemMuestrasAlmacenados(document.getElementById('idMuestraPuntoControlLaboratorio<?php echo trim($value[0]) ?>').value);"><img border="0" title="Editar" alt="" src="../../../../medifacil_front/imagen/btn/b_editar_on.gif"/></a>
+                                <a href="javascript:EditarItemMuestrasAlmacenados(document.getElementById('idMuestraPuntoControlLaboratorio<?php echo trim($value[0]) ?>').value);"><img border="0" title="Editar" alt="" src="../../../../fastmedical_front/imagen/btn/b_editar_on.gif"/></a>
 
                             </div>  
                         </div>
@@ -177,7 +177,7 @@ foreach ($arrayListaMuestrasxPuntoDeControlxExamen as $i => $value) {
 
                         <div class="inputMuestraDetalle">
                             <div id="div_BotonEliminar_Muestra_MDxE <?php echo trim($value[0]) ?>">
-                                <a href="javascript:EliminarItemMuestraAlmacenados(document.getElementById('idMuestraPuntoControlLaboratorio<?php echo trim($value[0]) ?>').value);"><img border="0" title="Eliminar" alt="" src="../../../../medifacil_front/imagen/btn/b_borrar_on.gif"/></a>
+                                <a href="javascript:EliminarItemMuestraAlmacenados(document.getElementById('idMuestraPuntoControlLaboratorio<?php echo trim($value[0]) ?>').value);"><img border="0" title="Eliminar" alt="" src="../../../../fastmedical_front/imagen/btn/b_borrar_on.gif"/></a>
 
                             </div>
                         </div>
@@ -190,7 +190,7 @@ foreach ($arrayListaMuestrasxPuntoDeControlxExamen as $i => $value) {
                                    document.getElementById('txtCantidadMinimaMuestraSeleccionada<?php echo trim($value[0]) ?>').value,
                                    document.getElementById('idMuestraPuntoControlLaboratorio<?php echo trim($value[0]) ?>').value);">
 
-                                    <img border="0" title="Actualizar" alt="" src="../../../../medifacil_front/imagen/btn/b_actualizar_on.gif"/></a>
+                                    <img border="0" title="Actualizar" alt="" src="../../../../fastmedical_front/imagen/btn/b_actualizar_on.gif"/></a>
 
                             </div> 
                         </div>

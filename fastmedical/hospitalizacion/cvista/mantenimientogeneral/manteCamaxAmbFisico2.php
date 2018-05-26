@@ -49,6 +49,6 @@
         </div>
     </div>
     <div id="divAccionesMantCamaxAmbFisico2" align="center" style="width:100%;height:auto;background: white;display: block">
-        <?php echo "<a href=\"javascript:manteCamaxAmbFisico('$accion',$codAmbienteFisico);\"><img src=\"../../../../medifacil_front/imagen/btn/b_grabar_on.gif \"></a>"; ?>
+        <?php echo "<a href=\"javascript:manteCamaxAmbFisico('$accion',$codAmbienteFisico);\"><img src=\"../../../../fastmedical_front/imagen/btn/b_grabar_on.gif \"></a>"; ?>
     </div>
 </div>

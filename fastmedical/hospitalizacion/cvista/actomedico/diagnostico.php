@@ -22,7 +22,7 @@ $tipoingreso = $o_ActionActoMedico->comboTipoIngreso($nombretipoingreso,$indSelT
         <td width="16%">
             <div align="center">
                 <a href="javascript:;" onclick="javascript:eliminarDiagnostico(<?php echo $datos["numerodivDiagnostico"].",'".$datos["codigointernoCIE"]."'"; ?>);">
-                    <img src='../../../../medifacil_front/imagen/icono/borrar.png' alt="Eliminar">
+                    <img src='../../../../fastmedical_front/imagen/icono/borrar.png' alt="Eliminar">
                 </a>
             </div>
         </td>

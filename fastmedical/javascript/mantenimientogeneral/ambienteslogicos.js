@@ -8,7 +8,7 @@ function cargarArbolCentroCostos()
     var myDiv=document.getElementById('Div_centroCostos');
     myDiv.innerHTML = " ";
     var tree=new dhtmlXTreeObject("Div_centroCostos","100%","100%",0);
-    tree.setImagePath("../../../../medifacil_front/imagen/icono/tree/");
+    tree.setImagePath("../../../../fastmedical_front/imagen/icono/tree/");
     tree.attachEvent("onClick", function(){
         clickCargaCentroCosto(tree.getSelectedItemId(),tree.getSelectedItemText());
         desactivar();

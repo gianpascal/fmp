@@ -44,10 +44,10 @@
         <tr>
             <td class="filalabel" colspan="8" align="center">
                 <a onclick="editarDatosPersona();" href="javascript:;">
-                    <img src="../../../../medifacil_front/imagen/btn/b_ver_on.gif" id="imgVerPacienteDatos" alt="Ver">
+                    <img src="../../../../fastmedical_front/imagen/btn/b_ver_on.gif" id="imgVerPacienteDatos" alt="Ver">
                 </a>
                 <a href='javascript:;' onclick="javascript:regresarAgendaMedica();">
-                    <img id="btnregresarActoMedico" src='../../../../medifacil_front/imagen/btn/b_regresar_on.gif' title='Regresar' alt=""/>
+                    <img id="btnregresarActoMedico" src='../../../../fastmedical_front/imagen/btn/b_regresar_on.gif' title='Regresar' alt=""/>
                 </a>
             </td>
         </tr>

@@ -370,15 +370,15 @@
                             <?php
                             $toolbar = new ToollBar();
                             if (isset($_SESSION["permiso_formulario_servicio"][110]["EDITAR_PAC"]) && $_SESSION["permiso_formulario_servicio"][110]["EDITAR_PAC"] == 1)
-                                $toolbar->SetBoton("EDITAR", "Editar", "btn", "onclick,onkeypress", "editar_persona()", "../../../../medifacil_front/imagen/icono/editar.png", "", "", $btnhabil);
+                                $toolbar->SetBoton("EDITAR", "Editar", "btn", "onclick,onkeypress", "editar_persona()", "../../../../fastmedical_front/imagen/icono/editar.png", "", "", $btnhabil);
                             if (isset($_SESSION["permiso_formulario_servicio"][110]["GUARDAR_PAC"]) && $_SESSION["permiso_formulario_servicio"][110]["GUARDAR_PAC"] == 1)
-                                $toolbar->SetBoton("GRABAR", "Guardar", "btn", "onclick,onkeypress", "guardar_persona()", "../../../../medifacil_front/imagen/icono/grabar.png", "", "", $btndeshabil);
+                                $toolbar->SetBoton("GRABAR", "Guardar", "btn", "onclick,onkeypress", "guardar_persona()", "../../../../fastmedical_front/imagen/icono/grabar.png", "", "", $btndeshabil);
                             if (isset($_SESSION["permiso_formulario_servicio"][110]["REST_PAC"]) && $_SESSION["permiso_formulario_servicio"][110]["REST_PAC"] == 1)
-                                $toolbar->SetBoton("RESTAURAR", "Restaurar", "btn", "onclick,onkeypress", "restauraCambios()", "../../../../medifacil_front/imagen/icono/undo.png", "", "", ($accion == 'inserted' ? 0 : $btndeshabil));
+                                $toolbar->SetBoton("RESTAURAR", "Restaurar", "btn", "onclick,onkeypress", "restauraCambios()", "../../../../fastmedical_front/imagen/icono/undo.png", "", "", ($accion == 'inserted' ? 0 : $btndeshabil));
                             if (isset($_SESSION["permiso_formulario_servicio"][110]["IMPRIMIR_HC"]) && $_SESSION["permiso_formulario_servicio"][110]["IMPRIMIR_HC"] == 1)
-                                $toolbar->SetBoton("IMPRIMIRHC", "Imprimir HC", "btn", "onclick,onkeypress", "mostrarHistoriaClinica()", "../../../../medifacil_front/imagen/icono/printer.png", "", "", 1);
+                                $toolbar->SetBoton("IMPRIMIRHC", "Imprimir HC", "btn", "onclick,onkeypress", "mostrarHistoriaClinica()", "../../../../fastmedical_front/imagen/icono/printer.png", "", "", 1);
                             if (isset($_SESSION["permiso_formulario_servicio"][110]["CONSULTAR_HC"]) && $_SESSION["permiso_formulario_servicio"][110]["CONSULTAR_HC"] == 1)
-                                $toolbar->SetBoton("CONSULTARHC", "Consultar HC", "btn", "onclick,onkeypress", "mostrarVentanaHistoriaClinica()", "../../../../medifacil_front/imagen/icono/historial.png", "", "", 1);
+                                $toolbar->SetBoton("CONSULTARHC", "Consultar HC", "btn", "onclick,onkeypress", "mostrarVentanaHistoriaClinica()", "../../../../fastmedical_front/imagen/icono/historial.png", "", "", 1);
                             $toolbar->Mostrar();
                             ?>
                         </div>

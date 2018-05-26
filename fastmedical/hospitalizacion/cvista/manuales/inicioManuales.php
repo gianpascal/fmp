@@ -20,12 +20,12 @@
                     <div style="width: 80%; margin-top: 4px; margin-bottom: 4px; margin-left: 5px; margin-right: 5px;">
                         <div style="width: 15%; float: left; background-color: #7CC434;" id="divBotonActivo">
                             <a onclick="" href="javascript:manualesActivos();">
-                                <img border="0" alt="" src="../../../../medifacil_front/imagen/btn/btn_ArbolActivo.gif"/></a>
+                                <img border="0" alt="" src="../../../../fastmedical_front/imagen/btn/btn_ArbolActivo.gif"/></a>
                         </div>
                         <div style="width: 15%; float: right; background-color: #7CC434;" id="divBotonTodo">
                             <a onclick="tree.enableThreeStateCheckboxes(-1); " href="javascript:manualesTodos();">
 
-                                <img border="0" alt="" src="../../../../medifacil_front/imagen/btn/btn_ArbolTodo.gif"/></a>
+                                <img border="0" alt="" src="../../../../fastmedical_front/imagen/btn/btn_ArbolTodo.gif"/></a>
                         </div>
                     </div>
                 </fieldset>
@@ -34,8 +34,8 @@
                 <div id ="botones" style=" float:left;width:98%;height:30px;">
                     <?php
                     $toolbar=new ToollBar("right");
-                    $toolbar->SetBoton("NUEVO","Nuevo","btn","onclick,onkeypress","nuevoManual()","../../../../medifacil_front/imagen/icono/nuevo.png","","",true);
-                    //$toolbar->SetBoton("VER","Ver Datos","btn","onclick,onkeypress","ventana_formulario_persona('setDatosContribuyente')","../../../../medifacil_front/imagen/icono/add_user.png","","",true);
+                    $toolbar->SetBoton("NUEVO","Nuevo","btn","onclick,onkeypress","nuevoManual()","../../../../fastmedical_front/imagen/icono/nuevo.png","","",true);
+                    //$toolbar->SetBoton("VER","Ver Datos","btn","onclick,onkeypress","ventana_formulario_persona('setDatosContribuyente')","../../../../fastmedical_front/imagen/icono/add_user.png","","",true);
                     $toolbar->Mostrar();
                     ?>
                 </div>

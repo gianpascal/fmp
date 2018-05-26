@@ -84,7 +84,7 @@ class LOrden {
         $arrayProducto[4] = number_format($arrayProductoFila[9], 2); //Total
         $arrayProducto[5] = $arrayProductoFila[12]; //bedita_precio
         //OyenteJS, numColInd, Icono de imagen de Oyente
-        $arrayProducto[6] = array("button", array("delete", "0", "../../../../medifacil_front/imagen/icono/agt_action_fail.png"));
+        $arrayProducto[6] = array("button", array("delete", "0", "../../../../fastmedical_front/imagen/icono/agt_action_fail.png"));
         //$oEProducto
         //var_dump($_SESSION["mantenimiento_productos_ordenes"]);
         $arrayProductosActuales = empty($_SESSION["mantenimiento_productos_ordenes"]) ? array() : $_SESSION["mantenimiento_productos_ordenes"];
@@ -223,7 +223,7 @@ class LOrden {
         $tablaep = array();
         foreach ($resultado as $i => $value) {
 
-            $resultado[$i]['descuento'] = "../../../../medifacil_front/imagen/icono/icono_descuento.jpg ^ descuento";
+            $resultado[$i]['descuento'] = "../../../../fastmedical_front/imagen/icono/icono_descuento.jpg ^ descuento";
             $resultado[$i]['porcentaje'] = '';
             $resultado[$i]['montoDescuento'] = '0';
             $resultado[$i]['nuevoPrecio'] = $value['n_preunit'];
@@ -297,7 +297,7 @@ class LOrden {
         $oDOrden = new DOrden();
         $resultado = $oDOrden->dgetArrayProductos($afil, $pro);
         foreach ($resultado as $key => $value) {
-            array_push($resultado[$key], "../../../../medifacil_front/imagen/icono/agt_upgrade_misc.png ^ Accion");
+            array_push($resultado[$key], "../../../../fastmedical_front/imagen/icono/agt_upgrade_misc.png ^ Accion");
         }
         return $resultado;
     }

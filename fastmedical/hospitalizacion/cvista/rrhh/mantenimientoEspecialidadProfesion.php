@@ -28,7 +28,7 @@ require_once("../../ccontrol/control/ActionRrhh.php");
 
                        <div style="width: 20%; height: 35%; float: left;" id="DivEtiquetaNomP">
                              <a href="javascript:buscarProfesiones(document.getElementById('txtProfesion').value,'','');">
-                             <img border="0" title="Buscador de Profesiones" alt="" src="../../../../medifacil_front/imagen/btn/nbtn_buscar.gif"/></a>
+                             <img border="0" title="Buscador de Profesiones" alt="" src="../../../../fastmedical_front/imagen/btn/nbtn_buscar.gif"/></a>
                       </div>
                     </div>
                        <div id="divdetalleProfesion" style=" height:70%; width:99%; float: left; margin-left:5px; overflow: auto;">
@@ -38,15 +38,15 @@ require_once("../../ccontrol/control/ActionRrhh.php");
                         </div>
                       <div id="divBotonesProfesion1" style=" height:9%; width:60%; float: left; margin-left:5px;">
                           <a href="javascript:agregarProfesion();">
-                          <img id="btnAgregar" border="0" title="Agregar Profesiones" align="right" alt="" src="../../../../medifacil_front/imagen/btn/b_agregar_on.gif"/></a>
+                          <img id="btnAgregar" border="0" title="Agregar Profesiones" align="right" alt="" src="../../../../fastmedical_front/imagen/btn/b_agregar_on.gif"/></a>
                           <a href="javascript:editaProfesion();">
-                          <img id="btnActual" border="0" style=" visibility:hidden " align="right" src="../../../../medifacil_front/imagen/btn/b_editar_on.gif" alt="" title="Editar Documentos"/></a>
+                          <img id="btnActual" border="0" style=" visibility:hidden " align="right" src="../../../../fastmedical_front/imagen/btn/b_editar_on.gif" alt="" title="Editar Documentos"/></a>
                       </div>
                       <div id="divBotonesProfesion2" style=" height:9%; width:36%; float: left; margin-left:5px;">
                           <a href="javascript:disableEditar(2);" onclick="">
-                          <img id="btnCancelar" border="0" style=" visibility:hidden " align="right" src="../../../../medifacil_front/imagen/btn/b_cancelar_on.gif" alt=""/></a>
+                          <img id="btnCancelar" border="0" style=" visibility:hidden " align="right" src="../../../../fastmedical_front/imagen/btn/b_cancelar_on.gif" alt=""/></a>
                           <a href="javascript:editarProfesion(document.getElementById('txtNombre').value);" onclick=" ">
-                          <img id="btnActualizar" border="0" style=" visibility:hidden " align="right" src="../../../../medifacil_front/imagen/btn/b_grabar__on.gif" alt="" title="Editar Documentos"/></a>
+                          <img id="btnActualizar" border="0" style=" visibility:hidden " align="right" src="../../../../fastmedical_front/imagen/btn/b_grabar__on.gif" alt="" title="Editar Documentos"/></a>
                           <input type="hidden" id="txtNombre" name="txtNombre" style=" width: 200px;  " size="12" value="">
                           <div style="width: 5%; float: left; visibility: hidden " id="DivEtiqueta" align="center">
                           Nombre:</div>
@@ -63,7 +63,7 @@ require_once("../../ccontrol/control/ActionRrhh.php");
                         </div>
                       <div id="divdetalleEspecialidades" style=" height:9%; width:99%; float: left; margin-left:5px; overflow: auto;">
                           <a href="javascript:agregarEspecialidad(document.getElementById('hProfesion').value);">
-                          <img border="0" title="Agregar Especialidades" alt="" src="../../../../medifacil_front/imagen/btn/b_agregar_on.gif"/></a>
+                          <img border="0" title="Agregar Especialidades" alt="" src="../../../../fastmedical_front/imagen/btn/b_agregar_on.gif"/></a>
                       </div>
                </fieldset>
               </div>

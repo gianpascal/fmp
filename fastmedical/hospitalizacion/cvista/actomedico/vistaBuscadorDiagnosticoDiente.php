@@ -11,7 +11,7 @@
     <div style="float: left; width:40px;">
         <?php
         $toolbar1 = new ToollBar("Left");
-        $toolbar1->SetBoton("siguiente", "Next", "btn", "onclick,onkeypress", "buscarArbolDiagnosticoOdontolograma()", "../../../../medifacil_front/imagen/icono/b_adelante.gif", "", "", true);
+        $toolbar1->SetBoton("siguiente", "Next", "btn", "onclick,onkeypress", "buscarArbolDiagnosticoOdontolograma()", "../../../../fastmedical_front/imagen/icono/b_adelante.gif", "", "", true);
         $toolbar1->Mostrar();
         ?>
     </div>

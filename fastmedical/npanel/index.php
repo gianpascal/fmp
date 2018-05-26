@@ -29,7 +29,7 @@
     <body onload="javascript: document.login.p2.focus(); myajax = new isiAJAX('intro_right_inicio', 'cargador');">
         <div id="cargador">
             Por Favor Espere &nbsp;&nbsp;&nbsp;&nbsp;
-            <img src="../../medifacil_front/imagen/icono/cargando.gif"  border="0" title="CARGANDO" alt="Cargador"/><a href="#" id="hider2"></a>
+            <img src="../../fastmedical_front/imagen/icono/cargando.gif"  border="0" title="CARGANDO" alt="Cargador"/><a href="#" id="hider2"></a>
         </div>
         <div id="main">
             <div id="logo">
@@ -84,7 +84,7 @@
                     <h3>Login de Administrador <span id="loginbutton"><a href="#" title="Log In">&nbsp;</a></span></h3>
                     <form name="login" id="login" action="ccontrol/control/control.php" method="post" >
                         <p style="color:#000000">
-                            <img src="../../medifacil_front/imagen/icono/password.png" alt="Image" class="image" />
+                            <img src="../../fastmedical_front/imagen/icono/password.png" alt="Image" class="image" />
                             Usuario&nbsp;&nbsp;&nbsp;: &nbsp;<input name="p2" id="p2" type="text" maxlength="20" class="search" /> <br />
                             Password: &nbsp;<input name="p3" id="p3" type="password" maxlength="20" class="search" />
                             <input type="hidden" name="p1" id="p1" value="valida_usuario"/>
@@ -96,7 +96,7 @@
                 </div>
                 <div class="rightcol">
                     <h3>Gobierno Electr&oacute;nico</h3>
-                    <p><img src="../../medifacil_front/imagen/icono/agt_web.png" alt="Image" class="image" /> El sistema integrado para el sector p&uacute;blico establece los principios y acciones para modernizar la gesti&oacute;n p&uacute;blica y propiciar la descentralizaci&oacute;n del Estado mediante el uso intensivo de las tecnolog&iacute;as de informaci&oacute;n, en este caso el uso de herramientas de gesti&oacute;n intgradas las cuales promueven el incremento de capacidades competitivas en la Administraci&oacute;n P&uacute;blica, empresas y ciudadanos por medio del uso intensivo de las TI, entre otros.</p>
+                    <p><img src="../../fastmedical_front/imagen/icono/agt_web.png" alt="Image" class="image" /> El sistema integrado para el sector p&uacute;blico establece los principios y acciones para modernizar la gesti&oacute;n p&uacute;blica y propiciar la descentralizaci&oacute;n del Estado mediante el uso intensivo de las tecnolog&iacute;as de informaci&oacute;n, en este caso el uso de herramientas de gesti&oacute;n intgradas las cuales promueven el incremento de capacidades competitivas en la Administraci&oacute;n P&uacute;blica, empresas y ciudadanos por medio del uso intensivo de las TI, entre otros.</p>
                 </div>
 
                 <div class="special">
@@ -105,7 +105,7 @@
             </div>
 
             <div id="footer">
-                &copy; Copyright <a href="#">Gr@njit@</a><img src="../../medifacil_front/imagen/icono/granjita.jpg" alt="Granjita" title="Gr@njit@"/> 2010 &middot;  Actualizado por <a href="#">SIMEDH</a> 2010 &middot; Resoluci&oacute;n de pantalla recomendada: 1024x768 p&iacute;xeles
+                &copy; Copyright <a href="#">Gr@njit@</a><img src="../../fastmedical_front/imagen/icono/granjita.jpg" alt="Granjita" title="Gr@njit@"/> 2010 &middot;  Actualizado por <a href="#">SIMEDH</a> 2010 &middot; Resoluci&oacute;n de pantalla recomendada: 1024x768 p&iacute;xeles
             </div>
         </div>
     </body>

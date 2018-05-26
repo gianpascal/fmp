@@ -26,7 +26,7 @@
                                     <tr>
                                         <td><?php
                                              $toolbar3 = new ToollBar("left");
-                                               $toolbar3->SetBoton("REFRESCAR", "REFRESCAR", "btn", "onclick,onkeypress", "refrescarTablaPaciente()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/actividad3.png");
+                                               $toolbar3->SetBoton("REFRESCAR", "REFRESCAR", "btn", "onclick,onkeypress", "refrescarTablaPaciente()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/actividad3.png");
                                                $toolbar3->Mostrar();
                                                ?>
                                         </td>
@@ -181,8 +181,8 @@
                                         if(isset($_SESSION["permiso_formulario_servicio"][225]["GRABAR_PROG_EME"]) && $_SESSION["permiso_formulario_servicio"][225]["GRABAR_PROG_EME"]==1){
                                         echo "<td>
                                             <a href=\"javascript:GuardarnsdProgramacionPacientesEmergencia($i);\">
-                                                <img border=\"0\" title=\"Guardar\" alt=\"\" src=\"../../../../medifacil_front/imagen/icono/grabar.png\"/></a>
-                        <!--                            <img align=\"absmiddle\" title=\"\" alt=\"Grabar\" src=\"../../../../medifacil_front/imagen/icono/grabar.png\"></img>-->
+                                                <img border=\"0\" title=\"Guardar\" alt=\"\" src=\"../../../../fastmedical_front/imagen/icono/grabar.png\"/></a>
+                        <!--                            <img align=\"absmiddle\" title=\"\" alt=\"Grabar\" src=\"../../../../fastmedical_front/imagen/icono/grabar.png\"></img>-->
                                         </td>";
                                         }
                                         ?>
@@ -190,8 +190,8 @@
                                         if(isset($_SESSION["permiso_formulario_servicio"][225]["EDITAR_PROG_EME"]) && $_SESSION["permiso_formulario_servicio"][225]["EDITAR_PROG_EME"]==1){
                                         echo "<td>
                                             <a href=\"javascript:EditaComboCamaAmbienteFisicoDestino($i);\">
-                                                <img border=\"0\" title=\"Editar\" alt=\"\" src=\"../../../../medifacil_front/imagen/icono/editar.png\"/></a>
-                        <!--                            <img border=\"0\" src=\"../../../../medifacil_front/imagen/icono/editar.png\" title=\" Editar\"></img>-->
+                                                <img border=\"0\" title=\"Editar\" alt=\"\" src=\"../../../../fastmedical_front/imagen/icono/editar.png\"/></a>
+                        <!--                            <img border=\"0\" src=\"../../../../fastmedical_front/imagen/icono/editar.png\" title=\" Editar\"></img>-->
                                         </td>";
                                         }
                                         ?>
@@ -200,8 +200,8 @@
                                         if(isset($_SESSION["permiso_formulario_servicio"][225]["VER_DET_PROG_EME"]) && $_SESSION["permiso_formulario_servicio"][225]["VER_DET_PROG_EME"]==1){
                                         echo "<td>
                                             <a href=\"javascript:EditarDetallePaciente($i);\">
-                                                <img border=\"0\" title=\"Visualizar Paciente\" alt=\"\" src=\"../../../../medifacil_front/imagen/icono/b_ver_on.gif\"/></a>
-                        <!--                            <img border=\"0\" src=\"../../../../medifacil_front/imagen/icono/editar.png\" title=\" Editar\"></img>-->
+                                                <img border=\"0\" title=\"Visualizar Paciente\" alt=\"\" src=\"../../../../fastmedical_front/imagen/icono/b_ver_on.gif\"/></a>
+                        <!--                            <img border=\"0\" src=\"../../../../fastmedical_front/imagen/icono/editar.png\" title=\" Editar\"></img>-->
                                         </td>";
                                         }
                                         ?>

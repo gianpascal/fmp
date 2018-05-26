@@ -95,9 +95,9 @@ $opcionesHTMLTipo = $o_ComboTipo->getOptionsHTML($idTipo);
     <?php
     if ($_SESSION["permiso_formulario_servicio"][202]["GRABAR_AMB_FISICO"] == 1) {
         $toolbar = new ToollBar("right");
-        $toolbar->SetBoton("GRABAR", "Grabar", "btn", "onclick,onkeypress", "validarManteAmbienteFisico('$accion')", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/grabar.png");
+        $toolbar->SetBoton("GRABAR", "Grabar", "btn", "onclick,onkeypress", "validarManteAmbienteFisico('$accion')", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/grabar.png");
         /* if($e!='nuevo')
-          $toolbar->SetBoton("NUEVO","Restaurar","btn","onclick,onkeypress","actualizaPwd()",$_SESSION['path_principal']."../medifacil_front/imagen/icono/restaurar.png"); */
+          $toolbar->SetBoton("NUEVO","Restaurar","btn","onclick,onkeypress","actualizaPwd()",$_SESSION['path_principal']."../fastmedical_front/imagen/icono/restaurar.png"); */
         $toolbar->Mostrar();
     }
     ?>

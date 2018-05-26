@@ -64,7 +64,7 @@ require_once("../../ccontrol/control/ActionPersona.php");
                           <?php
                             if($_SESSION["permiso_formulario_servicio"][203]["GRABAR_CCOSTO"]==1){
                                 echo "<a onclick=\"tree.insertNewItem(tree.getSelectedItemId(),generaCodCCHijo(tree.getSelectedItemId(),document.getElementById('txtInsertar').value,document.getElementById('txtAbrev').value, document.getElementById('txtObservacion').value),document.getElementById('txtInsertar').value,0,0,0,0,'SELECT',0);\" href=\"javascript:disableNuevoItem();\">
-                                      <img border=\"0\" id=\"btnGrabar\" align=\"right\" alt=\"\" src=\"../../../../medifacil_front/imagen/btn/b_grabar__on.gif\"/></a>";
+                                      <img border=\"0\" id=\"btnGrabar\" align=\"right\" alt=\"\" src=\"../../../../fastmedical_front/imagen/btn/b_grabar__on.gif\"/></a>";
                             }
                           ?>
                       </div>
@@ -72,7 +72,7 @@ require_once("../../ccontrol/control/ActionPersona.php");
                           <?php
                             if($_SESSION["permiso_formulario_servicio"][203]["ACT_CCOSTO"]==1){
                                 echo "<a onclick=\"editaItem(tree.getSelectedItemId(),document.getElementById('txtInsertar').value,document.getElementById('txtAbrev').value,document.getElementById('txtObservacion').value,document.getElementById('txtCodigo').value);\" href=\"javascript:disableNuevoItem();\">
-                                      <img border=\"0\" id=\"btnActualizar\" align=\"right\" alt=\"\" src=\"../../../../medifacil_front/imagen/btn/b_actualizar_on.gif\"/></a>";
+                                      <img border=\"0\" id=\"btnActualizar\" align=\"right\" alt=\"\" src=\"../../../../fastmedical_front/imagen/btn/b_actualizar_on.gif\"/></a>";
                             }
                           ?>
                       </div>
@@ -80,7 +80,7 @@ require_once("../../ccontrol/control/ActionPersona.php");
                           <?php
                             if($_SESSION["permiso_formulario_servicio"][203]["CANCELAR_CCOSTO"]==1){
                               echo "<a onclick=\"\" href=\"javascript:disableNuevoItem();\">
-                                  <img border=\"0\" id=\"btnCancelar\" align=\"left\" alt=\"\" src=\"../../../../medifacil_front/imagen/btn/b_cancelar_on.gif\"/></a>";
+                                  <img border=\"0\" id=\"btnCancelar\" align=\"left\" alt=\"\" src=\"../../../../fastmedical_front/imagen/btn/b_cancelar_on.gif\"/></a>";
                             }
                           ?>
                       </div>
@@ -118,7 +118,7 @@ require_once("../../ccontrol/control/ActionPersona.php");
                        <div style="width: 25%; float: left; visibility:hidden;" id="divBotonNew">
                            <?php
                                 if($_SESSION["permiso_formulario_servicio"][203]["AGREGAR_CCOSTO"]==1){
-                                    echo "<a onclick=\"\" href=\"javascript:enableNuevoItem(1);\"><img border=\"0\" alt=\"\" src=\"../../../../medifacil_front/imagen/btn/b_agregar_cc.gif\"/></a>";
+                                    echo "<a onclick=\"\" href=\"javascript:enableNuevoItem(1);\"><img border=\"0\" alt=\"\" src=\"../../../../fastmedical_front/imagen/btn/b_agregar_cc.gif\"/></a>";
                                 }
                             ?>
                       </div>
@@ -126,7 +126,7 @@ require_once("../../ccontrol/control/ActionPersona.php");
                       <div style="width: 25%; float: left; visibility:hidden;" id="divBotonEditar">
                            <?php
                                 if($_SESSION["permiso_formulario_servicio"][203]["EDITAR_CCOSTO"]==1){
-                                    echo "<a onclick=\"\" href=\"javascript:enableNuevoItem(2);\"><img border=\"0\" title=\"Centro Costos\" alt=\"\" src=\"../../../../medifacil_front/imagen/btn/b_editar_on.gif\"/></a>";
+                                    echo "<a onclick=\"\" href=\"javascript:enableNuevoItem(2);\"><img border=\"0\" title=\"Centro Costos\" alt=\"\" src=\"../../../../fastmedical_front/imagen/btn/b_editar_on.gif\"/></a>";
                                 }
                            ?>
 
@@ -135,7 +135,7 @@ require_once("../../ccontrol/control/ActionPersona.php");
                            <?php
                                 if($_SESSION["permiso_formulario_servicio"][203]["ELIMINAR_CCOSTO"]==1){
                                      echo "<a  onclick=\"eliminaItem(tree.getSelectedItemId(),tree.getItemText(tree.getSelectedItemId())); tree.deleteItem(tree.getSelectedItemId(),false);\" href=\"javascript:void(0);\">
-                                     <img border=\"0\" alt=\"\" src=\"../../../../medifacil_front/imagen/btn/b_eliminar_on.gif\"/></a>";
+                                     <img border=\"0\" alt=\"\" src=\"../../../../fastmedical_front/imagen/btn/b_eliminar_on.gif\"/></a>";
                                 }
                            ?>
                      </div>
@@ -143,7 +143,7 @@ require_once("../../ccontrol/control/ActionPersona.php");
                          <?php
                             if($_SESSION["permiso_formulario_servicio"][203]["LIMPIAR_CCOSTO"]==1){
                               echo "<a onclick=\"\" href=\"javascript:limpiaDatos();\">
-                                 <img border=\"0\" alt=\"\" src=\"../../../../medifacil_front/imagen/btn/b_limpiar.gif\"/></a>";
+                                 <img border=\"0\" alt=\"\" src=\"../../../../fastmedical_front/imagen/btn/b_limpiar.gif\"/></a>";
                             }
                          ?>
                      </div>
@@ -166,7 +166,7 @@ require_once("../../ccontrol/control/ActionPersona.php");
                          <?php
                                 if($_SESSION["permiso_formulario_servicio"][203]["MOSTRAR_ACTIVO_CCOSTO"]==1){
                                      echo "<a onclick=\"\" href=\"javascript:seleccionarArbolCCostos();\">
-                                     <img border=\"0\" alt=\"\" src=\"../../../../medifacil_front/imagen/btn/btn_ArbolActivo.gif\"/></a>";
+                                     <img border=\"0\" alt=\"\" src=\"../../../../fastmedical_front/imagen/btn/btn_ArbolActivo.gif\"/></a>";
                                 }
                          ?>
 
@@ -175,7 +175,7 @@ require_once("../../ccontrol/control/ActionPersona.php");
                          <?php
                                 if($_SESSION["permiso_formulario_servicio"][203]["MOSTRAR_TODO_CCOSTO"]==1){
                                     echo "<a onclick=\"tree.enableThreeStateCheckboxes(-1);\" href=\"javascript:seleccionarArbolCCostosCompleto();\">
-                                        <img border=\"0\" alt=\"\" src=\"../../../../medifacil_front/imagen/btn/btn_ArbolTodo.gif\"/></a>";
+                                        <img border=\"0\" alt=\"\" src=\"../../../../fastmedical_front/imagen/btn/btn_ArbolTodo.gif\"/></a>";
                                 }
                          ?>
                      </div>

@@ -31,7 +31,7 @@ if ($datos["codigomedicamento"] == '0000000') {
         <td width="10%"><input id="txtcantidadmedicamento_<?php echo $datos["numerodivmedicamento"]; ?>" onkeypress="return validFormSalt('nro',this,event,'lstTipoDosis_<?php echo $datos["numerodivmedicamento"]; ?>')" name="txtcantidadmedicamento_<?php echo $datos["numerodivmedicamento"]; ?>" type="text" onchange="<?php echo "cambiarEstadoTratamientoMedicamentoso('" . $datos["numerodivmedicamento"] . "')"; ?>" onkeyup="validaIntegers(event,this,'')" value="<?php echo $datos["icantidad"]; ?>" maxlength="6" size="4"/></td>
 <!--        <td width="15%"><?php echo $respuesta; ?></td>-->
         <td width="30%"><textarea id="<?php echo "txtareaObservacionMedicamento_" . $datos["numerodivmedicamento"]; ?>" name="<?php echo "txtareaObservacionMedicamento_" . $datos["numerodivmedicamento"]; ?>" onchange="<?php echo "cambiarEstadoTratamientoMedicamentoso('" . $datos["numerodivmedicamento"] . "')"; ?>" rows="1" style="width: 100%"><?php echo htmlentities($datos["modoaplicacion"]); ?></textarea></td>
-        <td width="6%"><a href="javascript:;" onclick="javascript:eliminarMedicamentoHC(<?php echo "'Div_Receta" . $datos["numerodivmedicamento"] . "','" . $datos["codigomedicamento"] . "'"; ?>);"><img src='../../../../medifacil_front/imagen/icono/borrar.png' alt=""></a></td>
+        <td width="6%"><a href="javascript:;" onclick="javascript:eliminarMedicamentoHC(<?php echo "'Div_Receta" . $datos["numerodivmedicamento"] . "','" . $datos["codigomedicamento"] . "'"; ?>);"><img src='../../../../fastmedical_front/imagen/icono/borrar.png' alt=""></a></td>
     </tr>
 </table>
 <br/>

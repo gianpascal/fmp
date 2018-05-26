@@ -16,7 +16,7 @@
         <div style="width:30%; margin:0px auto;">
              <input type="hidden" id="hNombre" name="hNombre" size="12" value="<?php echo $especialidad; ?>" >
              <input type="text" id="hProf" name="hProf" size="12" value="<?php echo $profesion; ?>" >
-             <a href="javascript:editarEspecialidad(document.getElementById('hNombre').value,document.getElementById('txtNombre').value,document.getElementById('hProf').value);"><img  id="imgagenGuardar" src="../../../../medifacil_front/imagen/btn/b_grabar_on.gif"/></a>
+             <a href="javascript:editarEspecialidad(document.getElementById('hNombre').value,document.getElementById('txtNombre').value,document.getElementById('hProf').value);"><img  id="imgagenGuardar" src="../../../../fastmedical_front/imagen/btn/b_grabar_on.gif"/></a>
         </div>
 
     </div>

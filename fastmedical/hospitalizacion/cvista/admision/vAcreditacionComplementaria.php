@@ -18,14 +18,14 @@ function ultimoDiaMes($mes, $año) {
             <td align="left" style="width: 20%">Desde</td>
             <td align="center" style="width: 20%"><input id="txtvigenciadesde" type="text" size="10" value="<?php echo date("d/m/Y"); ?>" readonly="true"/></td>
             <td align="left" style="width: 20%">
-                <a href="javascript:mostrarcalendar('dhtmlxCalendar1')"><img id="calendar1" src="../../../../medifacil_front/imagen/icono/hos_calendar.png" alt=""></a>
+                <a href="javascript:mostrarcalendar('dhtmlxCalendar1')"><img id="calendar1" src="../../../../fastmedical_front/imagen/icono/hos_calendar.png" alt=""></a>
                 <div id="dhtmlxCalendar1" style="position:absolute;display:none"></div>
             </td>
             <td align="center" style="width: 20%">-</td>
             <td align="left" style="width: 20%">Hasta</td>
             <td align="center" style="width: 20%"><input id="txtvigenciahasta" type="text" size="10" value="<?php echo ultimoDiaMes(date("m"), date("Y")); ?>" readonly="true"/></td>
             <td align="left" style="width: 20%">
-                <a href="javascript:mostrarcalendar('dhtmlxCalendar2')"><img id="calendar2" src="../../../../medifacil_front/imagen/icono/hos_calendar.png" alt=""></a>
+                <a href="javascript:mostrarcalendar('dhtmlxCalendar2')"><img id="calendar2" src="../../../../fastmedical_front/imagen/icono/hos_calendar.png" alt=""></a>
                 <div id="dhtmlxCalendar2" style="position:absolute;display:none"></div>
             </td>
 
@@ -36,13 +36,13 @@ function ultimoDiaMes($mes, $año) {
             <td align="right" colspan="3">
                 <div>
                     <?php if (isset($_SESSION["permiso_formulario_servicio"][177]["ACEPTAR_ACREDITACION_COMPLEMENTARIA"]) && ($_SESSION["permiso_formulario_servicio"][177]["ACEPTAR_ACREDITACION_COMPLEMENTARIA"] == 1))
-                        echo "<a href=\"javascript:aceptarAcreditacionComplementaria('".$datos["cadena"]."');\"><img src=\"../../../../medifacil_front/imagen/btn/b_aceptar_on.gif\"></a>"; ?>
+                        echo "<a href=\"javascript:aceptarAcreditacionComplementaria('".$datos["cadena"]."');\"><img src=\"../../../../fastmedical_front/imagen/btn/b_aceptar_on.gif\"></a>"; ?>
                 </div>
             </td>
             <td align="left" colspan="3">
                 <div>
                     <?php if (isset($_SESSION["permiso_formulario_servicio"][177]["CANCELAR_ACREDITACION_COMPLEMENTARIA"]) && ($_SESSION["permiso_formulario_servicio"][177]["CANCELAR_ACREDITACION_COMPLEMENTARIA"] == 1))
-                        echo "<a href=\"javascript:cerrarVentanasEmergentes('Div_acreditaciónComplementaria');\"><img src=\"../../../../medifacil_front/imagen/btn/b_cancelar_on.gif\"></a>"; ?>
+                        echo "<a href=\"javascript:cerrarVentanasEmergentes('Div_acreditaciónComplementaria');\"><img src=\"../../../../fastmedical_front/imagen/btn/b_cancelar_on.gif\"></a>"; ?>
                 </div>
             </td>            
         </tr>  

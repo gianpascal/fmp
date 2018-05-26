@@ -23,7 +23,7 @@ if($num>0) {
     ?>
 <script type="text/javascript">
     stm_bm(["menu4878",830,"","<?php echo $path?>blank.gif",0,"","",<?php echo $alineacion?>,0,25,0,50,1,0,0,"","",0,0,1,2,"default","hand",""],this);
-    stm_bp("p0",[0,4,0,0,0,2,18,7,100,"",-2,"",-2,50,0,0,"#799BD8","FFFFFF","<?php echo $path?>../../../../medifacil_front/imagen/menu/bg_menu.png",3,0,0,"#000000"]);
+    stm_bp("p0",[0,4,0,0,0,2,18,7,100,"",-2,"",-2,50,0,0,"#799BD8","FFFFFF","<?php echo $path?>../../../../fastmedical_front/imagen/menu/bg_menu.png",3,0,0,"#000000"]);
 
     <?php
     $primero=1;
@@ -111,7 +111,7 @@ stm_bpx("p<?php echo $numero[$row['idepende_formulario']]?>","p1",[1,2,2]);
             {
                 ?>
 
-stm_ai("p<?php echo $row['inivel_formulario']?>i<?php echo $count[$row['idepende_formulario']]?>",[0,"<?php echo $row['vnom_formulario']?>","","",-1,-1,0,"","_self","","","","<?php echo $path?>tclarrow.gif",18,7,0,"<?php echo $path?>flecha_derecha.gif","<?php echo $path?>flecha_derecha.gif",7,7,0,0,1,"#FFFFF7",1,"B5BED6",1,"","<?php echo $path?>../../../../medifacil_front/imagen/menu/bg_menu_on.png",2,3,0,0,"#FFFFF7","#000000","#FFffFF","#FFFFFF","bold 10pt Arial","bold 10pt Arial",0,0],60,20);
+stm_ai("p<?php echo $row['inivel_formulario']?>i<?php echo $count[$row['idepende_formulario']]?>",[0,"<?php echo $row['vnom_formulario']?>","","",-1,-1,0,"","_self","","","","<?php echo $path?>tclarrow.gif",18,7,0,"<?php echo $path?>flecha_derecha.gif","<?php echo $path?>flecha_derecha.gif",7,7,0,0,1,"#FFFFF7",1,"B5BED6",1,"","<?php echo $path?>../../../../fastmedical_front/imagen/menu/bg_menu_on.png",2,3,0,0,"#FFFFF7","#000000","#FFffFF","#FFFFFF","bold 10pt Arial","bold 10pt Arial",0,0],60,20);
 stm_bp("p1",[1,4,0,0,0,4,18,7,100,"",-2,"",-2,50,0,0,"#799BD8","#001860","",3,1,1,""]);
 
                 <?php

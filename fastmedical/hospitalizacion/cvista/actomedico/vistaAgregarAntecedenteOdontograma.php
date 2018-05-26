@@ -180,7 +180,7 @@ if ($datos["bTercero"] == '') {
             ?>
             <div id="divContenedorUpload<?php echo $datos["numeroAntecedenteOdontograma"]; ?>"style="float: left;border:0px solid black;width:160px;">
                 <div  id="button<?php echo $datos["numeroAntecedenteOdontograma"]; ?>" onmouseout="this.style.background='#C2DB76';" onmouseover="this.style.background='yellow'" style="visibility:hidden;float: left;border: 1px solid black; width:28px; height: 23px; background: none repeat scroll 0% 0% #C2DB76; color: white;padding-top:8px;cursor:pointer " onclick="adjuntarFotoOdontograma(<?php echo $datos["numeroAntecedenteOdontograma"]; ?>);">
-                    <img src="../../../../medifacil_front/imagen/icono/adjunto.gif">
+                    <img src="../../../../fastmedical_front/imagen/icono/adjunto.gif">
                 </div>
                 <div id="adjuntarFotoOdontograma<?php echo $datos["numeroAntecedenteOdontograma"]; ?>" style="float: left;border:0px solid;width:100px;height:25px;">
 
@@ -199,7 +199,7 @@ if ($datos["bTercero"] == '') {
             ?>
             <div id="divContenedorUpload<?php echo $datos["numeroAntecedenteOdontograma"]; ?>"style="float: left;border:0px solid black;width:160px;">
                 <div  id="button<?php echo $datos["numeroAntecedenteOdontograma"]; ?>" onmouseout="this.style.background='#C2DB76';" onmouseover="this.style.background='yellow'" style="visibility:visible;float: left;border: 1px solid black; width:28px; height: 23px; background: none repeat scroll 0% 0% #C2DB76; color: white;padding-top:8px;cursor:pointer " onclick="adjuntarFotoOdontograma(<?php echo $datos["numeroAntecedenteOdontograma"]; ?>);">
-                    <img src="../../../../medifacil_front/imagen/icono/adjunto.gif">
+                    <img src="../../../../fastmedical_front/imagen/icono/adjunto.gif">
                 </div>
                 <div id="adjuntarFotoOdontograma<?php echo $datos["numeroAntecedenteOdontograma"]; ?>" style="float: left;border:0px solid;width:100px;height:25px;">
 
@@ -216,7 +216,7 @@ if ($datos["bTercero"] == '') {
         ?>
         <div id="divContenedorUpload<?php echo $datos["numeroAntecedenteOdontograma"]; ?>"style="float: left;border:0px solid black;width:160px;">
             <div  id="button<?php echo $datos["numeroAntecedenteOdontograma"]; ?>" onmouseout="this.style.background='#C2DB76';" onmouseover="this.style.background='yellow'" style="visibility:visible;float: left;border: 1px solid black; width:28px; height: 23px; background: none repeat scroll 0% 0% #C2DB76; color: white;padding-top:8px;cursor:pointer " onclick="adjuntarFotoOdontograma(<?php echo $datos["numeroAntecedenteOdontograma"]; ?>);">
-                <img src="../../../../medifacil_front/imagen/icono/adjunto.gif">
+                <img src="../../../../fastmedical_front/imagen/icono/adjunto.gif">
             </div>
             <div id="adjuntarFotoOdontograma<?php echo $datos["numeroAntecedenteOdontograma"]; ?>" style="float: left;border:0px solid;width:100px;height:25px;">
 
@@ -241,7 +241,7 @@ if ($datos["bTercero"] == '') {
 
     <div style="float: right; margin-top: -15px;">
         <a onclick="javascript:cerrarAntecedenteOdontograma(<?php echo $datos["numeroAntecedenteOdontograma"]; ?>);" href="javascript:;">
-            <img title="Cerrar" alt="Cerrar" src="../../../../medifacil_front/imagen/icono/borrar.png">
+            <img title="Cerrar" alt="Cerrar" src="../../../../fastmedical_front/imagen/icono/borrar.png">
         </a>
     </div>
 </fieldset>

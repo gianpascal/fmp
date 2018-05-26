@@ -41,7 +41,7 @@ $toolbar_01=new ToollBar("right");
                             <td>
                                 <?php
                                     if (isset($_SESSION["permiso_formulario_servicio"][221]["AGREGAR_TURNO_A_PROGRAMAR"]) && ($_SESSION["permiso_formulario_servicio"][221]["AGREGAR_TURNO_A_PROGRAMAR"]==1)){
-                                        $toolbar_01->SetBoton("CrearTurno","Agregar","btn","onclick,onkeypress","grabarTurnoProgramar()",$_SESSION['path_principal']."../medifacil_front/imagen/icono/grabar.png","","",1);
+                                        $toolbar_01->SetBoton("CrearTurno","Agregar","btn","onclick,onkeypress","grabarTurnoProgramar()",$_SESSION['path_principal']."../fastmedical_front/imagen/icono/grabar.png","","",1);
                                         $toolbar_01->Mostrar();
                                     }
                                 ?>

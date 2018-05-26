@@ -1,7 +1,7 @@
 <fieldset style="height:100; width: 980px; float: left; margin-right:20px; ">
     <legend>Dientes</legend>
     <div  style="width: 980px;height:100px;  float: left;  ">
-<!--            <img src="../../../../medifacil_front/imagen/odontograma/odontograma.png" width="800" height="400" usemap="#Map"/>-->
+<!--            <img src="../../../../fastmedical_front/imagen/odontograma/odontograma.png" width="800" height="400" usemap="#Map"/>-->
         <canvas id="canvaDientesSeleccionados"   width="980px" height="80px" >
 
         </canvas>
@@ -56,10 +56,10 @@
         </div>
         <div id="btns" class="btns">
             <a onclick="javascript:agregarDiagnosticosDientes();" href="javascript:;">
-                <img src="../../../../medifacil_front/imagen/btn/b_agregar_on.gif">
+                <img src="../../../../fastmedical_front/imagen/btn/b_agregar_on.gif">
             </a>
             <a onclick="javascript:cancelarDiagnosticoDientes();" href="javascript:;">
-                <img src="../../../../medifacil_front/imagen/btn/b_cancelar_on.gif">
+                <img src="../../../../fastmedical_front/imagen/btn/b_cancelar_on.gif">
             </a>
             
         </div>

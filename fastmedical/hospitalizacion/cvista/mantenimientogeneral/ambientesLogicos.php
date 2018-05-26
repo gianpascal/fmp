@@ -44,11 +44,11 @@ $o_ActionMantenimientoGeneral = new ActionMantenimientoGeneral();
                                 </fieldset>
                             </div>
                             <div id="divNuevo" align="center"  style="width:100%;height:5%;display: block">
-                                <?php if($_SESSION["permiso_formulario_servicio"][201]["NUEVO_AMB_LOGICO"]==1) echo"<a href=\"javascript:nuevoAmbienteLogico()\"><img src=\"../../../../medifacil_front/imagen/btn/b_adiciona_on.gif\"></a>&nbsp;&nbsp;&nbsp;&nbsp;";?>
+                                <?php if($_SESSION["permiso_formulario_servicio"][201]["NUEVO_AMB_LOGICO"]==1) echo"<a href=\"javascript:nuevoAmbienteLogico()\"><img src=\"../../../../fastmedical_front/imagen/btn/b_adiciona_on.gif\"></a>&nbsp;&nbsp;&nbsp;&nbsp;";?>
                             </div>
                             <div id="divGuardaryRegresar" align="center"  style="width:100%;height:5%;display: none">
-                                <?php if($_SESSION["permiso_formulario_servicio"][201]["GRABAR_AMB_LOGICO"]==1) echo"<a href=\"javascript:grabarAmbienteLogico()\"><img src=\"../../../../medifacil_front/imagen/btn/b_grabar__on.gif\"></a>&nbsp;&nbsp;&nbsp;&nbsp;";?>
-                                <?php if($_SESSION["permiso_formulario_servicio"][201]["LIMPIAR_AMB_LOGICO"]==1) echo"<a href=\"javascript:limpiarDatosAmbienteLogico()\"><img src=\"../../../../medifacil_front/imagen/btn/btn_limpiar.gif\">";?>
+                                <?php if($_SESSION["permiso_formulario_servicio"][201]["GRABAR_AMB_LOGICO"]==1) echo"<a href=\"javascript:grabarAmbienteLogico()\"><img src=\"../../../../fastmedical_front/imagen/btn/b_grabar__on.gif\"></a>&nbsp;&nbsp;&nbsp;&nbsp;";?>
+                                <?php if($_SESSION["permiso_formulario_servicio"][201]["LIMPIAR_AMB_LOGICO"]==1) echo"<a href=\"javascript:limpiarDatosAmbienteLogico()\"><img src=\"../../../../fastmedical_front/imagen/btn/btn_limpiar.gif\">";?>
                             </div>
                         </div>
                         <div id="Div_TablaAmbientesLogicos" align="center" style="width:100%;height:50%; overflow: auto;">

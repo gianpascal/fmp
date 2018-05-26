@@ -3483,7 +3483,7 @@ function probandolayout(){
     parametros+="&p2="+sede;
     
     dhxTree.setSkin('dhx_skyblue');
-    dhxTree.setImagePath("../../../../medifacil_front/imagen/csh_bluebooks_simedh/");
+    dhxTree.setImagePath("../../../../fastmedical_front/imagen/csh_bluebooks_simedh/");
     dhxTree.openAllItems(0);
     dhxTree.loadXML(pathRequestControl+'?'+parametros);
     
@@ -3545,7 +3545,7 @@ function indicadorLaboratorioClinicoListaSedes(){
                 $('con2lc').show();
                 if ($('ContadorSede').value<=1){
                     $('Sede').value+= IdSede + '|';
-                    var s ='<table cellSpacing="0" border="0" width="220" id='+IdSede+'><tr><td width="120"><font size="2"><UL type = square><LI>'+Sede+'</UL></font></td><td><center><a href="javascript:eliminarFiltroLaboratorioClinicoSede(\''+IdSede+'\')"><img src="../../../../medifacil_front/imagen/icono/btn_cerrar_layer.png"></a></center></td></tr></table>';
+                    var s ='<table cellSpacing="0" border="0" width="220" id='+IdSede+'><tr><td width="120"><font size="2"><UL type = square><LI>'+Sede+'</UL></font></td><td><center><a href="javascript:eliminarFiltroLaboratorioClinicoSede(\''+IdSede+'\')"><img src="../../../../fastmedical_front/imagen/icono/btn_cerrar_layer.png"></a></center></td></tr></table>';
                     var range = document.createRange();
                   
                     range.selectNode(document.body);
@@ -4117,7 +4117,7 @@ function cargaraFiltroIndicadoresLaboratorioClinico(id,desc,cont){
             //            alert(cadExam);
             var para = document.getElementById("contenedorfiltros1lb");
             $('con1lc').show();
-            var s ='<table cellSpacing="0" border="0" width="220" id='+id+'><tr><td width="120"><font size="1"><UL type = square><LI>'+desc+'</UL></font></td><td><center><a href="javascript:eliminarFiltroLaboratorioClinicoExamenes(\''+id+'\')"><img src="../../../../medifacil_front/imagen/icono/btn_cerrar_layer.png"></a></center></td></tr></table>';
+            var s ='<table cellSpacing="0" border="0" width="220" id='+id+'><tr><td width="120"><font size="1"><UL type = square><LI>'+desc+'</UL></font></td><td><center><a href="javascript:eliminarFiltroLaboratorioClinicoExamenes(\''+id+'\')"><img src="../../../../fastmedical_front/imagen/icono/btn_cerrar_layer.png"></a></center></td></tr></table>';
             var range = document.createRange();
             range.selectNode(document.body);
             var documentFragment = range.createContextualFragment(s);
@@ -4136,7 +4136,7 @@ function cargaraFiltroIndicadoresLaboratorioClinico(id,desc,cont){
       
             var para = document.getElementById("contenedorfiltros2lb");
             $('con2lc').show();
-            var s ='<table cellSpacing="0" border="0" width="220" id='+id+'><tr><td width="120"><font size="1"><UL type = square><LI>'+desc+'</UL></font></td><td><center><a href="javascript:eliminarFiltroLaboratorioClinicoSede(\''+id+'\')"><img src="../../../../medifacil_front/imagen/icono/btn_cerrar_layer.png"></a></center></td></tr></table>';
+            var s ='<table cellSpacing="0" border="0" width="220" id='+id+'><tr><td width="120"><font size="1"><UL type = square><LI>'+desc+'</UL></font></td><td><center><a href="javascript:eliminarFiltroLaboratorioClinicoSede(\''+id+'\')"><img src="../../../../fastmedical_front/imagen/icono/btn_cerrar_layer.png"></a></center></td></tr></table>';
             var range = document.createRange();
             range.selectNode(document.body);
             var documentFragment = range.createContextualFragment(s);
@@ -4155,7 +4155,7 @@ function cargaraFiltroIndicadoresLaboratorioClinico(id,desc,cont){
  
             var para = document.getElementById("contenedorfiltros3lb");
             $('con3lc').show();
-            var s ='<table cellSpacing="0" border="0" width="220" id='+id+'><tr><td width="120"><font size="1"><UL type = square><LI>'+desc+'</UL></font></td><td><center><a href="javascript:eliminarFiltroLaboratorioClinicoProcedencia(\''+id+'\')"><img src="../../../../medifacil_front/imagen/icono/btn_cerrar_layer.png"></a></center></td></tr></table>';
+            var s ='<table cellSpacing="0" border="0" width="220" id='+id+'><tr><td width="120"><font size="1"><UL type = square><LI>'+desc+'</UL></font></td><td><center><a href="javascript:eliminarFiltroLaboratorioClinicoProcedencia(\''+id+'\')"><img src="../../../../fastmedical_front/imagen/icono/btn_cerrar_layer.png"></a></center></td></tr></table>';
             var range = document.createRange();
             range.selectNode(document.body);
             var documentFragment = range.createContextualFragment(s);
@@ -4174,7 +4174,7 @@ function cargaraFiltroIndicadoresLaboratorioClinico(id,desc,cont){
       
             var para = document.getElementById("contenedorfiltros4lb");
             $('con4lc').show();
-            var s ='<table cellSpacing="0" border="0" width="220" id='+id+'><tr><td width="120"><font size="1"><UL type = square><LI>'+desc+'</UL></font></td><td><center><a href="javascript:eliminarFiltroLaboratorioClinicoAfiliaciones(\''+id+'\')"><img src="../../../../medifacil_front/imagen/icono/btn_cerrar_layer.png"></a></center></td></tr></table>';
+            var s ='<table cellSpacing="0" border="0" width="220" id='+id+'><tr><td width="120"><font size="1"><UL type = square><LI>'+desc+'</UL></font></td><td><center><a href="javascript:eliminarFiltroLaboratorioClinicoAfiliaciones(\''+id+'\')"><img src="../../../../fastmedical_front/imagen/icono/btn_cerrar_layer.png"></a></center></td></tr></table>';
             var range = document.createRange();
             range.selectNode(document.body);
             var documentFragment = range.createContextualFragment(s);
@@ -4195,7 +4195,7 @@ function cargaraFiltroIndicadoresLaboratorioClinico(id,desc,cont){
             //            alert(cadExam);
             var para = document.getElementById("contenedorfiltros5lb");
             $('con5lc').show();
-            var s ='<table cellSpacing="0" border="0" width="220" id='+id+'><tr><td width="120"><font size="1"><UL type = square><LI>'+desc+'</UL></font></td><td><center><a href="javascript:eliminarFiltroLaboratorioClinicoMateriales(\''+id+'\')"><img src="../../../../medifacil_front/imagen/icono/btn_cerrar_layer.png"></a></center></td></tr></table>';
+            var s ='<table cellSpacing="0" border="0" width="220" id='+id+'><tr><td width="120"><font size="1"><UL type = square><LI>'+desc+'</UL></font></td><td><center><a href="javascript:eliminarFiltroLaboratorioClinicoMateriales(\''+id+'\')"><img src="../../../../fastmedical_front/imagen/icono/btn_cerrar_layer.png"></a></center></td></tr></table>';
             var range = document.createRange();
             range.selectNode(document.body);
             var documentFragment = range.createContextualFragment(s);
@@ -4367,7 +4367,7 @@ function indicadorLaboratorioClinicoListaExamenes(){
                                         
                     //fin agregado
                     $('Examenes').value+= IdExamenLaboratorio + '|';
-                    var s ='<table cellSpacing="0" border="0" width="220" id='+IdExamenLaboratorio+'><tr><td width="120"><font size="2"><UL type = square><LI>'+descripcionExamenes+'</UL></font></td><td><center><a href="javascript:eliminarFiltroLaboratorioClinicoExamenes(\''+IdExamenLaboratorio+'\')"><img src="../../../../medifacil_front/imagen/icono/btn_cerrar_layer.png"></a></center></td></tr></table>';
+                    var s ='<table cellSpacing="0" border="0" width="220" id='+IdExamenLaboratorio+'><tr><td width="120"><font size="2"><UL type = square><LI>'+descripcionExamenes+'</UL></font></td><td><center><a href="javascript:eliminarFiltroLaboratorioClinicoExamenes(\''+IdExamenLaboratorio+'\')"><img src="../../../../fastmedical_front/imagen/icono/btn_cerrar_layer.png"></a></center></td></tr></table>';
                     var range = document.createRange();
                   
                     range.selectNode(document.body);
@@ -4439,7 +4439,7 @@ function reporteDePuntoControlXExamen_IndicadorLaboratorio(IdExamenLaboratorio){
                 if ($('ContadorPuntoControl').value<=1){
             
                     $('PuntoControl').value+= IdPuntoControl + '|';
-                    var s ='<table cellSpacing="0" border="0" width="220" id='+IdPuntoControl+'><tr><td width="120"><font size="2"><UL type = square><LI>'+nombrePuntoControl+'</UL></font></td><td><center><a href="javascript:eliminarFiltroLaboratorioClinicoPuntoControl(\''+IdPuntoControl+'\')"><img src="../../../../medifacil_front/imagen/icono/btn_cerrar_layer.png"></a></center></td></tr></table>';
+                    var s ='<table cellSpacing="0" border="0" width="220" id='+IdPuntoControl+'><tr><td width="120"><font size="2"><UL type = square><LI>'+nombrePuntoControl+'</UL></font></td><td><center><a href="javascript:eliminarFiltroLaboratorioClinicoPuntoControl(\''+IdPuntoControl+'\')"><img src="../../../../fastmedical_front/imagen/icono/btn_cerrar_layer.png"></a></center></td></tr></table>';
                     var range = document.createRange();
                   
                     range.selectNode(document.body);
@@ -4507,7 +4507,7 @@ function  indicadorLaboratorioClinicoMaterialesLaboratorio(){
                 if ($('ContadorMateriales').value<=1){
             
                     $('Materiales').value+= IdMat + '|';
-                    var s ='<table cellSpacing="0" border="0" width="220" id='+IdMat+'><tr><td width="120"><font size="2"><UL type = square><LI>'+descripcionExamenes+'</UL></font></td><td><center><a href="javascript:eliminarFiltroLaboratorioClinicoMateriales(\''+IdMat+'\')"><img src="../../../../medifacil_front/imagen/icono/btn_cerrar_layer.png"></a></center></td></tr></table>';
+                    var s ='<table cellSpacing="0" border="0" width="220" id='+IdMat+'><tr><td width="120"><font size="2"><UL type = square><LI>'+descripcionExamenes+'</UL></font></td><td><center><a href="javascript:eliminarFiltroLaboratorioClinicoMateriales(\''+IdMat+'\')"><img src="../../../../fastmedical_front/imagen/icono/btn_cerrar_layer.png"></a></center></td></tr></table>';
                     var range = document.createRange();
                   
                     range.selectNode(document.body);
@@ -4573,7 +4573,7 @@ function reporteDeUnidadesUtilizadasxMaterialLaboratorio_IndicadorLaboratorio(Id
                 if ($('ContadorUnidadMedida').value<=1){
             
                     $('UnidadMedida').value+= IdUnidadMedida + '|';
-                    var s ='<table cellSpacing="0" border="0" width="220" id='+IdUnidadMedida+'><tr><td width="120"><font size="2"><UL type = square><LI>'+nombreUnidadMedida+'</UL></font></td><td><center><a href="javascript:eliminarFiltroLaboratorioClinicoUnidadMedida(\''+IdUnidadMedida+'\')"><img src="../../../../medifacil_front/imagen/icono/btn_cerrar_layer.png"></a></center></td></tr></table>';
+                    var s ='<table cellSpacing="0" border="0" width="220" id='+IdUnidadMedida+'><tr><td width="120"><font size="2"><UL type = square><LI>'+nombreUnidadMedida+'</UL></font></td><td><center><a href="javascript:eliminarFiltroLaboratorioClinicoUnidadMedida(\''+IdUnidadMedida+'\')"><img src="../../../../fastmedical_front/imagen/icono/btn_cerrar_layer.png"></a></center></td></tr></table>';
                     var range = document.createRange();
                   
                     range.selectNode(document.body);
@@ -4638,7 +4638,7 @@ function indicadorLaboratorioClinicoListaProcedencia(){
                 if ($('ContadorProcedencia').value<=1){
             
                     $('Procedencia').value+= idProcedencia + '|';
-                    var s ='<table cellSpacing="0" border="0" width="220" id='+idProcedencia+'><tr><td width="120"><font size="2"><UL type = square><LI>'+descripcionProcedencia+'</UL></font></td><td><center><a href="javascript:eliminarFiltroLaboratorioClinicoProcedencia(\''+idProcedencia+'\')"><img src="../../../../medifacil_front/imagen/icono/btn_cerrar_layer.png"></a></center></td></tr></table>';
+                    var s ='<table cellSpacing="0" border="0" width="220" id='+idProcedencia+'><tr><td width="120"><font size="2"><UL type = square><LI>'+descripcionProcedencia+'</UL></font></td><td><center><a href="javascript:eliminarFiltroLaboratorioClinicoProcedencia(\''+idProcedencia+'\')"><img src="../../../../fastmedical_front/imagen/icono/btn_cerrar_layer.png"></a></center></td></tr></table>';
                     var range = document.createRange();
                   
                     range.selectNode(document.body);
@@ -4712,7 +4712,7 @@ function indicadorLaboratorioClinicoListaAfiliaciones(){
                 if ($('ContadorAfiliacion').value<=1){
             
                     $('Afiliaciones').value+= IdAfiliacion + '|';
-                    var s ='<table cellSpacing="0" border="0" width="220" id='+IdAfiliacion+'><tr><td width="120"><font size="2"><UL type = square><LI>'+descripcionAfiliacion+'</UL></font></td><td><center><a href="javascript:eliminarFiltroLaboratorioClinicoAfiliaciones(\''+IdAfiliacion+'\')"><img src="../../../../medifacil_front/imagen/icono/btn_cerrar_layer.png"></a></center></td></tr></table>';
+                    var s ='<table cellSpacing="0" border="0" width="220" id='+IdAfiliacion+'><tr><td width="120"><font size="2"><UL type = square><LI>'+descripcionAfiliacion+'</UL></font></td><td><center><a href="javascript:eliminarFiltroLaboratorioClinicoAfiliaciones(\''+IdAfiliacion+'\')"><img src="../../../../fastmedical_front/imagen/icono/btn_cerrar_layer.png"></a></center></td></tr></table>';
                     var range = document.createRange();
                   
                     range.selectNode(document.body);
@@ -7074,7 +7074,7 @@ function buscarExamenesLaboratorioManteExamenes(){
 //        //        alert("Nº de teclas presionadas: "+numero);
 //        dn=0;
 //        mygridxcor = new dhtmlXGridObject('Div_listadoTodosCordinadores');
-//        mygridxcor.setImagePath("../../../../medifacil_front/imagen/icono/");
+//        mygridxcor.setImagePath("../../../../fastmedical_front/imagen/icono/");
 //  
 //        mygridxcor.attachEvent("onRowSelect",ClickCargarlistadoTodosCordinadores );
 //        

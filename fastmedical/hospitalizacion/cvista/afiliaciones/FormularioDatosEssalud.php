@@ -109,14 +109,14 @@
     $toolbar2 = new ToollBar();
     ?>
     <div style="padding-left:90px; float:left;"><?php
-    $toolbar1->SetBoton("Guardar", "Guardar", "btn", "onclick,onkeypress", "GuardarDatosEssalud()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/grabar.png", "", "", 1);
+    $toolbar1->SetBoton("Guardar", "Guardar", "btn", "onclick,onkeypress", "GuardarDatosEssalud()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/grabar.png", "", "", 1);
     $toolbar1->Mostrar();
     ?> 
     </div>
     <div id="button4" style="float:left; width: 50px; border: 1px  solid white;"></div>
     <div style="float:left;">
         <?php
-        $toolbar2->SetBoton("Link", "", "btn", "onclick,onkeypress", "abrirEssalud", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/images.jpg", "", "", 1);
+        $toolbar2->SetBoton("Link", "", "btn", "onclick,onkeypress", "abrirEssalud", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/images.jpg", "", "", 1);
         $toolbar2->Mostrar();
         ?> 
     </div>

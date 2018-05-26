@@ -27,7 +27,7 @@ $c_cod_per
         <tr>
             <td colspan="2">
                 <div align="center">
-                    <a href="javascript:guardarComprobanteSerie();"><img border="0" title="Codigo de Persona" alt="" src="../../../../medifacil_front/imagen/btn/b_agregar_off.gif"/></a>
+                    <a href="javascript:guardarComprobanteSerie();"><img border="0" title="Codigo de Persona" alt="" src="../../../../fastmedical_front/imagen/btn/b_agregar_off.gif"/></a>
                 </div>
             </td>
         </tr>

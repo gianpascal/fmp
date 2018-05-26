@@ -14,7 +14,7 @@
                 width: 1200px;
                 height:550px;
                 background-size:1200px 550px;
-                background-image: url('../../../../medifacil_front/imagen/fondo/laser_reader.jpg');
+                background-image: url('../../../../fastmedical_front/imagen/fondo/laser_reader.jpg');
                 background-position:center;
                 background-repeat: no-repeat;
             }
@@ -48,7 +48,7 @@
                                     </select> </td>
                             </tr>
                             <tr align="center">
-                                <td colspan="4"><img id="imgGenerarCodigoBarra" border="0" title="Generar Codigo Barra" src="../../../../medifacil_front/imagen/btn/generar.bmp" onclick="generarCodigoBarra()" ></td>
+                                <td colspan="4"><img id="imgGenerarCodigoBarra" border="0" title="Generar Codigo Barra" src="../../../../fastmedical_front/imagen/btn/generar.bmp" onclick="generarCodigoBarra()" ></td>
                             </tr>
                         </table>
 

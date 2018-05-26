@@ -60,20 +60,20 @@
                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                         <?php
                                         if (isset($_SESSION["permiso_formulario_servicio"][224]["BUSCAR_REGISTRO_ASISTENCIA_EMP"]) && ($_SESSION["permiso_formulario_servicio"][224]["BUSCAR_REGISTRO_ASISTENCIA_EMP"] == 1)) {
-                                            echo '<a href="javascript:BusquedaEmpleado();"><img border="0" title="Codigo de Persona" alt="" src="../../../../medifacil_front/imagen/btn/nbtn_buscar.gif"/></a>';
+                                            echo '<a href="javascript:BusquedaEmpleado();"><img border="0" title="Codigo de Persona" alt="" src="../../../../fastmedical_front/imagen/btn/nbtn_buscar.gif"/></a>';
                                         }
                                         ?>
                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                         <?php
                                         if (isset($_SESSION["permiso_formulario_servicio"][224]["LIMPIAR_CRITERIOS_BUSQUEDA_REGISTRO_ASISTENCIA"]) && ($_SESSION["permiso_formulario_servicio"][224]["LIMPIAR_CRITERIOS_BUSQUEDA_REGISTRO_ASISTENCIA"] == 1)) {
-                                            echo '<a href="javascript:LimpiaTablansdHorarioRealesAsistenciaRefrescar();"><img border="0" title="Limpiar" alt="" src="../../../../medifacil_front/imagen/btn/btn_limpiar.gif"/></a>';
+                                            echo '<a href="javascript:LimpiaTablansdHorarioRealesAsistenciaRefrescar();"><img border="0" title="Limpiar" alt="" src="../../../../fastmedical_front/imagen/btn/btn_limpiar.gif"/></a>';
                                         }
                                         ?>
                                         <div style="width: 100px;" align="center">
                                             <?php
                                             if (isset($_SESSION["permiso_formulario_servicio"][224]["BUSCAR_EMP_POPPAD"]) && ($_SESSION["permiso_formulario_servicio"][224]["BUSCAR_EMP_POPPAD"] == 1)) {
-                                                $toolbar1->SetBoton("BusquedaEmpleado", "Buscar Empleado", "btn", "onclick,onkeypress", "podpadBusquedaEmpleado()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/kopeteavailable.png", "", "", 1);
+                                                $toolbar1->SetBoton("BusquedaEmpleado", "Buscar Empleado", "btn", "onclick,onkeypress", "podpadBusquedaEmpleado()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/kopeteavailable.png", "", "", 1);
                                                 $toolbar1->Mostrar();
                                             }
                                             ?>

@@ -73,7 +73,7 @@
                             </td>
                             <td align="center" style="height: 25px;width: 100px; alignment-adjust: central">Nueva Area:</td>
                             <td> <a href="javascript:verBuscadorAreasRegularizarEmpleado();">
-                                    <img border="0" title="Agregar Area" alt="" src="../../../../medifacil_front/imagen/icono/window_new.png">
+                                    <img border="0" title="Agregar Area" alt="" src="../../../../fastmedical_front/imagen/icono/window_new.png">
                                 </a>
                             </td>
                         </tr>
@@ -94,7 +94,7 @@
                             <td align="center" height="25">Nuevo Turno</td>
                             <td>
                                 <a href="javascript:agregarTurnoEmporesaAreaPersona();">
-                                    <img border="0" title="Otra Turno" alt="" src="../../../../medifacil_front/imagen/icono/window_new.png">
+                                    <img border="0" title="Otra Turno" alt="" src="../../../../fastmedical_front/imagen/icono/window_new.png">
                                 </a>
                             </td>
                         </tr>
@@ -118,7 +118,7 @@
                         </tr>
                         <tr align="center">
                             <td colspan="4" align="center" height="25">
-                                <a href="javascript:guardarNuevaProgramacionReemplanzo();"> <img border="0" title="Guardar" alt="" src="../../../../medifacil_front/imagen/btn/b_grabar_on.gif"/></a>
+                                <a href="javascript:guardarNuevaProgramacionReemplanzo();"> <img border="0" title="Guardar" alt="" src="../../../../fastmedical_front/imagen/btn/b_grabar_on.gif"/></a>
                             </td>
                         </tr>
                     </table>

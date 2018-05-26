@@ -101,7 +101,7 @@ function cargarTablaPacientes(opcion,patron){
     parametros+='&p3='+patron;
 
     tablaPacientes = new dhtmlXGridObject('divResultadoBusquedaPersonas');
-    tablaPacientes.setImagePath("../../../../medifacil_front/imagen/icono/");
+    tablaPacientes.setImagePath("../../../../fastmedical_front/imagen/icono/");
     tablaPacientes.setSkin("dhx_skyblue");
     tablaPacientes.attachEvent("onRowSelect", seleccionarPaciente);
     tablaPacientes.init();
@@ -116,7 +116,7 @@ function cargarTablaCirujanos(opcion,patron){
     parametros+='&p3='+patron;
 
     tablaCirujanos = new dhtmlXGridObject('divResultadoBusquedaPersonas');
-    tablaCirujanos.setImagePath("../../../../medifacil_front/imagen/icono/");
+    tablaCirujanos.setImagePath("../../../../fastmedical_front/imagen/icono/");
     tablaCirujanos.setSkin("dhx_skyblue");
     tablaCirujanos.attachEvent("onRowSelect", seleccionarCirujano);
     tablaCirujanos.init();
@@ -131,7 +131,7 @@ function cargarTablaCirujanosSOP(opcion,patron){
     parametros+='&p3='+patron;
 
     tablaCirujanosSOP = new dhtmlXGridObject('divResultadoBusquedaPersonas');
-    tablaCirujanosSOP.setImagePath("../../../../medifacil_front/imagen/icono/");
+    tablaCirujanosSOP.setImagePath("../../../../fastmedical_front/imagen/icono/");
     tablaCirujanosSOP.setSkin("dhx_skyblue");
     tablaCirujanosSOP.attachEvent("onRowSelect", seleccionarCirujanoSOP);
     tablaCirujanosSOP.init();
@@ -146,7 +146,7 @@ function cargarTablaResponsablesSOP(opcion,patron){
     parametros+='&p3='+patron;
 
     tablaResponsablesSOP = new dhtmlXGridObject('divResultadoBusquedaPersonas');
-    tablaResponsablesSOP.setImagePath("../../../../medifacil_front/imagen/icono/");
+    tablaResponsablesSOP.setImagePath("../../../../fastmedical_front/imagen/icono/");
     tablaResponsablesSOP.setSkin("dhx_skyblue");
     tablaResponsablesSOP.attachEvent("onRowSelect", seleccionarResponsablesSOP);
     tablaResponsablesSOP.init();

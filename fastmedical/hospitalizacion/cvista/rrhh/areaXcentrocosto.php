@@ -40,7 +40,7 @@ $toolbar1=new ToollBar("right");
                     <div style="float: right">
                         <?php
                             if (isset($_SESSION["permiso_formulario_servicio"][218]["NUEVA_AREA_POR_SEDE"]) && ($_SESSION["permiso_formulario_servicio"][218]["NUEVA_AREA_POR_SEDE"]==1)){
-                                $toolbar0->SetBoton("NuevaAreaxSucursal","Nueva Area por Sucursal","btn","onclick,onkeypress","abrirArea('nuevo')",$_SESSION['path_principal']."../medifacil_front/imagen/icono/filenew.png","","",1);
+                                $toolbar0->SetBoton("NuevaAreaxSucursal","Nueva Area por Sucursal","btn","onclick,onkeypress","abrirArea('nuevo')",$_SESSION['path_principal']."../fastmedical_front/imagen/icono/filenew.png","","",1);
                                 $toolbar0->Mostrar();
                             }
                         ?>
@@ -68,7 +68,7 @@ $toolbar1=new ToollBar("right");
                     <div align="center" style="width: 200px">
                         <?php
                             if (isset($_SESSION["permiso_formulario_servicio"][218]["ASIG_AREA_CCOSTO"]) && ($_SESSION["permiso_formulario_servicio"][218]["ASIG_AREA_CCOSTO"]==1)){
-                                $toolbar1->SetBoton("AsignarCeCeSedeEmAr","Asignar Área a Centro Costo","btn","onclick,onkeypress","grabarCeCeSedeEmpresaArea()",$_SESSION['path_principal']."../medifacil_front/imagen/icono/agt_action_success.png","","",1);
+                                $toolbar1->SetBoton("AsignarCeCeSedeEmAr","Asignar Área a Centro Costo","btn","onclick,onkeypress","grabarCeCeSedeEmpresaArea()",$_SESSION['path_principal']."../fastmedical_front/imagen/icono/agt_action_success.png","","",1);
                                 $toolbar1->Mostrar();
                             }
                         ?>

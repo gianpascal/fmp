@@ -171,10 +171,10 @@ $programacionMedico["anioprogramacion"] = $anio;
                         <td>
                             <?php
                             if (isset($_SESSION["permiso_formulario_servicio"][115]["GRABAR_ADIC_MAX_PROG_MED"]) && ($_SESSION["permiso_formulario_servicio"][115]["GRABAR_ADIC_MAX_PROG_MED"] == 1)) {
-                                echo "<a href=\"#\" onclick=\"javascript:actualizaradicionalesActoMedico();\"><img src=\"../../../../medifacil_front/imagen/btn/b_grabar__on.gif\" alt=\"Grabar\"></a>";
+                                echo "<a href=\"#\" onclick=\"javascript:actualizaradicionalesActoMedico();\"><img src=\"../../../../fastmedical_front/imagen/btn/b_grabar__on.gif\" alt=\"Grabar\"></a>";
                             }
                             ?>
-                            <!--<a href="#" onclick="javascript:actualizaradicionalesActoMedico();"><img src='../../../../medifacil_front/imagen/btn/b_grabar__on.gif' alt="Grabar"></a>-->
+                            <!--<a href="#" onclick="javascript:actualizaradicionalesActoMedico();"><img src='../../../../fastmedical_front/imagen/btn/b_grabar__on.gif' alt="Grabar"></a>-->
                         </td>
                     </tr>
                 </table>

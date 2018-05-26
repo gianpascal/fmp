@@ -54,15 +54,15 @@
                                 <tr>
                                     <td align="center" colspan="4">
                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                        <a href="javascript:BusquedaEmpleado();"><img border="0" title="Codigo de Persona" alt="" src="../../../../medifacil_front/imagen/btn/nbtn_buscar.gif"/></a>
+                                        <a href="javascript:BusquedaEmpleado();"><img border="0" title="Codigo de Persona" alt="" src="../../../../fastmedical_front/imagen/btn/nbtn_buscar.gif"/></a>
                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                        <a href="javascript:LimpiaTablansdHorarioRealesAsistenciaRefrescar();"><img border="0" title="Limpiar" alt="" src="../../../../medifacil_front/imagen/btn/btn_limpiar.gif"/></a>
+                                        <a href="javascript:LimpiaTablansdHorarioRealesAsistenciaRefrescar();"><img border="0" title="Limpiar" alt="" src="../../../../fastmedical_front/imagen/btn/btn_limpiar.gif"/></a>
 
                                         <div style="width: 100px;" align="center">
                                             <?php
                                         if (isset($_SESSION["permiso_formulario_servicio"][224]["REG_ESPECIAL_ASISTENCIA_EMP"]) && ($_SESSION["permiso_formulario_servicio"][224]["REG_ESPECIAL_ASISTENCIA_EMP"]==1)){
-                                            $toolbar1->SetBoton("RegularizacionEspecial","Regularizacion Especial","btn","onclick,onkeypress","RegularizacionEspecial()",$_SESSION['path_principal']."../medifacil_front/imagen/icono/filenew.png","","",1);
+                                            $toolbar1->SetBoton("RegularizacionEspecial","Regularizacion Especial","btn","onclick,onkeypress","RegularizacionEspecial()",$_SESSION['path_principal']."../fastmedical_front/imagen/icono/filenew.png","","",1);
                                             $toolbar1->Mostrar();
                                         }
                                             ?>

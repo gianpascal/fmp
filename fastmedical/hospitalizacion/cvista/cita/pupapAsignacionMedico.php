@@ -21,7 +21,7 @@
                             </td>
                             <td><br><br>
                                 <div style="height: 200px; width: 200px;">
-                                    <a href="javascript:guardarASignacionMedico()"><img src="../../../../medifacil_front/imagen/btn/b_grabar__on.gif"/>
+                                    <a href="javascript:guardarASignacionMedico()"><img src="../../../../fastmedical_front/imagen/btn/b_grabar__on.gif"/>
                                     </a><br>
                                     <div id="div_NombreMedicoSeleccionado" style="height: auto; width: auto; visibility: visible;"></div>
                                 </div>

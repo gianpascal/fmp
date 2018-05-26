@@ -30,7 +30,7 @@
     <div style="width:380px; height:20px;float:left;">
         <div style="float:inherit; padding-left:150 ">
             <?php
-            $toolbar1->SetBoton("popadTipoUnidaMedida", "Agregar", "btn", "onclick,onkeypress", "popadTipoUnidaMedida()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/nuevo.png", "", "", 1);
+            $toolbar1->SetBoton("popadTipoUnidaMedida", "Agregar", "btn", "onclick,onkeypress", "popadTipoUnidaMedida()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/nuevo.png", "", "", 1);
             $toolbar1->Mostrar();
             ?> 
         </div>
@@ -39,7 +39,7 @@
     <div style="width:380px; height:20px;float:left">
         <div style="float:inherit; padding-left:150 ">
             <?php
-            $toolbar2->SetBoton("agregarUnidadMedida", "Agregar", "btn", "onclick,onkeypress", "popadUnidaMedida()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/nuevo.png", "", "", 1);
+            $toolbar2->SetBoton("agregarUnidadMedida", "Agregar", "btn", "onclick,onkeypress", "popadUnidaMedida()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/nuevo.png", "", "", 1);
             $toolbar2->Mostrar();
             ?> 
         </div>

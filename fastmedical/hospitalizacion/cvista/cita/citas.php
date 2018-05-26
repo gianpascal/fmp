@@ -135,7 +135,7 @@ $cb_combo_sede = $o_actionCita->listaDatosSede($datos);
                         <div id="divLeyendaCitasInformes" style="width:470px;font-family: Arial;font-size: 18pt;background: white;float:left;">
                             <table>
                                 <tr>
-                                    <td><img alt="" src='../../../../medifacil_front/imagen/icono/apply.png'></td>
+                                    <td><img alt="" src='../../../../fastmedical_front/imagen/icono/apply.png'></td>
                                     <td class="Estilo6">C. NUEVA</td>
                                     <td class="Estilo6" style="background-color:#F0F43A" align="center">RESERVADO</td>
                                     <td class="Estilo6" style="background-color:#F8A83E" align="center">PAGADO</td>
@@ -182,7 +182,7 @@ $cb_combo_sede = $o_actionCita->listaDatosSede($datos);
                             <table >
                                 <tr style="">
                                     <td>
-                                        <div id="programacioncitas" align="center" style="width:98%;height:600px;background: url(../../../../medifacil_front/imagen/fondo/medicos.jpg) no-repeat center ;"><!--<a href="#" onclick = javascript:setCabeceraCronograma();>LUIS</a><?php //echo html_entity_decode($tablita);                                                                                                                                                                                                                                    ?>-->
+                                        <div id="programacioncitas" align="center" style="width:98%;height:600px;background: url(../../../../fastmedical_front/imagen/fondo/medicos.jpg) no-repeat center ;"><!--<a href="#" onclick = javascript:setCabeceraCronograma();>LUIS</a><?php //echo html_entity_decode($tablita);                                                                                                                                                                                                                                    ?>-->
 
                                         </div>
                                         <div id="programacioncitasEmergencia" align="center" style="display:none;width:98%;height:500px;"><!--<a href="#" onclick = javascript:setCabeceraCronograma();>LUIS</a><?php //echo html_entity_decode($tablita);                                                                                                                                                                                                                                    ?>-->
@@ -199,7 +199,7 @@ $cb_combo_sede = $o_actionCita->listaDatosSede($datos);
                                                     <tr align="center">
                                                         <td style="width: 15%;"><input type="hidden" id="hidfilaorigen" name="hidfilaorigen" value="" /><input type="hidden" id="hidcolumnaorigen" name="hidcolumnaorigen" value="" /></td>
                                                         <td style="width: 45%;height: 15px;font-family: Arial;font-size: 12pt"><font color="blue">Elegir celda de destino</font></td>
-                                                        <td align="left" style="width: 25%;height: 15px;font-family: Arial;font-size: 12pt"><a href="javascript:cancelaredicioncitas();"><img src="../../../../medifacil_front/imagen/btn/b_cancelar_on.gif"></a></td>
+                                                        <td align="left" style="width: 25%;height: 15px;font-family: Arial;font-size: 12pt"><a href="javascript:cancelaredicioncitas();"><img src="../../../../fastmedical_front/imagen/btn/b_cancelar_on.gif"></a></td>
                                                         <td style="width: 15%;"><input type="hidden" id="hidfiladestino" name="hidfiladestino" value="" /><input type="hidden" id="hidcolumnadestino" name="hidcolumnadestino" value="" /></td>
                                                     </tr>
                                                 </table>
@@ -218,11 +218,11 @@ $cb_combo_sede = $o_actionCita->listaDatosSede($datos);
 
                                                             <td style="width: 22%;">
 
-<!--                                        <div id="divNumeroOrdenGenerada1a" align="left">dfgfg <a href=\"javascript:ventanaVerDetalleOrden();\"><img src="../../../../medifacil_front/imagen/icono/abrir.png"></a>
+<!--                                        <div id="divNumeroOrdenGenerada1a" align="left">dfgfg <a href=\"javascript:ventanaVerDetalleOrden();\"><img src="../../../../fastmedical_front/imagen/icono/abrir.png"></a>
                                         </div> -->
                                                                 <div id="divSandy" align="left"  style="width:100%;height:20px;background: white;display: none" >
                                                                     <?php
-                                                                    echo"<a href=\"javascript:ventanaVerDetalleOrden();\"><img height='18px' width='110px' src=\"../../../../medifacil_front/imagen/icono/detallecita3.png\"></a>";
+                                                                    echo"<a href=\"javascript:ventanaVerDetalleOrden();\"><img height='18px' width='110px' src=\"../../../../fastmedical_front/imagen/icono/detallecita3.png\"></a>";
 //                                   
                                                                     ?>
                                                                 </div> 
@@ -302,7 +302,7 @@ $cb_combo_sede = $o_actionCita->listaDatosSede($datos);
                                         <div id="divAcciones" align="center"  style="width:100%;height:30px;background: white;display: block" >
                                             <?php
                                             if ($_SESSION["permiso_formulario_servicio"][118]["MOSTRAR_ATEN_PAC"] == 1)
-                                                echo"<a href=\"javascript:ventanaVerAtenciones();\"><img src=\"../../../../medifacil_front/imagen/btn/b_mostrar_atenciones.png \"></a>";
+                                                echo"<a href=\"javascript:ventanaVerAtenciones();\"><img src=\"../../../../fastmedical_front/imagen/btn/b_mostrar_atenciones.png \"></a>";
                                             ?>
                                         </div>
 
@@ -314,58 +314,58 @@ $cb_combo_sede = $o_actionCita->listaDatosSede($datos);
 
                                             <!--                    <div id="divSandy" align="left"  style="width:100%;height:15px;background: white;display: block" >
                                             <?php
-                                            echo"<a href=\"javascript:ventanaVerDetalleOrden();\"><img src=\"../../../../medifacil_front/imagen/icono/abrir.png\"></a>";
+                                            echo"<a href=\"javascript:ventanaVerDetalleOrden();\"><img src=\"../../../../fastmedical_front/imagen/icono/abrir.png\"></a>";
                                             ?>
                                                                 </div> -->
 
                                             <!--                    <div title="Proxima Fecha Disponible Programada para Cita" onmouseout="this.style.background='#1B843C';" onmouseover="this.style.background='#006631'" onclick="buscarProximaCita();" style="border: 1px solid; width:80px; height: 18px; background: none repeat scroll 0% 0% rgb(27, 132, 60); color: white; padding-top: 2px;float:left;">
                                                                     <center>Siguiente Cupo</center>
                                                                 </div>-->
-                                            <a href="javascript:buscarProximaCita();"><img id="btnProximaCIta" src="../../../../medifacil_front/imagen/icono/sigcupo.png" style="height:25px"></a>
+                                            <a href="javascript:buscarProximaCita();"><img id="btnProximaCIta" src="../../../../fastmedical_front/imagen/icono/sigcupo.png" style="height:25px"></a>
 
-                                            <?php //echo"<a href=\"javascript:editarCitaInformes()\"><img src=\"../../../../medifacil_front/imagen/btn/b_editar_on.gif\"></a>&nbsp;&nbsp;&nbsp;&nbsp;"; ?>
-                                            <?php //echo"<a href=\"javascript:myajax.Link('../admision/registro_personas_busqueda.php','Contenido')\"><img src=\"../../../../medifacil_front/imagen/btn/b_agregar_on1.gif\"></a>";?>
+                                            <?php //echo"<a href=\"javascript:editarCitaInformes()\"><img src=\"../../../../fastmedical_front/imagen/btn/b_editar_on.gif\"></a>&nbsp;&nbsp;&nbsp;&nbsp;"; ?>
+                                            <?php //echo"<a href=\"javascript:myajax.Link('../admision/registro_personas_busqueda.php','Contenido')\"><img src=\"../../../../fastmedical_front/imagen/btn/b_agregar_on1.gif\"></a>";?>
 
                                             <?php
                                             if (isset($_SESSION["permiso_formulario_servicio"][118]["IMPRIMIR_TICKET_CITA"]) && ($_SESSION["permiso_formulario_servicio"][118]["IMPRIMIR_TICKET_CITA"] == 1))
-                                                echo"<a href=\"javascript:imprimirTicketCita();\"><img src=\"../../../../medifacil_front/imagen/btn/b_imprimir_on.gif\"></a>";
+                                                echo"<a href=\"javascript:imprimirTicketCita();\"><img src=\"../../../../fastmedical_front/imagen/btn/b_imprimir_on.gif\"></a>";
                                             ?>
 
                                             <?php
                                             if (isset($_SESSION["permiso_formulario_servicio"][118]["MOSTRAR_ATEN_PAC"]) && ($_SESSION["permiso_formulario_servicio"][118]["MOSTRAR_ATEN_PAC"] == 1))
-                                                echo"<a href=\"javascript:ventanaVerAtenciones();\"><img src=\"../../../../medifacil_front/imagen/btn/b_mostrar_atenciones.png \"></a>";
+                                                echo"<a href=\"javascript:ventanaVerAtenciones();\"><img src=\"../../../../fastmedical_front/imagen/btn/b_mostrar_atenciones.png \"></a>";
                                             ?>
 
                                             <?php
                                             if (isset($_SESSION["permiso_formulario_servicio"][118]["PAGAR_CITA_CARTA_VIRTUAL_PAC"]) && ($_SESSION["permiso_formulario_servicio"][118]["PAGAR_CITA_CARTA_VIRTUAL_PAC"] == 1))
-                                                echo"<a href=\"javascript:cambiarEstadoConfirmacionCita();\"><img src=\"../../../../medifacil_front/imagen/btn/b_pago_cvirtual.png\"></a>";
+                                                echo"<a href=\"javascript:cambiarEstadoConfirmacionCita();\"><img src=\"../../../../fastmedical_front/imagen/btn/b_pago_cvirtual.png\"></a>";
                                             ?>
 
                                             <?php
                                             if (isset($_SESSION["permiso_formulario_servicio"][118]["EDITAR_CITA"]) && ($_SESSION["permiso_formulario_servicio"][118]["EDITAR_CITA"] == 1))
-                                                echo"<a name='btnEditarCita' href=\"javascript:validaredicionCitaInformes('0');\"><img src=\"../../../../medifacil_front/imagen/btn/b_editar_on.gif\"></a>";
+                                                echo"<a name='btnEditarCita' href=\"javascript:validaredicionCitaInformes('0');\"><img src=\"../../../../fastmedical_front/imagen/btn/b_editar_on.gif\"></a>";
                                             ?>
 
                                             <?php
                                             if (isset($_SESSION["permiso_formulario_servicio"][118]["ELIMINAR_CITA"]) && ($_SESSION["permiso_formulario_servicio"][118]["ELIMINAR_CITA"] == 1))
-                                                echo"<a href=\"javascript:eliminarCitaInformes();\"><img src=\"../../../../medifacil_front/imagen/btn/b_eliminar_on.gif\"></a>";
+                                                echo"<a href=\"javascript:eliminarCitaInformes();\"><img src=\"../../../../fastmedical_front/imagen/btn/b_eliminar_on.gif\"></a>";
                                             ?>
 
                                             <?php
                                             if (isset($_SESSION["permiso_formulario_servicio"][118]["ASIGNAR_TRIAJE"]) && ($_SESSION["permiso_formulario_servicio"][118]["ASIGNAR_TRIAJE"] == 1))
-                                                echo"<a href=\"javascript:mostrarFormRegistrarTriaje();\"><img src=\"../../../../medifacil_front/imagen/btn/b_triaje.png\"></a>";
+                                                echo"<a href=\"javascript:mostrarFormRegistrarTriaje();\"><img src=\"../../../../fastmedical_front/imagen/btn/b_triaje.png\"></a>";
                                             ?>
 
                                             <?php
                                             if (isset($_SESSION["permiso_formulario_servicio"][118]["CAMBIAR_ESTADO_NO_ATENDIDO"]) && ($_SESSION["permiso_formulario_servicio"][118]["CAMBIAR_ESTADO_NO_ATENDIDO"] == 1))
-                                                echo"<a href=\"javascript:CambiarEstadoNoAtendido();\"><img src='../../../../medifacil_front/imagen/btn/btn_cambiarEstado.gif' title='Cambiar Estado' alt=''/></a>";
+                                                echo"<a href=\"javascript:CambiarEstadoNoAtendido();\"><img src='../../../../fastmedical_front/imagen/btn/btn_cambiarEstado.gif' title='Cambiar Estado' alt=''/></a>";
                                             ?>
 
                                             <?php
                                             if (isset($_SESSION["permiso_formulario_servicio"][325]["PAGAR_CITA"]) && ($_SESSION["permiso_formulario_servicio"][325]["PAGAR_CITA"] == 1))
-                                                echo"<a href=\"javascript:pagarCita();\"><img src='../../../../medifacil_front/imagen/btn/cancelarPago.gif' title='Pagar Cita' alt=''/></a>";
+                                                echo"<a href=\"javascript:pagarCita();\"><img src='../../../../fastmedical_front/imagen/btn/cancelarPago.gif' title='Pagar Cita' alt=''/></a>";
                                             ?>
-                                                 <a href="javascript:nuevacitaEmergenecia();"><img id="btnNuevoEmergencia" style="display:none" src='../../../../medifacil_front/imagen/btn/b_nuevo_on.gif' title='Nueva Cita de Emergencia ' alt=''/></a>
+                                                 <a href="javascript:nuevacitaEmergenecia();"><img id="btnNuevoEmergencia" style="display:none" src='../../../../fastmedical_front/imagen/btn/b_nuevo_on.gif' title='Nueva Cita de Emergencia ' alt=''/></a>
                                         </div>
 
 
@@ -522,21 +522,21 @@ $cb_combo_sede = $o_actionCita->listaDatosSede($datos);
                         <div id="divGuardaryRegresar" align="center"  style="width:100%;height:auto;background: white;display: block">
                             <?php
                             if ($_SESSION["permiso_formulario_servicio"][118]["GRABAR_CITA"] == 1)
-//                                echo"<a href=\"javascript:validarCitaInformes()\"><img src=\"../../../../medifacil_front/imagen/btn/b_grabar__on.gif\"></a>&nbsp;&nbsp;&nbsp;&nbsp;";
-                                echo"<a href=\"javascript:validarCitaInformes()\"><img src=\"../../../../medifacil_front/imagen/btn/grabarcita.PNG\"></a>&nbsp;&nbsp;&nbsp;&nbsp;";
+//                                echo"<a href=\"javascript:validarCitaInformes()\"><img src=\"../../../../fastmedical_front/imagen/btn/b_grabar__on.gif\"></a>&nbsp;&nbsp;&nbsp;&nbsp;";
+                                echo"<a href=\"javascript:validarCitaInformes()\"><img src=\"../../../../fastmedical_front/imagen/btn/grabarcita.PNG\"></a>&nbsp;&nbsp;&nbsp;&nbsp;";
                             ?>
                             <?php
                             if ($_SESSION["permiso_formulario_servicio"][118]["REGRESAR_CITA"] == 1)
-//                                echo"<a href=\"javascript:regresaracronogramacitas()\"><img src=\"../../../../medifacil_front/imagen/btn/b_regresar_on.gif\">";
-                                echo"<a href=\"javascript:regresaracronogramacitas()\"><img src=\"../../../../medifacil_front/imagen/btn/regresar.PNG\">";
+//                                echo"<a href=\"javascript:regresaracronogramacitas()\"><img src=\"../../../../fastmedical_front/imagen/btn/b_regresar_on.gif\">";
+                                echo"<a href=\"javascript:regresaracronogramacitas()\"><img src=\"../../../../fastmedical_front/imagen/btn/regresar.PNG\">";
                             ?>
 
                         </div>
                     </div>
                     <!--                    <div>
                     <?php
-                    //echo"<a href=\"javascript:PopudVincularRecetasConTratamientos();\"><img src=\"../../../../medifacil_front/imagen/btn/regresar.PNG\">";
-//                        echo"<a href=\"javascript:getVinculadosTratamientoPaciente('0469643');\"><img src=\"../../../../medifacil_front/imagen/btn/regresar.PNG\">";
+                    //echo"<a href=\"javascript:PopudVincularRecetasConTratamientos();\"><img src=\"../../../../fastmedical_front/imagen/btn/regresar.PNG\">";
+//                        echo"<a href=\"javascript:getVinculadosTratamientoPaciente('0469643');\"><img src=\"../../../../fastmedical_front/imagen/btn/regresar.PNG\">";
                     ?>
                                         </div>-->
 

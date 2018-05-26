@@ -622,7 +622,7 @@ function recargarArbolCCostosPuestos(funcion){
     myDiv=document.getElementById('divOpcCCostos');
     myDiv.innerHTML = " ";
     tree2=new dhtmlXTreeObject("divOpcCCostos","100%","100%",0);
-    tree2.setImagePath("../../../../medifacil_front/imagen/icono/tree/");
+    tree2.setImagePath("../../../../fastmedical_front/imagen/icono/tree/");
     tree2.attachEvent("onClick", function(){
               
             funcionArbol(funcion,tree2.getSelectedItemId());

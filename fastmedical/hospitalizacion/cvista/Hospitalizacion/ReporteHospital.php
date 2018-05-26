@@ -110,21 +110,21 @@
 
                     <td id="Editar[<?php echo $i; ?>]">
                         <a href="javascript:EditaHospitalizacion(<?php echo $i; ?>);">
-                            <img border="0" title="Editar" alt="" src="../../../../medifacil_front/imagen/icono/editar.png"/></a>                                              
+                            <img border="0" title="Editar" alt="" src="../../../../fastmedical_front/imagen/icono/editar.png"/></a>                                              
                     </td>
                     <td id="Guardar[<?php echo $i; ?>]" style="display: none">
                         <a href="javascript:GuardarHospitalizacion(<?php echo $i; ?>);">
-                            <img border="0" title="Guardar" alt="" src="../../../../medifacil_front/imagen/icono/adicionar.png"/></a>                                              
+                            <img border="0" title="Guardar" alt="" src="../../../../fastmedical_front/imagen/icono/adicionar.png"/></a>                                              
                     </td>
                     <td>
                         <a href="javascript:BorrarHospitalizacion(<?php echo $i; ?>);">
-                            <img border="0" title="Eliminar" alt="" src="../../../../medifacil_front/imagen/icono/borrar.png"/></a>
-        <!--                            <img border="0" src="../../../../medifacil_front/imagen/icono/editar.png" title=" Editar"></img>-->
+                            <img border="0" title="Eliminar" alt="" src="../../../../fastmedical_front/imagen/icono/borrar.png"/></a>
+        <!--                            <img border="0" src="../../../../fastmedical_front/imagen/icono/editar.png" title=" Editar"></img>-->
                     </td>
                     <td>
                         <a href="javascript:VistaDetallePaciente(<?php echo $i; ?>);">
-                            <img border="0" title="Visualizar Paciente" alt="" src="../../../../medifacil_front/imagen/icono/b_ver_on.gif"/></a>
-        <!--                            <img border="0" src="../../../../medifacil_front/imagen/icono/editar.png" title=" Editar"></img>-->
+                            <img border="0" title="Visualizar Paciente" alt="" src="../../../../fastmedical_front/imagen/icono/b_ver_on.gif"/></a>
+        <!--                            <img border="0" src="../../../../fastmedical_front/imagen/icono/editar.png" title=" Editar"></img>-->
                     </td>
                     <td hidden=""><?php echo $value[10]; ?></td>
                     <td hidden=""><?php echo $value[11]; ?></td>
@@ -157,20 +157,20 @@
             <td><br><br><br><br>
                 <?php
                 $toolbar3 = new ToollBar("left");
-                $toolbar3->SetBoton("", "Nuevo", "btn", "onclick,onkeypress", "NuevoPaciente()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/edit2.png");
+                $toolbar3->SetBoton("", "Nuevo", "btn", "onclick,onkeypress", "NuevoPaciente()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/edit2.png");
                 $toolbar3->Mostrar();
                 ?> </td>
             <td><br><br><br><br>
 
                 <a href="javascript:ExpotarExcelHospitalizacion();">     
-                    <img border="0" title="Exportar a Excel" alt="" src="../../../../medifacil_front/imagen/btn/b_exportarexcel_on.gif"/></a> 
+                    <img border="0" title="Exportar a Excel" alt="" src="../../../../fastmedical_front/imagen/btn/b_exportarexcel_on.gif"/></a> 
 
             </td>
             <td><br><br><br><br>
 
                 <?php
                 $toolbar3 = new ToollBar("left");
-                $toolbar3->SetBoton("", "Imprimir", "btn", "onclick,onkeypress", "refrescarTablaPaciente()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/imprimir.png");
+                $toolbar3->SetBoton("", "Imprimir", "btn", "onclick,onkeypress", "refrescarTablaPaciente()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/imprimir.png");
                 $toolbar3->Mostrar();
                 ?>                  
 

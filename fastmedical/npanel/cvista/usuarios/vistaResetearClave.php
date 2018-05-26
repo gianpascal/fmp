@@ -14,7 +14,7 @@ $toolbar3 = new ToollBar();
                     <br>
                     <div>
                         <?php
-                        $toolbar1->SetBoton("BusquedaEmpleado", "Buscar Usuario", "btn", "onclick,onkeypress", "podpadbuscarUsuariosClonarUsuario()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/kopeteavailable.png", "", "", 1);
+                        $toolbar1->SetBoton("BusquedaEmpleado", "Buscar Usuario", "btn", "onclick,onkeypress", "podpadbuscarUsuariosClonarUsuario()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/kopeteavailable.png", "", "", 1);
                         $toolbar1->Mostrar();
                         ?>  
                     </div>
@@ -45,7 +45,7 @@ $toolbar3 = new ToollBar();
             <br>
             <div id="divboton" style="float:center; width: 100px; height: 100px">
                 <?php
-                $toolbar3->SetBoton("ResetearClave", "Resetear clave", "btn", "onclick,onkeypress", "ConfirmacionResetearclave()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/kopeteavailable.png", "", "", 1);
+                $toolbar3->SetBoton("ResetearClave", "Resetear clave", "btn", "onclick,onkeypress", "ConfirmacionResetearclave()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/kopeteavailable.png", "", "", 1);
                 $toolbar3->Mostrar();
                 ?>  
             </div>  

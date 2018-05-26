@@ -46,7 +46,7 @@ class generarReporteMensualPreventivas {
         $cabecera = '
              <table border="0" width="1000">
                     <tr>
-                    <td width="100"><img src="../../../../medifacil_front/imagen/logo/HMLO.jpg" width="90"></td>
+                    <td width="100"><img src="../../../../fastmedical_front/imagen/logo/HMLO.jpg" width="90"></td>
                         <td>
                                 <table border="0">
                                     <tr>

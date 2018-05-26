@@ -41,10 +41,10 @@
             <td colspan="2">
                 <?php
                 if (isset($_SESSION["permiso_formulario_servicio"][224]["ACT_ASISTENCIA_EMP"]) && ($_SESSION["permiso_formulario_servicio"][224]["ACT_ASISTENCIA_EMP"] == 1)) {
-                    //<a href="javascript:ActualizarTablansdHorarioRealesAsistencia();"><img border="0" title="Actualizar" alt="" src="../../../../medifacil_front/imagen/btn/b_actualizar_off.gif"/></a>
-                    echo "<a href=\"javascript:ActualizarTablansdHorarioRealesAsistencia();\"><img border=\"0\" title=\"Actualizar\" alt=\"\" src=\"../../../../medifacil_front/imagen/btn/b_actualizar_off.gif\"/></a>";
+                    //<a href="javascript:ActualizarTablansdHorarioRealesAsistencia();"><img border="0" title="Actualizar" alt="" src="../../../../fastmedical_front/imagen/btn/b_actualizar_off.gif"/></a>
+                    echo "<a href=\"javascript:ActualizarTablansdHorarioRealesAsistencia();\"><img border=\"0\" title=\"Actualizar\" alt=\"\" src=\"../../../../fastmedical_front/imagen/btn/b_actualizar_off.gif\"/></a>";
                 } else {
-                    echo "<img border=\"0\" title=\"Actualizar\" alt=\"\" src=\"../../../../medifacil_front/imagen/btn/b_actualizar_off.gif\"/>";
+                    echo "<img border=\"0\" title=\"Actualizar\" alt=\"\" src=\"../../../../fastmedical_front/imagen/btn/b_actualizar_off.gif\"/>";
                 }
                 ?>
             </td>       

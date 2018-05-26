@@ -22,7 +22,7 @@
                 <tr bgcolor="#D4E7FF">
                     <td>
                         <font size="4" color="blue" style="font:bold;color:#0000FF"> <?php echo $value[0] . '   ' . $value[1] . '  ( ' . strtoupper($value[3]) . ' )' ?></font>
-                        <b><font size="2" color="blue" style="font:bold;color:#F90E16">AGREGAR TURNO</font></b><a href="javascript:programacionTurno(<?php echo $i ?>);"> <img border="0" title="Turno" alt="" src="../../../../medifacil_front/imagen/icono/timer.png"/></a>
+                        <b><font size="2" color="blue" style="font:bold;color:#F90E16">AGREGAR TURNO</font></b><a href="javascript:programacionTurno(<?php echo $i ?>);"> <img border="0" title="Turno" alt="" src="../../../../fastmedical_front/imagen/icono/timer.png"/></a>
                         <input id="hNombreAreaSede<?php echo $i ?>" type="hidden"
                                value=" <?php echo $value[0] . '   ' . $value[1] . '  ( ' . strtoupper($value[3]) . ' )' ?>" />
                         <input id="hSede<?php echo $i ?>" type="hidden"
@@ -163,14 +163,14 @@
 
                                                 <?php if ($value[5] == 1) { ?><!-- con permiso -->
                                                     <td>
-                                                        <a href="javascript:programacionPersonal(<?php echo $i ?>,<?php echo $a ?>);"> <img border="0" title="Turno" alt="" src="../../../../medifacil_front/imagen/icono/kopeteavailable.png"/></a>
+                                                        <a href="javascript:programacionPersonal(<?php echo $i ?>,<?php echo $a ?>);"> <img border="0" title="Turno" alt="" src="../../../../fastmedical_front/imagen/icono/kopeteavailable.png"/></a>
                                                     </td>
                                                     <?php
                                                 } else {
                                                     if ($value[5] == 0) {// sin permiso
                                                         ?>
                                                         <td bgcolor="#C0C0C0">
-                                                            <img border="0" title="Turno" alt="" src="../../../../medifacil_front/imagen/icono/kopeteavailable.png"/>
+                                                            <img border="0" title="Turno" alt="" src="../../../../fastmedical_front/imagen/icono/kopeteavailable.png"/>
                                                         </td>                     <?php
                             }
                         }
@@ -291,14 +291,14 @@
                                                                 if ($value[5] == 1) {   // con permiso
                                                                     ?>
                                                                     <td style="width: 22px; height: 20px ; background-color: #E88D8D;"  ><!-- domingo -->
-                                                                        <a href="javascript:programacionPorDiaSinTurno(<?php echo $i ?>,<?php echo $a ?>,<?php echo $k ?>);" > <img border="0" title="Turno" alt="" src="../../../../medifacil_front/imagen/icono/good.gif"/></a>
+                                                                        <a href="javascript:programacionPorDiaSinTurno(<?php echo $i ?>,<?php echo $a ?>,<?php echo $k ?>);" > <img border="0" title="Turno" alt="" src="../../../../fastmedical_front/imagen/icono/good.gif"/></a>
                                                                     </td>
                                                                     <?php
                                                                 } else {
                                                                     if ($value[5] == 0) {// sin permiso
                                                                         ?>
                                                                         <td style="width: 22px; height: 20px ; background-color: #C0C0C0;" class="<?php echo $class; ?>" ><!-- domingo -->
-                                                                            <img border="0" title="Turno" alt="" src="../../../../medifacil_front/imagen/icono/good.gif"/>
+                                                                            <img border="0" title="Turno" alt="" src="../../../../fastmedical_front/imagen/icono/good.gif"/>
                                                                         </td>
                                                                         <?php
                                                                     }
@@ -315,14 +315,14 @@
                                                                 if ($value[5] == 1) {  // con permiso
                                                                     ?>
                                                                     <td  class="<?php echo $class; ?>" >
-                                                                        <a href="javascript:programacionPorDiaSinTurno(<?php echo $i ?>,<?php echo $a ?>,<?php echo $k ?>);"> <img border="0" title="Turno" alt="" src="../../../../medifacil_front/imagen/icono/good.gif"/></a>
+                                                                        <a href="javascript:programacionPorDiaSinTurno(<?php echo $i ?>,<?php echo $a ?>,<?php echo $k ?>);"> <img border="0" title="Turno" alt="" src="../../../../fastmedical_front/imagen/icono/good.gif"/></a>
                                                                     </td>
                                                                     <?php
                                                                 } else {
                                                                     if ($value[5] == 0) {//sin permiso
                                                                         ?>
                                                                         <td  bgcolor="#C0C0C0" >
-                                                                            <img border="0" title="Turno" alt="" src="../../../../medifacil_front/imagen/icono/good.gif"/>
+                                                                            <img border="0" title="Turno" alt="" src="../../../../fastmedical_front/imagen/icono/good.gif"/>
                                                                         </td>
                                                                         <?php
                                                                     }
@@ -343,13 +343,13 @@
                                                 <?php if ($value[5] == 1) { // Con permiso 
                                                     ?>
                                                     <td  style="width: 22px; height: 20px ;"  class="<?php echo $class; ?>">
-                                                        <a href="javascript:programacionEliminar(<?php echo $i ?>,<?php echo $a ?>,<?php echo $k ?>);"> <img border="0" title="Turno" alt="" src="../../../../medifacil_front/imagen/icono/borrar.png"/></a>
+                                                        <a href="javascript:programacionEliminar(<?php echo $i ?>,<?php echo $a ?>,<?php echo $k ?>);"> <img border="0" title="Turno" alt="" src="../../../../fastmedical_front/imagen/icono/borrar.png"/></a>
                                                     </td>
                                                     <td  style="width: 22px; height: 20px ;"  class="<?php echo $class; ?>">
-                                                        <a href="javascript:programacionBorrar(<?php echo $i ?>,<?php echo $a ?>,<?php echo $k ?>);"> <img border="0" title="Turno" alt="" src="../../../../medifacil_front/imagen/icono/borrar.gif"/></a>
+                                                        <a href="javascript:programacionBorrar(<?php echo $i ?>,<?php echo $a ?>,<?php echo $k ?>);"> <img border="0" title="Turno" alt="" src="../../../../fastmedical_front/imagen/icono/borrar.gif"/></a>
                                                     </td>
                                                     <td  style="width: 22px; height: 20px ;"  class="<?php echo $class; ?>">
-                                                        <a href="javascript:programacionActualizar(<?php echo $i ?>,<?php echo $a ?>,<?php echo $k ?>);"> <img border="0" title="Turno" alt="" src="../../../../medifacil_front/imagen/icono/reload3.png"/></a>
+                                                        <a href="javascript:programacionActualizar(<?php echo $i ?>,<?php echo $a ?>,<?php echo $k ?>);"> <img border="0" title="Turno" alt="" src="../../../../fastmedical_front/imagen/icono/reload3.png"/></a>
                                                     </td>
 
                                                 <?php } else { ?>
@@ -382,13 +382,13 @@
                                                         <tr>
                                                             <td>
                                                                 <div id="divOcultarTurnos">
-                                                                    <a href="javascript:OcultarTurnos(<?php echo $i ?>);"> <img border="0" title="Ocultar" alt="" src="../../../../medifacil_front/imagen/icono/Upload.png"/></a>
+                                                                    <a href="javascript:OcultarTurnos(<?php echo $i ?>);"> <img border="0" title="Ocultar" alt="" src="../../../../fastmedical_front/imagen/icono/Upload.png"/></a>
                                                                 </div>
                                                             </td>
                                                             <td>
 
                                                                 <div id="divMostrarTurnos">
-                                                                    <a href="javascript:MostrarTurnos(<?php echo $i ?>);"> <img border="0" title="Ocultar" alt="" src="../../../../medifacil_front/imagen/icono/Download.png"/></a>
+                                                                    <a href="javascript:MostrarTurnos(<?php echo $i ?>);"> <img border="0" title="Ocultar" alt="" src="../../../../fastmedical_front/imagen/icono/Download.png"/></a>
                                                                 </div>
                                                             </td>
                                                         </tr>

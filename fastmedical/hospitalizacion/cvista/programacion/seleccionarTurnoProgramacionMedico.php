@@ -39,7 +39,7 @@
                 <td colspan="2"></td>
                 <td colspan="2">
                     <a href="javascript:actualizarTurnoProgramacionMedico($('hcodigocronograma').value);">
-                                    <img src="../../../../medifacil_front/imagen/btn/b_actualizar_on.gif"/></a>                   
+                                    <img src="../../../../fastmedical_front/imagen/btn/b_actualizar_on.gif"/></a>                   
                 </td>                
                 <td colspan="2">                    
                     <input type="hidden" id="hCodigoTurno" value="<?php echo $codTur; ?>"/>

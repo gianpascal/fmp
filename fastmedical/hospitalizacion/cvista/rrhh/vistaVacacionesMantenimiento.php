@@ -44,17 +44,17 @@
                         </br>
                         <div id="idDivGuardarVacaciones">
                             <a id="btnGuardarVacaciones" href="javascript:guardarVacaciones();">
-                                <img border="0" src="../../../../medifacil_front/imagen/btn/b_grabar_off.gif" alt="" title="Buscar">
+                                <img border="0" src="../../../../fastmedical_front/imagen/btn/b_grabar_off.gif" alt="" title="Buscar">
                             </a>
                         </div>
                         <div id="idDivModificarVacaciones" style="display:none">
                             <a id="btnModificarVacaciones" href="javascript:actualizarVacaciones();">
-                                <img border="0" src="../../../../medifacil_front/imagen/btn/b_actualizar_on.gif" alt="" title="Buscar">
+                                <img border="0" src="../../../../fastmedical_front/imagen/btn/b_actualizar_on.gif" alt="" title="Buscar">
                             </a>
                         </div>
                         <div id="idDivCerrarVacaciones" style="display:none">
                             <a id="btnModificarVacaciones" href="javascript:cerrarVacaciones();">
-                                <img border="0" src="../../../../medifacil_front/imagen/btn/b_salir_on.gif" alt="" title="Buscar">
+                                <img border="0" src="../../../../fastmedical_front/imagen/btn/b_salir_on.gif" alt="" title="Buscar">
                             </a>
                         </div>
                         <p id="resultadoVacaciones" style="text-align: center"></p>

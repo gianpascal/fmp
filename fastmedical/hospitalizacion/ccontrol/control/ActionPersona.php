@@ -172,8 +172,8 @@ class ActionPersona {
         $arrayFilas = $o_LPersona->lObtenerCoincidencias($apellidoPaterno, $ApellidoMaterno, $primerNombre, $dni, $rId);
 
         if (count($arrayFilas) == 0) {
-            $botonAgregar = "<a href='#' onclick=\"javascript:registrarPersonaEssalud('$rId');\"><$array src='../../../../medifacil_front/imagen/btn/b_agregar_on1.gif' /></a>";
-            $botonCancelar = "<a href='#' onclick=\"javascript:cancelarRegistroEssalud('');\"><img src='../../../../medifacil_front/imagen/btn/b_cancelar_on.gif' /></a>";
+            $botonAgregar = "<a href='#' onclick=\"javascript:registrarPersonaEssalud('$rId');\"><$array src='../../../../fastmedical_front/imagen/btn/b_agregar_on1.gif' /></a>";
+            $botonCancelar = "<a href='#' onclick=\"javascript:cancelarRegistroEssalud('');\"><img src='../../../../fastmedical_front/imagen/btn/b_cancelar_on.gif' /></a>";
             $tabla = "La persona: <b>" . $apellidoPaterno . " " . $ApellidoMaterno . " " . $primerNombre . " " . $segundoNombre;
             $tabla.="</b> no se encuentra registrada en la base de datos del Hospital Municipal Los Olivos, desea registrarlo ahora?";
             $tabla.="<br/><br/>";
@@ -187,7 +187,7 @@ class ActionPersona {
             $o_Html->setColumnasOrdenar(array("0", "1", "2"));
             $tabla = "Es la primera vez que se va a creditar a: <b>" . $apellidoPaterno . " " . $ApellidoMaterno . " " . $primerNombre . " " . $segundoNombre;
             $tabla.="</b>,seleccione a la persona correcta, si no lo es puede agregarlo como nuevo";
-            $tabla.="<a href='#' onclick=\"javascript:registrarPersonaEssalud('$rId');\"><img src='../../../../medifacil_front/imagen/btn/b_agregar_on1.gif' /></a>";
+            $tabla.="<a href='#' onclick=\"javascript:registrarPersonaEssalud('$rId');\"><img src='../../../../fastmedical_front/imagen/btn/b_agregar_on1.gif' /></a>";
             $tabla.="<p><div style='height:50px;'>" . $o_Html->getTabla() . "</div>";
         }
 
@@ -231,8 +231,8 @@ class ActionPersona {
             $nombre = utf8_encode($arrayFilas[0][2]);
             $afiliacion = $arrayFilas[0][3];
             if ($_SESSION["permiso_formulario_servicio"][177]["VER_ACRE"] == 1) {
-                $ver = "<a href='#' onclick=\"javascript:ventanaEditaPersona('" . $codigo . "');\"><img style='height:15px;' src='../../../../medifacil_front/imagen/btn/b_ver_off.gif' title='Editar Persona'/></a>";
-                $ver2 = "<a href='#' onclick=\"javascript:ventanaEditaPersona('" . $codigo . "');\"><img style='height:15px;' src='../../../../medifacil_front/imagen/icono/ver.png' title='Paquete etareo'/></a>";               
+                $ver = "<a href='#' onclick=\"javascript:ventanaEditaPersona('" . $codigo . "');\"><img style='height:15px;' src='../../../../fastmedical_front/imagen/btn/b_ver_off.gif' title='Editar Persona'/></a>";
+                $ver2 = "<a href='#' onclick=\"javascript:ventanaEditaPersona('" . $codigo . "');\"><img style='height:15px;' src='../../../../fastmedical_front/imagen/icono/ver.png' title='Paquete etareo'/></a>";               
             } else {
                 $ver = "";
                 $ver2 = "";

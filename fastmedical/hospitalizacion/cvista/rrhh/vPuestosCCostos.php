@@ -48,7 +48,7 @@
 
                         </div>
                         <div style=" width: 30%; float: left; margin-left: 20px;" id="DivBuscar" >
-<!--                            <a href="javascript:verPuestos('x','','detallePuestoCentro');"><img border="0" title="Codigo de Persona" alt="" src="../../../../medifacil_front/imagen/btn/nbtn_buscar.gif"/></a>-->
+<!--                            <a href="javascript:verPuestos('x','','detallePuestoCentro');"><img border="0" title="Codigo de Persona" alt="" src="../../../../fastmedical_front/imagen/btn/nbtn_buscar.gif"/></a>-->
                             <!--                            /inicio-->
 
                             <?php
@@ -57,13 +57,13 @@
 
                                 echo "
                                 
-                        <a href=\"javascript:BuscarPuestosxEstados(document.getElementById('txtPuesto').value,document.getElementById('comboEstados').value);\"><img border=0 title=\"Codigo de Persona\"  src=\"../../../../medifacil_front/imagen/btn/nbtn_buscar.gif\"/></a>
+                        <a href=\"javascript:BuscarPuestosxEstados(document.getElementById('txtPuesto').value,document.getElementById('comboEstados').value);\"><img border=0 title=\"Codigo de Persona\"  src=\"../../../../fastmedical_front/imagen/btn/nbtn_buscar.gif\"/></a>
                        
                                     ";
                             } else {
 
                                 echo "
-                                <img border=0 title=\"Codigo de Persona\"  src=\"../../../../medifacil_front/imagen/btn/nbtn_buscar.gif\"/>
+                                <img border=0 title=\"Codigo de Persona\"  src=\"../../../../fastmedical_front/imagen/btn/nbtn_buscar.gif\"/>
                                                      
                                     ";
                             }
@@ -72,7 +72,7 @@
 
 
 
-<!--                            <a href="javascript:BuscarPuestosxEstados(document.getElementById('txtPuesto').value,document.getElementById('comboEstados').value);"><img border="0" title="Codigo de Persona" alt="" src="../../../../medifacil_front/imagen/btn/nbtn_buscar.gif"/></a>-->
+<!--                            <a href="javascript:BuscarPuestosxEstados(document.getElementById('txtPuesto').value,document.getElementById('comboEstados').value);"><img border="0" title="Codigo de Persona" alt="" src="../../../../fastmedical_front/imagen/btn/nbtn_buscar.gif"/></a>-->
 
 
 
@@ -154,17 +154,17 @@
                 <div id="botones" style="height:32px;">
                     <?php
                     if (isset($_SESSION["permiso_formulario_servicio"][204]["EDITAR_PUESTO_X_CCOSTO"]) && ($_SESSION["permiso_formulario_servicio"][204]["EDITAR_PUESTO_X_CCOSTO"] == 1)) {
-                        //<a href="javascript:editarDetallePuesto();"><img id="imagenEditar" style=" display: none;" src="../../../../medifacil_front/imagen/btn/b_editar_on.gif"/></a>
-                        echo "<a href=\"javascript:editarDetallePuesto();\"><img id=\"imagenEditar\" style=\" ;\" src=\"../../../../medifacil_front/imagen/btn/b_editar_on.gif\"/></a>";
+                        //<a href="javascript:editarDetallePuesto();"><img id="imagenEditar" style=" display: none;" src="../../../../fastmedical_front/imagen/btn/b_editar_on.gif"/></a>
+                        echo "<a href=\"javascript:editarDetallePuesto();\"><img id=\"imagenEditar\" style=\" ;\" src=\"../../../../fastmedical_front/imagen/btn/b_editar_on.gif\"/></a>";
                     } else {
-                        echo "<img id=\"imagenEditar\" style=\" display: none;\" src=\"../../../../medifacil_front/imagen/btn/b_editar_on.gif\"/>";
+                        echo "<img id=\"imagenEditar\" style=\" display: none;\" src=\"../../../../fastmedical_front/imagen/btn/b_editar_on.gif\"/>";
                     }
 
                     if (isset($_SESSION["permiso_formulario_servicio"][204]["AGREGAR_PUESTO_X_CCOSTO"]) && ($_SESSION["permiso_formulario_servicio"][204]["AGREGAR_PUESTO_X_CCOSTO"] == 1)) {
-                        //<a href="javascript:agregarDetallePuesto();"><img id="imagenAgregar" src="../../../../medifacil_front/imagen/btn/b_agregar_on.gif"/></a>
-                        echo "<a href=\"javascript:agregarDetallePuesto();\"><img id=\"imagenAgregar\" src=\"../../../../medifacil_front/imagen/btn/b_agregar_on.gif\"/></a>";
+                        //<a href="javascript:agregarDetallePuesto();"><img id="imagenAgregar" src="../../../../fastmedical_front/imagen/btn/b_agregar_on.gif"/></a>
+                        echo "<a href=\"javascript:agregarDetallePuesto();\"><img id=\"imagenAgregar\" src=\"../../../../fastmedical_front/imagen/btn/b_agregar_on.gif\"/></a>";
                     } else {
-                        echo "<img id=\"imagenAgregar\" src=\"../../../../medifacil_front/imagen/btn/b_agregar_on.gif\"/>";
+                        echo "<img id=\"imagenAgregar\" src=\"../../../../fastmedical_front/imagen/btn/b_agregar_on.gif\"/>";
                     }
                     ?>
 
@@ -220,7 +220,7 @@
             <?php
             if (isset($_SESSION["permiso_formulario_servicio"][204]["ASIGNAR_PUESTO_AREA"]) && ($_SESSION["permiso_formulario_servicio"][204]["ASIGNAR_PUESTO_AREA"] == 1)) {
                 $toolbarz = new ToollBar("left");
-                $toolbarz->SetBoton("btnAsignarPuestoSedeArea", "Asignar Puesto Área", "btn", "onclick,onkeypress", "asignarPuestoSedeArea()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/button_ok.png", "", "", 1);
+                $toolbarz->SetBoton("btnAsignarPuestoSedeArea", "Asignar Puesto Área", "btn", "onclick,onkeypress", "asignarPuestoSedeArea()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/button_ok.png", "", "", 1);
                 $toolbarz->Mostrar();
             }
             ?>

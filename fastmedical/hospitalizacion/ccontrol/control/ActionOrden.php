@@ -115,7 +115,7 @@ class ActionOrden {
         $oEProducto->setIid_tafiliacion(substr($parametros["codigoProducto"], 13, 2));
         $arrayProductosOrden = $oLOrden->getArrayAgregarProductos($oEProducto);
         $numProductos = count($arrayProductosOrden);
-        $imgCabecera = "../../../../medifacil_front/imagen/icono/agt_action_fail.png";
+        $imgCabecera = "../../../../fastmedical_front/imagen/icono/agt_action_fail.png";
 
         $arrayCabecera = array("1" => "Concepto", "2" => "Precio", "3" => "Cant", "4" => "Total", "6" => "<img src=\"$imgCabecera\" />");
         $oTabla = new Tabla1($arrayCabecera, 13, $arrayProductosOrden, 'tablaOrden', "fila2", "fila2", "", "", "", 0);

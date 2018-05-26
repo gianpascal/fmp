@@ -7,7 +7,7 @@
             <input type="hidden" id="hIdAntecedente_<?php echo $numero; ?>" value="<?php echo $idAntecedente; ?>" >
             <div style="float: right; margin-top: -15px;"  >
                 <a href="javascript:;" onclick="javascript:cerrarAntecedente(<?php echo $numero; ?>);">
-                    <img src='../../../../medifacil_front/imagen/icono/borrar.png' alt="Cerrar antecedente">
+                    <img src='../../../../fastmedical_front/imagen/icono/borrar.png' alt="Cerrar antecedente">
                 </a>
             </div>
             <fieldset style="margin:5px; ">

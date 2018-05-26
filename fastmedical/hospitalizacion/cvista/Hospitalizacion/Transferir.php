@@ -180,14 +180,14 @@ $exti = date("A");
                             <td>
                                 <?php
                                 $toolbar3 = new ToollBar("left");
-                                $toolbar3->SetBoton("GRABAR", "GRABAR", "btn", "onclick,onkeypress", "guardarTransferenciaPaciente()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/grabar.png");
+                                $toolbar3->SetBoton("GRABAR", "GRABAR", "btn", "onclick,onkeypress", "guardarTransferenciaPaciente()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/grabar.png");
                                 $toolbar3->Mostrar();
                                 ?>
                             </td>
                             <td>
                                 <?php
                                 $toolbar3 = new ToollBar("left");
-                                $toolbar3->SetBoton("ELIMINAR", "SALIR", "btn", "onclick,onkeypress", "cerrarTransferenciaPaciente()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/salir.gif");
+                                $toolbar3->SetBoton("ELIMINAR", "SALIR", "btn", "onclick,onkeypress", "cerrarTransferenciaPaciente()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/salir.gif");
                                 $toolbar3->Mostrar();
                                 ?>
                             </td>

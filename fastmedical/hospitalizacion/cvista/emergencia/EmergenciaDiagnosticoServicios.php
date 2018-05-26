@@ -2,7 +2,7 @@
 <div align="center">
 
     <a href="javascript:ExpotarExcelDiagnostico();">
-<img border="0" src="../../../../medifacil_front/imagen/btn/b_exportarexcel_on.gif" alt="" title="Exportar a Excel">
+<img border="0" src="../../../../fastmedical_front/imagen/btn/b_exportarexcel_on.gif" alt="" title="Exportar a Excel">
 </a>
 </div>
 <fieldset  style="margin:auto;width:auto;height:auto; "> 

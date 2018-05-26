@@ -56,7 +56,7 @@ $toolbar3 = new ToollBar("right");
                             <div id="btnGrabar" style="width: 90px;" align="center">
                                 <?php
                                 if (isset($_SESSION["permiso_formulario_servicio"][121]["GRABAR_MODALIDAD_CONTRATO"]) && ($_SESSION["permiso_formulario_servicio"][121]["GRABAR_MODALIDAD_CONTRATO"] == 1)) {
-                                    $toolbar0->SetBoton("GrabarContrato", "Grabar", "btn", "onclick,onkeypress", "grabarContrato()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/grabar.png", "", "", 1);
+                                    $toolbar0->SetBoton("GrabarContrato", "Grabar", "btn", "onclick,onkeypress", "grabarContrato()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/grabar.png", "", "", 1);
                                     $toolbar0->Mostrar();
                                 }
                                 ?>
@@ -64,16 +64,16 @@ $toolbar3 = new ToollBar("right");
                             <div id="btnEditar" style="width: 350px;display: none;" align="center">
                                 <?php
                                 $hayBotones = 0;
-                                $toolbar1->SetBoton("Reecontratacion", "Reecontratacion Personal", "btn", "onclick,onkeypress", "reecontratacionPersonal()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/nuevo.png", "", "", 1);
+                                $toolbar1->SetBoton("Reecontratacion", "Reecontratacion Personal", "btn", "onclick,onkeypress", "reecontratacionPersonal()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/nuevo.png", "", "", 1);
                                 $hayBotones = 1;
 
 
                                 if (isset($_SESSION["permiso_formulario_servicio"][121]["NUEVA_MODALIDAD_CONTRATO"]) && ($_SESSION["permiso_formulario_servicio"][121]["NUEVA_MODALIDAD_CONTRATO"] == 1)) {
-                                    $toolbar1->SetBoton("NuevoContrato", "Nuevo Contrato", "btn", "onclick,onkeypress", "nuevoContrato()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/nuevo.png", "", "", 1);
+                                    $toolbar1->SetBoton("NuevoContrato", "Nuevo Contrato", "btn", "onclick,onkeypress", "nuevoContrato()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/nuevo.png", "", "", 1);
                                     $hayBotones = 1;
                                 }
                                 if (isset($_SESSION["permiso_formulario_servicio"][121]["EDITAR_MODALIDAD_CONTRATO"]) && ($_SESSION["permiso_formulario_servicio"][121]["EDITAR_MODALIDAD_CONTRATO"] == 1)) {
-                                    $toolbar1->SetBoton("EditarContrato", "Editar", "btn", "onclick,onkeypress", "editarContrato()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/editar.png", "", "", 1);
+                                    $toolbar1->SetBoton("EditarContrato", "Editar", "btn", "onclick,onkeypress", "editarContrato()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/editar.png", "", "", 1);
                                     $hayBotones = 1;
                                 }
 //                                $toolbar1->Mostrar();
@@ -85,7 +85,7 @@ $toolbar3 = new ToollBar("right");
                             <div id="btnModificar" style="width: 90px; display: none;" align="center">
                                 <?php
                                 if (isset($_SESSION["permiso_formulario_servicio"][121]["MODIFICAR_MODALIDAD_CONTRATO"]) && ($_SESSION["permiso_formulario_servicio"][121]["MODIFICAR_MODALIDAD_CONTRATO"] == 1)) {
-                                    $toolbar2->SetBoton("ModificarContrato", "Modificar", "btn", "onclick,onkeypress", "modificarContrato()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/grabar.png", "", "", 1);
+                                    $toolbar2->SetBoton("ModificarContrato", "Modificar", "btn", "onclick,onkeypress", "modificarContrato()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/grabar.png", "", "", 1);
                                     $toolbar2->Mostrar();
                                 }
                                 ?>
@@ -93,7 +93,7 @@ $toolbar3 = new ToollBar("right");
                             </div>
                                     <div id="btnModificarFecha" style="width: 90px; display: none;" align="center">
                                 <?php
-                                $toolbar3->SetBoton("ModificarContratoxx", "Modificar Solo Fecha Contrato", "btn", "onclick,onkeypress", "modificarContratoSoloFecha()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/grabar.png", "", "", 1);
+                                $toolbar3->SetBoton("ModificarContratoxx", "Modificar Solo Fecha Contrato", "btn", "onclick,onkeypress", "modificarContratoSoloFecha()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/grabar.png", "", "", 1);
                                 $toolbar3->Mostrar();
                                 ?>
 <!--                                btnModificar-->
@@ -132,7 +132,7 @@ $toolbar3 = new ToollBar("right");
                 <div style="margin:1px;width:50%;height:27px;padding: 0px;">
                     <div  id ="DivEliminar" style=" float:right;width:33%; visibility: hidden;" align="center">
                         <a href="javascript:enableAccion(3);">
-                            <img border="0" title="" alt="" src="../../../../medifacil_front/imagen/btn/b_eliminar_on.gif"/></a>
+                            <img border="0" title="" alt="" src="../../../../fastmedical_front/imagen/btn/b_eliminar_on.gif"/></a>
                     </div>
                     <div  id ="DivAgregar" style=" float:right;width:33%;" align="center">
                         <?php
@@ -140,17 +140,17 @@ $toolbar3 = new ToollBar("right");
                         //if($_SESSION['permiso_formulario'][121]['iid_formulario']==121 && $_SESSION['permiso_formulario'][211]['iid_formulario']==211)
                         if (isset($_SESSION['permiso_formulario'][121]) && isset($_SESSION['permiso_formulario'][212])) {
                             if ($_SESSION["permiso_formulario_servicio"][121]["AGREGAR_PUESTO_EMP"] == 1)
-                                echo "<a href=\"javascript:agregarPuestoEmpleado();\"><img border=\"0\" src=\"../../../../medifacil_front/imagen/btn/b_agregar_on.gif\"/></a>";
+                                echo "<a href=\"javascript:agregarPuestoEmpleado();\"><img border=\"0\" src=\"../../../../fastmedical_front/imagen/btn/b_agregar_on.gif\"/></a>";
                         }
                         else {
                             if (!isset($_SESSION['permiso_formulario'][121]) && isset($_SESSION['permiso_formulario'][212])) {
                                 if ($_SESSION["permiso_formulario_servicio"][212]["AGREGAR_PUESTO_EMP"] == 1)
-                                    echo "<a href=\"javascript:agregarPuestoEmpleado();\"><img border=\"0\" src=\"../../../../medifacil_front/imagen/btn/b_agregar_on.gif\"/></a>";
+                                    echo "<a href=\"javascript:agregarPuestoEmpleado();\"><img border=\"0\" src=\"../../../../fastmedical_front/imagen/btn/b_agregar_on.gif\"/></a>";
                             }
                             else {
                                 if (isset($_SESSION['permiso_formulario'][121]) && !isset($_SESSION['permiso_formulario'][212])) {
                                     if ($_SESSION["permiso_formulario_servicio"][121]["AGREGAR_PUESTO_EMP"] == 1)
-                                        echo "<a href=\"javascript:agregarPuestoEmpleado();\"><img border=\"0\" src=\"../../../../medifacil_front/imagen/btn/b_agregar_on.gif\"/></a>";
+                                        echo "<a href=\"javascript:agregarPuestoEmpleado();\"><img border=\"0\" src=\"../../../../fastmedical_front/imagen/btn/b_agregar_on.gif\"/></a>";
                                 }
                             }
                         }
@@ -158,7 +158,7 @@ $toolbar3 = new ToollBar("right");
                     </div>
                     <div  id ="DivEditar" style=" float:right;width:33%; visibility: hidden;" align="center">
                         <a href="javascript:enableAccion(1);">
-                            <img border="0" title="" alt="" src="../../../../medifacil_front/imagen/btn/b_editar_on.gif"/></a>
+                            <img border="0" title="" alt="" src="../../../../fastmedical_front/imagen/btn/b_editar_on.gif"/></a>
                     </div>
                 </div>
                 <!--</fieldset>-->
@@ -207,23 +207,23 @@ $toolbar3 = new ToollBar("right");
                                 //121:Formulario de registro de personal - 212:Formulario de datos de usuario
                                 if (isset($_SESSION['permiso_formulario'][121]) && isset($_SESSION['permiso_formulario'][212])) {
                                     if ($_SESSION["permiso_formulario_servicio"][121]["CAMBIAR_ESTADO_PUESTO_EMP"] == 1)
-                                        echo "<a href=\"javascript:ventanaCambiarEstadoPuestoEmpleado('cambioEstado');\"><img id=\"btnCambiarEstado\" style=\"display: none;\" border=\"0\" src=\"../../../../medifacil_front/imagen/btn/btn_cambiarEstado.gif\"/></a>";
+                                        echo "<a href=\"javascript:ventanaCambiarEstadoPuestoEmpleado('cambioEstado');\"><img id=\"btnCambiarEstado\" style=\"display: none;\" border=\"0\" src=\"../../../../fastmedical_front/imagen/btn/btn_cambiarEstado.gif\"/></a>";
                                 }
                                 else {
                                     if (!isset($_SESSION['permiso_formulario'][121]) && isset($_SESSION['permiso_formulario'][212])) {
                                         if ($_SESSION["permiso_formulario_servicio"][212]["CAMBIAR_ESTADO_PUESTO_EMP"] == 1)
-                                            echo "<a href=\"javascript:ventanaCambiarEstadoPuestoEmpleado('cambioEstado');\"><img id=\"btnCambiarEstado\" style=\"display: none;\" border=\"0\" src=\"../../../../medifacil_front/imagen/btn/btn_cambiarEstado.gif\"/></a>";
+                                            echo "<a href=\"javascript:ventanaCambiarEstadoPuestoEmpleado('cambioEstado');\"><img id=\"btnCambiarEstado\" style=\"display: none;\" border=\"0\" src=\"../../../../fastmedical_front/imagen/btn/btn_cambiarEstado.gif\"/></a>";
                                     }
                                     else {
                                         if (isset($_SESSION['permiso_formulario'][121]) && !isset($_SESSION['permiso_formulario'][212])) {
                                             if ($_SESSION["permiso_formulario_servicio"][121]["CAMBIAR_ESTADO_PUESTO_EMP"] == 1)
-                                                echo "<a href=\"javascript:ventanaCambiarEstadoPuestoEmpleado('cambioEstado');\"><img id=\"btnCambiarEstado\" style=\"display: none;\" border=\"0\" src=\"../../../../medifacil_front/imagen/btn/btn_cambiarEstado.gif\"/></a>";
+                                                echo "<a href=\"javascript:ventanaCambiarEstadoPuestoEmpleado('cambioEstado');\"><img id=\"btnCambiarEstado\" style=\"display: none;\" border=\"0\" src=\"../../../../fastmedical_front/imagen/btn/btn_cambiarEstado.gif\"/></a>";
                                         }
                                     }
                                 }
                                 ?>
                                 <!--<a href="javascript:ventanaCambiarEstadoPuestoEmpleado('cambioEstado');">
-                                    <img id="btnCambiarEstado" style=" display: none;" border="0" title="" alt="" src="../../../../medifacil_front/imagen/btn/btn_cambiarEstado.gif"/>
+                                    <img id="btnCambiarEstado" style=" display: none;" border="0" title="" alt="" src="../../../../fastmedical_front/imagen/btn/btn_cambiarEstado.gif"/>
                                 </a>-->
                             </div>
                         </div>

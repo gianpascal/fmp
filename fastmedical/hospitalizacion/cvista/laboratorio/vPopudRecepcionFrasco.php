@@ -46,8 +46,8 @@
             <td colspan="3" align="center">
                 <table>
                     <tr>
-                        <td><img border="0" src="../../../../medifacil_front/imagen/btn/recibir.bmp" title="Recibir" id="imgEntregaFrasco" onclick="recepcionarFrasco()"></td>
-                        <td><img border="0" src="../../../../medifacil_front/imagen/btn/cancelar.bmp" title="Cancelar" id="imgEntregaFrasco" onclick="cerrarPopudRecepcionFrasco()" ></td>
+                        <td><img border="0" src="../../../../fastmedical_front/imagen/btn/recibir.bmp" title="Recibir" id="imgEntregaFrasco" onclick="recepcionarFrasco()"></td>
+                        <td><img border="0" src="../../../../fastmedical_front/imagen/btn/cancelar.bmp" title="Cancelar" id="imgEntregaFrasco" onclick="cerrarPopudRecepcionFrasco()" ></td>
                     </tr>
                 </table>
             </td>

@@ -74,8 +74,8 @@ CABECERA
 #formu{margin:2px 2px 5px 2px; padding:5px 5px 10px 5px; border:1px solid #CCCCCC; }						
 #gridbox_cn{background-color:white; width:100%; margin:2px; padding:5px; border:1px #CCCCCC solid}						
 #Localidad{float:left;} 						
-#Main #Name #escudo{background:url(../../medifacil_front/imagen/logomdlo.gif) no-repeat; width:42px; height:53px; float:left; margin:2px 0 0 0;} 						
-#Main #Name #moduloname{background:url(../../medifacil_front/imagen/logo_sam.gif) no-repeat; width:104px; height:42px; float:left; margin:10px 0 0 0;}						
+#Main #Name #escudo{background:url(../../fastmedical_front/imagen/logomdlo.gif) no-repeat; width:42px; height:53px; float:left; margin:2px 0 0 0;} 						
+#Main #Name #moduloname{background:url(../../fastmedical_front/imagen/logo_sam.gif) no-repeat; width:104px; height:42px; float:left; margin:10px 0 0 0;}						
 #Main{
     width:98%;
     height:auto;
@@ -144,7 +144,7 @@ CABECERA
     top: 19px;
     /*z-index:100;*/
     position:absolute;
-    background-image: url(../../medifacil_front/../medifacil_front/imagen/logo/logo_medifacil.png);
+    background-image: url(../../fastmedical_front/../fastmedical_front/imagen/logo/logo_medifacil.png);
     background-repeat: no-repeat;
 }
 #MainLogo01{
@@ -155,7 +155,7 @@ CABECERA
     top: 19px;
     /*z-index:100;*/
     position:absolute;
-    background-image: url(../../medifacil_front/imagen/logo/hospi1.png);
+    background-image: url(../../fastmedical_front/imagen/logo/hospi1.png);
     background-repeat: no-repeat;
 }
 #MainLogo02{
@@ -166,7 +166,7 @@ CABECERA
     top: 19px;
     /*z-index:100;*/
     position:absolute;
-    background-image: url(../../medifacil_front/imagen/logo/hospi2.png);
+    background-image: url(../../fastmedical_front/imagen/logo/hospi2.png);
     background-repeat: no-repeat;
 
 
@@ -513,7 +513,7 @@ tr.title{
     background-image:url(../imagen/inicio/bg_grid.gif);
 }						
 tr.titlea{color:#8495AC; }
-tr.titleb{font-size:1em; font-weight:bold; text-align:center; color:#8495AC; height:20px; background-color:#CCCCCC; background-image:url(../../medifacil_front/imagen/fondo/bg_grid2.gif);}
+tr.titleb{font-size:1em; font-weight:bold; text-align:center; color:#8495AC; height:20px; background-color:#CCCCCC; background-image:url(../../fastmedical_front/imagen/fondo/bg_grid2.gif);}
 td.borde{border-width: 0px 0px 1px 0px; border-style: groove dotted dashed solid; border-color: #333333 #333333 #000000 #333333;} 						
 td.bordes{border-width: 1px 0px 0px 0px; border-style: dashed dotted dashed solid; border-color: #000000 #333333 #333333 #333333;} 						
 /*************************************************************************************
@@ -555,7 +555,7 @@ btn*/
     font-family:Arial, Helvetica, sans-serif;
     /*float:left;*/
     white-space:nowrap;
-    background:url("../../medifacil_front/imagen/btn/btn_hover.gif") repeat-x right top;
+    background:url("../../fastmedical_front/imagen/btn/btn_hover.gif") repeat-x right top;
     display:block;
     padding:3px 5px;
     color:#24618E;
@@ -595,7 +595,7 @@ btn*/
 
 }
 .tablaOrden thead tr th{
-    background-image:url(../../medifacil_front/imagen/fondo/bg_foot.gif);
+    background-image:url(../../fastmedical_front/imagen/fondo/bg_foot.gif);
     white-space:nowrap;
     border-top:none;
     border-bottom:none;
@@ -1032,7 +1032,7 @@ TABS
     color: #000000;
     background-repeat:  repeat-x;
     background-position: bottom;
-    background-image: url(../../medifacil_front/imagen/icono/btnHorarios.png);
+    background-image: url(../../fastmedical_front/imagen/icono/btnHorarios.png);
 
 }
 .btnHorarios:hover {

@@ -106,9 +106,9 @@ $o_Cal01 = new Calendario('cal03', 'botonAccionCalendario', 'cabeceraCalendario'
                                           <td></td>
                                        <td   align="center" colspan="4" >
                                             <a href="javascript:BusquedaPersonaPaciente();">
-                                                <img border="0" title="Buscar" alt="" src="../../../../medifacil_front/imagen/btn/b_buscar_on.gif"/></a>                                                                               
+                                                <img border="0" title="Buscar" alt="" src="../../../../fastmedical_front/imagen/btn/b_buscar_on.gif"/></a>                                                                               
                                             <a href="javascript:LimpiarPersonaPaciente();">
-                                                <img border="0" title="Buscar" alt="" src="../../../../medifacil_front/imagen/btn/btn_limpiar.gif"/></a>
+                                                <img border="0" title="Buscar" alt="" src="../../../../fastmedical_front/imagen/btn/btn_limpiar.gif"/></a>
                                         </td> 
                                      
 

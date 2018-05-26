@@ -45,7 +45,7 @@ if ($arrayDatosUnidadMedida[0][3] == 1) {
 </div>
 <div style="float:inherit; padding-left: 140px;">
     <?php
-    $toolbar3->SetBoton("eliminarTipoUnidadMedida", "Eliminar  ", "btn", "onclick,onkeypress", "eliminarUnidadMedida()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/i_nomailappt.png", "", "", 1);
+    $toolbar3->SetBoton("eliminarTipoUnidadMedida", "Eliminar  ", "btn", "onclick,onkeypress", "eliminarUnidadMedida()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/i_nomailappt.png", "", "", 1);
     $toolbar3->Mostrar();
     ?> 
 </div> 

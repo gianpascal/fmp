@@ -91,7 +91,7 @@ $cboTipoAtributo = array(0 => "Un Valor", 1 => "Multi Valor");
                                             <br>
                                             <div id="divBtnGrabarReporte" style="width: 80px; display: block;">
                                                 <?php
-                                                $toolbarr1->SetBoton("GrabarReporte","Grabar","btn","onclick,onkeypress","mantenimientoReporte('formReporte','reporte','grabar')",$_SESSION['path_principal']."../medifacil_front/imagen/icono/grabar.png","","",1);
+                                                $toolbarr1->SetBoton("GrabarReporte","Grabar","btn","onclick,onkeypress","mantenimientoReporte('formReporte','reporte','grabar')",$_SESSION['path_principal']."../fastmedical_front/imagen/icono/grabar.png","","",1);
                                                 $toolbarr1->Mostrar();
                                                 ?>
                                             </div>
@@ -100,13 +100,13 @@ $cboTipoAtributo = array(0 => "Un Valor", 1 => "Multi Valor");
                                                     <tr>
                                                         <td>
                                                             <?php
-                                                            $toolbarr2->SetBoton("EditarReporte","Editar","btn","onclick,onkeypress","mantenimientoReporte('','reporte','editar')",$_SESSION['path_principal']."../medifacil_front/imagen/icono/editar.png","","",1);
+                                                            $toolbarr2->SetBoton("EditarReporte","Editar","btn","onclick,onkeypress","mantenimientoReporte('','reporte','editar')",$_SESSION['path_principal']."../fastmedical_front/imagen/icono/editar.png","","",1);
                                                             $toolbarr2->Mostrar();
                                                             ?>
                                                         </td>
                                                         <td>
                                                             <?php
-                                                            $toolbarr3->SetBoton("NuevoReporte","Nuevo","btn","onclick,onkeypress","limpiarFormulario('formReporte')",$_SESSION['path_principal']."../medifacil_front/imagen/icono/window_new.png","","",1);
+                                                            $toolbarr3->SetBoton("NuevoReporte","Nuevo","btn","onclick,onkeypress","limpiarFormulario('formReporte')",$_SESSION['path_principal']."../fastmedical_front/imagen/icono/window_new.png","","",1);
                                                             $toolbarr3->Mostrar();
                                                             ?>
                                                         </td>
@@ -115,7 +115,7 @@ $cboTipoAtributo = array(0 => "Un Valor", 1 => "Multi Valor");
                                             </div>
                                             <div id="divBtnModificarReporte" style="width: 80px; display: none;">
                                                 <?php
-                                                $toolbarr4->SetBoton("ModificarReporte","Modificar","btn","onclick,onkeypress","mantenimientoReporte('formReporte','reporte','modificar')",$_SESSION['path_principal']."../medifacil_front/imagen/icono/grabar.png","","",1);
+                                                $toolbarr4->SetBoton("ModificarReporte","Modificar","btn","onclick,onkeypress","mantenimientoReporte('formReporte','reporte','modificar')",$_SESSION['path_principal']."../fastmedical_front/imagen/icono/grabar.png","","",1);
                                                 $toolbarr4->Mostrar();
                                                 ?>
                                             </div>
@@ -155,7 +155,7 @@ $cboTipoAtributo = array(0 => "Un Valor", 1 => "Multi Valor");
                                         <td width="15%" rowspan="2">
                                       <div id="divVerAtributos" style="width: 80px; display: block;">
                                                 <?php
-                                                $toolbarg1->SetBoton("VerAtributo","Asignar Atributos","btn","onclick,onkeypress","asignarEtiquetaAtributo()",$_SESSION['path_principal']."../medifacil_front/imagen/icono/b_ver_on.gif","","",1);
+                                                $toolbarg1->SetBoton("VerAtributo","Asignar Atributos","btn","onclick,onkeypress","asignarEtiquetaAtributo()",$_SESSION['path_principal']."../fastmedical_front/imagen/icono/b_ver_on.gif","","",1);
                                                 $toolbarg1->Mostrar();
                                                 ?>
                                             </div></td>
@@ -177,7 +177,7 @@ $cboTipoAtributo = array(0 => "Un Valor", 1 => "Multi Valor");
                                             <br>
                                             <div id="divBtnGrabarEtiqueta" style="width: 80px; display: block;">
                                                 <?php
-                                                $toolbare1->SetBoton("GrabarEtiqueta","Grabar","btn","onclick,onkeypress","mantenimientoReporte('formEtiqueta','etiqueta','grabar')",$_SESSION['path_principal']."../medifacil_front/imagen/icono/grabar.png","","",1);
+                                                $toolbare1->SetBoton("GrabarEtiqueta","Grabar","btn","onclick,onkeypress","mantenimientoReporte('formEtiqueta','etiqueta','grabar')",$_SESSION['path_principal']."../fastmedical_front/imagen/icono/grabar.png","","",1);
                                                 $toolbare1->Mostrar();
                                                 ?>
                                             </div>
@@ -186,12 +186,12 @@ $cboTipoAtributo = array(0 => "Un Valor", 1 => "Multi Valor");
                                                     <tr>
                                                         <td>
                                                             <?php
-                                                            $toolbare2->SetBoton("EditarEtiqueta","Editar","btn","onclick,onkeypress","mantenimientoReporte('','etiqueta','editar')",$_SESSION['path_principal']."../medifacil_front/imagen/icono/editar.png","","",1);
+                                                            $toolbare2->SetBoton("EditarEtiqueta","Editar","btn","onclick,onkeypress","mantenimientoReporte('','etiqueta','editar')",$_SESSION['path_principal']."../fastmedical_front/imagen/icono/editar.png","","",1);
                                                             $toolbare2->Mostrar();
                                                             ?>                                                        </td>
                                                         <td>
                                                             <?php
-                                                            $toolbare3->SetBoton("NuevaEtiqueta","Nuevo","btn","onclick,onkeypress","limpiarFormulario('formEtiqueta')",$_SESSION['path_principal']."../medifacil_front/imagen/icono/window_new.png","","",1);
+                                                            $toolbare3->SetBoton("NuevaEtiqueta","Nuevo","btn","onclick,onkeypress","limpiarFormulario('formEtiqueta')",$_SESSION['path_principal']."../fastmedical_front/imagen/icono/window_new.png","","",1);
                                                             $toolbare3->Mostrar();
                                                             ?>                                                        </td>
                                                     </tr>
@@ -199,7 +199,7 @@ $cboTipoAtributo = array(0 => "Un Valor", 1 => "Multi Valor");
                                             </div>
                                             <div id="divBtnModificarEtiqueta" style="width: 80px; display: none;">
                                                 <?php
-                                                $toolbare4->SetBoton("ModificarEtiqueta","Modificar","btn","onclick,onkeypress","mantenimientoReporte('formEtiqueta','etiqueta','modificar')",$_SESSION['path_principal']."../medifacil_front/imagen/icono/grabar.png","","",1);
+                                                $toolbare4->SetBoton("ModificarEtiqueta","Modificar","btn","onclick,onkeypress","mantenimientoReporte('formEtiqueta','etiqueta','modificar')",$_SESSION['path_principal']."../fastmedical_front/imagen/icono/grabar.png","","",1);
                                                 $toolbare4->Mostrar();
                                                 ?>
                                             </div>                                        </td>
@@ -256,7 +256,7 @@ $cboTipoAtributo = array(0 => "Un Valor", 1 => "Multi Valor");
                                             <br>
                                             <div id="divBtnGrabarAtributo" style="width: 80px; display: block;">
                                                 <?php
-                                                $toolbara1->SetBoton("GrabarAtributo","Grabar","btn","onclick,onkeypress","mantenimientoReporte('formAtributo','atributo','grabar')",$_SESSION['path_principal']."../medifacil_front/imagen/icono/grabar.png","","",1);
+                                                $toolbara1->SetBoton("GrabarAtributo","Grabar","btn","onclick,onkeypress","mantenimientoReporte('formAtributo','atributo','grabar')",$_SESSION['path_principal']."../fastmedical_front/imagen/icono/grabar.png","","",1);
                                                 $toolbara1->Mostrar();
                                                 ?>
                                             </div>
@@ -265,13 +265,13 @@ $cboTipoAtributo = array(0 => "Un Valor", 1 => "Multi Valor");
                                                     <tr>
                                                         <td>
                                                             <?php
-                                                            $toolbara2->SetBoton("EditarAtributo","Editar","btn","onclick,onkeypress","mantenimientoReporte('','atributo','editar')",$_SESSION['path_principal']."../medifacil_front/imagen/icono/editar.png","","",1);
+                                                            $toolbara2->SetBoton("EditarAtributo","Editar","btn","onclick,onkeypress","mantenimientoReporte('','atributo','editar')",$_SESSION['path_principal']."../fastmedical_front/imagen/icono/editar.png","","",1);
                                                             $toolbara2->Mostrar();
                                                             ?>
                                                         </td>
                                                         <td>
                                                             <?php
-                                                            $toolbara3->SetBoton("NuevoAtributo","Nuevo","btn","onclick,onkeypress","limpiarFormulario('formAtributo')",$_SESSION['path_principal']."../medifacil_front/imagen/icono/window_new.png","","",1);
+                                                            $toolbara3->SetBoton("NuevoAtributo","Nuevo","btn","onclick,onkeypress","limpiarFormulario('formAtributo')",$_SESSION['path_principal']."../fastmedical_front/imagen/icono/window_new.png","","",1);
                                                             $toolbara3->Mostrar();
                                                             ?>
                                                         </td>
@@ -281,7 +281,7 @@ $cboTipoAtributo = array(0 => "Un Valor", 1 => "Multi Valor");
                                             </div>
                                             <div id="divBtnModificarAtributo" style="width: 80px; display: none;">
                                                 <?php
-                                                $toolbara4->SetBoton("ModificarAtributo","Modificar","btn","onclick,onkeypress","mantenimientoReporte('formAtributo','atributo','modificar')",$_SESSION['path_principal']."../medifacil_front/imagen/icono/grabar.png","","",1);
+                                                $toolbara4->SetBoton("ModificarAtributo","Modificar","btn","onclick,onkeypress","mantenimientoReporte('formAtributo','atributo','modificar')",$_SESSION['path_principal']."../fastmedical_front/imagen/icono/grabar.png","","",1);
                                                 $toolbara4->Mostrar();
                                                 ?>
                                             </div>

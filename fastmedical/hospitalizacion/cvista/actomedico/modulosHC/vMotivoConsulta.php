@@ -6,7 +6,7 @@
                     <h1>Motivo de la Consulta</h1>
                 </td>
                 <td style="width:3%">
-                    <img id="Div_ConsultaMedicaCuerpoicono" src='../../../../medifacil_front/imagen/icono/desplegar.png' title='desplegar' alt=""/>
+                    <img id="Div_ConsultaMedicaCuerpoicono" src='../../../../fastmedical_front/imagen/icono/desplegar.png' title='desplegar' alt=""/>
                 </td>
             </tr>
         </table>

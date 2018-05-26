@@ -24,9 +24,9 @@ class LAfiliaciones {
                 $fila["dFechaNacimiento"] = date("d/m/Y", $fechaNac);
             }
             if ($fila["cTipoPersona"] == 1) {
-                $imagenHab = $fila["cTipoPersona"] . "<img src='../../../../medifacil_front/imagen/icono/agt_action_success.png' alt='Activa' title='Activa'/>";
+                $imagenHab = $fila["cTipoPersona"] . "<img src='../../../../fastmedical_front/imagen/icono/agt_action_success.png' alt='Activa' title='Activa'/>";
             } else {
-                $imagenHab = $fila["cTipoPersona"] . "<img src='../../../../medifacil_front/imagen/icono/agt_action_fail.png' alt='Inactiva' title='Inactiva'/>";
+                $imagenHab = $fila["cTipoPersona"] . "<img src='../../../../fastmedical_front/imagen/icono/agt_action_fail.png' alt='Inactiva' title='Inactiva'/>";
             }
             $fila["iconoActivo"] = $imagenHab;
             array_push($resultadoArray, $fila);
@@ -41,9 +41,9 @@ class LAfiliaciones {
 
         foreach ($resultado as $indice => $fila) {
             if ($fila["b_activo"] == 1) {
-                $imagenHab = $fila["b_activo"] . "<img src='../../../../medifacil_front/imagen/icono/agt_action_success.png' alt='Activo' title='Activo'/>";
+                $imagenHab = $fila["b_activo"] . "<img src='../../../../fastmedical_front/imagen/icono/agt_action_success.png' alt='Activo' title='Activo'/>";
             } else {
-                $imagenHab = $fila["b_activo"] . "<img src='../../../../medifacil_front/imagen/icono/agt_action_fail.png' alt='Inactivo' title='Inactivo'/>";
+                $imagenHab = $fila["b_activo"] . "<img src='../../../../fastmedical_front/imagen/icono/agt_action_fail.png' alt='Inactivo' title='Inactivo'/>";
             }
             $fila["iconoActivo"] = $imagenHab;
             array_push($resultadoArray, $fila);
@@ -63,13 +63,13 @@ class LAfiliaciones {
                 $fila["dfecfin"] = date("d/m/Y", $fechaFin);
             }
             if ($fila["estado"] == 1) {
-                $imagenHab = $fila["estado"] . "<img src='../../../../medifacil_front/imagen/icono/agt_action_success.png' alt='Activa' title='Activa'/>";
+                $imagenHab = $fila["estado"] . "<img src='../../../../fastmedical_front/imagen/icono/agt_action_success.png' alt='Activa' title='Activa'/>";
             } else {
                 if ($fila["estado"] == 0) {
-                    $imagenHab = $fila["estado"] . "<img src='../../../../medifacil_front/imagen/icono/agt_action_fail.png' alt='Eliminada' title='Eliminada'/>";
+                    $imagenHab = $fila["estado"] . "<img src='../../../../fastmedical_front/imagen/icono/agt_action_fail.png' alt='Eliminada' title='Eliminada'/>";
                 } else {
                     if ($fila["estado"] == 2) {
-                        $imagenHab = $fila["estado"] . "<img src='../../../../medifacil_front/imagen/icono/agt_action_fail.png' alt='Cerrada' title='Cerrada'/>";
+                        $imagenHab = $fila["estado"] . "<img src='../../../../fastmedical_front/imagen/icono/agt_action_fail.png' alt='Cerrada' title='Cerrada'/>";
                     }
                 }
             }
@@ -97,13 +97,13 @@ class LAfiliaciones {
             }
 
             if ($fila["estado"] == 1) {
-                $imagenHab = $fila["estado"] . "<img src='../../../../medifacil_front/imagen/icono/agt_action_success.png' alt='Activo' title='Activo'/>";
+                $imagenHab = $fila["estado"] . "<img src='../../../../fastmedical_front/imagen/icono/agt_action_success.png' alt='Activo' title='Activo'/>";
             } else {
                 if ($fila["estado"] == 0) {
-                    $imagenHab = $fila["estado"] . "<img src='../../../../medifacil_front/imagen/icono/agt_action_fail.png' alt='Eliminado' title='Eliminado'/>";
+                    $imagenHab = $fila["estado"] . "<img src='../../../../fastmedical_front/imagen/icono/agt_action_fail.png' alt='Eliminado' title='Eliminado'/>";
                 } else {
                     if ($fila["estado"] == 2) {
-                        $imagenHab = $fila["estado"] . "<img src='../../../../medifacil_front/imagen/icono/agt_action_fail.png' alt='Cerrado' title='Cerrado'/>";
+                        $imagenHab = $fila["estado"] . "<img src='../../../../fastmedical_front/imagen/icono/agt_action_fail.png' alt='Cerrado' title='Cerrado'/>";
                     }
                 }
             }
@@ -209,7 +209,7 @@ class LAfiliaciones {
         $o_DAfiliaciones = new DAfiliaciones();
         $resultado = $o_DAfiliaciones->BuscarPersonaDBSIMI($datos);
         foreach ($resultado as $key => $value) {
-            array_push($resultado[$key], "../../../../medifacil_front/imagen/icono/good.gif ^ ...");
+            array_push($resultado[$key], "../../../../fastmedical_front/imagen/icono/good.gif ^ ...");
         }
         return $resultado;
     }
@@ -268,14 +268,14 @@ class LAfiliaciones {
         $resultado = $o_DAfiliaciones->tablaAfiliacionesActiPersona($datos);
         foreach ($resultado as $key => $value) {
             if ($value[6] == 1) {
-                array_push($resultado[$key], "../../../../medifacil_front/imagen/icono/good.gif ^ ...");
+                array_push($resultado[$key], "../../../../fastmedical_front/imagen/icono/good.gif ^ ...");
             } else {
-                array_push($resultado[$key], "../../../../medifacil_front/imagen/icono/nosecurity.png ^ ...");
+                array_push($resultado[$key], "../../../../fastmedical_front/imagen/icono/nosecurity.png ^ ...");
             }
             if ($value[0] == '0027' || $value[0] == '0002') {
-                array_push($resultado[$key], "../../../../medifacil_front/imagen/icono/Verreload.png ^ Ver");
+                array_push($resultado[$key], "../../../../fastmedical_front/imagen/icono/Verreload.png ^ Ver");
             } else {
-                array_push($resultado[$key], "../../../../medifacil_front/imagen/icono/whiteee.PNG ^ Ver");
+                array_push($resultado[$key], "../../../../fastmedical_front/imagen/icono/whiteee.PNG ^ Ver");
             }
         }
         return $resultado;
@@ -320,7 +320,7 @@ class LAfiliaciones {
             }
 
         foreach ($resultado as $key => $value) {
-            array_push($resultado[$key], "../../../../medifacil_front/imagen/icono/button_ok.png ^ Ver");
+            array_push($resultado[$key], "../../../../fastmedical_front/imagen/icono/button_ok.png ^ Ver");
         }
         return $resultado;
     }

@@ -32,25 +32,25 @@
                     <td>
                         <div id="divGrabar" style="display:block; width: 110px" align="center">
                             <?php
-                            $toolbar1->SetBoton("Grabar","Grabar prueba","btn","onclick,onkeypress","grabarPrueba('nuevo')",$_SESSION['path_principal']."../medifacil_front/imagen/icono/grabar.png","","",1);
+                            $toolbar1->SetBoton("Grabar","Grabar prueba","btn","onclick,onkeypress","grabarPrueba('nuevo')",$_SESSION['path_principal']."../fastmedical_front/imagen/icono/grabar.png","","",1);
                             $toolbar1->Mostrar();
                             ?>
                         </div> 
                         <div id="divEditar" style="display:none; width: 110px" align="center">
                            <?php
-                            $toolbar2->SetBoton("Editar","Editar","btn","onclick,onkeypress","postEditarPrueba()",$_SESSION['path_principal']."../medifacil_front/imagen/icono/editar.png","","",1);
+                            $toolbar2->SetBoton("Editar","Editar","btn","onclick,onkeypress","postEditarPrueba()",$_SESSION['path_principal']."../fastmedical_front/imagen/icono/editar.png","","",1);
                             $toolbar2->Mostrar();
                             ?>
                         </div>
                         <div id="divActualizar" style="display:none; width: 100px; float:left;" >
                          <?php
-                            $toolbar3->SetBoton("Actualizar","Actualizar","btn","onclick,onkeypress","grabarPrueba('modificar')",$_SESSION['path_principal']."../medifacil_front/imagen/icono/grabar.png","","",1);
+                            $toolbar3->SetBoton("Actualizar","Actualizar","btn","onclick,onkeypress","grabarPrueba('modificar')",$_SESSION['path_principal']."../fastmedical_front/imagen/icono/grabar.png","","",1);
                             $toolbar3->Mostrar();
                          ?>
                         </div>
                         <div id="divRestaurar" style="display:none; width: 100px; float:right;">
                         <?php
-                            $toolbar4->SetBoton("Restaurar","Restaurar","btn","onclick,onkeypress","restaurarPrueba()",$_SESSION['path_principal']."../medifacil_front/imagen/icono/undo.png","","",1);
+                            $toolbar4->SetBoton("Restaurar","Restaurar","btn","onclick,onkeypress","restaurarPrueba()",$_SESSION['path_principal']."../fastmedical_front/imagen/icono/undo.png","","",1);
                             $toolbar4->Mostrar();
                          ?>
                         </div>

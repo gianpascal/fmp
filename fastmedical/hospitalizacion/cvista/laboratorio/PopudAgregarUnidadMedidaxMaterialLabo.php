@@ -73,7 +73,7 @@ $toolbar2 = new ToollBar("center");
 <!--                <div id="div_EditarDetalleExamenLabo"  style="margin-left: 50% ">-->
                      <div id="div_EditarDetalleExamenLabo"  style="margin-left: 20% ">
                     <?php
-                    $toolbar1->SetBoton("AgregarNuevaUnidad", "Agregar Unidad", "btn", "onclick,onkeypress", "agregarNuevoUnidadalMaterialLaboratorioPoppud()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/reload3.png", "", "", 1);
+                    $toolbar1->SetBoton("AgregarNuevaUnidad", "Agregar Unidad", "btn", "onclick,onkeypress", "agregarNuevoUnidadalMaterialLaboratorioPoppud()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/reload3.png", "", "", 1);
                     $toolbar1->Mostrar();
                     ?>
                 </div>

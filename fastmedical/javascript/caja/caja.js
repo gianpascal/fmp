@@ -79,7 +79,7 @@ function mostrarTablaParteDiariaCierreCaja(numerocaja, fechadeproceso) {
     parametros += '&p3=' + fechadeproceso;
 
     tablaPartidaDiariaCierreCaja = new dhtmlXGridObject('Div_TablaParteDiarioCierreCaja');
-    tablaPartidaDiariaCierreCaja.setImagePath("../../../../medifacil_front/imagen/icono/");
+    tablaPartidaDiariaCierreCaja.setImagePath("../../../../fastmedical_front/imagen/icono/");
     tablaPartidaDiariaCierreCaja.setSkin("dhx_skyblue");
     tablaPartidaDiariaCierreCaja.init();
     tablaPartidaDiariaCierreCaja.loadXML(pathRequestControl + '?' + parametros);

@@ -117,14 +117,14 @@ echo 'El Nombre del Coordinador: ' . $arrayNombreCoordinador[0][0];
                 
                 
                                             <div  id ="divEtiquetaBuscar" style=" float:left;width:16%;" align="center">
-                                                <a href="javascript:ListadoFiltradoAreas(document.getElementById('nombres').value);"><img id="imgbusqueda" border="0"  title="Codigo de Persona" alt="" src="../../../../medifacil_front/imagen/btn/nbtn_buscar.gif"/></a>
+                                                <a href="javascript:ListadoFiltradoAreas(document.getElementById('nombres').value);"><img id="imgbusqueda" border="0"  title="Codigo de Persona" alt="" src="../../../../fastmedical_front/imagen/btn/nbtn_buscar.gif"/></a>
                                             </div>
                 
                 
                 
                 
                                             <div  id ="divEtiquetaLimpiar" style=" float:left;width:16%;" align="center">
-                                                <a href="javascript:limpiaBusquedas('0','','');"><img border="0" title="Limpia" alt="" src="../../../../medifacil_front/imagen/btn/btn_limpiar.gif"/></a>
+                                                <a href="javascript:limpiaBusquedas('0','','');"><img border="0" title="Limpia" alt="" src="../../../../fastmedical_front/imagen/btn/btn_limpiar.gif"/></a>
                                             </div>    
                                         </div>
                 
@@ -143,7 +143,7 @@ echo 'El Nombre del Coordinador: ' . $arrayNombreCoordinador[0][0];
                             <td width="100">
                                 <?php
                                 if (isset($_SESSION["permiso_formulario_servicio"][218]["NUEVA_AREA"]) && ($_SESSION["permiso_formulario_servicio"][218]["NUEVA_AREA"] == 1)) {
-                                    $toolbar00->SetBoton("NuevaArea", "Nueva Area", "btn", "onclick,onkeypress", "nuevoDatosArea()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/filenew.png", "", "", 1);
+                                    $toolbar00->SetBoton("NuevaArea", "Nueva Area", "btn", "onclick,onkeypress", "nuevoDatosArea()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/filenew.png", "", "", 1);
                                     $toolbar00->Mostrar();
                                 }
                                 ?>
@@ -210,10 +210,10 @@ echo 'El Nombre del Coordinador: ' . $arrayNombreCoordinador[0][0];
 
 
                                     <div  id ="divEtiquetaBuscar" style=" float:left;width:16%;" align="center">
-                                        <a href="javascript:buscarEmpleados(document.getElementById('txtCodigo').value,document.getElementById('comboTipoEstados').value,document.getElementById('comboTipoDocumentos').value,document.getElementById('nroDoc').value,document.getElementById('apellidoPaterno').value,document.getElementById('apellidoMaterno').value,document.getElementById('nombres').value);"><img id="imgbusqueda" border="0" title="Codigo de Persona" alt="" src="../../../../medifacil_front/imagen/btn/nbtn_buscar.gif"/></a>
+                                        <a href="javascript:buscarEmpleados(document.getElementById('txtCodigo').value,document.getElementById('comboTipoEstados').value,document.getElementById('comboTipoDocumentos').value,document.getElementById('nroDoc').value,document.getElementById('apellidoPaterno').value,document.getElementById('apellidoMaterno').value,document.getElementById('nombres').value);"><img id="imgbusqueda" border="0" title="Codigo de Persona" alt="" src="../../../../fastmedical_front/imagen/btn/nbtn_buscar.gif"/></a>
                                     </div>
                                     <div  id ="divEtiquetaLimpiar" style=" float:left;width:16%;" align="center">
-                                        <a href="javascript:limpiaBusquedas('0','','');"><img border="0" title="Limpia" alt="" src="../../../../medifacil_front/imagen/btn/btn_limpiar.gif"/></a>
+                                        <a href="javascript:limpiaBusquedas('0','','');"><img border="0" title="Limpia" alt="" src="../../../../fastmedical_front/imagen/btn/btn_limpiar.gif"/></a>
                                     </div>    
                                 </div>
 

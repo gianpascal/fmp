@@ -148,7 +148,7 @@ $anio = date("Y");
                             </tr>
                         </table>
                         <div style="width: 100%;height: 10%">
-                            <?php if ($_SESSION["permiso_formulario_servicio"][119]["NUEVA_PROG_MED"] == 1) echo"<a href=\"javascript:nuevaProgramacionMedicos()\"><img src=\"../../../../medifacil_front/imagen/btn/b_nuevo_on.gif\"></a>&nbsp;&nbsp;&nbsp;&nbsp;"; ?>
+                            <?php if ($_SESSION["permiso_formulario_servicio"][119]["NUEVA_PROG_MED"] == 1) echo"<a href=\"javascript:nuevaProgramacionMedicos()\"><img src=\"../../../../fastmedical_front/imagen/btn/b_nuevo_on.gif\"></a>&nbsp;&nbsp;&nbsp;&nbsp;"; ?>
                         </div>
                     </div>
 
@@ -167,7 +167,7 @@ $anio = date("Y");
                     <!--campo oculto--> <input type="hidden" name="hcodigoverificacion" id ="hcodigoverificacion" value="" />
                     <!--campo oculto--> <input type="hidden" name="hcodigopersona" id ="hcodigopersona" value="" />
                     <!--campo oculto--> <input type="hidden" name="hcodigocronograma" id ="hcodigocronograma" value="" />
-                                        <!--<div align="center" style="width: 100%;height: 7%;background: white"><?php echo"<a href=\"javascript:accionNuevaProgramacionMedicos()\"><img src=\"../../../../medifacil_front/imagen/btn/b_nuevo_on.gif\"></a>&nbsp;&nbsp;&nbsp;&nbsp;"; ?></div>-->
+                                        <!--<div align="center" style="width: 100%;height: 7%;background: white"><?php echo"<a href=\"javascript:accionNuevaProgramacionMedicos()\"><img src=\"../../../../fastmedical_front/imagen/btn/b_nuevo_on.gif\"></a>&nbsp;&nbsp;&nbsp;&nbsp;"; ?></div>-->
                     <div id="calendario"style="width: 100%;height: 53%">
                         <div id="divProgramacionMedicos" style="float: left;width: 40%;height: 100%">
                             <input type="hidden" id="hFechaSeleccionada" name="hFechaSeleccionada" value="<?php echo $fechaActualTimeStamp ?>"/>
@@ -199,7 +199,7 @@ $anio = date("Y");
                                         <div>&nbsp;</div>
                                         <div><?php
                                             if ($_SESSION["permiso_formulario_servicio"][119]["SELEC_AFIL"] == 1) {
-                                                echo "<a href=\"javascript:agregarAfiliaciones()\"><img src=\"../../../../medifacil_front/imagen/icono/b_adelante.gif\"></a>&nbsp;&nbsp;&nbsp;&nbsp;";
+                                                echo "<a href=\"javascript:agregarAfiliaciones()\"><img src=\"../../../../fastmedical_front/imagen/icono/b_adelante.gif\"></a>&nbsp;&nbsp;&nbsp;&nbsp;";
                                             }
                                             ?>
                                         </div>
@@ -207,7 +207,7 @@ $anio = date("Y");
                                         <div><?php
                                             if ($_SESSION["permiso_formulario_servicio"][119]["DESELEC_AFIL"] == 1) {
 
-                                                echo "<a href=\"javascript:quitarAfiliaciones()\"><img src=\"../../../../medifacil_front/imagen/icono/b_atras.gif\"></a>&nbsp;&nbsp;&nbsp;&nbsp;";
+                                                echo "<a href=\"javascript:quitarAfiliaciones()\"><img src=\"../../../../fastmedical_front/imagen/icono/b_atras.gif\"></a>&nbsp;&nbsp;&nbsp;&nbsp;";
                                             }
                                             ?>
                                         </div>
@@ -294,7 +294,7 @@ $anio = date("Y");
 
                                             </td>
                                             <td>
-                                                <?php if ($_SESSION["permiso_formulario_servicio"][119]["VER_PROG_AMB_FISICO"] == 1) echo "<a href=\"javascript:verCruces();\"><img src=\"../../../../medifacil_front/imagen/btn/b_ver_on.gif\"></a>" ?>
+                                                <?php if ($_SESSION["permiso_formulario_servicio"][119]["VER_PROG_AMB_FISICO"] == 1) echo "<a href=\"javascript:verCruces();\"><img src=\"../../../../fastmedical_front/imagen/btn/b_ver_on.gif\"></a>" ?>
                                             </td>
 
                                         </tr>
@@ -326,16 +326,16 @@ $anio = date("Y");
                     </div>
                     <br/>
                     <div id="Div_grabar" align="center" style="width: 100%;background: bottom;display: block">
-                        <?php if ($_SESSION["permiso_formulario_servicio"][119]["GRABAR_PROG_MED"] == 1) echo "<a href=\"javascript:validarCronogramaProgramacionMedicos()\"><img src=\"../../../../medifacil_front/imagen/btn/b_grabar__on.gif\"></a>&nbsp;&nbsp;&nbsp;&nbsp;"; ?>
-                        <?php if ($_SESSION["permiso_formulario_servicio"][119]["CANCELAR_GRABAR_PROG_MED"] == 1) echo "<a href=\"javascript:regresarCronogramaProgramacionMedicos()\"><img src=\"../../../../medifacil_front/imagen/btn/b_cancelar_on.gif\"></a>&nbsp;&nbsp;&nbsp;&nbsp;"; ?>
+                        <?php if ($_SESSION["permiso_formulario_servicio"][119]["GRABAR_PROG_MED"] == 1) echo "<a href=\"javascript:validarCronogramaProgramacionMedicos()\"><img src=\"../../../../fastmedical_front/imagen/btn/b_grabar__on.gif\"></a>&nbsp;&nbsp;&nbsp;&nbsp;"; ?>
+                        <?php if ($_SESSION["permiso_formulario_servicio"][119]["CANCELAR_GRABAR_PROG_MED"] == 1) echo "<a href=\"javascript:regresarCronogramaProgramacionMedicos()\"><img src=\"../../../../fastmedical_front/imagen/btn/b_cancelar_on.gif\"></a>&nbsp;&nbsp;&nbsp;&nbsp;"; ?>
                     </div>
                     <!--campo oculto--> <input type="hidden" name="hTipoActualizacion" id="hTipoActualizacion" value="" />
                     <div id="Div_actualizar" align="center" style="width: 100%;background: bottom;display: none">
-                        <?php echo"<a href=\"javascript:validarCronogramaReProgramacionMedicos()\"><img src=\"../../../../medifacil_front/imagen/btn/b_actualizar_on.gif\"></a>&nbsp;&nbsp;&nbsp;&nbsp;"; ?>
-                        <?php echo"<a href=\"javascript:regresarCronogramaProgramacionMedicos()\"><img src=\"../../../../medifacil_front/imagen/btn/b_cancelar_on.gif\"></a>&nbsp;&nbsp;&nbsp;&nbsp;"; ?>
+                        <?php echo"<a href=\"javascript:validarCronogramaReProgramacionMedicos()\"><img src=\"../../../../fastmedical_front/imagen/btn/b_actualizar_on.gif\"></a>&nbsp;&nbsp;&nbsp;&nbsp;"; ?>
+                        <?php echo"<a href=\"javascript:regresarCronogramaProgramacionMedicos()\"><img src=\"../../../../fastmedical_front/imagen/btn/b_cancelar_on.gif\"></a>&nbsp;&nbsp;&nbsp;&nbsp;"; ?>
                     </div>
                     <div id="Div_regresar" align="center" style="width: 100%;background: bottom;display: none">
-                        <?php echo"<a href=\"javascript:regresarCronogramaProgramacionMedicos()\"><img src=\"../../../../medifacil_front/imagen/btn/b_regresar_on.gif\"></a>&nbsp;&nbsp;&nbsp;&nbsp;"; ?>
+                        <?php echo"<a href=\"javascript:regresarCronogramaProgramacionMedicos()\"><img src=\"../../../../fastmedical_front/imagen/btn/b_regresar_on.gif\"></a>&nbsp;&nbsp;&nbsp;&nbsp;"; ?>
                     </div>
                 </div>
 

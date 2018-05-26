@@ -24,7 +24,7 @@
             <div id="modificarCombo" style="margin-left: 37%; margin-right: 37%;">
                 <?php
                 $toolbar1=new ToollBar("center");
-                $toolbar1->SetBoton("Aceptar","Aceptar","btn","onclick,onkeypress","seleccionarColor()",$_SESSION['path_principal']."../medifacil_front/imagen/icono/button_ok.png","","",1);
+                $toolbar1->SetBoton("Aceptar","Aceptar","btn","onclick,onkeypress","seleccionarColor()",$_SESSION['path_principal']."../fastmedical_front/imagen/icono/button_ok.png","","",1);
                 $toolbar1->Mostrar();
                 ?>
             </div>

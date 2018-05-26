@@ -21,7 +21,7 @@
                     <td colspan="2">
                         <div id="div_consultaporcodigo" style="display:none;"><input type="text" onkeypress=" " value="<?php echo $resultado[0]["cContribuyente"]?>" onchange="contribuyentepuntual.completar_ceros(this.id)" maxlength="7" style="width:50%;" name="txtpcodigo" id="txtpcodigo"></div>
                         <div id="div_consultapornombre" style="display:block;"><input type="text" style="width:99%;" value="<?php echo $resultado[0]["apellidos"]?>" onkeyup="this.value=this.value.toUpperCase()" name="txtpbuscar" id="txtpbuscar"></div></td>
-                    <td align="right"><a href="javascript:contribuyentepuntual.buscarcontribuyentes()"><img src="../../../../medifacil_front/imagen/btn/b_buscar_on.gif"></a>
+                    <td align="right"><a href="javascript:contribuyentepuntual.buscarcontribuyentes()"><img src="../../../../fastmedical_front/imagen/btn/b_buscar_on.gif"></a>
 <!--                        <input name="button" type="button" style="cursor:pointer;" onclick="contribuyentepuntual.buscarcontribuyentes()" value="Buscar" />-->
                     </td>
                 </tr>

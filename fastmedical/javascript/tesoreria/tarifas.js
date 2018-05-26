@@ -10,8 +10,8 @@ function formateaOpcionBusquedaTarifa(opc) {
             document.getElementById("txtPatronBusquedaProductos").className = "textPatronDescripcion";
             document.getElementById("txtPatronBusquedaProductos").value = "Buscar...";
             document.getElementById("hOpcBusquedaProductos").value = 1;
-            document.getElementById("img_descripcion").src = "../../../../medifacil_front/imagen/btn/btn_busqueda_descripcion_des.gif";
-            document.getElementById("img_codigo").src = "../../../../medifacil_front/imagen/btn/btn_cod_pro.gif";
+            document.getElementById("img_descripcion").src = "../../../../fastmedical_front/imagen/btn/btn_busqueda_descripcion_des.gif";
+            document.getElementById("img_codigo").src = "../../../../fastmedical_front/imagen/btn/btn_cod_pro.gif";
 
             break;
         }
@@ -21,8 +21,8 @@ function formateaOpcionBusquedaTarifa(opc) {
             document.getElementById("txtPatronBusquedaProductos").className = "textPatronCodigo";
             document.getElementById("txtPatronBusquedaProductos").value = "Buscar...";
             document.getElementById("hOpcBusquedaProductos").value = 2;
-            document.getElementById("img_descripcion").src = "../../../../medifacil_front/imagen/btn/btn_busqueda_descripcion.gif";
-            document.getElementById("img_codigo").src = "../../../../medifacil_front/imagen/btn/btn_cod_pro_des.gif";
+            document.getElementById("img_descripcion").src = "../../../../fastmedical_front/imagen/btn/btn_busqueda_descripcion.gif";
+            document.getElementById("img_codigo").src = "../../../../fastmedical_front/imagen/btn/btn_cod_pro_des.gif";
             break;
         }
     }
@@ -588,7 +588,7 @@ function filtroproductos(evento) {
         }
     }
     if (numero == 0) {
-        $('contenedorTablaServicios').update('<img src="../../../../medifacil_front/imagen/fondo/almacen.jpg" style="width:100%;height: 100%">')
+        $('contenedorTablaServicios').update('<img src="../../../../fastmedical_front/imagen/fondo/almacen.jpg" style="width:100%;height: 100%">')
         $('contenedorPrecios').update('');
         $('contenedorStock').update('');
         $('nombrePaqueteAbajo').value = '';
@@ -812,8 +812,8 @@ function agregarProcedimientoNuevo(codigo,nombre,precio,bEstadoServicio){
    //             tablaAgregarProcedimientoNuevo.cells(m,2).setValue(precio); 
                 tablaAgregarProcedimientoNuevo.cells(m,2).setValue('<input id="txtPrecio'+i+'" type="txt" title="Precio" size="10" name="grupoPrecio" value="'+precio+'">'); 
                 tablaAgregarProcedimientoNuevo.cells(m,3).setValue('<input id="txtCantidad'+i+'" type="txt" title="Cantidad" size="3" name="grupoMuestra" value="1">');
-                //        tablaAgregarProcedimientoNuevo.cells(m,5).setValue('<a href="#" onclick=\"javascript:eliminarProcedimientoSeleccionado();\"><img src="../../../../medifacil_front/imagen/icono/borrar.png" title="Eliminar"/></a>'); 
-                tablaAgregarProcedimientoNuevo.cells(m,5).setValue('../../../../medifacil_front/imagen/icono/borrar.png');   
+                //        tablaAgregarProcedimientoNuevo.cells(m,5).setValue('<a href="#" onclick=\"javascript:eliminarProcedimientoSeleccionado();\"><img src="../../../../fastmedical_front/imagen/icono/borrar.png" title="Eliminar"/></a>'); 
+                tablaAgregarProcedimientoNuevo.cells(m,5).setValue('../../../../fastmedical_front/imagen/icono/borrar.png');   
             //        alert(3);
             }     
         }      
@@ -834,8 +834,8 @@ function agregarProcedimientoNuevo(codigo,nombre,precio,bEstadoServicio){
             //tablaAgregarProcedimientoNuevo.cells(m,2).setValue(precio); 
             tablaAgregarProcedimientoNuevo.cells(m,2).setValue('<input id="txtPrecio'+i+'" type="txt" title="Precio" size="10" name="grupoPrecio" value="'+precio+'">'); 
             tablaAgregarProcedimientoNuevo.cells(m,3).setValue('<input id="txtCantidad'+i+'" type="txt" title="Cantidad" size="3" name="grupoMuestra" value="1">');
-            //        tablaAgregarProcedimientoNuevo.cells(m,5).setValue('<a href="#" onclick=\"javascript:eliminarProcedimientoSeleccionado();\"><img src="../../../../medifacil_front/imagen/icono/borrar.png" title="Eliminar"/></a>'); 
-            tablaAgregarProcedimientoNuevo.cells(m,5).setValue('../../../../medifacil_front/imagen/icono/borrar.png');   
+            //        tablaAgregarProcedimientoNuevo.cells(m,5).setValue('<a href="#" onclick=\"javascript:eliminarProcedimientoSeleccionado();\"><img src="../../../../fastmedical_front/imagen/icono/borrar.png" title="Eliminar"/></a>'); 
+            tablaAgregarProcedimientoNuevo.cells(m,5).setValue('../../../../fastmedical_front/imagen/icono/borrar.png');   
         //        alert(3);
         }  
     }  
@@ -895,7 +895,7 @@ function eliminarRegistrodeProcedimiento(rId,cInd){
                         //tablaAgregarProcedimientoNuevo.cells(i,2).setValue(precio); 
                         tablaAgregarProcedimientoNuevo.cells(m,2).setValue('<input id="txtPrecio'+i+'" type="txt" title="Precio" size="10" name="grupoPrecio" value="'+precio+'">'); 
                         tablaAgregarProcedimientoNuevo.cells(i,3).setValue('<input id="txtCantidad'+i+'" type="txt" title="Cantidad" size="3" name="grupoMuestra" value="'+cantidad+'">');
-                        tablaAgregarProcedimientoNuevo.cells(i,5).setValue('../../../../medifacil_front/imagen/icono/borrar.png'); 
+                        tablaAgregarProcedimientoNuevo.cells(i,5).setValue('../../../../fastmedical_front/imagen/icono/borrar.png'); 
                     }else{
                         tablaAgregarProcedimientoNuevo.deleteRow(m-1);   
                     }
@@ -1020,7 +1020,7 @@ function agregarProcedimientoNuevoInicio7(cadenaProcedimientos) {
                 //tablaAgregarProcedimientoNuevo.cells(y,2).setValue(arrayPalabras1[2]); 
                 tablaAgregarProcedimientoNuevo.cells(y,2).setValue('<input id="txtPrecio'+y+'" type="txt" title="Precio" size="10" name="grupoPrecio" value="'+arrayPalabras1[2]+'">'); 
                 tablaAgregarProcedimientoNuevo.cells(y,3).setValue('<input id="txtCantidad'+y+'" type="txt" title="Cantidad" size="3" name="grupoMuestra" value="'+arrayPalabras1[3]+'">');
-                tablaAgregarProcedimientoNuevo.cells(y,5).setValue('../../../../medifacil_front/imagen/icono/borrar.png');  
+                tablaAgregarProcedimientoNuevo.cells(y,5).setValue('../../../../fastmedical_front/imagen/icono/borrar.png');  
             }
                   
         }

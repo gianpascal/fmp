@@ -31,7 +31,7 @@
 print '<rows>';
 foreach ($arrayGrupo as $keyGRupo => $valueGrupo) {
     print '<row id="grupo_' . utf8_decode(ltrim(rtrim($valueGrupo[0]))) . '" >';
-    print '<cell image="../../../medifacil_front/imagen/csh_bluebooks_simedh/book.gif">' . htmlspecialchars(utf8_decode(ltrim(rtrim($valueGrupo[1])))) . '</cell>';
+    print '<cell image="../../../fastmedical_front/imagen/csh_bluebooks_simedh/book.gif">' . htmlspecialchars(utf8_decode(ltrim(rtrim($valueGrupo[1])))) . '</cell>';
     print '<cell></cell>';
     print '<cell></cell>';
     print '<cell></cell>';
@@ -48,7 +48,7 @@ foreach ($arrayGrupo as $keyGRupo => $valueGrupo) {
     foreach ($arrayActividad as $keyActividad => $valueActividad) {
         if ('actividad_' . utf8_decode(ltrim(rtrim($valueActividad[0]))) == 'actividad_' . utf8_decode(ltrim(rtrim($valueGrupo[0])))) {
             print '<row id="actividad_' . utf8_decode(ltrim(rtrim($valueGrupo[0]))) . '_' . utf8_decode(ltrim(rtrim($valueActividad[1]))) . '">';
-            print '<cell image="../../../medifacil_front/imagen/csh_bluebooks_simedh/book.gif">' . htmlspecialchars(utf8_decode(ltrim(rtrim($valueActividad[2])))) . '</cell>';
+            print '<cell image="../../../fastmedical_front/imagen/csh_bluebooks_simedh/book.gif">' . htmlspecialchars(utf8_decode(ltrim(rtrim($valueActividad[2])))) . '</cell>';
             print '<cell></cell>';
             print '<cell></cell>';
             print '<cell></cell>';
@@ -68,7 +68,7 @@ foreach ($arrayGrupo as $keyGRupo => $valueGrupo) {
                     if ('actividad_' . utf8_decode(ltrim(rtrim($valueServicio[1]))) == 'actividad_' . utf8_decode(ltrim(rtrim($valueActividad[1])))) {
                         if (utf8_decode(ltrim(rtrim($valueServicio[3]))) != '') {
                             print '<row id="actividad_' . utf8_decode(ltrim(rtrim($valueGrupo[0]))) . '_' . utf8_decode(ltrim(rtrim($valueActividad[1]))) . 'servicio_' . utf8_decode(ltrim(rtrim($valueServicio[2]))) . '" >';
-                            print '<cell image="../../../medifacil_front/imagen/csh_bluebooks_simedh/book.gif">' . htmlspecialchars(utf8_decode(ltrim(rtrim($valueServicio[3])))) . '</cell>';
+                            print '<cell image="../../../fastmedical_front/imagen/csh_bluebooks_simedh/book.gif">' . htmlspecialchars(utf8_decode(ltrim(rtrim($valueServicio[3])))) . '</cell>';
                             print '<cell></cell>';
                             print '<cell></cell>';
                             print '<cell></cell>';

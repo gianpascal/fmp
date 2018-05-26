@@ -193,7 +193,7 @@ function cargar_tree_ccostos()
     myDiv=document.getElementById('divBusCronogramaArbol');
     myDiv.innerHTML = " ";
     tree=new dhtmlXTreeObject("divBusCronogramaArbol","100%","100%",0);
-    tree.setImagePath("../../../../medifacil_front/imagen/icono/tree/");
+    tree.setImagePath("../../../../fastmedical_front/imagen/icono/tree/");
     tree.attachEvent("onClick", function(){
             clickoficinastree(tree.getSelectedItemId(),tree.getSelectedItemText());
             return true;

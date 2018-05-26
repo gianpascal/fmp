@@ -165,7 +165,7 @@ foreach ($arrayListaMaterialesxPuntoDeControlxExamen as $i => $value) {
                     <div class="filaMaterialDetalle" >
                         <div class="labelMaterialDetalle">
                             <div id="div_BotonEditar_Material_MDxE<?php echo trim($value[0]) ?>">
-                                <a href="javascript:EditarItemMaterialesAlmacenados(document.getElementById('idUnidadMedidaExamenLabotorio<?php echo trim($value[0]) ?>').value);"><img border="0" title="Editar" alt="" src="../../../../medifacil_front/imagen/btn/b_editar_on.gif"/></a>
+                                <a href="javascript:EditarItemMaterialesAlmacenados(document.getElementById('idUnidadMedidaExamenLabotorio<?php echo trim($value[0]) ?>').value);"><img border="0" title="Editar" alt="" src="../../../../fastmedical_front/imagen/btn/b_editar_on.gif"/></a>
 
                             </div>  
                         </div>
@@ -173,7 +173,7 @@ foreach ($arrayListaMaterialesxPuntoDeControlxExamen as $i => $value) {
 
                         <div class="inputMaterialDetalle">
                             <div id="div_BotonEliminar_Material_MDxE <?php echo trim($value[0]) ?>">
-                                <a href="javascript:EliminarItemMaterialesAlmacenados(document.getElementById('idUnidadMedidaExamenLabotorio<?php echo trim($value[0]) ?>').value);"><img border="0" title="Eliminar" alt="" src="../../../../medifacil_front/imagen/btn/b_borrar_on.gif"/></a>
+                                <a href="javascript:EliminarItemMaterialesAlmacenados(document.getElementById('idUnidadMedidaExamenLabotorio<?php echo trim($value[0]) ?>').value);"><img border="0" title="Eliminar" alt="" src="../../../../fastmedical_front/imagen/btn/b_borrar_on.gif"/></a>
 
                             </div> 
                         </div>
@@ -186,7 +186,7 @@ foreach ($arrayListaMaterialesxPuntoDeControlxExamen as $i => $value) {
                                    document.getElementById('txtCantidadMinimaMaterialLabo<?php echo trim($value[0]) ?>').value,
                                    document.getElementById('idUnidadMedidaExamenLabotorio<?php echo trim($value[0]) ?>').value);">
 
-                                    <img border="0" title="Actualizar" alt="" src="../../../../medifacil_front/imagen/btn/b_actualizar_on.gif"/></a>
+                                    <img border="0" title="Actualizar" alt="" src="../../../../fastmedical_front/imagen/btn/b_actualizar_on.gif"/></a>
 
                             </div> 
                         </div>
@@ -260,14 +260,14 @@ foreach ($arrayListaMaterialesxPuntoDeControlxExamen as $i => $value) {
                                     <tr>
                                         <td>
                                             <div id="div_BotonEditar_Material_MDxE<?php echo trim($value[0]) ?>">
-                                                <a href="javascript:EditarItemMaterialesAlmacenados(document.getElementById('idUnidadMedidaExamenLabotorio<?php echo trim($value[0]) ?>').value);"><img border="0" title="Editar" alt="" src="../../../../medifacil_front/imagen/btn/b_editar_on.gif"/></a>
+                                                <a href="javascript:EditarItemMaterialesAlmacenados(document.getElementById('idUnidadMedidaExamenLabotorio<?php echo trim($value[0]) ?>').value);"><img border="0" title="Editar" alt="" src="../../../../fastmedical_front/imagen/btn/b_editar_on.gif"/></a>
         
                                             </div> 
         
                                         </td>
                                         <td>
                                             <div id="div_BotonEliminar_Material_MDxE <?php echo trim($value[0]) ?>">
-                                                <a href="javascript:EliminarItemMaterialesAlmacenados(document.getElementById('idUnidadMedidaExamenLabotorio<?php echo trim($value[0]) ?>').value);"><img border="0" title="Eliminar" alt="" src="../../../../medifacil_front/imagen/btn/b_borrar_on.gif"/></a>
+                                                <a href="javascript:EliminarItemMaterialesAlmacenados(document.getElementById('idUnidadMedidaExamenLabotorio<?php echo trim($value[0]) ?>').value);"><img border="0" title="Eliminar" alt="" src="../../../../fastmedical_front/imagen/btn/b_borrar_on.gif"/></a>
         
                                             </div> 
         
@@ -280,7 +280,7 @@ foreach ($arrayListaMaterialesxPuntoDeControlxExamen as $i => $value) {
                                                    document.getElementById('txtCantidadMinimaMaterialLabo<?php echo trim($value[0]) ?>').value,
                                                    document.getElementById('idUnidadMedidaExamenLabotorio<?php echo trim($value[0]) ?>').value);">
         
-                                                    <img border="0" title="Actualizar" alt="" src="../../../../medifacil_front/imagen/btn/b_actualizar_on.gif"/></a>
+                                                    <img border="0" title="Actualizar" alt="" src="../../../../fastmedical_front/imagen/btn/b_actualizar_on.gif"/></a>
         
                                             </div> 
         

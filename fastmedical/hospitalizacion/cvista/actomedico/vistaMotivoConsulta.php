@@ -7,7 +7,7 @@
     &nbsp;&nbsp;&nbsp;&nbsp;
     <!--<a href="javascript:;" onclick="javascript:agregarOtro_ActoMedico('motivoconsulta');">-->
     <a href="javascript:;" onclick="javascript:agregarOtroMotivoDeConsultaDesdeBoton();">
-        <img id="btn_agregarotro" src='../../../../medifacil_front/imagen/btn/btn_agregarotro.png' alt="Agregar otro sintoma">
+        <img id="btn_agregarotro" src='../../../../fastmedical_front/imagen/btn/btn_agregarotro.png' alt="Agregar otro sintoma">
     </a>
 </fieldset>
 
@@ -16,7 +16,7 @@
 <fieldset class="examenes" style="width:900px">
     <div style="float:right; margin-top:3px;"  >
         <a href="javascript:;" onclick="javascript:verMotivoConsultaAnteriores();">
-            <img id="icono_abrirMotivoConsultaAnteriores" src='../../../../medifacil_front/imagen/icono/abrir.png' alt="Abrir">
+            <img id="icono_abrirMotivoConsultaAnteriores" src='../../../../fastmedical_front/imagen/icono/abrir.png' alt="Abrir">
         </a>
     </div>
     <a href="javascript:;" onclick="javascript:verMotivoConsultaAnteriores();">

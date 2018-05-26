@@ -15,33 +15,33 @@ class LCarnetizacion {
 
         foreach ($resultado as $key => $value) {
             if ($value[26] == 0) {//resultado
-                $resultado[$key][21] = "../../../../medifacil_front/imagen/icono/blank.gif";
+                $resultado[$key][21] = "../../../../fastmedical_front/imagen/icono/blank.gif";
                 $resultado[$key][27] = 0;
-//                array_push($resultado[$key], "../../../../medifacil_front/imagen/icono/blank.gif");
+//                array_push($resultado[$key], "../../../../fastmedical_front/imagen/icono/blank.gif");
             } else {
                 if ($value[8] == null || $value[8] == '') {
-                    $resultado[$key][21] = "../../../../medifacil_front/imagen/icono/blank.gif";
+                    $resultado[$key][21] = "../../../../fastmedical_front/imagen/icono/blank.gif";
                     $resultado[$key][27] = 0;
                 } else {
                     //$value[1] codigo persona
                     $nombre_fichero = "../../../../carpetaDocumentos/materialesLaboratorio/fotosCarnet/" . $value[1] . ".JPG";
                     if (file_exists($nombre_fichero)) {//$datos["c_cod_per"] 
-                        $resultado[$key][21] = "../../../../medifacil_front/imagen/icono/imprimir.png ^ Imprimir";
+                        $resultado[$key][21] = "../../../../fastmedical_front/imagen/icono/imprimir.png ^ Imprimir";
                         $resultado[$key][27] = 1;
                     } else {
 //            echo "El fichero $nombre_fichero existe";
-                        $resultado[$key][21] = "../../../../medifacil_front/imagen/icono/blank.gif";
+                        $resultado[$key][21] = "../../../../fastmedical_front/imagen/icono/blank.gif";
                         $resultado[$key][27] = 0;
                     }
 
 
 
-//                array_push($resultado[$key], "../../../../medifacil_front/imagen/icono/imprimir.png ^ Imprimir");
+//                array_push($resultado[$key], "../../../../fastmedical_front/imagen/icono/imprimir.png ^ Imprimir");
                 }
             }
 //print_r($array[$j][6]);
             if ($resultado[$key][3] == '0' || $resultado[$j][3] == '' || $resultado[$j][3] == null) {
-                $resultado[$key][3] = "../../../../medifacil_front/imagen/icono/display.png ^ Ver";
+                $resultado[$key][3] = "../../../../fastmedical_front/imagen/icono/display.png ^ Ver";
 //                $resultado[$key][6] = "cxc";
             }
         }

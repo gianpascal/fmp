@@ -44,11 +44,11 @@
                         <?php
                         if($_SESSION["permiso_formulario_servicio"][110]["NUEVO_PAC"]==1){
                             $toolbar=new ToollBar("right");
-                            //$toolbar->SetBoton("RESULTADO","Resultado","btn","onclick,onkeypress","ventana_resultado()","../../../../medifacil_front/imagen/icono/resultado.png","","",true);
-                            //$toolbar->SetBoton("HC","H.C.","btn","onclick,onkeypress","getDatosPersonasLab(document.getElementById('idBusquedaPersona').value)","../../../../medifacil_front/imagen/icono/historial.png","","",true);
-                            //$toolbar->SetBoton("CONTRIBUYENTE","CONTRIBUYENTE","btn","onclick,onkeypress,onDblClick","ventana_contribuyente('setDatosContribuyente')","../../../../medifacil_front/imagen/icono/add_user.png","","",TRUE);
-                            $toolbar->SetBoton("NUEVO","Nuevo","btn","onclick,onkeypress","DatosPersonasAdmision('')","../../../../medifacil_front/imagen/icono/nuevo.png","","",true);
-                            //$toolbar->SetBoton("VER","Ver Datos","btn","onclick,onkeypress","ventana_formulario_persona('setDatosContribuyente')","../../../../medifacil_front/imagen/icono/add_user.png","","",true);
+                            //$toolbar->SetBoton("RESULTADO","Resultado","btn","onclick,onkeypress","ventana_resultado()","../../../../fastmedical_front/imagen/icono/resultado.png","","",true);
+                            //$toolbar->SetBoton("HC","H.C.","btn","onclick,onkeypress","getDatosPersonasLab(document.getElementById('idBusquedaPersona').value)","../../../../fastmedical_front/imagen/icono/historial.png","","",true);
+                            //$toolbar->SetBoton("CONTRIBUYENTE","CONTRIBUYENTE","btn","onclick,onkeypress,onDblClick","ventana_contribuyente('setDatosContribuyente')","../../../../fastmedical_front/imagen/icono/add_user.png","","",TRUE);
+                            $toolbar->SetBoton("NUEVO","Nuevo","btn","onclick,onkeypress","DatosPersonasAdmision('')","../../../../fastmedical_front/imagen/icono/nuevo.png","","",true);
+                            //$toolbar->SetBoton("VER","Ver Datos","btn","onclick,onkeypress","ventana_formulario_persona('setDatosContribuyente')","../../../../fastmedical_front/imagen/icono/add_user.png","","",true);
                             $toolbar->Mostrar();
                         }
                         ?>

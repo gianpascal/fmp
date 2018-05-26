@@ -427,9 +427,9 @@
 		</div>
 	</form>
 	<div id="Div_botones" style="width:100%;height:30px ;float: left">
-		<a href='javascript:;' onclick="javascript:darxAtencionCompletada();"><img id="btnAtencionCompletada" src='../../../../medifacil_front/imagen/btn/btn_darPorAtendido.gif' title='Atención Completada' alt=""/></a>
-		<a href='javascript:;' onclick="javascript:cancelarAtencionMedica();"><img id="btncancelarActoMedico" src='../../../../medifacil_front/imagen/btn/b_cancelar_on.gif' title='Cancelar' alt=""/></a>
-		<a href='javascript:;' onclick="javascript:regresarAgendaMedica();"><img id="btnregresarActoMedico" src='../../../../medifacil_front/imagen/btn/b_regresar_on.gif' title='Regresar' alt=""/></a>
+		<a href='javascript:;' onclick="javascript:darxAtencionCompletada();"><img id="btnAtencionCompletada" src='../../../../fastmedical_front/imagen/btn/btn_darPorAtendido.gif' title='Atención Completada' alt=""/></a>
+		<a href='javascript:;' onclick="javascript:cancelarAtencionMedica();"><img id="btncancelarActoMedico" src='../../../../fastmedical_front/imagen/btn/b_cancelar_on.gif' title='Cancelar' alt=""/></a>
+		<a href='javascript:;' onclick="javascript:regresarAgendaMedica();"><img id="btnregresarActoMedico" src='../../../../fastmedical_front/imagen/btn/b_regresar_on.gif' title='Regresar' alt=""/></a>
 	</div>
 	<input type="hidden" id="hNumeroDiagnostico" name="hNumeroDiagnostico" value="0" />
 </div>

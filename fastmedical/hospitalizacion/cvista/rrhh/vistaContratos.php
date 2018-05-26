@@ -20,7 +20,7 @@
             } else {
                 $verBotonVentanaNuevoContrato = 0;
             }
-            $toolbar->SetBoton("NUEVO", "Nuevo", "btn", "onclick,onkeypress", "ventanaMantenimientoContrato(1,'','')", "../../../../medifacil_front/imagen/icono/nuevo.png", "", "", $verBotonVentanaNuevoContrato);
+            $toolbar->SetBoton("NUEVO", "Nuevo", "btn", "onclick,onkeypress", "ventanaMantenimientoContrato(1,'','')", "../../../../fastmedical_front/imagen/icono/nuevo.png", "", "", $verBotonVentanaNuevoContrato);
             $toolbar->Mostrar();
             ?>
         </div>
@@ -45,7 +45,7 @@
             } else {
                  $funcionBoton='';
             }
-            $toolbar1->SetBoton("AsignarArea", "Asignar Area", "btn", "onclick,onkeypress", $funcionBoton, "../../../../medifacil_front/imagen/icono/b_tree.gif", "", "", false);
+            $toolbar1->SetBoton("AsignarArea", "Asignar Area", "btn", "onclick,onkeypress", $funcionBoton, "../../../../fastmedical_front/imagen/icono/b_tree.gif", "", "", false);
             $toolbar1->Mostrar();
             ?>
         </div>

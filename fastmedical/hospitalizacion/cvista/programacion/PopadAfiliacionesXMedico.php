@@ -52,7 +52,7 @@
                 <div>
                     <?php
                     if ($_SESSION["permiso_formulario_servicio"][119]["SELEC_AFIL"] == 1) {
-                        echo "<a href=\"javascript:agregarAfiliacionesPopad()\"><img src=\"../../../../medifacil_front/imagen/icono/b_adelante.gif\"></a>&nbsp;&nbsp;&nbsp;&nbsp;";
+                        echo "<a href=\"javascript:agregarAfiliacionesPopad()\"><img src=\"../../../../fastmedical_front/imagen/icono/b_adelante.gif\"></a>&nbsp;&nbsp;&nbsp;&nbsp;";
                     }
                     ?>
                 </div>
@@ -61,7 +61,7 @@
                 <div>
                     <?php
                     if ($_SESSION["permiso_formulario_servicio"][119]["DESELEC_AFIL"] == 1) {
-                        echo "<a href=\"javascript:quitarAfiliacionesPopad()\"><img src=\"../../../../medifacil_front/imagen/icono/b_atras.gif\"></a>&nbsp;&nbsp;&nbsp;&nbsp;";
+                        echo "<a href=\"javascript:quitarAfiliacionesPopad()\"><img src=\"../../../../fastmedical_front/imagen/icono/b_atras.gif\"></a>&nbsp;&nbsp;&nbsp;&nbsp;";
                     }
                     ?>
                 </div>
@@ -96,7 +96,7 @@
          <td style="width: 40%;">
              <?php
         $toolbar1 = new ToollBar("center");
-        $toolbar1->SetBoton("AgregarNuevaUnidad", "Guardar", "btn", "onclick,onkeypress", "guardarAfiliacionesXMedico()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/grabar.png", "", "", 1);
+        $toolbar1->SetBoton("AgregarNuevaUnidad", "Guardar", "btn", "onclick,onkeypress", "guardarAfiliacionesXMedico()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/grabar.png", "", "", 1);
         $toolbar1->Mostrar();
         ?>
          </td>

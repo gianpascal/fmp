@@ -61,7 +61,7 @@ $cb_combo_sede = $o_ActionCita->listaDatosSedeSolo($datos);
                         </div>
                     </td>
                     <td>
-                        <?php if ($_SESSION["permiso_formulario_servicio"][119]["VER_PROG_AMB_FISICO"] == 1) echo "<a href=\"javascript:verCruces();\"><img src=\"../../../../medifacil_front/imagen/btn/b_ver_on.gif\"></a>" ?>
+                        <?php if ($_SESSION["permiso_formulario_servicio"][119]["VER_PROG_AMB_FISICO"] == 1) echo "<a href=\"javascript:verCruces();\"><img src=\"../../../../fastmedical_front/imagen/btn/b_ver_on.gif\"></a>" ?>
                     </td>
 
                 </tr>

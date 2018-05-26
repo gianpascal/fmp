@@ -79,10 +79,10 @@
                     </div>
 
                     <!--<div style="width: 16%; float: left;" id="DivLimpiar" align="center">
-                            <a href="javascript:limpiaBusquedasPopap('0');"><img border="0" title="Codigo de Persona" alt="" src="../../../../medifacil_front/imagen/btn/btn_limpiar.gif"/></a>
+                            <a href="javascript:limpiaBusquedasPopap('0');"><img border="0" title="Codigo de Persona" alt="" src="../../../../fastmedical_front/imagen/btn/btn_limpiar.gif"/></a>
                     </div>-->
                     <div  id ="divEtiquetaBuscar" style=" float:left;width:16%;" align="center">
-                        <a href="javascript:buscarEmpleadosPopap(document.getElementById('txtCodigo').value,document.getElementById('comboTipoEstados').value,document.getElementById('comboTipoDocumentos').value,document.getElementById('nroDoc').value,document.getElementById('apellidoPaterno').value,document.getElementById('apellidoMaterno').value,document.getElementById('nombres').value);"><img border="0" title="Codigo de Persona" alt="" src="../../../../medifacil_front/imagen/btn/nbtn_buscar.gif"/></a>
+                        <a href="javascript:buscarEmpleadosPopap(document.getElementById('txtCodigo').value,document.getElementById('comboTipoEstados').value,document.getElementById('comboTipoDocumentos').value,document.getElementById('nroDoc').value,document.getElementById('apellidoPaterno').value,document.getElementById('apellidoMaterno').value,document.getElementById('nombres').value);"><img border="0" title="Codigo de Persona" alt="" src="../../../../fastmedical_front/imagen/btn/nbtn_buscar.gif"/></a>
                     </div>
 
                 </div>

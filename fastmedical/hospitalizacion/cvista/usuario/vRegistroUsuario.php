@@ -24,7 +24,7 @@ $toolbar71 = new ToollBar("left");
                         <td colspan="4" align="center" height="40">
                             <div id="btnCrearUsuario" style="width: 90px;"  align="center">
                                 <?php
-                                $toolbar66->SetBoton("crearUsuario", "Generar Usuario", "btn", "onclick,onkeypress", "crearUsuario()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/add_user.png", "", "", 1);
+                                $toolbar66->SetBoton("crearUsuario", "Generar Usuario", "btn", "onclick,onkeypress", "crearUsuario()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/add_user.png", "", "", 1);
                                 $toolbar66->Mostrar();
                                 ?>
                             </div>
@@ -68,14 +68,14 @@ $toolbar71 = new ToollBar("left");
                         <td colspan="4" align="center" height="40">
                             <div id="btnGrabarUsuario" style="width: 90px;" align="center">
                                 <?php
-                                $toolbar67->SetBoton("Guardar", "Guardar Usario", "btn", "onclick,onkeypress", "guardarUsuario()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/grabar.png", "", "", 1);
+                                $toolbar67->SetBoton("Guardar", "Guardar Usario", "btn", "onclick,onkeypress", "guardarUsuario()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/grabar.png", "", "", 1);
                                 $toolbar67->Mostrar();
                                 ?>
 
                             </div>
                             <div id="btnEditarUsuario" style="width: 90px;display: none;" align="center">
                                 <?php
-                                $toolbar70->SetBoton("EditarUsuario", "Editar Perfil", "btn", "onclick,onkeypress", "editarUsuario()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/editar.png", "", "", 1);
+                                $toolbar70->SetBoton("EditarUsuario", "Editar Perfil", "btn", "onclick,onkeypress", "editarUsuario()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/editar.png", "", "", 1);
                                 $toolbar70->Mostrar();
                                 ?>
                             </div>
@@ -103,7 +103,7 @@ $toolbar71 = new ToollBar("left");
 
                     <div id="btnModificarUsuario" style="width: 90px; display: none;" align="center">
                         <?php
-                        $toolbar68->SetBoton("ModificarUsuario", "Modificar", "btn", "onclick,onkeypress", "modificarUsuario()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/add_user.png", "", "", 1);
+                        $toolbar68->SetBoton("ModificarUsuario", "Modificar", "btn", "onclick,onkeypress", "modificarUsuario()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/add_user.png", "", "", 1);
                         $toolbar68->Mostrar();
                         ?>
                         <!--                                btnModificar-->
@@ -115,7 +115,7 @@ $toolbar71 = new ToollBar("left");
 
                 <div id="btnGrabarActividad" style="width: 90px; " align="left">
                     <?php
-                    $toolbar71->SetBoton("GrabarActividad", "Grabar Actividad", "btn", "onclick,onkeypress", "GrabarActividad()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/add_user.png", "", "", 1);
+                    $toolbar71->SetBoton("GrabarActividad", "Grabar Actividad", "btn", "onclick,onkeypress", "GrabarActividad()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/add_user.png", "", "", 1);
                     $toolbar71->Mostrar();
                     ?>
                 </div> 

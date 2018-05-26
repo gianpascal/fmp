@@ -21,9 +21,9 @@ $cb_combo_afiliacionesasignadas = $o_ActionCronograma->obtenerlistaAfiliacionesA
 
         <td align="center" width="10%" height="100%">
             <div>&nbsp;</div>
-            <div><?php if($_SESSION["permiso_formulario_servicio"][119]["SELEC_AFIL"]==1) echo"<a href=\"javascript:agregarAfiliaciones()\"><img src=\"../../../../medifacil_front/imagen/icono/b_adelante.gif\"></a>&nbsp;&nbsp;&nbsp;&nbsp;";?></div>
+            <div><?php if($_SESSION["permiso_formulario_servicio"][119]["SELEC_AFIL"]==1) echo"<a href=\"javascript:agregarAfiliaciones()\"><img src=\"../../../../fastmedical_front/imagen/icono/b_adelante.gif\"></a>&nbsp;&nbsp;&nbsp;&nbsp;";?></div>
             <div>&nbsp;</div>
-            <div><?php if($_SESSION["permiso_formulario_servicio"][119]["DESELEC_AFIL"]==1) echo"<a href=\"javascript:quitarAfiliaciones()\"><img src=\"../../../../medifacil_front/imagen/icono/b_atras.gif\"></a>&nbsp;&nbsp;&nbsp;&nbsp;";?></div>
+            <div><?php if($_SESSION["permiso_formulario_servicio"][119]["DESELEC_AFIL"]==1) echo"<a href=\"javascript:quitarAfiliaciones()\"><img src=\"../../../../fastmedical_front/imagen/icono/b_atras.gif\"></a>&nbsp;&nbsp;&nbsp;&nbsp;";?></div>
             <div>&nbsp;</div>
         </td>
         <td width="45%" height="100%">

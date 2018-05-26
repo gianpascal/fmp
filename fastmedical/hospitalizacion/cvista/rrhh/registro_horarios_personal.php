@@ -32,7 +32,7 @@ $toolbar2 = new ToollBar("center");
                     </div>  
                 </td>
                 <td>
-                    <a href="javascript:MostrarDatosCoordinador();"> <img border="0" title="Mostrar" alt="" src="../../../../medifacil_front/imagen/icono/Download.png"/></a>
+                    <a href="javascript:MostrarDatosCoordinador();"> <img border="0" title="Mostrar" alt="" src="../../../../fastmedical_front/imagen/icono/Download.png"/></a>
                 </td>
             </tr>
         </table>
@@ -103,15 +103,15 @@ $toolbar2 = new ToollBar("center");
                                                     } else {
                                                         $verBotonReporteCoordinadores = 0;
                                                     }
-                                                    $toolbar1->SetBoton("Refrescar", "Refrescar", "btn", "onclick,onkeypress", "reporteEmpleado()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/reload3.png", "", "", $verBotonReporteCoordinadores);
+                                                    $toolbar1->SetBoton("Refrescar", "Refrescar", "btn", "onclick,onkeypress", "reporteEmpleado()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/reload3.png", "", "", $verBotonReporteCoordinadores);
                                                     $toolbar1->Mostrar();
                                                     ?>
                                                 </td>
 
                                                 <td>
                                                     <div id="divOcultarBotonSubir" >
-                                                        <a href="javascript:Ocultar();"> <img border="0" title="Ocultar" alt="" src="../../../../medifacil_front/imagen/icono/Upload.png"/></a>
-            <!--                                         <a href="javascript:HorariosTurnosAreaCoordinador();"> <img border="0" title="Turno" alt="" width="22" height="22" src="../../../../medifacil_front/imagen/icono/iconoExcel1.PNG"/></a>-->
+                                                        <a href="javascript:Ocultar();"> <img border="0" title="Ocultar" alt="" src="../../../../fastmedical_front/imagen/icono/Upload.png"/></a>
+            <!--                                         <a href="javascript:HorariosTurnosAreaCoordinador();"> <img border="0" title="Turno" alt="" width="22" height="22" src="../../../../fastmedical_front/imagen/icono/iconoExcel1.PNG"/></a>-->
                                                     </div>
                                                 </td>
 
@@ -134,21 +134,21 @@ $toolbar2 = new ToollBar("center");
                                                     <tr>
                                                         <td>
                                                             <a href="javascript:HorariosTurnosAreaCoordinador('.xls');">
-                                                                <img  style="height: 30px;width: 35px" border="0" src="../../../../medifacil_front/imagen/icono/2003.jpg" alt="" title="excel2003">
+                                                                <img  style="height: 30px;width: 35px" border="0" src="../../../../fastmedical_front/imagen/icono/2003.jpg" alt="" title="excel2003">
                                                             </a> 
                                                         </td>
                                                     </tr>
                                                     <tr>
                                                         <td>
                                                             <a href="javascript:HorariosTurnosAreaCoordinador('.xlsx');">
-                                                                <img style="height: 30px;width: 35px"  border="0" src="../../../../medifacil_front/imagen/icono/Excel2007.jpg" alt="" title="excel2007">
+                                                                <img style="height: 30px;width: 35px"  border="0" src="../../../../fastmedical_front/imagen/icono/Excel2007.jpg" alt="" title="excel2007">
                                                             </a>
                                                         </td>
                                                     </tr>
                                                     <tr>
                                                         <td>
                                                             <a href="javascript:HorariosTurnosAreaCoordinador('.ods');">
-                                                                <img style="height: 30px;width: 35px" border="0" src="../../../../medifacil_front/imagen/icono/libreofficecal3.jpg" alt="" title="libreofficecal">
+                                                                <img style="height: 30px;width: 35px" border="0" src="../../../../fastmedical_front/imagen/icono/libreofficecal3.jpg" alt="" title="libreofficecal">
                                                             </a>
                                                         </td>
                                                     </tr>                                                
@@ -196,7 +196,7 @@ $toolbar2 = new ToollBar("center");
             </tr>
             <tr align="center">
                 <td colspan="3" align="center">
-                    <a href="javascript:agregarPersonaProgramacion();"> <img border="0" title="Ocultar" alt="" src="../../../../medifacil_front/imagen/btn/b_agregar_off.gif"/></a>
+                    <a href="javascript:agregarPersonaProgramacion();"> <img border="0" title="Ocultar" alt="" src="../../../../fastmedical_front/imagen/btn/b_agregar_off.gif"/></a>
                 </td>
             </tr>   
         </table>

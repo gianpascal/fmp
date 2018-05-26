@@ -73,7 +73,7 @@ $toolbar01 = new ToollBar("right");
                         <div id="idbBuscarCoordinadores" style="width: 100%; ">';
 
 
-                    $toolbar01->SetBoton("btnAceptarColorTurnoArea", "Confirmar", "btn", "onclick,onkeypress", "xxx()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/agt_action_success.png", "", "", 1);
+                    $toolbar01->SetBoton("btnAceptarColorTurnoArea", "Confirmar", "btn", "onclick,onkeypress", "xxx()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/agt_action_success.png", "", "", 1);
                     $toolbar01->Mostrar();
 
                     echo '
@@ -92,7 +92,7 @@ $toolbar01 = new ToollBar("right");
 //                        <div id="idbBuscarCoordinadores" style="width: 100%;">';
 //
 //
-//                        $toolbar01->SetBoton("btnListaCoordinadores", "Buscar", "btn", "onclick,onkeypress", "buscarCoordinadoresAsignar()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/agt_action_success.png", "", "", 1);
+//                        $toolbar01->SetBoton("btnListaCoordinadores", "Buscar", "btn", "onclick,onkeypress", "buscarCoordinadoresAsignar()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/agt_action_success.png", "", "", 1);
 //                        $toolbar01->Mostrar();
 //
 //                        echo '
@@ -151,7 +151,7 @@ $toolbar01 = new ToollBar("right");
 //
 //
 //
-//        $toolbar02->SetBoton("desactivarCoordinadorAlArea", "Desactivar", "btn", "onclick,onkeypress", "desactivarCoordinadorAlArea()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/agt_action_success.png", "", "", 1);
+//        $toolbar02->SetBoton("desactivarCoordinadorAlArea", "Desactivar", "btn", "onclick,onkeypress", "desactivarCoordinadorAlArea()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/agt_action_success.png", "", "", 1);
 ////        $toolbar02->Mostrar();
 //
 //

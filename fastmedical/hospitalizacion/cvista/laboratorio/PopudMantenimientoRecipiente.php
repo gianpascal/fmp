@@ -36,7 +36,7 @@ $NombreExamenLaboratorio = $datos["NombreExamenLaboratorio"];
                 <div style="" id="modificardiv">
 
                     <?php
-                    $toolbar04->SetBoton("AdjuntarImagenNuevoRecpiente", "Adjuntar ...", "btn", "onclick,onkeypress", " AdjuntarImagenNuevoRecpiente()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/agt_action_success.png", "", "", 1);
+                    $toolbar04->SetBoton("AdjuntarImagenNuevoRecpiente", "Adjuntar ...", "btn", "onclick,onkeypress", " AdjuntarImagenNuevoRecpiente()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/agt_action_success.png", "", "", 1);
                     $toolbar04->Mostrar();
                     ?>
 
@@ -58,7 +58,7 @@ $NombreExamenLaboratorio = $datos["NombreExamenLaboratorio"];
 <td align="center"  height="30">
 
     <?php
-    $toolbar06->SetBoton("salir2", "Salir", "btn", "onclick,onkeypress", " salirPopupEditarMantenimientoExamen()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/agt_action_success.png", "", "", 1);
+    $toolbar06->SetBoton("salir2", "Salir", "btn", "onclick,onkeypress", " salirPopupEditarMantenimientoExamen()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/agt_action_success.png", "", "", 1);
     $toolbar06->Mostrar();
     ?>
 
@@ -95,7 +95,7 @@ $NombreExamenLaboratorio = $datos["NombreExamenLaboratorio"];
 
 
     <?php
-    //$toolbar06->SetBoton("salirPopupEditarMantenimientoExamen", "Salir", "btn", "onclick,onkeypress", " salirPopupEditarMantenimientoExamen()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/agt_action_success.png", "", "", 1);
+    //$toolbar06->SetBoton("salirPopupEditarMantenimientoExamen", "Salir", "btn", "onclick,onkeypress", " salirPopupEditarMantenimientoExamen()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/agt_action_success.png", "", "", 1);
     //$toolbar06->Mostrar();
     ?>
 

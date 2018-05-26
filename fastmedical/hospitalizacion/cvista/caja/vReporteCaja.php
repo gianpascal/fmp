@@ -17,21 +17,21 @@
                             <input type="text"  maxlength="10"  onclick="calendarioHtmlx('txtFechaFinal')" size="20" id="txtFechaFinal" name="txtFechaFinal">
 
 
-                            <img id="imgBuscar" border="0" src="../../../../medifacil_front/imagen/btn/nbtn_buscar.gif" alt="" title="Buscar" onclick="buscarReporteCaja()">
-                            <img id="imgBuscar" border="0" src="../../../../medifacil_front/imagen/btn/b_validar_on.gif" alt="" title="Buscar" onclick="calcularTotalesReporteCaja()">
+                            <img id="imgBuscar" border="0" src="../../../../fastmedical_front/imagen/btn/nbtn_buscar.gif" alt="" title="Buscar" onclick="buscarReporteCaja()">
+                            <img id="imgBuscar" border="0" src="../../../../fastmedical_front/imagen/btn/b_validar_on.gif" alt="" title="Buscar" onclick="calcularTotalesReporteCaja()">
                         </td> 
                         <td>
                             Exportar:
                         </td>
                         <td>
                             <a href="javascript:exportarReporteCaja('.xls');">
-                                <img  style="height: 30px;width: 35px" border="0" src="../../../../medifacil_front/imagen/icono/2003.jpg" alt="" title="excel2003">
+                                <img  style="height: 30px;width: 35px" border="0" src="../../../../fastmedical_front/imagen/icono/2003.jpg" alt="" title="excel2003">
                             </a> 
                             <a href="javascript:exportarReporteCaja('.xlsx');">
-                                <img style="height: 30px;width: 35px"  border="0" src="../../../../medifacil_front/imagen/icono/Excel2007.jpg" alt="" title="excel2007">
+                                <img style="height: 30px;width: 35px"  border="0" src="../../../../fastmedical_front/imagen/icono/Excel2007.jpg" alt="" title="excel2007">
                             </a>
                             <a href="javascript:exportarReporteCaja('.ods');">
-                                <img style="height: 30px;width: 35px" border="0" src="../../../../medifacil_front/imagen/icono/libreofficecal3.jpg" alt="" title="libreofficecal">
+                                <img style="height: 30px;width: 35px" border="0" src="../../../../fastmedical_front/imagen/icono/libreofficecal3.jpg" alt="" title="libreofficecal">
                             </a>
                         </td>
 

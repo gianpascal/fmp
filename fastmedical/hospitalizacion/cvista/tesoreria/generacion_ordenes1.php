@@ -81,7 +81,7 @@ require_once("../../ccontrol/control/ActionPersona.php");
           </label></td>
         </tr>
         <tr>
-          <td colspan="5"><div align="center"><a href="javascript:getBuscarPersonasOrden();"><img src="../../../../medifacil_front/imagen/btn/b_buscar.gif" alt="" border="0" title="Codigo de Persona"/></a></div></td>
+          <td colspan="5"><div align="center"><a href="javascript:getBuscarPersonasOrden();"><img src="../../../../fastmedical_front/imagen/btn/b_buscar.gif" alt="" border="0" title="Codigo de Persona"/></a></div></td>
       </tr>
     </table>
     </form>

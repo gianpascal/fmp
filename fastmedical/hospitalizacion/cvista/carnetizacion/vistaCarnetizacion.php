@@ -121,14 +121,14 @@ $toolbar2 = new ToollBar("center");
                                                     </td>
                                                     <td>
                                                         <?php
-                                                        $toolbar1->SetBoton("Buscar", "Buscar", "btn", "onclick,onkeypress", "buscarPorBotonPersonaCarnetizacion()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/filenew.png", "", "", 1);
+                                                        $toolbar1->SetBoton("Buscar", "Buscar", "btn", "onclick,onkeypress", "buscarPorBotonPersonaCarnetizacion()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/filenew.png", "", "", 1);
                                                         $toolbar1->Mostrar();
                                                         ?>
                                                     </td>
                                                     <td style="width: 12px"> </td>
                                                     <td>
                                                         <?php
-                                                        $toolbar2->SetBoton("Limpiar", "Limpiar", "btn", "onclick,onkeypress", "LimpiarPersonaCarnetizacion()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/filenew.png", "", "", 1);
+                                                        $toolbar2->SetBoton("Limpiar", "Limpiar", "btn", "onclick,onkeypress", "LimpiarPersonaCarnetizacion()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/filenew.png", "", "", 1);
                                                         $toolbar2->Mostrar();
                                                         ?> 
                                                     </td>
@@ -172,11 +172,11 @@ $toolbar2 = new ToollBar("center");
                         <td style="height: 7px" bgColor="#D6E9FE" colspan="2"> 
                             <div id="div_fechaArriba">
                                 <a href="javascript:ocultarBusqueda();">
-                                    <img border="0" title="Buscar" alt="" src="../../../../medifacil_front/imagen/icono/arribaFecha.png"/></a>
+                                    <img border="0" title="Buscar" alt="" src="../../../../fastmedical_front/imagen/icono/arribaFecha.png"/></a>
                             </div>
                             <div id="div_fechaAbajo">
                                 <a href="javascript:ocultarBusqueda();">
-                                    <img border="0" title="Buscar" alt="" src="../../../../medifacil_front/imagen/icono/agt_upgrade_misc.png"/></a>
+                                    <img border="0" title="Buscar" alt="" src="../../../../fastmedical_front/imagen/icono/agt_upgrade_misc.png"/></a>
                             </div>    
                         </td>
                     </tr>

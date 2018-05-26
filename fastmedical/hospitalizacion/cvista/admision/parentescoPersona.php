@@ -1,7 +1,7 @@
 <?php
 $toolbar10=new ToollBar("center");
 if(isset($_SESSION["permiso_formulario_servicio"][110]["AGREGAR_PARENTESCO_PAC"]) && $_SESSION["permiso_formulario_servicio"][110]["AGREGAR_PARENTESCO_PAC"]==1)
-    $toolbar10->SetBoton("btnParentesco","Agregar","btn","onclick,onkeypress","buscarParentescoPaciente()","../../../../medifacil_front/imagen/icono/good.gif","","",1);
+    $toolbar10->SetBoton("btnParentesco","Agregar","btn","onclick,onkeypress","buscarParentescoPaciente()","../../../../fastmedical_front/imagen/icono/good.gif","","",1);
 ?>
 <table width="710" border="0" cellpadding="0" cellspacing="0">
     <tr>

@@ -103,7 +103,7 @@ $resultado = $o_ActionCronograma->traerDatosProgramacion($datos);
                 <tr>
                     <td>
                         <a href='#' onclick="validarAutorizacionProgramacionMedicos()">
-                            <img src='../../../../medifacil_front/imagen/btn/b_vbueno_on.gif' title='Verificar Autorización' alt="Validar Autorización"/>
+                            <img src='../../../../fastmedical_front/imagen/btn/b_vbueno_on.gif' title='Verificar Autorización' alt="Validar Autorización"/>
                         </a>
                     </td>
                 </tr>

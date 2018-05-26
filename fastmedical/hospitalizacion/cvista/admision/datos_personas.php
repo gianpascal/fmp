@@ -49,7 +49,7 @@ $p=array();
                         <tr>
                             <td width="116" height="23" bordercolor="#000000" >Fecha Nacimiento * </td>
                             <td width="287"><input name="txtFechaNacimiento" type="text"  style="width:100px;" id="txtFechaNacimiento"  onkeypress="return validFormSalt('txt',this,event,'cb_tipDc')" title="Fecha Nacimiento" <?php echo $readonly ?>/>
-                            <a href="#" onclick="displayCalendar(document.getElementById('txtFechaNacimiento'),'dd/mm/yyyy',document.getElementById('txtFechaNacimiento'),true);"><img src="../../../../medifacil_front/imagen/icono/date.png" border="0" /></a>            </td>
+                            <a href="#" onclick="displayCalendar(document.getElementById('txtFechaNacimiento'),'dd/mm/yyyy',document.getElementById('txtFechaNacimiento'),true);"><img src="../../../../fastmedical_front/imagen/icono/date.png" border="0" /></a>            </td>
                         </tr>
                         <tr>
                             <td height="23" bordercolor="#000000">Edad</td>
@@ -245,8 +245,8 @@ $p=array();
                     <div id="toolbar2">
 		    <?php
                         $toolbar=new ToollBar("left");
-                        $toolbar->SetBoton("btn_FILIACION","Filiacion","btn","onclick,onkeypress","ventana_filiacion()","../../../../medifacil_front/imagen/icono/normal.png","","",true);
-                        $toolbar->SetBoton("btn_DNI","Adjuntar Fotografia del DNI","btn","onclick,onkeypress","ventana_add_dni()","../../../../medifacil_front/imagen/icono/adjunto.gif","","",true);
+                        $toolbar->SetBoton("btn_FILIACION","Filiacion","btn","onclick,onkeypress","ventana_filiacion()","../../../../fastmedical_front/imagen/icono/normal.png","","",true);
+                        $toolbar->SetBoton("btn_DNI","Adjuntar Fotografia del DNI","btn","onclick,onkeypress","ventana_add_dni()","../../../../fastmedical_front/imagen/icono/adjunto.gif","","",true);
                         $toolbar->Mostrar();
                         ?>
                     </div>
@@ -254,9 +254,9 @@ $p=array();
 			<?php
                         //echo "$iid_persona  $btnhabil  $btndeshabil<br>";
                         $toolbar=new ToollBar("left");
-                        $toolbar->SetBoton("btn_EDITAR","Editar","btn","onclick,onkeypress","editar_persona()","../../../../medifacil_front/imagen/icono/editar.png","","",$btnhabil);
-                        $toolbar->SetBoton("btn_GRABAR","Guardar","btn","onclick,onkeypress","guardar_persona()","../../../../medifacil_front/imagen/icono/grabar.png","","",$btnhabil);
-                        $toolbar->SetBoton("btn_RESTAURAR","Restaurar","btn","onclick,onkeypress","restauraCambios()","../../../../medifacil_front/imagen/icono/undo.png","","",false);
+                        $toolbar->SetBoton("btn_EDITAR","Editar","btn","onclick,onkeypress","editar_persona()","../../../../fastmedical_front/imagen/icono/editar.png","","",$btnhabil);
+                        $toolbar->SetBoton("btn_GRABAR","Guardar","btn","onclick,onkeypress","guardar_persona()","../../../../fastmedical_front/imagen/icono/grabar.png","","",$btnhabil);
+                        $toolbar->SetBoton("btn_RESTAURAR","Restaurar","btn","onclick,onkeypress","restauraCambios()","../../../../fastmedical_front/imagen/icono/undo.png","","",false);
                         $toolbar->Mostrar();
                         ?>
                     </div>

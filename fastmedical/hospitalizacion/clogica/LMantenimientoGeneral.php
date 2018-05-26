@@ -14,7 +14,7 @@ class LMantenimientoGeneral {
         $o_DMantenimientoGeneral = new DMantenimientoGeneral();
         $resultado = $o_DMantenimientoGeneral->getListarAlmacenes();
         foreach ($resultado as $key => $value) {
-            array_push($resultado[$key], "../../../../medifacil_front/imagen/icono/editar.png ^ Editar");
+            array_push($resultado[$key], "../../../../fastmedical_front/imagen/icono/editar.png ^ Editar");
         }
         return $resultado;
     }
@@ -25,25 +25,25 @@ class LMantenimientoGeneral {
         $resultadoArray = array();
         foreach ($resultado as $fila) {
             if ($_SESSION["permiso_formulario_servicio"][201]["EDITAR_AMB_LOGICO"] == 1)
-                $fila[4] = "<a href='#' onclick=\"irEditarAmbienteLogico('" . $fila[0] . "');\"><img src='../../../../medifacil_front/imagen/icono/editar.png' title='Editar cita'/></a>";
+                $fila[4] = "<a href='#' onclick=\"irEditarAmbienteLogico('" . $fila[0] . "');\"><img src='../../../../fastmedical_front/imagen/icono/editar.png' title='Editar cita'/></a>";
             else
                 $fila[4] = "";
 
             if ($fila[3] == '1') {
                 if ($_SESSION["permiso_formulario_servicio"][201]["INACTIVAR_AMB_LOGICO"] == 1) {
-                    $fila[5] = "<a href='#' onclick=\"irActivaryDesactivarAmbienteLogico('" . $fila[0] . "','" . $fila[3] . "');\"><img src='../../../../medifacil_front/imagen/icono/agt_action_success.png' title='Desactivar'/></a>";
+                    $fila[5] = "<a href='#' onclick=\"irActivaryDesactivarAmbienteLogico('" . $fila[0] . "','" . $fila[3] . "');\"><img src='../../../../fastmedical_front/imagen/icono/agt_action_success.png' title='Desactivar'/></a>";
                 } else {
-                    $fila[5] = "<img src='../../../../medifacil_front/imagen/icono/agt_action_success.png' title='Desactivar'/>";
+                    $fila[5] = "<img src='../../../../fastmedical_front/imagen/icono/agt_action_success.png' title='Desactivar'/>";
                 }
             } else {
                 if ($_SESSION["permiso_formulario_servicio"][201]["ACTIVAR_AMB_LOGICO"] == 1) {
-                    $fila[5] = "<a href='#' onclick=\"irActivaryDesactivarAmbienteLogico('" . $fila[0] . "','" . $fila[3] . "');\"><img src='../../../../medifacil_front/imagen/icono/agt_action_fail.png' title='Activar'/></a>";
+                    $fila[5] = "<a href='#' onclick=\"irActivaryDesactivarAmbienteLogico('" . $fila[0] . "','" . $fila[3] . "');\"><img src='../../../../fastmedical_front/imagen/icono/agt_action_fail.png' title='Activar'/></a>";
                 } else {
-                    $fila[5] = "<img src='../../../../medifacil_front/imagen/icono/agt_action_fail.png' title='Activar'/>";
+                    $fila[5] = "<img src='../../../../fastmedical_front/imagen/icono/agt_action_fail.png' title='Activar'/>";
                 }
             }
             //if($_SESSION["permiso_formulario_servicio"][201]["ACTIVAR_AMB_LOGICO"]==1)
-            $fila[6] = "<a href='#' onclick=\"irAsignarAmbienteFisico('" . $fila[0] . "','" . $fila[2] . "');\"><img src='../../../../medifacil_front/imagen/icono/gohome.png' title='Ambiente Fisico'/></a>";
+            $fila[6] = "<a href='#' onclick=\"irAsignarAmbienteFisico('" . $fila[0] . "','" . $fila[2] . "');\"><img src='../../../../fastmedical_front/imagen/icono/gohome.png' title='Ambiente Fisico'/></a>";
             //else
             //    $fila[6]="";
             array_push($resultadoArray, $fila);
@@ -74,12 +74,12 @@ class LMantenimientoGeneral {
             $opciones = "";
 
             if ($_SESSION["permiso_formulario_servicio"][206]["ELIMINAR_TURNO"] == 1) {
-                $opciones.="<a href='#' onclick=\"eliminarTurno('eliminar','$fila[0]');\"><img src='../../../../medifacil_front/imagen/icono/op_rechazado.gif' alt='Eliminar' title='Eliminar' border='0'/></a>&nbsp;&nbsp;&nbsp;&nbsp;";
+                $opciones.="<a href='#' onclick=\"eliminarTurno('eliminar','$fila[0]');\"><img src='../../../../fastmedical_front/imagen/icono/op_rechazado.gif' alt='Eliminar' title='Eliminar' border='0'/></a>&nbsp;&nbsp;&nbsp;&nbsp;";
             }
             if ($_SESSION["permiso_formulario_servicio"][206]["EDITAR_TURNO"] == 1) {
                 $opciones.="<a href='#' onclick=\"CargarVentana('popupMantTurno','Registro de TurnosEditar','../mantenimientogeneral/manteTurno.php?" .
                         "datos=$datos&accion=actualizar','400','300',false,true,'',1,'',10,10,10,10);\">" .
-                        "<img src='../../../../medifacil_front/imagen/icono/editar.png' alt='Editar' title='Editar' border='0'/></a>";
+                        "<img src='../../../../fastmedical_front/imagen/icono/editar.png' alt='Editar' title='Editar' border='0'/></a>";
             }
 
             $fila["opciones"] = $opciones;
@@ -94,12 +94,12 @@ class LMantenimientoGeneral {
         $resultado = $o_DMantenimientoGeneral->listaTurno($descTurno);
         foreach ($resultado as $key => $value) {
             if ($_SESSION["permiso_formulario_servicio"][206]["ELIMINAR_TURNO"] == 1) {
-                array_push($resultado[$key], "../../../../medifacil_front/imagen/icono/op_rechazado.gif ^ Eliminar");
+                array_push($resultado[$key], "../../../../fastmedical_front/imagen/icono/op_rechazado.gif ^ Eliminar");
             } else {
                 array_push($resultado[$key], "");
             }
             if ($_SESSION["permiso_formulario_servicio"][206]["EDITAR_TURNO"] == 1) {
-                array_push($resultado[$key], "../../../../medifacil_front/imagen/icono/editar.png' ^ Editar");
+                array_push($resultado[$key], "../../../../fastmedical_front/imagen/icono/editar.png' ^ Editar");
             } else {
                 array_push($resultado[$key], "");
             }
@@ -111,9 +111,9 @@ class LMantenimientoGeneral {
         $o_DMantenimientoGeneral = new DMantenimientoGeneral();
         $resultado = $o_DMantenimientoGeneral->cargarTablaIPs();
         foreach ($resultado as $key => $value) {
-            array_push($resultado[$key], "../../../../medifacil_front/imagen/icono/edit2.png ^ Editar");
+            array_push($resultado[$key], "../../../../fastmedical_front/imagen/icono/edit2.png ^ Editar");
 
-            array_push($resultado[$key], "../../../../medifacil_front/imagen/icono/cancel.png' ^ Eliminar");
+            array_push($resultado[$key], "../../../../fastmedical_front/imagen/icono/cancel.png' ^ Eliminar");
         }
         return $resultado;
     }
@@ -121,7 +121,7 @@ class LMantenimientoGeneral {
         $o_DMantenimientoGeneral = new DMantenimientoGeneral();
         $resultado = $o_DMantenimientoGeneral->cargarTablaAmbientes();
         foreach ($resultado as $key => $value) {
-            array_push($resultado[$key], "../../../../medifacil_front/imagen/icono/clean.png ^ Agregar");
+            array_push($resultado[$key], "../../../../fastmedical_front/imagen/icono/clean.png ^ Agregar");
         }
         return $resultado;
     }
@@ -198,19 +198,19 @@ class LMantenimientoGeneral {
             $datos = base64_encode($fila[0] . "|" . $fila[1] . "|" . ($fila[2]) . "|" . ($fila[3]) . "|" . $fila[4] . "|" . $fila[5] . "|" . $fila[6] . "|" . $fila[7] . "|" . $fila[8] . "|" . $fila[9] . "|" . $fila[10]);
             $opciones = "";
             if ($_SESSION["permiso_formulario_servicio"][202]["ELIMINAR_AMB_FISICO"] == 1) {
-                $opciones .= "<a href='#' onclick=\"eliminarAmbienteFisico('eliminar',$fila[0]);\"><img src='../../../../medifacil_front/imagen/icono/op_rechazado.gif' alt='Eliminar' title='Eliminar' border='0'/></a>&nbsp;&nbsp;&nbsp;&nbsp;";
+                $opciones .= "<a href='#' onclick=\"eliminarAmbienteFisico('eliminar',$fila[0]);\"><img src='../../../../fastmedical_front/imagen/icono/op_rechazado.gif' alt='Eliminar' title='Eliminar' border='0'/></a>&nbsp;&nbsp;&nbsp;&nbsp;";
             }
             if ($_SESSION["permiso_formulario_servicio"][202]["EDITAR_AMB_FISICO"] == 1) {
                 $opciones .= "<a href='#' onclick=\"CargarVentana('popupMantAmbFisico','Registro de Ambientes Físicos','../mantenimientogeneral/manteAmbienteFisico.php?" .
                         "datos=$datos&accion=actualizar','500','320',false,true,'',1,'',10,10,10,10);\">" .
-                        "<img src='../../../../medifacil_front/imagen/icono/editar.png' alt='Editar' title='Editar' border='0'/></a>&nbsp;&nbsp;&nbsp;&nbsp;";
+                        "<img src='../../../../fastmedical_front/imagen/icono/editar.png' alt='Editar' title='Editar' border='0'/></a>&nbsp;&nbsp;&nbsp;&nbsp;";
             }
             if ($_SESSION["permiso_formulario_servicio"][202]["AGREGAR_SERVICIO_X_AMB_FISICO"] == 1) {
-                $opciones .= "<a href='#' onclick=\"mostrarAmbFisicoxServBasico($fila[0],'$fila[vNombreAmbienteFisico]');\"><img src='../../../../medifacil_front/imagen/icono/exec.gif' alt='Servicios' title='Servicios' border='0'/></a>&nbsp;&nbsp;&nbsp;&nbsp;";
+                $opciones .= "<a href='#' onclick=\"mostrarAmbFisicoxServBasico($fila[0],'$fila[vNombreAmbienteFisico]');\"><img src='../../../../fastmedical_front/imagen/icono/exec.gif' alt='Servicios' title='Servicios' border='0'/></a>&nbsp;&nbsp;&nbsp;&nbsp;";
             }
 
             //if($_SESSION["permiso_formulario_servicio"][202]["AGREGAR_SERVICIO_X_AMB_FISICO"]==1){
-            $opciones .= "<a href='#' onclick=\"mostrarMantCamaxAmbFisico($fila[0],'$fila[vNombreAmbienteFisico]');\"><img src='../../../../medifacil_front/imagen/icono/cama.jpg' alt='Camas' title='Camas' border='0'/></a>";
+            $opciones .= "<a href='#' onclick=\"mostrarMantCamaxAmbFisico($fila[0],'$fila[vNombreAmbienteFisico]');\"><img src='../../../../fastmedical_front/imagen/icono/cama.jpg' alt='Camas' title='Camas' border='0'/></a>";
             //}
             $fila["opciones"] = $opciones;
             array_push($resultadoArray, $fila);
@@ -229,10 +229,10 @@ class LMantenimientoGeneral {
 
             if ($fila["bActivo"] == 1) {
                 $fila["chk_activo"] = "<input type='checkbox' checked disabled>";
-                $imagenHab = "<img src='../../../../medifacil_front/imagen/icono/agt_action_fail.png' alt='Deshabilitar' title='Deshabilitar'/>";
+                $imagenHab = "<img src='../../../../fastmedical_front/imagen/icono/agt_action_fail.png' alt='Deshabilitar' title='Deshabilitar'/>";
             } else {
                 $fila["chk_activo"] = "<input type='checkbox' disabled>";
-                $imagenHab = "<img src='../../../../medifacil_front/imagen/icono/agt_action_success.png' alt='Habilitar' title='Habilitar'/>";
+                $imagenHab = "<img src='../../../../fastmedical_front/imagen/icono/agt_action_success.png' alt='Habilitar' title='Habilitar'/>";
             }
             $estado = $fila["bActivo"];
 
@@ -252,10 +252,10 @@ class LMantenimientoGeneral {
             //Para habilitar-deshabilitar cama
             if ($fila["bEstado"] == 1) {
                 $fila["chk_activo"] = "<input type='checkbox' checked disabled>";
-                $imagenHab = "<img src='../../../../medifacil_front/imagen/icono/agt_action_fail.png' alt='Deshabilitar' title='Deshabilitar'/>";
+                $imagenHab = "<img src='../../../../fastmedical_front/imagen/icono/agt_action_fail.png' alt='Deshabilitar' title='Deshabilitar'/>";
             } else {
                 $fila["chk_activo"] = "<input type='checkbox' disabled>";
-                $imagenHab = "<img src='../../../../medifacil_front/imagen/icono/agt_action_success.png' alt='Habilitar' title='Habilitar'/>";
+                $imagenHab = "<img src='../../../../fastmedical_front/imagen/icono/agt_action_success.png' alt='Habilitar' title='Habilitar'/>";
             }
             $estado = $fila["bEstado"];
 
@@ -267,7 +267,7 @@ class LMantenimientoGeneral {
             //if($_SESSION["permiso_formulario_servicio"][202]["AGREGAR_SERVICIO_X_AMB_FISICO"]==1){
             $datos = $codAmbienteFisico . "|" . $fila["vNombreAmbienteFisico"] . "|" . $fila["iIdCodigoCama"] . "|" . $fila["iNumeroCama"] . "|" . $fila["vDescripcionCama"];
             $datos = base64_encode($datos);
-            $opciones .= "<a href=\"javascript:mostrarMantCamaxAmbFisico2('actualizar','$datos');\"><img src=\"../../../../medifacil_front/imagen/icono/editar.png \"></a>";
+            $opciones .= "<a href=\"javascript:mostrarMantCamaxAmbFisico2('actualizar','$datos');\"><img src=\"../../../../fastmedical_front/imagen/icono/editar.png \"></a>";
             //}
 
             $fila["opciones"] = $opciones;
@@ -346,19 +346,19 @@ class LMantenimientoGeneral {
         foreach ($resultado as $fila) {
             if ($fila[6] == '1') {
                 if ($_SESSION["permiso_formulario_servicio"][201]["DESACTIVAR_AMB_FISICO_X_AMB_LOGICO"] == 1) {
-                    $fila[7] = "<a href='#' onclick=\"irActivaryDesactivarAsignacionAmbFisicoaAmbLogico('" . $fila[0] . "','" . $fila[1] . "','" . $fila[2] . "','" . $fila[6] . "');\"><img src='../../../../medifacil_front/imagen/icono/agt_action_success.png' title='Desactivar'/></a>";
+                    $fila[7] = "<a href='#' onclick=\"irActivaryDesactivarAsignacionAmbFisicoaAmbLogico('" . $fila[0] . "','" . $fila[1] . "','" . $fila[2] . "','" . $fila[6] . "');\"><img src='../../../../fastmedical_front/imagen/icono/agt_action_success.png' title='Desactivar'/></a>";
                 } else {
-                    $fila[7] = "<img src='../../../../medifacil_front/imagen/icono/agt_action_success.png' title='Activado'/>";
+                    $fila[7] = "<img src='../../../../fastmedical_front/imagen/icono/agt_action_success.png' title='Activado'/>";
                 }
             } else {
                 if ($_SESSION["permiso_formulario_servicio"][201]["ACTIVAR_AMB_FISICO_X_AMB_LOGICO"] == 1) {
-                    $fila[7] = "<a href='#' onclick=\"irActivaryDesactivarAsignacionAmbFisicoaAmbLogico('" . $fila[0] . "','" . $fila[1] . "','" . $fila[2] . "','" . $fila[6] . "');\"><img src='../../../../medifacil_front/imagen/icono/agt_action_fail.png' title='Activar'/></a>";
+                    $fila[7] = "<a href='#' onclick=\"irActivaryDesactivarAsignacionAmbFisicoaAmbLogico('" . $fila[0] . "','" . $fila[1] . "','" . $fila[2] . "','" . $fila[6] . "');\"><img src='../../../../fastmedical_front/imagen/icono/agt_action_fail.png' title='Activar'/></a>";
                 } else {
-                    $fila[7] = "<img src='../../../../medifacil_front/imagen/icono/agt_action_fail.png' title='Desactivado'/>";
+                    $fila[7] = "<img src='../../../../fastmedical_front/imagen/icono/agt_action_fail.png' title='Desactivado'/>";
                 }
             }
             if ($_SESSION["permiso_formulario_servicio"][201]["ELIMINAR_AMB_FISICO_X_AMB_LOGICO"] == 1) {
-                $fila[8] = "<a href='#' onclick=\"irEliminarAsignacionAmbFisicoaAmbLogico('" . $fila[0] . "','" . $fila[1] . "','" . $fila[2] . "');\"><img src='../../../../medifacil_front/imagen/icono/delete.png' title='Eliminar'/></a>";
+                $fila[8] = "<a href='#' onclick=\"irEliminarAsignacionAmbFisicoaAmbLogico('" . $fila[0] . "','" . $fila[1] . "','" . $fila[2] . "');\"><img src='../../../../fastmedical_front/imagen/icono/delete.png' title='Eliminar'/></a>";
             } else {
                 $fila[8] = "";
             }
@@ -390,7 +390,7 @@ class LMantenimientoGeneral {
 
 
         foreach ($resultado as $j => $fila) {
-            $imagen1 = "../../../../medifacil_front/imagen/icono/nuevo_item.png ^ Agregar";
+            $imagen1 = "../../../../fastmedical_front/imagen/icono/nuevo_item.png ^ Agregar";
             array_push($resultado[$j], $imagen1);
         }
         return $resultado;
@@ -423,8 +423,8 @@ class LMantenimientoGeneral {
                 array_push($resultado[$j], "Activado");
             else if ($resultado[$j][5] == 0)
                 array_push($resultado[$j], "Desactivado");
-            $imagen1 = "../../../../medifacil_front/imagen/icono/editar.png ^ Editar";
-            $imagen2 = "../../../../medifacil_front/imagen/icono/eliminar.gif ^ Eliminar";
+            $imagen1 = "../../../../fastmedical_front/imagen/icono/editar.png ^ Editar";
+            $imagen2 = "../../../../fastmedical_front/imagen/icono/eliminar.gif ^ Eliminar";
             array_push($resultado[$j], $imagen1);
             array_push($resultado[$j], $imagen2);
         }
@@ -535,8 +535,8 @@ class LMantenimientoGeneral {
         $o_DMantenimientoGeneral = new DMantenimientoGeneral();
         $resultado = $o_DMantenimientoGeneral->getUnidadMedida();
         foreach ($resultado as $key => $value) {
-            array_push($resultado[$key], "../../../../medifacil_front/imagen/icono/editar.png ^ Editar");
-            array_push($resultado[$key], "../../../../medifacil_front/imagen/icono/i_nomailappt.png ^ Eliminar");
+            array_push($resultado[$key], "../../../../fastmedical_front/imagen/icono/editar.png ^ Editar");
+            array_push($resultado[$key], "../../../../fastmedical_front/imagen/icono/i_nomailappt.png ^ Eliminar");
         }
         return $resultado;
     }
@@ -545,8 +545,8 @@ class LMantenimientoGeneral {
         $o_DMantenimientoGeneral = new DMantenimientoGeneral();
         $resultado = $o_DMantenimientoGeneral->getUnidad($datos);
         foreach ($resultado as $key => $value) {
-            array_push($resultado[$key], "../../../../medifacil_front/imagen/icono/editar.png ^ Editar");
-            array_push($resultado[$key], "../../../../medifacil_front/imagen/icono/i_nomailappt.png ^ Eliminar");
+            array_push($resultado[$key], "../../../../fastmedical_front/imagen/icono/editar.png ^ Editar");
+            array_push($resultado[$key], "../../../../fastmedical_front/imagen/icono/i_nomailappt.png ^ Eliminar");
         }
         return $resultado;
     }

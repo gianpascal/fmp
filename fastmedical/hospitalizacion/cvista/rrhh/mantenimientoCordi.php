@@ -149,7 +149,7 @@ if (trim($accion) == "EditarCoordinador") {
                 $verBotonBuscarEditarCoordinador = 0;
             }
 
-            $toolbar01->SetBoton("btnListaCoordinadores", "Buscar", "btn", "onclick,onkeypress", "buscarCoordinadoresAsignar()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/agt_action_success.png", "", "", $verBotonBuscarEditarCoordinador);
+            $toolbar01->SetBoton("btnListaCoordinadores", "Buscar", "btn", "onclick,onkeypress", "buscarCoordinadoresAsignar()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/agt_action_success.png", "", "", $verBotonBuscarEditarCoordinador);
             $toolbar01->Mostrar();
 
             echo '
@@ -175,7 +175,7 @@ if (trim($accion) == "EditarCoordinador") {
             }
 
             //lo cambie de 01 a 02
-            $toolbar02->SetBoton("btnListaCoordinadores", "Buscar", "btn", "onclick,onkeypress", "buscarCoordinadoresAsignar()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/agt_action_success.png", "", "", $verBotonBuscarNuevoCoordinador);
+            $toolbar02->SetBoton("btnListaCoordinadores", "Buscar", "btn", "onclick,onkeypress", "buscarCoordinadoresAsignar()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/agt_action_success.png", "", "", $verBotonBuscarNuevoCoordinador);
             $toolbar02->Mostrar();
 
             echo '
@@ -236,7 +236,7 @@ if (trim($accion) == "EditarCoordinador") {
 //
 //
 //
-//        $toolbar02->SetBoton("desactivarCoordinadorAlArea", "Desactivar", "btn", "onclick,onkeypress", "desactivarCoordinadorAlArea()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/agt_action_success.png", "", "", 1);
+//        $toolbar02->SetBoton("desactivarCoordinadorAlArea", "Desactivar", "btn", "onclick,onkeypress", "desactivarCoordinadorAlArea()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/agt_action_success.png", "", "", 1);
 ////        $toolbar02->Mostrar();
 //
 //
@@ -262,7 +262,7 @@ if (trim($accion) == "EditarCoordinador") {
 //
 //                            <div style="width: 20px; display: none" id="activardiv" >';
 //
-//                             $toolbar03->SetBoton("deshacerCambiosCoordinadorAlArea", "Guardarr", "btn", "onclick,onkeypress", "asignandoNuevoCoordinadorAlArea()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/agt_action_success.png", "", "", 1);
+//                             $toolbar03->SetBoton("deshacerCambiosCoordinadorAlArea", "Guardarr", "btn", "onclick,onkeypress", "asignandoNuevoCoordinadorAlArea()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/agt_action_success.png", "", "", 1);
 //                             $toolbar03->Mostrar();
 //
 //
@@ -329,7 +329,7 @@ if (trim($accion) == "EditarCoordinador") {
         }
 
 
-        $toolbar03->SetBoton("deshacerCambiosCoordinadorAlArea", "Guardar", "btn", "onclick,onkeypress", "asignandoNuevoCoordinadorAlArea()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/agt_action_success.png", "", "", $verBotonGuardarCoordinadores);
+        $toolbar03->SetBoton("deshacerCambiosCoordinadorAlArea", "Guardar", "btn", "onclick,onkeypress", "asignandoNuevoCoordinadorAlArea()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/agt_action_success.png", "", "", $verBotonGuardarCoordinadores);
         $toolbar03->Mostrar();
         echo '
 
@@ -345,7 +345,7 @@ if (trim($accion) == "EditarCoordinador") {
             $verBotonModificarCoordinadores = 0;
         }
 
-        $toolbar04->SetBoton("asignarCoordinadorAlArea", "Modificar", "btn", "onclick,onkeypress", " asignarCoordinadorAlArea()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/agt_action_success.png", "", "", $verBotonModificarCoordinadores);
+        $toolbar04->SetBoton("asignarCoordinadorAlArea", "Modificar", "btn", "onclick,onkeypress", " asignarCoordinadorAlArea()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/agt_action_success.png", "", "", $verBotonModificarCoordinadores);
         $toolbar04->Mostrar();
 
 
@@ -375,7 +375,7 @@ if (trim($accion) == "EditarCoordinador") {
         } else {
             $verBotonGuardarNuevoCoordinador = 0;
         }
-        $toolbar05->SetBoton("asignarCoordinadorAlArea", "Guardar", "btn", "onclick,onkeypress", " asignarNuevoCoordinadorAlArea()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/agt_action_success.png", "", "", $verBotonGuardarNuevoCoordinador);
+        $toolbar05->SetBoton("asignarCoordinadorAlArea", "Guardar", "btn", "onclick,onkeypress", " asignarNuevoCoordinadorAlArea()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/agt_action_success.png", "", "", $verBotonGuardarNuevoCoordinador);
         $toolbar05->Mostrar();
 
         echo ' 
@@ -402,7 +402,7 @@ if (trim($accion) == "EditarCoordinador") {
         }
     
 
-        $toolbar06->SetBoton("salirModCoordiTurnos", "Salir", "btn", "onclick,onkeypress", " salirModCoordiTurnos()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/agt_action_success.png", "", "", $verBotonSalirNuevoCoordinador);
+        $toolbar06->SetBoton("salirModCoordiTurnos", "Salir", "btn", "onclick,onkeypress", " salirModCoordiTurnos()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/agt_action_success.png", "", "", $verBotonSalirNuevoCoordinador);
         $toolbar06->Mostrar();
    
 
@@ -455,7 +455,7 @@ if (trim($accion) == "EditarCoordinador") {
 <?php
 //if ($_SESSION["permiso_formulario_servicio"][206]["GRABAR_CORDI"] == 1) {
 //    $toolbar = new ToollBar("right");
-//    $toolbar->SetBoton("GRABAR", "GrabarLabel", "btn", "onclick,onkeypress", "validarMantenimientoCordi('$accion')", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/grabar.png");
+//    $toolbar->SetBoton("GRABAR", "GrabarLabel", "btn", "onclick,onkeypress", "validarMantenimientoCordi('$accion')", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/grabar.png");
 //    $toolbar->Mostrar();
 //}
 ?>

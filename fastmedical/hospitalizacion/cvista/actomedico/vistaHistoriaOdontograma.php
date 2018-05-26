@@ -8,7 +8,7 @@
     </div>
     <div id="Div_HistoriaBotones" style="width:200px;float: left; height: 400px;background-color: #ff6631 ">
 <!--            <a href="javascript:;" onclick="javascript:historiaLeyenda();">
-                <img src="../../../../medifacil_front/imagen/btn/b_ver_on.gif" />
+                <img src="../../../../fastmedical_front/imagen/btn/b_ver_on.gif" />
             </a> -->
             <div style="border:0px solid;width: 90%;height:500px;float:left;padding:0px;">
                 <div id="Div_HistoriaLeyenda" style="overflow-y:scroll;width: 200px; height:400px; background-color:#006631;  ">

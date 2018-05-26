@@ -28,7 +28,7 @@
                         
                         <td align="right">Fecha:&nbsp;</td>
                         <td><input type="text" onkeypress="enfocarCampos(id,event)" onfocus="estadoCambioFechasConsultaLaboratorio('0')" maxlength="10"  onclick="calendarioHtmlx('txtFechaIni')" size="20" id="txtFechaIni" name="txtFechaIni"></td>
-                        <td><img id="imgBuscar" border="0" src="../../../../medifacil_front/imagen/btn/nbtn_buscar.gif" alt="" title="Codigo de Persona" onclick="buscarConsultaEstadoExamen()"></td>                    
+                        <td><img id="imgBuscar" border="0" src="../../../../fastmedical_front/imagen/btn/nbtn_buscar.gif" alt="" title="Codigo de Persona" onclick="buscarConsultaEstadoExamen()"></td>                    
                     </tr>
                     <tr>
                         <td align="right">Ape Pat:&nbsp;</td>
@@ -43,7 +43,7 @@
                         <td>
 <!--                            <input type="text" onfocus="estadoCambioFechasConsultaLaboratorio('1')" maxlength="10" onkeypress="return validar(event,4)" onclick="calendarioHtmlx('txtFechaFinal')" size="20" id="txtFechaFinal" name="txtFechaFinal">-->
                         </td>
-                        <td><img border="0" src="../../../../medifacil_front/imagen/btn/btn_limpiar.gif" alt="" title="Limpiar" onclick="limpiarCamposConsultaEstado(0,'','')"></td>                       
+                        <td><img border="0" src="../../../../fastmedical_front/imagen/btn/btn_limpiar.gif" alt="" title="Limpiar" onclick="limpiarCamposConsultaEstado(0,'','')"></td>                       
                     </tr>
                 </table>
             </td>

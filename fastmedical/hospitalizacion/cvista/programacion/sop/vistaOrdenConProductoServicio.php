@@ -53,8 +53,8 @@
                 <input type="text" id="txtDescProdServSeleccionado" name="txtDescProdServSeleccionado" size="50" readonly/>
                 <input type="text" id="txtPrecioProdServSeleccionado" name="txtPrecioProdServSeleccionado" size="10" readonly/>
                 <input type="text" id="txtCantProdServSeleccionado" name="txtCantProdServSeleccionado" size="10"/>
-                <a href="javascript:aceptarProductoServicio();"><img src="../../../../medifacil_front/imagen/icono/agt_action_success.png" title="Aceptar" alt="Aceptar"/></a>
-                <!--<img src="../../../../medifacil_front/imagen/icono/edit2.png" title="Editar precio" alt="Editar precio"/>-->
+                <a href="javascript:aceptarProductoServicio();"><img src="../../../../fastmedical_front/imagen/icono/agt_action_success.png" title="Aceptar" alt="Aceptar"/></a>
+                <!--<img src="../../../../fastmedical_front/imagen/icono/edit2.png" title="Editar precio" alt="Editar precio"/>-->
             </div>
         </div>
 
@@ -112,10 +112,10 @@
     <div id="divAccionesyBotonesProdServSeleccionado" align="right" style="width: 100%; height: 50px; background: white">
         <div style="float:right;">
             <a href="javascript:manteOrdenConProductoServicio('insertar');">
-                <img src="../../../../medifacil_front/imagen/btn/b_grabar_on.gif" title="Guardar" border="0" alt="Guardar"/>
+                <img src="../../../../fastmedical_front/imagen/btn/b_grabar_on.gif" title="Guardar" border="0" alt="Guardar"/>
             </a>
             <a href="javascript:cerrarVentanaOrdenConProductoServicio();">
-                <img src="../../../../medifacil_front/imagen/btn/b_cancelar_on.gif" title="Cancelar" border="0" alt="Cancelar"/>
+                <img src="../../../../fastmedical_front/imagen/btn/b_cancelar_on.gif" title="Cancelar" border="0" alt="Cancelar"/>
             </a>
         </div>
     </div>

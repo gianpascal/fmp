@@ -61,7 +61,7 @@ $toolbar1 = new ToollBar("center");
         <td></td>
         <td >
             <?php
-            $toolbar1->SetBoton("Editar", "Editar", "btn", "onclick,onkeypress", "modificarServicioGrupoEtario()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/editar.png", "", "", 1);
+            $toolbar1->SetBoton("Editar", "Editar", "btn", "onclick,onkeypress", "modificarServicioGrupoEtario()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/editar.png", "", "", 1);
             $toolbar1->Mostrar();
             ?>
         </td>

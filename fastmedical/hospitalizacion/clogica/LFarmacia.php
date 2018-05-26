@@ -14,7 +14,7 @@ class LFarmacia {
         $resultado = $o_DFarmacia->getArrayControlInternoFarmaciaSOP($datos);
         $j = 0;
         foreach ($resultado as $fila) {
-            $imagen1 = "../../../../medifacil_front/imagen/icono/eliminar.gif ^ Eliminar";
+            $imagen1 = "../../../../fastmedical_front/imagen/icono/eliminar.gif ^ Eliminar";
             array_push($resultado[$j], $imagen1);
             $j++;
         }

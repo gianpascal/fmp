@@ -11,7 +11,7 @@
 
                        <div style="width: 20%; height: 35%; float: left;" id="DivEtiquetaNomP">
                              <a href="javascript:buscarDocumentos(document.getElementById('txtDocumento').value,'','');">
-                            <img border="0" title="Buscador de Documentos" alt="" src="../../../../medifacil_front/imagen/btn/nbtn_buscar.gif"/></a>
+                            <img border="0" title="Buscador de Documentos" alt="" src="../../../../fastmedical_front/imagen/btn/nbtn_buscar.gif"/></a>
                     </div>
            </div>
             <div id="divdetalleDocumento" style=" height:85%; width:99%; float: left; margin-left:5px; overflow: auto;">

@@ -265,7 +265,7 @@ function getMedicos(a, b, evento){
     if (numero == 3 || tecla == 13) {
         vcpt = 0;
         tablaMedicos = new dhtmlXGridObject('divResultadoBusquedaMedicos');
-        tablaMedicos.setImagePath("../../../../medifacil_front/imagen/icono/");
+        tablaMedicos.setImagePath("../../../../fastmedical_front/imagen/icono/");
         tablaMedicos.attachEvent("onRowSelect", function(fila, columna) {
             if (columna==0){ 
                 var codigoPersona=tablaMedicos.cells(fila,1).getValue();

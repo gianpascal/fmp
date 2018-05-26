@@ -68,7 +68,7 @@ if($datos["mes"]<10){
             </tr>
             <tr>
                 <td>
-                    <a href="javascript:guardarTurnoProgramadoIndividuar();"> <img border="0" title="Turno" alt="" src="../../../../medifacil_front/imagen/btn/b_grabar_on.gif"/></a>
+                    <a href="javascript:guardarTurnoProgramadoIndividuar();"> <img border="0" title="Turno" alt="" src="../../../../fastmedical_front/imagen/btn/b_grabar_on.gif"/></a>
                 </td>
             </tr>
             <tr>

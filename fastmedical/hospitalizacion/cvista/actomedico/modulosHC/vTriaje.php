@@ -6,7 +6,7 @@
                         <h1>Triaje</h1>
                     </td>
                     <td style="width:3%">
-                        <img id="Div_TriajeCuerpoicono" src='../../../../medifacil_front/imagen/icono/plegar.png' title='plegar' alt=""/>
+                        <img id="Div_TriajeCuerpoicono" src='../../../../fastmedical_front/imagen/icono/plegar.png' title='plegar' alt=""/>
                     </td>
                 </tr>
             </table>

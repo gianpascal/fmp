@@ -16,7 +16,7 @@
                             <h1>Paquetes Incompletos</h1>
                         </td>
                         <td style="width:3%">
-                            <img id="Div_PaquetesCuerpoicono" src='../../../../medifacil_front/imagen/icono/desplegar.png' title='desplegar' alt=""/>
+                            <img id="Div_PaquetesCuerpoicono" src='../../../../fastmedical_front/imagen/icono/desplegar.png' title='desplegar' alt=""/>
                         </td>
                     </tr>
                 </table>
@@ -124,10 +124,10 @@
             }
             ?>
             <a onclick="javascript:GeneralServicos(<?php echo $numeroPaquetes ?>,<?php echo $value['iIdGrupoEtarioPersonas'] ?>);" href="javascript:;">
-                <img id="btn_agregarotro" title="Generar"alt="" src="../../../../medifacil_front/imagen/btn/btn_GenerarOrdenes.png">
+                <img id="btn_agregarotro" title="Generar"alt="" src="../../../../fastmedical_front/imagen/btn/btn_GenerarOrdenes.png">
             </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <a onclick="javascript:ActualizarServicios(<?php echo $numeroPaquetes ?>,<?php echo $value['iIdGrupoEtarioPersonas'].",'".$datosPersona['codpersona']."'" ?>);" href="javascript:;">
-                <img id="btn_agregarotro" title="Actualizar" style="width: 50px;" alt="" src="../../../../medifacil_front/imagen/btn/btn_actualizar.jpg">
+                <img id="btn_agregarotro" title="Actualizar" style="width: 50px;" alt="" src="../../../../fastmedical_front/imagen/btn/btn_actualizar.jpg">
             </a>
         </div>
 

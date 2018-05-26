@@ -39,7 +39,7 @@ ocupaciones por centro de costos
                     
                     
           <center>
-	<a href="javascript:agregarOcupacion();"><img src="../../../../medifacil_front/imagen/btn/b_agregar_on.gif" alt="" border="0" 					title="Agregar Ocupaciones"/></a>
+	<a href="javascript:agregarOcupacion();"><img src="../../../../fastmedical_front/imagen/btn/b_agregar_on.gif" alt="" border="0" 					title="Agregar Ocupaciones"/></a>
     <div id="estado">
     estado
     </div>

@@ -65,13 +65,13 @@ if (count($resultadoMateriales) > 0) {
                         <div class="inputMateriales">
                             <input onkeyup='validaDecimal(event,this,"");' readonly="true" name="<?php echo $iidPacientePuntoControlMateriales; ?>" id="material_<?php echo $iidPacientePuntoControlMateriales; ?>" type="text"  value="<?php echo $valueMateriales[6]; ?>" style="width:45px;" />
                             <a href="javascript:editarMaterialPersona(<?php echo $iidPacientePuntoControlMateriales; ?>);">
-                                <img id="iconoEditarMaterial_<?php echo $iidPacientePuntoControlMateriales; ?>" border="0" src="../../../../medifacil_front/imagen/icono/editar.png" alt="" title="editar" />
+                                <img id="iconoEditarMaterial_<?php echo $iidPacientePuntoControlMateriales; ?>" border="0" src="../../../../fastmedical_front/imagen/icono/editar.png" alt="" title="editar" />
                             </a>
                             <a href="javascript:modificarMaterialPersona(<?php echo $iidPacientePuntoControlMateriales; ?>);">
-                                <img style="display: none;" id="iconoGrabarMaterial_<?php echo $iidPacientePuntoControlMateriales; ?>" border="0" src="../../../../medifacil_front/imagen/icono/grabar.png" alt="" title="Guardar" />
+                                <img style="display: none;" id="iconoGrabarMaterial_<?php echo $iidPacientePuntoControlMateriales; ?>" border="0" src="../../../../fastmedical_front/imagen/icono/grabar.png" alt="" title="Guardar" />
                             </a>
                             <a href="javascript:cancelarMaterialPersona(<?php echo $iidPacientePuntoControlMateriales; ?>);">
-                                <img style="display: none;" id="iconoCancelarMaterial_<?php echo $iidPacientePuntoControlMateriales; ?>" border="0" src="../../../../medifacil_front/imagen/icono/cancel.png" alt="" title="cancelar" />
+                                <img style="display: none;" id="iconoCancelarMaterial_<?php echo $iidPacientePuntoControlMateriales; ?>" border="0" src="../../../../fastmedical_front/imagen/icono/cancel.png" alt="" title="cancelar" />
                             </a>
                         </div>
                     </div>

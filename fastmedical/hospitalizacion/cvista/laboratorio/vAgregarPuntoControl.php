@@ -32,7 +32,7 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <a href="javascript:guardarNuevoPuntoControl();"> <img border="0" title="Nuevo" alt="" src="../../../../medifacil_front/imagen/btn/b_grabar_on.gif"/></a>
+                                    <a href="javascript:guardarNuevoPuntoControl();"> <img border="0" title="Nuevo" alt="" src="../../../../fastmedical_front/imagen/btn/b_grabar_on.gif"/></a>
                                 </td>
                             </tr>
                         </table>

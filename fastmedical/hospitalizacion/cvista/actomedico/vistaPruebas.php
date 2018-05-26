@@ -23,7 +23,7 @@
                 </div>
                 <div id="divBuscar" style="display: block; margin-left: 35%; margin-right: 35%; height:60px;">
                     <?php
-                    $toolbarx->SetBoton("Buscar","Buscar","btn","onclick,onkeypress","buscarPrueba()",$_SESSION['path_principal']."../medifacil_front/imagen/icono/kappfinder.png","","",1);
+                    $toolbarx->SetBoton("Buscar","Buscar","btn","onclick,onkeypress","buscarPrueba()",$_SESSION['path_principal']."../fastmedical_front/imagen/icono/kappfinder.png","","",1);
                     $toolbarx->Mostrar();
                     ?>
                 </div>-->
@@ -41,7 +41,7 @@
                 </div>
                 <div id="divNuevo" style="width:200px; height: auto; margin-left: 30px; margin-right: 30px" align="center">
                             <?php
-                            $toolbarz->SetBoton("Nuevo","Nueva Prueba","btn","onclick,onkeypress","pruebasCampos()",$_SESSION['path_principal']."../medifacil_front/imagen/icono/editar.png","","",1);
+                            $toolbarz->SetBoton("Nuevo","Nueva Prueba","btn","onclick,onkeypress","pruebasCampos()",$_SESSION['path_principal']."../fastmedical_front/imagen/icono/editar.png","","",1);
                             $toolbarz->Mostrar();
                             ?>
                 </div>

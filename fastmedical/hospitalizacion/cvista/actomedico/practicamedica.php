@@ -22,7 +22,7 @@
                 <td width="16%">&nbsp;</td>
                 <td width="1%">&nbsp;</td>
                 <td width="5%" align="right"><div style="margin-top: -15px">
-                    <?php if( $paquete==0) { ?>    <a href="javascript:;" onClick="javascript:eliminarPracticaMedicaHC(<?php echo "'Div_PracticaMedica".$datos["numerodivpracticamedica"]."','".$datos["codigoservicio"]."','".$datos["numerodivpracticamedica"]."'";?>);"><img src='../../../../medifacil_front/imagen/icono/borrar.png' alt="Eliminar"></a></div>
+                    <?php if( $paquete==0) { ?>    <a href="javascript:;" onClick="javascript:eliminarPracticaMedicaHC(<?php echo "'Div_PracticaMedica".$datos["numerodivpracticamedica"]."','".$datos["codigoservicio"]."','".$datos["numerodivpracticamedica"]."'";?>);"><img src='../../../../fastmedical_front/imagen/icono/borrar.png' alt="Eliminar"></a></div>
                    <?php } ?>
                 </td>
             </tr>

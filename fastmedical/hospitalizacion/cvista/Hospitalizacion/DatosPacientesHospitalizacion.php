@@ -110,7 +110,7 @@ and open the template in the editor.
                             <table align="center"> <tr>
                                     <td><?php
                                             $toolbar3 = new ToollBar("left");
-                                            $toolbar3->SetBoton("ELIMINAR", "SALIR", "btn", "onclick,onkeypress", "SalirReportePaciente()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/salir.gif");
+                                            $toolbar3->SetBoton("ELIMINAR", "SALIR", "btn", "onclick,onkeypress", "SalirReportePaciente()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/salir.gif");
                                             $toolbar3->Mostrar();
                                             ?>
                                     </td>
@@ -119,7 +119,7 @@ and open the template in the editor.
                                         <?php
                                         if($datos["codigoHospitalizacionSiguiente"]==''){
                                         $toolbar3 = new ToollBar("left");
-                                        $toolbar3->SetBoton("ELIMINAR", "TRANSFERENCIA(INTERNA)", "btn", "onclick,onkeypress", "TranferenciaDePaciente()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/transferir.gif");
+                                        $toolbar3->SetBoton("ELIMINAR", "TRANSFERENCIA(INTERNA)", "btn", "onclick,onkeypress", "TranferenciaDePaciente()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/transferir.gif");
                                         $toolbar3->Mostrar();
                                         }
                                         ?>

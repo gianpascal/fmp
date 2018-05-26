@@ -27,7 +27,7 @@
                         <?php echo $htmlFormulario; ?>
                     </div>
                     <div id="botones">
-                        <a href='#' onclick="CargarVentana('popupManteFormulario','Registro de Formularios','../herramientas/manteFormulario.php?accion=insertar&id_sistema=<?php echo $id_sistema?>','305','350',false,true,'',1,'',10,10,10,10);"><img src="../../../../medifacil_front/imagen/btn/b_nuevo_on.gif" alt='Nuevo' title='Nuevo' border='0'/></a>
+                        <a href='#' onclick="CargarVentana('popupManteFormulario','Registro de Formularios','../herramientas/manteFormulario.php?accion=insertar&id_sistema=<?php echo $id_sistema?>','305','350',false,true,'',1,'',10,10,10,10);"><img src="../../../../fastmedical_front/imagen/btn/b_nuevo_on.gif" alt='Nuevo' title='Nuevo' border='0'/></a>
                     </div>
                 </td>
             </tr>

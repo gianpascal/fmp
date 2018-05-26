@@ -19,16 +19,16 @@ class LCaja {
       $record = $this->dCaja->getArrayListaCajaGeneral($sector,$habilitado1,$habilitado2);
       $resultadoArray = array();
       foreach ($record as $fila){
-      $habilitado = '<img src="'.$_SESSION['path_principal'].'../medifacil_front/imagen/icono/agt_action_success.png" border="0" alt="HABILITADO" title="HABILITADO"/>';
-      $deshabilitado = '<img src="'.$_SESSION['path_principal'].'../medifacil_front/imagen/icono/agt_action_fail.png" border="0" alt="DESHABILITADO" title="DESHABILITADO"/>';
+      $habilitado = '<img src="'.$_SESSION['path_principal'].'../fastmedical_front/imagen/icono/agt_action_success.png" border="0" alt="HABILITADO" title="HABILITADO"/>';
+      $deshabilitado = '<img src="'.$_SESSION['path_principal'].'../fastmedical_front/imagen/icono/agt_action_fail.png" border="0" alt="DESHABILITADO" title="DESHABILITADO"/>';
       $fila[4] = $fila[4]=='t'?$habilitado:$deshabilitado;
       $fila['opcion']='
       <a href="#" onclick=myajax.Link("../../ccontrol/control/control.php?p1=caj_detalle_trabajador&caja='.$fila[0].'","resumen_caja")>
-      <img src="'.$_SESSION['path_principal'].'../medifacil_front/imagen/icono/add_user2.png" border="0" alt="DETALLES" title="DETALLES"/></a>&nbsp;
+      <img src="'.$_SESSION['path_principal'].'../fastmedical_front/imagen/icono/add_user2.png" border="0" alt="DETALLES" title="DETALLES"/></a>&nbsp;
       <a href="#" onclick=myajax.Link("../../ccontrol/control/control.php?p1=caj_detalle_comprobante&caja='.$fila[0].'","resumen_caja")>
-      <img src="'.$_SESSION['path_principal'].'../medifacil_front/imagen/icono/mostrar.png" border="0" alt="DETALLES" title="DETALLES"/></a>&nbsp;
+      <img src="'.$_SESSION['path_principal'].'../fastmedical_front/imagen/icono/mostrar.png" border="0" alt="DETALLES" title="DETALLES"/></a>&nbsp;
       <a href="#" onclick=myajax.Link("../../ccontrol/control/control.php?p1=caj_detalle_ingreso_caja&caja='.$fila[0].'","resumen_caja")>
-      <img src="'.$_SESSION['path_principal'].'../medifacil_front/imagen/icono/barras.png" border="0" alt="ESTADISTICA" title="ESTADISTICA"/></a>';
+      <img src="'.$_SESSION['path_principal'].'../fastmedical_front/imagen/icono/barras.png" border="0" alt="ESTADISTICA" title="ESTADISTICA"/></a>';
       array_push($resultadoArray,$fila);
       }
       return $resultadoArray;
@@ -62,11 +62,11 @@ class LCaja {
       $record = $this->dCaja->getArrayListaDetalleTrabajador($caja);
       $resultadoArray = array();
       foreach ($record as $fila) {
-      $habilitado = '<img src="'.$_SESSION['path_principal'].'../medifacil_front/imagen/icono/agt_action_success.png" border="0" alt="HABILITADO" title="HABILITADO"/>';
-      $deshabilitado = '<img src="'.$_SESSION['path_principal'].'../medifacil_front/imagen/icono/agt_action_fail.png" border="0" alt="DESHABILITADO" title="DESHABILITADO"/>';
+      $habilitado = '<img src="'.$_SESSION['path_principal'].'../fastmedical_front/imagen/icono/agt_action_success.png" border="0" alt="HABILITADO" title="HABILITADO"/>';
+      $deshabilitado = '<img src="'.$_SESSION['path_principal'].'../fastmedical_front/imagen/icono/agt_action_fail.png" border="0" alt="DESHABILITADO" title="DESHABILITADO"/>';
       $fila[6] = $fila[6]=='t'?$habilitado:$deshabilitado;
       $fila['opcion']='
-      <a href="#" onclick=myajax.Link("'.$_SESSION['path_principal'].'hospitalizacion/ccontrol/control/control.php?p1=caj_cajero_datos&persona='.$fila[0].'&caja='.$fila[4].'&incluye=1","grid_cajero_datos")><img src="'.$_SESSION['path_principal'].'../medifacil_front/imagen/icono/mostrar.png" border="0" alt="MOSTRAR" title="MOSTRAR"/></a>';
+      <a href="#" onclick=myajax.Link("'.$_SESSION['path_principal'].'hospitalizacion/ccontrol/control/control.php?p1=caj_cajero_datos&persona='.$fila[0].'&caja='.$fila[4].'&incluye=1","grid_cajero_datos")><img src="'.$_SESSION['path_principal'].'../fastmedical_front/imagen/icono/mostrar.png" border="0" alt="MOSTRAR" title="MOSTRAR"/></a>';
       array_push($resultadoArray,$fila);
       }
       return $resultadoArray;
@@ -75,8 +75,8 @@ class LCaja {
       $record = $this->dCaja->getArrayListaTrabajadorComprobante($persona,$caja);
       $resultadoArray = array();
       foreach ($record as $fila) {
-      $habilitado = '<img src="'.$_SESSION['path_principal'].'../medifacil_front/imagen/icono/agt_action_success.png" border="0" alt="HABILITADO" title="HABILITADO"/>';
-      $deshabilitado = '<img src="'.$_SESSION['path_principal'].'../medifacil_front/imagen/icono/agt_action_fail.png" border="0" alt="DESHABILITADO" title="DESHABILITADO"/>';
+      $habilitado = '<img src="'.$_SESSION['path_principal'].'../fastmedical_front/imagen/icono/agt_action_success.png" border="0" alt="HABILITADO" title="HABILITADO"/>';
+      $deshabilitado = '<img src="'.$_SESSION['path_principal'].'../fastmedical_front/imagen/icono/agt_action_fail.png" border="0" alt="DESHABILITADO" title="DESHABILITADO"/>';
       $fila[6] = $fila[6]=='t'?$habilitado:$deshabilitado;
       array_push($resultadoArray,$fila);
       }
@@ -89,10 +89,10 @@ class LCaja {
       $record = $this->dCaja->getArrayListaCajaComprobante($caja);
       $resultadoArray = array();
       foreach ($record as $fila){
-      $habilitado = '<img src="'.$_SESSION['path_principal'].'../medifacil_front/imagen/icono/agt_action_success.png" border="0" alt="HABILITADO" title="HABILITADO"/>';
-      $deshabilitado = '<img src="'.$_SESSION['path_principal'].'../medifacil_front/imagen/icono/agt_action_fail.png" border="0" alt="DESHABILITADO" title="DESHABILITADO"/>';
-      $estadoyes = '<img src="'.$_SESSION['path_principal'].'../medifacil_front/imagen/icono/aprobado.gif" border="0" alt="APROBADO" title="APROBADO"/>';
-      $estadono = '<img src="'.$_SESSION['path_principal'].'../medifacil_front/imagen/icono/no_aprobado.gif" border="0" alt="NO APROBADO" title="NO APROBADO"/>';
+      $habilitado = '<img src="'.$_SESSION['path_principal'].'../fastmedical_front/imagen/icono/agt_action_success.png" border="0" alt="HABILITADO" title="HABILITADO"/>';
+      $deshabilitado = '<img src="'.$_SESSION['path_principal'].'../fastmedical_front/imagen/icono/agt_action_fail.png" border="0" alt="DESHABILITADO" title="DESHABILITADO"/>';
+      $estadoyes = '<img src="'.$_SESSION['path_principal'].'../fastmedical_front/imagen/icono/aprobado.gif" border="0" alt="APROBADO" title="APROBADO"/>';
+      $estadono = '<img src="'.$_SESSION['path_principal'].'../fastmedical_front/imagen/icono/no_aprobado.gif" border="0" alt="NO APROBADO" title="NO APROBADO"/>';
       $fila[6] = $fila[6]=='t'?$estadoyes:$estadono;
       $fila[7] = $fila[7]=='t'?$habilitado:$deshabilitado;
       array_push($resultadoArray,$fila);
@@ -103,8 +103,8 @@ class LCaja {
       $record = $this->dCaja->getArrayListaComprobanteSerie();
       $resultadoArray = array();
       foreach ($record as $fila){
-      $habilitado = '<img src="'.$_SESSION['path_principal'].'../medifacil_front/imagen/icono/agt_action_success.png" border="0" alt="HABILITADO" title="HABILITADO"/>';
-      $deshabilitado = '<img src="'.$_SESSION['path_principal'].'../medifacil_front/imagen/icono/agt_action_fail.png" border="0" alt="DESHABILITADO" title="DESHABILITADO"/>';
+      $habilitado = '<img src="'.$_SESSION['path_principal'].'../fastmedical_front/imagen/icono/agt_action_success.png" border="0" alt="HABILITADO" title="HABILITADO"/>';
+      $deshabilitado = '<img src="'.$_SESSION['path_principal'].'../fastmedical_front/imagen/icono/agt_action_fail.png" border="0" alt="DESHABILITADO" title="DESHABILITADO"/>';
       $fila[5] = $fila[5]=='t'?$habilitado:$deshabilitado;
       array_push($resultadoArray,$fila);
       }
@@ -175,8 +175,8 @@ class LCaja {
         $oDCaja = new Dcaja();
         $rs = $oDCaja->lCargarReporteCaja($parametros);
         foreach ($rs as $key => $value) {
-            array_push($rs[$key], "../../../../medifacil_front/imagen/icono/exec.gif ^ procesar");
-            array_push($rs[$key], "../../../../medifacil_front/imagen/icono/anular.png ^ anular");
+            array_push($rs[$key], "../../../../fastmedical_front/imagen/icono/exec.gif ^ procesar");
+            array_push($rs[$key], "../../../../fastmedical_front/imagen/icono/anular.png ^ anular");
         }
         return $rs;
     }

@@ -9,7 +9,7 @@ $toolbar = new ToollBar("center");
     <h1><?php echo $datos["nombreExamen"] ?>  /  <?php echo $datos["nombrePuntoControl"] ?>   </h1>
 
     <div id="div_mostrarTablasExamenYpuntoControl">
-        <a href="javascript:mostrarTablasExamenYpuntoControl();"> <img border="0" title="Nuevo" alt="" src="../../../../medifacil_front/imagen/icono/agt_upgrade_misc.png"/></a>
+        <a href="javascript:mostrarTablasExamenYpuntoControl();"> <img border="0" title="Nuevo" alt="" src="../../../../fastmedical_front/imagen/icono/agt_upgrade_misc.png"/></a>
     </div>
 
 </div>
@@ -300,13 +300,13 @@ $toolbar = new ToollBar("center");
                                                         <h3> <b>AGREGAR NUEVO GRUPO </b></h3>
                                                     </td>
                                                     <td style="width:30px;float: center; height: auto; ">
-                                                        <a href="javascript:popapParaCrearNuevoGrupo();"> <img border="0" title="Nuevo Grupo" alt="" src="../../../../medifacil_front/imagen/btn/b_adiciona_on.gif"/></a>
+                                                        <a href="javascript:popapParaCrearNuevoGrupo();"> <img border="0" title="Nuevo Grupo" alt="" src="../../../../fastmedical_front/imagen/btn/b_adiciona_on.gif"/></a>
                                                     </td>
                                                     <td style="width:80px;float: center; height: auto; " align="center">
                                                     </td>
                                                     <td>
                                                         <?php
-                                                        $toolbar->SetBoton("Confirmar a Produccion", "Confirmar a Produccion", "btn", "onclick,onkeypress", "confirmarAproduccion()", "../../../../medifacil_front/imagen/icono/window_new.png", "", "", true);
+                                                        $toolbar->SetBoton("Confirmar a Produccion", "Confirmar a Produccion", "btn", "onclick,onkeypress", "confirmarAproduccion()", "../../../../fastmedical_front/imagen/icono/window_new.png", "", "", true);
                                                         $toolbar->Mostrar();
                                                         ?> 
                                                     </td>
@@ -345,16 +345,16 @@ $toolbar = new ToollBar("center");
                                                                 <table>
                                                                     <tr align="center" bgcolor="#C1E69D">
                                                                         <td style="width:15px;float: center; height: auto; ">
-                                                                            <a href="javascript:editarGrupoDatos(<?php echo $k ?>);"> <img border="0" title="Editar" alt="" src="../../../../medifacil_front/imagen/icono/editar.png"/></a>
+                                                                            <a href="javascript:editarGrupoDatos(<?php echo $k ?>);"> <img border="0" title="Editar" alt="" src="../../../../fastmedical_front/imagen/icono/editar.png"/></a>
                                                                         </td>
                                                                         <td style="width:40px;float: center; height: auto; ">
-                                                                            <a href="javascript:eliminarGrupoDatos(<?php echo $k ?>);"> <img border="0" title="Eliminar" alt="" src="../../../../medifacil_front/imagen/icono/i_icq_dnd.png"/></a>
+                                                                            <a href="javascript:eliminarGrupoDatos(<?php echo $k ?>);"> <img border="0" title="Eliminar" alt="" src="../../../../fastmedical_front/imagen/icono/i_icq_dnd.png"/></a>
                                                                         </td>
                                                                     </tr>
                                                                 </table>
                                                             </div>
                                                             <div id="div_grupoDatosBotonGuardar<?php echo $k ?>">
-                                                                <a href="javascript:guardarModificadoGrupoDatos(<?php echo $k ?>);"> <img border="0" title="Guardar" alt="" src="../../../../medifacil_front/imagen/icono/grabar.png"/></a>
+                                                                <a href="javascript:guardarModificadoGrupoDatos(<?php echo $k ?>);"> <img border="0" title="Guardar" alt="" src="../../../../fastmedical_front/imagen/icono/grabar.png"/></a>
                                                             </div>
                                                         </td> 
                                                     </tr>
@@ -423,10 +423,10 @@ $toolbar = new ToollBar("center");
                                                                                                     <div id="div_EditarCombo<?php echo $k ?><?php echo $y ?>">
                                                                                                         <?php if ($valuey[9] == '') { ?>
                                                                                                             <a href="javascript:editarCombos('.',<?php echo $valuey[0] ?>,<?php echo $k ?>,<?php echo $y ?>);">
-                                                                                                                <img border="0" title="Editar" alt="" src="../../../../medifacil_front/imagen/icono/abrir.png"/></a>
+                                                                                                                <img border="0" title="Editar" alt="" src="../../../../fastmedical_front/imagen/icono/abrir.png"/></a>
                                                                                                         <?php } else { ?>
                                                                                                             <a href="javascript:editarCombos(<?php echo $valuey[9] ?>,<?php echo $valuey[0] ?>,<?php echo $k ?>,<?php echo $y ?>);">
-                                                                                                                <img border="0" title="Editar" alt="" src="../../../../medifacil_front/imagen/icono/abrir.png"/></a>
+                                                                                                                <img border="0" title="Editar" alt="" src="../../../../fastmedical_front/imagen/icono/abrir.png"/></a>
                                                                                                         <?php } ?>
                                                                                                         <input type="hidden" id="hidCombo<?php echo $k ?><?php echo $y ?>" name="hidCombo"  value="<?php echo $valuey[9] ?>"> 
                                                                                                     </div> 
@@ -471,28 +471,28 @@ $toolbar = new ToollBar("center");
                                                                                     </td>      
                                                                                     <td>
                                                                                         <div id="div_editarDatosPuntoControl<?php echo $k ?><?php echo $y ?>">
-                                                                                            <a href="javascript:editarDatosPuntoControl(<?php echo $valuey[0] ?>,<?php echo $k ?>,<?php echo $y ?>);"> <img border="0" title="Editar Datos Puntos de Control" alt="" src="../../../../medifacil_front/imagen/icono/editar.png"/></a>
+                                                                                            <a href="javascript:editarDatosPuntoControl(<?php echo $valuey[0] ?>,<?php echo $k ?>,<?php echo $y ?>);"> <img border="0" title="Editar Datos Puntos de Control" alt="" src="../../../../fastmedical_front/imagen/icono/editar.png"/></a>
                                                                                         </div>
                                                                                         <div id="div_GuardarDatosPuntoControl<?php echo $k ?><?php echo $y ?>">
-                                                                                            <a href="javascript:modificarDatosPuntoControl(<?php echo $valuey[0] ?>,<?php echo $k ?>,<?php echo $y ?>);"> <img border="0" title="Guardar" alt="" src="../../../../medifacil_front/imagen/icono/grabar.png"/></a>
+                                                                                            <a href="javascript:modificarDatosPuntoControl(<?php echo $valuey[0] ?>,<?php echo $k ?>,<?php echo $y ?>);"> <img border="0" title="Guardar" alt="" src="../../../../fastmedical_front/imagen/icono/grabar.png"/></a>
                                                                                         </div>
                                                                                     </td>
                                                                                     <td><!-- AGREGAR OTRO RANGO =================== -->
                                                                                         <div id="div_agregarRango<?php echo $k ?><?php echo $y ?>">
-                                                                                            <a href="javascript:agregarRango(<?php echo $valuey[0] ?>,<?php echo $k ?>,<?php echo $y ?>);"> <img border="0" title="Agregar Rango" alt="" src="../../../../medifacil_front/imagen/icono/abrir.png"/></a>
+                                                                                            <a href="javascript:agregarRango(<?php echo $valuey[0] ?>,<?php echo $k ?>,<?php echo $y ?>);"> <img border="0" title="Agregar Rango" alt="" src="../../../../fastmedical_front/imagen/icono/abrir.png"/></a>
                                                                                         </div>
 
                                                                                     </td>
                                                                                     <td><!-- ELIMINAR DATOS=================== -->
                                                                                         <div id="div_agregarRango<?php echo $k ?><?php echo $y ?>">
-                                                                                            <a href="javascript:EliminarDatosPuntoControl(<?php echo $valuey[0] ?>,<?php echo $k ?>,<?php echo $y ?>,<?php echo $valuey[7] ?>);"> <img border="0" title="Eliminar Punto Control" alt="" src="../../../../medifacil_front/imagen/icono/i_icq_dnd.png"/></a>
+                                                                                            <a href="javascript:EliminarDatosPuntoControl(<?php echo $valuey[0] ?>,<?php echo $k ?>,<?php echo $y ?>,<?php echo $valuey[7] ?>);"> <img border="0" title="Eliminar Punto Control" alt="" src="../../../../fastmedical_front/imagen/icono/i_icq_dnd.png"/></a>
                                                                                         </div>
 
                                                                                     </td>
                                                                                     <td><!-- SUBIR DATOS=================== -->
                                                                                         <div id="div_agregarRango<?php echo $k ?><?php echo $y ?>">
                                                                                             <?php if ($y != 0) { ?>
-                                                                                                <a href="javascript:subirDatosPuntoControl(<?php echo $valuey[0] ?>,<?php echo $k ?>,<?php echo $y ?>,<?php echo $valuey[7] ?>)"> <img border="0" title="Subir de Orden" alt="" src="../../../../medifacil_front/imagen/icono/arribaFecha.png"/></a>   
+                                                                                                <a href="javascript:subirDatosPuntoControl(<?php echo $valuey[0] ?>,<?php echo $k ?>,<?php echo $y ?>,<?php echo $valuey[7] ?>)"> <img border="0" title="Subir de Orden" alt="" src="../../../../fastmedical_front/imagen/icono/arribaFecha.png"/></a>   
                                                                                             <?php } ?>
                                                                                         </div>
 
@@ -500,7 +500,7 @@ $toolbar = new ToollBar("center");
                                                                                     <td><!-- BAJAR DATOS=================== -->
                                                                                         <div id="div_agregarRango<?php echo $k ?><?php echo $y ?>">
                                                                                             <?php if ($value[3] != $y + 1) { ?>
-                                                                                                <a href="javascript:bajarDatosPuntoControl(<?php echo $valuey[0] ?>,<?php echo $k ?>,<?php echo $y ?>,<?php echo $valuey[7] ?>);"> <img border="0" title="Bajar de Orden" alt="" src="../../../../medifacil_front/imagen/icono/agt_upgrade_misc.png"/></a>
+                                                                                                <a href="javascript:bajarDatosPuntoControl(<?php echo $valuey[0] ?>,<?php echo $k ?>,<?php echo $y ?>,<?php echo $valuey[7] ?>);"> <img border="0" title="Bajar de Orden" alt="" src="../../../../fastmedical_front/imagen/icono/agt_upgrade_misc.png"/></a>
                                                                                             <?php } ?>
                                                                                         </div>
 
@@ -562,11 +562,11 @@ $toolbar = new ToollBar("center");
                                                                                                             </td>
                                                                                                             <td>
                                                                                                                 <a href="javascript:editarRango(<?php echo $k ?>,<?php echo $y ?>,<?php echo $x ?>);"> 
-                                                                                                                    <img border="0" title="Editar Rango" alt="" src="../../../../medifacil_front/imagen/icono/editar.png"/></a>
+                                                                                                                    <img border="0" title="Editar Rango" alt="" src="../../../../fastmedical_front/imagen/icono/editar.png"/></a>
                                                                                                             </td>
                                                                                                             <td>
                                                                                                                 <a href="javascript:eliminarRango(<?php echo $k ?>,<?php echo $y ?>,<?php echo $x ?>);">
-                                                                                                                    <img border="0" src="../../../../medifacil_front/imagen/icono/i_icq_dnd.png" alt="" title="Eliminar Rango">
+                                                                                                                    <img border="0" src="../../../../fastmedical_front/imagen/icono/i_icq_dnd.png" alt="" title="Eliminar Rango">
                                                                                                                 </a>
                                                                                                             </td>
 
@@ -635,7 +635,7 @@ $toolbar = new ToollBar("center");
                                                                                        id="checkObligatorio<?php echo $k ?>"/>
                                                                             </td>
                                                                             <td>                                
-                                                                                <a href="javascript:guardarDatosPuntoControlGuardar(<?php echo $k ?>,<?php echo $value[0] ?>)"> <img border="0" title="Guardar" alt="" src="../../../../medifacil_front/imagen/icono/grabar.png"/></a>                     
+                                                                                <a href="javascript:guardarDatosPuntoControlGuardar(<?php echo $k ?>,<?php echo $value[0] ?>)"> <img border="0" title="Guardar" alt="" src="../../../../fastmedical_front/imagen/icono/grabar.png"/></a>                     
                                                                             </td>
                                                                             <td colspan="4"> </td>
                                                                         </tr>

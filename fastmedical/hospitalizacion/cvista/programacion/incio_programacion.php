@@ -1,8 +1,8 @@
 <?php
 require_once("../../../pholivo/Html.php");
 $toolbar=new ToollBar("left");
-//$toolbar->SetBoton("PROFESIONAL","Profesional","btn","onclick,onkeypress","cargar_profesional",$_SESSION['path_principal']."../medifacil_front/imagen/icono/add_user2.png");
-$toolbar->SetBoton("BUSCAR","Buscar","btn","onclick,onkeypress","myajax.Link('../../ccontrol/control.php?p1=cro_busca_profesional&p2='+document.getElementById('campo').value,'busca_tipo')","../../../../medifacil_front/imagen/icono/add_user2.png");
+//$toolbar->SetBoton("PROFESIONAL","Profesional","btn","onclick,onkeypress","cargar_profesional",$_SESSION['path_principal']."../fastmedical_front/imagen/icono/add_user2.png");
+$toolbar->SetBoton("BUSCAR","Buscar","btn","onclick,onkeypress","myajax.Link('../../ccontrol/control.php?p1=cro_busca_profesional&p2='+document.getElementById('campo').value,'busca_tipo')","../../../../fastmedical_front/imagen/icono/add_user2.png");
 ?>
 <html>
     <head>

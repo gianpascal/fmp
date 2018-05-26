@@ -57,7 +57,7 @@ $result.= '<td><div style="border:0px solid;">
 					<table>
 					<tr>
 					<td><button   
-					onclick="volverAcargar(' . $numeric . ');" style="cursor: pointer;border: 1px solid black; border-radius:5px;width:23px; height: 23px; "><img src="../../../../medifacil_front/imagen/icono/otro.png"></button></td>
+					onclick="volverAcargar(' . $numeric . ');" style="cursor: pointer;border: 1px solid black; border-radius:5px;width:23px; height: 23px; "><img src="../../../../fastmedical_front/imagen/icono/otro.png"></button></td>
 					</tr>
 					<tr>
 					<td></td>

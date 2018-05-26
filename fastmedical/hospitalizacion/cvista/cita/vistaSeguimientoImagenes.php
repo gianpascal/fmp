@@ -100,7 +100,7 @@ if ($arrayDatos[0]['iIdHistoriaImagen'] > 0) {
                 }
             ?>">
             <a href="javascript:editarNumeroPlaca();">
-                <img src="../../../../medifacil_front/imagen/btn/b_editar_on.gif"/>
+                <img src="../../../../fastmedical_front/imagen/btn/b_editar_on.gif"/>
             </a>
 
         </div>
@@ -111,7 +111,7 @@ if ($arrayDatos[0]['iIdHistoriaImagen'] > 0) {
             ?>">
             <?php if ($_SESSION["permiso_formulario_servicio"][118]["guardarNroPlaca_citas"] == 1) { ?>
             <a href="javascript:guardarNroPlaca();">
-                <img src="../../../../medifacil_front/imagen/btn/b_grabar__on.gif"/>
+                <img src="../../../../fastmedical_front/imagen/btn/b_grabar__on.gif"/>
             </a>
             <?php } ?>
         </div>
@@ -122,7 +122,7 @@ if ($arrayDatos[0]['iIdHistoriaImagen'] > 0) {
             ?>">
             <?php if ($_SESSION["permiso_formulario_servicio"][118]["b_cancelar_on_Citas"] == 1) { ?>
             <a href="javascript:cancelarGuardarNroPlaca();">
-                <img src="../../../../medifacil_front/imagen/btn/b_cancelar_on.gif"/>
+                <img src="../../../../fastmedical_front/imagen/btn/b_cancelar_on.gif"/>
             </a>
               <?php } ?>
         </div>
@@ -191,7 +191,7 @@ if ($arrayDatos[0]['iIdHistoriaImagen'] > 0) {
         <div style="height: 20px;width:80px; margin: 0 auto; float: left" >
             <div id="" style="float:left">
                 <a href="javascript:imprimirUbicacion(<?php echo utf8_encode($valueHistoria[0]); ?>);">
-                    <img src="../../../../medifacil_front/imagen/btn/b_imprimir_on.gif"/>
+                    <img src="../../../../fastmedical_front/imagen/btn/b_imprimir_on.gif"/>
                 </a>
             </div>
         </div>
@@ -238,7 +238,7 @@ if ($arrayDatos[0]['iIdHistoriaImagen'] > 0) {
         <div id="" style=" float: left">
             <?php if ($_SESSION["permiso_formulario_servicio"][118]["grabarUbicacionImagenes_Citas"] == 1) { ?>
                 <a href="javascript:grabarUbicacionImagenes();">
-                    <img src="../../../../medifacil_front/imagen/btn/b_grabar__on.gif"/>
+                    <img src="../../../../fastmedical_front/imagen/btn/b_grabar__on.gif"/>
                 </a>
             <?php } ?>
         </div>

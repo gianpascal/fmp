@@ -24,7 +24,7 @@
             </tr>
             <tr>
                 <td colspan="2" align="center">
-                    <a href="javascript:agregarNuevoGrupo();"> <img border="0" title="Nuevo" alt="" src="../../../../medifacil_front/imagen/btn/b_grabar_on.gif"/></a>
+                    <a href="javascript:agregarNuevoGrupo();"> <img border="0" title="Nuevo" alt="" src="../../../../fastmedical_front/imagen/btn/b_grabar_on.gif"/></a>
                 </td>
             </tr>
         </table>

@@ -39,7 +39,7 @@
                                 <div id="divAsignarAtributos" style="width: 80px; display: block;">
                                     <?php
                                     $toolbarj1=new ToollBar("right");
-                                    $toolbarj1->SetBoton("Asignar","Asignar","btn","onclick,onkeypress","grabarEtiquetaAtributo('grabar')",$_SESSION['path_principal']."../medifacil_front/imagen/icono/lassists.png","","",1);
+                                    $toolbarj1->SetBoton("Asignar","Asignar","btn","onclick,onkeypress","grabarEtiquetaAtributo('grabar')",$_SESSION['path_principal']."../fastmedical_front/imagen/icono/lassists.png","","",1);
                                     $toolbarj1->Mostrar();
                                     ?>
                                 </div>
@@ -65,7 +65,7 @@
                                                     <div id="divAsignarAtributos" style="width: 80px;">
                                                         <?php
                                                         $toolbarj2=new ToollBar("right");
-                                                        $toolbarj2->SetBoton("ModificarValor","Modificar","btn","onclick,onkeypress","grabarEtiquetaAtributo('modificar')",$_SESSION['path_principal']."../medifacil_front/imagen/icono/grabar.png","","",1);
+                                                        $toolbarj2->SetBoton("ModificarValor","Modificar","btn","onclick,onkeypress","grabarEtiquetaAtributo('modificar')",$_SESSION['path_principal']."../fastmedical_front/imagen/icono/grabar.png","","",1);
                                                         $toolbarj2->Mostrar();
                                                         ?>
                                                     </div>

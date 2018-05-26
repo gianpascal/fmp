@@ -59,7 +59,7 @@
                                 <h1>Historia</h1>
                             </td>
                             <td style="width:3%">
-                                <img id="divHC_cuerpoicono" src='../../../../medifacil_front/imagen/icono/desplegar.png' title='desplegar' alt=""/>
+                                <img id="divHC_cuerpoicono" src='../../../../fastmedical_front/imagen/icono/desplegar.png' title='desplegar' alt=""/>
                             </td>
                         </tr>
                     </table>
@@ -75,7 +75,7 @@
                             <h1>Historia Cl&iacute;nica Reciente</h1>
                         </td>
                         <td style="width:3%">
-                            <img id="Div_HCRecienteCuerpoicono" src='../../../../medifacil_front/imagen/icono/plegar.png' title='plegar' alt=""/>
+                            <img id="Div_HCRecienteCuerpoicono" src='../../../../fastmedical_front/imagen/icono/plegar.png' title='plegar' alt=""/>
                         </td>
                     </tr>
                 </table>
@@ -144,16 +144,16 @@ $arrayFechaProximaCita = $this->proximaCitaSugeridaArray($datos);
             <td>&nbsp;&nbsp;(dd/mm/yyyy)</td>
             <td><input id="txtproximacita" size="10" type="text" readonly="true" onclick="javascript:calendarioHtmlx('txtproximacita')" value="<?php echo $arrayFechaProximaCita[0][0]; ?>"/></td>
 <!--            <td><input id="txtproximacita" type="text" readonly="true" onclick="javascript:calendarioHtmlx('txtproximacita')"/></td>
-    <td><a href="javascript:calendarioHtmlx('calendar1')"><img id="calendar1" src="../../../../medifacil_front/imagen/icono/hos_calendar.png" alt=""></a></td>-->
+    <td><a href="javascript:calendarioHtmlx('calendar1')"><img id="calendar1" src="../../../../fastmedical_front/imagen/icono/hos_calendar.png" alt=""></a></td>-->
         </tr>
     </table>
 </div>
 <div id="Div_botones" style="width:100%;height:30px ;float: left">
-    <!-- <a href='javascript:;' onclick="javascript:imprimirRecetaAtencion();"><img src='../../../../medifacil_front/imagen/btn/b_imprimir_on.gif' title='Imprimir Otra Receta' alt=""/></a> -->
-<!--    <a href='javascript:;' onclick="javascript:imprimirRecetaUnicaEstandarizada();"><img id="btnImprimirRecetaUnica" src='../../../../medifacil_front/imagen/btn/ImprimirReceta.png' title='Receta Medica Estandarizada' alt=""/></a>-->
-    <a href='javascript:;' onclick="javascript:darxAtencionCompletada();"><img id="btnAtencionCompletada" src='../../../../medifacil_front/imagen/btn/btn_darPorAtendido.gif' title='Atención Completada' alt=""/></a>
-    <a href='javascript:;' onclick="javascript:cancelarAtencionMedica();"><img id="btncancelarActoMedico" src='../../../../medifacil_front/imagen/btn/b_cancelar_on.gif' title='Cancelar' alt=""/></a>
-    <a href='javascript:;' onclick="javascript:regresarAgendaMedica();"><img id="btnregresarActoMedico" src='../../../../medifacil_front/imagen/btn/b_regresar_on.gif' title='Regresar' alt=""/></a>
-<!--    <a href='javascript:;' onclick="javascript:CambiarEstadoNoAtendido();"><img src='../../../../medifacil_front/imagen/btn/btn_cambiarEstado.gif' title='Cambiar Estado' alt=""/></a>-->
+    <!-- <a href='javascript:;' onclick="javascript:imprimirRecetaAtencion();"><img src='../../../../fastmedical_front/imagen/btn/b_imprimir_on.gif' title='Imprimir Otra Receta' alt=""/></a> -->
+<!--    <a href='javascript:;' onclick="javascript:imprimirRecetaUnicaEstandarizada();"><img id="btnImprimirRecetaUnica" src='../../../../fastmedical_front/imagen/btn/ImprimirReceta.png' title='Receta Medica Estandarizada' alt=""/></a>-->
+    <a href='javascript:;' onclick="javascript:darxAtencionCompletada();"><img id="btnAtencionCompletada" src='../../../../fastmedical_front/imagen/btn/btn_darPorAtendido.gif' title='Atención Completada' alt=""/></a>
+    <a href='javascript:;' onclick="javascript:cancelarAtencionMedica();"><img id="btncancelarActoMedico" src='../../../../fastmedical_front/imagen/btn/b_cancelar_on.gif' title='Cancelar' alt=""/></a>
+    <a href='javascript:;' onclick="javascript:regresarAgendaMedica();"><img id="btnregresarActoMedico" src='../../../../fastmedical_front/imagen/btn/b_regresar_on.gif' title='Regresar' alt=""/></a>
+<!--    <a href='javascript:;' onclick="javascript:CambiarEstadoNoAtendido();"><img src='../../../../fastmedical_front/imagen/btn/btn_cambiarEstado.gif' title='Cambiar Estado' alt=""/></a>-->
 </div>
 <input type="hidden" id="hNumeroDiagnostico" name="hNumeroDiagnostico" value="0" />

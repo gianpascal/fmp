@@ -96,13 +96,13 @@
                            onkeyup="getBuscarPersonasNombre(event,this,'3');" value="" size="12" />
                 </div>
                 <div id="divEtiquetaBuscar" style="width:17%;  float:left; display: <?php echo $arrayParametros['bbuscar'] == true ? 'anone' : ''; ?> ">
-                    <a href="javascript:buscarPersonas();"><img src="../../../../medifacil_front/imagen/btn/nbtn_buscar.gif" alt=""  border="0" title="Buscar"/></a>
+                    <a href="javascript:buscarPersonas();"><img src="../../../../fastmedical_front/imagen/btn/nbtn_buscar.gif" alt=""  border="0" title="Buscar"/></a>
                 </div>
                 <div id="DivLimpiar" style="width:16%; float:left; display: <?php echo $arrayParametros['blimpiar'] == true ? 'anone' : ''; ?> ">
-                    <a href="javascript:limpiarCampos('0');"><img src="../../../../medifacil_front/imagen/btn/btn_limpiar.gif" alt=""  border="0" title="Limpiar"/></a>
+                    <a href="javascript:limpiarCampos('0');"><img src="../../../../fastmedical_front/imagen/btn/btn_limpiar.gif" alt=""  border="0" title="Limpiar"/></a>
                 </div>
                 <div id="DivLimpiar" style="width:17%; float:left; display: <?php echo $arrayParametros['bnuevo'] == true ? 'anone' : ''; ?> ">
-                    <a href="javascript:ventana_formulario_persona('<?php echo $arrayParametros['fnuevo'] ?>');"><img src="../../../../medifacil_front/imagen/btn/nbtn_nuevo.gif" alt="" border="0" title="Codigo de Persona"/></a>
+                    <a href="javascript:ventana_formulario_persona('<?php echo $arrayParametros['fnuevo'] ?>');"><img src="../../../../fastmedical_front/imagen/btn/nbtn_nuevo.gif" alt="" border="0" title="Codigo de Persona"/></a>
                 </div>
             </div>
 

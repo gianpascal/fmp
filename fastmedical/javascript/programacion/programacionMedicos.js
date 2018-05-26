@@ -57,7 +57,7 @@ function clickCargaCentroCostoProgramacionMedicos(idcentrocosto, nombrecentrocos
 //    myDiv=document.getElementById('Div_centroCostos');
 //    myDiv.innerHTML = " ";
 //    tree=new dhtmlXTreeObject("Div_centroCostos","100%","100%",0);
-//    tree.setImagePath("../../../../medifacil_front/imagen/icono/tree/");
+//    tree.setImagePath("../../../../fastmedical_front/imagen/icono/tree/");
 //    tree.attachEvent("onClick", function(){
 //        clickCargaCentroCostoProgramacionMedicos(tree.getSelectedItemId(),tree.getSelectedItemText());
 //        return true;
@@ -75,7 +75,7 @@ function recargarArbolServicios() {
     divMostrar.innerHTML = " ";
     treeCentroCostos = new dhtmlXTreeObject("Div_centroCostos", "100%", "100%", 0);
     treeCentroCostos.setSkin('dhx_skyblue');
-    treeCentroCostos.setImagePath("../../../../medifacil_front/imagen/csh_bluebooks_simedh/");
+    treeCentroCostos.setImagePath("../../../../fastmedical_front/imagen/csh_bluebooks_simedh/");
     treeCentroCostos.attachEvent("onClick", function() {
         //  buscarEmpleadosCentroCostos();
         clickCargaCentroCostoProgramacionMedicos(treeCentroCostos.getSelectedItemId(), treeCentroCostos.getSelectedItemText());
@@ -1869,7 +1869,7 @@ function cargarTablaMedicoParaReprogramacion() {
     parametros += '&p2=' + iCodigoCronograma;
 
     tablaMedicoParaReprogramacion = new dhtmlXGridObject('divResultadoBusquedaPersonas');
-    tablaMedicoParaReprogramacion.setImagePath("../../../../medifacil_front/imagen/icono/");
+    tablaMedicoParaReprogramacion.setImagePath("../../../../fastmedical_front/imagen/icono/");
     tablaMedicoParaReprogramacion.setSkin("dhx_skyblue");
     tablaMedicoParaReprogramacion.attachEvent("onRowSelect", seleccionarMedicoParaReprogramacion);
     tablaMedicoParaReprogramacion.init();

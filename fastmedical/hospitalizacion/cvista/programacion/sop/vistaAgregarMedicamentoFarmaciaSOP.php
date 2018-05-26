@@ -1,7 +1,7 @@
 <?php
 $toolbar = new ToollBar("right");
-$toolbar->SetBoton("Cancelar Agregar Producto", "Cancelar", "btn", "onclick,onkeypress", "", "../../../../medifacil_front/imagen/icono/borrar.png", "", "", true);
-$toolbar->SetBoton("Agregar Producto", "Agregar", "btn", "onclick,onkeypress", "agregarProductoalPacienteCISOP()", "../../../../medifacil_front/imagen/icono/inbox.png", "", "", true);
+$toolbar->SetBoton("Cancelar Agregar Producto", "Cancelar", "btn", "onclick,onkeypress", "", "../../../../fastmedical_front/imagen/icono/borrar.png", "", "", true);
+$toolbar->SetBoton("Agregar Producto", "Agregar", "btn", "onclick,onkeypress", "agregarProductoalPacienteCISOP()", "../../../../fastmedical_front/imagen/icono/inbox.png", "", "", true);
 ?>
 <div align="center">
     <input id="hCodigoProductoIndividual" type="text"></input>

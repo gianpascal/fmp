@@ -31,7 +31,7 @@
                             <td colspan="2" >
                                 <?php
                                     if($_SESSION["permiso_formulario_servicio"][171]["BUSCAR_PRODUCTO"]==1){
-                                        echo "<a href=\"javascript:getTarifasProductos('',1);\"><img src=\"../../../../medifacil_front/imagen/btn/b_buscar_on.gif\" alt=\"\" border=\"0\" title=\"Agregar Ocupaciones\"/></a>";                                
+                                        echo "<a href=\"javascript:getTarifasProductos('',1);\"><img src=\"../../../../fastmedical_front/imagen/btn/b_buscar_on.gif\" alt=\"\" border=\"0\" title=\"Agregar Ocupaciones\"/></a>";                                
                                     }
                                 ?>
                                 <div id="estado"></div>

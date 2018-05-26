@@ -889,7 +889,7 @@ class ActionMantenimientoGeneral {
         $arrayType = array(0 => "text", 1 => "text", 2 => "text");
         $arrayCursor = array(0 => "pointer", 1 => "pointer" , 2 => "pointer");
         $arrayImagenPorCelda = array(0 => "0", 1 => "0", 2 => "1");
-        $arrayUrlImagen = array(0 => "", 1 => "", 2 => "../../../../medifacil_front/imagen/icono/Download.png");
+        $arrayUrlImagen = array(0 => "", 1 => "", 2 => "../../../../fastmedical_front/imagen/icono/Download.png");
         $arrayFunction = array(0 => "", 1 => "", 2 => "verListaDeCiePorGrupoEtareo");
         $arrayTitle = array(0 => "", 1 => "", 2 => "Ver Lista");
         $arrayFunctionXCelda = array(0 => "verListaDeCiePorGrupoEtareo", 1 => "verListaDeCiePorGrupoEtareo", 2 => "");
@@ -915,7 +915,7 @@ class ActionMantenimientoGeneral {
         $arrayType = array(0 => "text", 1 => "text", 2 => "text");
         $arrayCursor = array(0 => "pointer", 1 => "pointer", 2 => "pointer");
         $arrayImagenPorCelda = array(0 => "0", 1 => "0", 2 => "1");
-        $arrayUrlImagen = array(0 => "", 1 => "", 2 => "../../../../medifacil_front/imagen/icono/apply.png");
+        $arrayUrlImagen = array(0 => "", 1 => "", 2 => "../../../../fastmedical_front/imagen/icono/apply.png");
         $arrayFunction = array(0 => "", 1 => "", 2 => "agregarCIEaGrupoEtareo");
         $arrayTitle = array(0 => "", 1 => "", 2 => "Agregar");
         $arrayFunctionXCelda = array(0 => "", 1 => "", 2 => "");
@@ -938,7 +938,7 @@ class ActionMantenimientoGeneral {
         $arrayType = array(0 => "text", 1 => "text", 2 => "text");
         $arrayCursor = array(0 => "default", 1 => "default", 2 => "pointer");
         $arrayImagenPorCelda = array(0 => "0", 1 => "0", 2 => "1");
-        $arrayUrlImagen = array(0 => "", 1 => "", 2 => "../../../../medifacil_front/imagen/icono/apply.png");
+        $arrayUrlImagen = array(0 => "", 1 => "", 2 => "../../../../fastmedical_front/imagen/icono/apply.png");
         $arrayFunction = array(0 => "", 1 => "", 2 => "agregarCIEaGrupoEtareo");
         $arrayTitle = array(0 => "", 1 => "", 2 => "Agregar");
         $arrayFunctionXCelda = array(0 => "", 1 => "", 2 => "");

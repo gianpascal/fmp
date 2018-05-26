@@ -17,7 +17,7 @@ $toolbar4 = new ToollBar("right");
                 <div>
                     <div id="button1" style="float:left;padding-left: 250px;">
                         <?php
-                        $toolbar2->SetBoton("Essalud", "Acreditar", "btn", "onclick,onkeypress", "popadDatosEssalud('$datos[codigoPersona]')", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/monedas.jpg", "", "", 1);
+                        $toolbar2->SetBoton("Essalud", "Acreditar", "btn", "onclick,onkeypress", "popadDatosEssalud('$datos[codigoPersona]')", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/monedas.jpg", "", "", 1);
                         $toolbar2->Mostrar();
                         ?> 
                     </div>
@@ -29,14 +29,14 @@ $toolbar4 = new ToollBar("right");
                         } else {
                             $verBotonAgregarAfiliaciones = 0;
                         }
-                        $toolbar1->SetBoton("Agregar", "Agregar", "btn", "onclick,onkeypress", "PopadAgregarAfiliaciones('$datos[codigoPersona]')", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/window_new.png", "", "", $verBotonAgregarAfiliaciones);
+                        $toolbar1->SetBoton("Agregar", "Agregar", "btn", "onclick,onkeypress", "PopadAgregarAfiliaciones('$datos[codigoPersona]')", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/window_new.png", "", "", $verBotonAgregarAfiliaciones);
                         $toolbar1->Mostrar();
                         ?> 
                     </div>
                     <div id="button4" style="float:left; width: 50px; border: 1px  solid white;"></div>
                     <div id="button5" style="float:left;">
                         <?php
-                        $toolbar3->SetBoton("Link", "", "btn", "onclick,onkeypress", "abrirEssalud", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/images.jpg", "", "", 1);
+                        $toolbar3->SetBoton("Link", "", "btn", "onclick,onkeypress", "abrirEssalud", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/images.jpg", "", "", 1);
                         $toolbar3->Mostrar();
                         ?> 
                     </div>
@@ -100,7 +100,7 @@ $toolbar4 = new ToollBar("right");
                 </div>
                 <?php
                 
-                $toolbar4->SetBoton("Quitar Relacion Municipalidad", "Quitar Relacion Municipalidad", "btn", "onclick,onkeypress", "QuitarRelacion()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/window_new.png", "", "");
+                $toolbar4->SetBoton("Quitar Relacion Municipalidad", "Quitar Relacion Municipalidad", "btn", "onclick,onkeypress", "QuitarRelacion()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/window_new.png", "", "");
                         $toolbar4->Mostrar();
                 ?>
             </div>

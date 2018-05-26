@@ -18,12 +18,12 @@ if ($datos["existe"] == 0) {
             <div style="float: left;"><input type="text" readonly="" value="<?php echo $quinceDias; ?>" id="fechaVencimiento_<?php echo $datos["nroReceta"]; ?>"  style="width:100px; "  onclick="javascript:calendarioFechaVencimiento('<?php echo $datos["nroReceta"]; ?>')" /> </div>
             <div style=" margin-left:50px; margin-top:-6px; width: 100px; float: left; height: 20px;">
                 <a href="javascript:;" onclick="javascript:duplicarReceta(<?php echo $datos["nroReceta"] ?>);">
-                    <img src='../../../../medifacil_front/imagen/btn/b_duplicar_on.gif' alt="" />
+                    <img src='../../../../fastmedical_front/imagen/btn/b_duplicar_on.gif' alt="" />
                 </a>
             </div>
             <div style=" margin-left:300px; margin-top:-6px;  width: 100px; float: left; height: 20px;">
                 <a href="javascript:;" onclick="javascript:eliminarReceta(<?php echo $datos["nroReceta"] ; ?>);">
-                    <img src='../../../../medifacil_front/imagen/btn/b_anular_on.gif' alt="" />
+                    <img src='../../../../fastmedical_front/imagen/btn/b_anular_on.gif' alt="" />
                 </a>
             </div>
 
@@ -87,7 +87,7 @@ if ($datos["existe"] == 0) {
                       style="height:30px; width: 290px " onchange="javascript:preguardarRectaMedica('<?php echo $datos["nroReceta"]; ?>','<?php echo $datos["numeroProducto"]; ?>')"  ></textarea>
         </div>
         <div style="float: left; width:58px; height: 20px; ">
-            <a href="javascript:;" onclick="javascript:eliminarMedicamentoHC(<?php echo $datos["nroReceta"] . ',' . $datos["numeroProducto"]; ?>,1);"><img src='../../../../medifacil_front/imagen/icono/borrar.png' alt=""></a>
+            <a href="javascript:;" onclick="javascript:eliminarMedicamentoHC(<?php echo $datos["nroReceta"] . ',' . $datos["numeroProducto"]; ?>,1);"><img src='../../../../fastmedical_front/imagen/icono/borrar.png' alt=""></a>
         </div>
 
     </div>

@@ -157,7 +157,7 @@ $toolbar2 = new ToollBar("center");
             <div style="float: left;">
 
                 <?php
-                $toolbar1->SetBoton("pagarOrden", "Pagar", "btn", "onclick,onkeypress", "cancelarMontoComprobanteFacturacion()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/monedas.jpg", "", "", 1);
+                $toolbar1->SetBoton("pagarOrden", "Pagar", "btn", "onclick,onkeypress", "cancelarMontoComprobanteFacturacion()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/monedas.jpg", "", "", 1);
                 $toolbar1->Mostrar();
                 ?>
 <!--<input type="button" id="btnCancelarMontoComprobanteFacturacion" name="btnCancelarMontoComprobanteFacturacion" value="Cancelar Monto" onclick="verificarCajaNoCerrada();">-->
@@ -167,10 +167,10 @@ $toolbar2 = new ToollBar("center");
             </div>
             <div style="float: left;">
                 <!--<a href="javascript:salirVentanaFacturacionOrdenPaciente();">
-                    Salir<img src="../../../../medifacil_front/imagen/icono/salir.gif" title="Salir" alt="Salir"/>
+                    Salir<img src="../../../../fastmedical_front/imagen/icono/salir.gif" title="Salir" alt="Salir"/>
                 </a>-->
                  <?php
-                $toolbar2->SetBoton("salirPago", "Salir", "btn", "onclick,onkeypress", "salirVentanaFacturacionOrdenPaciente()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/salir.gif", "", "", 1);
+                $toolbar2->SetBoton("salirPago", "Salir", "btn", "onclick,onkeypress", "salirVentanaFacturacionOrdenPaciente()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/salir.gif", "", "", 1);
                 $toolbar2->Mostrar();
                 ?>
                 

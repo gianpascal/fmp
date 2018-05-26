@@ -146,13 +146,13 @@ class LTesoreria {
               //  onclick=\"EliminacionComprobantePago('".$array[$i][8]. "','" . $codigoPersona. "','" . $orden ."','" . $estado . "');\">".$array[$i][8]."</a>";
                 $numeroComprobante=$array[$i][8];
                $eliminar =  "<a href='#' 
-                onclick=\"anularComprobantePago('".$array[$i][8]. "');\"><img src='../../../../medifacil_front/imagen/icono/agt_action_fail.png' title='eliminar'/></a>";
+                onclick=\"anularComprobantePago('".$array[$i][8]. "');\"><img src='../../../../fastmedical_front/imagen/icono/agt_action_fail.png' title='eliminar'/></a>";
             }else {
                 $numeroComprobante='';
             }
             if($estado==1) {
                $eliminar =  "<a href='#' 
-                onclick=\"anularItem('".$array[$i][9]. "');\"><img src='../../../../medifacil_front/imagen/icono/agt_action_fail.png' title='eliminar'/></a>";
+                onclick=\"anularItem('".$array[$i][9]. "');\"><img src='../../../../fastmedical_front/imagen/icono/agt_action_fail.png' title='eliminar'/></a>";
             }
             
 

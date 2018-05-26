@@ -6,7 +6,7 @@
                     <h1>Procedimientos Médicos y/o Interconsultas</h1>
                 </td>
                 <td style="width:3%">
-                    <img id="Div_TratamientoCuerpoicono" src='../../../../medifacil_front/imagen/icono/plegar.png' title='plegar' alt=""/>
+                    <img id="Div_TratamientoCuerpoicono" src='../../../../fastmedical_front/imagen/icono/plegar.png' title='plegar' alt=""/>
                 </td>
             </tr>
         </table>
@@ -31,7 +31,7 @@
     <fieldset class="examenes" style="width:85%">
         <div style="float: right; margin-top:3px;"  >
             <a href="javascript:;" onclick="javascript:verPracticasMedicasAnteriores();">
-                <img id="icono_abrirPracticasMedicasAnteriores" src='../../../../medifacil_front/imagen/icono/abrir.png' alt="">
+                <img id="icono_abrirPracticasMedicasAnteriores" src='../../../../fastmedical_front/imagen/icono/abrir.png' alt="">
             </a>
         </div>
         <a href="javascript:;" onclick="javascript:verPracticasMedicasAnteriores();"> 

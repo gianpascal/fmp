@@ -38,7 +38,7 @@
             <tr>
                 <td colspan="2" align="center">
                     <a href="javascript:busquedaPaciente();">
-                        <img border="0" title="Buscar" alt="" src="../../../../medifacil_front/imagen/btn/b_buscar_on.gif"/></a>
+                        <img border="0" title="Buscar" alt="" src="../../../../fastmedical_front/imagen/btn/b_buscar_on.gif"/></a>
                 </td>
 
             </tr>  
@@ -49,7 +49,7 @@
             </div>
             <div align="center">
                 <a href="javascript:Cerrar();">
-                    <img border="0" title="Salir" alt="" src="../../../../medifacil_front/imagen/btn/b_Salir.gif"/></a>
+                    <img border="0" title="Salir" alt="" src="../../../../fastmedical_front/imagen/btn/b_Salir.gif"/></a>
             </div>
         </fieldset>
 
@@ -58,6 +58,6 @@
 </fieldset > 
 <?php
 //                                        $toolbar3 = new ToollBar("left");
-//                                        $toolbar3->SetBoton("ELIMINAR", "SALIR", "btn", "onclick,onkeypress", "SalirReportePaciente()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/salir.gif");
+//                                        $toolbar3->SetBoton("ELIMINAR", "SALIR", "btn", "onclick,onkeypress", "SalirReportePaciente()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/salir.gif");
 //                                        $toolbar3->Mostrar();
 ?>

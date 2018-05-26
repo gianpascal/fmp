@@ -56,7 +56,7 @@
                             </td>
                             <td style="width:60px;float: center; height: auto; ">
                                 <div id="div_ocultarTablasExamenYpuntoControl">
-                                    <a href="javascript:ocultarTablasExamenYpuntoControl();"> <img border="0" title="Nuevo" alt="" src="../../../../medifacil_front/imagen/icono/fechaArriba.jpg"/></a>
+                                    <a href="javascript:ocultarTablasExamenYpuntoControl();"> <img border="0" title="Nuevo" alt="" src="../../../../fastmedical_front/imagen/icono/fechaArriba.jpg"/></a>
                                 </div>
                             </td>
                             <td>
@@ -79,7 +79,7 @@
                                             </td>
                                             <td>
                                                 <div id="div_agregarNuevoPuntoControlBoton">                                 
-                                                    <a href="javascript:agregarNuevoPuntoControl();"> <img border="0" title="Nuevo" alt="" src="../../../../medifacil_front/imagen/btn/b_adiciona_on.gif"/></a>
+                                                    <a href="javascript:agregarNuevoPuntoControl();"> <img border="0" title="Nuevo" alt="" src="../../../../fastmedical_front/imagen/btn/b_adiciona_on.gif"/></a>
                                                 </div>
                                             </td>
                                         </tr>

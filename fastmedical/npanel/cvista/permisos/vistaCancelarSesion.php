@@ -24,7 +24,7 @@ $toolbar4 = new ToollBar();
 
                             <div>
                                 <?php
-                                $toolbar1->SetBoton("BusquedaEmpleado", "Buscar Usuario", "btn", "onclick,onkeypress", "podpadbuscarUsuariosCancelarSesion()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/kopeteavailable.png", "", "", 1);
+                                $toolbar1->SetBoton("BusquedaEmpleado", "Buscar Usuario", "btn", "onclick,onkeypress", "podpadbuscarUsuariosCancelarSesion()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/kopeteavailable.png", "", "", 1);
                                 $toolbar1->Mostrar();
                                 ?>  
                             </div>
@@ -32,7 +32,7 @@ $toolbar4 = new ToollBar();
                             <br>
                             <div id="divboton" style="float:center; width: 100px; height: 100px">
                                 <?php
-                                $toolbar2->SetBoton("cancelarSesionIndividual", "Cancelar Sesion del Usuario", "btn", "onclick,onkeypress", "ConfirmacionCancelarSesionIndividual()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/kopeteavailable.png", "", "", 1);
+                                $toolbar2->SetBoton("cancelarSesionIndividual", "Cancelar Sesion del Usuario", "btn", "onclick,onkeypress", "ConfirmacionCancelarSesionIndividual()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/kopeteavailable.png", "", "", 1);
                                 $toolbar2->Mostrar();
                                 ?>  
                             </div>  
@@ -46,7 +46,7 @@ $toolbar4 = new ToollBar();
 
                             <div id="divboton" style="float:center; width: 100px; height: 100px">
                                 <?php
-                                $toolbar3->SetBoton("cancelarSesion", "Cancelar Sesion por Perfil", "btn", "onclick,onkeypress", "podpadseleccionarPerfilCancelarSesion()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/kopeteavailable.png", "", "", 1);
+                                $toolbar3->SetBoton("cancelarSesion", "Cancelar Sesion por Perfil", "btn", "onclick,onkeypress", "podpadseleccionarPerfilCancelarSesion()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/kopeteavailable.png", "", "", 1);
                                 $toolbar3->Mostrar();
                                 ?>      
                             </div>
@@ -60,7 +60,7 @@ $toolbar4 = new ToollBar();
                             <legend>CANCELACION SESION TODOS LOS USUARIOS</legend>
                             <div id="divboton" style="float:center; width: 100px; height: 100px">
                                 <?php
-                                $toolbar4->SetBoton("cancelarSesionTodos", "Cancelar Sesion Todos Usuarios ", "btn", "onclick,onkeypress", "ConfirmacionCancelarSesionTotal()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/kopeteavailable.png", "", "", 1);
+                                $toolbar4->SetBoton("cancelarSesionTodos", "Cancelar Sesion Todos Usuarios ", "btn", "onclick,onkeypress", "ConfirmacionCancelarSesionTotal()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/kopeteavailable.png", "", "", 1);
                                 $toolbar4->Mostrar();
                                 ?>  
                             </div>  

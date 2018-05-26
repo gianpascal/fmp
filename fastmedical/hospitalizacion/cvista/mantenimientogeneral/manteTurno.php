@@ -106,7 +106,7 @@ $opcionesHTMLTipoHorarioTurno = $o_Combo->getOptionsHTML($tipoHorarioTurno);
     <?php
     if ($_SESSION["permiso_formulario_servicio"][206]["GRABAR_TURNO"] == 1) {
         $toolbar = new ToollBar("center");
-        $toolbar->SetBoton("GRABAR", "GRABAR", "btn", "onclick,onkeypress", "validarManteTurno()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/grabar.png");
+        $toolbar->SetBoton("GRABAR", "GRABAR", "btn", "onclick,onkeypress", "validarManteTurno()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/grabar.png");
         $toolbar->Mostrar();
     }
     ?>

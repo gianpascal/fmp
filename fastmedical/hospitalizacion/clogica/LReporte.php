@@ -19,7 +19,7 @@ class LReporte {
         $o_DReporte = new DReporte();
         $respuesta = $o_DReporte->cargarTablaPersonal($datos);
         foreach ($respuesta as $key => $value) {
-            array_push($respuesta[$key], "../../../../medifacil_front/imagen/icono/bajarAngel.png ^ Agregar");
+            array_push($respuesta[$key], "../../../../fastmedical_front/imagen/icono/bajarAngel.png ^ Agregar");
         }
         return $respuesta;
     }
@@ -28,7 +28,7 @@ class LReporte {
         $o_DReporte = new DReporte();
         $respuesta = $o_DReporte->cargarTablaServicios($datos);
         foreach ($respuesta as $key => $value) {
-            array_push($respuesta[$key], "../../../../medifacil_front/imagen/icono/bajarAngel.png ^ Agregar");
+            array_push($respuesta[$key], "../../../../fastmedical_front/imagen/icono/bajarAngel.png ^ Agregar");
         }
         return $respuesta;
     }
@@ -37,9 +37,9 @@ class LReporte {
         $o_DReporte = new DReporte();
         $respuesta = $o_DReporte->TablaHistoriaEstadistica();
         foreach ($respuesta as $key => $value) {
-            array_push($respuesta[$key], "../../../../medifacil_front/imagen/icono/editarAngel.png ^ Editar");
-            array_push($respuesta[$key], "../../../../medifacil_front/imagen/icono/estadisticasAngel.png ^ Ver");
-            array_push($respuesta[$key], "../../../../medifacil_front/imagen/icono/cancelarBlanco.png ^ Eliminar");
+            array_push($respuesta[$key], "../../../../fastmedical_front/imagen/icono/editarAngel.png ^ Editar");
+            array_push($respuesta[$key], "../../../../fastmedical_front/imagen/icono/estadisticasAngel.png ^ Ver");
+            array_push($respuesta[$key], "../../../../fastmedical_front/imagen/icono/cancelarBlanco.png ^ Eliminar");
         }
         return $respuesta;
     }
@@ -54,7 +54,7 @@ class LReporte {
 
         $respuesta = $o_DReporte->cargarTablaSedes();
         foreach ($respuesta as $key => $value) {
-            array_push($respuesta[$key], "../../../../medifacil_front/imagen/icono/bajarAngel.png ^ Agregar");
+            array_push($respuesta[$key], "../../../../fastmedical_front/imagen/icono/bajarAngel.png ^ Agregar");
         }
         return $respuesta;
     }
@@ -65,7 +65,7 @@ class LReporte {
         $o_DReporte = new DReporte();
         $respuesta = $o_DReporte->dindicadorLaboratorioClinicoListaAfiliaciones();
         foreach ($respuesta as $key => $value) {
-            array_push($respuesta[$key], "../../../../medifacil_front/imagen/icono/boton_agregar1.JPG ^ Agregar");
+            array_push($respuesta[$key], "../../../../fastmedical_front/imagen/icono/boton_agregar1.JPG ^ Agregar");
         }
         return $respuesta;
     }
@@ -76,7 +76,7 @@ class LReporte {
         $o_DReporte = new DReporte();
         $respuesta = $o_DReporte->dindicadorLaboratorioClinicoListaProcedencia();
         foreach ($respuesta as $key => $value) {
-            array_push($respuesta[$key], "../../../../medifacil_front/imagen/icono/boton_agregar1.JPG ^ Agregar");
+            array_push($respuesta[$key], "../../../../fastmedical_front/imagen/icono/boton_agregar1.JPG ^ Agregar");
         }
         return $respuesta;
     }
@@ -88,7 +88,7 @@ class LReporte {
         $o_DReporte = new DReporte();
         $respuesta = $o_DReporte->DreporteDePuntoControlXExamen_indicador($datos);
         foreach ($respuesta as $key => $value) {
-            array_push($respuesta[$key], "../../../../medifacil_front/imagen/icono/boton_agregar1.JPG ^ Agregar");
+            array_push($respuesta[$key], "../../../../fastmedical_front/imagen/icono/boton_agregar1.JPG ^ Agregar");
         }
         return $respuesta;
     }
@@ -100,7 +100,7 @@ class LReporte {
         $o_DReporte = new DReporte();
         $respuesta = $o_DReporte->DreporteDeUnidadesUtilizadasxMaterialLaboratorio_IndicadorLaboratorio($datos);
         foreach ($respuesta as $key => $value) {
-            array_push($respuesta[$key], "../../../../medifacil_front/imagen/icono/boton_agregar1.JPG ^ Agregar");
+            array_push($respuesta[$key], "../../../../fastmedical_front/imagen/icono/boton_agregar1.JPG ^ Agregar");
         }
         return $respuesta;
     }
@@ -111,7 +111,7 @@ class LReporte {
         $o_DReporte = new DReporte();
         $respuesta = $o_DReporte->dindicadorLaboratorioClinicoListaSedes();
         foreach ($respuesta as $key => $value) {
-            array_push($respuesta[$key], "../../../../medifacil_front/imagen/icono/boton_agregar1.JPG ^ Agregar");
+            array_push($respuesta[$key], "../../../../fastmedical_front/imagen/icono/boton_agregar1.JPG ^ Agregar");
         }
         return $respuesta;
     }
@@ -133,7 +133,7 @@ class LReporte {
         $o_DReporte = new DReporte();
         $respuesta = $o_DReporte->indicadorLaboratorioClinicoMaterialesLaboratorio();
         foreach ($respuesta as $key => $value) {
-            array_push($respuesta[$key], "../../../../medifacil_front/imagen/icono/boton_agregar1.JPG ^ Agregar");
+            array_push($respuesta[$key], "../../../../fastmedical_front/imagen/icono/boton_agregar1.JPG ^ Agregar");
         }
         return $respuesta;
     }
@@ -145,11 +145,11 @@ class LReporte {
         $respuesta = $o_DReporte->dindicadorLaboratorioClinicoListaExamenes();
 
         foreach ($respuesta as $i => $valuey) {
-            array_push($respuesta[$i], "../../../../medifacil_front/imagen/icono/boton_agregar1.JPG ^ Agregar");
+            array_push($respuesta[$i], "../../../../fastmedical_front/imagen/icono/boton_agregar1.JPG ^ Agregar");
         }
 //
 //        foreach ($rs as $j => $valuem) {
-//            array_push($rs[$j], "../../../../medifacil_front/imagen/icono/cancel.png ^ Eliminar Examen");
+//            array_push($rs[$j], "../../../../fastmedical_front/imagen/icono/cancel.png ^ Eliminar Examen");
 //        }
 
         return $respuesta;
@@ -159,7 +159,7 @@ class LReporte {
         $o_DReporte = new DReporte();
         $respuesta = $o_DReporte->tablaAmbiLo();
         foreach ($respuesta as $key => $value) {
-            array_push($respuesta[$key], "../../../../medifacil_front/imagen/icono/bajarAngel.png ^ Agregar");
+            array_push($respuesta[$key], "../../../../fastmedical_front/imagen/icono/bajarAngel.png ^ Agregar");
         }
         return $respuesta;
     }
@@ -168,7 +168,7 @@ class LReporte {
         $o_DReporte = new DReporte();
         $respuesta = $o_DReporte->tablaAmbiFi();
         foreach ($respuesta as $key => $value) {
-            array_push($respuesta[$key], "../../../../medifacil_front/imagen/icono/bajarAngel.png ^ Agregar");
+            array_push($respuesta[$key], "../../../../fastmedical_front/imagen/icono/bajarAngel.png ^ Agregar");
         }
         return $respuesta;
     }
@@ -177,7 +177,7 @@ class LReporte {
         $o_DReporte = new DReporte();
         $respuesta = $o_DReporte->ListarActividades();
         foreach ($respuesta as $key => $value) {
-            array_push($respuesta[$key], "../../../../medifacil_front/imagen/icono/bajarAngel.png ^ Agregar");
+            array_push($respuesta[$key], "../../../../fastmedical_front/imagen/icono/bajarAngel.png ^ Agregar");
         }
         return $respuesta;
     }
@@ -384,10 +384,10 @@ class LReporte {
             $datos[$i][6] = $respuesta[$i][4];
             if ($respuesta[$i][4] == 0) {
                 $datos[$i][7] = "Desactivado";
-                $datos[$i][8] = "../../../../medifacil_front/imagen/icono/good.gif ^ Activar";
+                $datos[$i][8] = "../../../../fastmedical_front/imagen/icono/good.gif ^ Activar";
             } else if ($respuesta[$i][4] == 1) {
                 $datos[$i][7] = "Activado";
-                $datos[$i][8] = "../../../../medifacil_front/imagen/icono/eliminar.gif ^ Desactivar";
+                $datos[$i][8] = "../../../../fastmedical_front/imagen/icono/eliminar.gif ^ Desactivar";
             }
         }
         return $datos;
@@ -818,7 +818,7 @@ class LReporte {
         $o_DPersona = new DPersonas();
         $respuesta = $o_DPersona->getArrayListPersonas($patron, $tipoDoc, $parametro);
         foreach ($respuesta as $key => $value) {
-            array_push($respuesta[$key], "../../../../medifacil_front/imagen/icono/editar.png ^ Agregar");
+            array_push($respuesta[$key], "../../../../fastmedical_front/imagen/icono/editar.png ^ Agregar");
         }
         return $respuesta;
     }

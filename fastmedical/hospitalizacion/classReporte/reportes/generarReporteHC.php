@@ -107,7 +107,7 @@ class generarMYPDFHC extends TCPDF {
 
         /////////////////////////////////// FIN CABECERA///////////////////////////////////
         /////////////////////////////////// IMPRESION REPORTE ////////////////////////////
-       // $pdf->Image('../../../../medifacil_front/imagen/logo/membrete.jpg', '', '', 190, "auto");
+       // $pdf->Image('../../../../fastmedical_front/imagen/logo/membrete.jpg', '', '', 190, "auto");
         $pdf->writeHTML('<br><br><br><br><br><br><br><br>', true, true, true, true, 'a');
         $pdf->writeHTML($cabeceraReporte, true, true, true, true, 'a');
 
@@ -128,7 +128,7 @@ class generarMYPDFHC extends TCPDF {
             $xPrincipal = 15;
             $yPrincipal = 60;
 		    
-           // $pdf->Image('../../../../medifacil_front/imagen/odontograma/odontograma.png', $xPrincipal, $yPrincipal, $ancho, $alto, '', '', '', true, 100);
+           // $pdf->Image('../../../../fastmedical_front/imagen/odontograma/odontograma.png', $xPrincipal, $yPrincipal, $ancho, $alto, '', '', '', true, 100);
          //   $pdf->writeHTML('<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>', true, false, false, false, '');
             $pdf->writeHTML('<br>', true, false, false, false, '');
             $pdf->SetFont($family, $styleNormal, $sizeDatos);
@@ -188,7 +188,7 @@ class generarMYPDFHC extends TCPDF {
             $pdf->SetFont($family, $styleNegrita, $sizeSubtitulo);
             $pdf->writeHTML('<br>', true, false, false, false, '');
             $pdf->Write(0, 'NRO. PLACA', '', 0, 'L', true, 0, false, false, 0);
-            $pdf->Image('../../../../medifacil_front/imagen/logo/linea.jpg', '', '', 190, "auto");
+            $pdf->Image('../../../../fastmedical_front/imagen/logo/linea.jpg', '', '', 190, "auto");
             $pdf->writeHTML('<br>', true, false, false, false, '');
             $pdf->SetFont($family, $styleNormal, $sizeDatos);
             $pdf->writeHTML($cadenaPlaca, true, false, false, false, '');
@@ -217,7 +217,7 @@ class generarMYPDFHC extends TCPDF {
             $pdf->SetFont($family, $styleNegrita, $sizeSubtitulo);
             $pdf->writeHTML('<br>', true, false, false, false, '');
             $pdf->Write(0, 'PROCEDIMIENTOS', '', 0, 'L', true, 0, false, false, 0);
-            $pdf->Image('../../../../medifacil_front/imagen/logo/linea.jpg', '', '', 190, "auto");
+            $pdf->Image('../../../../fastmedical_front/imagen/logo/linea.jpg', '', '', 190, "auto");
             //$pdf->writeHTML('<br>', true, false, false, false, '');
             $pdf->SetFont($family, $styleNormal, $sizeDatos);
             $pdf->writeHTML($cadenaProcedimientos, true, false, false, false, '');
@@ -281,7 +281,7 @@ class generarMYPDFHC extends TCPDF {
                     $pdf->SetFont($family, $styleNegrita, $sizeSubtitulo);
         $pdf->writeHTML('<br>', true, false, false, false, '');
         $pdf->Write(0, 'ANTECEDENTES', '', 0, 'L', true, 0, false, false, 0);
-        $pdf->Image('../../../../medifacil_front/imagen/logo/linea.jpg', '', '', 190, "auto");
+        $pdf->Image('../../../../fastmedical_front/imagen/logo/linea.jpg', '', '', 190, "auto");
         $pdf->writeHTML('<br>', true, false, false, false, '');
         $pdf->SetFont($family, $styleNormal, $sizeDatos);
         $pdf->writeHTML($cadenaAntecedentes, true, false, false, false, '');
@@ -601,7 +601,7 @@ class generarMYPDFHC extends TCPDF {
                 $pdf->SetFont($family, $styleNegrita, $sizeSubtitulo);
                 $pdf->writeHTML('<br>', true, false, false, false, '');
                 $pdf->Write(0, 'MOTIVO DE CONSULTA', '', 0, 'L', true, 0, false, false, 0);
-                $pdf->Image('../../../../medifacil_front/imagen/logo/linea.jpg', '', '', 190, "auto");
+                $pdf->Image('../../../../fastmedical_front/imagen/logo/linea.jpg', '', '', 190, "auto");
                 $pdf->writeHTML('<br>', true, false, false, false, '');
                 $pdf->SetFont($family, $styleNormal, $sizeDatos);
                 $pdf->writeHTML($cadenaMotCon, true, false, false, false, '');
@@ -612,7 +612,7 @@ class generarMYPDFHC extends TCPDF {
                 $pdf->SetFont($family, $styleNegrita, $sizeSubtitulo);
                 $pdf->writeHTML('<br>', true, false, false, false, '');
                 $pdf->Write(0, 'TRIAJE', '', 0, 'L', true, 0, false, false, 0);
-                $pdf->Image('../../../../medifacil_front/imagen/logo/linea.jpg', '', '', 190, "auto");
+                $pdf->Image('../../../../fastmedical_front/imagen/logo/linea.jpg', '', '', 190, "auto");
                 $pdf->writeHTML('<br>', true, false, false, false, '');
                 $pdf->SetFont($family, $styleNormal, $sizeDatos);
                 $pdf->writeHTML($cadenaTriaje, true, false, false, false, '');
@@ -623,7 +623,7 @@ class generarMYPDFHC extends TCPDF {
                 $pdf->SetFont($family, $styleNegrita, $sizeSubtitulo);
                 //$pdf->writeHTML('<br>', true, false, false, false, '');
                 $pdf->Write(0, 'EXAMENES MEDICOS', '', 0, 'L', true, 0, false, false, 0);
-                $pdf->Image('../../../../medifacil_front/imagen/logo/linea.jpg', '', '', 190, "auto");
+                $pdf->Image('../../../../fastmedical_front/imagen/logo/linea.jpg', '', '', 190, "auto");
                 $pdf->writeHTML('<br>', true, false, false, false, '');
                 $pdf->SetFont($family, $styleNormal, $sizeDatos);
                 $pdf->writeHTML($cadenaExamenes, true, false, false, false, '');
@@ -634,7 +634,7 @@ class generarMYPDFHC extends TCPDF {
                 $pdf->SetFont($family, $styleNegrita, $sizeSubtitulo);
                 $pdf->writeHTML('<br>', true, false, false, false, '');
                 $pdf->Write(0, 'DIAGNOSTICO', '', 0, 'L', true, 0, false, false, 0);
-                $pdf->Image('../../../../medifacil_front/imagen/logo/linea.jpg', '', '', 190, "auto");
+                $pdf->Image('../../../../fastmedical_front/imagen/logo/linea.jpg', '', '', 190, "auto");
                 $pdf->writeHTML('<br>', true, false, false, false, '');
                 $pdf->SetFont($family, $styleNormal, $sizeDatos);
                 $pdf->writeHTML($cadenaDiagnostico, true, false, false, false, '');
@@ -645,7 +645,7 @@ class generarMYPDFHC extends TCPDF {
                 $pdf->SetFont($family, $styleNegrita, $sizeSubtitulo);
                 $pdf->writeHTML('<br>', true, false, false, false, '');
                 $pdf->Write(0, 'TRATAMIENTOS', '', 0, 'L', true, 0, false, false, 0);
-                $pdf->Image('../../../../medifacil_front/imagen/logo/linea.jpg', '', '', 190, "auto");
+                $pdf->Image('../../../../fastmedical_front/imagen/logo/linea.jpg', '', '', 190, "auto");
                 $pdf->writeHTML('<br>', true, false, false, false, '');
                 $pdf->SetFont($family, $styleNormal, $sizeDatos);
                 $pdf->writeHTML($cadenaTratamientos, true, false, false, false, '');

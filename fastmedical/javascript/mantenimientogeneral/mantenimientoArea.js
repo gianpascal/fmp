@@ -385,7 +385,7 @@ function cargarArbolAreas(sede){
     divMostrar.innerHTML = " ";
     treex=new dhtmlXTreeObject("arbolAreas","100%","100%",0);
     treex.setSkin('dhx_skyblue');
-    treex.setImagePath("../../../../medifacil_front/imagen/csh_bluebooks_simedh/");
+    treex.setImagePath("../../../../fastmedical_front/imagen/csh_bluebooks_simedh/");
     treex.attachEvent("onClick", function(){
         editarAreas(treex.getSelectedItemId(),treex.getSelectedItemText());
         return true;
@@ -410,7 +410,7 @@ function cargarArbolodontologia(){
     divMostrar.innerHTML = " ";
     treex=new dhtmlXTreeObject("arbolOdontologia","100%","100%",0);
     treex.setSkin('dhx_skyblue');
-    treex.setImagePath("../../../../medifacil_front/imagen/csh_bluebooks_simedh/");
+    treex.setImagePath("../../../../fastmedical_front/imagen/csh_bluebooks_simedh/");
     treex.attachEvent("onClick", function(){
         editarAreas(treex.getSelectedItemId(),treex.getSelectedItemText());
         return true;

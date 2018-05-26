@@ -54,7 +54,7 @@ $variable=$o_rrhh1->funcionprueba();      ;
                                     <div style="float: left; width: 30%">
                                         <?php
                                             if (isset($_SESSION["permiso_formulario_servicio"][226]["AGREGAR_SUBAREA"]) && ($_SESSION["permiso_formulario_servicio"][226]["AGREGAR_SUBAREA"]==1)){
-                                                $toolbarx->SetBoton("btnAgregarSubAreas", "Agregar Sub Areas", "btn", "onclick,onkeypress", "agregarSubAreas()", "../../../../medifacil_front/imagen/icono/apply.png", "", "", true);
+                                                $toolbarx->SetBoton("btnAgregarSubAreas", "Agregar Sub Areas", "btn", "onclick,onkeypress", "agregarSubAreas()", "../../../../fastmedical_front/imagen/icono/apply.png", "", "", true);
                                                 $toolbarx->Mostrar();
                                             }
                                         ?>
@@ -84,7 +84,7 @@ $variable=$o_rrhh1->funcionprueba();      ;
                         <td>
                             <?php
                                 if (isset($_SESSION["permiso_formulario_servicio"][226]["ASIG_EMP_SUBAREA"]) && ($_SESSION["permiso_formulario_servicio"][226]["ASIG_EMP_SUBAREA"]==1)){
-                                    $toolbar->SetBoton("Asignacion Empleado a SubArea", "Asignar", "btn", "onclick,onkeypress", "asignarEmpleadoaSubArea()", "../../../../medifacil_front/imagen/icono/apply.png", "", "", true);
+                                    $toolbar->SetBoton("Asignacion Empleado a SubArea", "Asignar", "btn", "onclick,onkeypress", "asignarEmpleadoaSubArea()", "../../../../fastmedical_front/imagen/icono/apply.png", "", "", true);
                                     $toolbar->Mostrar();
                                 }
                             ?>

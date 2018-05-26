@@ -83,14 +83,14 @@
                             <div  id ="divEtiquetaBuscar" style="width:100px;  float:left;" align="center">
                                 <?php
                                 if (isset($_SESSION["permiso_formulario_servicio"][224]["BUSCAR_EMP"]) && ($_SESSION["permiso_formulario_servicio"][224]["BUSCAR_EMP"] == 1)) {
-                                    echo '<a href="javascript:buscarMedicoX(document.getElementById(\'txtCodigo\').value,document.getElementById(\'comboTipoEstados\').value,document.getElementById(\'comboTipoDocumentos\').value,document.getElementById(\'nroDoc\').value,document.getElementById(\'apellidoPaterno\').value,document.getElementById(\'apellidoMaterno\').value,document.getElementById(\'nombres\').value);"><img id="imgbusqueda" border="0" title="Codigo de Persona" alt="" src="../../../../medifacil_front/imagen/btn/nbtn_buscar.gif"/></a>';
+                                    echo '<a href="javascript:buscarMedicoX(document.getElementById(\'txtCodigo\').value,document.getElementById(\'comboTipoEstados\').value,document.getElementById(\'comboTipoDocumentos\').value,document.getElementById(\'nroDoc\').value,document.getElementById(\'apellidoPaterno\').value,document.getElementById(\'apellidoMaterno\').value,document.getElementById(\'nombres\').value);"><img id="imgbusqueda" border="0" title="Codigo de Persona" alt="" src="../../../../fastmedical_front/imagen/btn/nbtn_buscar.gif"/></a>';
                                 }
                                 ?>
                             </div>
                             <div  id ="divEtiquetaLimpiar" style="width:100px;  float:left;" align="center">
                                 <?php
                                 if (isset($_SESSION["permiso_formulario_servicio"][224]["LIMPIAR_EMP"]) && ($_SESSION["permiso_formulario_servicio"][224]["LIMPIAR_EMP"] == 1)) {
-                                    echo '<a href="javascript:limpiaBusquedasXMedico(\'0\',\'\',\'\');"><img border="0" title="Limpia" alt="" src="../../../../medifacil_front/imagen/btn/btn_limpiar.gif"/></a>';
+                                    echo '<a href="javascript:limpiaBusquedasXMedico(\'0\',\'\',\'\');"><img border="0" title="Limpia" alt="" src="../../../../fastmedical_front/imagen/btn/btn_limpiar.gif"/></a>';
                                 }
                                 ?>
                             </div> 

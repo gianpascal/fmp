@@ -54,7 +54,7 @@ $caja=$arrayMaximoNumeroCaje[0][0];
                     
                     
                     <td>
-                        <a href="javascript:eliminarComprobante(<?php  echo $value[3] ?>);"><img border="0" title="Editar" alt="" src="../../../../medifacil_front/imagen/icono/cancel.png"/></a>
+                        <a href="javascript:eliminarComprobante(<?php  echo $value[3] ?>);"><img border="0" title="Editar" alt="" src="../../../../fastmedical_front/imagen/icono/cancel.png"/></a>
                     </td>
                 </tr>
 
@@ -64,5 +64,5 @@ $caja=$arrayMaximoNumeroCaje[0][0];
     </div>
 </div>
 <div align="center">
-    <a href="javascript:poppackBoletas();"><img border="0" title="Codigo de Persona" alt="" src="../../../../medifacil_front/imagen/btn/b_agregar_off.gif"/></a>
+    <a href="javascript:poppackBoletas();"><img border="0" title="Codigo de Persona" alt="" src="../../../../fastmedical_front/imagen/btn/b_agregar_off.gif"/></a>
 </div>

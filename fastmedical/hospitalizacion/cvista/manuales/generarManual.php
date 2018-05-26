@@ -9,7 +9,7 @@
 <div id ="botones" style=" float:left;width:100%;height:30px;">
     <?php
     $toolbar2=new ToollBar("left");
-    $toolbar2->SetBoton("Editar","Editar","btn","onclick,onkeypress","editaManual()",$_SESSION['path_principal']."../medifacil_front/imagen/icono/editar.png");
+    $toolbar2->SetBoton("Editar","Editar","btn","onclick,onkeypress","editaManual()",$_SESSION['path_principal']."../fastmedical_front/imagen/icono/editar.png");
     $toolbar2->Mostrar();
     ?>
 </div>

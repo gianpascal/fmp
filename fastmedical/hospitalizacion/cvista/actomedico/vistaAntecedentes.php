@@ -7,7 +7,7 @@
     <input style=" width:70px; " type="text" name="textCodigoCie" value="" id="textCodigoCie" onkeyup='buscarCieCodigo();'>
     &nbsp;&nbsp;&nbsp;&nbsp;
     <a href="javascript:;" onclick="javascript:agregarOtro_ActoMedico('antecedentes');">
-        <img id="btn_agregarotro" src='../../../../medifacil_front/imagen/btn/btn_agregarotro.png' alt="">
+        <img id="btn_agregarotro" src='../../../../fastmedical_front/imagen/btn/btn_agregarotro.png' alt="">
     </a>
 </fieldset>
 
@@ -17,7 +17,7 @@
 <fieldset class="examenes" style="width:900px">
     <div style="float: right; margin-top:3px;"  >
         <a href="javascript:;" onclick="javascript:verAntecedentesAnteriores();">
-            <img id="icono_abrir" src='../../../../medifacil_front/imagen/icono/abrir.png' alt="">
+            <img id="icono_abrir" src='../../../../fastmedical_front/imagen/icono/abrir.png' alt="">
         </a>
     </div>
     <a href="javascript:;" onclick="javascript:verAntecedentesAnteriores();">

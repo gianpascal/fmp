@@ -18,8 +18,8 @@ echo '</td>
        <div  id ="DivDetalle" style=" float:right;width:150px;">
 ';
                     $toolbar=new ToollBar("right");
-                    $toolbar->SetBoton("Adjuntar","Adjuntar otro archivo","btn","onclick,onkeypress","adjuntarOtroFile()","../../../../medifacil_front/imagen/icono/adjunto.gif","","",true);
-                    //$toolbar->SetBoton("VER","Ver Datos","btn","onclick,onkeypress","ventana_formulario_persona('setDatosContribuyente')","../../../../medifacil_front/imagen/icono/add_user.png","","",true);
+                    $toolbar->SetBoton("Adjuntar","Adjuntar otro archivo","btn","onclick,onkeypress","adjuntarOtroFile()","../../../../fastmedical_front/imagen/icono/adjunto.gif","","",true);
+                    //$toolbar->SetBoton("VER","Ver Datos","btn","onclick,onkeypress","ventana_formulario_persona('setDatosContribuyente')","../../../../fastmedical_front/imagen/icono/add_user.png","","",true);
                     $toolbar->Mostrar();
   echo '</div>
       </td>

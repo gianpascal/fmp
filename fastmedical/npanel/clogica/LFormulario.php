@@ -53,17 +53,17 @@ class LFormulario{
                 $permiso2 = $Permisos_user[$id_formulario]['EDITAR'];
             }
             $icono1 = $habilitado==1?'agt_action_fail':'agt_action_success';
-            $boton1_desh = "<img src='../../../../medifacil_front/imagen/icono/".$icono1."_desh.png' alt='' title='' border='0'/>";
-            $boton2_desh = "<img src='../../../../medifacil_front/imagen/icono/editar_desh.png' alt='' title='' border='0'/>";
+            $boton1_desh = "<img src='../../../../fastmedical_front/imagen/icono/".$icono1."_desh.png' alt='' title='' border='0'/>";
+            $boton2_desh = "<img src='../../../../fastmedical_front/imagen/icono/editar_desh.png' alt='' title='' border='0'/>";
             $resultadoArray = array();
             //$f[0]: iid_usuario, $f[1]: c_cod_per
             foreach($rs as $f){
                 $boton1 = "<a href='#' onclick=\"even_panel(1,'$ophabilita','$f[0]','$id_sistema');\">".
-                           "<img src='../../../../medifacil_front/imagen/icono/".$icono1.".png' alt='Deshabilitar' title='Deshabilitar' border='0'/></a>";
+                           "<img src='../../../../fastmedical_front/imagen/icono/".$icono1.".png' alt='Deshabilitar' title='Deshabilitar' border='0'/></a>";
                 $data = base64_encode($f[1]."|".$f[5]."|".$f[13]."|".$f[14]."|".$f[6]."|".htmlentities($f[7])."|".htmlentities($f[8])."|".htmlentities($f[9])."|".$id_sistema."|".$f[3]."|".$f[4]);
                 $boton2 = "<a href='#' onclick=\"CargarVentana('buscador4','Nuevo Usuario del Sistema','../../ccontrol/control/control.php?".
                            "p1=MostrarPersona&c=$data&idformula=$id_formulario&estado=editar','500','300',false,true,'',1,'',10,10,10,10);\">".
-                           "<img src='../../../../medifacil_front/imagen/icono/editar.png' alt='Editar' title='Editar' border='0'/></a>";
+                           "<img src='../../../../fastmedical_front/imagen/icono/editar.png' alt='Editar' title='Editar' border='0'/></a>";
                 
                 $f['v_nomper'] = htmlentities($f[7]);
                 $f['v_apepat'] = htmlentities($f[8]);
@@ -122,19 +122,19 @@ class LFormulario{
                 //Para habilitar-deshabilitar formulario
                 if($fila["bhab_formulario"]==1){
                     $fila["chk_habilitado"] = "<input type='checkbox' checked disabled>";
-                    $imagenHab = "<img src='../../../../medifacil_front/imagen/icono/agt_action_fail.png' alt='Deshabilitar' title='Deshabilitar'/>";
+                    $imagenHab = "<img src='../../../../fastmedical_front/imagen/icono/agt_action_fail.png' alt='Deshabilitar' title='Deshabilitar'/>";
                 }
                 else
                     if($fila["bhab_formulario"]==0){
                         $fila["chk_habilitado"] = "<input type='checkbox' disabled>";
-                        $imagenHab = "<img src='../../../../medifacil_front/imagen/icono/agt_action_success.png' alt='Habilitar' title='Habilitar'/>";
+                        $imagenHab = "<img src='../../../../fastmedical_front/imagen/icono/agt_action_success.png' alt='Habilitar' title='Habilitar'/>";
                     }
                     else
                         $fila["habilitado"] = "Nulo";
                 
                 $estado=$fila["bhab_formulario"];
                 $fila["opciones"] = "<a href='#' onclick=\"habFormDePerfil($fila[1],'$fila[vnom_formulario]',$estado);\">".$imagenHab."</a>&nbsp;&nbsp;&nbsp;&nbsp;".
-                                    "<a href='#' onclick=\"mostrarPerfilFormularioServicio($idsistema,$idperfil,$fila[1],'$fila[vnom_formulario]');\"><img src='../../../../medifacil_front/imagen/icono/exec.gif' alt='Servicios' title='Servicios' border='0'/></a>";
+                                    "<a href='#' onclick=\"mostrarPerfilFormularioServicio($idsistema,$idperfil,$fila[1],'$fila[vnom_formulario]');\"><img src='../../../../fastmedical_front/imagen/icono/exec.gif' alt='Servicios' title='Servicios' border='0'/></a>";
                 array_push($resultadoArray,$fila);
             }
             return $resultadoArray;
@@ -161,21 +161,21 @@ class LFormulario{
                 //Para habilitar-deshabilitar formulario
                 if($fila["bhabilitar_formulario"]==1){
                     $fila["chk_habilitado"] = "<input type='checkbox' checked disabled>";
-                    $imagenHab = "<img src='../../../../medifacil_front/imagen/icono/agt_action_fail.png' alt='Deshabilitar' title='Deshabilitar'/>";
+                    $imagenHab = "<img src='../../../../fastmedical_front/imagen/icono/agt_action_fail.png' alt='Deshabilitar' title='Deshabilitar'/>";
                 }
                 else{
                     $fila["chk_habilitado"] = "<input type='checkbox' disabled>";
-                    $imagenHab = "<img src='../../../../medifacil_front/imagen/icono/agt_action_success.png' alt='Habilitar' title='Habilitar'/>";
+                    $imagenHab = "<img src='../../../../fastmedical_front/imagen/icono/agt_action_success.png' alt='Habilitar' title='Habilitar'/>";
                 }
                 $estado=$fila["bhabilitar_formulario"];
 
                 $datos = base64_encode($fila[0]."|".$fila[1]."|".htmlentities($fila[2])."|".$fila[3]."|".htmlentities($fila[4])."|".$fila[5]."|".$fila[6]."|".$fila[7]."|".$fila[8]."|".$fila[9]."|".$fila[10]."|".$fila[11]);
 
-                $fila["opciones"] = "<a href='#' onclick=\"eliminarFormulario('eliminar',$fila[1]);\"><img src='../../../../medifacil_front/imagen/icono/op_rechazado.gif' alt='Eliminar' title='Eliminar' border='0'/></a>&nbsp;&nbsp;&nbsp;&nbsp;".
+                $fila["opciones"] = "<a href='#' onclick=\"eliminarFormulario('eliminar',$fila[1]);\"><img src='../../../../fastmedical_front/imagen/icono/op_rechazado.gif' alt='Eliminar' title='Eliminar' border='0'/></a>&nbsp;&nbsp;&nbsp;&nbsp;".
                                     "<a href='#' onclick=\"CargarVentana('popupManteFormulario','Registro de Formularios','../herramientas/manteFormulario.php?".
                                         "datos=$datos&accion=actualizar','305','350',false,true,'',1,'',10,10,10,10);\">".
-                                        "<img src='../../../../medifacil_front/imagen/icono/editar.png' alt='Editar' title='Editar' border='0'/></a>&nbsp;&nbsp;&nbsp;&nbsp;".
-                                    "<a href='#' onclick=\"mostrarFormServ($idsistema,$fila[1],'$fila[vnom_formulario]');\"><img src='../../../../medifacil_front/imagen/icono/exec.gif' alt='Servicios' title='Servicios' border='0'/></a>";
+                                        "<img src='../../../../fastmedical_front/imagen/icono/editar.png' alt='Editar' title='Editar' border='0'/></a>&nbsp;&nbsp;&nbsp;&nbsp;".
+                                    "<a href='#' onclick=\"mostrarFormServ($idsistema,$fila[1],'$fila[vnom_formulario]');\"><img src='../../../../fastmedical_front/imagen/icono/exec.gif' alt='Servicios' title='Servicios' border='0'/></a>";
                 array_push($resultadoArray,$fila);
             }
             return $resultadoArray;
@@ -184,8 +184,8 @@ class LFormulario{
         public function getDetalleServicio($nomservicio){
             $rs = $this->dFormulario->listaServicio($nomservicio);
             $resultadoArray = array();//$fila[0]:iid_servicio
-            $ruta_boton=$_SESSION["path_principal"].'../medifacil_front/imagen/btn/';
-            $ruta_icono=$_SESSION["path_principal"].'../medifacil_front/imagen/icono/';
+            $ruta_boton=$_SESSION["path_principal"].'../fastmedical_front/imagen/btn/';
+            $ruta_icono=$_SESSION["path_principal"].'../fastmedical_front/imagen/icono/';
             //$fila[0]:iid_servicio, $fila[1]:vnom_servicio, $fila[3]:vdesc_servicio, $fila[2]:vimagen_servicio, $fila[4]:vicono_servicio
             foreach($rs as $fila){
                 $fila["vnom_servicio"]=htmlentities($fila[1]);
@@ -196,10 +196,10 @@ class LFormulario{
                 $fila["boton"] = "<img src=$imagen_boton alt='No Registrado' title='Boton' border='0'/>";
                 $fila["icono"] = "<img src=$imagen_icono alt='No Registrado' title='Icono' border='0'/>";
                 $fila["opciones"] = "<a href='#' onclick=\"eliminarServicio('eliminar',$fila[0]);\">".
-                                    "<img src='../../../../medifacil_front/imagen/icono/op_rechazado.gif' alt='Eliminar' title='Eliminar' border='0'/></a>&nbsp;&nbsp;&nbsp;&nbsp;".
+                                    "<img src='../../../../fastmedical_front/imagen/icono/op_rechazado.gif' alt='Eliminar' title='Eliminar' border='0'/></a>&nbsp;&nbsp;&nbsp;&nbsp;".
                                     "<a href='#' onclick=\"CargarVentana('popupManteServicio','Registro de Sevicios','../herramientas/manteServicio.php?".
                                     "p2=$fila[0]&p3=$fila[1]&p4=$fila[3]&p5=$fila[2]&p6=$fila[4]&accion=actualizar','305','220',false,true,'',1,'',10,10,10,10);\">".
-                                    "<img src='../../../../medifacil_front/imagen/icono/editar.png' alt='Editar' title='Editar' border='0'/></a>";
+                                    "<img src='../../../../fastmedical_front/imagen/icono/editar.png' alt='Editar' title='Editar' border='0'/></a>";
                 array_push($resultadoArray,$fila);
                 //CargarVentana('popupManteServicio','Registro de Sevicios','../herramientas/manteServicio.php?accion=\'insertar\'','305','200',false,true,'',1,'',10,10,10,10);
             }
@@ -209,8 +209,8 @@ class LFormulario{
         public function getPerfFormServ($idsistema,$idperfil,$idformulario){
             $rs = $this->dFormulario->listaPerfilServicio($idsistema,$idperfil,$idformulario);
             $resultadoArray = array();//$fila[2]:iid_servicio, $fila[3]:vnom_servicio
-            $ruta_boton=$_SESSION["path_principal"].'../medifacil_front/imagen/btn/';
-            $ruta_icono=$_SESSION["path_principal"].'../medifacil_front/imagen/icono/';
+            $ruta_boton=$_SESSION["path_principal"].'../fastmedical_front/imagen/btn/';
+            $ruta_icono=$_SESSION["path_principal"].'../fastmedical_front/imagen/icono/';
             foreach($rs as $fila){
                 //Para habilitar-deshabilitar servicio de formulario de perfil
                 $fila["vnom_servicio"]=htmlentities($fila[3]);
@@ -218,11 +218,11 @@ class LFormulario{
                 
                 if($fila["bhab_servicio"]==1){
                     $fila["chk_habilitado"] = "<input type='checkbox' checked disabled>";
-                    $imagenHab = "<img src='../../../../medifacil_front/imagen/icono/agt_action_fail.png' alt='Deshabilitar' title='Deshabilitar'/>";
+                    $imagenHab = "<img src='../../../../fastmedical_front/imagen/icono/agt_action_fail.png' alt='Deshabilitar' title='Deshabilitar'/>";
                 }
                 else{
                     $fila["chk_habilitado"] = "<input type='checkbox' disabled>";
-                    $imagenHab = "<img src='../../../../medifacil_front/imagen/icono/agt_action_success.png' alt='Habilitar' title='Habilitar'/>";
+                    $imagenHab = "<img src='../../../../fastmedical_front/imagen/icono/agt_action_success.png' alt='Habilitar' title='Habilitar'/>";
                 }
                 $estado=$fila["bhab_servicio"];
 
@@ -239,8 +239,8 @@ class LFormulario{
         public function getPermisoFormServ($idsistema,$idformulario,$idpersona){
             $rs = $this->dFormulario->listaPermisoServicio($idsistema,$idformulario,$idpersona);
             $resultadoArray = array();//$fila[2]:iid_servicio, $fila[3]:vnom_servicio
-            $ruta_boton=$_SESSION["path_principal"].'../medifacil_front/imagen/btn/';
-            $ruta_icono=$_SESSION["path_principal"].'../medifacil_front/imagen/icono/';
+            $ruta_boton=$_SESSION["path_principal"].'../fastmedical_front/imagen/btn/';
+            $ruta_icono=$_SESSION["path_principal"].'../fastmedical_front/imagen/icono/';
             foreach($rs as $fila){
                 //Para habilitar-deshabilitar servicio de formulario de permiso
                 $fila["vnom_servicio"]=htmlentities($fila[3]);
@@ -248,11 +248,11 @@ class LFormulario{
 
                 if($fila["bhabilitar_servicio"]==1){
                     $fila["chk_habilitado"] = "<input type='checkbox' checked disabled>";
-                    $imagenHab = "<img src='../../../../medifacil_front/imagen/icono/agt_action_fail.png' alt='Deshabilitar' title='Deshabilitar'/>";
+                    $imagenHab = "<img src='../../../../fastmedical_front/imagen/icono/agt_action_fail.png' alt='Deshabilitar' title='Deshabilitar'/>";
                 }
                 else{
                     $fila["chk_habilitado"] = "<input type='checkbox' disabled>";
-                    $imagenHab = "<img src='../../../../medifacil_front/imagen/icono/agt_action_success.png' alt='Habilitar' title='Habilitar'/>";
+                    $imagenHab = "<img src='../../../../fastmedical_front/imagen/icono/agt_action_success.png' alt='Habilitar' title='Habilitar'/>";
                 }
                 $estado=$fila["bhabilitar_servicio"];
 
@@ -269,8 +269,8 @@ class LFormulario{
         public function getFormServ($idsistema,$idformulario,$nomservicio){
             $rs = $this->dFormulario->listaFormularioServicio($idsistema,$idformulario,$nomservicio);
             $resultadoArray = array();//$fila[2]:iid_servicio, $fila[3]:vnom_servicio
-            $ruta_boton=$_SESSION["path_principal"].'../medifacil_front/imagen/btn/';
-            $ruta_icono=$_SESSION["path_principal"].'../medifacil_front/imagen/icono/';
+            $ruta_boton=$_SESSION["path_principal"].'../fastmedical_front/imagen/btn/';
+            $ruta_icono=$_SESSION["path_principal"].'../fastmedical_front/imagen/icono/';
             foreach($rs as $fila){
                 //Para habilitar-deshabilitar servicio de formulario
                 $fila["vnom_servicio"]=htmlentities($fila[3]);
@@ -278,11 +278,11 @@ class LFormulario{
 
                 if($fila["bhab_servicio"]==1){
                     $fila["chk_habilitado"] = "<input type='checkbox' checked disabled>";
-                    $imagenHab = "<img src='../../../../medifacil_front/imagen/icono/agt_action_fail.png' alt='Deshabilitar' title='Deshabilitar'/>";
+                    $imagenHab = "<img src='../../../../fastmedical_front/imagen/icono/agt_action_fail.png' alt='Deshabilitar' title='Deshabilitar'/>";
                 }
                 else{
                     $fila["chk_habilitado"] = "<input type='checkbox' disabled>";
-                    $imagenHab = "<img src='../../../../medifacil_front/imagen/icono/agt_action_success.png' alt='Habilitar' title='Habilitar'/>";
+                    $imagenHab = "<img src='../../../../fastmedical_front/imagen/icono/agt_action_success.png' alt='Habilitar' title='Habilitar'/>";
                 }
                 $estado=$fila["bhab_servicio"];
 
@@ -312,16 +312,16 @@ class LFormulario{
                 //Para habilitar-deshabilitar formulario
                 if($fila["bhabilitar_permiso_formulario"]==1){
                     $fila["chk_habilitado"] = "<input type='checkbox' checked disabled>";
-                    $imagenHab = "<img src='../../../../medifacil_front/imagen/icono/agt_action_fail.png' alt='Deshabilitar' title='Deshabilitar'/>";
+                    $imagenHab = "<img src='../../../../fastmedical_front/imagen/icono/agt_action_fail.png' alt='Deshabilitar' title='Deshabilitar'/>";
                 }
                 else{
                     $fila["chk_habilitado"] = "<input type='checkbox' disabled>";
-                    $imagenHab = "<img src='../../../../medifacil_front/imagen/icono/agt_action_success.png' alt='Habilitar' title='Habilitar'/>";
+                    $imagenHab = "<img src='../../../../fastmedical_front/imagen/icono/agt_action_success.png' alt='Habilitar' title='Habilitar'/>";
                 }
                 //fila[1]:iid_formulario, fila[2]:vnom_formulario
                 $estado=$fila["bhabilitar_permiso_formulario"];
                 $fila["opciones"] = "<a href='#' onclick=\"habFormDePermiso($fila[1],'$fila[vnom_formulario]',$estado);\">".$imagenHab."</a>&nbsp;&nbsp;&nbsp;&nbsp;".
-                                    "<a href='#' onclick=\"mostrarPermisoFormServ($idsistema,'$idpersona',$fila[1],'$fila[vnom_formulario]');\"><img src='../../../../medifacil_front/imagen/icono/exec.gif' alt='Servicios' title='Servicios' border='0'/></a>";
+                                    "<a href='#' onclick=\"mostrarPermisoFormServ($idsistema,'$idpersona',$fila[1],'$fila[vnom_formulario]');\"><img src='../../../../fastmedical_front/imagen/icono/exec.gif' alt='Servicios' title='Servicios' border='0'/></a>";
                 array_push($resultadoArray,$fila);
             }
             return $resultadoArray;

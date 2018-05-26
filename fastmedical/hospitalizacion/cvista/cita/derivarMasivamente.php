@@ -64,7 +64,7 @@
         <div id="" style=" float: left">
             <?php if ($_SESSION["permiso_formulario_servicio"][118]["grabarUbicacionImagenes_Citas"] == 1) { ?>
                 <a href="javascript:grabarUbicacionPlacas();">
-                    <img src="../../../../medifacil_front/imagen/btn/b_grabar__on.gif"/>
+                    <img src="../../../../fastmedical_front/imagen/btn/b_grabar__on.gif"/>
                 </a>
             <?php } ?>
         </div>

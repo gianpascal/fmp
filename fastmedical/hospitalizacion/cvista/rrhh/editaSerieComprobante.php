@@ -53,5 +53,5 @@
 </div>
 
 <DIV align="">
- <a href="javascript:modificarSerieEstado();"><img border="0" title="Codigo de Persona" alt="" src="../../../../medifacil_front/imagen/btn/b_actualizar_on.gif"/></a>
+ <a href="javascript:modificarSerieEstado();"><img border="0" title="Codigo de Persona" alt="" src="../../../../fastmedical_front/imagen/btn/b_actualizar_on.gif"/></a>
 </DIV>

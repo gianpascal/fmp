@@ -9,14 +9,14 @@ $o_CalSOP = new Calendario('cal04', 'botonAccionCalendario', 'cabeceraCalendario
 //($_nombreCalendario='',$_estiloAccion='', $_estiloCabeceraDia='',$_estiloCasilla1='',$_estiloCasilla2='',$_fechaActual='',$_idAdicionFecha='',$_funcionjsDia='',$_funcionjsCalendario='',$diapintado='',$_dibujarCheck=0,$_funcionjsCheckDia='')
 //-------------------------------------------------------------------------------
 $toolbar = new ToollBar("right");
-$toolbar->SetBoton("Transferencia del Paciente", "Transferir Paciente", "btn", "onclick,onkeypress", "", "../../../../medifacil_front/imagen/icono/reload3.png", "", "", true);
-$toolbar->SetBoton("Pre-Orden Farmaceútica", "Pre-Orden Farmaceútica", "btn", "onclick,onkeypress", "mostrarPreOrdenFarmaciaSOP()", "../../../../medifacil_front/imagen/icono/pastillas.png", "", "", true);
-$toolbar->SetBoton("Solicitudes Realizadas", "Ver Solicitudes Realizadas", "btn", "onclick,onkeypress", "verSolicitudesRealizadasSOP()", "../../../../medifacil_front/imagen/icono/contents.png", "", "", true);
-$toolbar->SetBoton("Generación Reporte Operatorio SOP", "Generar Reporte Operatorio", "btn", "onclick,onkeypress", "generarReporteOperatorioSOP()", "../../../../medifacil_front/imagen/icono/easymoblog.png", "", "", true);
-$toolbar->SetBoton("Generación Solicitud Programacion SOP", "Nueva Solicitud", "btn", "onclick,onkeypress", "mostrarSolicitudProgramacionSOP()", "../../../../medifacil_front/imagen/icono/filenew.png", "", "", true);
+$toolbar->SetBoton("Transferencia del Paciente", "Transferir Paciente", "btn", "onclick,onkeypress", "", "../../../../fastmedical_front/imagen/icono/reload3.png", "", "", true);
+$toolbar->SetBoton("Pre-Orden Farmaceútica", "Pre-Orden Farmaceútica", "btn", "onclick,onkeypress", "mostrarPreOrdenFarmaciaSOP()", "../../../../fastmedical_front/imagen/icono/pastillas.png", "", "", true);
+$toolbar->SetBoton("Solicitudes Realizadas", "Ver Solicitudes Realizadas", "btn", "onclick,onkeypress", "verSolicitudesRealizadasSOP()", "../../../../fastmedical_front/imagen/icono/contents.png", "", "", true);
+$toolbar->SetBoton("Generación Reporte Operatorio SOP", "Generar Reporte Operatorio", "btn", "onclick,onkeypress", "generarReporteOperatorioSOP()", "../../../../fastmedical_front/imagen/icono/easymoblog.png", "", "", true);
+$toolbar->SetBoton("Generación Solicitud Programacion SOP", "Nueva Solicitud", "btn", "onclick,onkeypress", "mostrarSolicitudProgramacionSOP()", "../../../../fastmedical_front/imagen/icono/filenew.png", "", "", true);
 //-------------------------------------------------------------------------------
 $toolbar1 = new ToollBar("right");
-$toolbar1->SetBoton("Mostrar Solicitudes Pendientes", "Ver Solicitudes Pendientes", "btn", "onclick,onkeypress", "verSolicitudesPendientesSOP()", "../../../../medifacil_front/imagen/icono/comment.png", "", "", true);
+$toolbar1->SetBoton("Mostrar Solicitudes Pendientes", "Ver Solicitudes Pendientes", "btn", "onclick,onkeypress", "verSolicitudesPendientesSOP()", "../../../../fastmedical_front/imagen/icono/comment.png", "", "", true);
 //-------------------------------------------------------------------------------
 ?>
 <div align="center" style="width:100%;height: 750px">

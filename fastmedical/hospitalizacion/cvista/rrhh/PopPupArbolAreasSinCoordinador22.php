@@ -107,14 +107,14 @@
 
                         <td  align="center" style="width:180px; height:50px;">
 
-                            <a href="javascript:asignarTurnoDisponibleAlArea();"> <img  id="imgagenGuardar" src="../../../../medifacil_front/imagen/icono/b_adelante.gif" width="25px" height="25px"/></a>
+                            <a href="javascript:asignarTurnoDisponibleAlArea();"> <img  id="imgagenGuardar" src="../../../../fastmedical_front/imagen/icono/b_adelante.gif" width="25px" height="25px"/></a>
 
                         </td>
                     </tr>
                     <tr align="center" style="width:180px; height:50px;">
                         <td align="center">
 
-                            <a href="javascript:quitarTurnoSeleccionadoAlArea();"><img  id="imgagenGuardar" src="../../../../medifacil_front/imagen/icono/b_atras.gif" width="25px" height="25px"/></a>
+                            <a href="javascript:quitarTurnoSeleccionadoAlArea();"><img  id="imgagenGuardar" src="../../../../fastmedical_front/imagen/icono/b_atras.gif" width="25px" height="25px"/></a>
                         </td>
                     </tr>
 

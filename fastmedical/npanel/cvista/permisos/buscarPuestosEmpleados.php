@@ -37,7 +37,7 @@
                             </select>
                         </div>
                         <div style=" width: 30%; float: left; margin-left: 20px;" id="DivBuscar">
-                            <a href="javascript:verPuestos('x','','mostrarFormularioDePerfil');"><img border="0" title="Codigo de Persona" alt="" src="../../../../medifacil_front/imagen/btn/nbtn_buscar.gif"/></a>
+                            <a href="javascript:verPuestos('x','','mostrarFormularioDePerfil');"><img border="0" title="Codigo de Persona" alt="" src="../../../../fastmedical_front/imagen/btn/nbtn_buscar.gif"/></a>
                         </div>
                     </div>
             </div>

@@ -25,7 +25,7 @@ function CargarArboldeCentroCostos(){
     treex=new dhtmlXTreeObject("divOpcCCostos","100%","100%",0);
     
     treex.setSkin('dhx_skyblue');
-    treex.setImagePath("../../../../medifacil_front/imagen/csh_bluebooks_simedh/");
+    treex.setImagePath("../../../../fastmedical_front/imagen/csh_bluebooks_simedh/");
     treex.attachEvent("onClick", function(){
         
         CargarlistadoPuestosXCentroCostos(treex.getSelectedItemId());

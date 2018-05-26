@@ -21,13 +21,13 @@
                             else{
                                 if($id_sistema==2){//Carga perfiles de Simedh web
                                     echo "<input type=\"text\" ondblclick=\"seleccionarPerfil()\" name=\"txtNombrePerfil\" id=\"txtNombrePerfil\" size=\"40\" value=\"Seleccione Perfil\" readonly>
-                                          <a href=\"#\" onclick=\"seleccionarPerfil()\"><img src=\"../../../../medifacil_front/imagen/icono/groupevent.png\" alt=\"Perfiles\" title=\"Perfiles\" border=0/></a>";
+                                          <a href=\"#\" onclick=\"seleccionarPerfil()\"><img src=\"../../../../fastmedical_front/imagen/icono/groupevent.png\" alt=\"Perfiles\" title=\"Perfiles\" border=0/></a>";
                                 }
                             }
                         ?>
-                        <!--<a href='#' onclick="nuevoPerfil()"><img src="../../../../medifacil_front/imagen/btn/ b_nuevo_on.gif" alt='Nuevo' title='Nuevo' border='0'/></a>-->
+                        <!--<a href='#' onclick="nuevoPerfil()"><img src="../../../../fastmedical_front/imagen/btn/ b_nuevo_on.gif" alt='Nuevo' title='Nuevo' border='0'/></a>-->
                         <!--<input type="text" name="txtNombrePerfil" id="txtNombrePerfil" size="40" value="Seleccione Perfil" readonly/>
-                        <a href='#' onclick="seleccionarPerfil()"><img src="../../../../medifacil_front/imagen/icono/groupevent.png" alt='Perfiles' title='Perfiles' border='0'/></a>-->
+                        <a href='#' onclick="seleccionarPerfil()"><img src="../../../../fastmedical_front/imagen/icono/groupevent.png" alt='Perfiles' title='Perfiles' border='0'/></a>-->
                     </div>
                     <div style="float:right">
                         <span class="blue negrita">FORMULARIO</span>
@@ -45,13 +45,13 @@
                     <div id="botones">
                         <?php
                             if($id_sistema==1){//Botones de nuevo perfil solo para el panel web
-                                echo "<a href=\"#\" onclick=\"nuevoPerfil()\"><img src=\"../../../../medifacil_front/imagen/btn/b_nuevo_on.gif\" alt=\"Nuevo\" title=\"Nuevo\" border=0/></a>
-                                      <a href=\"#\" onclick=\"editarPerfil()\"><img src=\"../../../../medifacil_front/imagen/btn/b_editar_on.gif\" alt=\"Editar\" title=\"Editar\" border=0/></a>";
+                                echo "<a href=\"#\" onclick=\"nuevoPerfil()\"><img src=\"../../../../fastmedical_front/imagen/btn/b_nuevo_on.gif\" alt=\"Nuevo\" title=\"Nuevo\" border=0/></a>
+                                      <a href=\"#\" onclick=\"editarPerfil()\"><img src=\"../../../../fastmedical_front/imagen/btn/b_editar_on.gif\" alt=\"Editar\" title=\"Editar\" border=0/></a>";
                             }
                         ?>
-                        <!--<a href='#' onclick="CargarVentana('popupMantePerfil','Registro de Perfiles','../permisos/mantePerfil.php?id_sistema=<?php //echo $id_sistema?>&accion=insertar','305','180',false,true,'',1,'',10,10,10,10);"><img src="../../../../medifacil_front/imagen/btn/b_nuevo_on.gif" alt='Nuevo' title='Nuevo' border='0'/></a>
-                        <a href='#' onclick="editarPerfil()"><img src="../../../../medifacil_front/imagen/btn/b_editar_on.gif" alt='Editar' title='Editar' border='0'/></a>-->
-                        <!--<a href='#' onclick="eliminarPerfil('eliminar')"><img src="../../../../medifacil_front/imagen/btn/b_borrar_on.gif" alt='Eliminar' title='Eliminar' border='0'/></a>-->
+                        <!--<a href='#' onclick="CargarVentana('popupMantePerfil','Registro de Perfiles','../permisos/mantePerfil.php?id_sistema=<?php //echo $id_sistema?>&accion=insertar','305','180',false,true,'',1,'',10,10,10,10);"><img src="../../../../fastmedical_front/imagen/btn/b_nuevo_on.gif" alt='Nuevo' title='Nuevo' border='0'/></a>
+                        <a href='#' onclick="editarPerfil()"><img src="../../../../fastmedical_front/imagen/btn/b_editar_on.gif" alt='Editar' title='Editar' border='0'/></a>-->
+                        <!--<a href='#' onclick="eliminarPerfil('eliminar')"><img src="../../../../fastmedical_front/imagen/btn/b_borrar_on.gif" alt='Eliminar' title='Eliminar' border='0'/></a>-->
                     </div>
                 </td>
             </tr>

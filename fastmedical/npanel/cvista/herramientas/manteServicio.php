@@ -36,13 +36,13 @@
             <tr>
                 <td align="left">Bot&oacute;n</td>
                 <td>
-                    <a href='#' onclick="CargarVentana('popupMantePerfil','Registro de Perfiles','../permisos/mantePerfil.php?id_sistema=<?php echo $id_sistema?>&accion=insertar','305','180',false,true,'',1,'',10,10,10,10);"><img src="../../../../medifacil_front/imagen/icono/b_ver_on.gif" alt='Nuevo' title='Nuevo' border='0'/></a>
+                    <a href='#' onclick="CargarVentana('popupMantePerfil','Registro de Perfiles','../permisos/mantePerfil.php?id_sistema=<?php echo $id_sistema?>&accion=insertar','305','180',false,true,'',1,'',10,10,10,10);"><img src="../../../../fastmedical_front/imagen/icono/b_ver_on.gif" alt='Nuevo' title='Nuevo' border='0'/></a>
                 </td>
             </tr>
             <tr>
                 <td align="left">Icono</td>
                 <td>
-                    <a href='#' onclick="CargarVentana('popupMantePerfil','Registro de Perfiles','../permisos/mantePerfil.php?id_sistema=<?php echo $id_sistema?>&accion=insertar','305','180',false,true,'',1,'',10,10,10,10);"><img src="../../../../medifacil_front/imagen/icono/b_ver_on.gif" alt='Nuevo' title='Nuevo' border='0'/></a>
+                    <a href='#' onclick="CargarVentana('popupMantePerfil','Registro de Perfiles','../permisos/mantePerfil.php?id_sistema=<?php echo $id_sistema?>&accion=insertar','305','180',false,true,'',1,'',10,10,10,10);"><img src="../../../../fastmedical_front/imagen/icono/b_ver_on.gif" alt='Nuevo' title='Nuevo' border='0'/></a>
                 </td>
             </tr>-->
         </table>
@@ -52,9 +52,9 @@
 <fieldset>
 <?php
     $toolbar=new ToollBar("left");
-    $toolbar->SetBoton("GRABAR","Grabar","btn","onclick,onkeypress","manteServicio('$accion')",$_SESSION['path_principal']."../medifacil_front/imagen/icono/grabar.png");
+    $toolbar->SetBoton("GRABAR","Grabar","btn","onclick,onkeypress","manteServicio('$accion')",$_SESSION['path_principal']."../fastmedical_front/imagen/icono/grabar.png");
     /*if($e!='nuevo')
-        $toolbar->SetBoton("NUEVO","Restaurar","btn","onclick,onkeypress","actualizaPwd()",$_SESSION['path_principal']."../medifacil_front/imagen/icono/restaurar.png");*/
+        $toolbar->SetBoton("NUEVO","Restaurar","btn","onclick,onkeypress","actualizaPwd()",$_SESSION['path_principal']."../fastmedical_front/imagen/icono/restaurar.png");*/
     $toolbar->Mostrar();
 ?>
 </fieldset>

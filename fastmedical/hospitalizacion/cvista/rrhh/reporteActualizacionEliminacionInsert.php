@@ -59,7 +59,7 @@ $anio = date("Y");
                         <?php
                         if (isset($_SESSION["permiso_formulario_servicio"][232]["REFRESCAR_HORARIO_EMP"]) && ($_SESSION["permiso_formulario_servicio"][232]["REFRESCAR_HORARIO_EMP"] == 1)) {
                             $toolbarx = new ToollBar("right");
-                            $toolbarx->SetBoton("Reporte", "Reporte", "btn", "onclick,onkeypress", "reportePerActElimInsert()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/reload3.png", "", "", 1);
+                            $toolbarx->SetBoton("Reporte", "Reporte", "btn", "onclick,onkeypress", "reportePerActElimInsert()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/reload3.png", "", "", 1);
                             $toolbarx->Mostrar();
                         }
                         ?></div>

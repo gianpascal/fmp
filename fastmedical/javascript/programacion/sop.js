@@ -18,7 +18,7 @@ function cargarTablaSolicitudesPendientesSOP(){
     parametros+='p1='+patronModulo;
 
     tablaSolicitudesPendientes = new dhtmlXGridObject('Div_TablaSolicitudesPendientesSOP');
-    tablaSolicitudesPendientes.setImagePath("../../../../medifacil_front/imagen/icono/");
+    tablaSolicitudesPendientes.setImagePath("../../../../fastmedical_front/imagen/icono/");
     tablaSolicitudesPendientes.setSkin("dhx_skyblue");
     tablaSolicitudesPendientes.attachEvent("onRowSelect", eventoSolicitudesPendientesSOP);
     tablaSolicitudesPendientes.init();
@@ -275,7 +275,7 @@ function cargarTablaProgramacionesSOP(){
     parametros+='&p2='+fechaSOP;
 
     tablaProgramacionesSOP = new dhtmlXGridObject('Div_TablaProgramacionesSOP');
-    tablaProgramacionesSOP.setImagePath("../../../../medifacil_front/imagen/icono/");
+    tablaProgramacionesSOP.setImagePath("../../../../fastmedical_front/imagen/icono/");
     tablaProgramacionesSOP.setSkin("dhx_skyblue");
     tablaProgramacionesSOP.attachEvent("onRowSelect", eventoProgramacionesSOP);
 /*
@@ -373,7 +373,7 @@ function mostrarTablaCirugiasRealizadasSOP(iidProgramacionSOP){
     parametros+='&p2='+iidProgramacionSOP;
 
     tablaCirugiasRealizadasSOP = new dhtmlXGridObject('divTablaCirugiasRealizadasSOP');
-    tablaCirugiasRealizadasSOP.setImagePath("../../../../medifacil_front/imagen/icono/");
+    tablaCirugiasRealizadasSOP.setImagePath("../../../../fastmedical_front/imagen/icono/");
     tablaCirugiasRealizadasSOP.attachEvent("onRowSelect", eventoTablaCirugiasRealizadasSOP);
     tablaCirugiasRealizadasSOP.setSkin("dhx_skyblue");
     tablaCirugiasRealizadasSOP.init();
@@ -387,7 +387,7 @@ function mostrarTablaServiciosUtilizadosSOP(iidProgramacionSOP){
     parametros+='&p2='+iidProgramacionSOP;
 
     tablaServiciosUtilizadosSOP = new dhtmlXGridObject('divTablaServiciosUtilizadosSOP');
-    tablaServiciosUtilizadosSOP.setImagePath("../../../../medifacil_front/imagen/icono/");
+    tablaServiciosUtilizadosSOP.setImagePath("../../../../fastmedical_front/imagen/icono/");
     tablaServiciosUtilizadosSOP.attachEvent("onRowSelect", eventoTablaServiciosUtilizadosSOP);
     tablaServiciosUtilizadosSOP.setSkin("dhx_skyblue");
     tablaServiciosUtilizadosSOP.init();
@@ -527,7 +527,7 @@ function mostrarAmbientesLogicosSOP(){
     parametros+='p1='+patronModulo;
 
     tablaAmbienteLogicoSOP = new dhtmlXGridObject('divTablaAmbientesLogicosEncontrados');
-    tablaAmbienteLogicoSOP.setImagePath("../../../../medifacil_front/imagen/icono/");
+    tablaAmbienteLogicoSOP.setImagePath("../../../../fastmedical_front/imagen/icono/");
     tablaAmbienteLogicoSOP.attachEvent("onRowSelect", agregarAmbienteLogico);
     tablaAmbienteLogicoSOP.setSkin("dhx_skyblue");
     tablaAmbienteLogicoSOP.init();
@@ -546,7 +546,7 @@ function buscarAmbienteLogicoPorNombre(){
         //cn=0;
     if(numero==4){
         tablaAmbienteLogicoSOP = new dhtmlXGridObject('divTablaAmbientesLogicosEncontrados');
-        tablaAmbienteLogicoSOP.setImagePath("../../../../medifacil_front/imagen/icono/");
+        tablaAmbienteLogicoSOP.setImagePath("../../../../fastmedical_front/imagen/icono/");
         tablaAmbienteLogicoSOP.attachEvent("onRowSelect", agregarAmbienteLogico);
         tablaAmbienteLogicoSOP.setSkin("dhx_skyblue");
         tablaAmbienteLogicoSOP.init();
@@ -583,7 +583,7 @@ function cargarLeyendaProgramacionesSOP(){
     parametros+='p1='+patronModulo;
 
     tablaLeyendaProgramacionesSOP = new dhtmlXGridObject('Div_LeyendaProgramacionSOP');
-    tablaLeyendaProgramacionesSOP.setImagePath("../../../../medifacil_front/imagen/icono/");
+    tablaLeyendaProgramacionesSOP.setImagePath("../../../../fastmedical_front/imagen/icono/");
     tablaLeyendaProgramacionesSOP.setSkin("dhx_skyblue");
     //tablaSolicitudesPendientes.attachEvent("onRowSelect", agregarMedicamentoHC);
     tablaLeyendaProgramacionesSOP.init();
@@ -767,7 +767,7 @@ function buscarCieNombreDxPreOperatorio(){
         //cn=0;
     if(numero==4){
         tablaCieDxPreOperatorio = new dhtmlXGridObject('divTablaCieDxPreOperatorio');
-        tablaCieDxPreOperatorio.setImagePath("../../../../medifacil_front/imagen/icono/");
+        tablaCieDxPreOperatorio.setImagePath("../../../../fastmedical_front/imagen/icono/");
         tablaCieDxPreOperatorio.attachEvent("onRowSelect", agregarDxPreOperatorio);
         tablaCieDxPreOperatorio.setSkin("dhx_skyblue");
         tablaCieDxPreOperatorio.init();
@@ -852,7 +852,7 @@ function nuevoDxPreOperatorio(){
     linkBuscador.setAttribute("href","#");
     linkBuscador.setAttribute("onclick","mostrarBuscadorDxPreOperatorio('"+idNuevoHidden+"','"+idNuevoText+"');");
     imgBuscador = document.createElement("img");
-    imgBuscador.setAttribute("src","../../../../medifacil_front/imagen/btn/nbtn_buscar.gif");
+    imgBuscador.setAttribute("src","../../../../fastmedical_front/imagen/btn/nbtn_buscar.gif");
     linkBuscador.appendChild(imgBuscador);
     divCol3.appendChild(linkBuscador);
     ////////////////////////////////////////////////////////////////////////////
@@ -966,7 +966,7 @@ function nuevoServicioCirugia(){
     linkBuscador.setAttribute("href","#");
     linkBuscador.setAttribute("onclick","mostrarBuscadorServicioCirugia('"+idNuevoHidden+"','"+idNuevoText+"');");
     imgBuscador = document.createElement("img");
-    imgBuscador.setAttribute("src","../../../../medifacil_front/imagen/btn/nbtn_buscar.gif");
+    imgBuscador.setAttribute("src","../../../../fastmedical_front/imagen/btn/nbtn_buscar.gif");
     linkBuscador.appendChild(imgBuscador);
     divCol4.appendChild(linkBuscador);
     ////////////////////////////////////////////////////////////////////////////
@@ -1063,7 +1063,7 @@ function nuevoCirujanoAyudante(){
     linkBuscador.setAttribute("href","#");
     linkBuscador.setAttribute("onclick","mostrarBuscadorCirujano('"+idNuevoHidden+"','"+idNuevoText+"');");
     imgBuscador = document.createElement("img");
-    imgBuscador.setAttribute("src","../../../../medifacil_front/imagen/btn/nbtn_buscar.gif");
+    imgBuscador.setAttribute("src","../../../../fastmedical_front/imagen/btn/nbtn_buscar.gif");
     linkBuscador.appendChild(imgBuscador);
     divCol3.appendChild(linkBuscador);
     ////////////////////////////////////////////////////////////////////////////
@@ -1133,7 +1133,7 @@ function buscarCieCodigo(){
     if(numero==2){
         cc=0;
         miTablaCie = new dhtmlXGridObject('tablaCie');
-        miTablaCie.setImagePath("../../../../medifacil_front/imagen/icono/");
+        miTablaCie.setImagePath("../../../../fastmedical_front/imagen/icono/");
         miTablaCie.attachEvent("onRowSelect", agregarAntecedente);
         miTablaCie.setSkin("dhx_skyblue");
         miTablaCie.init();
@@ -1160,7 +1160,7 @@ function buscarServicioNombreCirugia(){
         //cn=0;
     if(numero==2){
         tablaServicioCirugia = new dhtmlXGridObject('divTablaServicioCirugia');
-        tablaServicioCirugia.setImagePath("../../../../medifacil_front/imagen/icono/");
+        tablaServicioCirugia.setImagePath("../../../../fastmedical_front/imagen/icono/");
         tablaServicioCirugia.attachEvent("onRowSelect", agregarServicioCirugia);
         tablaServicioCirugia.setSkin("dhx_skyblue");
         tablaServicioCirugia.init();

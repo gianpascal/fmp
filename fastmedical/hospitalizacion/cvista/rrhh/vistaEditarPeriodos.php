@@ -22,7 +22,7 @@
             </tr>
             <tr>
                 <td colspan="2" height="40" align="center">
-                      <a href="javascript:editarFechaPeriodos();"><img  id="imgagenGuardar" src="../../../../medifacil_front/imagen/btn/b_grabar_on.gif"/></a>
+                      <a href="javascript:editarFechaPeriodos();"><img  id="imgagenGuardar" src="../../../../fastmedical_front/imagen/btn/b_grabar_on.gif"/></a>
                 </td>
             </tr>
         </table><br>

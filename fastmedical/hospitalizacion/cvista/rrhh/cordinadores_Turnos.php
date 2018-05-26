@@ -111,14 +111,14 @@
 
 
                             echo "<td align=center>
-                                    <a href=\"javascript:PopPupArbolAreasConCoordinador('conCordi');\"><img  id=\"imgagenGuardar\" src=\"../../../../medifacil_front/imagen/icono/folder.png\" width=30px height=25px/></a>
+                                    <a href=\"javascript:PopPupArbolAreasConCoordinador('conCordi');\"><img  id=\"imgagenGuardar\" src=\"../../../../fastmedical_front/imagen/icono/folder.png\" width=30px height=25px/></a>
                                      </td>
                                     ";
                         } else {
 
                             echo "
                                     <td align=center>
-                                    <img  id=\"imgagenGuardar\" src=\"../../../../medifacil_front/imagen/icono/folder.png\" width=30px height=25px/>
+                                    <img  id=\"imgagenGuardar\" src=\"../../../../fastmedical_front/imagen/icono/folder.png\" width=30px height=25px/>
                                     
                                      </td>
                                     ";
@@ -133,7 +133,7 @@
                         <!--inicio-->
 <!--                        <td align="center">
 
-                            <a href="javascript:PopPupArbolAreasConCoordinador('conCordi');"><img  id="imgagenGuardar" src="../../../../medifacil_front/imagen/icono/folder.png" width="30px" height="25px"/></a>
+                            <a href="javascript:PopPupArbolAreasConCoordinador('conCordi');"><img  id="imgagenGuardar" src="../../../../fastmedical_front/imagen/icono/folder.png" width="30px" height="25px"/></a>
 
 
 
@@ -223,14 +223,14 @@
 
 
                             echo "<td align=center>
-                                    <a href=\"javascript:PopPupArbolAreasConCoordinador('sinCordi');\"><img  id=\"imgagenGuardar\" src=\"../../../../medifacil_front/imagen/icono/folder.png\" width=30px height=25px/></a>
+                                    <a href=\"javascript:PopPupArbolAreasConCoordinador('sinCordi');\"><img  id=\"imgagenGuardar\" src=\"../../../../fastmedical_front/imagen/icono/folder.png\" width=30px height=25px/></a>
                                      </td>
                                     ";
                         } else {
 
                             echo "
                                     <td align=center>
-                                    <img  id=\"imgagenGuardar\" src=\"../../../../medifacil_front/imagen/icono/folder.png\" width=30px height=25px/>
+                                    <img  id=\"imgagenGuardar\" src=\"../../../../fastmedical_front/imagen/icono/folder.png\" width=30px height=25px/>
                                     
                                      </td>
                                     ";
@@ -245,7 +245,7 @@
                         <!--                       fin -->
 <!--                        <td align="center">
 
-                            <a href="javascript:PopPupArbolAreasConCoordinador('sinCordi');"><img  id="imgagenGuardar" src="../../../../medifacil_front/imagen/icono/folder.png" width="30px" height="25px"/></a>
+                            <a href="javascript:PopPupArbolAreasConCoordinador('sinCordi');"><img  id="imgagenGuardar" src="../../../../fastmedical_front/imagen/icono/folder.png" width="30px" height="25px"/></a>
                         </td>-->
 
 

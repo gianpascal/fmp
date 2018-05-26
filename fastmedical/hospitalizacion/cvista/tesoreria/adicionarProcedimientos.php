@@ -29,7 +29,7 @@
                     </div>-->
 <!--                    <div style="width:70%; height:33%; float:left;" >
                         <a href="javascript:getTarifasProcedimientos('','03');">
-                            <img src="../../../../medifacil_front/imagen/btn/b_buscar_on.gif" alt="" border="0" title="Agregar Ocupaciones"/>
+                            <img src="../../../../fastmedical_front/imagen/btn/b_buscar_on.gif" alt="" border="0" title="Agregar Ocupaciones"/>
                         </a>
                     </div>-->
 
@@ -64,10 +64,10 @@
                     <td width="25%">&nbsp;</td>
                     <td width="25%" align="center">
                         <a href="javascript:cerrarAgregaProcedimientoNuevo('01');">
-                            <img src="../../../../medifacil_front/imagen/btn/b_aceptar_on.gif" alt="" border="0" title="Codigo de Persona"/>                          </a>                        </td>
+                            <img src="../../../../fastmedical_front/imagen/btn/b_aceptar_on.gif" alt="" border="0" title="Codigo de Persona"/>                          </a>                        </td>
                     <td width="25%" align="center">
                         <a href="javascript:cerrarAgregaProcedimientoNuevo('02');">
-                            <img src="../../../../medifacil_front/imagen/btn/b_cancelar_on.gif" alt="" border="0" title="Codigo de Persona"/>                        	</a>                        </td>
+                            <img src="../../../../fastmedical_front/imagen/btn/b_cancelar_on.gif" alt="" border="0" title="Codigo de Persona"/>                        	</a>                        </td>
                     <td width="25%">&nbsp;</td>
                 </tr>
             </table>

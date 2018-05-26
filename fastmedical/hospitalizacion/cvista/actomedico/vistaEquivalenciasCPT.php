@@ -70,7 +70,7 @@
                 <div id="div_TablaDetalleEquivalencia" align="center">
                     <?php
                     echo "<a href=\"javascript:examenesRelacionados();\">
-                          <img border=\"0\" id=\"btnRelacion\" align=\"right\" alt=\"\" src=\"../../../../medifacil_front/imagen/btn/b_verrelacion_on.GIF\"/></a>";
+                          <img border=\"0\" id=\"btnRelacion\" align=\"right\" alt=\"\" src=\"../../../../fastmedical_front/imagen/btn/b_verrelacion_on.GIF\"/></a>";
                     ?>
                 </div>
                 <div class="titleform">

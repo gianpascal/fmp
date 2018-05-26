@@ -32,7 +32,7 @@ $toolbar4 = new ToollBar("center");
                 <tr  align ="center">
                     <td colspan="2" align ="center">
                         <?php
-                        $toolbar1->SetBoton("Nuevo", "Nuevo", "btn", "onclick,onkeypress", "buscarPorBotonPersonaCarnetizacion()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/nuevo.png", "", "", 1);
+                        $toolbar1->SetBoton("Nuevo", "Nuevo", "btn", "onclick,onkeypress", "buscarPorBotonPersonaCarnetizacion()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/nuevo.png", "", "", 1);
                         $toolbar1->Mostrar();
                         ?>
                     </td>
@@ -109,11 +109,11 @@ $toolbar4 = new ToollBar("center");
                 </tr>
                 <tr align="center">
                     <td colspan ="2">  <?php
-                            $toolbar2->SetBoton("Editar", "Editar", "btn", "onclick,onkeypress", "editarGrupoEtario()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/edit2.png", "", "", 1);
+                            $toolbar2->SetBoton("Editar", "Editar", "btn", "onclick,onkeypress", "editarGrupoEtario()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/edit2.png", "", "", 1);
                             $toolbar2->Mostrar();
                             ?></td>
                     <td colspan ="2">  <?php
-                        $toolbar3->SetBoton("Guardar", "Guardar", "btn", "onclick,onkeypress", "buscarPorBotonPersonaCarnetizacion()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/grabar.png", "", "", 1);
+                        $toolbar3->SetBoton("Guardar", "Guardar", "btn", "onclick,onkeypress", "buscarPorBotonPersonaCarnetizacion()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/grabar.png", "", "", 1);
                         $toolbar3->Mostrar();
                             ?></td>
                 </tr>
@@ -125,7 +125,7 @@ $toolbar4 = new ToollBar("center");
                 <tr>
                     <td colspan="4">
                         <?php
-                        $toolbar4->SetBoton("Agregar", "Agregar", "btn", "onclick,onkeypress", "agregarNuevoServicioPorGRupoEtario()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/abrir.png", "", "", 1);
+                        $toolbar4->SetBoton("Agregar", "Agregar", "btn", "onclick,onkeypress", "agregarNuevoServicioPorGRupoEtario()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/abrir.png", "", "", 1);
                         $toolbar4->Mostrar();
                         ?>
                     </td>

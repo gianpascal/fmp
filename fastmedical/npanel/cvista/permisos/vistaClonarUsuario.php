@@ -6,8 +6,8 @@ $toolbar3 = new ToollBar();
 <form action="" id="vista_clonarPermisos" name="vista_clonarUsuarios" method="get" >
     <center><div style="width: 910px; height: 550px;">
 
-            <div>  <img style="overflow:hidden;position:absolute;height:56;width:63;left:50%;top:50%;margin-top:-20px;margin-left:-30px; "src="../../../../medifacil_front/imagen/btn/fechaDerecha.jpg"></div>
-  <!--            <div class="centrar-imagen" width="30" height="30"><img src="../../../../medifacil_front/imagen/btn/fechaDerecha.jpg"></div> 
+            <div>  <img style="overflow:hidden;position:absolute;height:56;width:63;left:50%;top:50%;margin-top:-20px;margin-left:-30px; "src="../../../../fastmedical_front/imagen/btn/fechaDerecha.jpg"></div>
+  <!--            <div class="centrar-imagen" width="30" height="30"><img src="../../../../fastmedical_front/imagen/btn/fechaDerecha.jpg"></div> 
             <img style="center:63px;width: 20px; height: 20px; vertical-align:middle;   -->
 
 
@@ -19,7 +19,7 @@ $toolbar3 = new ToollBar();
                     </div>
                     <div>
                         <?php
-                        $toolbar1->SetBoton("BusquedaEmpleado", "Buscar Usuario", "btn", "onclick,onkeypress", "podpadbuscarUsuariosClonarUsuario()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/kopeteavailable.png", "", "", 1);
+                        $toolbar1->SetBoton("BusquedaEmpleado", "Buscar Usuario", "btn", "onclick,onkeypress", "podpadbuscarUsuariosClonarUsuario()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/kopeteavailable.png", "", "", 1);
                         $toolbar1->Mostrar();
                         ?>  
                     </div>
@@ -47,7 +47,7 @@ $toolbar3 = new ToollBar();
             </div> 
 
             <div style=" padding-left : 56px;float:right; width: 420px; height: 555px;">
-<!--<div class="centrar-imagen" style="float:center ; width: 63px; height: 56px;" ><img src="../../../../medifacil_front/imagen/btn/fechaDerecha.jpg"></div>-->
+<!--<div class="centrar-imagen" style="float:center ; width: 63px; height: 56px;" ><img src="../../../../fastmedical_front/imagen/btn/fechaDerecha.jpg"></div>-->
 
 
                 <div style="float:right; width: 425px; height:50px;">       
@@ -58,7 +58,7 @@ $toolbar3 = new ToollBar();
                         </div>
                         <div>
                             <?php
-                            $toolbar2->SetBoton("UsuarioCopia", "Buscar Usuario", "btn", "onclick,onkeypress", "podpadbuscarUsuariosCopia()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/kopeteavailable.png", "", "", 1);
+                            $toolbar2->SetBoton("UsuarioCopia", "Buscar Usuario", "btn", "onclick,onkeypress", "podpadbuscarUsuariosCopia()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/kopeteavailable.png", "", "", 1);
                             $toolbar2->Mostrar();
                             ?>  
                         </div>
@@ -90,7 +90,7 @@ $toolbar3 = new ToollBar();
             </div>
             <div id="divboton" style="float:center; width: 100px; height: 100px">
                 <?php
-                $toolbar3->SetBoton("ClonarPermisos", "Clonar Permisos", "btn", "onclick,onkeypress", "ConfirmacionClonar()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/kopeteavailable.png", "", "", 1);
+                $toolbar3->SetBoton("ClonarPermisos", "Clonar Permisos", "btn", "onclick,onkeypress", "ConfirmacionClonar()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/kopeteavailable.png", "", "", 1);
                 $toolbar3->Mostrar();
                 ?>  
             </div>

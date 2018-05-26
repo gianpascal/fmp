@@ -34,7 +34,7 @@
                             $permiso1 = $Permisos_user[$id_formulario]['HABILITAR'];
                             $permiso2 = $Permisos_user[$id_formulario]['EDITAR'];*/
                         ?>
-                        <a href='#' onclick="CargarVentana('popupManteServicio','Registro de Sevicios','../herramientas/manteServicio.php?accion=insertar','305','220',false,true,'',1,'',10,10,10,10);"><img src="../../../../medifacil_front/imagen/btn/b_nuevo_on.gif" alt='Nuevo' title='Nuevo' border='0'/></a>
+                        <a href='#' onclick="CargarVentana('popupManteServicio','Registro de Sevicios','../herramientas/manteServicio.php?accion=insertar','305','220',false,true,'',1,'',10,10,10,10);"><img src="../../../../fastmedical_front/imagen/btn/b_nuevo_on.gif" alt='Nuevo' title='Nuevo' border='0'/></a>
                     </div>
                 </td>
             </tr>

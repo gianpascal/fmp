@@ -14,7 +14,7 @@
                                             <?php
                                             $disabled='';
                                             $cantidad=1;
-                                            $imagen= $disabled==''?'../../../../medifacil_front/imagen/icono/nuevo_item.png':'../../../../medifacil_front/imagen/icono/nuevo_item_black.png';
+                                            $imagen= $disabled==''?'../../../../fastmedical_front/imagen/icono/nuevo_item.png':'../../../../fastmedical_front/imagen/icono/nuevo_item_black.png';
                                             $cursor= $disabled==''?'cursor:pointer;':'cursor:default;';
                                             echo "<script>$('divValorCombo').innerHTML=".$cantidad."</script>";
                                             ?>
@@ -52,7 +52,7 @@
                                                     </td>
                                                     <td height="25">
                                                         <?php if($cantidad==1){?>
-                                                        <input type="button" name="btnItemCombo[<?php echo $cantidad;?>]" id="btnItemCombo[<?php echo $cantidad;?>]" value="" style="background:url('../../../../medifacil_front/imagen/icono/nuevo_item.png') no-repeat;width:18px;height:18px;border:0px; cursor: pointer" onclick="agregaItemsCombo('tbl_combo',++kk)">
+                                                        <input type="button" name="btnItemCombo[<?php echo $cantidad;?>]" id="btnItemCombo[<?php echo $cantidad;?>]" value="" style="background:url('../../../../fastmedical_front/imagen/icono/nuevo_item.png') no-repeat;width:18px;height:18px;border:0px; cursor: pointer" onclick="agregaItemsCombo('tbl_combo',++kk)">
                                                         <?php }else{?>
                                                         <input type="button" name="btnItemCombo[<?php echo $cantidad;?>]" id="btnItemCombo[<?php echo $cantidad;?>]" value="" style="background:url('../../../imagen/inicio/eliminar.gif') no-repeat;width:18px;height:18px;border:0px; cursor: pointer" onclick="eliminaDbComboAtributo(<?php echo $cantidad;?>)">
                                                         <?php }?>
@@ -79,14 +79,14 @@
             <div id="nuevoCombo" style="margin-left: 37%; margin-right: 37%;display:none;">
                 <?php
                 $toolbar1=new ToollBar("center");
-                $toolbar1->SetBoton("Grabar","Grabar","btn","onclick,onkeypress","grabarAtributoCombo('formAtributoFormato','grabar')",$_SESSION['path_principal']."../medifacil_front/imagen/icono/grabar.png","","",1);
+                $toolbar1->SetBoton("Grabar","Grabar","btn","onclick,onkeypress","grabarAtributoCombo('formAtributoFormato','grabar')",$_SESSION['path_principal']."../fastmedical_front/imagen/icono/grabar.png","","",1);
                 $toolbar1->Mostrar();
                 ?>
             </div>
             <div id="modificarCombo" style="margin-left: 37%; margin-right: 37%; display:none;">
                 <?php
                 $toolbar2=new ToollBar("center");
-                $toolbar2->SetBoton("Modificar","Modificar","btn","onclick,onkeypress","grabarAtributoCombo('formAtributoFormato','modificar')",$_SESSION['path_principal']."../medifacil_front/imagen/icono/grabar.png","","",1);
+                $toolbar2->SetBoton("Modificar","Modificar","btn","onclick,onkeypress","grabarAtributoCombo('formAtributoFormato','modificar')",$_SESSION['path_principal']."../fastmedical_front/imagen/icono/grabar.png","","",1);
                 $toolbar2->Mostrar();
                 ?>
             </div>

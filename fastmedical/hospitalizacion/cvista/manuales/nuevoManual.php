@@ -113,15 +113,15 @@ CKEDITOR.remove(CKEDITOR.instances['txtCuerpo']);
             <td width="33%">
                 <?php
                 $toolbar1=new ToollBar("right");
-                $toolbar1->SetBoton("GRABAR","Grabar","btn","onclick,onkeypress","nue_actManual('nuevo')",$_SESSION['path_principal']."../medifacil_front/imagen/icono/grabar.png","","",$btnhabil);
-                $toolbar1->SetBoton("ACTUALIZAR","Actualizar","btn","onclick,onkeypress","nue_actManual('actualizar')",$_SESSION['path_principal']."../medifacil_front/imagen/icono/reload3.png","","",$btndeshabil);
+                $toolbar1->SetBoton("GRABAR","Grabar","btn","onclick,onkeypress","nue_actManual('nuevo')",$_SESSION['path_principal']."../fastmedical_front/imagen/icono/grabar.png","","",$btnhabil);
+                $toolbar1->SetBoton("ACTUALIZAR","Actualizar","btn","onclick,onkeypress","nue_actManual('actualizar')",$_SESSION['path_principal']."../fastmedical_front/imagen/icono/reload3.png","","",$btndeshabil);
                 $toolbar1->Mostrar();
                 ?>
             </td>
             <td width="33%">
                 <?php
                 $toolbar3=new ToollBar("right");
-                $toolbar3->SetBoton("ELIMINAR","Eliminar","btn","onclick,onkeypress","eliminaManual()",$_SESSION['path_principal']."../medifacil_front/imagen/icono/delete.png","","",$btndeshabil);
+                $toolbar3->SetBoton("ELIMINAR","Eliminar","btn","onclick,onkeypress","eliminaManual()",$_SESSION['path_principal']."../fastmedical_front/imagen/icono/delete.png","","",$btndeshabil);
                 $toolbar3->Mostrar();
                 ?>
             </td>

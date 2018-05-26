@@ -47,7 +47,7 @@ $p['csexo']='h';
                       <tr>
                         <td width="131" bordercolor="#000000">Fecha Nacimiento * </td>
                         <td width="183" align="left"><input name="txtFechaNacimiento" type="text" size="18" id="txtFechaNacimiento" value="" onkeyup="javascript:if(lee_tecla(event,13)==1){this.form.txtNroDocIdent.focus();}else {return setupper(this); } "/>
-                          <a href="#" onclick="cajaTextocalendarioActiva=document.getElementById('txtFechaNacimiento');p3=document.getElementById('txtFechaNacimiento').value;CargarVentana('calendar01','Calendario','../../ccontrol/control/control.php?p1=calendario&amp;p2=calendar01&amp;p3='+p3+'&amp;p4=5','250','250',false,true,'',1,'',10,10,10,10);"><img src="../../../../medifacil_front/imagen/icono/date.png" border="0" /></a> </td>
+                          <a href="#" onclick="cajaTextocalendarioActiva=document.getElementById('txtFechaNacimiento');p3=document.getElementById('txtFechaNacimiento').value;CargarVentana('calendar01','Calendario','../../ccontrol/control/control.php?p1=calendario&amp;p2=calendar01&amp;p3='+p3+'&amp;p4=5','250','250',false,true,'',1,'',10,10,10,10);"><img src="../../../../fastmedical_front/imagen/icono/date.png" border="0" /></a> </td>
                       </tr>
                       <tr>
                         <td bordercolor="#000000" width="131" >Edad</td>
@@ -223,10 +223,10 @@ $p['csexo']='h';
         <td width="20">        </td>
         <td></td>
         <td>
-        <a href="#" onclick="CargarVentana('grid_caja2','Registro de Filiaciones del Paciente','../admision/filiacion_personas.php?iid_persona='+document.form_detalle.txtCodigoPersona.value,'750','500',false,true,'',1,'',10,10,10,10);"><img src="../../../../medifacil_front/imagen/btn/b_filiacion.gif" width="61" height="24" /></a>        </td>
+        <a href="#" onclick="CargarVentana('grid_caja2','Registro de Filiaciones del Paciente','../admision/filiacion_personas.php?iid_persona='+document.form_detalle.txtCodigoPersona.value,'750','500',false,true,'',1,'',10,10,10,10);"><img src="../../../../fastmedical_front/imagen/btn/b_filiacion.gif" width="61" height="24" /></a>        </td>
         <td>
         <a href="#" onclick="CargarVentana('grid_caja3','Adjuntar Fotografia del DNI','../admision/upload_dni.php','500','300',true,true,'','','',10,10,80,10);">
-        <img src="../../../../medifacil_front/imagen/btn/btn_dni_adjuntar.gif" />		</a>        </td>
+        <img src="../../../../fastmedical_front/imagen/btn/btn_dni_adjuntar.gif" />		</a>        </td>
     </tr>
 </table>
 </div>
@@ -237,10 +237,10 @@ $p['csexo']='h';
         <td></td>
         <td width="20"></td>
         <td>&nbsp;</td>
-        <td><a href="#" onclick="myajax.Link('../admision/registro_personas.php','datos_persona')"><img src="../../../../medifacil_front/imagen/btn/b_nuevo_on.gif" width="61" height="24" /></a></td>
+        <td><a href="#" onclick="myajax.Link('../admision/registro_personas.php','datos_persona')"><img src="../../../../fastmedical_front/imagen/btn/b_nuevo_on.gif" width="61" height="24" /></a></td>
         <td>
         <a href="#" onclick="javascript: myajax.Link('../../ccontrol/control/control.php?'+myajax.DataForm($('form_detalle')),'Resp')">
-        <img src="../../../../medifacil_front/imagen/btn/b_grabar_on.gif" width="61" height="24" />        </a>        </td>
+        <img src="../../../../fastmedical_front/imagen/btn/b_grabar_on.gif" width="61" height="24" />        </a>        </td>
     </tr>
 </table>
 </div></td>

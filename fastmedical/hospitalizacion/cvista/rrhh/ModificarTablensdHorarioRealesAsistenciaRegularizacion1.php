@@ -111,10 +111,10 @@ if($resultadoturnos [$m][3]==''){
                                 <td><?php echo $resultadoturnos [0][6] ?>
                                 </td>
                                 <td>
-                                    <a href="javascript:ActualizarTablaHorarioAsistencia(1);"><img border="0" title="Actualizar" alt="" src="../../../../medifacil_front/imagen/btn/b_actualizar_off.gif"/></a>
+                                    <a href="javascript:ActualizarTablaHorarioAsistencia(1);"><img border="0" title="Actualizar" alt="" src="../../../../fastmedical_front/imagen/btn/b_actualizar_off.gif"/></a>
                                 </td>
                                 <td>
-                                    <a href="javascript:eliminarTurnoPersona(1);"><img border="0" title="Eliminar" alt="" src="../../../../medifacil_front/imagen/icono/borrar.png"/></a>
+                                    <a href="javascript:eliminarTurnoPersona(1);"><img border="0" title="Eliminar" alt="" src="../../../../fastmedical_front/imagen/icono/borrar.png"/></a>
                                 </td>
                             </tr>
                         </tbody>
@@ -179,10 +179,10 @@ if($resultadoturnos [$m][3]==''){
                                 <td><?php echo $resultadoturnos [$m][6] ?>
                                 </td>
                                 <td>
-                                    <a href="javascript:ActualizarTablaHorarioAsistencia(2);"><img border="0" title="Actualizar" alt="" src="../../../../medifacil_front/imagen/btn/b_actualizar_off.gif"/></a>
+                                    <a href="javascript:ActualizarTablaHorarioAsistencia(2);"><img border="0" title="Actualizar" alt="" src="../../../../fastmedical_front/imagen/btn/b_actualizar_off.gif"/></a>
                                 </td>
                                 <td>
-                                    <a href="javascript:eliminarTurnoPersona(2);"><img border="0" title="Eliminar" alt="" src="../../../../medifacil_front/imagen/icono/borrar.png"/></a>
+                                    <a href="javascript:eliminarTurnoPersona(2);"><img border="0" title="Eliminar" alt="" src="../../../../fastmedical_front/imagen/icono/borrar.png"/></a>
                                 </td>
                             </tr>
                         </tbody>

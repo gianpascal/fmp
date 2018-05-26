@@ -7,13 +7,13 @@ $o_ActionTesoreria = new ActionTesoreria();
 require_once("../../ccontrol/control/ActionPersona.php");
 $o_ActionPersona = new ActionPersona();
 $toolbar3 = new ToollBar("left");
-$toolbar3->SetBoton("IMPRIMIR", "IMPRIMIR", "btn", "onclick,onkeypress", "imprimirRecibo('34030340186016')", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/imprimir.png");
+$toolbar3->SetBoton("IMPRIMIR", "IMPRIMIR", "btn", "onclick,onkeypress", "imprimirRecibo('34030340186016')", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/imprimir.png");
 $toolbar4 = new ToollBar("left");
-$toolbar4->SetBoton("PAGAR", "PAGAR", "btn", "onclick,onkeypress", "cancelarOrdenesSeleccionadas()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/monedas.jpg");
+$toolbar4->SetBoton("PAGAR", "PAGAR", "btn", "onclick,onkeypress", "cancelarOrdenesSeleccionadas()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/monedas.jpg");
 $toolbar5 = new ToollBar("left");
-$toolbar5->SetBoton("AGREGAR", "AGREGAR", "btn", "onclick,onkeypress", "agregarOrdenes()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/nuevo.png");
+$toolbar5->SetBoton("AGREGAR", "AGREGAR", "btn", "onclick,onkeypress", "agregarOrdenes()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/nuevo.png");
 $toolbar6 = new ToollBar("left");
-$toolbar6->SetBoton("Eliminar", "Eliminar Orden", "btn", "onclick,onkeypress", "anularOrden()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/borrar.png");
+$toolbar6->SetBoton("Eliminar", "Eliminar Orden", "btn", "onclick,onkeypress", "anularOrden()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/borrar.png");
 ?>
 <div style="float:left; width:420px; height:620px; margin:5px; background-color: white;" >
     <div style=" width:400px;">

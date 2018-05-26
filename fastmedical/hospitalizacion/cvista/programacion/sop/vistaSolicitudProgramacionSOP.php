@@ -112,7 +112,7 @@ $opcionesHTMLHorasEstimadas = $o_Combo->getOptionsHTML();
                 </div>
                 <div style="float:left; width:11%;">
                     <a href="javascript:mostrarBuscadorPaciente('hdnCodPerPaciente','txtNomPacienteSolProgSOP')">
-                        <img border="0" title="Buscar Paciente" alt="Buscar" src="../../../../medifacil_front/imagen/btn/nbtn_buscar.gif">
+                        <img border="0" title="Buscar Paciente" alt="Buscar" src="../../../../fastmedical_front/imagen/btn/nbtn_buscar.gif">
                     </a>
                 </div>
                 <div style="float:left; width:11%;">&nbsp;</div>
@@ -141,7 +141,7 @@ $opcionesHTMLHorasEstimadas = $o_Combo->getOptionsHTML();
                     </select>
                 </div>
                 <div style="float:left; width:11%;">
-                    <img border="0" title="Buscar Centro de Costo" alt="Buscar" src="../../../../medifacil_front/imagen/btn/nbtn_buscar.gif">
+                    <img border="0" title="Buscar Centro de Costo" alt="Buscar" src="../../../../fastmedical_front/imagen/btn/nbtn_buscar.gif">
                 </div>
                 <div style="float:left; width:11%;">&nbsp;</div>
                 <div style="float:left; width:11%;">&nbsp;</div>
@@ -160,12 +160,12 @@ $opcionesHTMLHorasEstimadas = $o_Combo->getOptionsHTML();
                     </div>
                     <div style="float:left; width:11%;">
                         <a href="javascript:mostrarBuscadorDxPreOperatorio('hdnIdDxPreOperatorio_1','txtDescDxPreOperatorio_1')">
-                            <img border="0" title="Buscar Diagnostico" alt="Buscar" src="../../../../medifacil_front/imagen/btn/nbtn_buscar.gif">
+                            <img border="0" title="Buscar Diagnostico" alt="Buscar" src="../../../../fastmedical_front/imagen/btn/nbtn_buscar.gif">
                         </a>
                     </div>
                     <div style="float:left; width:11%;">
                         <a href="javascript:nuevoDxPreOperatorio()">
-                            <img border="0" title="Nuevo Diagnostico" alt="Nuevo" src="../../../../medifacil_front/imagen/icono/abrir.png">
+                            <img border="0" title="Nuevo Diagnostico" alt="Nuevo" src="../../../../fastmedical_front/imagen/icono/abrir.png">
                         </a>
                     </div>
                     <div style="float:left; width:11%;">&nbsp;</div>
@@ -188,12 +188,12 @@ $opcionesHTMLHorasEstimadas = $o_Combo->getOptionsHTML();
                     </div>
                     <div style="float:left; width:11%;">
                         <a href="javascript:mostrarBuscadorServicioCirugia('hdnCodServicioCirugia_1','txtDescServicioCirugia_1')">
-                            <img border="0" title="Buscar Cirugia" alt="Buscar" src="../../../../medifacil_front/imagen/btn/nbtn_buscar.gif">
+                            <img border="0" title="Buscar Cirugia" alt="Buscar" src="../../../../fastmedical_front/imagen/btn/nbtn_buscar.gif">
                         </a>
                     </div>
                     <div style="float:left; width:11%;">
                         <a href="javascript:nuevoServicioCirugia()">
-                            <img border="0" title="Nueva Cirugia" alt="Nuevo" src="../../../../medifacil_front/imagen/icono/abrir.png">
+                            <img border="0" title="Nueva Cirugia" alt="Nuevo" src="../../../../fastmedical_front/imagen/icono/abrir.png">
                         </a>
                     </div>
                 </div>
@@ -239,12 +239,12 @@ $opcionesHTMLHorasEstimadas = $o_Combo->getOptionsHTML();
                     </div>
                     <div style="float:left; width:11%;">
                         <a href="javascript:mostrarBuscadorCirujano('hdnCodPerCirujanoAyudante_1','txtNomPerCirujanoAyudante_1')">
-                            <img border="0" title="Buscar Cirujano" alt="Buscar" src="../../../../medifacil_front/imagen/btn/nbtn_buscar.gif">
+                            <img border="0" title="Buscar Cirujano" alt="Buscar" src="../../../../fastmedical_front/imagen/btn/nbtn_buscar.gif">
                         </a>
                     </div>
                     <div style="float:left; width:11%;">
                         <a href="javascript:nuevoCirujanoAyudante()">
-                            <img border="0" title="Codigo de Persona" alt="" src="../../../../medifacil_front/imagen/icono/abrir.png">
+                            <img border="0" title="Codigo de Persona" alt="" src="../../../../fastmedical_front/imagen/icono/abrir.png">
                         </a>
                     </div>
                     <div style="float:left; width:11%;">&nbsp;</div>
@@ -292,9 +292,9 @@ $opcionesHTMLHorasEstimadas = $o_Combo->getOptionsHTML();
     </div>
     <br/>
     <div id="Div_btnSolProgSOP" align="center" style="width: 100%;background: bottom;display: block">
-        <?php //if($_SESSION["permiso_formulario_servicio"][119]["GRABAR_PROG_MED"]==1) echo "<a href=\"javascript:validarCronogramaProgramacionMedicos()\"><img src=\"../../../../medifacil_front/imagen/btn/b_grabar__on.gif\"></a>&nbsp;&nbsp;&nbsp;&nbsp;";?>
-        <?php //if($_SESSION["permiso_formulario_servicio"][119]["CANCELAR_GRABAR_PROG_MED"]==1) echo "<a href=\"javascript:regresarCronogramaProgramacionMedicos()\"><img src=\"../../../../medifacil_front/imagen/btn/b_cancelar_on.gif\"></a>&nbsp;&nbsp;&nbsp;&nbsp;";?>
-        <?php echo "<a href=\"javascript:validarManteSolProgSOP('insertar')\"><img src=\"../../../../medifacil_front/imagen/btn/b_grabar__on.gif\"></a>&nbsp;&nbsp;&nbsp;&nbsp;";?>
-        <?php echo "<a href=\"javascript:regresarCronogramaProgramacionSOP()\"><img src=\"../../../../medifacil_front/imagen/btn/b_cancelar_on.gif\"></a>";?>
+        <?php //if($_SESSION["permiso_formulario_servicio"][119]["GRABAR_PROG_MED"]==1) echo "<a href=\"javascript:validarCronogramaProgramacionMedicos()\"><img src=\"../../../../fastmedical_front/imagen/btn/b_grabar__on.gif\"></a>&nbsp;&nbsp;&nbsp;&nbsp;";?>
+        <?php //if($_SESSION["permiso_formulario_servicio"][119]["CANCELAR_GRABAR_PROG_MED"]==1) echo "<a href=\"javascript:regresarCronogramaProgramacionMedicos()\"><img src=\"../../../../fastmedical_front/imagen/btn/b_cancelar_on.gif\"></a>&nbsp;&nbsp;&nbsp;&nbsp;";?>
+        <?php echo "<a href=\"javascript:validarManteSolProgSOP('insertar')\"><img src=\"../../../../fastmedical_front/imagen/btn/b_grabar__on.gif\"></a>&nbsp;&nbsp;&nbsp;&nbsp;";?>
+        <?php echo "<a href=\"javascript:regresarCronogramaProgramacionSOP()\"><img src=\"../../../../fastmedical_front/imagen/btn/b_cancelar_on.gif\"></a>";?>
     </div>
 </div>

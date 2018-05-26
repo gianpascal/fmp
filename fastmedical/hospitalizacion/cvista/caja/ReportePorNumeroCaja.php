@@ -39,7 +39,7 @@ $toolbar1 = new ToollBar("LEFT");
                                 <tr>
                                     <td align="center">
                                         <?php
-                                        $toolbarx->SetBoton("cajeroXcaja", "REPORTE CAJERO POR DIA", "btn", "onclick", "reporteCajaPorCajero(1)", $_SESSION['path_principal']."../medifacil_front/imagen/icono/filenew.png", "", "", 1);
+                                        $toolbarx->SetBoton("cajeroXcaja", "REPORTE CAJERO POR DIA", "btn", "onclick", "reporteCajaPorCajero(1)", $_SESSION['path_principal']."../fastmedical_front/imagen/icono/filenew.png", "", "", 1);
                                         $toolbarx->Mostrar();
                                         ?>
                                     </td>
@@ -47,7 +47,7 @@ $toolbar1 = new ToollBar("LEFT");
                                 <tr>
                                     <td align="center">
                                         <?php
-                                        $toolbar1->SetBoton("cajeroXPersona", "REPORTE CAJERO POR EMPLEADO", "btn", "onclick,onkeypress", "reporteCajaPorCajero(2)", $_SESSION['path_principal']."../medifacil_front/imagen/icono/filenew.png", "", "", 1);
+                                        $toolbar1->SetBoton("cajeroXPersona", "REPORTE CAJERO POR EMPLEADO", "btn", "onclick,onkeypress", "reporteCajaPorCajero(2)", $_SESSION['path_principal']."../fastmedical_front/imagen/icono/filenew.png", "", "", 1);
                                         $toolbar1->Mostrar();
                                         ?>                                                              
                                     </td>

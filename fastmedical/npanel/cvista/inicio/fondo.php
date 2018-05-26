@@ -29,7 +29,7 @@
     </div>
     <div class="fondo_rightcol">
         <h3>Advertencia</h3>
-        <p><img src="../../../../medifacil_front/imagen/icono/alert_big.png" alt="Image" class="image" style="border:none;" border="0" /></p><br />
+        <p><img src="../../../../fastmedical_front/imagen/icono/alert_big.png" alt="Image" class="image" style="border:none;" border="0" /></p><br />
         <p>
             Bienvenido<br/>
             <strong>

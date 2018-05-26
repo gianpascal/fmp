@@ -31,7 +31,7 @@ $cb_combo_cajas = $o_ActionCaja->listadoCajas($datos);
                         <div align="center">
                             Seleccione Día de Proceso
                             <input id="txtcalendario1" type="text" size="10" value="<?php echo date("d/m/Y"); ?>" readonly="true"/>
-                            <a href="javascript:mostrarcalendar('dhtmlxCalendar1')"><img id="calendar1" src="../../../../medifacil_front/imagen/icono/hos_calendar.png" alt=""></a>
+                            <a href="javascript:mostrarcalendar('dhtmlxCalendar1')"><img id="calendar1" src="../../../../fastmedical_front/imagen/icono/hos_calendar.png" alt=""></a>
                             <div id="dhtmlxCalendar1" style="position:relative;display:none"></div>
                         </div>
                     </td>
@@ -104,12 +104,12 @@ $cb_combo_cajas = $o_ActionCaja->listadoCajas($datos);
 
             <?php
 //if (isset($_SESSION["permiso_formulario_servicio"][177]["ACEPTAR_ACREDITACION_COMPLEMENTARIA"]) && ($_SESSION["permiso_formulario_servicio"][177]["ACEPTAR_ACREDITACION_COMPLEMENTARIA"] == 1))
-//echo "<a href=\"javascript:busquedaCierreCaja();\"><img src=\"../../../../medifacil_front/imagen/btn/b_buscar_on.gif\"></a>";
+//echo "<a href=\"javascript:busquedaCierreCaja();\"><img src=\"../../../../fastmedical_front/imagen/btn/b_buscar_on.gif\"></a>";
 
             $toolbar = new ToollBar("right");
-            $toolbar->SetBoton("ANULAR CIERRE CAJA", "Anular Cierre", "btn", "onclick,onkeypress", "anularCierreCaja()", "../../../../medifacil_front/imagen/icono/agt_action_fail.png", "", "", 1);
-            $toolbar->SetBoton("CERRAR CAJA", "Cerrar Caja", "btn", "onclick,onkeypress", "cerrarCajaCierreCaja()", "../../../../medifacil_front/imagen/icono/lock.png", "", "", 1);
-            $toolbar->SetBoton("BUSCAR", "Buscar", "btn", "onclick,onkeypress", "busquedaCierreCaja()", "../../../../medifacil_front/imagen/icono/demo.png", "", "", 1);
+            $toolbar->SetBoton("ANULAR CIERRE CAJA", "Anular Cierre", "btn", "onclick,onkeypress", "anularCierreCaja()", "../../../../fastmedical_front/imagen/icono/agt_action_fail.png", "", "", 1);
+            $toolbar->SetBoton("CERRAR CAJA", "Cerrar Caja", "btn", "onclick,onkeypress", "cerrarCajaCierreCaja()", "../../../../fastmedical_front/imagen/icono/lock.png", "", "", 1);
+            $toolbar->SetBoton("BUSCAR", "Buscar", "btn", "onclick,onkeypress", "busquedaCierreCaja()", "../../../../fastmedical_front/imagen/icono/demo.png", "", "", 1);
             $toolbar->Mostrar();
             ?>
         </div> 

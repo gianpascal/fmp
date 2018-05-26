@@ -38,7 +38,7 @@
 <fieldset>
 <?php
     $toolbar=new ToollBar("right");
-    $toolbar->SetBoton("GRABAR","Grabar","btn","onclick,onkeypress","validateNewPassword()",$_SESSION['path_principal']."../medifacil_front/imagen/icono/grabar.png");
+    $toolbar->SetBoton("GRABAR","Grabar","btn","onclick,onkeypress","validateNewPassword()",$_SESSION['path_principal']."../fastmedical_front/imagen/icono/grabar.png");
     $toolbar->Mostrar();
 ?>
 </fieldset>

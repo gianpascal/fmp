@@ -16,7 +16,7 @@ class LPermisos {
         $oDPermisos = new DPermisos();
         $rs = $oDPermisos->dCargarUsuarios($idFormulario);
         foreach ($rs as $key => $value) {
-            array_push($rs[$key], "../../../../medifacil_front/imagen/icono/eliminar.gif ^ ...");
+            array_push($rs[$key], "../../../../fastmedical_front/imagen/icono/eliminar.gif ^ ...");
         }
         return $rs;
     }
@@ -25,7 +25,7 @@ class LPermisos {
         $oDPermisos = new DPermisos();
         $rs = $oDPermisos->dCargarUsuariosInac($idFormulario);
         foreach ($rs as $key => $value) {
-            array_push($rs[$key], "../../../../medifacil_front/imagen/icono/good.gif ^ ...");
+            array_push($rs[$key], "../../../../fastmedical_front/imagen/icono/good.gif ^ ...");
         }
         return $rs;
     }
@@ -60,7 +60,7 @@ class LPermisos {
         $oDPermisos = new DPermisos();
         $rs = $oDPermisos->dCargarUsuariosActivos($idServicio, $idSistema, $idFormulario, $bEstado);
         foreach ($rs as $key => $value) {
-            array_push($rs[$key], "../../../../medifacil_front/imagen/icono/eliminar.gif ^ ...");
+            array_push($rs[$key], "../../../../fastmedical_front/imagen/icono/eliminar.gif ^ ...");
         }
         return $rs;
     }
@@ -69,7 +69,7 @@ class LPermisos {
         $oDPermisos = new DPermisos();
         $rs = $oDPermisos->dCargarUsuariosInactivos($idServicio, $idSistema, $idFormulario);
         foreach ($rs as $key => $value) {
-            array_push($rs[$key], "../../../../medifacil_front/imagen/icono/good.gif ^ ...");
+            array_push($rs[$key], "../../../../fastmedical_front/imagen/icono/good.gif ^ ...");
         }
         return $rs;
     }
@@ -159,7 +159,7 @@ class LPermisos {
         $oDPermisos = new DPermisos();
         $rs = $oDPermisos->funcionArbolPopad($datos);
         foreach ($rs as $key => $value) {
-            array_push($rs[$key], "../../../../medifacil_front/imagen/icono/eliminar.gif ^ ...");
+            array_push($rs[$key], "../../../../fastmedical_front/imagen/icono/eliminar.gif ^ ...");
         }
         return $rs;
     }

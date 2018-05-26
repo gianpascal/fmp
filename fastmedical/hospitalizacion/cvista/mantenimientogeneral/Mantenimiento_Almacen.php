@@ -14,7 +14,7 @@
     ?>
     <div style="width: 90px; float: inherit; padding-top: 50px; padding-left: 400px">
         <?php
-        $toolbar1->SetBoton("nuevoAlmacen", "Nuevo", "btn", "onclick,onkeypress", "nuevoAlmacen()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/nuevo.png", "", "", 1);
+        $toolbar1->SetBoton("nuevoAlmacen", "Nuevo", "btn", "onclick,onkeypress", "nuevoAlmacen()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/nuevo.png", "", "", 1);
         $toolbar1->Mostrar();
         ?> 
     </div></div>

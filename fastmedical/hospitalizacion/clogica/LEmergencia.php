@@ -215,10 +215,10 @@ class LEmergencia {
             $array[$j][3] = $j + 1;
             If ($array[$j][1] == '1') {
                 $array[$j][1] = "ACTIVO";
-                $array[$j][4] = "<a onclick='javascript:eliminarDocumento(" . $array[$j][2] . ");'><img border='0' title='Desactivar' src='../../../../medifacil_front/imagen/icono/op_rechazado.gif'/></a>";
+                $array[$j][4] = "<a onclick='javascript:eliminarDocumento(" . $array[$j][2] . ");'><img border='0' title='Desactivar' src='../../../../fastmedical_front/imagen/icono/op_rechazado.gif'/></a>";
             } else {
                 $array[$j][1] = "INACTIVO";
-                $array[$j][4] = "<a onclick='javascript:activarDocumento(" . $array[$j][2] . ");'><img border='0' title='Activar' src='../../../../medifacil_front/imagen/icono/op_atendido.gif'/></a>";
+                $array[$j][4] = "<a onclick='javascript:activarDocumento(" . $array[$j][2] . ");'><img border='0' title='Activar' src='../../../../fastmedical_front/imagen/icono/op_atendido.gif'/></a>";
             }
             $j++;
         }
@@ -238,17 +238,17 @@ class LEmergencia {
             $array[$j][5] = $j + 1;
             $array[$j][8] = $array[$j][4];
             if ($j == 0 && $filas > 1) {
-                $array[$j][6] = "<img border='0' src='../../../../medifacil_front/imagen/btn/blank.png'/>" . "<a onclick='javascript:ordenarAtributo(" . $array[$j][4] . ",1," . $array[$j][0] . ");'><img border='0' title='Bajar' src='../../../../medifacil_front/imagen/btn/c_down.png'/></a>";
+                $array[$j][6] = "<img border='0' src='../../../../fastmedical_front/imagen/btn/blank.png'/>" . "<a onclick='javascript:ordenarAtributo(" . $array[$j][4] . ",1," . $array[$j][0] . ");'><img border='0' title='Bajar' src='../../../../fastmedical_front/imagen/btn/c_down.png'/></a>";
             } else {
                 if ($j < $filas) {
-                    $array[$j][6] = "<a onclick='javascript:ordenarAtributo(" . $array[$j][4] . ",0," . $array[$j][0] . ");'><img border='0' title='Subir' src='../../../../medifacil_front/imagen/btn/c_up.png'/></a>" . "<a onclick='javascript:ordenarAtributo(" . $array[$j][4] . ",1," . $array[$j][0] . ");'><img border='0' title='Bajar' src='../../../../medifacil_front/imagen/btn/c_down.png'/></a>";
+                    $array[$j][6] = "<a onclick='javascript:ordenarAtributo(" . $array[$j][4] . ",0," . $array[$j][0] . ");'><img border='0' title='Subir' src='../../../../fastmedical_front/imagen/btn/c_up.png'/></a>" . "<a onclick='javascript:ordenarAtributo(" . $array[$j][4] . ",1," . $array[$j][0] . ");'><img border='0' title='Bajar' src='../../../../fastmedical_front/imagen/btn/c_down.png'/></a>";
                 } else {
                     if ($filas > 1) {
-                        $array[$j][6] = "<a onclick='javascript:ordenarAtributo(" . $array[$j][4] . ",0," . $array[$j][0] . ");'><img border='0' title='Subir' src='../../../../medifacil_front/imagen/btn/c_up.png'/></a>";
+                        $array[$j][6] = "<a onclick='javascript:ordenarAtributo(" . $array[$j][4] . ",0," . $array[$j][0] . ");'><img border='0' title='Subir' src='../../../../fastmedical_front/imagen/btn/c_up.png'/></a>";
                     }
                 }
             }
-            $array[$j][7] = "<a onclick='javascript:eliminarAtributo(" . $array[$j][3] . ");'><img border='0' title='Eliminar' src='../../../../medifacil_front/imagen/icono/op_rechazado.gif'/></a>";
+            $array[$j][7] = "<a onclick='javascript:eliminarAtributo(" . $array[$j][3] . ");'><img border='0' title='Eliminar' src='../../../../fastmedical_front/imagen/icono/op_rechazado.gif'/></a>";
             $j++;
         }
         return $array;
@@ -264,7 +264,7 @@ class LEmergencia {
         $resultadoArray = array();
         foreach ($resultado as $fila) {
             if ($_SESSION["permiso_formulario_servicio"][205]["ASIGNAR_SERVICIO_X_PUESTO"] == 1) {
-                $fila[3] = "<a href='#' onclick=\"grabarAsignacionServicioaPuesto('" . $fila[0] . "');\"><img src='../../../../medifacil_front/imagen/icono/window_new.png' title='Asignar Servicio'/></a>";
+                $fila[3] = "<a href='#' onclick=\"grabarAsignacionServicioaPuesto('" . $fila[0] . "');\"><img src='../../../../fastmedical_front/imagen/icono/window_new.png' title='Asignar Servicio'/></a>";
             } else {
                 $fila[3] = "";
             }
@@ -276,7 +276,7 @@ class LEmergencia {
     public function listaLeyendaTurno() {
         $o_DRrhh = new DRrhh();
         $resultado = $o_DRrhh->listaLeyendaTurno();
-        $imagen1 = "../../../../medifacil_front/imagen/icono/editar.png ^ Editar";
+        $imagen1 = "../../../../fastmedical_front/imagen/icono/editar.png ^ Editar";
         foreach ($resultado as $i => $value) {
             if ($value[4] == 1)
                 array_push($resultado[$i], "Activado");
@@ -290,7 +290,7 @@ class LEmergencia {
     public function BusquedaEmpleado($datos) {
         $o_DRrhh = new DRrhh();
         $resultado = $o_DRrhh->BusquedaEmpleado($datos);
-        $imagen1 = "../../../../medifacil_front/imagen/icono/editar.png ^ Editar";
+        $imagen1 = "../../../../fastmedical_front/imagen/icono/editar.png ^ Editar";
         foreach ($resultado as $i => $value) {
             array_push($resultado[$i], $imagen1);
         }

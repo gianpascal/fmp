@@ -26,7 +26,7 @@ foreach ($arrayDatosPuntoControl as $valores) {
         $cadena.="<legend>$nombreGrupo</legend>";
         $cadena.= "<input type='hidden' id='estado_$contador' value='$valores[24]' />";
         if ($valores[24] == 1) {
-            $cadena.= '<img id="imgBuscar" border="0" onclick="CargarDatosResultadosLaboratorio()" title="Codigo de Persona" alt="" src="../../../../medifacil_front/imagen/btn/nbtn_buscar.gif">';
+            $cadena.= '<img id="imgBuscar" border="0" onclick="CargarDatosResultadosLaboratorio()" title="Codigo de Persona" alt="" src="../../../../fastmedical_front/imagen/btn/nbtn_buscar.gif">';
         }
         $cadena.="<table class='tablaDiagnostico'  border='0'>";
         $cadena.="
@@ -229,7 +229,7 @@ echo $cadena;
     <input type="hidden" id="numeroCampos" value='<?php echo $contadorItems; ?>' />
     <?php
     $toolbar1 = new ToollBar();
-    $toolbar1->SetBoton("terminarProceso", "Terminar Proceso", "btn", "onclick,onkeypress", "terminarProceso($idProcesarPuntoControl,'$funcionCerrar')", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/kopeteavailable.png", "", "", 1);
+    $toolbar1->SetBoton("terminarProceso", "Terminar Proceso", "btn", "onclick,onkeypress", "terminarProceso($idProcesarPuntoControl,'$funcionCerrar')", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/kopeteavailable.png", "", "", 1);
     $toolbar1->Mostrar();
     ?>
 </fieldset>

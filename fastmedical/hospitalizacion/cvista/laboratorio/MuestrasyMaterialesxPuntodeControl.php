@@ -106,7 +106,7 @@ $toolbar7 = new ToollBar("center");
 
                             <div id="div_BotonBuscarMateriales_MDxE" style="margin-left: 40%">
                                 <?php
-                                $toolbar1->SetBoton("BuscarMaterialesxPuntoControl_2", "Buscar .. ", "btn", "onclick,onkeypress", "PopudbuscarMaterialesxPuntoControl_2()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/abrir.png", "", "", 1);
+                                $toolbar1->SetBoton("BuscarMaterialesxPuntoControl_2", "Buscar .. ", "btn", "onclick,onkeypress", "PopudbuscarMaterialesxPuntoControl_2()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/abrir.png", "", "", 1);
                                 $toolbar1->Mostrar();
                                 ?>
                             </div> 
@@ -176,7 +176,7 @@ $toolbar7 = new ToollBar("center");
 
                             <div id="div_BotonGuardar_Material_MDxE">
                                 <?php
-                                $toolbar2->SetBoton("GuardarMaterialPuntoControl", "Guardar", "btn", "onclick,onkeypress", "GuardarMaterialxPuntoControlxExamenLaboratorio()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/abrir.png", "", "", 1);
+                                $toolbar2->SetBoton("GuardarMaterialPuntoControl", "Guardar", "btn", "onclick,onkeypress", "GuardarMaterialxPuntoControlxExamenLaboratorio()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/abrir.png", "", "", 1);
                                 $toolbar2->Mostrar();
                                 ?>
                             </div> 
@@ -187,7 +187,7 @@ $toolbar7 = new ToollBar("center");
                         <div class="inputMaterialDetalle2">
                             <div id="div_BotonAgregar_Material_MDxE">
                                 <?php
-                                $toolbar3->SetBoton("AgregarotroMaterialalPuntoControl", "Agregar Material", "btn", "onclick,onkeypress", "AgregarotroMaterialLaboratorio()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/abrir.png", "", "", 1);
+                                $toolbar3->SetBoton("AgregarotroMaterialalPuntoControl", "Agregar Material", "btn", "onclick,onkeypress", "AgregarotroMaterialLaboratorio()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/abrir.png", "", "", 1);
                                 $toolbar3->Mostrar();
                                 ?>
                             </div> 
@@ -196,7 +196,7 @@ $toolbar7 = new ToollBar("center");
                         <div class="inputMaterialDetalle2">
                             <div id="div_BotonMostrarMaterialesSeleccionadosXpuntoControlExamenLabo">
                                 <?php
-                                $toolbar7->SetBoton("MostrarMaterialesSeleccionadosXpuntoControlExamenLabo", "Mostrar Historial", "btn", "onclick,onkeypress", "MostrarMaterialesSeleccionadosXpuntoControlExamenLabo()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/abrir.png", "", "", 1);
+                                $toolbar7->SetBoton("MostrarMaterialesSeleccionadosXpuntoControlExamenLabo", "Mostrar Historial", "btn", "onclick,onkeypress", "MostrarMaterialesSeleccionadosXpuntoControlExamenLabo()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/abrir.png", "", "", 1);
                                 $toolbar7->Mostrar();
                                 ?>
 
@@ -247,7 +247,7 @@ $toolbar7 = new ToollBar("center");
                             <div class="inputMuestraDetalle2">
                                 <div id="divBotonBuscarMuestra_MDxE">
                                     <?php
-                                    $toolbar4->SetBoton("BuscarMaterialesxPuntoControl_3", "Buscar Muestras ...", "btn", "onclick,onkeypress", "PopudbuscarMaterialesxPuntoControl_3()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/abrir.png", "", "", 1);
+                                    $toolbar4->SetBoton("BuscarMaterialesxPuntoControl_3", "Buscar Muestras ...", "btn", "onclick,onkeypress", "PopudbuscarMaterialesxPuntoControl_3()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/abrir.png", "", "", 1);
                                     $toolbar4->Mostrar();
                                     ?>
                                 </div> 
@@ -307,7 +307,7 @@ $toolbar7 = new ToollBar("center");
                             <div class="labelMuestraDetalle">
                                 <div id="div_BotonGuardar_Muestra_MDxE" style="margin-left: 10%;" >
                                     <?php
-                                    $toolbar5->SetBoton("GuardarMuestraPuntoControl", "Guardar Muestra", "btn", "onclick,onkeypress", "GuardarMuestraxPuntoControlxExamenLaboratorio()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/abrir.png", "", "", 1);
+                                    $toolbar5->SetBoton("GuardarMuestraPuntoControl", "Guardar Muestra", "btn", "onclick,onkeypress", "GuardarMuestraxPuntoControlxExamenLaboratorio()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/abrir.png", "", "", 1);
                                     $toolbar5->Mostrar();
                                     ?>
                                 </div> 
@@ -315,7 +315,7 @@ $toolbar7 = new ToollBar("center");
                             <div class="inputMuestraDetalle">
                                 <div id="div_BotonAgregar_Muestra_MDxE"  style="margin-left: 27%;">
                                     <?php
-                                    $toolbar6->SetBoton("AgregarotroMuestraalPuntoControl", "Agregar Muestra", "btn", "onclick,onkeypress", "AgregarotroMuestraMaterialdeLaboratorio()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/abrir.png", "", "", 1);
+                                    $toolbar6->SetBoton("AgregarotroMuestraalPuntoControl", "Agregar Muestra", "btn", "onclick,onkeypress", "AgregarotroMuestraMaterialdeLaboratorio()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/abrir.png", "", "", 1);
                                     $toolbar6->Mostrar();
                                     ?>
                                 </div>

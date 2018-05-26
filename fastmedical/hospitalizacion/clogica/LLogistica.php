@@ -62,8 +62,8 @@ class LLogistica {
             //echo strftime("%A %d %B %Y",strtotime($fechastr));
             $array[$i][7] = strftime('%d %B %Y', strtotime($fechastr));
             $chek = "<input type='checkbox' name='f' value='opción' id='f0' />";
-            $editar = "<a href='#' onclick=\"javascript:confirmarEliminarCita();\"><img src='../../../../medifacil_front/imagen/icono/editar.png' title='Editar Orden'/></a>";
-            $eliminar = "<a href='#' onclick=\"javascript:confirmarEliminarCita();\"><img src='../../../../medifacil_front/imagen/icono/editdelete.png' title='Eliminar Orden'/></a>";
+            $editar = "<a href='#' onclick=\"javascript:confirmarEliminarCita();\"><img src='../../../../fastmedical_front/imagen/icono/editar.png' title='Editar Orden'/></a>";
+            $eliminar = "<a href='#' onclick=\"javascript:confirmarEliminarCita();\"><img src='../../../../fastmedical_front/imagen/icono/editdelete.png' title='Eliminar Orden'/></a>";
             $blanco = "";
             array_push($array[$i], $chek);
             array_push($array[$i], $editar);
@@ -112,7 +112,7 @@ class LLogistica {
             $nombre = $array[$i][1];
             //echo htmlentities($nombre);
             $precio = $array[$i][3];
-            $add = "<a href='#' onclick=\"javascript:agregarProcedimiento('" . $cCodigoProducto . "');\"><img src='../../../../medifacil_front/imagen/icono/nuevo.png' title='Editar Orden'/></a>";
+            $add = "<a href='#' onclick=\"javascript:agregarProcedimiento('" . $cCodigoProducto . "');\"><img src='../../../../fastmedical_front/imagen/icono/nuevo.png' title='Editar Orden'/></a>";
             $codigo = "<input type='hidden' value='" . $cCodigoProducto . "' id='co" . $cCodigoProducto . "' />";
             $nombre = "<input type='hidden' value='" . htmlentities($nombre) . "' id='no" . $cCodigoProducto . "' />";
             $precio = "<input type='hidden' value='" . $precio . "' id='pr" . $cCodigoProducto . "' />";
@@ -152,7 +152,7 @@ class LLogistica {
                 $hnombre = "<input type='hidden' value='" . $array2[$i]['1'] . "' id='no" . $array2[$i]['0'] . "' />";
                 //$hprecio = "<input type='hidden' value='" . $array2[$i]['2'] . "' id='pr" . $array2[$i]['0'] . "' />";
                 $hnumero = "<input type='hidden' value='" . $array2[$i]['0'] . "' id='nro" . $i . "' />";
-                $eliminar = "<a href='#' onclick=\"javascript:eliminarProcedimientoSeleccionado('" . $array2[$i]['0'] . "');\"><img src='../../../../medifacil_front/imagen/icono/borrar.png' title='Borrar Procedimiento'/></a>";
+                $eliminar = "<a href='#' onclick=\"javascript:eliminarProcedimientoSeleccionado('" . $array2[$i]['0'] . "');\"><img src='../../../../fastmedical_front/imagen/icono/borrar.png' title='Borrar Procedimiento'/></a>";
                 $array2[$i]['4'] = $eliminar;
                 $array2[$i]['5'] = $hcodigo . $hnombre . $hnumero;
             }
@@ -169,7 +169,7 @@ class LLogistica {
             $hprecio = "<input type='hidden' value='" . $precio . "' id='pr" . $c_cod_ser_pro . "' />";
             $hnumero = "<input type='hidden' value='" . $c_cod_ser_pro . "' id='nro" . $nro . "' />";
             $cantidad = "<input type='text' size='3' value='1' id='ca" . $c_cod_ser_pro . "' />";
-            $eliminar = "<a href='#' onclick=\"javascript:eliminarProcedimientoSeleccionado('" . $c_cod_ser_pro . "');\"><img src='../../../../medifacil_front/imagen/icono/borrar.png' title='Borrar Procedimiento'/></a>";
+            $eliminar = "<a href='#' onclick=\"javascript:eliminarProcedimientoSeleccionado('" . $c_cod_ser_pro . "');\"><img src='../../../../fastmedical_front/imagen/icono/borrar.png' title='Borrar Procedimiento'/></a>";
             $array['0'] = $c_cod_ser_pro;
             $array['1'] = $nombre;
             $array['2'] = $precio;
@@ -224,12 +224,12 @@ class LLogistica {
         $rs = $o_DLogistica->getTarifasProcedimientosProductos($datos);
 
         foreach ($rs as $j => $valuem) {
-            $rs[$j][5] = "../../../../medifacil_front/imagen/icono/nuevo.png ^ Agregar";
+            $rs[$j][5] = "../../../../fastmedical_front/imagen/icono/nuevo.png ^ Agregar";
         }
         return $rs;
     }
 
-// ../../../../medifacil_front/imagen/icono/nuevo.png'
+// ../../../../fastmedical_front/imagen/icono/nuevo.png'
 }
 
 ?>

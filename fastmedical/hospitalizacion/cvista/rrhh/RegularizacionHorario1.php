@@ -151,7 +151,7 @@ $comboTipoDocumentos = $o_LPersona->comboTipoDocumento('1');
                     </div>
                     <div >
                         <CENTER><div  id ="divEtiquetaBuscar" style="width:65px;" align="center">
-                                <!--<CENTER> <a href="javascript:buscarEmpleadosAreasNombreHorario();"><img id="imgbusqueda" border="0" title="Codigo de Persona" alt="" src="../../../../medifacil_front/imagen/btn/nbtn_buscar.gif"/></a></CENTER>-->
+                                <!--<CENTER> <a href="javascript:buscarEmpleadosAreasNombreHorario();"><img id="imgbusqueda" border="0" title="Codigo de Persona" alt="" src="../../../../fastmedical_front/imagen/btn/nbtn_buscar.gif"/></a></CENTER>-->
                             </div>
                         </CENTER>
                     </div> 
@@ -195,7 +195,7 @@ $comboTipoDocumentos = $o_LPersona->comboTipoDocumento('1');
             <table>
                 <tr>
                     <td style="width: 20px"><a href="javascript:agregarPersonalTurnoRegularizar();">
-                            <img border="0" src="../../../../medifacil_front/imagen/btn/b_agregar_off.gif" alt="" title="Ocultar">
+                            <img border="0" src="../../../../fastmedical_front/imagen/btn/b_agregar_off.gif" alt="" title="Ocultar">
                         </a></td>
                     <td style="width: 20px"></td>
                     <td ><b>Leyenda:</b> </td>

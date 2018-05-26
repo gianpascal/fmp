@@ -1,14 +1,14 @@
 <?php
 //agregar medicamentos
 $toolbar1 = new ToollBar("right");
-$toolbar1->SetBoton("Agregar Productos", "Agregar Productos", "btn", "onclick,onkeypress", "mostrarVentanaNuevosMedicamentosCISOP()", "../../../../medifacil_front/imagen/icono/abrir16.png", "", "", true);
+$toolbar1->SetBoton("Agregar Productos", "Agregar Productos", "btn", "onclick,onkeypress", "mostrarVentanaNuevosMedicamentosCISOP()", "../../../../fastmedical_front/imagen/icono/abrir16.png", "", "", true);
 //botones totales
 $toolbar = new ToollBar("right");
-$toolbar->SetBoton("Generar Orden", "Finalizar", "btn", "onclick,onkeypress", "generarOrdenCuentaCorrienteFarmaciaCISOP()", "../../../../medifacil_front/imagen/icono/apply.png", "", "", true);
-$toolbar->SetBoton("Impresion de la Pre Orden", "Imprimir", "btn", "onclick,onkeypress", "enviandoImprimirFarmaciaCISOP()", "../../../../medifacil_front/imagen/icono/printer.png", "", "", true);
-$toolbar->SetBoton("Limpiar", "Limpiar", "btn", "onclick,onkeypress", "restaurarTablaGeneracionPreOrdenFarmaciaSOP()", "../../../../medifacil_front/imagen/icono/limpiar.png", "", "", true);
-$toolbar->SetBoton("Guardar Nueva Cantidad Entregados", "Guardar Nueva Cantidad", "btn", "onclick,onkeypress", "actualizarNuevaCantidadEntregadaCISOP()", "../../../../medifacil_front/imagen/icono/grabar.png", "", "", true);
-$toolbar->SetBoton("Volver a Programacion SOP", "Volver", "btn", "onclick,onkeypress", "volveraProgramacionSOPdesdeCIFarmaciaSOP()", "../../../../medifacil_front/imagen/icono/14_rotateactivo.png", "", "", true);
+$toolbar->SetBoton("Generar Orden", "Finalizar", "btn", "onclick,onkeypress", "generarOrdenCuentaCorrienteFarmaciaCISOP()", "../../../../fastmedical_front/imagen/icono/apply.png", "", "", true);
+$toolbar->SetBoton("Impresion de la Pre Orden", "Imprimir", "btn", "onclick,onkeypress", "enviandoImprimirFarmaciaCISOP()", "../../../../fastmedical_front/imagen/icono/printer.png", "", "", true);
+$toolbar->SetBoton("Limpiar", "Limpiar", "btn", "onclick,onkeypress", "restaurarTablaGeneracionPreOrdenFarmaciaSOP()", "../../../../fastmedical_front/imagen/icono/limpiar.png", "", "", true);
+$toolbar->SetBoton("Guardar Nueva Cantidad Entregados", "Guardar Nueva Cantidad", "btn", "onclick,onkeypress", "actualizarNuevaCantidadEntregadaCISOP()", "../../../../fastmedical_front/imagen/icono/grabar.png", "", "", true);
+$toolbar->SetBoton("Volver a Programacion SOP", "Volver", "btn", "onclick,onkeypress", "volveraProgramacionSOPdesdeCIFarmaciaSOP()", "../../../../fastmedical_front/imagen/icono/14_rotateactivo.png", "", "", true);
 ?>
 <div>
     <!--  cabecera  -->
@@ -24,7 +24,7 @@ $toolbar->SetBoton("Volver a Programacion SOP", "Volver", "btn", "onclick,onkeyp
             <tr>
                 <td>Código :</td>
                 <td><input id="txtcodigopersona" type="text" size="20" readonly="true"></input>
-                <a id="busquedaPersonaCISOP" style ="display:none" href="#"><img onclick="javascript:mostrarBusquedadePersonasCISOP()" border="0" title="Buscar Paquete" alt="" src="../../../../medifacil_front/imagen/btn/nbtn_buscar.gif"></a>
+                <a id="busquedaPersonaCISOP" style ="display:none" href="#"><img onclick="javascript:mostrarBusquedadePersonasCISOP()" border="0" title="Buscar Paquete" alt="" src="../../../../fastmedical_front/imagen/btn/nbtn_buscar.gif"></a>
                 </td>
                 
 
@@ -43,7 +43,7 @@ $toolbar->SetBoton("Volver a Programacion SOP", "Volver", "btn", "onclick,onkeyp
                 <td>Cod. Paquete Farmaceútico :</td>
                 <td>
                     <input id="txtcodigopaquete" type="text" size="20" readonly="true"></input>
-                    &nbsp;&nbsp;<a href="#"><img onclick="javascript:mostrarPaquetesFarmaceuticosSOP()" border="0" title="Buscar Paquete" alt="" src="../../../../medifacil_front/imagen/btn/nbtn_buscar.gif"></a>
+                    &nbsp;&nbsp;<a href="#"><img onclick="javascript:mostrarPaquetesFarmaceuticosSOP()" border="0" title="Buscar Paquete" alt="" src="../../../../fastmedical_front/imagen/btn/nbtn_buscar.gif"></a>
                 </td>
             </tr>
             <tr>

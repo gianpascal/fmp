@@ -4,16 +4,16 @@
     $oTabla = new Tabla1($arrayCabecera,20,$arrayFilas,'tablaOrden','fila2','fila2','filaSeleccionada','ondblclick',$parametros["funcionJSEjecutar"],0);
     $oTabla->setColumnasOrdenar(array("0","1","9"));
     $oToolbarBusqueda = new ToollBar('left','btns');
-    $oToolbarBusqueda->SetBoton('btnEditarPersona',"Editar Datos",'btn','onClick,KeyPress,onDblClick','alert','../../../../medifacil_front/imagen/icono/hos_calendar.png','','','85');
-    $oToolbarBusqueda->SetBoton('btnCancelar',"Cancelar",'btn','onClick,KeyPress,onDblClick','alert','../../../../medifacil_front/imagen/icono/hos_calendar.png','','','80');
+    $oToolbarBusqueda->SetBoton('btnEditarPersona',"Editar Datos",'btn','onClick,KeyPress,onDblClick','alert','../../../../fastmedical_front/imagen/icono/hos_calendar.png','','','85');
+    $oToolbarBusqueda->SetBoton('btnCancelar',"Cancelar",'btn','onClick,KeyPress,onDblClick','alert','../../../../fastmedical_front/imagen/icono/hos_calendar.png','','','80');
 ?>
 <form name="frmBusqueda"  action="">
 <div id="toolbar" style="height:20px;">
   <table cellpadding="0" cellspacing="0">
     <tr>
-      <td valign="top"><a href="javascript:formateaOpcionBusqueda('nombre');"><img src="../../../../medifacil_front/imagen/btn/btn_nombres_persona.gif" title="Nombres y Apellidos" border="0"/></a></td>
-      <td valign="top"><a href="javascript:formateaOpcionBusqueda('documento');"><img src="../../../../medifacil_front/imagen/btn/btn_dni_persona.gif" title="Documento de Identidad" border="0"/></a></td>
-      <td valign="top"><a href="javascript:formateaOpcionBusqueda('codigo');"><img src="../../../../medifacil_front/imagen/btn/btn_cod_persona.gif" title="Codigo de Persona" border="0"/></a></td>
+      <td valign="top"><a href="javascript:formateaOpcionBusqueda('nombre');"><img src="../../../../fastmedical_front/imagen/btn/btn_nombres_persona.gif" title="Nombres y Apellidos" border="0"/></a></td>
+      <td valign="top"><a href="javascript:formateaOpcionBusqueda('documento');"><img src="../../../../fastmedical_front/imagen/btn/btn_dni_persona.gif" title="Documento de Identidad" border="0"/></a></td>
+      <td valign="top"><a href="javascript:formateaOpcionBusqueda('codigo');"><img src="../../../../fastmedical_front/imagen/btn/btn_cod_persona.gif" title="Codigo de Persona" border="0"/></a></td>
       <td>
       
       <table width="100%" border="0" cellpadding="0" cellspacing="0">

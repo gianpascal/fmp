@@ -155,7 +155,7 @@ function mostrarTablaTipoComprobantesAperturados(codCaja, fechaHoy) {
     parametros += '&p3=' + fechaHoy;
 
     tablaProductoServicioSOP = new dhtmlXGridObject('divTablaTipoComprobantesAperturados');
-    tablaProductoServicioSOP.setImagePath("../../../../medifacil_front/imagen/icono/");
+    tablaProductoServicioSOP.setImagePath("../../../../fastmedical_front/imagen/icono/");
     tablaProductoServicioSOP.setSkin("dhx_skyblue");
     tablaProductoServicioSOP.init();
     tablaProductoServicioSOP.loadXML(pathRequestControl + '?' + parametros);
@@ -465,7 +465,7 @@ function mostrarTablaProductoServicioFacturacion() {
     parametros += '&p3=' + cadenaItems;
 
     tablaProductoServicioComprobanteFacturacion = new dhtmlXGridObject('divTablaProductoServicioComprobanteFacturacion');
-    tablaProductoServicioComprobanteFacturacion.setImagePath("../../../../medifacil_front/imagen/icono/");
+    tablaProductoServicioComprobanteFacturacion.setImagePath("../../../../fastmedical_front/imagen/icono/");
     tablaProductoServicioComprobanteFacturacion.setSkin("dhx_skyblue");
     tablaProductoServicioComprobanteFacturacion.attachEvent("onRowSelect", aplicarDescuento);
     tablaProductoServicioComprobanteFacturacion.init();
@@ -838,7 +838,7 @@ function mostrarTablaProductoServicioFacturacionTodo() {
     parametros += '&p3=' + cadenaItems;
 
     tablaProductoServicioComprobanteFacturacion = new dhtmlXGridObject('divTablaProductoServicioComprobanteFacturacion');
-    tablaProductoServicioComprobanteFacturacion.setImagePath("../../../../medifacil_front/imagen/icono/");
+    tablaProductoServicioComprobanteFacturacion.setImagePath("../../../../fastmedical_front/imagen/icono/");
     tablaProductoServicioComprobanteFacturacion.setSkin("dhx_skyblue");
     tablaProductoServicioComprobanteFacturacion.attachEvent("onRowSelect", aplicarDescuento);
     tablaProductoServicioComprobanteFacturacion.init();
@@ -1010,7 +1010,7 @@ function buscarAutoriza(txtCodigo, comboTipoEstados, comboTipoDocumentos, nroDoc
     parametros += '&p7=' + apellidoMaterno;
     parametros += '&p8=' + nombres;
     tablaAutoriza = new dhtmlXGridObject('divTablaAutoriza');
-    tablaAutoriza.setImagePath("../../../../medifacil_front/imagen/icono/");
+    tablaAutoriza.setImagePath("../../../../fastmedical_front/imagen/icono/");
     tablaAutoriza.setSkin("dhx_skyblue");
     tablaAutoriza.attachEvent("onRowSelect", seleccionarAutoriza);
     tablaAutoriza.init();
@@ -1332,7 +1332,7 @@ function listartablaproductos(event) {
                 var Cantidd = 1;
                 var Precio = aProductos.cells(rId, 2).getValue();
                 var Total = Precio * Cantidd;
-                var Imagen = "../../../../medifacil_front/imagen/icono/i_nomailappt.png";
+                var Imagen = "../../../../fastmedical_front/imagen/icono/i_nomailappt.png";
                 var Existe = 0;
                 eOrdenGenerada.forEachRow(function (id) {
                     if (id == idnuevo) {

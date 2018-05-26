@@ -46,7 +46,7 @@
                 <?php
                 if (isset($_SESSION["permiso_formulario_servicio"][224]["GRABAR_FALTA_REGULARIZADA"]) && ($_SESSION["permiso_formulario_servicio"][224]["GRABAR_FALTA_REGULARIZADA"] == 1)) {
                     echo '<a id="btnGuardarEmpleadoRegularizar" href="javascript:guardarEmpleadoRegularizar();">' .
-                    '<img border="0" title="Buscar" alt="" src="../../../../medifacil_front/imagen/btn/b_grabar_off.gif"/></a>' .
+                    '<img border="0" title="Buscar" alt="" src="../../../../fastmedical_front/imagen/btn/b_grabar_off.gif"/></a>' .
                     '<p id="resultadosRegularizacionEspecial" ></p>';
                 }
                 ?>

@@ -30,7 +30,7 @@ $cb_empresas = $o_ActionMantGeneral->listaDatosEmpresa($codEmpresa,$codSede,$dis
                         
                     </div>
                     <div id="botones" style="height:10%;">
-                        <?php if($_SESSION["permiso_formulario_servicio"][202]["NUEVO_AMB_FISICO"]==1) echo "<a href='#' onclick=\"CargarVentana('popupMantAmbFisico','Registro de Ambientes Físicos','../mantenimientogeneral/manteAmbienteFisico.php?accion=insertar','500','320',false,true,'',1,'',10,10,10,10);\"><img src=\"../../../../medifacil_front/imagen/btn/b_nuevo_on.gif\" alt='Nuevo' title='Nuevo' border='0'/></a>"?>
+                        <?php if($_SESSION["permiso_formulario_servicio"][202]["NUEVO_AMB_FISICO"]==1) echo "<a href='#' onclick=\"CargarVentana('popupMantAmbFisico','Registro de Ambientes Físicos','../mantenimientogeneral/manteAmbienteFisico.php?accion=insertar','500','320',false,true,'',1,'',10,10,10,10);\"><img src=\"../../../../fastmedical_front/imagen/btn/b_nuevo_on.gif\" alt='Nuevo' title='Nuevo' border='0'/></a>"?>
                     </div>
                 </div>
             <!--</div>-->

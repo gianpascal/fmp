@@ -103,8 +103,8 @@ class LCronograma {
         $record = $this->dCronograma->getArrayCronogramaOficina($persona);
         $resultadoArray = array();
         foreach ($record as $fila) {
-            $fila[2] = '<a href="#" onclick="listaCronogramaOficina(\'' . $fila[0] . '\')"><img src="' . $_SESSION['path_principal'] . '../medifacil_front/imagen/icono/mostrar.png" alt="VER" title="VER"/></a>';
-            $fila[3] = '<img src="' . $_SESSION['path_principal'] . '../medifacil_front/imagen/icono/button_ok.png" alt="HABILITAR" title="HABILITAR"/>';
+            $fila[2] = '<a href="#" onclick="listaCronogramaOficina(\'' . $fila[0] . '\')"><img src="' . $_SESSION['path_principal'] . '../fastmedical_front/imagen/icono/mostrar.png" alt="VER" title="VER"/></a>';
+            $fila[3] = '<img src="' . $_SESSION['path_principal'] . '../fastmedical_front/imagen/icono/button_ok.png" alt="HABILITAR" title="HABILITAR"/>';
             array_push($resultadoArray, $fila);
         }
         return $resultadoArray;
@@ -124,7 +124,7 @@ class LCronograma {
             $fila['turno'] = $fila[5] . '-' . $fila[6];
             $fila['cupos'] = $oHospitalizacion->getCupos($fila[7], $fila[5], $fila[6]);
             $cal_valores = "|" . $fila[1] . "|";
-            $fila['opcion'] = '<a href="#" onclick=mostrarCalendario("' . $fila[12] . '","' . $fila[13] . '","' . $fila[11] . '","' . $fila[8] . '","' . $fila[9] . '","' . substr($fila[1], 0, 2) . '","' . substr($fila[1], 3, 2) . '","' . substr($fila[1], 6, 4) . '","' . $cal_valores . '",1,"' . $fila[14] . '") ><img src="' . $_SESSION['path_principal'] . '../medifacil_front/imagen/icono/i_edit.png" border="0"/></a>&nbsp;<a href="#" onclick=cancelaCalendario("' . $fila[14] . '","' . $fila[1] . '")><img src="' . $_SESSION['path_principal'] . '../medifacil_front/imagen/icono/agt_action_fail.png" border="0"/></a>';
+            $fila['opcion'] = '<a href="#" onclick=mostrarCalendario("' . $fila[12] . '","' . $fila[13] . '","' . $fila[11] . '","' . $fila[8] . '","' . $fila[9] . '","' . substr($fila[1], 0, 2) . '","' . substr($fila[1], 3, 2) . '","' . substr($fila[1], 6, 4) . '","' . $cal_valores . '",1,"' . $fila[14] . '") ><img src="' . $_SESSION['path_principal'] . '../fastmedical_front/imagen/icono/i_edit.png" border="0"/></a>&nbsp;<a href="#" onclick=cancelaCalendario("' . $fila[14] . '","' . $fila[1] . '")><img src="' . $_SESSION['path_principal'] . '../fastmedical_front/imagen/icono/agt_action_fail.png" border="0"/></a>';
             array_push($resultadoArray, $fila);
         }
         return $resultadoArray;
@@ -1149,36 +1149,36 @@ class LCronograma {
                 if ((int) $fechaResultadoArray[1] >= (int) $fechaHoyArray[1]) {
                     if ((int) $fechaResultadoArray[0] >= (int) $fechaHoyArray[0] or (int) $fechaResultadoArray[0] <= (int) $fechaHoyArray[0] and (int) $fechaResultadoArray[1] > (int) $fechaHoyArray[1]) {
                         if ($_SESSION["permiso_formulario_servicio"][119]["EDITAR_PROG_MED"] == 1) {
-                            array_push($resultado[$key], "../../../../medifacil_front/imagen/icono/edit2.png ^ Editar");
+                            array_push($resultado[$key], "../../../../fastmedical_front/imagen/icono/edit2.png ^ Editar");
                         } else {
                             array_push($resultado[$key], "");
                         }
 
                         if ($_SESSION["permiso_formulario_servicio"][119]["ELIMINAR_PROG_MED"] == 1) {
-                            array_push($resultado[$key], "../../../../medifacil_front/imagen/icono/editdelete.png ^ Eliminar");
+                            array_push($resultado[$key], "../../../../fastmedical_front/imagen/icono/editdelete.png ^ Eliminar");
                         } else {
                             array_push($resultado[$key], "");
                         }
                         if ($_SESSION["permiso_formulario_servicio"][119]["AUTORIZAR_REPROG_MED"] == 1) {
-                            array_push($resultado[$key], "../../../../medifacil_front/imagen/icono/agt_action_success.png ^ Autorizar");
+                            array_push($resultado[$key], "../../../../fastmedical_front/imagen/icono/agt_action_success.png ^ Autorizar");
                         } else {
                             array_push($resultado[$key], "");
                         }
                         array_push($resultado[$key], 1);
                     } else {
                         if ($_SESSION["permiso_formulario_servicio"][119]["EDITAR_PROG_MED"] == 1) {
-                            array_push($resultado[$key], "../../../../medifacil_front/imagen/icono/editar_desh.png ^ Desabilitado");
+                            array_push($resultado[$key], "../../../../fastmedical_front/imagen/icono/editar_desh.png ^ Desabilitado");
                         } else {
                             array_push($resultado[$key], "");
                         }
 
                         if ($_SESSION["permiso_formulario_servicio"][119]["ELIMINAR_PROG_MED"] == 1) {
-                            array_push($resultado[$key], "../../../../medifacil_front/imagen/icono/editdelete_inactivo.png ^ Desabilitado");
+                            array_push($resultado[$key], "../../../../fastmedical_front/imagen/icono/editdelete_inactivo.png ^ Desabilitado");
                         } else {
                             array_push($resultado[$key], "");
                         }
                         if ($_SESSION["permiso_formulario_servicio"][119]["AUTORIZAR_REPROG_MED"] == 1) {
-                            array_push($resultado[$key], "../../../../medifacil_front/imagen/icono/agt_action_success_desh.png ^ Desabilitado");
+                            array_push($resultado[$key], "../../../../fastmedical_front/imagen/icono/agt_action_success_desh.png ^ Desabilitado");
                         } else {
                             array_push($resultado[$key], "");
                         }
@@ -1186,18 +1186,18 @@ class LCronograma {
                     }
                 } else {
                     if ($_SESSION["permiso_formulario_servicio"][119]["EDITAR_PROG_MED"] == 1) {
-                        array_push($resultado[$key], "../../../../medifacil_front/imagen/icono/editar_desh.png ^ Desabilitado");
+                        array_push($resultado[$key], "../../../../fastmedical_front/imagen/icono/editar_desh.png ^ Desabilitado");
                     } else {
                         array_push($resultado[$key], "");
                     }
 
                     if ($_SESSION["permiso_formulario_servicio"][119]["ELIMINAR_PROG_MED"] == 1) {
-                        array_push($resultado[$key], "../../../../medifacil_front/imagen/icono/editdelete_inactivo.png ^ Desabilitado");
+                        array_push($resultado[$key], "../../../../fastmedical_front/imagen/icono/editdelete_inactivo.png ^ Desabilitado");
                     } else {
                         array_push($resultado[$key], "");
                     }
                     if ($_SESSION["permiso_formulario_servicio"][119]["AUTORIZAR_REPROG_MED"] == 1) {
-                        array_push($resultado[$key], "../../../../medifacil_front/imagen/icono/agt_action_success_desh.png ^ Desabilitado");
+                        array_push($resultado[$key], "../../../../fastmedical_front/imagen/icono/agt_action_success_desh.png ^ Desabilitado");
                     } else {
                         array_push($resultado[$key], "");
                     }
@@ -1205,25 +1205,25 @@ class LCronograma {
                 }
             } else {
                 if ($_SESSION["permiso_formulario_servicio"][119]["EDITAR_PROG_MED"] == 1) {
-                    array_push($resultado[$key], "../../../../medifacil_front/imagen/icono/editar_desh.png ^ Desabilitado");
+                    array_push($resultado[$key], "../../../../fastmedical_front/imagen/icono/editar_desh.png ^ Desabilitado");
                 } else {
                     array_push($resultado[$key], "");
                 }
 
                 if ($_SESSION["permiso_formulario_servicio"][119]["ELIMINAR_PROG_MED"] == 1) {
-                    array_push($resultado[$key], "../../../../medifacil_front/imagen/icono/editdelete.png ^ Ver Motivo Eliminacion");
+                    array_push($resultado[$key], "../../../../fastmedical_front/imagen/icono/editdelete.png ^ Ver Motivo Eliminacion");
                 } else {
                     array_push($resultado[$key], "");
                 }
                 if ($_SESSION["permiso_formulario_servicio"][119]["AUTORIZAR_REPROG_MED"] == 1) {
-                    array_push($resultado[$key], "../../../../medifacil_front/imagen/icono/agt_action_success_desh.png ^ Desabilitado");
+                    array_push($resultado[$key], "../../../../fastmedical_front/imagen/icono/agt_action_success_desh.png ^ Desabilitado");
                 } else {
                     array_push($resultado[$key], "");
                 }
                 array_push($resultado[$key], 0);
             }
 
-            array_push($resultado[$key], $value[13] == 0 ? "../../../../medifacil_front/imagen/icono/exclamation_off.png" : "../../../../medifacil_front/imagen/icono/exclamation.png ^ Mensaje_Log");
+            array_push($resultado[$key], $value[13] == 0 ? "../../../../fastmedical_front/imagen/icono/exclamation_off.png" : "../../../../fastmedical_front/imagen/icono/exclamation.png ^ Mensaje_Log");
         }
         return $resultado;
     }

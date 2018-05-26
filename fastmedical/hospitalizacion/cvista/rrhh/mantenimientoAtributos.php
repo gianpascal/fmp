@@ -33,7 +33,7 @@
 
     <div style="height: 20%;">
         <div style="width:30%; margin:0px auto;">
-             <a href="javascript:grabarAtributo(document.getElementById('txtNombre').value,document.getElementById('comboTipo').value);"><img  id="imgagenGuardar" src="../../../../medifacil_front/imagen/btn/b_grabar_on.gif"/></a>
+             <a href="javascript:grabarAtributo(document.getElementById('txtNombre').value,document.getElementById('comboTipo').value);"><img  id="imgagenGuardar" src="../../../../fastmedical_front/imagen/btn/b_grabar_on.gif"/></a>
 
         </div>
 

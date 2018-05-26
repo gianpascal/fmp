@@ -20,16 +20,16 @@
     <div  id ="divBotonesEventos" style="width:99%;height:inherit;margin-left:1%;margin-right:1%; " align="center">
          <fieldset style="margin:1px;width:70%;height:27px;padding: 0px;">
                 <div  id ="DivEliminar" style=" float:right;width:25%;" align="center">
-                        <a href="javascript:ventana_formulario_empleado('');"><img border="0" title="Codigo de Persona" alt="" src="../../../../medifacil_front/imagen/btn/b_borrar_on.gif"/></a>
+                        <a href="javascript:ventana_formulario_empleado('');"><img border="0" title="Codigo de Persona" alt="" src="../../../../fastmedical_front/imagen/btn/b_borrar_on.gif"/></a>
                 </div>
                 <div  id ="DivAgregar" style=" float:right;width:25%;" align="center">
-                        <a href="javascript:ventana_formulario_empleado('');"><img border="0" title="Codigo de Persona" alt="" src="../../../../medifacil_front/imagen/btn/b_agregar_on.gif"/></a>
+                        <a href="javascript:ventana_formulario_empleado('');"><img border="0" title="Codigo de Persona" alt="" src="../../../../fastmedical_front/imagen/btn/b_agregar_on.gif"/></a>
                </div>
                <div  id ="DivEditar" style=" float:right;width:25%;" align="center">
-                        <a href="javascript:ventana_formulario_empleado('');"><img border="0" title="Codigo de Persona" alt="" src="../../../../medifacil_front/imagen/btn/b_editar_on.gif"/></a>
+                        <a href="javascript:ventana_formulario_empleado('');"><img border="0" title="Codigo de Persona" alt="" src="../../../../fastmedical_front/imagen/btn/b_editar_on.gif"/></a>
                </div>
                 <div  id ="DivDetalle" style=" float:right;width:25%;" align="center">
-                        <a href="javascript:ventana_formulario_empleado('');"><img border="0" title="Codigo de Persona" alt="" src="../../../../medifacil_front/imagen/btn/b_detalles_on.gif"/></a>
+                        <a href="javascript:ventana_formulario_empleado('');"><img border="0" title="Codigo de Persona" alt="" src="../../../../fastmedical_front/imagen/btn/b_detalles_on.gif"/></a>
                  </div>
 
 

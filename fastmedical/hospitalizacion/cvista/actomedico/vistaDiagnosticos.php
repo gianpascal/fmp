@@ -11,7 +11,7 @@ $o_ActionActoMedico = new ActionActoMedico();
     <input style=" width:70px; " type="text" name="txtbusquedaCodigoDiagnostico" value="" id="txtbusquedaCodigoDiagnostico" onkeyup='buscarDiagnosticoCodigo();'>
     &nbsp;&nbsp;&nbsp;&nbsp;
     <a href="javascript:;" onclick="javascript:agregarOtro_ActoMedico('diagnostico');">
-        <img id="btn_agregarotro" src='../../../../medifacil_front/imagen/btn/btn_agregarotro.png' alt="">
+        <img id="btn_agregarotro" src='../../../../fastmedical_front/imagen/btn/btn_agregarotro.png' alt="">
     </a>
 </fieldset>
 
@@ -19,7 +19,7 @@ $o_ActionActoMedico = new ActionActoMedico();
 <fieldset class="examenes" style="width:85%">
     <div style="float: right; margin-top:3px;"  >
         <a href="javascript:;" onclick="javascript:verDiagnosticosAnteriores();">
-            <img id="icono_abrirDiagnosticosAnteriores" src='../../../../medifacil_front/imagen/icono/abrir.png' alt="">
+            <img id="icono_abrirDiagnosticosAnteriores" src='../../../../fastmedical_front/imagen/icono/abrir.png' alt="">
         </a>
     </div>
     <a href="javascript:;" onclick="javascript:verDiagnosticosAnteriores();">

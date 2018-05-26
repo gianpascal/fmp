@@ -352,7 +352,7 @@ function regresaracronogramacitasx(){
     }
     setCabeceraCronograma(fecha,opcionBusqueda,servicio,nombrecentrocosto,codigoPersonalSalud,sede);
     micargador(0);
-    $('divGuardaryRegresar').innerHTML="<a href=\"javascript:validarCitaInformes()\"><img src=\"../../../../medifacil_front/imagen/btn/b_grabar__on.gif\"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"javascript:regresaracronogramacitas()\"><img src=\"../../../../medifacil_front/imagen/btn/b_regresar_on.gif\">";
+    $('divGuardaryRegresar').innerHTML="<a href=\"javascript:validarCitaInformes()\"><img src=\"../../../../fastmedical_front/imagen/btn/b_grabar__on.gif\"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"javascript:regresaracronogramacitas()\"><img src=\"../../../../fastmedical_front/imagen/btn/b_regresar_on.gif\">";
     
 }
 

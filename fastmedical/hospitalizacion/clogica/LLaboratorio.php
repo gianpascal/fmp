@@ -66,7 +66,7 @@ class LLaboratorio {
         $o_DLaboratorio = new DLaboratorio();
         $resultado = $o_DLaboratorio->DbuscarExamenesLaboratorio($datos);
         foreach ($resultado as $key => $value) {
-            array_push($resultado[$key], "../../../../medifacil_front/imagen/icono/b_ver_on.gif ^ Puntos Control");
+            array_push($resultado[$key], "../../../../fastmedical_front/imagen/icono/b_ver_on.gif ^ Puntos Control");
         }
         return $resultado;
     }
@@ -80,15 +80,15 @@ class LLaboratorio {
 ////        print_r($columna);
 //        foreach ($resultado as $key => $value) {
 //            if ($key == 0) {
-//                array_push($resultado[$key], "../../../../medifacil_front/imagen/icono/blank.gif");
+//                array_push($resultado[$key], "../../../../fastmedical_front/imagen/icono/blank.gif");
 //            } else {
-//                array_push($resultado[$key], "../../../../medifacil_front/imagen/icono/Upload.png ^ Subir");
+//                array_push($resultado[$key], "../../../../fastmedical_front/imagen/icono/Upload.png ^ Subir");
 //            }
 //            //////////////
 //            if ($key == $columna - 1) {
-//                array_push($resultado[$key], "../../../../medifacil_front/imagen/icono/blank.gif");
+//                array_push($resultado[$key], "../../../../fastmedical_front/imagen/icono/blank.gif");
 //            } else {
-//                array_push($resultado[$key], "../../../../medifacil_front/imagen/icono/agt_upgrade_misc.png ^ Bajar");
+//                array_push($resultado[$key], "../../../../fastmedical_front/imagen/icono/agt_upgrade_misc.png ^ Bajar");
 //            }
 //            array_push($resultado[$key], $columna);
 //        }
@@ -109,15 +109,15 @@ class LLaboratorio {
 //        print_r($columna);
         foreach ($resultado as $key => $value) {
             if ($key == $columna - 1) {
-                array_push($resultado[$key], "../../../../medifacil_front/imagen/icono/blank.gif");
+                array_push($resultado[$key], "../../../../fastmedical_front/imagen/icono/blank.gif");
             } else {
-                array_push($resultado[$key], "../../../../medifacil_front/imagen/icono/agt_upgrade_misc.png ^ Subir");
+                array_push($resultado[$key], "../../../../fastmedical_front/imagen/icono/agt_upgrade_misc.png ^ Subir");
             }
             //////////////
             if ($key == 0) {
-                array_push($resultado[$key], "../../../../medifacil_front/imagen/icono/blank.gif");
+                array_push($resultado[$key], "../../../../fastmedical_front/imagen/icono/blank.gif");
             } else {
-                array_push($resultado[$key], "../../../../medifacil_front/imagen/icono/arribaFecha.png ^ Bajar");
+                array_push($resultado[$key], "../../../../fastmedical_front/imagen/icono/arribaFecha.png ^ Bajar");
             }
             array_push($resultado[$key], $columna);
         }
@@ -125,12 +125,12 @@ class LLaboratorio {
         ///////
 
         foreach ($resultado as $i => $valuey) {
-            array_push($resultado[$i], "../../../../medifacil_front/imagen/icono/blank.gif ^ 1"); //muestra
-            array_push($resultado[$i], "../../../../medifacil_front/imagen/icono/Book.png ^ Detalle"); //detalle
+            array_push($resultado[$i], "../../../../fastmedical_front/imagen/icono/blank.gif ^ 1"); //muestra
+            array_push($resultado[$i], "../../../../fastmedical_front/imagen/icono/Book.png ^ Detalle"); //detalle
 
-            array_push($resultado[$i], "../../../../medifacil_front/imagen/icono/i_icq_dnd.png ^ Eliminar"); //eliminar
+            array_push($resultado[$i], "../../../../fastmedical_front/imagen/icono/i_icq_dnd.png ^ Eliminar"); //eliminar
 
-            array_push($resultado[$i], "../../../../medifacil_front/imagen/icono/blank.gif ^ 1"); //recibir
+            array_push($resultado[$i], "../../../../fastmedical_front/imagen/icono/blank.gif ^ 1"); //recibir
         }
 
 //        foreach ($resultado as $j => $valuem) {
@@ -177,7 +177,7 @@ class LLaboratorio {
         $oDLaboratorio = new DLaboratorio();
         $rs = $oDLaboratorio->dCargartablaPerfiles();
         foreach ($rs as $key => $value) {
-            array_push($rs[$key], "../../../../medifacil_front/imagen/icono/smile9.gif ^ Seleccionar");
+            array_push($rs[$key], "../../../../fastmedical_front/imagen/icono/smile9.gif ^ Seleccionar");
         }
         return $rs;
     }
@@ -186,8 +186,8 @@ class LLaboratorio {
         $oDLaboratorio = new DLaboratorio();
         $rs = $oDLaboratorio->dCargarTablaPerfilesExamenes($parametros);
         foreach ($rs as $key => $value) {
-            array_push($rs[$key], "../../../../medifacil_front/imagen/icono/editar.png ^ Editar");
-            array_push($rs[$key], "../../../../medifacil_front/imagen/icono/eliminar.gif ^ Eliminar");
+            array_push($rs[$key], "../../../../fastmedical_front/imagen/icono/editar.png ^ Editar");
+            array_push($rs[$key], "../../../../fastmedical_front/imagen/icono/eliminar.gif ^ Eliminar");
         }
         return $rs;
     }
@@ -197,7 +197,7 @@ class LLaboratorio {
         $oDLaboratorio = new DLaboratorio();
         $rs = $oDLaboratorio->dCargarTablaUsuariosHabilitadosXPuntoControl($parametros);
         foreach ($rs as $key => $value) {
-            array_push($rs[$key], "../../../../medifacil_front/imagen/icono/eliminar.gif ^ Eliminar");
+            array_push($rs[$key], "../../../../fastmedical_front/imagen/icono/eliminar.gif ^ Eliminar");
         }
         return $rs;
     }
@@ -210,11 +210,11 @@ class LLaboratorio {
 
 
 //        foreach ($rs as $i => $valuey) {
-//            array_push($rs[$i], "../../../../medifacil_front/imagen/icono/editar.png ^ Editar Examen");
+//            array_push($rs[$i], "../../../../fastmedical_front/imagen/icono/editar.png ^ Editar Examen");
 //        }
 //
 //        foreach ($rs as $j => $valuem) {
-//            array_push($rs[$j], "../../../../medifacil_front/imagen/icono/cancel.png ^ Eliminar Examen");
+//            array_push($rs[$j], "../../../../fastmedical_front/imagen/icono/cancel.png ^ Eliminar Examen");
 //        }
 
         return $rs;
@@ -235,11 +235,11 @@ class LLaboratorio {
 
 
 //        foreach ($rs as $i => $valuey) {
-//            array_push($rs[$i], "../../../../medifacil_front/imagen/icono/editar.png ^ Editar Examen");
+//            array_push($rs[$i], "../../../../fastmedical_front/imagen/icono/editar.png ^ Editar Examen");
 //        }
 //
 //        foreach ($rs as $j => $valuem) {
-//            array_push($rs[$j], "../../../../medifacil_front/imagen/icono/cancel.png ^ Eliminar Examen");
+//            array_push($rs[$j], "../../../../fastmedical_front/imagen/icono/cancel.png ^ Eliminar Examen");
 //        }
 
         return $rs;
@@ -421,11 +421,11 @@ class LLaboratorio {
 
 
 //        foreach ($rs as $i => $valuey) {
-//            array_push($rs[$i], "../../../../medifacil_front/imagen/icono/editar.png ^ Editar Examen");
+//            array_push($rs[$i], "../../../../fastmedical_front/imagen/icono/editar.png ^ Editar Examen");
 //        }
 //
 //        foreach ($rs as $j => $valuem) {
-//            array_push($rs[$j], "../../../../medifacil_front/imagen/icono/cancel.png ^ Eliminar Examen");
+//            array_push($rs[$j], "../../../../fastmedical_front/imagen/icono/cancel.png ^ Eliminar Examen");
 //        }
 
         return $rs;
@@ -445,9 +445,9 @@ class LLaboratorio {
 
         foreach ($rs as $key => $value) {
             if (trim($value[5]) == "xxxxxyyyyy") {
-                array_push($rs[$key], "../../../../medifacil_front/imagen/icono/agt_action_success_desh.png ^ No Enlazado");
+                array_push($rs[$key], "../../../../fastmedical_front/imagen/icono/agt_action_success_desh.png ^ No Enlazado");
             } else {
-                array_push($rs[$key], "../../../../medifacil_front/imagen/icono/button_ok.png ^ Enlazado");
+                array_push($rs[$key], "../../../../fastmedical_front/imagen/icono/button_ok.png ^ Enlazado");
             }
         }
         return $rs;
@@ -487,7 +487,7 @@ class LLaboratorio {
         $oDLaboratorio = new DLaboratorio();
         $rs = $oDLaboratorio->dprecioExamenesxAfiliacion($parametros);
 //        foreach ($rs as $key => $value) {
-//            array_push($rs[$key], "../../../../medifacil_front/imagen/icono/smile9.gif ^ Seleccionar");
+//            array_push($rs[$key], "../../../../fastmedical_front/imagen/icono/smile9.gif ^ Seleccionar");
 //        }
         return $rs;
     }
@@ -668,23 +668,23 @@ class LLaboratorio {
         $resultado = $oDLaboratorio->DeditarCombo($datos);
 // 
         foreach ($resultado as $i => $valuey) {
-            array_push($resultado[$i], "../../../../medifacil_front/imagen/icono/editar.png ^ Editar");
-            array_push($resultado[$i], "../../../../medifacil_front/imagen/icono/i_icq_dnd.png ^ Eliminar");
+            array_push($resultado[$i], "../../../../fastmedical_front/imagen/icono/editar.png ^ Editar");
+            array_push($resultado[$i], "../../../../fastmedical_front/imagen/icono/i_icq_dnd.png ^ Eliminar");
 
             if ($i == 0) {
-                array_push($resultado[$i], "../../../../medifacil_front/imagen/icono/blank.gif");
+                array_push($resultado[$i], "../../../../fastmedical_front/imagen/icono/blank.gif");
             } else {
-                array_push($resultado[$i], "../../../../medifacil_front/imagen/icono/arribaFecha.png ^ Subir");
+                array_push($resultado[$i], "../../../../fastmedical_front/imagen/icono/arribaFecha.png ^ Subir");
             }
             // ============================================================================================         
             if ($i == $datos["iTemMax"] - 1) {
-                array_push($resultado[$i], "../../../../medifacil_front/imagen/icono/blank.gif");
+                array_push($resultado[$i], "../../../../fastmedical_front/imagen/icono/blank.gif");
             } else {
-                array_push($resultado[$i], "../../../../medifacil_front/imagen/icono/agt_upgrade_misc.png ^ Bajar");
+                array_push($resultado[$i], "../../../../fastmedical_front/imagen/icono/agt_upgrade_misc.png ^ Bajar");
             }
 
-//            array_push($resultado[$i], "../../../../medifacil_front/imagen/icono/arribaFecha.png ^ Arriba");
-//            array_push($resultado[$i], "../../../../medifacil_front/imagen/icono/agt_upgrade_misc.png ^ Abajo");
+//            array_push($resultado[$i], "../../../../fastmedical_front/imagen/icono/arribaFecha.png ^ Arriba");
+//            array_push($resultado[$i], "../../../../fastmedical_front/imagen/icono/agt_upgrade_misc.png ^ Abajo");
         }
 
         return $resultado;
@@ -883,10 +883,10 @@ class LLaboratorio {
         $oDLaboratorio = new DLaboratorio();
         $rs = $oDLaboratorio->dCargarTablaEstadoExamenes($parametros);
         foreach ($rs as $key => $value) {
-            array_push($rs[$key], "../../../../medifacil_front/imagen/icono/exec.gif ^ procesar");
-            array_push($rs[$key], "../../../../medifacil_front/imagen/icono/imprimir.png ^ Imprimir");
-            array_push($rs[$key], "../../../../medifacil_front/imagen/icono/kdmconfig1.gif ^ reprocesar");
-            array_push($rs[$key], "../../../../medifacil_front/imagen/icono/anular.png ^ anular");
+            array_push($rs[$key], "../../../../fastmedical_front/imagen/icono/exec.gif ^ procesar");
+            array_push($rs[$key], "../../../../fastmedical_front/imagen/icono/imprimir.png ^ Imprimir");
+            array_push($rs[$key], "../../../../fastmedical_front/imagen/icono/kdmconfig1.gif ^ reprocesar");
+            array_push($rs[$key], "../../../../fastmedical_front/imagen/icono/anular.png ^ anular");
         }
         return $rs;
     }

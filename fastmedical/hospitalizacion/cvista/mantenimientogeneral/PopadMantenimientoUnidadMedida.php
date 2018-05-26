@@ -45,13 +45,13 @@ if ($arrayDatosUnidadMedida[0][3] == 1) {
     $toolbar2 = new ToollBar();
     ?>
     <?php
-    $toolbar1->SetBoton("grabarUnidadMedida", "Guardar", "btn", "onclick,onkeypress", "grabarUnidadMedida()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/grabar.png", "", "", 1);
+    $toolbar1->SetBoton("grabarUnidadMedida", "Guardar", "btn", "onclick,onkeypress", "grabarUnidadMedida()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/grabar.png", "", "", 1);
     $toolbar1->Mostrar();
     ?> 
 </div>
 <div style="float:left; padding-left: 15px;">
     <?php
-    $toolbar2->SetBoton("cerrarMantenimientoUnidadMedida", "Cerrar  ", "btn", "onclick,onkeypress", "cerrarMantenimientoUnidadMedida()", $_SESSION['path_principal'] . "../medifacil_front/imagen/icono/cerrar1.gif", "", "", 1);
+    $toolbar2->SetBoton("cerrarMantenimientoUnidadMedida", "Cerrar  ", "btn", "onclick,onkeypress", "cerrarMantenimientoUnidadMedida()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/cerrar1.gif", "", "", 1);
     $toolbar2->Mostrar();
     ?> 
 </div>  

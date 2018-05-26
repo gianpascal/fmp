@@ -48,7 +48,7 @@ $resultado = $o_ActionActoMedico->aListarSintomaticos($datos);
                     <h1>Sintomatico Respiratorio</h1>
                 </td>
                 <td style="width:3%">
-                    <img id="Div_SintomaticoCuerpoicono" src='../../../../medifacil_front/imagen/icono/plegar.png' title='plegar' alt=""/>
+                    <img id="Div_SintomaticoCuerpoicono" src='../../../../fastmedical_front/imagen/icono/plegar.png' title='plegar' alt=""/>
                 </td>
             </tr>
         </table>

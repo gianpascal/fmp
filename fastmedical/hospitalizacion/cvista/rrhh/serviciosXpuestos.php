@@ -28,7 +28,7 @@ $oActionRrhh = new ActionRrhh();
                 <div id="Div_btnAgregar" align="center"  style="width:100%;height:50%;display: none">
                     <?php 
                         if($_SESSION["permiso_formulario_servicio"][205]["AGREGAR_SERVICIO_X_PUESTO"]==1){
-                            echo "<a href=\"javascript:irAsignacionServiciosxPuestos()\"><img src=\"../../../../medifacil_front/imagen/btn/b_agregar_on.gif\"></a>&nbsp;&nbsp;&nbsp;&nbsp;";
+                            echo "<a href=\"javascript:irAsignacionServiciosxPuestos()\"><img src=\"../../../../fastmedical_front/imagen/btn/b_agregar_on.gif\"></a>&nbsp;&nbsp;&nbsp;&nbsp;";
                         }
                     ?>
                 </div>
@@ -55,7 +55,7 @@ $oActionRrhh = new ActionRrhh();
                 <div id="Div_btnAgregar" align="center"  style="width:100%;height:50%">
                     <?php 
                         if($_SESSION["permiso_formulario_servicio"][205]["REGRESAR_SERVICIO_X_PUESTO"]==1)
-                            echo "<a href=\"javascript:regresarAsignacionServiciosxPuestos()\"><img src=\"../../../../medifacil_front/imagen/btn/b_regresar_on.gif\"></a>&nbsp;&nbsp;&nbsp;&nbsp;";
+                            echo "<a href=\"javascript:regresarAsignacionServiciosxPuestos()\"><img src=\"../../../../fastmedical_front/imagen/btn/b_regresar_on.gif\"></a>&nbsp;&nbsp;&nbsp;&nbsp;";
                     ?>
                 </div>
 

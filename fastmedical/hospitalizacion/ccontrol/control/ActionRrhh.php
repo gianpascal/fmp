@@ -2603,9 +2603,9 @@ class ActionRrhh {
                 $r = 0;
                 foreach ($datosEmpleadoProg as $j => $val) {
                     if ($empleados[$i][0] == $datosEmpleadoProg[$j][0]) {
-                        $arrayFilas[$filx + $r][0] = "../../../../medifacil_front/imagen/icono/editar.png ^ Editar";
-                        $arrayFilas[$filx + $r][1] = "../../../../medifacil_front/imagen/icono/timer.png ^ Ver";
-                        $arrayFilas[$filx + $r][2] = "../../../../medifacil_front/imagen/icono/abrir16.png ^  Agragar otro turno";
+                        $arrayFilas[$filx + $r][0] = "../../../../fastmedical_front/imagen/icono/editar.png ^ Editar";
+                        $arrayFilas[$filx + $r][1] = "../../../../fastmedical_front/imagen/icono/timer.png ^ Ver";
+                        $arrayFilas[$filx + $r][2] = "../../../../fastmedical_front/imagen/icono/abrir16.png ^  Agragar otro turno";
                         $arrayFilas[$filx + $r][3] = $empleados[$i][0];
                         $arrayFilas[$filx + $r][4] = $empleados[$i][1] . " " . $empleados[$i][2] . " " . $empleados[$i][3];
 //--$arrayFilas[$filx+$r][5]="0.00"; //este dato se inserta mas abajo
@@ -2618,16 +2618,16 @@ class ActionRrhh {
                         if ($r == $datosEmpleadoProg[$j][1]) {
                             for ($p = 0; $p < $r; $p++) {
                                 if ($p > 0)
-                                    $arrayFilas[$filx - $p][2] = "../../../../medifacil_front/imagen/icono/no_add.png ^ ...";
+                                    $arrayFilas[$filx - $p][2] = "../../../../fastmedical_front/imagen/icono/no_add.png ^ ...";
                                 unset($datosEmpleadoProg[$j - $p]);
                             }
                             break;
                         }
                     }
                     else {
-                        $arrayFilas[$filx][0] = "../../../../medifacil_front/imagen/icono/grabar.png ^ Grabar";
-                        $arrayFilas[$filx][1] = "../../../../medifacil_front/imagen/icono/timer.png ^ Ver";
-                        $arrayFilas[$filx][2] = "../../../../medifacil_front/imagen/icono/abrir16.png ^  Agragar otro turno";
+                        $arrayFilas[$filx][0] = "../../../../fastmedical_front/imagen/icono/grabar.png ^ Grabar";
+                        $arrayFilas[$filx][1] = "../../../../fastmedical_front/imagen/icono/timer.png ^ Ver";
+                        $arrayFilas[$filx][2] = "../../../../fastmedical_front/imagen/icono/abrir16.png ^  Agragar otro turno";
                         $arrayFilas[$filx][3] = $empleados[$i][0];
                         $arrayFilas[$filx][4] = $empleados[$i][1] . " " . $empleados[$i][2] . " " . $empleados[$i][3];
 //--$arrayFilas[$filx][5]="0.00"; //este dato se inserta mas abajo
@@ -2638,9 +2638,9 @@ class ActionRrhh {
                     }
                 }
             } else {
-                $arrayFilas[$filx][0] = "../../../../medifacil_front/imagen/icono/grabar.png ^ Grabar";
-                $arrayFilas[$filx][1] = "../../../../medifacil_front/imagen/icono/timer.png ^ Ver";
-                $arrayFilas[$filx][2] = "../../../../medifacil_front/imagen/icono/abrir16.png ^  Agragar otro turno";
+                $arrayFilas[$filx][0] = "../../../../fastmedical_front/imagen/icono/grabar.png ^ Grabar";
+                $arrayFilas[$filx][1] = "../../../../fastmedical_front/imagen/icono/timer.png ^ Ver";
+                $arrayFilas[$filx][2] = "../../../../fastmedical_front/imagen/icono/abrir16.png ^  Agragar otro turno";
                 $arrayFilas[$filx][3] = $empleados[$i][0];
                 $arrayFilas[$filx][4] = $empleados[$i][1] . " " . $empleados[$i][2] . " " . $empleados[$i][3];
 //--$arrayFilas[$filx][5]="0.00"; //este dato se inserta mas abajo
@@ -2710,7 +2710,7 @@ class ActionRrhh {
 
                         $turnoProgramado = $oLRrhh->listaTurnoProgramado($idEmpleadoProgramado[$j][0], $datos["iIdProgramacionpersonal"], $datos["mes"], $datos["anio"], 'listaTurnoProgramado', $datosEmpleados[$i][1], $datos["idSEACC"]);
                         if ($turnoProgramado && $turnoProgramado[0][2] == null)
-                            $arrayFilas[$i][0] = "../../../../medifacil_front/imagen/icono/adicionar.png ^ Adicionar";
+                            $arrayFilas[$i][0] = "../../../../fastmedical_front/imagen/icono/adicionar.png ^ Adicionar";
                         $flag = "SI";
                         unset($idEmpleadoProgramado[$j]);
                         break;
@@ -2875,9 +2875,9 @@ class ActionRrhh {
                 $r = 0;
                 foreach ($datosEmpleadoProg as $j => $val) {
                     if ($empleados[$i][0] == $datosEmpleadoProg[$j][0]) {
-                        $arrayFilas[$filx + $r][0] = "../../../../medifacil_front/imagen/icono/editar.png ^ Editar";
-                        $arrayFilas[$filx + $r][1] = "../../../../medifacil_front/imagen/icono/timer.png ^ Ver";
-                        $arrayFilas[$filx + $r][2] = "../../../../medifacil_front/imagen/icono/abrir16.png ^  Agregar otro turno";
+                        $arrayFilas[$filx + $r][0] = "../../../../fastmedical_front/imagen/icono/editar.png ^ Editar";
+                        $arrayFilas[$filx + $r][1] = "../../../../fastmedical_front/imagen/icono/timer.png ^ Ver";
+                        $arrayFilas[$filx + $r][2] = "../../../../fastmedical_front/imagen/icono/abrir16.png ^  Agregar otro turno";
                         $arrayFilas[$filx + $r][3] = $empleados[$i][0];
                         $arrayFilas[$filx + $r][4] = $empleados[$i][1] . " " . $empleados[$i][2] . " " . $empleados[$i][3];
 //--$arrayFilas[$filx+$r][5]="0.00"; //este dato se inserta mas abajo
@@ -2891,16 +2891,16 @@ class ActionRrhh {
                         if ($r == $numProg) {
                             for ($p = 0; $p < $r; $p++) {
                                 if ($p > 0)
-                                    $arrayFilas[$filx - $p][2] = "../../../../medifacil_front/imagen/icono/no_add.png ^ ...";
+                                    $arrayFilas[$filx - $p][2] = "../../../../fastmedical_front/imagen/icono/no_add.png ^ ...";
                                 unset($datosEmpleadoProg[$j - $p]);
                             }
                             break;
                         }
                     }
                     else {
-                        $arrayFilas[$filx][0] = "../../../../medifacil_front/imagen/icono/grabar.png ^ Grabar";
-                        $arrayFilas[$filx][1] = "../../../../medifacil_front/imagen/icono/timer.png ^ Ver";
-                        $arrayFilas[$filx][2] = "../../../../medifacil_front/imagen/icono/abrir16.png ^  Agregar otro turno";
+                        $arrayFilas[$filx][0] = "../../../../fastmedical_front/imagen/icono/grabar.png ^ Grabar";
+                        $arrayFilas[$filx][1] = "../../../../fastmedical_front/imagen/icono/timer.png ^ Ver";
+                        $arrayFilas[$filx][2] = "../../../../fastmedical_front/imagen/icono/abrir16.png ^  Agregar otro turno";
                         $arrayFilas[$filx][3] = $empleados[$i][0];
                         $arrayFilas[$filx][4] = $empleados[$i][1] . " " . $empleados[$i][2] . " " . $empleados[$i][3];
 //--$arrayFilas[$filx][5]="0.00"; //este dato se inserta mas abajo
@@ -2911,9 +2911,9 @@ class ActionRrhh {
                     }
                 }
             } else {
-                $arrayFilas[$filx][0] = "../../../../medifacil_front/imagen/icono/grabar.png ^ Grabar";
-                $arrayFilas[$filx][1] = "../../../../medifacil_front/imagen/icono/timer.png ^ Ver";
-                $arrayFilas[$filx][2] = "../../../../medifacil_front/imagen/icono/abrir16.png ^  Agregar otro turno";
+                $arrayFilas[$filx][0] = "../../../../fastmedical_front/imagen/icono/grabar.png ^ Grabar";
+                $arrayFilas[$filx][1] = "../../../../fastmedical_front/imagen/icono/timer.png ^ Ver";
+                $arrayFilas[$filx][2] = "../../../../fastmedical_front/imagen/icono/abrir16.png ^  Agregar otro turno";
                 $arrayFilas[$filx][3] = $empleados[$i][0];
                 $arrayFilas[$filx][4] = $empleados[$i][1] . " " . $empleados[$i][2] . " " . $empleados[$i][3];
 //--$arrayFilas[$filx][5]="0.00"; //este dato se inserta mas abajo
@@ -2982,7 +2982,7 @@ class ActionRrhh {
 
                         $turnoProgramado = $oLRrhh->listaTurnoProgramado($idEmpleadoProgramado[$j][0], $datos["iIdProgramacionpersonal"], $datos["mes"], $datos["anio"], 'listaTurnoProgramado', $datosEmpleados[$i][1], $datos["idSEACC"], $datos["cboTipoContrato"]);
                         if ($turnoProgramado && $turnoProgramado[0][2] == null)
-                            $arrayFilas[$i][0] = "../../../../medifacil_front/imagen/icono/adicionar.png ^ Adicionar";
+                            $arrayFilas[$i][0] = "../../../../fastmedical_front/imagen/icono/adicionar.png ^ Adicionar";
                         $flag = "SI";
                         unset($idEmpleadoProgramado[$j]);
                         break;
