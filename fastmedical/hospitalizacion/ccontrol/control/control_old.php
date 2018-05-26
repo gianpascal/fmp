@@ -32,7 +32,11 @@ if (ini_get('memory_limit') == "2048M" && ini_get('max_input_time') == "90000" &
         $resultado = $islogin;
         $estado = '0';
     } else {
-        $estado = '0';
+        
+        //Borrar
+        $estado = '1';
+        //Descomentar
+        /*$estado = '0';
         if (isset($_SESSION)) {
             require_once("ActionLogin.php");
             $oActionLogin = new ActionLogin();
@@ -52,7 +56,7 @@ if (ini_get('memory_limit') == "2048M" && ini_get('max_input_time') == "90000" &
             } else {
                 $otroIp = 0;
             }
-        }
+        }*/
     }
     if ($estado == '1') {
         //echo $nuevaSesion;
@@ -1254,11 +1258,27 @@ if (ini_get('memory_limit') == "2048M" && ini_get('max_input_time') == "90000" &
                     $datos["codigoPaciente"] = $parametros["p4"];
                     $datos["codigoServicio"] = $parametros["p2"];
                     $datos["estado"] = $parametros["p5"];
+                    $datos["meses_nacimiento"] = $parametros["p6"];
                     //print_r($parametros);
                     $resultado = $o_ActionActoMedico->aCargarCuerpoHC($datos);
                     //require_once '../../cvista/actomedico/vistaAtencionMedicaHC.php';
                     break;
                 }
+
+            case 'cargarCuerpoHCNinoSano': {
+                    require_once("ActionActoMedico.php");
+                    $o_ActionActoMedico = new ActionActoMedico();
+                    $datos["c_cod_ser_pro"] = $parametros["p2"];
+                    $datos["codigoProgramacion"] = $parametros["p3"];
+                    $datos["codigoPaciente"] = $parametros["p4"];
+                    $datos["codigoServicio"] = $parametros["p2"];
+                    $datos["estado"] = $parametros["p5"];
+                    //print_r($parametros);
+                    $resultado = $o_ActionActoMedico->aCargarCuerpoHCNinoSano($datos);
+                    //require_once '../../cvista/actomedico/vistaAtencionMedicaHC.php';
+                    break;
+                }
+
             case 'insertaActualizaSintomatico': {
                     require_once("ActionActoMedico.php");
                     $o_ActionActoMedico = new ActionActoMedico();
@@ -1444,6 +1464,27 @@ if (ini_get('memory_limit') == "2048M" && ini_get('max_input_time') == "90000" &
                     $resultado = $o_ActionActoMedico->llamaralPacienteActoMedico($datos);
                     break;
                 }
+	    case 'llamarFechaNacimiento2':{
+               //var_dump('entrooooo');
+                    require_once("ActionActoMedico.php");
+                    $o_ActionActoMedico = new ActionActoMedico();
+                    $datos["codigoPaciente"] = $parametros["p2"];
+                    $resultado = $o_ActionActoMedico->llamarFechaNacimiento2($datos);
+                    $resultado = json_encode($resultado);
+                    //var_dump('<pre>',$resultado);exit();
+                    break;
+            }
+
+            case 'llamarNumMeses2':{
+                    require_once("ActionActoMedico.php");
+                    $o_ActionActoMedico = new ActionActoMedico();
+                    $datos["fecha"] = $parametros["p2"];
+                    $resultado = $o_ActionActoMedico->llamarNumMeses2($datos);
+                    $resultado = json_encode($resultado);
+                    //var_dump('<pre>',$resultado);exit();
+                    break;
+            }
+            
             case 'datosPersonalesActoMedico' : {
                     require_once("ActionActoMedico.php");
                     $o_ActionActoMedico = new ActionActoMedico();
@@ -4516,7 +4557,7 @@ if (ini_get('memory_limit') == "2048M" && ini_get('max_input_time') == "90000" &
             case 'verHCReciente': {
                     require_once("ActionActoMedico.php");
                     $o_ActionActoMedico = new ActionActoMedico();
-                    $resultado = $o_ActionActoMedico->verHCReciente($parametros["p2"]);
+                    $resultado = $o_ActionActoMedico->verHCReciente($parametros["p2"],$parametros['p3']);
                     break;
                 }
             case 'arbolHCFechas': {
@@ -5682,7 +5723,7 @@ if (ini_get('memory_limit') == "2048M" && ini_get('max_input_time') == "90000" &
                     break;
                 }
             case 'abrirAreaCentroCosto': {
-                    require_once("ActionabrirPopadAreasPorCoordinador.php");
+                    require_once("ActionRrhh.php");
                     $o_ActionRrhh = new ActionRrhh();
                     $resultado = $o_ActionRrhh->abrirAreaCentroCosto();
                     break;

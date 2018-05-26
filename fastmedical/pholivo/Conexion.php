@@ -96,7 +96,7 @@ class Conexion {
         $arrayDsnMSSQL['dbuser'] = 'sa'; //simedhgranja';
         $arrayDsnMSSQL['dbpasw'] = '123456'; //p3ch3';
 //        $arrayDsnMSSQL['dbhost'] = '192.168.88.51';
-        $arrayDsnMSSQL['dbhost'] = '192.168.1.109';
+        $arrayDsnMSSQL['dbhost'] = 'GARROYO-L\SQLEXPRESS';
         $arrayDsnMSSQL['dbdriv'] = 'SQLSRV';
         return $arrayDsnMSSQL;
     }
@@ -105,8 +105,8 @@ class Conexion {
         $arrayDsnMSSQL['dbname'] = 'yachayPanel';
       
         $arrayDsnMSSQL['dbuser'] = 'sa';
-        $arrayDsnMSSQL['dbpasw'] = '123456';
-        $arrayDsnMSSQL['dbhost'] = '192.168.1.109';
+        $arrayDsnMSSQL['dbpasw'] = 'Dive2018$';
+        $arrayDsnMSSQL['dbhost'] = 'GARROYO-L\SQLEXPRESS';
     //    $arrayDsnMSSQL['dbhost'] = 'DESKTOP-FRC01VR\gianp';
         $arrayDsnMSSQL['dbdriv'] = 'SQLSRV';
         return $arrayDsnMSSQL;
@@ -116,8 +116,8 @@ class Conexion {
         $arrayDsnMSSQL['dbname'] = 'yachay';
        
         $arrayDsnMSSQL['dbuser'] = 'sa';
-        $arrayDsnMSSQL['dbpasw'] = '123456';
-        $arrayDsnMSSQL['dbhost'] = '192.168.1.109';
+        $arrayDsnMSSQL['dbpasw'] = 'Dive2018$';
+        $arrayDsnMSSQL['dbhost'] = 'GARROYO-L\SQLEXPRESS';
         $arrayDsnMSSQL['dbdriv'] = 'SQLSRV';
         return $arrayDsnMSSQL;
     }

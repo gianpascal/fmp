@@ -7,7 +7,7 @@ if (!isset($_SESSION)) {
 ?>
 <html>
     <head>
-        <title>.: Sistema M&eacute;dico Hospitalario :: SIMEDH :.</title>
+        <title>.: Sistema M&eacute;dico Hospitalario :: FAST MEDICAL :.</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <!--<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">-->
         <!-- ================ ESTILOS CSS   ========================== -->
@@ -53,6 +53,8 @@ if (!isset($_SESSION)) {
             @import url("../../../../medifacil_front/estilo/dhtmlxwindows/dhtmlxwindows_dhx_skyblue.css");
             @import url("../../../../medifacil_front/estilo/dhtmlxwindows/dhtmlxwindows_dhx_terrace.css");
             @import url("../../../../medifacil_front/estilo/dhtmlxwindows/dhtmlxwindows_dhx_web.css");
+            /*modulo niño sano
+            @import url("../../../../medifacil_front/estilo/ninosano.css");*/
 
         </style>
         <style>
@@ -83,9 +85,14 @@ if (!isset($_SESSION)) {
         <!-- ================ ACTO MEDICO ============ -->
         <script type="text/javascript" src="../../../javascript/actomedico/actomedico.js"></script>
         <script type="text/javascript" src="../../../javascript/actomedico/llamarPaciente2.js"></script>
+        <!--modulo niño sano
+        <script type="text/javascript" src="../../../javascript/actomedico/ninosano.js"></script>-->
         <!-- ================ FARMACIA ============ -->
         <script type="text/javascript" src="../../../javascript/farmacia/farmacia.js"></script>
 
+         <!-- ================ JQUERY ============= -->
+        <script type="text/javascript" src="../../../javascript/jquery-3.3.1.min.js"></script>
+        
         <!--<script type="text/javascript" src="../../../javascript/ordenes.js"></script>-->
         <script type="text/javascript" src="../../../javascript/rrhh.js"></script>
         <script type="text/javascript" src="../../../javascript/menus.js"></script>
@@ -144,6 +151,9 @@ if (!isset($_SESSION)) {
         <script type="text/javascript" src="../../../javascript/js_funciones.js"></script>
         <script type="text/javascript" src="../../../javascript/js_Simi.js"></script>
         <script type="text/javascript" src="../../../javascript/uploader.js"></script>
+
+       
+        
         <!-- ================ FUNCIONES - MODULOS ============= -->
         <script type="text/javascript" src="../../../javascript/cronograma.js"></script>        <!--CRONOGRAMA-->
         <!--=============================CAJA===================================-->
@@ -315,8 +325,8 @@ if (!isset($_SESSION)) {
                 <div style="clear:both"></div>
             </div>
             <div id="Footer">
-                <div id="textizq">Copyright &copy; Todos los Derechos Reservados - 2017</div>
-                <div id="textder"><?php echo "Ing. Giancarlo Arroyo - gianpascal@gmail.com"; //$_SESSION["nom_empresa"]                                                ?></div>
+                <div id="textizq">Copyright ©2018 Fast Medical. Todos los derechos reservados.    </div>
+                <div id="textder"><?php echo "<a class=\"redirigir\" href=\"http:\\\\www.conastec.com.pe\" target=\"_blank\">CONASTEC</a>"; //$_SESSION["nom_empresa"]                                                ?></div>
             </div>
         </div>
     </body>

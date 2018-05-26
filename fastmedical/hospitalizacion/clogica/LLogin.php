@@ -102,19 +102,24 @@ class LLogin {
 
 ///////////****SOLICITA PERMISOS PARA FORMULARIO****////////////////
     public function getUsuarioPermisoFormulario($id_sistema, $id_persona) {
-
+       // echo "getUsuarioPermisoFormulario";
         $rs = $this->dLogin->getArrayUsuarioPermisoFormulario($id_sistema, $id_persona);
+        //var_dump($rs);
         $total = count($rs);
+        //echo "Total $total";
         $permiso_formulario = array();
         if ($total > 0) {
             foreach ($rs as $fila) {
                 $permiso_formulario[$fila['iid_formulario']] = $fila;
             }
-            //session_start();
+            session_start();
             $_SESSION['permiso_formulario'] = $permiso_formulario;
+            //print_r($_SESSION['permiso_formulario']);
             $resultado = 1;
-        } else
+        } else {
             $resultado = 0;
+        }
+           
         return $resultado;
     }
 
@@ -149,7 +154,8 @@ class LLogin {
 
     public function verificaSesion($accion, $sesion, $tiempo, $sistema, $contenido, $idusuario, $tcaduca, $ip, $id) {
         $o_DLogin = new DLogin();
-        $rs = $o_DLogin->getAccionSesion($accion, $sesion, $tiempo, $sistema, $contenido, $idusuario, $tcaduca, $ip, $id);
+        //$rs = $o_DLogin->getAccionSesion($accion, $sesion, $tiempo, $sistema, $contenido, $idusuario, $tcaduca, $ip, $id);
+        $rs=$this->dLogin->getAccionSesion($accion, $sesion, $tiempo, $sistema, $contenido, $idusuario, $tcaduca, $ip, $id);
         return $rs;
     }
 

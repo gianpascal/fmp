@@ -8,7 +8,7 @@
 $alineacion=1;
 $path='../menu/';
 $id_sistema='1';
-
+//var_dump($_SESSION);
 $num = count($_SESSION['permiso_formulario']);
 
 if($num>0) {
@@ -151,7 +151,8 @@ else { //header("Location: ../../../index.php?out=1");
     //echo 'Datos de menu no registrados';
     ?>
 <script type="text/javascript">
-    caduca_sesion()
+//alert('peche');
+  //  caduca_sesion()
 </script>
     <?php
 }
