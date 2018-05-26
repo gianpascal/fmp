@@ -39,8 +39,8 @@ class ActionLogin{
                     $rs=$oLLogin->verificaSesion($accion,$sesion, $tiempo, $sistema,$contenido,$idusuario,$tcaduca,$ip,'');
                     //$rs=$this->verificaSesion($accion,$sesion, $tiempo, $sistema,$contenido,$idusuario,$tcaduca,$ip,'');
                     //print_r($rs);
-                 //   echo "<br>Paso 6";
-                    $_SESSION['id']=$rs[0]['respuesta'];
+                   
+                    $_SESSION['id']=$rs[0]['idInt'];
 // print_r($_SESSION);
                     //header("location: ../../cvista/inicio/inicio.php");
                 }

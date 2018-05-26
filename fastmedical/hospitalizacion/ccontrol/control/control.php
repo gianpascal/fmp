@@ -3412,7 +3412,7 @@ if (ini_get('memory_limit') == "2048M" && ini_get('max_input_time') == "90000" &
                     $resultado = "";
                     break;
                 }
-            case 'validatePassword': {//Actualiza contrase�a de usuario
+            case 'validatePassword': {//Actualiza contraseóa de usuario
                     require_once("ActionUsuario.php");
                     $o_ActionUsuario = new ActionUsuario();
                     $resultado = $o_ActionUsuario->validatePassword($parametros);
@@ -3497,7 +3497,7 @@ if (ini_get('memory_limit') == "2048M" && ini_get('max_input_time') == "90000" &
                     break;
                 }
 
-            case 'manteTriaje': {//Guarda nuevo triaje de paciente en su programaci�n
+            case 'manteTriaje': {//Guarda nuevo triaje de paciente en su programación
                     require_once("ActionCita.php");
                     $o_ActionCita = new ActionCita();
                     $resultado = $o_ActionCita->manteTriaje($parametros);
@@ -3978,7 +3978,7 @@ if (ini_get('memory_limit') == "2048M" && ini_get('max_input_time') == "90000" &
                             if ($resultado == 'exitoso') {
                                 $resultado = "0|" . $codigo;
                             } else {
-                                $resultado = "1|No se realiz� la transferencia...verificar";
+                                $resultado = "1|No se realizó la transferencia...verificar";
                             }
                         }
                     }
@@ -4071,7 +4071,7 @@ if (ini_get('memory_limit') == "2048M" && ini_get('max_input_time') == "90000" &
                     require_once("ActionManual.php");
                     $o_ActionManual = new ActionManual();
                     $cadena = $parametros['p6'];
-                    $cadena = str_replace("�", "&", $cadena);
+                    $cadena = str_replace("ó", "&", $cadena);
                     $datos = array();
                     $datos["p2"] = $parametros['p2'];
                     $datos["p3"] = $parametros['p3'];
@@ -11797,23 +11797,23 @@ if (ini_get('memory_limit') == "2048M" && ini_get('max_input_time') == "90000" &
             $mensaje = '';
             $resultado = '';
             if ($estado == 0) {
-                $mensaje = 'Su sesi�n no fue iniciada';
+                $mensaje = 'Su sesión no fue iniciada';
             }
             if ($estado == '2') {
-                $mensaje = 'Su sesi�n ya fue cerrada';
+                $mensaje = 'Su sesión ya fue cerrada';
             }
             if ($estado == '3') {
-                $mensaje = 'Su sesi�n ha expirado';
+                $mensaje = 'Su sesión ha expirado';
             }
             if ($estado == '4') {
                 if ($otroIp != '0') {
-                    $mensaje = 'Se ha iniciado otra sesi�n en ' . $otroIp;
+                    $mensaje = 'Se ha iniciado otra sesión en ' . $otroIp;
                 } else {
                     $mensaje = 'Inicio su session en otro equipo';
                 }
             }
             if ($estado == '5') {
-                $mensaje = 'Se cancelo su sesi�n por mantenimiento del sistema';
+                $mensaje = 'Se cancelo su sesión por mantenimiento del sistema';
             }
             $mensaje = $mensaje;
             $resultado.="<script type='text/javascript'> ";
