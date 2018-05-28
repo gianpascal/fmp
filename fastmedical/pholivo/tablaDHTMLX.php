@@ -72,9 +72,10 @@ class tablaDHTMLX {
         return $cadena;
     }
 
-    public function generaTabla($arrayCabecera, $arrayFilas, $arrayTamanio, $arrayTipo, $arrayCursor, $arrayHidden, $arrayAling, $arrayColor = '') {
+    public function generaTabla($arrayCabecera, $arrayFilas, $arrayTamanio, $arrayTipo, $arrayCursor, $arrayHidden, $arrayAling, $arrayColor = array()) {
 //        header("Content-type: text/xml");
-        if ($arrayColor == "") {
+        //if ($arrayColor == "") {
+        if (count($arrayColor) == 0) {    
             foreach ($arrayCabecera as $i => $value) {
                 $arrayColor[$i] = "";
             }

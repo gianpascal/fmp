@@ -78,19 +78,28 @@ class Tabla1{
             $flat=true;
             $numArrayAdicionales = $this->numFilas-count($_arrayFilas);
             
-            $numArrayAdicionales = $numArrayAdicionales<0?0:$numArrayAdicionales;
-            if(count($_arrayFilas[0])==1 ){
-                $numColumnas=count($_arrayFilas);
-                $_arrayFilas1=array();
-                $_arrayFilas1[0]=$_arrayFilas;
-                $_arrayFilas=array();
-                $_arrayFilas=$_arrayFilas1;
-                $numArrayAdicionales = $this->numFilas;
-            }else{
-                $numColumnas = count($_arrayFilas[0]);
-
-                
-            }
+			$numArrayAdicionales = $numArrayAdicionales<0?0:$numArrayAdicionales;
+			if(!empty($_arrayFilas[0])){
+				
+				
+				if(count($_arrayFilas[0])==1 ){
+					$numColumnas=count($_arrayFilas);
+					$_arrayFilas1=array();
+					$_arrayFilas1[0]=$_arrayFilas;
+					$_arrayFilas=array();
+					$_arrayFilas=$_arrayFilas1;
+					$numArrayAdicionales = $this->numFilas;
+				}else{
+					$numColumnas = count($_arrayFilas[0]);
+	
+					
+				}
+			}
+			
+				
+			
+			
+			
 
             $arrayColsAdicionales=array_fill(0,$numColumnas,null);
             //$arrayColsAdicionales=array('0'=>'','1'=>'','3'=>'','9'=>'');

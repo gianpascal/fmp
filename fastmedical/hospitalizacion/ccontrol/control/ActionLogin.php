@@ -40,7 +40,7 @@ class ActionLogin{
                     //$rs=$this->verificaSesion($accion,$sesion, $tiempo, $sistema,$contenido,$idusuario,$tcaduca,$ip,'');
                     //print_r($rs);
                    
-                    $_SESSION['id']=$rs[0]['idInt'];
+                    $_SESSION['id']=$rs[0]['respuesta'];
 // print_r($_SESSION);
                     //header("location: ../../cvista/inicio/inicio.php");
                 }

@@ -40,7 +40,6 @@ class EPaciente{
 		$_iid_tafiliacion='',
 		$_iid_mafiliacion='',
 		$_afiliacion='',
-		$_fecha_nacimiento='',
 		$_grupo_sanguineo='',		
 		$_telefono='',
 		$_celular='',
