@@ -797,6 +797,7 @@ class LCita {
 
         //Resultado para Procedimientos  y Consultorio
         $resultado = $dcita->getArrayguardarCitaProgramada($datos);
+        //var_dump($resultado);
         $resultadoArray = array();
         foreach ($resultado as $indice => $fila) {
             $resultadoArray[$indice] = $fila;

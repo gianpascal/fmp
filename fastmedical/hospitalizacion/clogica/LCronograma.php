@@ -1,8 +1,9 @@
 <?php
 
-include_once("../../cdatos/DCronograma.php");
+include_once "../../cdatos/DCronograma.php";
 
-class LCronograma {
+class LCronograma
+{
 
     private $dCronograma;
     private $idCronograma;
@@ -12,7 +13,8 @@ class LCronograma {
     private $numerosubcabeceras;
     private $cadenaestadopagos;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->dCronograma = new DCronograma();
         $this->idCronograma = array();
         $this->horarios = array();
@@ -22,39 +24,48 @@ class LCronograma {
         $this->cadenaestadopagos = "";
     }
 
-    public function getCronogramaMedico($parametros) {
+    public function getCronogramaMedico($parametros)
+    {
         return $this->dCronograma->getArrayCronogramaMedico($parametros);
     }
 
-    public function guardarAfiliacionesXMedico($datos) {
+    public function guardarAfiliacionesXMedico($datos)
+    {
         return $this->dCronograma->dguardarAfiliacionesXMedico($datos);
     }
 
-    public function EliminarAfiliacionesXMedico($datos) {
+    public function EliminarAfiliacionesXMedico($datos)
+    {
         return $this->dCronograma->EliminarAfiliacionesXMedico($datos);
     }
 
-    public function getCronogramaMedicoporMedico($parametros) {
+    public function getCronogramaMedicoporMedico($parametros)
+    {
         return $this->dCronograma->getArrayCronogramaMedicoporMedico($parametros);
     }
 
-    public function getCronogramaMedicoporEspecialidad($parametros) {
+    public function getCronogramaMedicoporEspecialidad($parametros)
+    {
         return $this->dCronograma->getArrayCronogramaMedicoporEspecialidad($parametros);
     }
 
-    public function getCronogramaMedicoSede($parametros) {
+    public function getCronogramaMedicoSede($parametros)
+    {
         return $this->dCronograma->getArrayCronogramaMedicoporSede($parametros);
     }
 
-    public function getCronogramaFiltroDato($parametros) {
+    public function getCronogramaFiltroDato($parametros)
+    {
         return $this->dCronograma->getArrayCronogramaFiltroDato($parametros);
     }
 
-    public function getCronogramaMedicoObjecto($patron) {
+    public function getCronogramaMedicoObjecto($patron)
+    {
         return $resultado = $this->dCronograma->getObjectCronogramaID($patron);
     }
 
-    public function getListaProfesional($usuario) {
+    public function getListaProfesional($usuario)
+    {
         $oDCronograma = new DCronograma();
         $rs1 = $oDCronograma->getArrayProfesional($usuario);
         $resultadoArray = array();
@@ -65,7 +76,8 @@ class LCronograma {
         return $resultadoArray;
     }
 
-    public function getListaProfesionalTotal($oficina) {
+    public function getListaProfesionalTotal($oficina)
+    {
 //$usuario = empty($usuario)?'':$usuario;
         $rs1 = $this->dCronograma->getArrayProfesionalOficina($oficina);
         $resultadoArray = array();
@@ -76,29 +88,35 @@ class LCronograma {
         return $resultadoArray;
     }
 
-    function getDatosCronogramaMedico($bus, $id_cronograma) {
+    public function getDatosCronogramaMedico($bus, $id_cronograma)
+    {
         return $this->dCronograma->getObjectCronogramaID($id_cronograma);
     }
 
-    function getListaCronogramaporPersonalSalud($parametros) {
+    public function getListaCronogramaporPersonalSalud($parametros)
+    {
         return $this->dCronograma->getArrayCronogramaMedico($parametros);
     }
 
-    function getDatosDisponibilidadCupos($bus, $id_cronograma) {
+    public function getDatosDisponibilidadCupos($bus, $id_cronograma)
+    {
         return $this->dCronograma->getDisponibilidadCupos($id_cronograma);
     }
 
-    function getListaProfesionalSalud($opcion, $patron1, $patron2, $patron3) {
+    public function getListaProfesionalSalud($opcion, $patron1, $patron2, $patron3)
+    {
         $resultado = $this->dCronograma->getArrayProfesionalSalud($opcion, $patron1, $patron2, $patron3);
         return $resultado;
     }
 
-    public function getListaProfesionalCargo($persona) {
+    public function getListaProfesionalCargo($persona)
+    {
         $record = $this->dCronograma->getArrayProfesionalCargo($persona);
         return $record;
     }
 
-    public function getListaCronogramaOficina($persona) {
+    public function getListaCronogramaOficina($persona)
+    {
         $usuario = empty($persona) ? '' : $persona;
         $record = $this->dCronograma->getArrayCronogramaOficina($persona);
         $resultadoArray = array();
@@ -110,7 +128,8 @@ class LCronograma {
         return $resultadoArray;
     }
 
-    public function getListaCronogramaPrincipal($mes_actual = '', $ano_actual = '', $persona, $oficina) {
+    public function getListaCronogramaPrincipal($mes_actual = '', $ano_actual = '', $persona, $oficina)
+    {
         $oHospitalizacion = new LHospitalizacion();
         $oficina = $oficina == '' ? '%' : $oficina;
         $mes_actual = $mes_actual == '' ? intval(date('m')) : $mes_actual;
@@ -130,7 +149,8 @@ class LCronograma {
         return $resultadoArray;
     }
 
-    public function getSeleccionOficinaHospital() {
+    public function getSeleccionOficinaHospital()
+    {
         $record = $this->dCronograma->getArrayOficinaHospital();
         $resultadoArray = array();
         foreach ($record as $fila) {
@@ -139,7 +159,8 @@ class LCronograma {
         return $resultadoArray;
     }
 
-    public function getSeleccionActividad() {
+    public function getSeleccionActividad()
+    {
         $record = $this->dCronograma->getArrayActividad();
         $resultadoArray = array();
         foreach ($record as $fila) {
@@ -148,7 +169,8 @@ class LCronograma {
         return $resultadoArray;
     }
 
-    public function getSeleccionProducto($oficina = '%', $producto = '%', $actividad = '%') {
+    public function getSeleccionProducto($oficina = '%', $producto = '%', $actividad = '%')
+    {
         $record = $this->dCronograma->getArrayProducto($oficina, $producto, $actividad);
         $resultadoArray = array();
         if (!empty($record)) {
@@ -159,7 +181,8 @@ class LCronograma {
         return $resultadoArray;
     }
 
-    public function getSeleccionAmbiente($oficina = '%', $actividad = '%') {
+    public function getSeleccionAmbiente($oficina = '%', $actividad = '%')
+    {
         $record = $this->dCronograma->getArrayAmbiente($oficina, $actividad);
         $resultadoArray = array();
         if (!empty($record)) {
@@ -170,7 +193,8 @@ class LCronograma {
         return $resultadoArray;
     }
 
-    public function getSeleccionTurno() {
+    public function getSeleccionTurno()
+    {
         $record = $this->dCronograma->getArrayTurno();
         $resultadoArray = array();
         if (!empty($record)) {
@@ -181,12 +205,14 @@ class LCronograma {
         return $resultadoArray;
     }
 
-    public function getValidaCronograma($persona, $oficina, $actividad, $ambiente, $producto, $turno, $fecha) {
+    public function getValidaCronograma($persona, $oficina, $actividad, $ambiente, $producto, $turno, $fecha)
+    {
         $record = $this->dCronograma->getArrayValidaCronograma($persona, $oficina, $actividad, $ambiente, $producto, $turno, $fecha);
         return $record[0];
     }
 
-    public function getMantenimientoCronograma($accion, $vid_cronograma_ant, $persona, $ambiente, $oficina, $turno, $fecha, $producto, $actividad, $cupos) {
+    public function getMantenimientoCronograma($accion, $vid_cronograma_ant, $persona, $ambiente, $oficina, $turno, $fecha, $producto, $actividad, $cupos)
+    {
         $iid_persona = $iid_persona == '' ? 0 : $iid_persona;
         $ambiente = $ambiente == '' ? 0 : $ambiente;
         $oficina = $oficina == '' ? '' : $oficina;
@@ -197,14 +223,15 @@ class LCronograma {
         $cupos = $cupos == '' ? 0 : $cupos;
         if ($accion == 'delete') {
             $record = $this->dCronograma->getArrayMantenimientoCronograma($accion, $vid_cronograma_ant, $persona, $ambiente, $oficina, $turno, $fecha, $producto, $actividad, $cupos);
-            if ($record)
+            if ($record) {
                 $resultado = 'Operacion exitosa fecha ' . $fecha;
-            else
+            } else {
                 $resultado = 'Error en la operacion fecha ' . $fecha;
+            }
+
             $resultado = '<input type="text" id="mensaje_crono" name="mensaje_crono" style="width:280px; border-width:0; text-align:center;" value="' . $resultado . '"/>';
-        }
-        else {
-            if ($fecha <> '' and $accion <> '') {
+        } else {
+            if ($fecha != '' and $accion != '') {
                 $row = $this->dCronograma->getArrayConsultaTiempo($producto);
                 $tiempo = $row['ntiempo'];
                 $row = $this->dCronograma->getArrayConsultaTurno($turno);
@@ -216,10 +243,12 @@ class LCronograma {
                     $total_min = $total_min_trans[2] - $total_min_trans[1];
                     $cupos = round(floatval($total_min) / floatval($tiempo));
                     $record = $this->dCronograma->getArrayMantenimientoCronograma($accion, $vid_cronograma_ant, $persona, $ambiente, $oficina, $turno, $fecha, $producto, $actividad, $cupos);
-                    if ($record)
+                    if ($record) {
                         $respuesta = 'Operacion exitosa fecha ' . $fecha;
-                    else
+                    } else {
                         $respuesta = 'Error en la operacion fecha ' . $fecha;
+                    }
+
                     $resultado = '<input type="text" id="mensaje_crono" name="mensaje_crono" style="width:280px; border-width:0; text-align:center;" value="' . $respuesta . '"/>';
                 }
             }
@@ -230,16 +259,17 @@ class LCronograma {
     /*     * **************************** ADMINISTARCION DEL ARBOL DE C COSTOS ****************************** */
 
     /*     * *********************************************************************
-     * PRIMERO SE DEBE SABER QUÉ NIVEL OCUPA 
-     * LUEGO COMPARAR CON EL ANTERIORMENTE ESCRITO 
+     * PRIMERO SE DEBE SABER QUÉ NIVEL OCUPA
+     * LUEGO COMPARAR CON EL ANTERIORMENTE ESCRITO
      * PARA SABER SI SE DEBE CERRAR O PUEDE SER SU HIJO
      * ********************************************************************* */
 
-    function crearArbolCentroCostos() {
+    public function crearArbolCentroCostos()
+    {
         $oDCronograma = new DCronograma();
         $resultado = $oDCronograma->getDatosCentroCosto();
         $cadena = "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?>\n";
-        $cadena.="<tree id=\"0\" radio=\"1\">\n";
+        $cadena .= "<tree id=\"0\" radio=\"1\">\n";
         $n = 4; //Se debe definir de acuerdo a la data
         $array = array();
         $i = $n;
@@ -276,13 +306,13 @@ class LCronograma {
 
 //SE REPITE PARA CADA ITEM
             if ($codAnterior == '') { //para verificar si es el priner item
-                $cadena.="<item text=\"" . trim($resultado[$rs]["vDescripcionCcosto"]) . "\" open=\"1\" id=\"" . trim($resultado[$rs]["iIdCentroCosto"]) . "\" im0=\"tombs.gif\" im1=\"tombs_open.gif\" im2=\"tombs.gif\" >\n";
+                $cadena .= "<item text=\"" . trim($resultado[$rs]["vDescripcionCcosto"]) . "\" open=\"1\" id=\"" . trim($resultado[$rs]["iIdCentroCosto"]) . "\" im0=\"tombs.gif\" im1=\"tombs_open.gif\" im2=\"tombs.gif\" >\n";
                 $codAnterior = strlen(trim($resultado[$rs]["cCodigoJerarquico"])); //guardo la longitud de su codjerarquico
                 $array[$n - $j] = 1; //Indica que se ha abierto el nivel
             } else {
 //verificar si el anterior era de mas nivel
-                if ($codAnterior < strlen(trim($resultado[$rs]["cCodigoJerarquico"]))) {//el anterior era de nivel mas alto como 0
-                    $cadena.="<item text=\"" . trim($resultado[$rs]["vDescripcionCcosto"]) . "\" open=\"1\" id=\"" . trim($resultado[$rs]["iIdCentroCosto"]) . "\" im0=\"tombs.gif\" im1=\"tombs_open.gif\" im2=\"tombs.gif\" >\n";
+                if ($codAnterior < strlen(trim($resultado[$rs]["cCodigoJerarquico"]))) { //el anterior era de nivel mas alto como 0
+                    $cadena .= "<item text=\"" . trim($resultado[$rs]["vDescripcionCcosto"]) . "\" open=\"1\" id=\"" . trim($resultado[$rs]["iIdCentroCosto"]) . "\" im0=\"tombs.gif\" im1=\"tombs_open.gif\" im2=\"tombs.gif\" >\n";
                     $codAnterior = strlen(trim($resultado[$rs]["cCodigoJerarquico"])); //guardo la longitud de su codjerarquico
                     $array[$n - $j] = 1; //sirve para saber que el item nivel $n-2=1 está abierto
                 } else {
@@ -290,16 +320,16 @@ class LCronograma {
                     $aux = $codAnterior - strlen(trim($resultado[$rs]["cCodigoJerarquico"]));
                     $aux = $aux / 2;
                     if ($aux == 0) {
-                        $cadena.="</item>\n"; //se debe cerrar el item anterior porque el actual no puede ser su hijo
+                        $cadena .= "</item>\n"; //se debe cerrar el item anterior porque el actual no puede ser su hijo
                         $array[$n - $aux] = 0; //el elemento anterior se esta cerrando, pero pueden haber otros elementos abiertos de mayor nivel
                     } else {
                         while ($aux >= 0) {
-                            $cadena.="</item>\n"; //se debe cerrar el item anterior porque el actual no puede ser su hijo
+                            $cadena .= "</item>\n"; //se debe cerrar el item anterior porque el actual no puede ser su hijo
                             $array[$n - $aux] = 0; //el elemento anterior se esta cerrando, pero pueden haber otros elementos abiertos de mayor nivel
                             $aux = $aux - 1;
                         }
                     }
-                    $cadena.="<item text=\"" . trim($resultado[$rs]["vDescripcionCcosto"]) . "\" open=\"1\" id=\"" . trim($resultado[$rs]["iIdCentroCosto"]) . "\" im0=\"tombs.gif\" im1=\"tombs_open.gif\" im2=\"tombs.gif\" >\n";
+                    $cadena .= "<item text=\"" . trim($resultado[$rs]["vDescripcionCcosto"]) . "\" open=\"1\" id=\"" . trim($resultado[$rs]["iIdCentroCosto"]) . "\" im0=\"tombs.gif\" im1=\"tombs_open.gif\" im2=\"tombs.gif\" >\n";
                     $codAnterior = strlen(trim($resultado[$rs]["cCodigoJerarquico"])); //guardo la longitud de su codjerarquico
                     $array[$n - $j] = 1;
                 }
@@ -308,13 +338,13 @@ class LCronograma {
         $i = $n;
         foreach ($array as $i => $value) {
             if ($array[$i] == 1) {
-                $cadena.="</item>\n"; //se debe cerrar el item anterior
+                $cadena .= "</item>\n"; //se debe cerrar el item anterior
             }
         }
-        $cadena.="\n</tree>";
+        $cadena .= "\n</tree>";
         $archivo = basename("arbol_centroCostos");
 
-        $archivo.=".xml";
+        $archivo .= ".xml";
         $contenido2 = $cadena;
 
         $ft = fopen("../../../../carpetaDocumentos/" . $archivo, "w");
@@ -324,11 +354,12 @@ class LCronograma {
 
     /*     * ******************** GENERA EL ARBOL CON TODOS LOS ELEMENTOS ******************************************* */
 
-    function crearArbolCentroCostosCompleto() {
+    public function crearArbolCentroCostosCompleto()
+    {
         $oDCronograma = new DCronograma();
         $resultado = $oDCronograma->getDatosCentroCostoCompleto();
         $cadena = "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?>\n";
-        $cadena.="<tree id=\"0\" radio=\"1\">\n";
+        $cadena .= "<tree id=\"0\" radio=\"1\">\n";
         $n = 4; //Se debe definir de acuerdo a la data
         $array = array();
         $i = $n;
@@ -368,20 +399,20 @@ class LCronograma {
 //SE REPITE PARA CADA ITEM
             if ($codAnterior == '') { //para verificar si es el priner item
                 if ($resultado[$rs]["bActivo"] == 1) {
-                    $cadena.="<item text=\"" . trim($resultado[$rs]["vDescripcionCcosto"]) . "\" open=\"1\" id=\"" . trim($resultado[$rs]["iIdCentroCosto"]) . "\" im0=\"tombs.gif\" im1=\"tombs_open.gif\" im2=\"tombs.gif\" checked=\"1\" disabled=\"1\" >\n";
+                    $cadena .= "<item text=\"" . trim($resultado[$rs]["vDescripcionCcosto"]) . "\" open=\"1\" id=\"" . trim($resultado[$rs]["iIdCentroCosto"]) . "\" im0=\"tombs.gif\" im1=\"tombs_open.gif\" im2=\"tombs.gif\" checked=\"1\" disabled=\"1\" >\n";
                 } else {
-                    $cadena.="<item text=\"" . trim($resultado[$rs]["vDescripcionCcosto"]) . "\" open=\"1\" id=\"" . trim($resultado[$rs]["iIdCentroCosto"]) . "\" im0=\"tombs.gif\" im1=\"tombs_open.gif\" im2=\"tombs.gif\" disabled=\"1\" >\n";
+                    $cadena .= "<item text=\"" . trim($resultado[$rs]["vDescripcionCcosto"]) . "\" open=\"1\" id=\"" . trim($resultado[$rs]["iIdCentroCosto"]) . "\" im0=\"tombs.gif\" im1=\"tombs_open.gif\" im2=\"tombs.gif\" disabled=\"1\" >\n";
                 }
 
                 $codAnterior = strlen(trim($resultado[$rs]["cCodigoJerarquico"])); //guardo la longitud de su codjerarquico
                 $array[$n - $j] = 1; //Indica que se ha abierto el nivel
             } else {
 //verificar si el anterior era de mas nivel
-                if ($codAnterior < strlen(trim($resultado[$rs]["cCodigoJerarquico"]))) {//el anterior era de nivel mas alto como 0
+                if ($codAnterior < strlen(trim($resultado[$rs]["cCodigoJerarquico"]))) { //el anterior era de nivel mas alto como 0
                     if ($resultado[$rs]["bActivo"] == 1) {
-                        $cadena.="<item text=\"" . trim($resultado[$rs]["vDescripcionCcosto"]) . "\" open=\"1\" id=\"" . trim($resultado[$rs]["iIdCentroCosto"]) . "\" im0=\"tombs.gif\" im1=\"tombs_open.gif\" im2=\"tombs.gif\" checked=\"1\" disabled=\"1\" >\n";
+                        $cadena .= "<item text=\"" . trim($resultado[$rs]["vDescripcionCcosto"]) . "\" open=\"1\" id=\"" . trim($resultado[$rs]["iIdCentroCosto"]) . "\" im0=\"tombs.gif\" im1=\"tombs_open.gif\" im2=\"tombs.gif\" checked=\"1\" disabled=\"1\" >\n";
                     } else {
-                        $cadena.="<item text=\"" . trim($resultado[$rs]["vDescripcionCcosto"]) . "\" open=\"1\" id=\"" . trim($resultado[$rs]["iIdCentroCosto"]) . "\" im0=\"tombs.gif\" im1=\"tombs_open.gif\" im2=\"tombs.gif\" disabled=\"1\" >\n";
+                        $cadena .= "<item text=\"" . trim($resultado[$rs]["vDescripcionCcosto"]) . "\" open=\"1\" id=\"" . trim($resultado[$rs]["iIdCentroCosto"]) . "\" im0=\"tombs.gif\" im1=\"tombs_open.gif\" im2=\"tombs.gif\" disabled=\"1\" >\n";
                     }
 
                     $codAnterior = strlen(trim($resultado[$rs]["cCodigoJerarquico"])); //guardo la longitud de su codjerarquico
@@ -391,19 +422,19 @@ class LCronograma {
                     $aux = $codAnterior - strlen(trim($resultado[$rs]["cCodigoJerarquico"]));
                     $aux = $aux / 2;
                     if ($aux == 0) {
-                        $cadena.="</item>\n"; //se debe cerrar el item anterior porque el actual no puede ser su hijo
+                        $cadena .= "</item>\n"; //se debe cerrar el item anterior porque el actual no puede ser su hijo
                         $array[$n - $aux] = 0; //el elemento anterior se esta cerrando, pero pueden haber otros elementos abiertos de mayor nivel
                     } else {
                         while ($aux >= 0) {
-                            $cadena.="</item>\n"; //se debe cerrar el item anterior porque el actual no puede ser su hijo
+                            $cadena .= "</item>\n"; //se debe cerrar el item anterior porque el actual no puede ser su hijo
                             $array[$n - $aux] = 0; //el elemento anterior se esta cerrando, pero pueden haber otros elementos abiertos de mayor nivel
                             $aux = $aux - 1;
                         }
                     }
                     if ($resultado[$rs]["bActivo"] == 1) {
-                        $cadena.="<item text=\"" . trim($resultado[$rs]["vDescripcionCcosto"]) . "\" open=\"1\" id=\"" . trim($resultado[$rs]["iIdCentroCosto"]) . "\" im0=\"tombs.gif\" im1=\"tombs_open.gif\" im2=\"tombs.gif\" checked=\"1\" disabled=\"1\" >\n";
+                        $cadena .= "<item text=\"" . trim($resultado[$rs]["vDescripcionCcosto"]) . "\" open=\"1\" id=\"" . trim($resultado[$rs]["iIdCentroCosto"]) . "\" im0=\"tombs.gif\" im1=\"tombs_open.gif\" im2=\"tombs.gif\" checked=\"1\" disabled=\"1\" >\n";
                     } else {
-                        $cadena.="<item text=\"" . trim($resultado[$rs]["vDescripcionCcosto"]) . "\" open=\"1\" id=\"" . trim($resultado[$rs]["iIdCentroCosto"]) . "\" im0=\"tombs.gif\" im1=\"tombs_open.gif\" im2=\"tombs.gif\" disabled=\"1\" >\n";
+                        $cadena .= "<item text=\"" . trim($resultado[$rs]["vDescripcionCcosto"]) . "\" open=\"1\" id=\"" . trim($resultado[$rs]["iIdCentroCosto"]) . "\" im0=\"tombs.gif\" im1=\"tombs_open.gif\" im2=\"tombs.gif\" disabled=\"1\" >\n";
                     }
 
                     $codAnterior = strlen(trim($resultado[$rs]["cCodigoJerarquico"])); //guardo la longitud de su codjerarquico
@@ -414,13 +445,13 @@ class LCronograma {
         $i = $n;
         foreach ($array as $i => $value) {
             if ($array[$i] == 1) {
-                $cadena.="</item>\n"; //se debe cerrar el item anterior
+                $cadena .= "</item>\n"; //se debe cerrar el item anterior
             }
         }
-        $cadena.="\n</tree>";
+        $cadena .= "\n</tree>";
         $archivo = basename("arbol_centroCostosCompleto");
 
-        $archivo.=".xml";
+        $archivo .= ".xml";
         $contenido2 = $cadena;
 
         $ft = fopen("../../../../carpetaDocumentos/" . $archivo, "w");
@@ -429,7 +460,8 @@ class LCronograma {
     }
 
 //MUESTRA LOS DATOS DEL CENTR DE COSTO
-    function verItemCC($cod) {
+    public function verItemCC($cod)
+    {
         $oDCronograma = new DCronograma();
         $str = (string) $cod;
         if (strlen($str) < 10) { //si es el id
@@ -442,7 +474,8 @@ class LCronograma {
     }
 
 //MUESTRA LOS DATOS DEL CENTRO DE COSTO PADRE
-    function verItemPadre($cod) {
+    public function verItemPadre($cod)
+    {
         $oDCronograma = new DCronograma();
         $str = (string) $cod;
         if (strlen($str) < 10) {
@@ -455,28 +488,32 @@ class LCronograma {
     }
 
 //DEVULVE EL ID DEL ITEM SELECCIONADO O ACTUAL
-    function getIdActualCentroCosto($cod) {
+    public function getIdActualCentroCosto($cod)
+    {
         $oDCronograma = new DCronograma();
         $resultado = $oDCronograma->getIdActual($cod);
         return $resultado;
     }
 
 //OBTIENE EL CODIGO DE CENTRO DE COSTO ACTUAL
-    function getCodigoActualCentroCosto($pId) {
+    public function getCodigoActualCentroCosto($pId)
+    {
         $oDCronograma = new DCronograma();
         $resultado = $oDCronograma->getCodigoActual($pId);
         return $resultado;
     }
 
 //OBTIENE EL NOMBRE DEL CENTRO DE COSTO
-    function getNombreCentroCosto($cod) {
+    public function getNombreCentroCosto($cod)
+    {
         $oDCronograma = new DCronograma();
         $resultado = $oDCronograma->getNombreActual($cod);
         return $resultado;
     }
 
 //ENVIA LOS DATOS DEL CENTRO DE COSTO PARA LA EDICION, ADICION O ELIMINACION
-    function getDatosActualCentroCosto($opcNuevo, $opcAccion, $codj, $descripcion, $usuario, $abrev, $estado, $observ) {
+    public function getDatosActualCentroCosto($opcNuevo, $opcAccion, $codj, $descripcion, $usuario, $abrev, $estado, $observ)
+    {
         $estacion = $_SESSION['host'];
         if ($opcAccion == 1) { //AGREGA EL CENTRO DE COSTO
             $n = strlen($codj);
@@ -495,18 +532,19 @@ class LCronograma {
             $resultado = $oDCronograma->getDatosInsertaCentroCosto($cod, $codj, $descripcion, $nivel, 1, $usuario, $abrev, $observ, $estacion);
         }
         if ($opcAccion == 2) { //ELIMINA EL CENTRO DE COSTO
-            echo"item eliminado en proceso";
+            echo "item eliminado en proceso";
             $oDCronograma = new DCronograma();
             $resultado = $oDCronograma->getDatosEliminaCentroCosto($codj);
         }
-        if ($opcAccion == 3) {  //EDITA EL CENTR ODE COSTO
+        if ($opcAccion == 3) { //EDITA EL CENTR ODE COSTO
             $oDCronograma = new DCronograma();
             $resultado = $oDCronograma->getDatosEditaCentroCosto($codj, $descripcion, $abrev, $estado, $usuario, $observ, $estacion);
         }
     }
 
 //GENERA UN NUEVO CODIGO PARA EL NUEVO ITEM
-    function getCodigoNuevoCentroCosto($id) {
+    public function getCodigoNuevoCentroCosto($id)
+    {
         $oDCronograma = new DCronograma();
         $codigoAnt = $oDCronograma->getDatosItemCentroCosto($id);
         $cod1 = $codigoAnt['0']['0'];
@@ -516,7 +554,7 @@ class LCronograma {
             $cod1 = rtrim($cod1);
         }
         $cod2 = (int) $cod1; //codigo jerarquico anterior
-        $cod2 = $cod2 + 1;  //hay q sumarle 1
+        $cod2 = $cod2 + 1; //hay q sumarle 1
         $aux = (string) $cod2; //codigo jerarquico actual
         $aux = substr($aux, -2, 2); //ultimos 2 digito de la cadena
         $newCod = substr($cod1, 0, -2) . $aux;
@@ -526,65 +564,66 @@ class LCronograma {
     /*     * ************************ FIN DE ADMINIOSTRACION DE ARBOL C COSTOS ****************************** */
 
     /* function crearArbolServiciosProgramados() {
-      $oDCronograma = new DCronograma();
-      $resultado = $oDCronograma -> getDatosServiciosProgramados();
-      //print_r($resultado);
-      $cadena = "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?>\n";
-      $cadena.="<tree id=\"0\" radio=\"1\">\n";
-      $cCodigoCentroCostos = 0;
-      $bandera = 0;
-      $cadena.="<item text=\"Servicio de Consulta Externa\" open=\"1\" id=\"0102060900\" im0=\"tombs.gif\" im1=\"tombs_open.gif\" im2=\"tombs.gif\" >\n";
-      foreach($resultado as $indice=>$valor) {
-      if($resultado[$indice]["cCodigoCentroCosto"]!=$cCodigoCentroCostos) {
-      if($bandera == 1)$cadena.="</item>";
-      $cadena.="<item text=\"".trim($resultado[$indice]["vDescripcionCcosto"])."\" id=\"".trim($resultado[$indice]["cCodigoCentroCosto"])."\" im0=\"tombs.gif\" im1=\"tombs_open.gif\" im2=\"tombs.gif\" >\n";
-      $cadena.="<item text=\"".trim($resultado[$indice]["v_desc_ser_pro"])."\" id=\"".trim($resultado[$indice]["c_cod_ser_pro"])."\" im0=\"tombs.gif\" im1=\"tombs_open.gif\" im2=\"tombs.gif\" />\n";
-      $bandera = 1;
-      }else {
-      $cadena.="<item text=\"".trim($resultado[$indice]["v_desc_ser_pro"])."\" id=\"".trim($resultado[$indice]["c_cod_ser_pro"])."\" im0=\"tombs.gif\" im1=\"tombs_open.gif\" im2=\"tombs.gif\" />\n";
-      }
-      $cCodigoCentroCostos = $resultado[$indice]["cCodigoCentroCosto"];
-      }
-      $cadena.="</item>\n</item>\n</tree>";
-      echo $cadena;
-      //        $archivo=basename("arbolito");
-      //        $archivo.=".xml";
-      //        $contenido2=$cadena;
-      //
-      //        $ft=fopen("../../../javascript/xml/".$archivo,"w");
-      //        fwrite($ft,$contenido2);
-      //        fclose($ft);
+    $oDCronograma = new DCronograma();
+    $resultado = $oDCronograma -> getDatosServiciosProgramados();
+    //print_r($resultado);
+    $cadena = "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?>\n";
+    $cadena.="<tree id=\"0\" radio=\"1\">\n";
+    $cCodigoCentroCostos = 0;
+    $bandera = 0;
+    $cadena.="<item text=\"Servicio de Consulta Externa\" open=\"1\" id=\"0102060900\" im0=\"tombs.gif\" im1=\"tombs_open.gif\" im2=\"tombs.gif\" >\n";
+    foreach($resultado as $indice=>$valor) {
+    if($resultado[$indice]["cCodigoCentroCosto"]!=$cCodigoCentroCostos) {
+    if($bandera == 1)$cadena.="</item>";
+    $cadena.="<item text=\"".trim($resultado[$indice]["vDescripcionCcosto"])."\" id=\"".trim($resultado[$indice]["cCodigoCentroCosto"])."\" im0=\"tombs.gif\" im1=\"tombs_open.gif\" im2=\"tombs.gif\" >\n";
+    $cadena.="<item text=\"".trim($resultado[$indice]["v_desc_ser_pro"])."\" id=\"".trim($resultado[$indice]["c_cod_ser_pro"])."\" im0=\"tombs.gif\" im1=\"tombs_open.gif\" im2=\"tombs.gif\" />\n";
+    $bandera = 1;
+    }else {
+    $cadena.="<item text=\"".trim($resultado[$indice]["v_desc_ser_pro"])."\" id=\"".trim($resultado[$indice]["c_cod_ser_pro"])."\" im0=\"tombs.gif\" im1=\"tombs_open.gif\" im2=\"tombs.gif\" />\n";
+    }
+    $cCodigoCentroCostos = $resultado[$indice]["cCodigoCentroCosto"];
+    }
+    $cadena.="</item>\n</item>\n</tree>";
+    echo $cadena;
+    //        $archivo=basename("arbolito");
+    //        $archivo.=".xml";
+    //        $contenido2=$cadena;
+    //
+    //        $ft=fopen("../../../javascript/xml/".$archivo,"w");
+    //        fwrite($ft,$contenido2);
+    //        fclose($ft);
 
-      }
+    }
      */
     /*
 
-      while($row=mysql_fetch_array($rs)){
+    while($row=mysql_fetch_array($rs)){
 
-      $con.="<track>";
-      $con.="<title>".$row[1]."</title>";
-      $con.="<location>".$row[3]."</location>";
-      $con.="</track>";
+    $con.="<track>";
+    $con.="<title>".$row[1]."</title>";
+    $con.="<location>".$row[3]."</location>";
+    $con.="</track>";
 
-      <<<<<<< .mine
-      }
-      $con.="<track>";
-      $con.="<title>ZoneArtCss.com</title>";
-      $con.="<location>introradiocoral.flv</location>";
-      $con.="</track>";
-      $con.="</trackList>";
-      $con.="</playlist>";
+    <<<<<<< .mine
+    }
+    $con.="<track>";
+    $con.="<title>ZoneArtCss.com</title>";
+    $con.="<location>introradiocoral.flv</location>";
+    $con.="</track>";
+    $con.="</trackList>";
+    $con.="</playlist>";
 
-      $archivo=basename("playlist");
-      $archivo.=".xml";
-      $contenido2=$con;
+    $archivo=basename("playlist");
+    $archivo.=".xml";
+    $contenido2=$con;
 
-      $ft=fopen("system/videos/".$archivo,"w");
-      fwrite($ft,$contenido2);
-      fclose($ft);
+    $ft=fopen("system/videos/".$archivo,"w");
+    fwrite($ft,$contenido2);
+    fclose($ft);
      */
 
-    function listarServiciosCitas($datos) {
+    public function listarServiciosCitas($datos)
+    {
         $oDCronograma = new DCronograma();
         $resultado = $oDCronograma->getDatosServiciosProgramados($datos);
         return $resultado;
@@ -592,32 +631,37 @@ class LCronograma {
 
     /* CRONOGRAMACITASINFORMES */
 
-    function getdatosdecronograma($datos) {
+    public function getdatosdecronograma($datos)
+    {
         $oDCronograma = new DCronograma();
         $resultado = $oDCronograma->getdatosdecronograma($datos);
         return $resultado;
     }
 
-    function ltraerDatosCronogramaProgramado($datos) {
+    public function ltraerDatosCronogramaProgramado($datos)
+    {
         $oDCronograma = new DCronograma();
         $resultado = $oDCronograma->dtraerDatosCronogramaProgramado($datos);
         return $resultado[0][0];
     }
 
-    function getListaCitasporCronograma($n_nro_prog, $datos) {
+    public function getListaCitasporCronograma($n_nro_prog, $datos)
+    {
         $oDCronograma = new DCronograma();
         $repuesta = $oDCronograma->getArrayProgramacionPacientes($n_nro_prog, $datos);
         return $repuesta;
     }
 
-    public function obtenerCantidadOptimaFechas($datos) {
+    public function obtenerCantidadOptimaFechas($datos)
+    {
         //print_r($datos);
         $oDCronograma = new DCronograma();
         $resultado = $oDCronograma->getCantidadOptimaFechas($datos);
         return $resultado[0]['contadorOptimoFechas'];
     }
 
-    public function getListaCabeceraCronogramaInformes($datos) {
+    public function getListaCabeceraCronogramaInformes($datos)
+    {
         $oDCronograma = new DCronograma();
         $resultado = $oDCronograma->getArrayCabeceraCronogramaInformes($datos);
         $cadena = "Hora";
@@ -634,9 +678,10 @@ class LCronograma {
                         $cadena = $cadena . $coma . $dias[date('w', strtotime($resultado[$indice]['dFechaServicio']))] . " " . date('d', strtotime($resultado[$indice]['dFechaServicio'])) . " " . $meses[date('n', strtotime($resultado[$indice]['dFechaServicio'])) - 1] . " " . date('Y', strtotime($resultado[$indice]['dFechaServicio']));
                     }
                     $bandera = 0;
-                }
-                else
+                } else {
                     $cadena = $cadena . $coma . $cspan;
+                }
+
                 $i = $i + 1;
             }
         }
@@ -644,14 +689,15 @@ class LCronograma {
         return "\"" . $cadena . "\"";
     }
 
-    public function tipocabecera() {
+    public function tipocabecera()
+    {
         $cadena = "ro,";
         $coma = ",";
         $numerocolumnas = $this->numerosubcabeceras;
         $i = 0;
         while ($i < $numerocolumnas) {
             $cadena = $cadena . "ro";
-            if ($i <> $numerocolumnas - 1) {
+            if ($i != $numerocolumnas - 1) {
                 $cadena = $cadena . $coma;
             }
             $i = $i + 1;
@@ -660,14 +706,15 @@ class LCronograma {
         return "\"" . $cadena . "\"";
     }
 
-    public function alineamiento() {
+    public function alineamiento()
+    {
         $cadena = "center,";
         $coma = ",";
         $numerocolumnas = $this->numerosubcabeceras;
         $i = 0;
         while ($i < $numerocolumnas) {
             $cadena = $cadena . "center";
-            if ($i <> $numerocolumnas - 1) {
+            if ($i != $numerocolumnas - 1) {
                 $cadena = $cadena . $coma;
             }
             $i = $i + 1;
@@ -676,14 +723,15 @@ class LCronograma {
         return "\"" . $cadena . "\"";
     }
 
-    public function anchocolumnas() {
+    public function anchocolumnas()
+    {
         $cadena = "70,";
         $coma = ",";
         $numerocolumnas = $this->numerosubcabeceras;
         $i = 0;
         while ($i < $numerocolumnas) {
             $cadena = $cadena . "150";
-            if ($i <> $numerocolumnas - 1) {
+            if ($i != $numerocolumnas - 1) {
                 $cadena = $cadena . $coma;
             }
             $i = $i + 1;
@@ -692,21 +740,23 @@ class LCronograma {
         return "\"" . $cadena . "\"";
     }
 
-    public function getColumnasIds() {
+    public function getColumnasIds()
+    {
         $cadena = "hora,";
         $coma = ",";
         $i = 0;
         foreach ($this->idCronograma as $indice => $valor) {
             $cadena = $cadena . $valor['iCodigoProgramacion'];
             $i = $i + 1;
-            if ($i <> count($this->idCronograma)) {
+            if ($i != count($this->idCronograma)) {
                 $cadena = $cadena . $coma;
             }
         }
         return "\"" . $cadena . "\"";
     }
 
-    public function getListaSubCabeceraCronogramaInformes($datos) {
+    public function getListaSubCabeceraCronogramaInformes($datos)
+    {
         $oDCronograma = new DCronograma();
         $resultado = $oDCronograma->getArraySubCabeceraCronogramaInformes($datos);
         $rspan = " ";
@@ -728,10 +778,10 @@ class LCronograma {
             $this->idCronograma[$j]['tipoambiente'] = $resultado[$indice]['tipoambiente'];
             $this->idCronograma[$j]['isprocedimiento'] = $resultado[$indice]['isprocedimiento'];
             while ($i <= $resultado[$indice]['dFechaServicio']) {
-                if ($resultado[$indice]['iTiempoAtencion'] == 0)
+                if ($resultado[$indice]['iTiempoAtencion'] == 0) {
                     $cadena = $cadena . $coma . $rspan;
-                else {
-                    $cadena = $cadena . $coma .utf8_encode($resultado[$indice]['vNombreMedico']);
+                } else {
+                    $cadena = $cadena . $coma . utf8_encode($resultado[$indice]['vNombreMedico']);
                     $this->tiempoAtencion = $resultado[$indice]['iTiempoAtencion'];
                 }
                 $i = $i + 1;
@@ -742,7 +792,8 @@ class LCronograma {
         return "\"" . $cadena . "\"";
     }
 
-    function armarMatrizHorarios($horarioinicio, $horariofinal, $tiempoatencion) {
+    public function armarMatrizHorarios($horarioinicio, $horariofinal, $tiempoatencion)
+    {
         $matrizHorarios = array();
         $horainicio = $horarioinicio;
         $horaactual = number_format($horainicio, 2);
@@ -750,11 +801,11 @@ class LCronograma {
         $contadorhorario = number_format($tiempoatencion * 0.01, 2);
         $contadorfila = 0;
         /* echo "$horainicio <br>";
-          echo "$horaactual <br>";
-          echo "$horafinal <br>";
-          echo "$contadorhorario <br>";
+        echo "$horaactual <br>";
+        echo "$horafinal <br>";
+        echo "$contadorhorario <br>";
          */
-        while ($horaactual <= $horafinal && $tiempoatencion <> 0) {
+        while ($horaactual <= $horafinal && $tiempoatencion != 0) {
             $parte_entera = floor($horaactual);
             $parte_decimal = number_format($horaactual, 2) - $parte_entera;
             if (number_format($parte_decimal, 2) >= 0.60) {
@@ -800,7 +851,7 @@ class LCronograma {
 // echo "hora actual 1 $horaactual\n";
                 $horaactual = number_format($horaactual + 1.00 + $contadorhorario - 0.60, 2);
 // echo "a. $variableAuxiliar \n";
-// echo "hora actual 2 $horaactual \n";
+                // echo "hora actual 2 $horaactual \n";
             } else {
 // echo "b. $variableAuxiliar \n\n";
                 $horaactual = number_format($horaactual + $contadorhorario, 2);
@@ -812,7 +863,8 @@ class LCronograma {
         return $matrizHorarios;
     }
 
-    public function insertarMatrisHoraris($matriz, $codigoHora, $horario, $numeroHora) {
+    public function insertarMatrisHoraris($matriz, $codigoHora, $horario, $numeroHora)
+    {
         $matrizResultado = array();
 //$numeroHora = 0;
         $cantidad = count($matriz);
@@ -858,13 +910,14 @@ class LCronograma {
         }
         return $matrizResultado;
 //        foreach ($matriz as $key => $value) {
-//            if($value['numeroHora']<$numeroHora){
-//                
-//            }
-//        }
+        //            if($value['numeroHora']<$numeroHora){
+        //
+        //            }
+        //        }
     }
 
-    public function buscarCupoDisponible($datos) {
+    public function buscarCupoDisponible($datos)
+    {
         $cantidad = 0;
         foreach ($this->idCronograma as $indice => $valor) {
             $n_nro_prog = $this->idCronograma[$indice]['iCodigoProgramacion'];
@@ -887,7 +940,8 @@ class LCronograma {
         return $respuesta . "/" . $cantidad;
     }
 
-    public function buscarCupoDisponibleNuevo($datos) {
+    public function buscarCupoDisponibleNuevo($datos)
+    {
         $cantidad = 0;
         $respuesta = 0;
         foreach ($this->idCronograma as $indice => $valor) {
@@ -907,14 +961,16 @@ class LCronograma {
         return $respuesta . "/" . $cantidad;
     }
 
-    public function buscarProximaCita($datos) {
+    public function buscarProximaCita($datos)
+    {
         $o_Cronograma = new DCronograma();
         $resultado = $o_Cronograma->buscarProximaCita($datos);
         return $resultado;
     }
 
     //Revisar 8Abril2012
-    public function armarCronogramaCitasInformes($datos) {
+    public function armarCronogramaCitasInformes($datos)
+    {
 
         $matrizHorarios = array();
         $matrizHorariosAuxiliar = array();
@@ -940,12 +996,13 @@ class LCronograma {
 
 //        print_r($this->idCronograma);
         //echo 'jose';
-//$horariominimo = min($minimo);
-//  $horariomaximo = max($maximo);
-// $this->horarios = $this->armarMatrizHorarios($horariominimo, $horariomaximo, $this->tiempoAtencion);
-// $this->horarios[14]['codigohora']='2:50PM';
-// $this->horarios[14]['horario']='14:50';
-//print_r($this->horarios);
+        //$horariominimo = min($minimo);
+        //  $horariomaximo = max($maximo);
+        // $this->horarios = $this->armarMatrizHorarios($horariominimo, $horariomaximo, $this->tiempoAtencion);
+        // $this->horarios[14]['codigohora']='2:50PM';
+        // $this->horarios[14]['horario']='14:50';
+        //print_r($this->horarios);
+        $cronogramaauxiliar = array();
         foreach ($this->idCronograma as $indice => $valor) {
             $n_nro_prog = $this->idCronograma[$indice]['iCodigoProgramacion'];
             $cronogramaauxiliar[$valor['iCodigoProgramacion']] = $this->getListaCitasporCronograma($n_nro_prog, $datos);
@@ -966,21 +1023,26 @@ class LCronograma {
         $i = 0;
         $cadena = $iniciocadena;
 
-
         for ($z = 0; $z < count($this->horarios) + 3; $z++) {
 //foreach($this->horarios as $indicehorario=>$valorhorario) {
-            if ($z == 0)
+            if ($z == 0) {
                 $cadena = $cadena . $iniciafila . $id . $comillas . 'IsProcedimiento' . $comillas . $coma . $data . $iniciadata;
-            if ($z == 1)
+            }
+
+            if ($z == 1) {
                 $cadena = $cadena . $iniciafila . $id . $comillas . 'TipoAmbiente' . $comillas . $coma . $data . $iniciadata;
-            if ($z == 2)
+            }
+
+            if ($z == 2) {
                 $cadena = $cadena . $iniciafila . $id . $comillas . 'Adicionales' . $comillas . $coma . $data . $iniciadata;
-            if ($z != 0 && $z != 1 && $z != 2)
+            }
+
+            if ($z != 0 && $z != 1 && $z != 2) {
                 $cadena = $cadena . $iniciafila . $id . $comillas . $this->horarios[$z - 3]['codigohora'] . $comillas . $coma . $data . $iniciadata;
-
-
+            }
 
             $j = 0;
+            // var_dump($cronogramaauxiliar);
             foreach ($cronogramaauxiliar as $indicecronograma => $valorcronograma) {
                 if ($i == 0 && $j == 0) {
                     $cadena = $cadena . $comillas . 'Tipo Serv.' . $comillas . $coma;
@@ -997,7 +1059,6 @@ class LCronograma {
                         }
                     }
                 }
-
 
                 $encontrado = 0;
                 if ($indicecronograma > 0) {
@@ -1035,7 +1096,7 @@ class LCronograma {
                         $encontrado = 1;
                     }
 //echo $this->numerosubcabeceras;
-//print_r($this->horarios);
+                    //print_r($this->horarios);
                     foreach ($valorcronograma as $indice => $valor) {
                         if ($z >= 3) {
                             if (trim($this->horarios[$z - 3]['codigohora']) == trim($valor['c_cod_hora'])) {
@@ -1043,19 +1104,19 @@ class LCronograma {
                                 $cadena = $cadena . $comillas . utf8_encode($valor['nombrepaciente']) . $comillas;
 //echo $valor['nombrepaciente']." ".$valor['c_cod_hora']."<br/>";
                                 switch ($valor['estado']) {
-                                    case '1': {
+                                    case '1':{
                                             $cadenapagos = $cadenapagos . "mygrid.cells2(" . $i . "," . ($j + 1) . ").setBgColor('#F0F43A');";
                                             break;
                                         }
-                                    case '2': {
+                                    case '2':{
                                             $cadenapagos = $cadenapagos . "mygrid.cells2(" . $i . "," . ($j + 1) . ").setBgColor('#F8A83E');";
                                             break;
                                         }
-                                    case '3': {
+                                    case '3':{
                                             $cadenapagos = $cadenapagos . "mygrid.cells2(" . $i . "," . ($j + 1) . ").setBgColor('#DEEDF8');";
                                             break;
                                         }
-                                    case '4': {
+                                    case '4':{
                                             $cadenapagos = $cadenapagos . "mygrid.cells2(" . $i . "," . ($j + 1) . ").setBgColor('#FFB2B2');";
                                             break;
                                         }
@@ -1073,17 +1134,20 @@ class LCronograma {
                     $cadenapagos = $cadenapagos . "mygrid.cells2(" . $i . "," . ($j + 1) . ").setBgColor('#C7C7C7');";
                 }
 
-                if ($j == count($cronogramaauxiliar) - 1)
+                if ($j == count($cronogramaauxiliar) - 1) {
                     $cadena = $cadena . $finalizadata;
-                else
+                } else {
                     $cadena = $cadena . $coma;
+                }
 
                 $j = $j + 1;
             }
-            if ($i == count($this->horarios) + 2)
+            if ($i == count($this->horarios) + 2) {
                 $cadena = $cadena . $finalizacadena;
-            else
+            } else {
                 $cadena = $cadena . $finalizafila;
+            }
+
             $i = $i + 1;
         }
         $this->cadenaestadopagos = "\"" . $cadenapagos . "\"";
@@ -1091,52 +1155,55 @@ class LCronograma {
 
         /* ORIGINAL */
 //$data1 = "{\"rows\":[{\"id\":1001,\"data\":[\"100\",\"ji\",\"1500\",\"joaja\",\"kakaka\"]},{\"id\":1002,\"data\":[\"100\",\"ji\",\"1500\",\"joaja\",\"kakaka\"]}]}";
-//$data1 = "{\"rows\":[{\"id\":\"8.00AM\",\"data\":[\"100\",\"200\"]},{\"id\":\"8.15AM\",\"data\":[\"100\",\"200\"]},{\"id\":\"8.30AM\",\"data\":[\"100\",\"200\"]}]}";
-//                    [{'id':'8:00AM','data':['08:00',,,,'2612072',,,]},{'id':'8:15AM','data':['08:15',,,,'2612576',,,]}
+        //$data1 = "{\"rows\":[{\"id\":\"8.00AM\",\"data\":[\"100\",\"200\"]},{\"id\":\"8.15AM\",\"data\":[\"100\",\"200\"]},{\"id\":\"8.30AM\",\"data\":[\"100\",\"200\"]}]}";
+        //                    [{'id':'8:00AM','data':['08:00',,,,'2612072',,,]},{'id':'8:15AM','data':['08:15',,,,'2612576',,,]}
     }
 
-    public function getCadenaEstadoPagos() {
+    public function getCadenaEstadoPagos()
+    {
         return $this->cadenaestadopagos;
     }
 
     /*     * *******PROGRAMACIONMEDICOS******** */
 
-    public function getListaProfesionalMedicos($datos) {
+    public function getListaProfesionalMedicos($datos)
+    {
         $o_Cronograma = new DCronograma();
         $resultado = $o_Cronograma->getArrayProfesionalMedicos($datos);
         return $resultado;
     }
 
-    public function obtenerEstadisticaMensualMedico($datos) {
+    public function obtenerEstadisticaMensualMedico($datos)
+    {
         $o_Cronograma = new DCronograma();
         $resultado = $o_Cronograma->getArrayEstadisticaMensualMedico($datos);
         $cadena = "";
         $cuerpo = "<table width=\"95%\" border=\"0\" style=\"font-family: Tahoma;font-size: 11px;\">"
-                . "   <tr style=\"background-image:url(../../../estilo/imgs/dhxgrid_dhx_blue/hdr.png);font-weight: bold;\">"
-                . "       <td width=\"auto\"><div align=\"center\">Servicio</div></td>"
-                . "       <td width=\"auto\"><div align=\"center\">Cupos Programados</div></td>"
-                . "       <td width=\"auto\"><div align=\"center\">Cupos Adicionales</div></td>"
-                . "       <td width=\"auto\"><div align=\"center\">Horas Programadas</div></td>"
-                . "   </tr>";
+            . "   <tr style=\"background-image:url(../../../estilo/imgs/dhxgrid_dhx_blue/hdr.png);font-weight: bold;\">"
+            . "       <td width=\"auto\"><div align=\"center\">Servicio</div></td>"
+            . "       <td width=\"auto\"><div align=\"center\">Cupos Programados</div></td>"
+            . "       <td width=\"auto\"><div align=\"center\">Cupos Adicionales</div></td>"
+            . "       <td width=\"auto\"><div align=\"center\">Horas Programadas</div></td>"
+            . "   </tr>";
 
         foreach ($resultado as $ind => $valor) {
-            $cuerpo.= "<tr>"
-                    . "       <td width=\"auto\"><div align=\"left\">" . utf8_encode($valor["nombreservicio"]) . "</div></td>"
-                    . "       <td width=\"auto\"><div align=\"center\">" . $valor["cuposprogramadostotales"] . "</div></td>"
-                    . "       <td width=\"auto\"><div align=\"center\">" . $valor["cuposadicionalestotales"] . "</div></td>"
-                    . "       <td width=\"auto\"><div align=\"center\">" . $valor["horastotales"] . "</div></td>"
-                    . "   </tr>";
+            $cuerpo .= "<tr>"
+            . "       <td width=\"auto\"><div align=\"left\">" . utf8_encode($valor["nombreservicio"]) . "</div></td>"
+                . "       <td width=\"auto\"><div align=\"center\">" . $valor["cuposprogramadostotales"] . "</div></td>"
+                . "       <td width=\"auto\"><div align=\"center\">" . $valor["cuposadicionalestotales"] . "</div></td>"
+                . "       <td width=\"auto\"><div align=\"center\">" . $valor["horastotales"] . "</div></td>"
+                . "   </tr>";
         }
-        $cuerpo .="</table>";
+        $cuerpo .= "</table>";
 
         return $cuerpo;
     }
 
-    function obtenerProgramacionMedico($datos) {
+    public function obtenerProgramacionMedico($datos)
+    {
         $o_Cronograma = new DCronograma();
         $resultado = $o_Cronograma->getArrayProgramacionMedico($datos);
         // echo date("m/d/y");
-
 
         foreach ($resultado as $key => $value) {
             $fechaResultado = $resultado[$key][1];
@@ -1228,7 +1295,8 @@ class LCronograma {
         return $resultado;
     }
 
-    public function getArrayListaAmbientes($datos) {
+    public function getArrayListaAmbientes($datos)
+    {
         $o_Cronograma = new DCronograma();
         $rs = $o_Cronograma->getArraylistaAmbientes($datos);
         $resultadoArray = array();
@@ -1239,7 +1307,8 @@ class LCronograma {
         return $resultadoArray;
     }
 
-    public function spListaAmbienteLogicoPorPuesto($datos) {//Junnior
+    public function spListaAmbienteLogicoPorPuesto($datos)
+    { //Junnior
         $o_Cronograma = new DCronograma();
         $rs = $o_Cronograma->spListaAmbienteLogicoPorPuesto($datos);
         $resultadoArray = array();
@@ -1250,7 +1319,8 @@ class LCronograma {
         return $resultadoArray;
     }
 
-    public function spListaServiciosPorActividadDeCentroCosto($datos) {//Junnior
+    public function spListaServiciosPorActividadDeCentroCosto($datos)
+    { //Junnior
         $o_Cronograma = new DCronograma();
         $rs = $o_Cronograma->spListaServiciosPorActividadDeCentroCosto($datos);
         $resultadoArray = array();
@@ -1261,7 +1331,8 @@ class LCronograma {
         return $resultadoArray;
     }
 
-    function getArrayListaPuestos($datos) {
+    public function getArrayListaPuestos($datos)
+    {
         $o_Cronograma = new DCronograma();
         $rs = $o_Cronograma->getArrayPuestos($datos);
         $resultadoArray = array();
@@ -1272,7 +1343,8 @@ class LCronograma {
         return $resultadoArray;
     }
 
-    function getArrayListaServicios($datos) {
+    public function getArrayListaServicios($datos)
+    {
         $o_Cronograma = new DCronograma();
         $rs = $o_Cronograma->getArrayServicios($datos);
         $resultadoArray = array();
@@ -1283,7 +1355,8 @@ class LCronograma {
         return $resultadoArray;
     }
 
-    function getArrayListaAmbientesFisicos($datos) {
+    public function getArrayListaAmbientesFisicos($datos)
+    {
         $o_Cronograma = new DCronograma();
         $rs = $o_Cronograma->getArrayAmbientesFisicos($datos);
         $resultadoArray = array();
@@ -1294,33 +1367,39 @@ class LCronograma {
         return $resultadoArray;
     }
 
-    function getArrayListaTurnos($datos) {
+    public function getArrayListaTurnos($datos)
+    {
         $o_Cronograma = new DCronograma();
         $rs = $o_Cronograma->getArrayTurnos($datos);
         $resultadoArray = array();
         foreach ($rs as $fila) {
             $op = "" . $fila[0];
-            if ($op >= 0 && $op < 10)
+            if ($op >= 0 && $op < 10) {
                 $fila[1] = "0" . $fila[1];
+            }
+
             $fila[1] = str_replace(".", ":", $fila[1]);
             $resultadoArray[$op] = htmlentities($fila[1]);
         }
         return $resultadoArray;
     }
 
-    function getTiempoAtencion($datos) {
+    public function getTiempoAtencion($datos)
+    {
         $o_Cronograma = new DCronograma();
         $rs = $o_Cronograma->getTiempoAtencion($datos);
         return $rs[0]["n_dmin_prom"];
     }
 
-    function obtenercodigoTurno($datos) {
+    public function obtenercodigoTurno($datos)
+    {
         $o_Cronograma = new DCronograma();
         $rs = $o_Cronograma->getcodigoTurno($datos);
         return $rs[0]["cCodigoTurno"];
     }
 
-    function obtenerlistaAfiliacionesNOAsignadas() {
+    public function obtenerlistaAfiliacionesNOAsignadas()
+    {
         $o_Cronograma = new DCronograma();
         $rs = $o_Cronograma->getArrayAfiliacionesNOAsignadas();
         $resultadoArray = array();
@@ -1331,7 +1410,8 @@ class LCronograma {
         return $resultadoArray;
     }
 
-    function lobtenerlistaAfiliacionesNOAsignadasPopad($datos) {
+    public function lobtenerlistaAfiliacionesNOAsignadasPopad($datos)
+    {
         $o_Cronograma = new DCronograma();
         $rs = $o_Cronograma->getArrayAfiliacionesNOAsignadasPopad($datos);
         $resultadoArray = array();
@@ -1344,7 +1424,8 @@ class LCronograma {
 
     //obtenerlistaAfiliacionesAsignadasPopad
 
-    function lobtenerlistaAfiliacionesAsignadasPopad($datos) {
+    public function lobtenerlistaAfiliacionesAsignadasPopad($datos)
+    {
         $o_Cronograma = new DCronograma();
         $rs = $o_Cronograma->getArrayAfiliacionesAsignadasPopad($datos);
         $resultadoArray = array();
@@ -1355,7 +1436,8 @@ class LCronograma {
         return $resultadoArray;
     }
 
-    function obtenerlistaAfiliacionesAsignadas() {
+    public function obtenerlistaAfiliacionesAsignadas()
+    {
         $o_Cronograma = new DCronograma();
         $rs = $o_Cronograma->getArrayAfiliacionesAsignadas();
         $resultadoArray = array();
@@ -1366,7 +1448,8 @@ class LCronograma {
         return $resultadoArray;
     }
 
-    function grabarProgramacionMedicos($datos) {
+    public function grabarProgramacionMedicos($datos)
+    {
         $o_Cronograma = new DCronograma();
         $fechaActual = strftime("%Y-%m-%d", time());
         $fechas = array();
@@ -1386,13 +1469,15 @@ class LCronograma {
         return $rs;
     }
 
-    function eliminarProgramacionMedicos($datos) {
+    public function eliminarProgramacionMedicos($datos)
+    {
         $o_Cronograma = new DCronograma();
         $resultado = $o_Cronograma->eliminarProgramacionMedicos($datos);
         return utf8_encode($resultado[0]["respuesta"]);
     }
 
-    function listarProgramacionAmbientesFisicos($datos) {
+    public function listarProgramacionAmbientesFisicos($datos)
+    {
         $o_Cronograma = new DCronograma();
         $fechas = array();
         $fechas = explode("|", $datos["fechas"]);
@@ -1408,12 +1493,13 @@ class LCronograma {
 
     /* REPROGRAMACION DE MEDICOS */
 
-    public function armarcadenajs($nombreselect, $nuevonombre, $nuevovalor) {
+    public function armarcadenajs($nombreselect, $nuevonombre, $nuevovalor)
+    {
         $cadena = "";
         /* $cadena = "opt = document.getElementById(\"$nombreselect\").options;
-          opt[opt.length] = new Option(\"$nuevonombre\",\"$nuevovalor\");
-          document.getElementById(\"$nombreselect\").selectedIndex = opt.length-1;
-          document.getElementById(\"$nombreselect\").disabled = true; "; */
+        opt[opt.length] = new Option(\"$nuevonombre\",\"$nuevovalor\");
+        document.getElementById(\"$nombreselect\").selectedIndex = opt.length-1;
+        document.getElementById(\"$nombreselect\").disabled = true; "; */
         $cadena = "opt = document.getElementById(\"$nombreselect\").options;
             opt.length = 0;
             opt[0] = new Option(\"Seleccionar\",\"0000\");
@@ -1423,7 +1509,8 @@ class LCronograma {
         return $cadena;
     }
 
-    public function consultarProgramacionMedicos($datos) {
+    public function consultarProgramacionMedicos($datos)
+    {
         $o_Cronograma = new DCronograma();
         $resultado = $o_Cronograma->getArrayDatosProgramacionMedicos($datos);
         $cadena = "var ";
@@ -1438,8 +1525,8 @@ class LCronograma {
         $separar = explode("|", $resultado[0]["ambientefisico"]);
         $cadena .= $this->armarcadenajs("cb_filtro_ambientefisico", $separar[1], $separar[0]);
 //        $separar = explode("|",$resultado[0]["ambientefisico"]);
-//        $cadena .= $this->armarcadenajs("cb_filtro_ambientefisico",$separar[1],$separar[0]);
-//        $separar = explode("|",$resultado[0]["horario"]);
+        //        $cadena .= $this->armarcadenajs("cb_filtro_ambientefisico",$separar[1],$separar[0]);
+        //        $separar = explode("|",$resultado[0]["horario"]);
         $cadena .= $this->armarcadenajs("cb_filtro_turnoinicio", $resultado[0]["vhorainicio"], $resultado[0]["nhorainicio"]);
         $cadena .= $this->armarcadenajs("cb_filtro_turnofinal", $resultado[0]["vhorafinal"], $resultado[0]["nhorafinal"]);
         $cadena .= " document.getElementById(\"txttiempoatencion\").value=" . $resultado[0]["iTiempoAtencion"] . "; ";
@@ -1450,19 +1537,22 @@ class LCronograma {
         return $cadena;
     }
 
-    public function actualizarCronogramaReProgramacionMedicos($datos) {
+    public function actualizarCronogramaReProgramacionMedicos($datos)
+    {
         $o_Cronograma = new DCronograma();
         $rs = $o_Cronograma->actualizarCronogramaReProgramacionMedicos($datos);
         return utf8_encode($rs[0]["respuesta"]);
     }
 
-    public function spMantenimientoReprogramarMedico($datos) {
+    public function spMantenimientoReprogramarMedico($datos)
+    {
         $o_Cronograma = new DCronograma();
         $rs = $o_Cronograma->spMantenimientoReprogramarMedico($datos);
         return utf8_encode($rs[0]["respuesta"]);
     }
 
-    public function generarCodigoAutorizacionProgramacionMedicos($datos) {
+    public function generarCodigoAutorizacionProgramacionMedicos($datos)
+    {
         $o_Cronograma = new DCronograma();
         $datos["claveautogenerada"] = time();
         $rs = $o_Cronograma->generarCodigoAutorizacionProgramacionMedicos($datos);
@@ -1470,36 +1560,41 @@ class LCronograma {
     }
 
     /* public function validarAutorizacionProgramacionMedicos($datos) {
-      $o_Cronograma = new DCronograma();
-      $rs = $o_Cronograma ->validarAutorizacionProgramacionMedicos($datos);
-      return utf8_encode($rs[0]["respuesta"]);
-      } */
+    $o_Cronograma = new DCronograma();
+    $rs = $o_Cronograma ->validarAutorizacionProgramacionMedicos($datos);
+    return utf8_encode($rs[0]["respuesta"]);
+    } */
 
-    public function listarMedicosparaReprogramacionMedicos($datos) {
+    public function listarMedicosparaReprogramacionMedicos($datos)
+    {
         $o_Cronograma = new DCronograma();
         $rs = $o_Cronograma->getArrayMedicosparaReprogramacionMedicos($datos);
         return $rs;
     }
 
-    public function grabarReprogramacionMedicos($datos) {
+    public function grabarReprogramacionMedicos($datos)
+    {
         $o_Cronograma = new DCronograma();
         $rs = $o_Cronograma->grabarReprogramacionMedicos($datos);
         return utf8_encode($rs[0]["respuesta"]);
     }
 
-    public function traerDatosProgramacion($datos) {
+    public function traerDatosProgramacion($datos)
+    {
         $o_Cronograma = new DCronograma();
         $rs = $o_Cronograma->traerDatosProgramacion($datos);
         return $rs;
     }
 
-    public function guardarMantenimientoPRogramado($datos) {
+    public function guardarMantenimientoPRogramado($datos)
+    {
         $o_Cronograma = new DCronograma();
         $rs = $o_Cronograma->guardarMantenimientoPRogramado($datos);
         return $rs;
     }
 
-    function listaAfiliacionesXCronograma($datos) {
+    public function listaAfiliacionesXCronograma($datos)
+    {
         $o_Cronograma = new DCronograma();
         $rs = $o_Cronograma->getArrayAfiliacionesXCronograma($datos);
         $resultadoArray = array();
@@ -1510,77 +1605,87 @@ class LCronograma {
         return $resultadoArray;
     }
 
-    public function traerMotivoEliminacion($datos) {
+    public function traerMotivoEliminacion($datos)
+    {
         $o_Cronograma = new DCronograma();
         $rs = $o_Cronograma->traerMotivoEliminacion($datos);
         return $rs;
     }
 
-    public function mostrarEdicionProgramacion($datos) {
+    public function mostrarEdicionProgramacion($datos)
+    {
         $o_Cronograma = new DCronograma();
         $rs = $o_Cronograma->mostrarEdicionProgramacion($datos);
         return $rs;
     }
-    
-    public function consultarAmbienteFisico($datos){
+
+    public function consultarAmbienteFisico($datos)
+    {
         $o_Cronograma = new DCronograma();
-        $rs = $o_Cronograma->consultarAmbienteFisico($datos);           
-        return $rs;
-    }
-  
-    public function LconsultarSede($datos){
-        $o_Cronograma = new DCronograma();
-        $rs = $o_Cronograma->DconsultarSede($datos);           
-        return $rs;
-    }
-    public function LcargarComboAmbienteFisicoReprogramacionMedicoNuevo($datos){
-        $o_Cronograma = new DCronograma();
-        $rs = $o_Cronograma->DcargarComboAmbienteFisicoReprogramacionMedicoNuevo($datos);           
+        $rs = $o_Cronograma->consultarAmbienteFisico($datos);
         return $rs;
     }
 
-    public function lCantidadAdicionales($datos) {
+    public function LconsultarSede($datos)
+    {
+        $o_Cronograma = new DCronograma();
+        $rs = $o_Cronograma->DconsultarSede($datos);
+        return $rs;
+    }
+    public function LcargarComboAmbienteFisicoReprogramacionMedicoNuevo($datos)
+    {
+        $o_Cronograma = new DCronograma();
+        $rs = $o_Cronograma->DcargarComboAmbienteFisicoReprogramacionMedicoNuevo($datos);
+        return $rs;
+    }
+
+    public function lCantidadAdicionales($datos)
+    {
         $o_Cronograma = new DCronograma();
         $rs = $o_Cronograma->dCantidadAdicionales($datos);
         return $rs;
     }
 
-    public function lGuardarCambiosLogADicionales($datos) {
+    public function lGuardarCambiosLogADicionales($datos)
+    {
         $o_Cronograma = new DCronograma();
         $rs = $o_Cronograma->dGuardarCambiosLogADicionales($datos);
         return $rs;
     }
 
-    public function labrirPopudReporteMensualCronograma($datos) {
+    public function labrirPopudReporteMensualCronograma($datos)
+    {
         $o_Cronograma = new DCronograma();
         $rs = $o_Cronograma->dabrirPopudReporteMensualCronograma($datos);
         return $rs;
     }
 
-    public function lDatosCronogramaMedicos($datos) {
+    public function lDatosCronogramaMedicos($datos)
+    {
         $o_Cronograma = new DCronograma();
         $rs = $o_Cronograma->dDatosCronogramaMedicos($datos);
         return $rs;
     }
-    public function seleccionarTurnoProgramacionMedico($datos) {
+    public function seleccionarTurnoProgramacionMedico($datos)
+    {
         $o_Cronograma = new DCronograma();
-        $rs = $o_Cronograma->seleccionarTurnoProgramacionMedico($datos);           
+        $rs = $o_Cronograma->seleccionarTurnoProgramacionMedico($datos);
         return $rs;
     }
-    public function seleccionarHoraFinal($datos) {
+    public function seleccionarHoraFinal($datos)
+    {
         $o_Cronograma = new DCronograma();
-        $rs = $o_Cronograma->seleccionarHoraFinal($datos); 
-        $resultado="";
-        foreach($rs as $key => $value){ 
-             $resultado.='<option value="'.$value[0].'">'.number_format($value[1],2).'</option>';
+        $rs = $o_Cronograma->seleccionarHoraFinal($datos);
+        $resultado = "";
+        foreach ($rs as $key => $value) {
+            $resultado .= '<option value="' . $value[0] . '">' . number_format($value[1], 2) . '</option>';
         }
         return $resultado;
     }
-    public function actualizarTurnoProgramacionMedico($datos) {
+    public function actualizarTurnoProgramacionMedico($datos)
+    {
         $o_Cronograma = new DCronograma();
-        $rs = $o_Cronograma->actualizarTurnoProgramacionMedico($datos);           
+        $rs = $o_Cronograma->actualizarTurnoProgramacionMedico($datos);
         return utf8_encode($rs[0][0]);
     }
 }
-
-?>

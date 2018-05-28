@@ -831,7 +831,7 @@ class Adophp
             case "SQLSRV":
                 //var_dump($this->RecordSet);
                 $numFilas = sqlsrv_num_rows($this->RecordSet);
-              //  echo "Numfilas: $numFilas";
+                //  echo "Numfilas: $numFilas";
                 if ($numFilas == 1) {
                     $array[0] = $this->GetRow();
                 } else {
@@ -944,8 +944,8 @@ class Adophp
             case "SQLSRV":
                 $this->Prepare_StoreProcedure();
                 $query = $this->pSql;
-               //var_dump($query);
-              // echo "<br>Query:$query";
+                //var_dump($query);
+                // echo "<br>Query:$query";
                 //var_dump($this->pConnection);
                 $this->RecordSet = sqlsrv_query($this->pConnection, $query, null); // or die("\"$query\" ".Language::pickMessage('adophp',2,$this->language));
                 //  var_dump($this->RecordSet);

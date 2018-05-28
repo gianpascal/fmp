@@ -1,44 +1,49 @@
 <?php
 
 /* * ******************************************************************
- * **	Clase de Conexion 											  ***
+ * **    Clase de Conexion                                               ***
  * ** Realiza el seteo y recuperacion de las conexiones utilizadas  ***
- * ** dentro del sistema  					***
+ * ** dentro del sistema                      ***
  * ** creado : 14/01/2009                                         ***
- * ** desarrollado por : Helmut Pacheco				 ***
+ * ** desarrollado por : Helmut Pacheco                 ***
  * ** CARGA LAS CONEXIONES                                       ***
  * ******************************************************************* */
 
-class Conexion {
+class Conexion
+{
 
     public static $arrayDsnUser;
     public static $arrayDsnUserMSSQL;
     public static $cadConexion;
     public static $cnx;
 
-    public function __construct($driver) {
+    public function __construct($driver)
+    {
 
     }
 
-    public function getInitDsnPg() {
+    public function getInitDsnPg()
+    {
         //$arrayDsnPg['dbname'] = 'PANEL';
         //$arrayDsnPg['dbuser'] = 'postgres';
         //$arrayDsnPg['dbpasw'] = '123456';
         //$arrayDsnPg['dbhost'] = '127.0.0.1';
         //$arrayDsnPg['dbdriv'] = 'POSTGRES';
-//		$arrayDsnPg['dbname'] = 'allikay2_latin';
-//		$arrayDsnPg['dbuser'] = 'postgres';
-//		$arrayDsnPg['dbpasw'] = '123456';
-//		$arrayDsnPg['dbhost'] = '192.168.31.231';
-//		$arrayDsnPg['dbdriv'] = 'POSTGRES';
-//		return $arrayDsnPg;
+        //        $arrayDsnPg['dbname'] = 'allikay2_latin';
+        //        $arrayDsnPg['dbuser'] = 'postgres';
+        //        $arrayDsnPg['dbpasw'] = '123456';
+        //        $arrayDsnPg['dbhost'] = '192.168.31.231';
+        //        $arrayDsnPg['dbdriv'] = 'POSTGRES';
+        //        return $arrayDsnPg;
     }
 
-    public static function getPgConexion() {
+    public static function getPgConexion()
+    {
         return self::$arrayDsnUser;
     }
 
-    public static function getPgConexionX($_cadConexion='') {
+    public static function getPgConexionX($_cadConexion = '')
+    {
         self::$cadConexion = "host=192.168.31.231 port=5432 user=postgres dbname=allikay2_latin password=123456";
         //self::$cadConexion ="host=10.10.10.10 port=5432 user=postgres dbname=PANEL password=123456";
         self::$cadConexion = empty($_cadConexion) ? self::$cadConexion : $_cadConexion;
@@ -48,11 +53,13 @@ class Conexion {
         return self::$cnx;
     }
 
-    public static function getPgConexionMSSQL() {
+    public static function getPgConexionMSSQL()
+    {
         return self::$arrayDsnUserMSSQL;
     }
 
-    public static function getSQLConexionAuditoria($_cadConexion='') {
+    public static function getSQLConexionAuditoria($_cadConexion = '')
+    {
         self::$cadConexion = "host=192.168.31.234 port=2243 user=sa dbname=Auditoria password=123456";
         self::$cadConexion = empty($_cadConexion) ? self::$cadConexion : $_cadConexion;
         if (empty(self::$cnx)) {
@@ -61,7 +68,8 @@ class Conexion {
         return self::$cnx;
     }
 
-    public static function getSQLConexionAuditoriaWeb($_cadConexion='') {
+    public static function getSQLConexionAuditoriaWeb($_cadConexion = '')
+    {
         self::$cadConexion = "host=192.168.31.235 port=2243 user=sa dbname=AuditoriaWeb password=123456";
         //self::$cadConexion ="host=127.0.0.1 port=5432 user=postgres dbname=PANEL password=123456";
         self::$cadConexion = empty($_cadConexion) ? self::$cadConexion : $_cadConexion;
@@ -71,7 +79,8 @@ class Conexion {
         return self::$cnx;
     }
 
-    public static function getSQLConexionSimedh($_cadConexion='') {
+    public static function getSQLConexionSimedh($_cadConexion = '')
+    {
         self::$cadConexion = "host=192.168.31.234 port=2243 user=sa dbname=Simedh password=123456";
         //self::$cadConexion ="host=127.0.0.1 port=5432 user=postgres dbname=PANEL password=123456";
         self::$cadConexion = empty($_cadConexion) ? self::$cadConexion : $_cadConexion;
@@ -82,39 +91,42 @@ class Conexion {
     }
 
     /* public static function  getSQLConexionSimedh($_cadConexion=''){
-      self::$cadConexion ="host=127.0.0.1 port=5432 user=postgres dbname=allikay2_latin password=123456";
-      //self::$cadConexion ="host=127.0.0.1 port=5432 user=postgres dbname=PANEL password=123456";
-      self::$cadConexion = empty($_cadConexion)?self::$cadConexion:$_cadConexion;
-      if(empty(self::$cnx)){
-      self::$cnx = pg_connect(self::$cadConexion) or die("Error en la Conexion: ".pg_last_error());
-      }
-      return self::$cnx;
-      } */
+    self::$cadConexion ="host=127.0.0.1 port=5432 user=postgres dbname=allikay2_latin password=123456";
+    //self::$cadConexion ="host=127.0.0.1 port=5432 user=postgres dbname=PANEL password=123456";
+    self::$cadConexion = empty($_cadConexion)?self::$cadConexion:$_cadConexion;
+    if(empty(self::$cnx)){
+    self::$cnx = pg_connect(self::$cadConexion) or die("Error en la Conexion: ".pg_last_error());
+    }
+    return self::$cnx;
+    } */
 
-    public static function getInitDsnMSSQLAuditoria() {
+    public static function getInitDsnMSSQLAuditoria()
+    {
         $arrayDsnMSSQL['dbname'] = 'Auditoria';
         $arrayDsnMSSQL['dbuser'] = 'sa'; //simedhgranja';
         $arrayDsnMSSQL['dbpasw'] = '123456'; //p3ch3';
-//        $arrayDsnMSSQL['dbhost'] = '192.168.88.51';
+        //        $arrayDsnMSSQL['dbhost'] = '192.168.88.51';
         $arrayDsnMSSQL['dbhost'] = 'GARROYO-L\SQLEXPRESS2017';
         $arrayDsnMSSQL['dbdriv'] = 'SQLSRV';
         return $arrayDsnMSSQL;
     }
 
-    public static function getInitDsnMSSQLAuditoriaWeb() {
+    public static function getInitDsnMSSQLAuditoriaWeb()
+    {
         $arrayDsnMSSQL['dbname'] = 'yachayPanel';
-      
+
         $arrayDsnMSSQL['dbuser'] = 'sa';
         $arrayDsnMSSQL['dbpasw'] = 'Dive2018$';
         $arrayDsnMSSQL['dbhost'] = 'GARROYO-L\SQLEXPRESS2017';
-    //    $arrayDsnMSSQL['dbhost'] = 'DESKTOP-FRC01VR\gianp';
+        //    $arrayDsnMSSQL['dbhost'] = 'DESKTOP-FRC01VR\gianp';
         $arrayDsnMSSQL['dbdriv'] = 'SQLSRV';
         return $arrayDsnMSSQL;
     }
 
-    public static function getInitDsnMSSQLSimedh() {
+    public static function getInitDsnMSSQLSimedh()
+    {
         $arrayDsnMSSQL['dbname'] = 'yachay';
-       
+
         $arrayDsnMSSQL['dbuser'] = 'sa';
         $arrayDsnMSSQL['dbpasw'] = 'Dive2018$';
         $arrayDsnMSSQL['dbhost'] = 'GARROYO-L\SQLEXPRESS2017';
@@ -122,7 +134,8 @@ class Conexion {
         return $arrayDsnMSSQL;
     }
 
-    public static function getInitDsnMSSQLSimi() {
+    public static function getInitDsnMSSQLSimi()
+    {
         $arrayDsnMSSQL['dbname'] = 'SIMI';
         $arrayDsnMSSQL['dbuser'] = 'desa'; //simedhgranja';
         $arrayDsnMSSQL['dbpasw'] = 'desa'; //p3ch3';
@@ -132,5 +145,3 @@ class Conexion {
     }
 
 }
-
-?>
