@@ -205,53 +205,6 @@ class LActoMedico {
         return utf8_encode($rs[0]["respuesta"]);
     }
 
-    function obtenerFechaNacimiento($datos) {
-        //var_dump($datos);exit();
-        $o_DFechaNacimiento = new DActoMedico();
-        $rs = $o_DFechaNacimiento->getArrayFechaNacimiento($datos);
-        //var_dump($rs);exit();
-        return $rs;
-    }
-    function obtenerNumMeses($datos) {
-        //var_dump($datos);exit();
-        $o_DMesesNacimiento = new DActoMedico();
-        $rs = $o_DMesesNacimiento->getArrayMesesNacimiento($datos);
-        //var_dump($rs);exit();
-        return $rs;
-    }
-
-    function obtenerCodigoCronogramaServicio($datos) {
-        //var_dump($datos);exit();
-        $o_DMesesNacimiento = new DActoMedico();
-        $rs = $o_DMesesNacimiento->getCodigoCronogramaServicio($datos);
-        //var_dump($rs);exit();
-        return $rs;
-    }
-
-    function obtenerCodigoServicio($datos) {
-        //var_dump($datos);exit();
-        $o_DFechaNacimiento = new DActoMedico();
-        $rs = $o_DFechaNacimiento->getCodigoServicio($datos);
-        //var_dump($rs);exit();
-        return $rs;
-    }
-
-    function obtenerCodigoProgramacion($datos) {
-        //var_dump($datos);exit();
-        $o_codigoProgramacion = new DActoMedico();
-        $rs = $o_codigoProgramacion->getCodigoProgramacion($datos);
-        //var_dump('<pre>',$rs);exit();
-        return $rs;
-    }
-
-    function obtenerCodigoPersona($datos) {
-        //var_dump($datos);exit();
-        $o_CodigoPersona = new DActoMedico();
-        $rs = $o_CodigoPersona->getCodigoPersona($datos);
-        //var_dump($rs);exit();
-        return $rs;
-    }
-    
     function tablaLaboratorioHc($codPersona) {
         $o_DActoMedico = new DActoMedico();
         $resultado = $o_DActoMedico->tablaLaboratorioHc($codPersona);
@@ -1032,12 +985,6 @@ class LActoMedico {
     public function lCargarCuerpoHC($datos) {
         $o_DActoMedico = new DActoMedico();
         $resultado = $o_DActoMedico->dCargarCuerpoHC($datos);
-        return $resultado;
-    }
-
-     public function lCargarCuerpoHCNinoSano($datos) {
-        $o_DActoMedico = new DActoMedico();
-        $resultado = $o_DActoMedico->dCargarCuerpoHCNinoSano($datos);
         return $resultado;
     }
 
@@ -1890,25 +1837,13 @@ class LActoMedico {
         return $rs;
     }
 
-    public function spListaExamenPorServicio($codServicio, $idVersion, $idEstadoDesarrollo, $iCodigoProgramacion,$meses_nacimiento) {
-        //condicion x la cantidad de meses
+    public function spListaExamenPorServicio($codServicio, $idVersion, $idEstadoDesarrollo, $iCodigoProgramacion) {
         $o_DActoMedico = new DActoMedico();
-        if($codServicio=='PED0000001'){
-            if($meses_nacimiento>=6){
-                $iIdExamen=62;
-            }elseif($meses_nacimiento>=0 && $meses_nacimiento<=4){
-                $iIdExamen=63;
-            }
-            $rs = $o_DActoMedico->spListaExamenPorServicioPediatrico($codServicio, $idVersion, $idEstadoDesarrollo, $iCodigoProgramacion,$iIdExamen);
-        }else{
-            $rs = $o_DActoMedico->spListaExamenPorServicio($codServicio, $idVersion, $idEstadoDesarrollo, $iCodigoProgramacion);
-        }
-        
+        $rs = $o_DActoMedico->spListaExamenPorServicio($codServicio, $idVersion, $idEstadoDesarrollo, $iCodigoProgramacion);
+
         foreach ($rs as $indice => $valor) {
-            //var_dump('<pre>',$arrayExamenPorServicio[$rs[$indice]]);
             $arrayExamenPorServicio[$rs[$indice]['iIdExamen']] = $rs[$indice];
         }
-        //var_dump('<pre>',$arrayExamenPorServicio);exit();
         return $arrayExamenPorServicio;
     }
 

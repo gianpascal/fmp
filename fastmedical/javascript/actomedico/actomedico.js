@@ -5,7 +5,6 @@ var contadorDivsPracticaMedica = 0;
 var contadorDivsDiagnosticos = 0;
 var contadorGrid = 0;
 var opcionpreguardarDiagnosticos;
-var meses_nacimiento=0;
 function iniciarContador() {
     contadorGrid = 0;
 }
@@ -36,11 +35,11 @@ function mostrarprogramacionMedicosActoMedico() {
     parametros += '&p2=' + mes;
     parametros += '&p3=' + anio;
 
-    tablaProgramacionMedico = new dhtmlXGridObject('Div_programacionMedicosActoMedico');//crea la tabla
+    tablaProgramacionMedico = new dhtmlXGridObject('Div_programacionMedicosActoMedico');
     tablaProgramacionMedico.setImagePath("../../../../fastmedical_front/imagen/icono/");
     tablaProgramacionMedico.setSkin("dhx_skyblue");
 
-    tablaProgramacionMedico.attachEvent("onRowSelect", mostrarPacientes);//seleccionamos la fila
+    tablaProgramacionMedico.attachEvent("onRowSelect", mostrarPacientes);
     //////////para cargador peche////////////////
     contadorCargador++;
     var idCargador = contadorCargador;
@@ -128,7 +127,6 @@ function motrarTodasAtencionesProgramados(cadenaCronogramas) {
     tablaPacienteProgramados.setImagePath("../../../../fastmedical_front/imagen/icono/");
     tablaPacienteProgramados.setSkin("dhx_skyblue");
     tablaPacienteProgramados.attachEvent("onRowSelect", eventoPacienteProgramado);
-    //eventos segun iconos de pacientes adicionales
     // miTablaAntecedente.attachEvent("onRowSelect", agregarAntecedente);
     //////////para cargador peche////////////////
     contadorCargador++;
@@ -287,7 +285,7 @@ function mostrarPacientesAdicionales(codigocronograma) {
     tablaPacienteAdicionales = new dhtmlXGridObject('Div_pacientesadicionales');
     tablaPacienteAdicionales.setImagePath("../../../../fastmedical_front/imagen/icono/");
     tablaPacienteAdicionales.setSkin("dhx_skyblue");
-    tablaPacienteAdicionales.attachEvent("onRowSelect", eventoPacienteAdicional);//seleccionamos la fila
+    tablaPacienteAdicionales.attachEvent("onRowSelect", eventoPacienteAdicional);
     //////////para cargador peche////////////////
     contadorCargador++;
     var idCargador = contadorCargador;
@@ -303,11 +301,6 @@ function mostrarPacientesAdicionales(codigocronograma) {
 
         for (i = 0; i < tablaPacienteAdicionales.getRowsNum(); i++) {
             array = tablaPacienteAdicionales.getRowId(i).split("|");
-            console.log(tablaPacienteAdicionales.getRowId(i));
-            console.log('Celda 2: ' + tablaPacienteAdicionales.cells(tablaPacienteAdicionales.getRowId(i),2).getValue());
-            var fnacimiento=tablaPacienteAdicionales.cells(tablaPacienteAdicionales.getRowId(i),2).getValue();
-            console.log(fnacimiento);
-
             estadoatencion = array[2];
             if (estadoatencion == '0005') {
                 tablaPacienteAdicionales.setRowTextStyle(tablaPacienteAdicionales.getRowId(i), 'background-color:orange;color:black;border-top: 1px solid black;');
@@ -325,24 +318,6 @@ function mostrarPacientesAdicionales(codigocronograma) {
 }
 
 function eventoPacienteProgramado(rowId, cellInd) {
-    var array = rowId.split("|");
-    var codigopaciente = array[3];
-    var fecha='';
-    var resp='';
-    var fecha_nacimiento=llamarFechaNacimiento(codigopaciente, function(resp) {
-        console.log(resp);
-        decoded=JSON.parse(resp,true);
-        fecha=decoded[0].dFechaNacimiento;
-        return fecha;
-    });
-    console.log(fecha_nacimiento);
-    meses_nacimiento=llamarMeses(fecha_nacimiento, function(resp) {
-        decoded=JSON.parse(resp,true);
-        meses=decoded[0][0];
-        return meses;
-    });
-    console.log(meses_nacimiento);
-
     if (cellInd == 7) {
         llamaralPacienteActoMedico(rowId);
     }
@@ -364,54 +339,26 @@ function eventoPacienteProgramado(rowId, cellInd) {
 }
 
 function eventoPacienteAdicional(rowId, cellInd) {
-    var array = rowId.split("|");
-    var codigopaciente = array[3];
-    var fecha='';
-    var resp='';
-    var fecha_nacimiento=llamarFechaNacimiento(codigopaciente, function(resp) {
-        console.log(resp);
-        decoded=JSON.parse(resp,true);
-        fecha=decoded[0].dFechaNacimiento;
-        return fecha;
-    });
-    console.log(fecha_nacimiento);
-    meses_nacimiento=llamarMeses(fecha_nacimiento, function(resp) {
-        decoded=JSON.parse(resp,true);
-        meses=decoded[0][0];
-        return meses;
-    });
-    console.log(meses_nacimiento);
+    if (cellInd == 7) {
+        llamaralPacienteActoMedico(rowId);
+    }
+    if (cellInd == 8) {
+        $("hidtablapacientes").value = rowId;
+        $("hidtipoprogramacion").value = 1;
+        atenderPacienteActoMedico(rowId);
+    }
+    if (cellInd == 9) {
+        $("hidtablapacientes").value = rowId;
+        $("hidtipoprogramacion").value = 0;
+        if ($('henHora').value == 1) {
+            atencionInmediataXRegularizar(rowId);
+        } else {
+            alert('Solo se puede Cambiar de Estado durante su turno');
+        }
 
-        //click en iconos
-        if (cellInd == 7) {
-            llamaralPacienteActoMedico(rowId);
-        }
-        if (cellInd == 8) {
-            /*$("hidtablapacientes").value = rowId;
-            $("hidtipoprogramacion").value = 1;
-            if(meses_nacimiento<=12){
-                console.log('es menor a 1 año');
-                atenderPacienteActoMedicoNinoSano(rowId);
-            }else{*/
-                atenderPacienteActoMedico(rowId);
-            //}
-            
-        }
-        if (cellInd == 9) {
-            $("hidtablapacientes").value = rowId;
-            $("hidtipoprogramacion").value = 0;
-            if ($('henHora').value == 1) {
-                atencionInmediataXRegularizar(rowId);
-            } else {
-                alert('Solo se puede Cambiar de Estado durante su turno');
-            }
-        }
-}
-
-function redirection(monthAge) {
+    }
 
 }
-
 function afiliacionCorrecta(codigoProgramacion) {
 
 
@@ -525,7 +472,6 @@ function atencionInmediataXRegularizar(parametro) {
 
 }
 function cargarCuerpoHC(codigoservicio, codigoProgramacion) {
-    console.log(meses_nacimiento);
     //para limpiar los hc despues de grabar
     var estadoatencion = document.getElementById("htxtestadoatencion").value;
     var codigopaciente = document.getElementById("htxtcodigopaciente").value;
@@ -540,7 +486,6 @@ function cargarCuerpoHC(codigoservicio, codigoProgramacion) {
     parametros += '&p3=' + codigoProgramacion;
     parametros += '&p4=' + codigopaciente;
     parametros += '&p5=' + estadoatencion;
-    parametros += '&p6=' + meses_nacimiento;
     //  alert(codigoProgramacion);
     // alert(codigopaciente);
     //parametros+='&p4='+codigoservicio;
@@ -559,51 +504,13 @@ function cargarCuerpoHC(codigoservicio, codigoProgramacion) {
         }
     })
 }
-
-function cargarCuerpoHCNinoSano(codigoservicio, codigoProgramacion) {
-    console.log('entro1');
-    //para limpiar los hc despues de grabar
-    var estadoatencion = document.getElementById("htxtestadoatencion").value;
-    var codigopaciente = document.getElementById("htxtcodigopaciente").value;
-    //var codigoservicio = document.getElementById("htxtcodigoservicio").value;
-    var patronModulo = 'cargarCuerpoHCNinoSano';
-    var parametros = '';
-    parametros += 'p1=' + patronModulo;
-    parametros += '&p2=' + codigoservicio;
-    //var patronModulo='cargaFiliacionActoMedico';
-    //var parametros='';
-    // parametros+='p1='+patronModulo;
-    parametros += '&p3=' + codigoProgramacion;
-    parametros += '&p4=' + codigopaciente;
-    parametros += '&p5=' + estadoatencion;
-    //  alert(codigoProgramacion);
-    // alert(codigopaciente);
-    //parametros+='&p4='+codigoservicio;
-
-    contadorCargador++;
-    var idCargador = contadorCargador;
-    new Ajax.Request(pathRequestControl, {
-        method: 'get',
-        asynchronous: false,
-        parameters: parametros,
-        onLoading: cargadorpeche(1, idCargador),
-        onComplete: function(transport) {
-            cargadorpeche(0, idCargador);
-            var respuesta = transport.responseText;
-            $('Div_GeneralActoMedicoHC').update(respuesta);
-        }
-    })
-}
-
 function atenderPacienteActoMedico(parametro) {
-    //console.log(meses_nacimiento);
     //  alert(parametro);
     var array = parametro.split("|");
     var codigoProgramacion = array[0];
     var estadoatencion = array[2];
     var codigopaciente = array[3];
     var codigoservicio = array[4];
-    console.log(codigoservicio);
     var esEssalud = array[5];
     $("htxtcodigopaciente").value = codigopaciente;
     $("htxtestadoatencion").value = estadoatencion;
@@ -618,6 +525,7 @@ function atenderPacienteActoMedico(parametro) {
                 $("htxtcodigosDiagnosticos").value = 0;
                 $("txtbusquedaNombreDiagnostico").value = '';
             }
+
             $("Div_GeneralActoMedicoHC").show();
             $("Div_GeneralActoMedico").hide();//oculta programacion de medico
             //$('Div_HCReciente').hide(); //oculta lo 
@@ -636,7 +544,6 @@ function atenderPacienteActoMedico(parametro) {
     }
     else {
         //alert('peche 2')
-        console.log('sss');
         var divs_hc = ["Div_Triaje", "Div_ConsultaMedica", "Div_Antecedentes", "Div_ExamenMedico", "Div_Diagnostico", "Div_Tratamiento", "Opc_proximaCita"];
         cargarCuerpoHC('', codigoProgramacion);
         //$("divHC_cuerpo").hide();
@@ -666,33 +573,9 @@ function atenderPacienteActoMedico(parametro) {
      document.getElementById('Div_accordActoMedico').style.display="block";
      mostrarPestanitasActoMedico();*/
     window.scrollTo(0, 0); //para subir el scroll
-}
 
-function atenderPacienteActoMedicoNinoSano(parametro) {
-    var array = parametro.split("|");
-    var codigoProgramacion = array[0];
-    var estadoatencion = array[2];
-    var codigopaciente = array[3];
-    var codigoservicio = array[4];
-    var esEssalud = array[5];
-    $("htxtcodigopaciente").value = codigopaciente;
-    $("htxtestadoatencion").value = estadoatencion;
-    if (estadoatencion == '0004' || estadoatencion == '0007') {
-        var mensajeAfiliacion = afiliacionCorrecta(codigoProgramacion);
-        if (mensajeAfiliacion == 'ok') {
-            cargarCuerpoHCNinoSano(codigoservicio, codigoProgramacion);
-            $("Div_GeneralActoMedicoHC").show();
-        } else {
-            alert(mensajeAfiliacion);
-        }
-    }
-    else {
-            cargarCuerpoHCNinoSano('', codigoProgramacion);
-            $("Div_GeneralActoMedicoHC").show();
-    }
 
 }
-
 function cargarTablaPAquete2(codigopaciente, key, iIdGrupoEtarioPersonas, iIdGrupoEtareo) {
     // Lobo
     //    alert(iIdGrupoEtarioPersonas)
@@ -1211,88 +1094,6 @@ function crearDivNuevoSintoma(idDivSintoma) {
     nuevoDivSintoma.setAttribute("id", idDivSintoma);
     nuevoDivSintoma.setAttribute("style", "width: 60%;height: 50%");
     divAnterior.appendChild(nuevoDivSintoma);
-}
-
-/*
-function llamarFechaNacimiento(variableenviada,my_callback){
-    console.log('entro2');
-    var patronModulo = 'llamarFechaNacimiento2';
-    var parametros = {
-            "p1" : patronModulo,
-            "p2" : variableenviada
-    };
-    $.ajax({
-        url: '../../ccontrol/control/control.php',
-        data : parametros,
-        type: 'get',
-        datatype:"json",
-        error:function(){
-            alert("ha ocurrido un error");
-        },
-        success: function(datosRetornados){
-            console.log(datosRetornados);
-        }
-    });
-
-}*/
-function llamarFechaNacimiento(variableenviada,my_callback) {
-    //console.log('entro a actomedico,js');
-    var patronModulo = 'llamarFechaNacimiento2';
-    var resultadoGlobal="";
-        jQuery.ajax({
-            type: 'POST',
-            datatype:"json",
-            async: false,
-            url: '../../ccontrol/control/control.php',
-            data: {
-                "p1" : patronModulo,
-                "p2" : variableenviada 
-            },
-        success: function (data) {
-                 resultadoGlobal=data;
-                 f=my_callback(resultadoGlobal);
-                 console.log(f);
-                 
-        },
-        error: function (errorThrown) {}
-        });
-    return f;
-    /*var request = jQuery.ajax({
-        method: 'POST',
-        datatype:"json",
-        url: '../../ccontrol/control/control.php',
-        async: false,
-        data: {
-            "p1" : patronModulo,
-            "p2" : variableenviada 
-        }});
-    resultadoGlobal = request.responseText;
-    var f = my_callback(resultadoGlobal);
-    console.log(f);
-    return f;*/
-}
-
-function llamarMeses(variableenviada,my_callback) {
-    var patronModulo = 'llamarNumMeses2';
-    var resultadoGlobal="";
-        jQuery.ajax({
-            type: 'POST',
-            datatype:"json",
-            async: false,
-            url: '../../ccontrol/control/control.php',
-            data: {
-                "p1" : patronModulo,
-                "p2" : variableenviada 
-            },
-        success: function (data) {
-                 resultadoGlobal=data;
-                 f=my_callback(resultadoGlobal);
-                 console.log(f);
-                 
-        },
-        error: function (errorThrown) {}
-        });
-    return f;
 }
 
 function llamaralPacienteActoMedico(parametro) {
@@ -2529,14 +2330,12 @@ function abrirDivSimple(nombreDiv) {
     }
 }
 function verHcReciente() {
-    console.log('entroooo',meses_nacimiento);
     $('Div_HCReciente').show();
     idProgramacion = $('hcodigoProgramacion').value;
     patronModulo = 'verHCReciente';
     parametros = '';
     parametros += 'p1=' + patronModulo;
     parametros += '&p2=' + idProgramacion;
-    parametros += '&p3=' + meses_nacimiento;
 
     new Ajax.Request(pathRequestControl, {
         method: 'get',
@@ -5095,7 +4894,6 @@ function darxAtencionCompletada() {
     //////////////////////////////////////////////////////////////
     //2. Diagnostico
     if ($('existeDiagnostico') != null) {
-        console.log('entroaa');
         var numCiesVisibles = 0;
         var cantidadCies = parseInt($("hNumeroDiagnostico").value);
         var z;
@@ -5818,7 +5616,7 @@ function setIdPrueba(fila, columna) {
 
 function mostrartablaExamenPrueba(idExamen) {
     parametros = "p1=datosExamenPrueba&p2=" + idExamen;
-     mygridX = new dhtmlXGridObject('divtablaExamenPrueba');
+    var mygridX = new dhtmlXGridObject('divtablaExamenPrueba');
     mygridX.setImagePath("../../../imagen/dhtmlxgrid/imgs/");
     mygridX.setSkin("dhx_skyblue");
     mygridX.enableRowsHover(true, 'grid_hover');

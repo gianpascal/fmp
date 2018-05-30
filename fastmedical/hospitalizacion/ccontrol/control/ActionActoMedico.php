@@ -108,9 +108,7 @@ class ActionActoMedico {
         $oLActoMedico = new LActoMedico();
         $datos == '' ? $arrayFilas = array() : $arrayFilas = $oLActoMedico->getListaPacientesAdicionales($datos);
         $atencionrapida = "false";
-        if($datos["codigoactividad"]=''){
-
-        }else if ($datos["codigoactividad"] == "0003"){
+        if ($datos["codigoactividad"] == "0003"){
              $atencionrapida = "false";
         }
            
@@ -187,7 +185,7 @@ class ActionActoMedico {
 
 //
 //        $rs = '<table cellspacing="1" style="border:0px solid;">
-//                <tr style="background-image:url(\'../../../../fastmedical_front/imagen/icono/fondogrid.png\');height: 30px;">
+//                <tr style="background-image:url(\'../../../../medifacil_front/imagen/icono/fondogrid.png\');height: 30px;">
 //                    <td style="width: 90px;border:0px solid #006631">
 //                <center><p style="font-size:18px;font-family: segoe UI;color:black"><b>Codigo</b></p></center>
 //                </td>
@@ -215,7 +213,7 @@ class ActionActoMedico {
 //                        <p style="font-size:12px;font-family: segoe UI;color:white;padding-left:10px;">' . $resultado[$x][1] . '</p>
 //                    </td>
 //                    <td>
-//                        <a href="javascript:cargarMantenimiento(' . $id . ',' . $nombre . ')"><img src="../../../../fastmedical_front/imagen/icono/btn_EditarAngel.png" style="width: 30px;"></a>
+//                        <a href="javascript:cargarMantenimiento(' . $id . ',' . $nombre . ')"><img src="../../../../medifacil_front/imagen/icono/btn_EditarAngel.png" style="width: 30px;"></a>
 //                    </td>
 //                    </tr>';
 //        }
@@ -362,18 +360,6 @@ class ActionActoMedico {
         $rs = $oLActoMedico->obtenerdatosdellamadadelPaciente($datos);
         return $rs;
     }
-    function llamarFechaNacimiento2($datos) {
-        $oLActoMedico = new LActoMedico();
-        $rs = $oLActoMedico->obtenerFechaNacimiento($datos);
-        return $rs;
-    }
-
-    function llamarNumMeses2($datos) {
-        $oLActoMedico = new LActoMedico();
-        $rs = $oLActoMedico->obtenerNumMeses($datos);
-        //var_dump($rs);exit();
-        return $rs;
-    }
 
     function eliminarAnterioresSeleccionados($datos) {
         $oLActoMedico = new LActoMedico();
@@ -502,7 +488,7 @@ class ActionActoMedico {
 //
 ////        if($c_cod_per=='' || count($arrayFilas)==0){
 ////            $cb_tipDc  = $this->seleccionarTipoDocumento('0001');
-//            $imagen    = $disabled==''?'../../../../fastmedical_front/imagen/icono/nuevo_item.png':'../../../../fastmedical_front/imagen/icono/nuevo_item_black.png';
+//            $imagen    = $disabled==''?'../../../../medifacil_front/imagen/icono/nuevo_item.png':'../../../../medifacil_front/imagen/icono/nuevo_item_black.png';
 //            $cursor    = $disabled==''?'cursor:pointer;':'cursor:default;';
 //            $tablaHTML.= "<tr>";
 //            $tablaHTML.="<td height='30' width='25%' valign='top'><p>Tipo Campo :</p>";
@@ -536,7 +522,7 @@ class ActionActoMedico {
 ////                $tablaHTML.="</td>";
 ////                $tablaHTML.="<td>";
 ////                $tablaHTML.="<input name='txtNroDocIdent[".$i."]' onblur='valida_docIdentidad(".$i.");' onkeypress=\"return validFormSalt('nro',this,event,'txtApellidoPat')\" type='text' ".$readonly." style='width:100px;' id='txtNroDocIdent[".$i."]' value='".htmlentities(trim($arrayFilas[$i-1]['vNumeroDocumento']))."'  title='Documento Identidad' maxlength='8'/>";
-////                $tablaHTML.= $i==1?"<input type='button' disabled='disabled' name='btnDni[".$i."]' id='btnDni[".$i."]' value='' style='background:url(../../../../fastmedical_front/imagen/icono/nuevo_item_black.png) no-repeat;width:18px;height:18px;border:0px;cursor:default;' onclick='agrega_documento_identidad(\"tbl_doc\",++kk);'>":"<input type='button' name='btnDni[".$i."]' id='btnDni[".$i."]' disabled='disabled' value='' style='background:url(../../../imagen/inicio/eliminar_black.gif) no-repeat;width:18px;height:18px;border:0px;cursor:default;' onclick='elimina_fila(".$i.");'>";
+////                $tablaHTML.= $i==1?"<input type='button' disabled='disabled' name='btnDni[".$i."]' id='btnDni[".$i."]' value='' style='background:url(../../../../medifacil_front/imagen/icono/nuevo_item_black.png) no-repeat;width:18px;height:18px;border:0px;cursor:default;' onclick='agrega_documento_identidad(\"tbl_doc\",++kk);'>":"<input type='button' name='btnDni[".$i."]' id='btnDni[".$i."]' disabled='disabled' value='' style='background:url(../../../imagen/inicio/eliminar_black.gif) no-repeat;width:18px;height:18px;border:0px;cursor:default;' onclick='elimina_fila(".$i.");'>";
 ////                $tablaHTML.="</td>";
 ////                $tablaHTML.="</tr>";
 ////                $i++;
@@ -634,7 +620,7 @@ class ActionActoMedico {
 //
 ////        if($c_cod_per=='' || count($arrayFilas)==0){
 ////            $cb_tipDc  = $this->seleccionarTipoDocumento('0001');
-//        $imagen    = $disabled==''?'../../../../fastmedical_front/imagen/icono/nuevo_item.png':'../../../../fastmedical_front/imagen/icono/nuevo_item_black.png';
+//        $imagen    = $disabled==''?'../../../../medifacil_front/imagen/icono/nuevo_item.png':'../../../../medifacil_front/imagen/icono/nuevo_item_black.png';
 //        $cursor    = $disabled==''?'cursor:pointer;':'cursor:default;';
 //        $tablaHTML.= "<tr>";
 //        $tablaHTML.="<td height='30' width='25%' valign='top'><p>Tipo Campo :</p>";
@@ -668,7 +654,7 @@ class ActionActoMedico {
 ////                $tablaHTML.="</td>";
 ////                $tablaHTML.="<td>";
 ////                $tablaHTML.="<input name='txtNroDocIdent[".$i."]' onblur='valida_docIdentidad(".$i.");' onkeypress=\"return validFormSalt('nro',this,event,'txtApellidoPat')\" type='text' ".$readonly." style='width:100px;' id='txtNroDocIdent[".$i."]' value='".htmlentities(trim($arrayFilas[$i-1]['vNumeroDocumento']))."'  title='Documento Identidad' maxlength='8'/>";
-////                $tablaHTML.= $i==1?"<input type='button' disabled='disabled' name='btnDni[".$i."]' id='btnDni[".$i."]' value='' style='background:url(../../../../fastmedical_front/imagen/icono/nuevo_item_black.png) no-repeat;width:18px;height:18px;border:0px;cursor:default;' onclick='agrega_documento_identidad(\"tbl_doc\",++kk);'>":"<input type='button' name='btnDni[".$i."]' id='btnDni[".$i."]' disabled='disabled' value='' style='background:url(../../../imagen/inicio/eliminar_black.gif) no-repeat;width:18px;height:18px;border:0px;cursor:default;' onclick='elimina_fila(".$i.");'>";
+////                $tablaHTML.= $i==1?"<input type='button' disabled='disabled' name='btnDni[".$i."]' id='btnDni[".$i."]' value='' style='background:url(../../../../medifacil_front/imagen/icono/nuevo_item_black.png) no-repeat;width:18px;height:18px;border:0px;cursor:default;' onclick='agrega_documento_identidad(\"tbl_doc\",++kk);'>":"<input type='button' name='btnDni[".$i."]' id='btnDni[".$i."]' disabled='disabled' value='' style='background:url(../../../imagen/inicio/eliminar_black.gif) no-repeat;width:18px;height:18px;border:0px;cursor:default;' onclick='elimina_fila(".$i.");'>";
 ////                $tablaHTML.="</td>";
 ////                $tablaHTML.="</tr>";
 ////                $i++;
@@ -881,7 +867,6 @@ class ActionActoMedico {
     function vistaPruevasProduccion($idExamen, $iCodigoProgramacion) {
         $oLActoMedico = new LActoMedico();
         $pruebasExamenes = $oLActoMedico->pruebasExamenes($idExamen, $iCodigoProgramacion);
-            //var_dump('<pre>',$pruebasExamenes);
         $cadena = '';
         $idPruebaAux = '';
         $numero = count($pruebasExamenes);
@@ -1087,24 +1072,9 @@ class ActionActoMedico {
         require_once("../../cvista/actomedico/verHC.php");
     }
 
-    public function verHCReciente($idProgramacion,$meses_nacimiento) {
+    public function verHCReciente($idProgramacion) {
         $oLActoMedico = new LActoMedico();
-        $codigoServicios=$oLActoMedico->obtenerCodigoCronogramaServicio($idProgramacion);
-        $codigoServicios=$codigoServicios[0][0];
-        //var_dump('<pre>',$codigoServicios);exit();
-        if($codigoServicios=='PED0000001'){
-            require_once("../../cvista/actomedico/verHCxDia_Pediatria.php"); 
-        }else{
-            require_once("../../cvista/actomedico/verHCxDia.php");  
-        }
-        
-    }
-
-    function llamarCodigoServicio($datos) {
-        $oLActoMedico = new LActoMedico();
-        $rs = $oLActoMedico->obtenerCodigoCronogramaServicio($datos);
-        //var_dump($rs);exit();
-        return $rs;
+        require_once("../../cvista/actomedico/verHCxDia.php");
     }
 
     public function arbolHCFechas($codigoPaciente) {
@@ -1325,7 +1295,7 @@ class ActionActoMedico {
 
                     $cadena.='<fieldset style="border:0px solid;padding-left: 5px;  font-size: 16px;">
                         <legend> Receta ' . $idReceta . ' - Vencimiento: ' . $fechaVencimiento . ' <a onclick="javascript:imprimirRecetaUnicaEstandarizada(' . $idReceta . ');" href="javascript:;">
-                                    <img alt="" title="Receta Medica Estandarizada" src="../../../../fastmedical_front/imagen/btn/ImprimirReceta.png" id="btnImprimirRecetaUnica">
+                                    <img alt="" title="Receta Medica Estandarizada" src="../../../../medifacil_front/imagen/btn/ImprimirReceta.png" id="btnImprimirRecetaUnica">
                                     </a></legend>
                         <table class="tablaDiagnostico" width="700px;" border="0" cellpadding="0" cellspacing="2" align="center">
                             <tr>
@@ -1360,7 +1330,7 @@ class ActionActoMedico {
                 $cadena.='<fieldset style=" margin:5px;">
                         <legend> Pr&aacute;cticas M&eacute;dicas 
   <a onclick="javascript:imprimirOrdenMedica(' . $idReceta . ');" href="javascript:;">
-                                    <img alt="" title="Receta Orden Médica" src="../../../../fastmedical_front/imagen/btn/ImprimirReceta.png" id="btnImprimirRecetaUnica">
+                                    <img alt="" title="Receta Orden Médica" src="../../../../medifacil_front/imagen/btn/ImprimirReceta.png" id="btnImprimirRecetaUnica">
                                     </a>                        
 </legend>
                         <div style="margin-left: 1%; margin-right: 1%;">';
@@ -1389,7 +1359,7 @@ class ActionActoMedico {
                         $cadena.='<br><fieldset style=" margin:5px;">';
                         $cadena.=' <legend> Pr&aacute;cticas M&eacute;dicas 
       <a onclick="javascript:imprimirOrdenMedica(' . $idReceta . ');" href="javascript:;">
-                                    <img alt="" title="Receta Orden Médica" src="../../../../fastmedical_front/imagen/btn/ImprimirReceta.png" id="btnImprimirRecetaUnica">
+                                    <img alt="" title="Receta Orden Médica" src="../../../../medifacil_front/imagen/btn/ImprimirReceta.png" id="btnImprimirRecetaUnica">
                                 </a>                             
 </legend>';
                         $cadena.='<div style="margin-left: 1%; margin-right: 1%;">';
@@ -1917,16 +1887,10 @@ class ActionActoMedico {
     }
 
     public function aCargarCuerpoHC($datos) {
-        //var_dump('<pre>',$datos);exit();
         $oLActoMedico = new LActoMedico();
         $resultado = $oLActoMedico->lCargarCuerpoHC($datos);
+        // print_r($datos);
         require_once '../../cvista/actomedico/vistaAtencionMedicaHC.php';
-        //return $resultado;
-    }
-    public function aCargarCuerpoHCNinoSano($datos) {
-        $oLActoMedico = new LActoMedico();
-        $resultado = $oLActoMedico->lCargarCuerpoHCNinoSano($datos);
-        require_once '../../cvista/actomedico/vistaNinoSano.php';
         //return $resultado;
     }
 
@@ -2735,10 +2699,10 @@ class ActionActoMedico {
       $divSintoma .= "</div>";
       $divSintoma .= "<div style=\"width: 20%; float: left; text-align: right\">";
       $divSintoma .= "<a href=\"#\" onclick=\"validarManteSintomaMotivoConsulta('insertar',".$numSintomas.")\">";
-      $divSintoma .= "<img src=\"../../../../fastmedical_front/imagen/icono/grabar.png\" alt=\"Grabar Sintoma\" title=\"Grabar Sintoma\"/>";
+      $divSintoma .= "<img src=\"../../../../medifacil_front/imagen/icono/grabar.png\" alt=\"Grabar Sintoma\" title=\"Grabar Sintoma\"/>";
       $divSintoma .= "</a>";
       $divSintoma .= "<a href=\"#\" onclick=\"eliminarSintoma('Div_sintoma".$numSintomas."')\">";
-      $divSintoma .= "<img src=\"../../../../fastmedical_front/imagen/icono/eliminar.gif\" alt=\"Eliminar Sintoma\" title=\"Eliminar Sintoma\"/>";
+      $divSintoma .= "<img src=\"../../../../medifacil_front/imagen/icono/eliminar.gif\" alt=\"Eliminar Sintoma\" title=\"Eliminar Sintoma\"/>";
       $divSintoma .= "</a>";
       $divSintoma .= "</div>";
       $divSintoma .= "</div>";
@@ -2923,9 +2887,8 @@ class ActionActoMedico {
 
     public function getPreordenArbol($arrayExamenMedico, $iIdExamen, $iCodigoProgramacion) {
         $arrayHijo = $this->getArrayHijoArbol($arrayExamenMedico, $iIdExamen);
-        //var_dump('<pre>',$arrayHijo);exit();
+        //print_r($arrayHijo);
         if ($arrayHijo != null) {
-            //var_dump('entro1');exit();
             if ($arrayExamenMedico[$iIdExamen]['iNivel'] != 0) {
                 $nomExamenMedico = utf8_encode($arrayExamenMedico[$iIdExamen]['vDescripcion']);
                 $this->cadenaArbolExamenMedico.="<div style=\"width:98%\">";
@@ -2945,11 +2908,10 @@ class ActionActoMedico {
             $this->cadenaArbolExamenMedico.="</div>";
             // }
         } else {
-            //var_dump('entro2');exit();
             $nomExamenMedico = utf8_encode($arrayExamenMedico[$iIdExamen]['vDescripcion']);
 
             $contenido = $this->vistaPruevasProduccion($iIdExamen, $iCodigoProgramacion);
-            //var_dump('<pre>',$contenido);exit();
+
             $this->cadenaArbolExamenMedico.="<div style=\"width:98%\">";
             $this->cadenaArbolExamenMedico.="<a href=\"javascript:;\" onclick=\"javascript:;\">";
             $this->cadenaArbolExamenMedico.="<div class='cabecerasExamenes' id=\"Div_ExamenMedicoEncabezado_" . $iIdExamen . "\" style=\"width:100% ;height:25px; display:block; border-style:solid; border-width:1px\" onclick=\"javascript:abrirDivSimple('Div_ExamenMedicoCuerpo_" . $iIdExamen . "')\">";
@@ -2971,10 +2933,9 @@ class ActionActoMedico {
         return $this->cadenaArbolExamenMedico;
     }
 
-    public function listaExamenPorServicio($codServicio, $idVersion, $idEstadoDesarrollo, $codProgramacion,$meses_nacimiento) {
-        //var_dump($meses_nacimiento);exit();
+    public function listaExamenPorServicio($codServicio, $idVersion, $idEstadoDesarrollo, $codProgramacion) {
         $oLActoMedico = new LActoMedico();
-        $rs = $oLActoMedico->spListaExamenPorServicio($codServicio, $idVersion, $idEstadoDesarrollo, $codProgramacion,$meses_nacimiento);
+        $rs = $oLActoMedico->spListaExamenPorServicio($codServicio, $idVersion, $idEstadoDesarrollo, $codProgramacion);
         return $rs;
     }
 
@@ -3136,7 +3097,6 @@ class ActionActoMedico {
 
     public function getArrayExamenPorServicioCompleto($arrayExamenPorServicio, $arrayExamenMedico) {//Arma el vector del arbol con los hijos encontrados en ServiciosExamenes con todos sus padres
         //$arrayExamenArbol = array();
-        //var_dump($arrayExamenPorServicio);exit();
         foreach ($arrayExamenPorServicio as $indice => $valor) {
             //array_push($arrayExamenArbol, $indice);
             $arrayExamenArbol[$arrayExamenPorServicio[$indice]['iIdExamen']] = $arrayExamenPorServicio[$indice];
@@ -3165,25 +3125,18 @@ class ActionActoMedico {
     }
 
     public function pintarDivExamenes($parametros) {
-        //var_dump('<pre>',$parametros);exit();
-        $codPaciente = $parametros['codigoPaciente'];
         $codServicio = $parametros['c_cod_ser_pro'];
         $codProgramacion = $parametros['codigoProgramacion'];
-        $meses_nacimiento = $parametros['meses_nacimiento'];
-        //var_dump($meses_nacimiento);exit();
         $this->cadenaArbolExamenMedico = '';
         $nomExamen = '%';
         //$idVersion=30;
         $arrayVersion = $this->listaVersionExamenDeProduccion();
-        //var_dump('<pre>',$arrayVersion);exit();
         $idVersion = $arrayVersion[0]['iIdVersion']; //echo 'Version:'.$idVersion;
         $idEstadoDesarrollo = 1;
-        $arrayExamenPorServicio = $this->listaExamenPorServicio($codServicio, $idVersion, $idEstadoDesarrollo, $codProgramacion,$meses_nacimiento); //print_r($arrayExamenPorServicio);
-        //var_dump($arrayExamenPorServicio);exit();
+        $arrayExamenPorServicio = $this->listaExamenPorServicio($codServicio, $idVersion, $idEstadoDesarrollo, $codProgramacion); //print_r($arrayExamenPorServicio);
         $arrayExamenMedico = $this->listaExamenMedico($nomExamen, $idVersion, $idEstadoDesarrollo); //print_r($arrayExamenMedico);
 
         $arrayExamenPorServicioCompleto = $this->getArrayExamenPorServicioCompleto($arrayExamenPorServicio, $arrayExamenMedico); //print_r($arrayExamenPorServicioCompleto);
-        //var_dump('<pre>',$arrayExamenPorServicioCompleto);exit();
         //$iIdExamenRaiz=275;
         $iIdExamenRaiz = -1;
         //Buscamos la raiz del arbol
@@ -3201,17 +3154,14 @@ class ActionActoMedico {
         $arrayAux = array();
         foreach ($arrayExamenPorServicio as $idExamen => $valor) {
             $arrayPruebas = $oLActoMedico->pruebasExamenes($idExamen, $codProgramacion);
-            //var_dump('<pre>',$arrayPruebas);exit();
             if (isset($arrayPruebas)) {
                 foreach ($arrayPruebas as $indice => $valor2) {
                     //$arrayAux[$arrayPruebas[$indice]['iIdPrueba']]=$arrayPruebas[$indice];
                     $arrayAux[$arrayPruebas[$indice]['iIdPrueba']] = $arrayPruebas[$indice]['iIdPrueba'];
-                    //var_dump($arrayAux[$arrayPruebas[$indice]['iIdPrueba']]);exit();
                 }
             }
         }
         $cadenaIdPruebas = join("|", $arrayAux);
-        //var_dump('<pre>',$cadenaIdPruebas);exit();
         //Concatenamos el hidden con los codigos de la pruebas con el arbol de div generado
         $this->cadenaArbolExamenMedico = $this->cadenaArbolExamenMedico . "<input type=\"hidden\" id=\"hdnIdVersion\" value=\"" . $idVersion . "\"/>";
         $this->cadenaArbolExamenMedico = $this->cadenaArbolExamenMedico . "<input type=\"hidden\" id=\"hdnIdEstadoDesarrollo\" value=\"" . $idEstadoDesarrollo . "\"/>";
@@ -3467,7 +3417,7 @@ class ActionActoMedico {
         $arrayFilas[0][2] = $datos["vCPTdescripcion"];
         $arrayFilas[0][3] = 0;
         $arrayFilas[0][4] = 0;
-        $arrayFilas[0][5] = "../../../../fastmedical_front/imagen/icono/grabar.png ^ guardar";
+        $arrayFilas[0][5] = "../../../../medifacil_front/imagen/icono/grabar.png ^ guardar";
 
         $arrayCabecera = array("0" => "iId", "1" => "iIdCPT", "2" => "Descripcion CPT", "3" => "idSerProd", "4" => "Descrip_Prod", "5" => "Accion");
         $arrayTamano = array(0 => "50", 1 => "30", 2 => "*", 3 => "80", 4 => "*", 5 => "50");
@@ -3581,13 +3531,13 @@ class ActionActoMedico {
 					<table>
 					<tr>
 					<td><button   
-					onclick="volverAcargar();" style="border: 1px solid black; border-radius:5px;width:23px; height: 23px; "><img src="../../../../fastmedical_front/imagen/icono/otro.png"></button></td>
+					onclick="volverAcargar();" style="border: 1px solid black; border-radius:5px;width:23px; height: 23px; "><img src="../../../../medifacil_front/imagen/icono/otro.png"></button></td>
 					</tr>
 					<tr>
-					<td><button   style="border: 1px solid black; border-radius:5px;width:23px; height: 23px;"><img src="../../../../fastmedical_front/imagen/icono/ver.png"></button></td>
+					<td><button   style="border: 1px solid black; border-radius:5px;width:23px; height: 23px;"><img src="../../../../medifacil_front/imagen/icono/ver.png"></button></td>
 					</tr>
 					<tr>
-					<td><button  onclick="quitarImagen();" style="border: 1px solid black; border-radius:5px;width:23px; height: 23px; "><img src="../../../../fastmedical_front/imagen/icono/cancelar.png"></button></td>
+					<td><button  onclick="quitarImagen();" style="border: 1px solid black; border-radius:5px;width:23px; height: 23px; "><img src="../../../../medifacil_front/imagen/icono/cancelar.png"></button></td>
 					</tr>
 					</table></div></td>';
                             $result.= '</tr>';
@@ -3740,7 +3690,7 @@ class ActionActoMedico {
 //
 //
 //        $rs = '<table cellspacing="1" style="border:0px solid;">
-//                <tr style="background-image:url(\'../../../../fastmedical_front/imagen/icono/fondogrid.png\');height: 30px;">
+//                <tr style="background-image:url(\'../../../../medifacil_front/imagen/icono/fondogrid.png\');height: 30px;">
 //                    <td style="width: 90px;border:0px solid #006631">
 //                <center><p style="font-size:18px;font-family: segoe UI;color:black"><b>Codigo</b></p></center>
 //                </td>
@@ -3768,7 +3718,7 @@ class ActionActoMedico {
 //                        <p style="font-size:12px;font-family: segoe UI;color:white;padding-left:10px;">' . $resultado[$x][1] . '</p>
 //                    </td>
 //                    <td>
-//                        <a href="javascript:cargarMantenimientoAfiliacionesModulo(' . $id . ',' . $nombre . ')"><img src="../../../../fastmedical_front/imagen/icono/btn_EditarAngel.png" style="width: 30px;"></a>
+//                        <a href="javascript:cargarMantenimientoAfiliacionesModulo(' . $id . ',' . $nombre . ')"><img src="../../../../medifacil_front/imagen/icono/btn_EditarAngel.png" style="width: 30px;"></a>
 //                    </td>
 //                    </tr>';
 //        }
@@ -3793,7 +3743,7 @@ class ActionActoMedico {
 					<table>
 					<tr>
 					<td><button   
-					onclick="volverAcargar(' . $numeric . ');" style="cursor: pointer;border: 1px solid black; border-radius:5px;width:23px; height: 23px; "><img src="../../../../fastmedical_front/imagen/icono/otro.png"></button></td>
+					onclick="volverAcargar(' . $numeric . ');" style="cursor: pointer;border: 1px solid black; border-radius:5px;width:23px; height: 23px; "><img src="../../../../medifacil_front/imagen/icono/otro.png"></button></td>
 					</tr>
 					<tr>
 					<td></td>
@@ -3822,7 +3772,7 @@ class ActionActoMedico {
         $oLActoMedico = new LActoMedico();
         $resultado = $oLActoMedico->LmostrarLeyenda($datos);
         $rs = '<table cellspacing="1" style="border:0px solid;">
-      <tr style="background-image:url(\'../../../../fastmedical_front/imagen/icono/fondogrid.png\');height: 30px;">
+      <tr style="background-image:url(\'../../../../medifacil_front/imagen/icono/fondogrid.png\');height: 30px;">
       <td style="width: 200px;border:0px solid #006631">
       <center><p style="font-size:18px;font-family: segoe UI;color:#006631"><b>LEYENDA</b></p></center>
       </td>
@@ -3831,21 +3781,21 @@ class ActionActoMedico {
         for ($x = 0; $x <= $contador - 1; $x++) {
             $j = 0;
             if ($resultado[$x][2] == '1' && $resultado[$x][3] == '3' && $resultado[$x][4] == '2') {
-                $respuesta[$j][1] = "<a><img width='50px' height='30px' align='center' src=../../../../fastmedical_front/imagen/odontograma/Azules/" . $resultado[$x][1] . "></a><br><b>Buen Estado</b>";
+                $respuesta[$j][1] = "<a><img width='50px' height='30px' align='center' src=../../../../medifacil_front/imagen/odontograma/Azules/" . $resultado[$x][1] . "></a><br><b>Buen Estado</b>";
             } else if ($resultado[$x][2] == '0' && $resultado[$x][3] == '3' && $resultado[$x][4] == '2') {
-                $respuesta[$j][1] = "<a><img width='50px' height='30px' align='center' src=../../../../fastmedical_front/imagen/odontograma/Rojos/" . $resultado[$x][1] . "></a><br><b>Mal Estado</b>";
+                $respuesta[$j][1] = "<a><img width='50px' height='30px' align='center' src=../../../../medifacil_front/imagen/odontograma/Rojos/" . $resultado[$x][1] . "></a><br><b>Mal Estado</b>";
             } else if ($resultado[$x][2] == '' && $resultado[$x][3] == '1' && $resultado[$x][4] == '1') {
-                $respuesta[$j][1] = "<a><img width='50px' height='30px' align='center' src=../../../../fastmedical_front/imagen/odontograma/Rojos/" . $resultado[$x][1] . "></a>";
+                $respuesta[$j][1] = "<a><img width='50px' height='30px' align='center' src=../../../../medifacil_front/imagen/odontograma/Rojos/" . $resultado[$x][1] . "></a>";
             } else if ($resultado[$x][2] == '' && $resultado[$x][3] == '2' && $resultado[$x][4] == '1') {
-                $respuesta[$j][1] = "<a><img width='50px' height='30px' align='center' src=../../../../fastmedical_front/imagen/odontograma/Azules/" . $resultado[$x][1] . "></a>";
+                $respuesta[$j][1] = "<a><img width='50px' height='30px' align='center' src=../../../../medifacil_front/imagen/odontograma/Azules/" . $resultado[$x][1] . "></a>";
             } else if ($resultado[$x][2] == '0' && $resultado[$x][3] == '2' && $resultado[$x][4] == '2') {
-                $respuesta[$j][1] = "<a><img width='50px' height='30px' align='center' src=../../../../fastmedical_front/imagen/odontograma/Azules/" . $resultado[$x][1] . "></a>";
+                $respuesta[$j][1] = "<a><img width='50px' height='30px' align='center' src=../../../../medifacil_front/imagen/odontograma/Azules/" . $resultado[$x][1] . "></a>";
             } else if ($resultado[$x][2] == '0' && $resultado[$x][3] == '3' && $resultado[$x][4] == '1') {
-                $respuesta[$j][1] = "<a><img width='50px' height='30px' align='center' src=../../../../fastmedical_front/imagen/odontograma/Rojos/" . $resultado[$x][1] . "></a><br><b>Mal Estado</b>";
+                $respuesta[$j][1] = "<a><img width='50px' height='30px' align='center' src=../../../../medifacil_front/imagen/odontograma/Rojos/" . $resultado[$x][1] . "></a><br><b>Mal Estado</b>";
             } else if ($resultado[$x][2] == '1' && $resultado[$x][3] == '3' && $resultado[$x][4] == '1') {
-                $respuesta[$j][1] = "<a><img width='50px' height='30px' align='center' src=../../../../fastmedical_front/imagen/odontograma/Azules/" . $resultado[$x][1] . "></a><br><b>Buen Estado</b>";
+                $respuesta[$j][1] = "<a><img width='50px' height='30px' align='center' src=../../../../medifacil_front/imagen/odontograma/Azules/" . $resultado[$x][1] . "></a><br><b>Buen Estado</b>";
             } else if ($resultado[$x][2] == '0' && $resultado[$x][3] == '2' && $resultado[$x][4] == '1') {
-                $respuesta[$j][1] = "<a><img width='50px' height='30px' align='center' src=../../../../fastmedical_front/imagen/odontograma/Azules/" . $resultado[$x][1] . "></a><br><b>Buen Estado</b>";
+                $respuesta[$j][1] = "<a><img width='50px' height='30px' align='center' src=../../../../medifacil_front/imagen/odontograma/Azules/" . $resultado[$x][1] . "></a><br><b>Buen Estado</b>";
             }
 
             $rs.='<tr style="background-color:' . $color . ';" onmouseout=\'this.style.background="#1B843C";\' onmouseover=\'this.style.background="#006631";\'>                 
@@ -3878,7 +3828,7 @@ class ActionActoMedico {
         $oLActoMedico = new LActoMedico();
         $resultado = $oLActoMedico->LhistoriaLeyenda($datos);
         $rs = '<table cellspacing="1" style="border:0px solid;">
-      <tr style="background-image:url(\'../../../../fastmedical_front/imagen/icono/fondogrid.png\');height: 30px;">
+      <tr style="background-image:url(\'../../../../medifacil_front/imagen/icono/fondogrid.png\');height: 30px;">
       <td style="width: 200px;border:0px solid #006631">
       <center><p style="font-size:18px;font-family: segoe UI;color:#006631"><b>LEYENDA</b></p></center>
       </td>
@@ -3887,19 +3837,19 @@ class ActionActoMedico {
         for ($x = 0; $x <= $contador - 1; $x++) {
             $j = 0;
             if ($resultado[$x][2] == '1' && $resultado[$x][3] == '3' && $resultado[$x][4] == '2') {
-                $respuesta[$j][1] = "<a><img width='50px' height='30px' align='center' src=../../../../fastmedical_front/imagen/odontograma/Azules/" . $resultado[$x][1] . "></a><br><b>Buen Estado</b>";
+                $respuesta[$j][1] = "<a><img width='50px' height='30px' align='center' src=../../../../medifacil_front/imagen/odontograma/Azules/" . $resultado[$x][1] . "></a><br><b>Buen Estado</b>";
             } else if ($resultado[$x][2] == '0' && $resultado[$x][3] == '3' && $resultado[$x][4] == '2') {
-                $respuesta[$j][1] = "<a><img width='50px' height='30px' align='center' src=../../../../fastmedical_front/imagen/odontograma/Rojos/" . $resultado[$x][1] . "></a><br><b>Mal Estado</b>";
+                $respuesta[$j][1] = "<a><img width='50px' height='30px' align='center' src=../../../../medifacil_front/imagen/odontograma/Rojos/" . $resultado[$x][1] . "></a><br><b>Mal Estado</b>";
             } else if ($resultado[$x][2] == '' && $resultado[$x][3] == '1' && $resultado[$x][4] == '1') {
-                $respuesta[$j][1] = "<a><img width='50px' height='30px' align='center' src=../../../../fastmedical_front/imagen/odontograma/Rojos/" . $resultado[$x][1] . "></a>";
+                $respuesta[$j][1] = "<a><img width='50px' height='30px' align='center' src=../../../../medifacil_front/imagen/odontograma/Rojos/" . $resultado[$x][1] . "></a>";
             } else if ($resultado[$x][2] == '' && $resultado[$x][3] == '2' && $resultado[$x][4] == '1') {
-                $respuesta[$j][1] = "<a><img width='50px' height='30px' align='center' src=../../../../fastmedical_front/imagen/odontograma/Azules/" . $resultado[$x][1] . "></a>";
+                $respuesta[$j][1] = "<a><img width='50px' height='30px' align='center' src=../../../../medifacil_front/imagen/odontograma/Azules/" . $resultado[$x][1] . "></a>";
             } else if ($resultado[$x][2] == '0' && $resultado[$x][3] == '2' && $resultado[$x][4] == '2') {
-                $respuesta[$j][1] = "<a><img width='50px' height='30px' align='center' src=../../../../fastmedical_front/imagen/odontograma/Azules/" . $resultado[$x][1] . "></a>";
+                $respuesta[$j][1] = "<a><img width='50px' height='30px' align='center' src=../../../../medifacil_front/imagen/odontograma/Azules/" . $resultado[$x][1] . "></a>";
             } else if ($resultado[$x][2] == '0' && $resultado[$x][3] == '3' && $resultado[$x][4] == '1') {
-                $respuesta[$j][1] = "<a><img width='50px' height='30px' align='center' src=../../../../fastmedical_front/imagen/odontograma/Rojos/" . $resultado[$x][1] . "></a><br><b>Mal Estado</b>";
+                $respuesta[$j][1] = "<a><img width='50px' height='30px' align='center' src=../../../../medifacil_front/imagen/odontograma/Rojos/" . $resultado[$x][1] . "></a><br><b>Mal Estado</b>";
             } else if ($resultado[$x][2] == '1' && $resultado[$x][3] == '3' && $resultado[$x][4] == '1') {
-                $respuesta[$j][1] = "<a><img width='50px' height='30px' align='center' src=../../../../fastmedical_front/imagen/odontograma/Azules/" . $resultado[$x][1] . "></a><br><b>Buen Estado</b>";
+                $respuesta[$j][1] = "<a><img width='50px' height='30px' align='center' src=../../../../medifacil_front/imagen/odontograma/Azules/" . $resultado[$x][1] . "></a><br><b>Buen Estado</b>";
             }
 
             $rs.='<tr style="background-color:' . $color . ';" onmouseout=\'this.style.background="#1B843C";\' onmouseover=\'this.style.background="#006631";\'>                 
