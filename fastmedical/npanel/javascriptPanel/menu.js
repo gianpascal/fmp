@@ -6,6 +6,7 @@ var pathRequestControl = "../../ccontrol/control/control.php";
 var contadorCargador=0;
 var arrayEstadosCargador= new Array();
 //var laban=28;
+/*
 function micargador(estado){
     $('VentanaTransparente').setStyle({
         visibility:'visible'
@@ -25,6 +26,8 @@ function micargador(estado){
         }
     }
 }
+*/
+/*
 function cargadorpeche(estado,id){
     if(estado==1){
         arrayEstadosCargador[id]=1;
@@ -55,6 +58,7 @@ function cargadorpeche(estado,id){
     }
 // alert('estado='+estado+'id='+id);
 }
+*/
 function maximozindex(){
     var tCol=document.getElementsByTagName('*');
     var z=0;

@@ -492,7 +492,7 @@ function menuDatosUsuario() {
 
 function menuActoMedicoConsultorio() {
     //path='../cita/citas.php';
-    patronModulo = 'actoMedicoConsultorio';    //se encuentra en control.php
+    patronModulo = 'actoMedicoConsultorio';
     parametros = '';
     parametros += 'p1=' + patronModulo;
 
@@ -502,16 +502,16 @@ function menuActoMedicoConsultorio() {
         method: 'get',
         asynchronous: false,
         parameters: parametros,
-        onLoading: micargador(1),
+        onLoading: cargadorpeche(1, idCargador),
         onComplete: function (transport) {
-            micargador(0);
+            cargadorpeche(0, idCargador);
             respuesta = transport.responseText;
             $('Contenido').update(respuesta);
             // llenardatosPersonalesMedicoActoMedico('');
 
         }
     })
-    mostrarprogramacionMedicosActoMedico();//panel derecho
+    mostrarprogramacionMedicosActoMedico();
 //mostrarPacientesProgramados('');
 // mostrarPacientesAdicionales('');
 //calculaAtendidosyNoAtendidosDiarioActoMedico('');

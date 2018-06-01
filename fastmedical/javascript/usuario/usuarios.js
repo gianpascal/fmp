@@ -142,7 +142,7 @@ function ingresarSistema(){
     } )
 
 }
-
+/*
 function cargador1(estado){
     switch (estado){
         case 0:	{
@@ -159,6 +159,7 @@ function cargador1(estado){
         }
     }
 }
+*/
 function abrirotraventana(){
     window.open("inicio.php");
 }

@@ -5,6 +5,7 @@ var pathRequestControl = "../../ccontrol/control/control.php";
 var contadorCargador = 0;
 var arrayEstadosCargador = new Array();
 //var laban=28;
+/*
 function micargador(estado) {
     $('VentanaTransparente').setStyle({
         visibility: 'visible'
@@ -25,7 +26,7 @@ function micargador(estado) {
             break;
         }
     }
-}
+}*/
 function cargadorpeche(estado, id) {
     $('VentanaTransparente').setStyle({
         visibility: 'visible'
@@ -38,8 +39,10 @@ function cargadorpeche(estado, id) {
         $('overlayPeche').setStyle({
             height: alto + 'px'
         });
-        
-        $('VentanaTransparente').show();
+        $('VentanaTransparente').setStyle({
+            display: 'block'
+        });
+       // $('VentanaTransparente').show();
         //alert('ventana trans');
 
     }
@@ -317,11 +320,13 @@ function DatosPersonasLab(iid_persona) {
 }
 function enabled_formulario_adm(op) {
     var read = new Array('txtApellidoPat', 'txtApellidoMat', 'txtNombrePaciente', 'txtTelefono', 'txtCelular', 'txtEmail', 'txtCelular2', 'txtHijos', 'txtNombreTipoVia', 'txtTipoCentroPoblado', 'txtNumero', 'txtManzana', 'txtLote', 'txtKm', 'txtObservaciones', 'txtNroDeHijo', 'vReferencia', 'txtFechaNacimiento');
-    var butt = new Array('btn_GRABAR', 'btn_EDITAR', 'btn_DNI', 'btn_RESTAURAR', 'btn_PERSONALES', 'btn_DATOS', 'btn_FILIACIONES', 'btn_ATENCIONES', 'btn_HUELLA');
+    //var butt = new Array('btn_GRABAR', 'btn_EDITAR', 'btn_DNI', 'btn_RESTAURAR', 'btn_PERSONALES', 'btn_DATOS', 'btn_FILIACIONES', 'btn_ATENCIONES', 'btn_HUELLA');
+	var butt = new Array('btn_GRABAR', 'btn_EDITAR',  'btn_RESTAURAR', 'btn_PERSONALES', 'btn_DATOS', 'btn_FILIACIONES', 'btn_ATENCIONES');
     var desh = new Array('sexo', 'cb_civil', 'cb_instruccion', 'cb_condicion', 'cb_vivienda', 'cb_raza', 'cb_departamento', 'cb_provincia', 'cb_distrito', 'cb_grado_estudio', 'cb_via', 'cb_cpo', 'cbNac_pais', 'cbNac_departamento', 'cbNac_provincia', 'cbNac_distrito', 'cb_tipoInstEduc', 'cb_InstEduc', 'cb_medio_contacto', 'chkValida', 'cb_grupolaboral', 'cb_subgrupolaboral', 'cb_pais');
     switch (op) {
         case 1:
-            habi = new Array('v', 'f', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v');
+           // habi = new Array('v', 'f', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v');
+			habi = new Array('v', 'f', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v');
             $('p_acc').update('update');
             buclesMulti('readOnly', read, false);
             buclesMulti('enable', desh, '');

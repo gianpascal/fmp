@@ -38,18 +38,18 @@ class tablaDHTMLX
     public function stringXml($arrayCabecera, $arrayFilas, $arrayTamano, $arrayTipo, $arrayAlineacion, $posicionId, $arrayhidden = '')
     {
 
-        $cadena = "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?>";
+        $cadena = "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
         $cadena .= "<rows>";
         $iniciocabecera = "<head>";
         $cuerpocabecera = "";
         $fincabecera = "</head>";
         if (empty($arrayhidden)) {
             foreach ($arrayCabecera as $ind => $valor) {
-                $cuerpocabecera .= "<column width='" . $arrayTamano[$ind] . "' align='" . $arrayAlineacion[$ind] . "' type='" . $arrayTipo[$ind] . "' sort='str' color=''>" . $arrayCabecera[$ind] . "</column>";
+                $cuerpocabecera .= "<column width='" . $arrayTamano[$ind] . "' align='" . $arrayAlineacion[$ind] . "' type='" . $arrayTipo[$ind] . "' sort='str' color=''>" .utf8_encode($arrayCabecera[$ind]) . "</column>";
             }
         } else {
             foreach ($arrayCabecera as $ind => $valor) {
-                $cuerpocabecera .= "<column width='" . $arrayTamano[$ind] . "' align='" . $arrayAlineacion[$ind] . "' hidden='" . $arrayhidden[$ind] . "' type='" . $arrayTipo[$ind] . "' sort='str' color=''>" . $arrayCabecera[$ind] . "</column>";
+                $cuerpocabecera .= "<column width='" . $arrayTamano[$ind] . "' align='" . $arrayAlineacion[$ind] . "' hidden='" . $arrayhidden[$ind] . "' type='" . $arrayTipo[$ind] . "' sort='str' color=''>" . utf8_encode($arrayCabecera[$ind]) . "</column>";
             }
         }
         $cadena .= $iniciocabecera . $cuerpocabecera . $fincabecera;

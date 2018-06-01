@@ -1531,14 +1531,15 @@ function preguardarAntecedente() {
             parametros[i] += '&p5=' + cadena[i];
             parametros[i] += '&p6=' + $(hEstado).value;
             parametros[i] += '&p7=' + $('hIdAntecedente_' + i).value;
-
+            contadorCargador++;
+            var idCargador = contadorCargador;
             new Ajax.Request(pathRequestControl, {
                 method: 'post',
                 asynchronous: false,
                 parameters: parametros[i],
-                onLoading: micargador(1),
+                onLoading: cargadorpeche(1, idCargador),
                 onComplete: function(transport) {
-                    micargador(0);
+                    cargadorpeche(0, idCargador);
                     respuesta[i] = transport.responseText;
                     $('hIdAntecedente_' + i).value = respuesta[i];
                 }

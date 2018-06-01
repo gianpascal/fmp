@@ -2,6 +2,7 @@
 var url = '../../ccontrol/control/control.php';
 
 //función empleada en las búsquedas
+/*
 function estadoCargador(estado){
     switch (estado){
         case 0:	{
@@ -18,7 +19,7 @@ function estadoCargador(estado){
         }
     }
 }
-
+*/
 function ltrim(s) {
     return s.replace(/^\s+/, "");
 }
