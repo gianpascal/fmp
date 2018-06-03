@@ -47,12 +47,14 @@ function programacionCitasInformes_Old() {
     parametros = '';
     parametros += 'p1=' + patronModulo;
     parametros += '&p2=' + codigoCentroCosto;
+    contadorCargador++;
+    var idCargador = contadorCargador;
     new Ajax.Request(pathRequestControl, {
         method: 'get',
         parameters: parametros,
-        onLoading: micargador(1),
-        onComplete: function (transport) {
-            micargador(0);
+        onLoading: cargadorpeche(1, idCargador),
+            onComplete: function (transport) {
+                cargadorpeche(0, idCargador);
             respuesta = transport.responseText;
             $('Contenido').update(respuesta);
             recargarTablaServicios();
@@ -78,12 +80,14 @@ function programacionCitasInformes() {
     parametros += '&p2=' + codigoCentroCosto;
     parametros += '&p3=' + ancho;
     parametros += '&p4=' + alto;
+    contadorCargador++;
+    var idCargador = contadorCargador;
     new Ajax.Request(pathRequestControl, {
         method: 'get',
         parameters: parametros,
-        onLoading: micargador(1),
+        onLoading: cargadorpeche(1, idCargador),
         onComplete: function (transport) {
-            micargador(0);
+            cargadorpeche(0, idCargador);
             var respuesta = transport.responseText;
             $('Contenido').update(respuesta);
             recargarTablaServicios();
@@ -101,13 +105,14 @@ function programacionMedicos() {
     parametros = '';
     parametros += 'p1=' + patronModulo;
 
-
+    contadorCargador++;
+    var idCargador = contadorCargador;
     new Ajax.Request(pathRequestControl, {
         method: 'get',
         parameters: parametros,
-        onLoading: micargador(1),
+        onLoading: cargadorpeche(1, idCargador),
         onComplete: function (transport) {
-            micargador(0);
+            cargadorpeche(0, idCargador);
             respuesta = transport.responseText;
             $('Contenido').update(respuesta);
             recargarArbolServicios();

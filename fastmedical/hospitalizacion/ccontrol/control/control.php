@@ -4504,6 +4504,7 @@ if (ini_get('memory_limit') == "2048M" && ini_get('max_input_time') == "90000" &
             case 'preguardarExamenes': {
                     require_once("ActionActoMedico.php");
                     $o_ActionActoMedico = new ActionActoMedico();
+                    
                     $resultado = $o_ActionActoMedico->preguardarExamenes(base64_decode($parametros["p2"]), $parametros["p3"], $parametros["p4"], $parametros["p5"], $parametros["p6"], $parametros["p7"], $parametros["p8"]);
                     break;
                 }

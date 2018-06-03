@@ -2,7 +2,8 @@
 if (!isset($_SESSION)) {
     session_start();
 }
-
+//session_start();
+//require_once('../../ccontrol/control/loadsession.php');
 ?>
 <html>
     <head>
@@ -144,18 +145,16 @@ if (!isset($_SESSION)) {
         <script type="text/javascript" src="../../../javascript/js_Simi.js"></script>
         <script type="text/javascript" src="../../../javascript/uploader.js"></script>
         <!-- ================ FUNCIONES - MODULOS ============= -->
-        <script type="text/javascript" src="../../../javascript/cronograma.js"></script>        
-        <!--CRONOGRAMA-->
+        <script type="text/javascript" src="../../../javascript/cronograma.js"></script>        <!--CRONOGRAMA-->
         <!--=============================CAJA===================================-->
         <script type="text/javascript" src="../../../javascript/caja/caja.js"></script>
-        <script src="../../../javascript/HTML_TreeMenu/TreeMenu.js" type="text/javascript"></script> 
-        <!--HTML_TreeMenu-->
+        <script src="../../../javascript/HTML_TreeMenu/TreeMenu.js" type="text/javascript"></script> <!--HTML_TreeMenu-->
         <!-- poo_pholivo-->
         <script type="text/javascript" src="../../../javascript/pholivo/poo_pholivo.js"></script>
-        <!-----------       FUNCIONES PARA RADIO  Y CHECBOX    --------- -->
+        <!-----------       FUNCIONES PARA RADIO  Y CHECBOX    ----------->
         <!--<script src="../../../javascript/crir.js" type="text/javascript"></script>-->
 
-        <!-----------       FUNCIONES PARA DHTMLXGRID    --------- -->
+        <!-----------       FUNCIONES PARA DHTMLXGRID    ----------->
         <script src="../../../javascript/dhtml_grid/dhtmlxcommon.js" type="text/javascript"></script>
         <script src="../../../javascript/dhtml_grid/dhtmlxgrid.js" type="text/javascript"></script>
         <script src="../../../javascript/dhtml_grid/dhtmlxgrid_hmenu.js" type="text/javascript"></script>
@@ -175,24 +174,24 @@ if (!isset($_SESSION)) {
         <script src="../../../javascript/dhtmlxtreegrid/dhtmlxtreegrid_filter.js" type="text/javascript"></script>
 
 
-        <!-----------       FUNCIONES PARA WINDOWS    --------- -->
+        <!-----------       FUNCIONES PARA WINDOWS    ----------->
         <script src="../../../javascript/dhtml_windows/dhtmlxwindows.js" type="text/javascript"></script>
         <script src="../../../javascript/dhtml_windows/dhtmlxcontainer.js" type="text/javascript"></script>
         <script src="../../../javascript/dhtml_windows/dhtmlxcommon.js" type="text/javascript"></script>
 
 
-        <!-----------       FUNCIONES PARA DHTMLXACCORDION    --------- -->
+        <!-----------       FUNCIONES PARA DHTMLXACCORDION    ----------->
         <script src="../../../javascript/dhtmlxaccordion/dhtmlxaccordion.js" type="text/javascript"></script>
         <script src="../../../javascript/dhtmlxaccordion/dhtmlxcontainer.js" type="text/javascript"></script>
-        <!-----------       FUNCIONES PARA AFILIACIONES    --------- -->
+        <!-----------       FUNCIONES PARA AFILIACIONES    ----------->
         <script src="../../../javascript/afiliaciones/afiliaciones.js" type="text/javascript"></script>
 
-        <!-----------       FUNCIONES PARA DHTMLXCOLORPICKER agregado 18 Abril 2012 --------- -->
+        <!-----------       FUNCIONES PARA DHTMLXCOLORPICKER agregado 18 Abril 2012 ----------->
 
         <script src="../../../javascript/dhtmlxcolorpicker/dhtmlxcommon.js" type="text/javascript"></script>
         <script src="../../../javascript/dhtmlxcolorpicker/dhtmlxcolorpicker.js" type="text/javascript"></script>
 
-        <!-----------       FUNCIONES PARA DHTMLXLAYOUT agregado 09 Octubre del 2012 --------- -->
+        <!-----------       FUNCIONES PARA DHTMLXLAYOUT agregado 09 Octubre del 2012 ----------->
 
         <script src="../../../javascript/dhtmlxlayout/dhtmlxcommon.js" type="text/javascript"></script>
         <script src="../../../javascript/dhtmlxlayout/dhtmlxcontainer.js" type="text/javascript"></script>
@@ -215,7 +214,7 @@ if (!isset($_SESSION)) {
 
         <!--       fin-->
 
-        <!-----------       FUNCIONES PARA DHTMLXCHART agregado 09 Octubre del 2012 --------- -->
+        <!-----------       FUNCIONES PARA DHTMLXCHART agregado 09 Octubre del 2012 ----------->
 
         <script src="../../../javascript/dhtmlxchart/dhtmlxchart.js" type="text/javascript"></script>
         <script src="../../../javascript/dhtmlxchart/dhtmlxchart_debug.js" type="text/javascript"></script>
@@ -242,8 +241,32 @@ if (!isset($_SESSION)) {
         <!--     fin para módulo de carga de horarios    -->
         <!-- ===================           fin           =================== -->
         <!-----------       CARGAR IMAGEN DE FONDO    --------- -->
-        <script type="text/javascript" src="../../../javascript/inicio.js"></script>
-        
+        <script type="text/javascript">
+            function cargar_form() {
+                myRand = parseInt(Math.random() * 999999999999999);
+                myajax.Link('default.php?rand=' + myRand, 'Contenido');
+                patronModulo = 'actoMedicoConsultorio';
+                patronModulo = 'actoMedicoConsultorio';
+    parametros = '';
+    parametros += 'p1=' + patronModulo;
+
+    contadorCargador++;
+    var idCargador = contadorCargador;
+    new Ajax.Request(pathRequestControl, {
+        method: 'get',
+        asynchronous: false,
+        parameters: parametros,
+        onLoading: cargadorpeche(1, idCargador),
+        onComplete: function (transport) {
+            cargadorpeche(0, idCargador);
+            respuesta = transport.responseText;
+            $('Contenido').update(respuesta);
+            // llenardatosPersonalesMedicoActoMedico('');
+
+        }
+    })
+            }
+        </script>
         <link rel="icon" type="image/png" href="../../../../fastmedical_front/fotos/icono.png" />
     </head>
     <!-----------       VENTANA DE CARGA DE DATOS    --------- -->
@@ -277,31 +300,14 @@ if (!isset($_SESSION)) {
 
         </div>
     </div>
-    <body onLoad="myajax = new isiAJAX('Contenido', 'VentanaTransparente'); myajax2 = new isiAJAX('Contenido', 'VentanaTransparente'); myajax3 = new isiAJAX('Contenido', 'VentanaTransparente'); myajax4 = new isiAJAX('Contenido', 'VentanaTransparente');  cargar_form();  parpadear_mensaje();" onunload="actualiza_sesion()">
-        <!-----------       CABECERA CON DATOS DEL USUARIO   ----------->
-        <div id="Main">
-            <div id="Fondo"></div>
-            <div id="Name">
-                <div id="Mi"></div>
-                <div id="Md"></div>
-                <div id="user">
-
-                    <p><span>
-                            <a href='#' onclick="abrirotraventana();"><img src="../../../../fastmedical_front/../fastmedical_front/imagen/icono/icono_mundo.png" title="Abrir otra ventana" border="0"></a>
-                            <a href='#' onclick="menuDatosUsuario();"><img src="../../../../fastmedical_front/../fastmedical_front/imagen/icono/kuser.png" alt='Opciones de Usuarios' title='Opciones de Usuarios' border='0'/></a>
-                            <a href='#' onclick="CargarVentana('popupManteUsuario', 'Cambiar Contraseña', '../usuario/manteUsuario.php', '265', '150', false, true, '', 1, '', 10, 10, 10, 10);"><img src="../../../../fastmedical_front/../fastmedical_front/imagen/icono/decrypted.png" alt='Cambiar contraseña' title='Cambiar contraseña' border='0'/></a>USUARIO :<?php echo strtoupper($_SESSION["login_user"]); ?></span></p>
-
-                </div>
-
-                <a href="#" title="INICIO" onClick="javascript:cargar_form();">
-                    <!--                    <div id="MainLogo01"></div>
-                                        <div id="MainLogo02"></div>-->
+    <body onLoad="cargar_form();  parpadear_mensaje();" onunload="actualiza_sesion()">
+        <!-----------       CABECERA CON DATOS DEL USUARIO   --------- -->
                     <div id="MainLogo"></div>
                 </a>
                 <div id="salir" style="cursor:pointer;"  onClick="cierra_sesionSimedh();"></div>
                 <div id="MainMenu">
                     <div id="Menu">
-                        <?php include '../menu/menu.php'; ?>
+                        <?php include '../menu/menu.php';?>
                     </div>
                 </div>
             </div>
@@ -313,7 +319,7 @@ if (!isset($_SESSION)) {
             </div>
             <div id="Footer">
                 <div id="textizq">Copyright &copy; Todos los Derechos Reservados - 2017</div>
-                <div id="textder"><?php echo "Ing. Giancarlo Arroyo - gianpascal@gmail.com"; //$_SESSION["nom_empresa"]                                                ?></div>
+                <div id="textder"><?php echo "Ing. Giancarlo Arroyo - gianpascal@gmail.com"; //$_SESSION["nom_empresa"]                                                  ?></div>
             </div>
         </div>
     </body>

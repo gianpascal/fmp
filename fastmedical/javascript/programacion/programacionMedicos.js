@@ -8,8 +8,7 @@ var tree;
 function busquedaarbol() {
     treeCentroCostos.findItem(document.getElementById("txtbuscarservicio").value);
 }
-function clickCargaCentroCostoProgramacionMedicos(idcentrocosto, nombrecentrocosto)
-{
+function clickCargaCentroCostoProgramacionMedicos(idcentrocosto, nombrecentrocosto) {
     document.getElementById("hidcentrocosto").value = idcentrocosto;
     $('Div_nombrecentrocosto').innerHTML = "<h1>" + nombrecentrocosto.toUpperCase() + "</h1>";
 
@@ -34,16 +33,16 @@ function clickCargaCentroCostoProgramacionMedicos(idcentrocosto, nombrecentrocos
     sEmpleadoMedicos.setImagePath("../../../imagen/dhtmlxgrid/imgs/");
     sEmpleadoMedicos.setSkin("dhx_skyblue");
     sEmpleadoMedicos.enableRowsHover(true, 'grid_hover');
-    sEmpleadoMedicos.attachEvent("onRowSelect", function(rowId, cellInd) {
+    sEmpleadoMedicos.attachEvent("onRowSelect", function (rowId, cellInd) {
         var parametroCadena = sEmpleadoMedicos.cells(rowId, 0).getValue();
         seleccionaMedicoProgramacionMedicos('', '', parametroCadena);
     });
     contadorCargador++;
     var idCargador = contadorCargador;
-    sEmpleadoMedicos.attachEvent("onXLS", function() {
+    sEmpleadoMedicos.attachEvent("onXLS", function () {
         cargadorpeche(1, idCargador);
     });
-    sEmpleadoMedicos.attachEvent("onXLE", function() {
+    sEmpleadoMedicos.attachEvent("onXLE", function () {
         cargadorpeche(0, idCargador);
     });
     /////////////fin cargador ///////////////////////
@@ -76,7 +75,7 @@ function recargarArbolServicios() {
     treeCentroCostos = new dhtmlXTreeObject("Div_centroCostos", "100%", "100%", 0);
     treeCentroCostos.setSkin('dhx_skyblue');
     treeCentroCostos.setImagePath("../../../../fastmedical_front/imagen/csh_bluebooks_simedh/");
-    treeCentroCostos.attachEvent("onClick", function() {
+    treeCentroCostos.attachEvent("onClick", function () {
         //  buscarEmpleadosCentroCostos();
         clickCargaCentroCostoProgramacionMedicos(treeCentroCostos.getSelectedItemId(), treeCentroCostos.getSelectedItemText());
     });
@@ -84,7 +83,7 @@ function recargarArbolServicios() {
     treeCentroCostos.openAllItems(0);
     //    treex.setXMLAutoLoading(pathRequestControl+'?'+parametros);
     treeCentroCostos.loadXML(pathRequestControl + '?' + parametros);
-//getMedicosdhtmlx();
+    //getMedicosdhtmlx();
 }
 //--------------
 
@@ -99,7 +98,7 @@ function agregarProgramacion() {
         //cargaAmbientesLogicosProgramacionMedicos(idcentrocosto);//Todavia no es necesario que este cargado para que se elija el puesto
         cargaActividadesProgramacionMedicos();
         accionNuevaProgramacionMedicos();
-        micargador(0);
+        //micargador(0);
         $("divGeneralProgramacionMedicos1").hide();
         $("divGeneralProgramacionMedicos2").show();
         //$("divBusquedasProgramacionMedicos").hide();
@@ -207,7 +206,7 @@ function accionCalendarioProgramacionMedicos(idAccion, cal) {
         method: 'get',
         parameters: pathLink,
         onLoading: micargador(1),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             micargador(0);
             respuesta = transport.responseText.split("|");
             fechaActual2 = respuesta[1];
@@ -222,12 +221,14 @@ function accionNuevaProgramacionMedicos() {
     codigopersona = document.getElementById("hcodigopersona").value;
     idcentrocosto = document.getElementById("hidcentrocosto").value;
     pathLink = "p1=cargaPuestosProgramacionMedicos&p2=" + codigopersona + "&p3=" + idcentrocosto;
+    contadorCargador++;
+    var idCargador = contadorCargador;
     new Ajax.Request(pathRequestControl, {
         method: 'get',
         parameters: pathLink,
-        onLoading: micargador(1),
-        onComplete: function(transport) {
-            micargador(0);
+        onLoading: cargadorpeche(1, idCargador),
+        onComplete: function (transport) {
+            cargadorpeche(0, idCargador);
             respuesta = transport.responseText;
             $('Div_puestos').update(respuesta);
             document.getElementById("cb_filtro_actividad").disabled = true;
@@ -246,13 +247,14 @@ function cargarEstadisticaMensualMedico() {
     parametros += '&p2=' + codigomedico;
     parametros += '&p3=' + messeleccionMedicos;
     parametros += '&p4=' + anioseleccionMedicos;
-
+    contadorCargador++;
+    var idCargador = contadorCargador;
     new Ajax.Request(pathRequestControl, {
         method: 'get',
         parameters: parametros,
-        onLoading: micargador(1),
-        onComplete: function(transport) {
-            micargador(0);
+        onLoading: cargadorpeche(1, idCargador),
+        onComplete: function (transport) {
+            cargadorpeche(0, idCargador);
             respuesta = transport.responseText;
             $('Div_estadisticaMensual').update(respuesta);
         }
@@ -280,7 +282,7 @@ function seleccionaMedicoProgramacionMedicos(html, event, codigoynombre) {
     ostrarseleccionProgramacionMedicos.setImagePath("../../../imagen/dhtmlxgrid/imgs/");
     ostrarseleccionProgramacionMedicos.setSkin("dhx_skyblue");
     ostrarseleccionProgramacionMedicos.enableRowsHover(true, 'grid_hover');
-    ostrarseleccionProgramacionMedicos.attachEvent("onRowSelect", function(rowId, cellInd) {
+    ostrarseleccionProgramacionMedicos.attachEvent("onRowSelect", function (rowId, cellInd) {
         var IdProgramacion = ostrarseleccionProgramacionMedicos.cells(rowId, 0).getValue();
         var Fecha = ostrarseleccionProgramacionMedicos.cells(rowId, 1).getValue();
         var Turno = ostrarseleccionProgramacionMedicos.cells(rowId, 6).getValue();
@@ -288,7 +290,7 @@ function seleccionaMedicoProgramacionMedicos(html, event, codigoynombre) {
         var Activo = ostrarseleccionProgramacionMedicos.cells(rowId, 12).getValue();
         var msj = ostrarseleccionProgramacionMedicos.cells(rowId, 18).getValue();
         //alert(msj);
-        if (Activo==1){
+        if (Activo == 1) {
             if (permisos == 1) {
                 if (cellInd == 14) {
                     editarProgramacionMedicos(IdProgramacion);
@@ -298,54 +300,54 @@ function seleccionaMedicoProgramacionMedicos(html, event, codigoynombre) {
                     $('var4').value = Turno;
                 }
                 if (cellInd == 15) {
-                    abrirPopudEliminarProgramacion(IdProgramacion,0);
-                //eliminarProgramacionMedicos(IdProgramacion);
+                    abrirPopudEliminarProgramacion(IdProgramacion, 0);
+                    //eliminarProgramacionMedicos(IdProgramacion);
                 }
                 if (cellInd == 16) {
                     autorizarReprogramacionMedicos(IdProgramacion);
-                }                                
-            }            
-        }else {
+                }
+            }
+        } else {
             if (permisos == 0 && Activo == 0) {
                 if (cellInd == 15) {
-                    abrirPopudEliminarProgramacion(IdProgramacion,1)
-                //eliminarProgramacionMedicos(IdProgramacion);
-                }               
+                    abrirPopudEliminarProgramacion(IdProgramacion, 1)
+                    //eliminarProgramacionMedicos(IdProgramacion);
+                }
             }
         }
-        if (cellInd == 18) {           
+        if (cellInd == 18) {
             mostrarEdicionProgramacion(IdProgramacion);
         }
-       
+
     });
     contadorCargador++;
     var idCargador = contadorCargador;
-    ostrarseleccionProgramacionMedicos.attachEvent("onXLS", function() {
+    ostrarseleccionProgramacionMedicos.attachEvent("onXLS", function () {
         cargadorpeche(1, idCargador);
     });
-    ostrarseleccionProgramacionMedicos.attachEvent("onXLE", function() {
+    ostrarseleccionProgramacionMedicos.attachEvent("onXLE", function () {
         cargadorpeche(0, idCargador);
     });
     ostrarseleccionProgramacionMedicos.setSkin("dhx_skyblue");
     ostrarseleccionProgramacionMedicos.enableMultiline(true);
     ostrarseleccionProgramacionMedicos.init();
-    ostrarseleccionProgramacionMedicos.loadXML(pathRequestControl+'?'+parametros,function(){
+    ostrarseleccionProgramacionMedicos.loadXML(pathRequestControl + '?' + parametros, function () {
         var activo;
         var pasado;
-        for(i=0;i<ostrarseleccionProgramacionMedicos.getRowsNum();i++){
-            activo = ostrarseleccionProgramacionMedicos.cells(i,12).getValue();
-            pasado = ostrarseleccionProgramacionMedicos.cells(i,17).getValue();
-            if(activo=='1' && pasado=='0')
-                ostrarseleccionProgramacionMedicos.setRowTextStyle(ostrarseleccionProgramacionMedicos.getRowId(i) ,'background-color:#DBDBDB;color:black;border-top: 0px solid #FAFAF8;');                           
-            else if(activo=='1' && pasado=='1')
-                ostrarseleccionProgramacionMedicos.setRowTextStyle(ostrarseleccionProgramacionMedicos.getRowId(i) ,'background-color:#82D33F;color:black;border-top: 0px solid #FAFAF8;');
-            else if(activo=='0' && pasado=='1')
-                ostrarseleccionProgramacionMedicos.setRowTextStyle(ostrarseleccionProgramacionMedicos.getRowId(i) ,'background-color:#FFAEFA;color:black;border-top: 0px solid #FFAEFA;');
-            else if(activo=='0' && pasado=='0')
-                ostrarseleccionProgramacionMedicos.setRowTextStyle(ostrarseleccionProgramacionMedicos.getRowId(i) ,'background-color:#FFAEFA;color:black;border-top: 0px solid #FFAEFA;');
-       
+        for (i = 0; i < ostrarseleccionProgramacionMedicos.getRowsNum(); i++) {
+            activo = ostrarseleccionProgramacionMedicos.cells(i, 12).getValue();
+            pasado = ostrarseleccionProgramacionMedicos.cells(i, 17).getValue();
+            if (activo == '1' && pasado == '0')
+                ostrarseleccionProgramacionMedicos.setRowTextStyle(ostrarseleccionProgramacionMedicos.getRowId(i), 'background-color:#DBDBDB;color:black;border-top: 0px solid #FAFAF8;');
+            else if (activo == '1' && pasado == '1')
+                ostrarseleccionProgramacionMedicos.setRowTextStyle(ostrarseleccionProgramacionMedicos.getRowId(i), 'background-color:#82D33F;color:black;border-top: 0px solid #FAFAF8;');
+            else if (activo == '0' && pasado == '1')
+                ostrarseleccionProgramacionMedicos.setRowTextStyle(ostrarseleccionProgramacionMedicos.getRowId(i), 'background-color:#FFAEFA;color:black;border-top: 0px solid #FFAEFA;');
+            else if (activo == '0' && pasado == '0')
+                ostrarseleccionProgramacionMedicos.setRowTextStyle(ostrarseleccionProgramacionMedicos.getRowId(i), 'background-color:#FFAEFA;color:black;border-top: 0px solid #FFAEFA;');
+
         }
-    });   
+    });
     cargarEstadisticaMensualMedico();
 }
 function filtrobusquedasfechasProgramacionMedicos() {
@@ -411,12 +413,14 @@ function seleccionaAmbientesLogicosProgramacionMedicos() {
     codigoactividad = $("cb_filtro_actividad").value;
     codigosede = $("cb_filtroSede").value;
     pathLink = "p1=cargaAmbientesFisicosProgramacionMedicos&p2=" + codigoambientelogico + "&p3=" + codigoactividad + "&p4=" + codigosede;
+    contadorCargador++;
+    var idCargador = contadorCargador;
     new Ajax.Request(pathRequestControl, {
         method: 'get',
         parameters: pathLink,
-        onLoading: micargador(1),
-        onComplete: function(transport) {
-            micargador(0);
+        onLoading: cargadorpeche(1, idCargador),
+        onComplete: function (transport) {
+            cargadorpeche(0, idCargador);
             respuesta = transport.responseText;
             $('Div_ambientesfisicos').update(respuesta);
             cargaTurnoInicioProgramacionMedicos();
@@ -440,12 +444,14 @@ function seleccionaAmbientesFisicosProgramacionMedicos() {
 function cargaTurnoInicioProgramacionMedicos(accion) {
 
     pathLink = "p1=cargaTurnoProgramacionMedicos&p2=-1";
+    contadorCargador++;
+    var idCargador = contadorCargador;
     new Ajax.Request(pathRequestControl, {
         method: 'get',
         parameters: pathLink,
-        onLoading: micargador(1),
-        onComplete: function(transport) {
-            micargador(0);
+        onLoading: cargadorpeche(1, idCargador),
+        onComplete: function (transport) {
+            cargadorpeche(0, idCargador);
             var respuesta = transport.responseText;
             $('Div_turnoinicio').update(respuesta);
             switch (accion) {
@@ -468,25 +474,27 @@ function cargaTurnoFinalProgramacionMedicos() {
     var turnoinicio = document.getElementById("cb_filtro_turnoinicio").value;
     pathLink = "p1=cargaTurnoProgramacionMedicos&p2=" + turnoinicio;
     document.getElementById("cb_filtro_turnofinal").disabled = false;
+    contadorCargador++;
+    var idCargador = contadorCargador;
     new Ajax.Request(pathRequestControl, {
         method: 'get',
         parameters: pathLink,
-        onLoading: micargador(1),
-        onComplete: function(transport) {
-            micargador(0);
+        onLoading: cargadorpeche(1, idCargador),
+        onComplete: function (transport) {
+            cargadorpeche(0, idCargador);
             var respuesta = transport.responseText;
             $('Div_turnofinal').update(respuesta);
             var turnofinalauxiliar = document.getElementById("hhorafinal").value;
             opt = document.getElementById("cb_filtro_turnofinal").options;
             i = 0;
-        /*
-            while (i < opt.length) {
-                if (opt[i].value == turnofinalauxiliar) {
-                    opt[i].selected = true;
+            /*
+                while (i < opt.length) {
+                    if (opt[i].value == turnofinalauxiliar) {
+                        opt[i].selected = true;
+                    }
+                    i = i + 1;
                 }
-                i = i + 1;
-            }
-            */
+                */
         }
     })
 }
@@ -494,12 +502,14 @@ function cargaActividadesProgramacionMedicos() {
 
     pathLink = "p1=cargaActividadesProgramacionMedicos";
     document.getElementById("cb_filtro_actividad").disabled = true;
+    contadorCargador++;
+    var idCargador = contadorCargador;
     new Ajax.Request(pathRequestControl, {
         method: 'get',
         parameters: pathLink,
-        onLoading: micargador(1),
-        onComplete: function(transport) {
-            micargador(0);
+        onLoading: cargadorpeche(1, idCargador),
+        onComplete: function (transport) {
+            cargadorpeche(0, idCargador);
             respuesta = transport.responseText;
             $('Div_actividad').update(respuesta);
 
@@ -510,12 +520,14 @@ function seleccionaActividadProgramacionMedicos() {
     var idPuesto = document.getElementById("cb_filtro_puestos").value;
     var codigoActividad = document.getElementById("cb_filtro_actividad").value;
     pathLink = "p1=cargaServiciosPorActividadDeCentroCosto&p2=" + idPuesto + "&p3=" + codigoActividad;
+    contadorCargador++;
+    var idCargador = contadorCargador;
     new Ajax.Request(pathRequestControl, {
         method: 'get',
         parameters: pathLink,
-        onLoading: micargador(1),
-        onComplete: function(transport) {
-            micargador(0);
+        onLoading: cargadorpeche(1, idCargador),
+        onComplete: function (transport) {
+            cargadorpeche(0, idCargador);
             respuesta = transport.responseText;
             $('Div_servicios').update(respuesta);
             if ($("cb_filtro_servicios").disabled) {
@@ -524,8 +536,8 @@ function seleccionaActividadProgramacionMedicos() {
                 $("cb_filtro_servicios").value = "0000";
                 cargaTiempoAtencionProgramacionMedicos();
             }
-        //document.getElementById("cb_filtro_servicios").disabled = false;
-        //document.getElementById("cb_filtro_actividad").disabled = false;
+            //document.getElementById("cb_filtro_servicios").disabled = false;
+            //document.getElementById("cb_filtro_actividad").disabled = false;
         }
     })
 }
@@ -566,12 +578,14 @@ function cargaTiempoAtencionProgramacionMedicos() {
     }
     codigoservicio = $("cb_filtro_servicios").value;
     pathLink = "p1=cargaTiempoAtencionProgramacionMedicos&p2=" + codigoservicio;
+    contadorCargador++;
+    var idCargador = contadorCargador;
     new Ajax.Request(pathRequestControl, {
         method: 'get',
         parameters: pathLink,
-        onLoading: micargador(1),
-        onComplete: function(transport) {
-            micargador(0);
+        onLoading: cargadorpeche(1, idCargador),
+        onComplete: function (transport) {
+            cargadorpeche(0, idCargador);
             respuesta = transport.responseText;
             if ($("cb_filtro_servicios").value == "0000") {
                 $("txttiempoatencion").value = 0;
@@ -590,16 +604,17 @@ function cargaAmbienteLogicoPorPuesto(idPuesto) {
     parametros += 'p1=' + patronModulo;
     parametros += '&p2=' + idPuesto;
     parametros += '&p3=' + codigosede;
-
+    contadorCargador++;
+    var idCargador = contadorCargador;
     new Ajax.Request(pathRequestControl, {
         method: 'get',
         parameters: parametros,
-        onLoading: micargador(1),
-        onComplete: function(transport) {
-            micargador(0);
+        onLoading: cargadorpeche(1, idCargador),
+        onComplete: function (transport) {
+            cargadorpeche(0, idCargador);
             respuesta = transport.responseText;
             $('Div_ambienteslogicos').update(respuesta);
-        //document.getElementById("cb_filtro_ambienteslogicos").disabled = true;
+            //document.getElementById("cb_filtro_ambienteslogicos").disabled = true;
         }
     })
 }
@@ -668,12 +683,14 @@ function seleccionaHoraFinal() {
     horainicio = document.getElementById("cb_filtro_turnoinicio").value;
     horafinal = document.getElementById("cb_filtro_turnofinal").value;
     pathLink = "p1=codigoTurnoProgramacionMedicos&p2=" + horainicio + "&p3=" + horafinal;
+    contadorCargador++;
+    var idCargador = contadorCargador;
     new Ajax.Request(pathRequestControl, {
         method: 'get',
         parameters: pathLink,
-        onLoading: micargador(1),
-        onComplete: function(transport) {
-            micargador(0);
+        onLoading: cargadorpeche(1, idCargador),
+        onComplete: function (transport) {
+            cargadorpeche(0, idCargador);
             respuesta = transport.responseText;
             document.getElementById("hcodigoturno").value = respuesta;
             calculaCantidadCupos();
@@ -1348,12 +1365,14 @@ function grabarCronogramaProgramacionMedicos() {
     var FechaFinal = dFechaAntesFin[2] + "-" + dFechaAntesFin[1] + "-" + dFechaAntesFin[0];
     pathLink = "p1=grabarProgramacionMedicos&p2=" + codigopersona + "&p3=" + codigoambientelogico + "&p4=" + codigoturno + "&p5=" + fechaservicio + "&p6=" + codigoservicio + "&p7=" + cupostotales + "&p8=" + cuposadicionales + "&p9=" + codigoambientefisico + "&p10=" + codigoactividad + "&p11=" + idpuesto + "&p12=" + afiliaciones + "&p13=" + tiempoatencion + "&p14=" + bProgramado + "&p15=" + FechaFinal;
     if (confirm("¿Esta seguro de guardar la programación?")) {
+        contadorCargador++;
+        var idCargador = contadorCargador;
         new Ajax.Request(pathRequestControl, {
             method: 'get',
             parameters: pathLink,
-            onLoading: micargador(1),
-            onComplete: function(transport) {
-                micargador(0);
+            onLoading: cargadorpeche(1, idCargador),
+            onComplete: function (transport) {
+                cargadorpeche(0, idCargador);
                 respuesta = transport.responseText;
                 rs = respuesta.split("|");
                 window.alert(rs[1]);
@@ -1409,23 +1428,23 @@ function consultaProgramacionMedicos(codigocronograma, accion) { //accion 1 solo
         method: 'get',
         parameters: pathLink,
         onLoading: micargador(1),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             micargador(0);
             respuesta = transport.responseText;
             eval(respuesta);
             $('chkProgramado').disabled = true;
             $('txtFechaProgramacion').disabled = true;
             switch (accion) {
-                case '1' :
+                case '1':
                     document.getElementById("hTipoActualizacion").value = 4
                     $('txtcuposadicionalesxturno').disabled = false;
 
-                   
+
                     break;
-                case '2' :
-                    consultaEdicionTurno(codigocronograma);                    
+                case '2':
+                    consultaEdicionTurno(codigocronograma);
                     break;
-                case '4' :
+                case '4':
                     consultaEdicionAmbienteLogicoyFisico(codigocronograma);
                     break;
             }
@@ -1465,7 +1484,7 @@ function cargarDatosPopadAfiliacionesProgramacion() {
         method: 'get',
         parameters: parametros,
         onLoading: micargador(1),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             micargador(0);
 
             $('nombreMedico').value = $('var1').value;
@@ -1488,12 +1507,12 @@ function cargarListadodeAfiliacionesNoActivas(codProgramacion) {
         method: 'get',
         parameters: parametros,
         onLoading: micargador(1),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             micargador(0);
             var respuesta = transport.responseText;
             $('Div_afiliacionesnoasignadas').update(respuesta);
             cargarListadodeAfiliacionesActivas(codProgramacion);
-        //alert(codProgramacion);
+            //alert(codProgramacion);
         }
     })
 }
@@ -1508,7 +1527,7 @@ function cargarListadodeAfiliacionesActivas(codProgramacion) {
         method: 'get',
         parameters: parametros,
         onLoading: micargador(1),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             micargador(0);
             var respuesta = transport.responseText;
             $('Div_afiliacionesasignadas').update(respuesta);
@@ -1520,7 +1539,7 @@ function cargarListadodeAfiliacionesActivas(codProgramacion) {
 function reprogramarAfiliacionesCronogramas(codigocronograma) {
     abrirPopadAfiliacionesXMedico();
 
-// capturarValoresArray();
+    // capturarValoresArray();
 }
 
 function capturarValoresArray() {
@@ -1550,8 +1569,8 @@ function capturarValoresArray() {
             arrayCombo2 += $('lst_afiliacionesseleccionadas')[y].value;
         }
     }
-//alert(arrayCombo1);
-//alert(arrayCombo2);
+    //alert(arrayCombo1);
+    //alert(arrayCombo2);
 }
 function consultaEdicionTurno(codigocronograma) {
     //consultaProgramacionMedicos(codigocronograma);
@@ -1600,7 +1619,7 @@ function cargarComboAmbienteLogicoReprogramacionMedico() {
         method: 'post',
         parameters: pathLink,
         onLoading: micargador(1),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             micargador(0);
             respuesta = transport.responseText;
             $('Div_ambienteslogicos').update(respuesta);
@@ -1627,7 +1646,7 @@ function cargarComboAmbienteFisicoReprogramacionMedico() {
         method: 'get',
         parameters: pathLink,
         onLoading: micargador(1),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             micargador(0);
             respuesta = transport.responseText;
             $('Div_ambientesfisicos').update(respuesta);
@@ -1697,7 +1716,7 @@ function actualizarCronogramaReProgramacionMedicos() {
         method: 'get',
         parameters: pathLink,
         onLoading: micargador(1),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             micargador(0);
             respuesta = transport.responseText;
             rs = respuesta.split("|");
@@ -1723,7 +1742,7 @@ function mantenimientoReprogramarMedico() {
         method: 'post',
         parameters: pathLink,
         onLoading: micargador(1),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             micargador(0);
             respuesta = transport.responseText;
             rs = respuesta.split("|");
@@ -1750,8 +1769,8 @@ function autorizarReprogramacion(codigocronograma) {
 
 function reprogramacionMedicos(codigocronograma) {
     $("Div_RePrograma").show();
-//$("Div_AutorizaReprogramacion").hide();
-//Windows.close("Div_opcionProgramacionMedicos");
+    //$("Div_AutorizaReprogramacion").hide();
+    //Windows.close("Div_opcionProgramacionMedicos");
 }
 
 function generarCodigoAutorizacionProgramacionMedicos() {
@@ -1763,7 +1782,7 @@ function generarCodigoAutorizacionProgramacionMedicos() {
             method: 'get',
             parameters: pathLink,
             onLoading: micargador(1),
-            onComplete: function(transport) {
+            onComplete: function (transport) {
                 micargador(0);
                 respuesta = transport.responseText;
                 document.getElementById("txtcodigoverificacion").value = respuesta;
@@ -1899,7 +1918,7 @@ function seleccionarMedicoParaReprogramacion(rowId, cellInd) {
             method: 'post',
             parameters: parametros,
             onLoading: micargador(1),
-            onComplete: function(transport) {
+            onComplete: function (transport) {
                 micargador(0);
                 respuesta = transport.responseText;
                 rs = respuesta.split("|");
@@ -1966,7 +1985,7 @@ function getBusquedaMedicoParaReprogramacion(event) {
                                         patron = '';
                                     }
                                 }
-                            //}
+                                //}
                             }
                         }
                     }
@@ -2014,10 +2033,10 @@ function guardarAfiliacionesXMedico() {
             method: 'get',
             parameters: parametros,
             onLoading: micargador(1),
-            onComplete: function(transport) {
+            onComplete: function (transport) {
                 micargador(0);
                 var respuesta = transport.responseText;
-                alert("Se guardo exitosamente...");  
+                alert("Se guardo exitosamente...");
             }
         })
     }
@@ -2031,14 +2050,14 @@ function guardarAfiliacionesXMedico() {
             method: 'get',
             parameters: parametros,
             onLoading: micargador(1),
-            onComplete: function(transport) {
+            onComplete: function (transport) {
                 micargador(0);
                 var respuesta = transport.responseText;
                 despuesdeEliminarAfiliaciones(arrayCombo2);
             }
         })
     }
-   
+
 }
 
 function despuesdeEliminarAfiliaciones(arrayCombo2) {
@@ -2052,7 +2071,7 @@ function despuesdeEliminarAfiliaciones(arrayCombo2) {
         method: 'get',
         parameters: parametros,
         onLoading: micargador(1),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             micargador(0);
             var respuesta = transport.responseText;
             alert("Se guardo exitosamente...");
@@ -2069,7 +2088,7 @@ function mostrarAfiliacionesXCronograma() {
         method: 'get',
         parameters: pathLink,
         onLoading: micargador(1),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             micargador(0);
             respuesta = transport.responseText;
             $('Div_CronogramaxAfiliacion').innerHTML = respuesta;
@@ -2082,7 +2101,7 @@ function cronogramaxAfiliacion() {
         method: 'get',
         parameters: pathLink,
         onLoading: micargador(1),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             micargador(0);
             respuesta = transport.responseText;
             $('Div_CronogramaxAfiliacion').innerHTML = respuesta;
@@ -2160,12 +2179,12 @@ function refrescarCalendarioConsultaReprogramacionMedicos() {
         method: 'get',
         parameters: pathLink,
         onLoading: micargador(1),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             micargador(0);
             respuesta = transport.responseText;
             rs = respuesta.split("|");
             $("divCalendario").innerHTML = rs[0];
-        //$("divCalendario").innerHTML = respuesta;
+            //$("divCalendario").innerHTML = respuesta;
         }
     })
 }
@@ -2177,7 +2196,7 @@ function refrescarCalendarioNuevaprogramacionMedicos() {
         method: 'get',
         parameters: pathLink,
         onLoading: micargador(1),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             micargador(0);
             respuesta = transport.responseText;
             rs = respuesta.split("|");
@@ -2196,18 +2215,18 @@ function clickCargaMedicoxCentroCostoProgramacionMedicos(html, event, valor) {
 function eliminacionProhibida() {
     window.alert("No se puede Eliminar La Programación");
 }
-function eliminarProgramacionMedicos(codigocronograma,motivo) {
+function eliminarProgramacionMedicos(codigocronograma, motivo) {
     codigopersona = document.getElementById("hcodigopersona").value;
     nombrepersona = document.getElementById("hnombrepersona").value;
     codigoynombre = codigopersona + "|" + nombrepersona;
 
     if (confirm("¿Esta seguro de eliminar la Programacion?")) {
-        pathLink = "p1=eliminarProgramacionMedicos&p2=" + codigocronograma+"&p3=" + motivo;
+        pathLink = "p1=eliminarProgramacionMedicos&p2=" + codigocronograma + "&p3=" + motivo;
         new Ajax.Request(pathRequestControl, {
             method: 'get',
             parameters: pathLink,
             onLoading: micargador(1),
-            onComplete: function(transport) {
+            onComplete: function (transport) {
                 micargador(0);
                 respuesta = transport.responseText;
                 window.alert(respuesta);
@@ -2234,12 +2253,14 @@ function mostrarbotonRegresar() {
 }
 function nuevaProgramacionMedicos() {
     pathLink = "p1=limpiarSeleccionesProgramacionMedicos";
+    contadorCargador++;
+    var idCargador = contadorCargador;
     new Ajax.Request(pathRequestControl, {
         method: 'get',
         parameters: pathLink,
-        onLoading: micargador(1),
-        onComplete: function(transport) {
-            micargador(0);
+        onLoading: cargadorpeche(1, idCargador),
+        onComplete: function (transport) {
+            cargadorpeche(0, idCargador);
             respuesta = transport.responseText;
             $("divGeneralProgramacionMedicos2").show();
             $('cb_filtroSede').disabled = true;
@@ -2293,7 +2314,7 @@ function verCruces() {
     }
 
 
-//    window.alert(fechas+"|"+codigoambientefisico+"|"+codigoturno);
+    //    window.alert(fechas+"|"+codigoambientefisico+"|"+codigoturno);
 }
 
 function activarFechaProgramacion(objeto) {
@@ -2335,7 +2356,7 @@ function guardarMantenimientoPRogramado(codProgramacion) {
         method: 'get',
         parameters: pathLink,
         onLoading: micargador(1),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             micargador(0);
             respuesta = transport.responseText;
             alert("Se actualizo Correctamente");
@@ -2348,7 +2369,7 @@ function guardarMantenimientoPRogramado(codProgramacion) {
 }
 
 
-function abrirPopudEliminarProgramacion(codProgramacion,accion){
+function abrirPopudEliminarProgramacion(codProgramacion, accion) {
     titulo = 'Eliminar Programacion'
     vFormaAbrir = ''
     vformname = ''
@@ -2377,20 +2398,20 @@ function abrirPopudEliminarProgramacion(codProgramacion,accion){
 
 }
 
-function grabarMotivoEliminacion(codProgramacion){
+function grabarMotivoEliminacion(codProgramacion) {
     var cantidad = $('motivoEliminacion').value
     var longitud = cantidad.length
-    if (longitud>=25){
-        eliminarProgramacionMedicos(codProgramacion,cantidad);
+    if (longitud >= 25) {
+        eliminarProgramacionMedicos(codProgramacion, cantidad);
         Windows.close("Div_abrirPopudEliminarProgramacion");
-    } 
+    }
     else {
         alert('La cantidad de Caracteres minimos es 25');
     }
-    
+
 }
 
-function mostrarEdicionProgramacion(codProgramacion){
+function mostrarEdicionProgramacion(codProgramacion) {
     var titulo = 'Log Programacion'
     var vFormaAbrir = ''
     var vformname = ''
@@ -2416,7 +2437,7 @@ function mostrarEdicionProgramacion(codProgramacion){
     var posFuncion = 'cargarAfiliacionesActivas';
     CargarVentanaPopPap(vformname, vtitle, vwidth, vheight, vcenter, vresizable, vmodal, vstyle, vopacity, vposx1, vposx2, vposy1, vposy2, parametros, posFuncion);
 }
-function cargarAfiliacionesActivas(){
+function cargarAfiliacionesActivas() {
     var codProg = $('hCronogramaMedicoSeleccionado').value;
     var patronModulo = 'cargarListadodeAfiliacionesActivas';
     var parametros = '';
@@ -2426,7 +2447,7 @@ function cargarAfiliacionesActivas(){
         method: 'get',
         parameters: parametros,
         onLoading: micargador(1),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             micargador(0);
             var respuesta = transport.responseText;
             $('divAfiliacionesCronograma').update(respuesta);
@@ -2436,7 +2457,7 @@ function cargarAfiliacionesActivas(){
 
 
 
-function seleccionarTurnoProgramacionMedico(codigocronograma){
+function seleccionarTurnoProgramacionMedico(codigocronograma) {
     var titulo = 'seleccionarTurnoProgramacionMedico'
     var vFormaAbrir = ''
     var vformname = 'seleccionarTurnoProgramacionMedico'
@@ -2463,36 +2484,36 @@ function seleccionarTurnoProgramacionMedico(codigocronograma){
     CargarVentanaPopPap(vformname, vtitle, vwidth, vheight, vcenter, vresizable, vmodal, vstyle, vopacity, vposx1, vposx2, vposy1, vposy2, parametros, posFuncion);
 }
 
-function seleccionarHoraFinal(horainicio){
-    var pathLink = "p1=seleccionarHoraFinal&p2=" + horainicio;  
+function seleccionarHoraFinal(horainicio) {
+    var pathLink = "p1=seleccionarHoraFinal&p2=" + horainicio;
     new Ajax.Request(pathRequestControl, {
         method: 'get',
         parameters: pathLink,
         onLoading: micargador(1),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             micargador(0);
             respuesta = transport.responseText;
-            $("cboHoraFin").update(respuesta);              
+            $("cboHoraFin").update(respuesta);
         }
     });
 }
-function actualizarTurnoProgramacionMedico(codigocronograma){
-    var motivo=$("txaMotivo").value;
-    if($("cboHoraFin").value!=$("hCodigoTurno").value){
-        if(motivo.length>=20){  
-            var codTur=$("cboHoraFin").value;
-            pathLink = "p1=actualizarTurnoProgramacionMedico&p2="+codigocronograma+"&p3="+codTur+"&p4="+motivo;
+function actualizarTurnoProgramacionMedico(codigocronograma) {
+    var motivo = $("txaMotivo").value;
+    if ($("cboHoraFin").value != $("hCodigoTurno").value) {
+        if (motivo.length >= 20) {
+            var codTur = $("cboHoraFin").value;
+            pathLink = "p1=actualizarTurnoProgramacionMedico&p2=" + codigocronograma + "&p3=" + codTur + "&p4=" + motivo;
             new Ajax.Request(pathRequestControl, {
                 method: 'get',
                 parameters: pathLink,
                 onLoading: micargador(1),
-                onComplete: function(transport) {
+                onComplete: function (transport) {
                     micargador(0);
-                    respuesta = transport.responseText;          
+                    respuesta = transport.responseText;
                     alert(respuesta);
                     Windows.close('Div_seleccionarTurnoProgramacionMedico');
                     Windows.close("Div_opcionProgramacionMedicos");
-                    seleccionaMedicoProgramacionMedicos("","",$("hcodigopersona").value+"|"+$("hnombrepersona").value);
+                    seleccionaMedicoProgramacionMedicos("", "", $("hcodigopersona").value + "|" + $("hnombrepersona").value);
                 }
             });
         }
@@ -2503,7 +2524,7 @@ function actualizarTurnoProgramacionMedico(codigocronograma){
         alert("El turno es el mismo. Elija otro para poder actualizar.");
 }
 
-function reprogramarAdicionales(iCodigoCronograma){
+function reprogramarAdicionales(iCodigoCronograma) {
     var titulo = 'Cambiar Adicionales Programacion'
     var vFormaAbrir = ''
     var vformname = ''
@@ -2528,7 +2549,7 @@ function reprogramarAdicionales(iCodigoCronograma){
     parametros += '&p2=' + iCodigoCronograma;
     var posFuncion = '';
     CargarVentanaPopPap(vformname, vtitle, vwidth, vheight, vcenter, vresizable, vmodal, vstyle, vopacity, vposx1, vposx2, vposy1, vposy2, parametros, posFuncion);
-  
+
 }
 
 function validaInteger(evento, elemento) {
@@ -2546,9 +2567,9 @@ function validaInteger(evento, elemento) {
     }
 }
 
-function guardarCambiosLogADicionales(){
-    var  iCodigocronograma = $("txtiCodigoCronogramaModificarAdicionales").value;
-    var  icantidad = $("txtNumeroAdicionales").value;
+function guardarCambiosLogADicionales() {
+    var iCodigocronograma = $("txtiCodigoCronogramaModificarAdicionales").value;
+    var icantidad = $("txtNumeroAdicionales").value;
     var patronModulo = 'guardarCambiosLogADicionales';
     var parametros = '';
     parametros += 'p1=' + patronModulo;
@@ -2558,11 +2579,11 @@ function guardarCambiosLogADicionales(){
         method: 'get',
         parameters: parametros,
         onLoading: micargador(1),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             micargador(0);
             var respuesta = transport.responseText;
             alert("Se guardo exitosamente...");
-            
+
             Windows.close("Div_");
             Windows.close("Div_opcionProgramacionMedicos");
             seleccionaMedicoProgramacionMedicos('', '', codigopersona + '|' + nombrepersona);
@@ -2571,7 +2592,7 @@ function guardarCambiosLogADicionales(){
 }
 
 
-function abrirPopudReporteMensualCronograma (){
+function abrirPopudReporteMensualCronograma() {
     var titulo = 'Reporte Log Mensual Cronograma'
     var vFormaAbrir = ''
     var vformname = 'abrirPopudReporteMensualCronograma'
@@ -2631,11 +2652,11 @@ function consultaProgramacionMedicosJorgeNuevo(codigocronograma, accion) {
     CargarVentanaPopPap(vformname, vtitle, vwidth, vheight, vcenter, vresizable, vmodal, vstyle, vopacity, vposx1, vposx2, vposy1, vposy2, parametros, posFuncion);
 }
 
-function cargarComboAmbienteFisicoReprogramacionMedicoNuevo(){
+function cargarComboAmbienteFisicoReprogramacionMedicoNuevo() {
     var idAmbienteslogicos = $('cb_filtro_ambienteslogicos').value
     var cidSedeEmpresa = $('idSedeEmpresa').value
     //    alert(idAmbienteslogicos);alert(cidSedeEmpresa);
-    
+
     var patronModulo = 'cargarComboAmbienteFisicoReprogramacionMedicoNuevo';
     var parametros = '';
     parametros += 'p1=' + patronModulo;
@@ -2648,36 +2669,36 @@ function cargarComboAmbienteFisicoReprogramacionMedicoNuevo(){
         parameters: parametros,
         asynchronous: false,
         onLoading: cargadorpeche(1, idCargador),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             cargadorpeche(0, idCargador);
             var respuesta = transport.responseText;
-            $('div_localizacionAmbienteFisico').update(respuesta);   
+            $('div_localizacionAmbienteFisico').update(respuesta);
         }
     })
 }
-function CancelarCambiodeAmbienteFisico(){
+function CancelarCambiodeAmbienteFisico() {
     Windows.close("Div_opcionProgramacionMedicos");
     Windows.close("Div_popupReprogramacionMedicosFisco");
-  
+
 }
-function actualizarAmbienteFisico(){
+function actualizarAmbienteFisico() {
     var codigopersona = document.getElementById("hcodigopersona").value;
     var idCodigocronograma = document.getElementById("idCodigocronograma").value;
     var idAmbienteslogicos = $('cb_filtro_ambienteslogicos').value;
     var idAmbienteFisico = $('cb_filtro_ambienteFisico').value;
     var vTxtAreaMotivoDelCambioAmbiente = $('idTxtAreaMotivoDelCambioAmbiente').value;
-    var m=vTxtAreaMotivoDelCambioAmbiente.length; 
-    var bValidador=1;
-    if(m>20){        
-        if(idAmbienteslogicos==0){
-            bValidador=0;
+    var m = vTxtAreaMotivoDelCambioAmbiente.length;
+    var bValidador = 1;
+    if (m > 20) {
+        if (idAmbienteslogicos == 0) {
+            bValidador = 0;
             alert("Ingrese Ambiente Logico");
         }
-        if(idAmbienteFisico=='0000'){
-            bValidador=0;
+        if (idAmbienteFisico == '0000') {
+            bValidador = 0;
             alert("Ingrese Ambiente Fisico");
         }
-        if(bValidador==1){
+        if (bValidador == 1) {
             accionControl = "mantenimientoReprogramarMedico";
             pathLink = "";
             pathLink += "p1=" + accionControl;
@@ -2690,7 +2711,7 @@ function actualizarAmbienteFisico(){
                 method: 'post',
                 parameters: pathLink,
                 onLoading: micargador(1),
-                onComplete: function(transport) {
+                onComplete: function (transport) {
                     micargador(0);
                     respuesta = transport.responseText;
                     rs = respuesta.split("|");
@@ -2698,15 +2719,15 @@ function actualizarAmbienteFisico(){
                     if (rs[0] == 0)
                         regresarCronogramaProgramacionMedicos();
                 }
-            })    
-        }      
-    }else{
+            })
+        }
+    } else {
         alert('Ingreso Motivo del Cambio de Ambiente')
     }
 }
 
 
-function listarLogCronograma(){
+function listarLogCronograma() {
     var patronModulo = 'mostrarTablaLog';
     parametros = '';
     parametros += 'p1=' + patronModulo;
@@ -2718,21 +2739,21 @@ function listarLogCronograma(){
     tblLogCronogramaMensual.setSkin("dhx_skyblue");
     tblLogCronogramaMensual.enableRowsHover(true, 'grid_hover');
     tblLogCronogramaMensual.enableMultiline(true);
-    tblLogCronogramaMensual.attachEvent("onRowSelect", function(rowId, cellInd) {
-        
-        });
+    tblLogCronogramaMensual.attachEvent("onRowSelect", function (rowId, cellInd) {
+
+    });
     contadorCargador++;
     var idCargador = contadorCargador;
-    tblLogCronogramaMensual.attachEvent("onXLS", function() {
+    tblLogCronogramaMensual.attachEvent("onXLS", function () {
         cargadorpeche(1, idCargador);
     });
-    tblLogCronogramaMensual.attachEvent("onXLE", function() {
+    tblLogCronogramaMensual.attachEvent("onXLE", function () {
         cargadorpeche(0, idCargador);
     });
     tblLogCronogramaMensual.setSkin("dhx_skyblue");
     tblLogCronogramaMensual.init();
-    tblLogCronogramaMensual.loadXML(pathRequestControl+'?'+parametros,function(){
-       
-        }); 
+    tblLogCronogramaMensual.loadXML(pathRequestControl + '?' + parametros, function () {
+
+    });
 }
 

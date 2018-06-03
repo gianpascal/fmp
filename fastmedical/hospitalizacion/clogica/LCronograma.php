@@ -1422,7 +1422,7 @@ class LCronograma
         return $resultadoArray;
     }
 
-    //obtenerlistaAfiliacionesAsignadasPopad
+    //obtener2listaAfiliacionesAsignadasPopad
 
     public function lobtenerlistaAfiliacionesAsignadasPopad($datos)
     {
@@ -1449,7 +1449,7 @@ class LCronograma
     }
 
     public function grabarProgramacionMedicos($datos)
-    {
+    { 
         $o_Cronograma = new DCronograma();
         $fechaActual = strftime("%Y-%m-%d", time());
         $fechas = array();

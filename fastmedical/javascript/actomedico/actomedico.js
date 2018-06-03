@@ -13,13 +13,14 @@ function mostrardatosMedicosActoMedico() {
     patronModulo = 'datosPersonalesActoMedico';
     parametros = '';
     parametros += 'p1=' + patronModulo;
-
+    contadorCargador++;
+    var idCargador = contadorCargador;
     new Ajax.Request(pathRequestControl, {
         method: 'get',
         parameters: parametros,
-        onLoading: micargador(1),
-        onComplete: function(transport) {
-            micargador(0);
+        onLoading: cargadorpeche(1, idCargador),
+        onComplete: function (transport) {
+            cargadorpeche(0, idCargador);
             respuesta = transport.responseText;
             window.alert(respuesta);
         }
@@ -43,18 +44,18 @@ function mostrarprogramacionMedicosActoMedico() {
     //////////para cargador peche////////////////
     contadorCargador++;
     var idCargador = contadorCargador;
-    tablaProgramacionMedico.attachEvent("onXLS", function() {
+    tablaProgramacionMedico.attachEvent("onXLS", function () {
         cargadorpeche(1, idCargador);
     });
-    tablaProgramacionMedico.attachEvent("onXLE", function() {
+    tablaProgramacionMedico.attachEvent("onXLE", function () {
         cargadorpeche(0, idCargador);
     });
     /////////////fin cargador ///////////////////////
     tablaProgramacionMedico.init();
-    tablaProgramacionMedico.loadXML(pathRequestControl + '?' + parametros, function() {
+    tablaProgramacionMedico.loadXML(pathRequestControl + '?' + parametros, function () {
         mostrarAtenciones();
     });
-//calculaAtendidosyNoAtendidosMensualActoMedico();
+    //calculaAtendidosyNoAtendidosMensualActoMedico();
 
 }
 
@@ -63,7 +64,7 @@ function mostrarAtenciones() {
     var cadenaCronogramas = '';
     var codigocronograma = '';
     var adicionales = 0;
-    var fila=0;
+    var fila = 0;
     for (i = 0; i < tablaProgramacionMedico.getRowsNum(); i++) {
 
         var array = tablaProgramacionMedico.getRowId(i).split("|");
@@ -75,24 +76,24 @@ function mostrarAtenciones() {
             codigocronograma = array[0];
             adicionales = array[1];
             fila = i;
-        //tablaProgramacionMedico.selectRow(i,true,true,true);
-        // motrarTodasAtencionesProgramados(cadenaCronogramas)                          
+            //tablaProgramacionMedico.selectRow(i,true,true,true);
+            // motrarTodasAtencionesProgramados(cadenaCronogramas)                          
         }
     }
-   
-    var id=tablaProgramacionMedico.getRowId(fila);
-    var servicio=tablaProgramacionMedico.cells(id, 4).getValue();
-    if (numero > 1 &&servicio=='TERAPIA FISICA (TARIFA A) ESSALUD') {
+
+    var id = tablaProgramacionMedico.getRowId(fila);
+    var servicio = tablaProgramacionMedico.cells(id, 4).getValue();
+    if (numero > 1 && servicio == 'TERAPIA FISICA (TARIFA A) ESSALUD') {
         motrarTodasAtencionesProgramados(cadenaCronogramas);
         // mostrarTodosPacientesAdicionales(cadenaCronogramas);
         llenardatosPersonalesMedicoActoMedico(codigocronograma);
 
 
     } else {
-        if(numero==1){
-             tablaProgramacionMedico.selectRow(fila, true, true, true);
+        if (numero == 1) {
+            tablaProgramacionMedico.selectRow(fila, true, true, true);
         }
-       
+
     }
     $('hcodigoCronograma').value = codigocronograma;
     $("txtcuposadicionales").value = adicionales;
@@ -112,7 +113,7 @@ function mostrarPacientes(rowId, cellInd) {
     $("txtcuposadicionales").value = adicionales;
     llenardatosPersonalesMedicoActoMedico(codigocronograma);
     calculaAtendidosyNoAtendidosDiarioActoMedico(codigocronograma);
-//calculaAtendidosyNoAtendidosMensualActoMedico(codigocronograma);
+    //calculaAtendidosyNoAtendidosMensualActoMedico(codigocronograma);
 }
 
 function motrarTodasAtencionesProgramados(cadenaCronogramas) {
@@ -131,15 +132,15 @@ function motrarTodasAtencionesProgramados(cadenaCronogramas) {
     //////////para cargador peche////////////////
     contadorCargador++;
     var idCargador = contadorCargador;
-    tablaPacienteProgramados.attachEvent("onXLS", function() {
+    tablaPacienteProgramados.attachEvent("onXLS", function () {
         cargadorpeche(1, idCargador);
     });
-    tablaPacienteProgramados.attachEvent("onXLE", function() {
+    tablaPacienteProgramados.attachEvent("onXLE", function () {
         cargadorpeche(0, idCargador);
     });
     /////////////fin cargador ///////////////////////
     tablaPacienteProgramados.init();
-    tablaPacienteProgramados.loadXML(pathRequestControl + '?' + parametros, function() {
+    tablaPacienteProgramados.loadXML(pathRequestControl + '?' + parametros, function () {
         var total = 0;
         var atendidos = 0;
         var regularizar = 0;
@@ -186,15 +187,15 @@ function mostrarTodosPacientesAdicionales(cadenaCronogramas) {
     //////////para cargador peche////////////////
     contadorCargador++;
     var idCargador = contadorCargador;
-    tablaPacienteAdicionales.attachEvent("onXLS", function() {
+    tablaPacienteAdicionales.attachEvent("onXLS", function () {
         cargadorpeche(1, idCargador);
     });
-    tablaPacienteAdicionales.attachEvent("onXLE", function() {
+    tablaPacienteAdicionales.attachEvent("onXLE", function () {
         cargadorpeche(0, idCargador);
     });
     /////////////fin cargador ///////////////////////
     tablaPacienteAdicionales.init();
-    tablaPacienteAdicionales.loadXML(pathRequestControl + '?' + parametros, function() {
+    tablaPacienteAdicionales.loadXML(pathRequestControl + '?' + parametros, function () {
         var total = 0;
         var atendidos = 0;
         var regularizar = 0;
@@ -219,7 +220,7 @@ function mostrarTodosPacientesAdicionales(cadenaCronogramas) {
         $('hatendidos').value = atendidos + parseInt($('hatendidos').value);
         $('hregularizar').value = regularizar + parseInt($('hregularizar').value);
         $('hnoAtendidos').value = noAtendidos + parseInt($('hnoAtendidos').value);
-    // alert(noAtendidos);
+        // alert(noAtendidos);
     });
 
 
@@ -243,15 +244,15 @@ function mostrarPacientesProgramados(codigocronograma) {
     //////////para cargador peche////////////////
     contadorCargador++;
     var idCargador = contadorCargador;
-    tablaPacienteProgramados.attachEvent("onXLS", function() {
+    tablaPacienteProgramados.attachEvent("onXLS", function () {
         cargadorpeche(1, idCargador);
     });
-    tablaPacienteProgramados.attachEvent("onXLE", function() {
+    tablaPacienteProgramados.attachEvent("onXLE", function () {
         cargadorpeche(0, idCargador);
     });
     /////////////fin cargador ///////////////////////
     tablaPacienteProgramados.init();
-    tablaPacienteProgramados.loadXML(pathRequestControl + '?' + parametros, function() {
+    tablaPacienteProgramados.loadXML(pathRequestControl + '?' + parametros, function () {
 
         for (i = 0; i < tablaPacienteProgramados.getRowsNum(); i++) {
             array = tablaPacienteProgramados.getRowId(i).split("|");
@@ -289,15 +290,15 @@ function mostrarPacientesAdicionales(codigocronograma) {
     //////////para cargador peche////////////////
     contadorCargador++;
     var idCargador = contadorCargador;
-    tablaPacienteAdicionales.attachEvent("onXLS", function() {
+    tablaPacienteAdicionales.attachEvent("onXLS", function () {
         cargadorpeche(1, idCargador);
     });
-    tablaPacienteAdicionales.attachEvent("onXLE", function() {
+    tablaPacienteAdicionales.attachEvent("onXLE", function () {
         cargadorpeche(0, idCargador);
     });
     /////////////fin cargador ///////////////////////
     tablaPacienteAdicionales.init();
-    tablaPacienteAdicionales.loadXML(pathRequestControl + '?' + parametros, function() {
+    tablaPacienteAdicionales.loadXML(pathRequestControl + '?' + parametros, function () {
 
         for (i = 0; i < tablaPacienteAdicionales.getRowsNum(); i++) {
             array = tablaPacienteAdicionales.getRowId(i).split("|");
@@ -375,7 +376,7 @@ function afiliacionCorrecta(codigoProgramacion) {
         parameters: parametros,
         asynchronous: false,
         onLoading: cargadorpeche(1, idCargador),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             cargadorpeche(0, idCargador);
             respuesta = transport.responseText;
 
@@ -394,7 +395,7 @@ function calculaAtendidosyNoAtendidosDiarioActoMedico(codigoCronograma) {
         method: 'get',
         parameters: pathLink,
         onLoading: cargadorpeche(1, idCargador),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             cargadorpeche(0, idCargador);
             respuesta = transport.responseText;
             $('Div_atencionesdiaria').update(respuesta);
@@ -418,7 +419,7 @@ function calculaAtendidosyNoAtendidosMensualActoMedico(codigoCronograma) {
         method: 'get',
         parameters: parametros,
         onLoading: cargadorpeche(1, idCargador),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             cargadorpeche(0, idCargador);
             var respuesta = transport.responseText;
             $('Div_atencionesmensuales').update(respuesta);
@@ -431,12 +432,14 @@ function seleccionCronogramaActoMedico(event, html, valores) {
     adicionales = valores.split("|")[1];
     document.getElementById("hcodigoCronograma").value = codigoCronograma;
     pathLink = "p1=seleccionCronogramaProgramadosActoMedico&p2=" + codigoCronograma;
+    contadorCargador++;
+    var idCargador = contadorCargador;
     new Ajax.Request(pathRequestControl, {
         method: 'get',
         parameters: pathLink,
-        onLoading: micargador(1),
-        onComplete: function(transport) {
-            micargador(0);
+        onLoading: cargadorpeche(1, idCargador),
+        onComplete: function (transport) {
+            cargadorpeche(0, idCargador);
             respuesta = transport.responseText;
             $('Div_pacientesprogramados').update(respuesta);
             document.getElementById("txtcuposadicionales").value = adicionales;
@@ -454,13 +457,14 @@ function atencionInmediataXRegularizar(parametro) {
     var parametros = '';
     parametros += 'p1=' + patronModulo;
     parametros += '&p2=' + codigoProgramacion;
-
+    contadorCargador++;
+    var idCargador = contadorCargador;
     new Ajax.Request(pathRequestControl, {
         method: 'get',
         parameters: parametros,
-        onLoading: micargador(1),
-        onComplete: function(transport) {
-            micargador(0);
+        onLoading: cargadorpeche(1, idCargador),
+        onComplete: function (transport) {
+            cargadorpeche(0, idCargador);
             var respuesta = transport.responseText;
 
             mostrarAtenciones();
@@ -497,7 +501,7 @@ function cargarCuerpoHC(codigoservicio, codigoProgramacion) {
         asynchronous: false,
         parameters: parametros,
         onLoading: cargadorpeche(1, idCargador),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             cargadorpeche(0, idCargador);
             var respuesta = transport.responseText;
             $('Div_GeneralActoMedicoHC').update(respuesta);
@@ -561,11 +565,11 @@ function atenderPacienteActoMedico(parametro) {
         $('Div_diagnosticoESSALUD').hide();
         //iniciarActoMedico(codigoProgramacion);
         verHcReciente();
-    /*
-         for (var i=0;i<divs_hc.length;i++){
-         $(divs_hc[i]).hide();
-         }
-         */
+        /*
+             for (var i=0;i<divs_hc.length;i++){
+             $(divs_hc[i]).hide();
+             }
+             */
     }
 
     /*
@@ -600,19 +604,19 @@ function cargarTablaPAquete2(codigopaciente, key, iIdGrupoEtarioPersonas, iIdGru
     tablaTablaPAquete.setSkin("dhx_skyblue");
     tablaTablaPAquete.enableRowsHover(true, 'grid_hover');
 
-    tablaTablaPAquete.attachEvent("onRowSelect", function(fila, columna) {
+    tablaTablaPAquete.attachEvent("onRowSelect", function (fila, columna) {
         //reporteDePuntoControlXExamen(fila,columna);    
         //        probar(fila,columna);
         //        verFotosPaciente()
-        });
+    });
     //////////para cargador peche////////////////
 
     contadorCargador++;
     var idCargador = contadorCargador;
-    tablaTablaPAquete.attachEvent("onXLS", function() {
+    tablaTablaPAquete.attachEvent("onXLS", function () {
         cargadorpeche(1, idCargador);
     });
-    tablaTablaPAquete.attachEvent("onXLE", function() {
+    tablaTablaPAquete.attachEvent("onXLE", function () {
         cargadorpeche(0, idCargador);
 
     });
@@ -621,15 +625,15 @@ function cargarTablaPAquete2(codigopaciente, key, iIdGrupoEtarioPersonas, iIdGru
     tablaTablaPAquete.init();
     //    tablaBuscarPersona.loadXML(pathRequestControl+'?'+parametros);
 
-    tablaTablaPAquete.loadXML(pathRequestControl + '?' + parametros, function() {
+    tablaTablaPAquete.loadXML(pathRequestControl + '?' + parametros, function () {
 
         //        CargarNombreGrupoEtario(tablaTablaPAquete)
         setColorTablaPaquetes();
     });
     //    alert(1.5);
-    tablaTablaPAquete.attachEvent("onEditCell", function(stage, rId, cInd, nValue, oValue) {
+    tablaTablaPAquete.attachEvent("onEditCell", function (stage, rId, cInd, nValue, oValue) {
 
-        });
+    });
 
 }
 //function CargarNombreGrupoEtario(tablaTablaPAquete){
@@ -656,7 +660,7 @@ function cargarTablaPAquete2(codigopaciente, key, iIdGrupoEtarioPersonas, iIdGru
 //    
 //}
 
-function  setColorTablaPaquetes() {
+function setColorTablaPaquetes() {
     for (var i = 0; i < tablaTablaPAquete.getRowsNum(); i++) {
 
         var nroAte = tablaTablaPAquete.cells(i, 8).getValue();
@@ -685,7 +689,7 @@ function pintarDivExamenes(codigoservicio, codigoProgramacion) {
         method: 'get',
         parameters: parametros,
         onLoading: cargadorpeche(1, idCargador),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             cargadorpeche(0, idCargador);
             respuesta = transport.responseText;
             $('Div_ExamenMedicoCuerpo').update(respuesta);
@@ -717,12 +721,12 @@ function cargarMotivoDeConsulta(codigoProgramacion) {
         method: 'get',
         parameters: parametros,
         onLoading: cargadorpeche(1, idCargador),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             cargadorpeche(0, idCargador);
             var respuesta = transport.responseText;
             //$('Div_sintomas').update(respuesta);
             $('Div_ConsultaMedicaCuerpo').update(respuesta);
-        //tablaSintomas();
+            //tablaSintomas();
         }
     })
 }
@@ -748,13 +752,14 @@ function agregarMotivoDeConsulta(rowId, cellInd) {
         parametros += '&p2=' + numSintoma;
         parametros += '&p3=' + nombreSintoma;
         parametros += '&p4=' + rowId;
-
+        contadorCargador++;
+        var idCargador = contadorCargador;
         new Ajax.Request(pathRequestControl, {
             method: 'post',
             parameters: parametros,
-            onLoading: micargador(1),
-            onComplete: function(transport) {
-                micargador(0);
+            onLoading: cargadorpeche(1, idCargador),
+            onComplete: function (transport) {
+                cargadorpeche(0, idCargador);
                 var respuesta = transport.responseText;
 
                 var para = document.getElementById("Div_sintomas");
@@ -799,10 +804,10 @@ function verMotivoConsultaAnteriores() {
         //////////para cargador peche////////////////
         contadorCargador++;
         var idCargador = contadorCargador;
-        miTablaMotivoConsulta.attachEvent("onXLS", function() {
+        miTablaMotivoConsulta.attachEvent("onXLS", function () {
             cargadorpeche(1, idCargador);
         });
-        miTablaMotivoConsulta.attachEvent("onXLE", function() {
+        miTablaMotivoConsulta.attachEvent("onXLE", function () {
             cargadorpeche(0, idCargador);
         });
         /////////////fin cargador ///////////////////////
@@ -856,7 +861,7 @@ function preguardarMotivoDeConsulta() {
                 asynchronous: false,
                 parameters: parametros,
                 onLoading: cargadorpeche(1, idCargador),
-                onComplete: function(transport) {
+                onComplete: function (transport) {
                     cargadorpeche(0, idCargador);
                     respuesta = transport.responseText;
                     if (respuesta == 'eliminado') {
@@ -915,19 +920,19 @@ function buscarSintomaNombre(evento) {
         //////////para cargador peche////////////////
         contadorCargador++;
         var idCargador = contadorCargador;
-        miTablaSintoma.attachEvent("onXLS", function() {
+        miTablaSintoma.attachEvent("onXLS", function () {
             cargadorpeche(1, idCargador);
         });
-        miTablaSintoma.attachEvent("onXLE", function() {
+        miTablaSintoma.attachEvent("onXLE", function () {
             cargadorpeche(0, idCargador);
             sn = 1;
         });
         /////////////fin cargador ///////////////////////
         miTablaSintoma.setSkin("dhx_skyblue");
         miTablaSintoma.init();
-        miTablaSintoma.loadXML(pathRequestControl + '?' + parametros, function() {
+        miTablaSintoma.loadXML(pathRequestControl + '?' + parametros, function () {
 
-            });
+        });
     }
 
     if (numero > 4 && sn == 1) {
@@ -967,16 +972,16 @@ function buscarSintomaCodigo() {
         //////////para cargador peche////////////////
         contadorCargador++;
         var idCargador = contadorCargador;
-        miTablaSintoma.attachEvent("onXLS", function() {
+        miTablaSintoma.attachEvent("onXLS", function () {
             cargadorpeche(1, idCargador);
         });
-        miTablaSintoma.attachEvent("onXLE", function() {
+        miTablaSintoma.attachEvent("onXLE", function () {
             cargadorpeche(0, idCargador);
         });
         /////////////fin cargador ///////////////////////
         miTablaSintoma.setSkin("dhx_skyblue");
         miTablaSintoma.init();
-        miTablaSintoma.loadXML(pathRequestControl + '?' + parametros, function() {
+        miTablaSintoma.loadXML(pathRequestControl + '?' + parametros, function () {
             sc = 1;
         });
     }
@@ -1028,21 +1033,21 @@ function validarManteSintomaMotivoConsulta(accion, numDivSintoma) {
 function manteMotivosDeConsulta(accion, datos) {
     pathLink = "p1=manteMotivosDeConsulta&accion=" + accion + "&datos=" + datos;
     new Ajax.Request(pathRequestControl,
-    {
-        method: 'get',
-        parameters: pathLink,
-        onLoading: micargador(1),
-        onComplete: function(transport) {
-            micargador(0);
-            respuesta = transport.responseText;
-            if (respuesta == 1) {
-                alert('Se realiz\xF3 la acci\xF3n con \xE9xito');
-            }
-            else {
-                alert('No se concret\xF3 la acci\xF3n, int\xE9ntelo nuevamente o cont\xE1ctese con su administrador');
+        {
+            method: 'get',
+            parameters: pathLink,
+            onLoading: micargador(1),
+            onComplete: function (transport) {
+                micargador(0);
+                respuesta = transport.responseText;
+                if (respuesta == 1) {
+                    alert('Se realiz\xF3 la acci\xF3n con \xE9xito');
+                }
+                else {
+                    alert('No se concret\xF3 la acci\xF3n, int\xE9ntelo nuevamente o cont\xE1ctese con su administrador');
+                }
             }
         }
-    }
     )
 }
 //editarSintomaMotivoConsulta('actualizar',".$arrayFilas[$i]["idMotivoConsulta"].")
@@ -1065,25 +1070,25 @@ function eliminarSintoma2(accion, idMotivoConsulta, idDivSintoma) {
     if (confirm('\xBFDesea eliminar s\xEDntoma?')) {
         pathLink = "p1=manteMotivosDeConsulta&accion=" + accion + "&idMotivoConsulta=" + idMotivoConsulta;
         new Ajax.Request(pathRequestControl,
-        {
-            method: 'post',
-            parameters: pathLink,
-            onLoading: micargador(1),
-            onComplete: function(transport) {
-                micargador(0);
-                respuesta = transport.responseText;
-                //alert(respuesta);
-                if (respuesta == 1) {
-                    var nodoHijo = document.getElementById(idDivSintoma);
-                    var nodoPadre = nodoHijo.parentNode;
-                    nodoPadre.removeChild(nodoHijo);
-                    alert('Se realiz\xF3 la acci\xF3n con \xE9xito');
-                }
-                else {
-                    alert('No se concret\xF3 la acci\xF3n, int\xE9ntelo nuevamente o cont\xE1ctese con su administrador');
+            {
+                method: 'post',
+                parameters: pathLink,
+                onLoading: micargador(1),
+                onComplete: function (transport) {
+                    micargador(0);
+                    respuesta = transport.responseText;
+                    //alert(respuesta);
+                    if (respuesta == 1) {
+                        var nodoHijo = document.getElementById(idDivSintoma);
+                        var nodoPadre = nodoHijo.parentNode;
+                        nodoPadre.removeChild(nodoHijo);
+                        alert('Se realiz\xF3 la acci\xF3n con \xE9xito');
+                    }
+                    else {
+                        alert('No se concret\xF3 la acci\xF3n, int\xE9ntelo nuevamente o cont\xE1ctese con su administrador');
+                    }
                 }
             }
-        }
         )
     }
 }
@@ -1103,55 +1108,55 @@ function llamaralPacienteActoMedico(parametro) {
     var estadoatencion = array[2];
 
     switch (estadoatencion) {
-        case '0004' :
-        {
-            var patronModulo = 'llamaralPacienteActoMedico';
-            parametros = '';
-            parametros += 'p1=' + patronModulo;
-            parametros += '&p2=' + codigoProgramacion;
-            parametros += '&p3=' + codigoambientefisico;
+        case '0004':
+            {
+                var patronModulo = 'llamaralPacienteActoMedico';
+                parametros = '';
+                parametros += 'p1=' + patronModulo;
+                parametros += '&p2=' + codigoProgramacion;
+                parametros += '&p3=' + codigoambientefisico;
 
-            //pathLink = "p1=llamaralPacienteActoMedico&p2="+codigoProgramacion+"&p3="+codigoambientefisico;
-            new Ajax.Request(pathRequestControl, {
-                method: 'get',
-                parameters: parametros,
-                onLoading: micargador(1),
-                onComplete: function(transport) {
-                    micargador(0);
-                    respuesta = transport.responseText;
-                    window.alert(respuesta);
-                }
-            })
-            break;
-        }
-        case '0005' :
-        {
-            window.alert("El paciente ya fue atendido!!");
-            break;
-        }
-        case '0007' :
-        {
-            //            window.alert("La atencion del paciente debe ser regularizada!!");
-            //            break;    
-            patronModulo = 'llamaralPacienteActoMedico';
-            parametros = '';
-            parametros += 'p1=' + patronModulo;
-            parametros += '&p2=' + codigoProgramacion;
-            parametros += '&p3=' + codigoambientefisico;
+                //pathLink = "p1=llamaralPacienteActoMedico&p2="+codigoProgramacion+"&p3="+codigoambientefisico;
+                new Ajax.Request(pathRequestControl, {
+                    method: 'get',
+                    parameters: parametros,
+                    onLoading: micargador(1),
+                    onComplete: function (transport) {
+                        micargador(0);
+                        respuesta = transport.responseText;
+                        window.alert(respuesta);
+                    }
+                })
+                break;
+            }
+        case '0005':
+            {
+                window.alert("El paciente ya fue atendido!!");
+                break;
+            }
+        case '0007':
+            {
+                //            window.alert("La atencion del paciente debe ser regularizada!!");
+                //            break;    
+                patronModulo = 'llamaralPacienteActoMedico';
+                parametros = '';
+                parametros += 'p1=' + patronModulo;
+                parametros += '&p2=' + codigoProgramacion;
+                parametros += '&p3=' + codigoambientefisico;
 
-            //pathLink = "p1=llamaralPacienteActoMedico&p2="+codigoProgramacion+"&p3="+codigoambientefisico;
-            new Ajax.Request(pathRequestControl, {
-                method: 'get',
-                parameters: parametros,
-                onLoading: micargador(1),
-                onComplete: function(transport) {
-                    micargador(0);
-                    respuesta = transport.responseText;
-                    window.alert(respuesta);
-                }
-            })
-            break;
-        }
+                //pathLink = "p1=llamaralPacienteActoMedico&p2="+codigoProgramacion+"&p3="+codigoambientefisico;
+                new Ajax.Request(pathRequestControl, {
+                    method: 'get',
+                    parameters: parametros,
+                    onLoading: micargador(1),
+                    onComplete: function (transport) {
+                        micargador(0);
+                        respuesta = transport.responseText;
+                        window.alert(respuesta);
+                    }
+                })
+                break;
+            }
     }
 }
 function llenardatosPersonalesMedicoActoMedico(codigoCronograma) {
@@ -1168,7 +1173,7 @@ function llenardatosPersonalesMedicoActoMedico(codigoCronograma) {
         method: 'get',
         parameters: parametros,
         onLoading: cargadorpeche(1, idCargador),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             cargadorpeche(0, idCargador);
             var respuesta = transport.responseText;
             var datos = respuesta.split("|");
@@ -1193,7 +1198,7 @@ function actualizaradicionalesActoMedico() {
             method: 'get',
             parameters: parametros,
             onLoading: micargador(1),
-            onComplete: function(transport) {
+            onComplete: function (transport) {
                 micargador(0);
                 var respuesta = transport.responseText;
                 mostrarprogramacionMedicosActoMedico();
@@ -1213,7 +1218,7 @@ function llamarCreacionMantPantallas() {
         method: 'get',
         parameters: pathLink,
         onLoading: micargador(1),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             micargador(0);
             respuesta = transport.responseText;
             creaAccordionLlamadasPacientes();
@@ -1260,7 +1265,7 @@ function mostrarTablaAmbientesFisicosxPantalla() {
         method: 'get',
         parameters: pathLink,
         onLoading: micargador(1),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             micargador(0);
             respuesta = transport.responseText;
             $('Div_tablaMantAmbienteFisicoxPantallas').update(respuesta);
@@ -1324,12 +1329,14 @@ function agregarAntecedente(rowId, cellInd) {
         parametros += '&p2=' + numeroAntecedente;
         parametros += '&p3=' + nombreCie;
         parametros += '&p4=' + rowId;
+        contadorCargador++;
+        var idCargador = contadorCargador;
         new Ajax.Request(pathRequestControl, {
             method: 'get',
             parameters: parametros,
-            onLoading: micargador(1),
-            onComplete: function(transport) {
-                micargador(0);
+            onLoading: cargadorpeche(1, idCargador),
+            onComplete: function (transport) {
+                cargadorpeche(0, idCargador);
                 respuesta = transport.responseText;
                 // $('divAntecedentes').innerHTML=$('divAntecedentes').innerHTML+respuesta;
                 var para = document.getElementById("divAntecedentes");
@@ -1359,11 +1366,11 @@ function cargaAntecedentes() {
         method: 'get',
         parameters: parametros,
         onLoading: cargadorpeche(1, idCargador),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             cargadorpeche(0, idCargador);
             var respuesta = transport.responseText;
             $('Div_AntecedentesCuerpo').update(respuesta);
-        //tablaCie();
+            //tablaCie();
 
         }
     })
@@ -1380,7 +1387,7 @@ function antecedentesPreguardados() {
         method: 'get',
         parameters: parametros,
         onLoading: micargador(1),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             micargador(0);
             respuesta = transport.responseText;
             $('divAntecedentes').update(respuesta);
@@ -1425,19 +1432,19 @@ function buscarCieNombre(evento) {
         //////////para cargador peche////////////////
         contadorCargador++;
         var idCargador = contadorCargador;
-        miTablaCie.attachEvent("onXLS", function() {
+        miTablaCie.attachEvent("onXLS", function () {
             cargadorpeche(1, idCargador);
         });
-        miTablaCie.attachEvent("onXLE", function() {
+        miTablaCie.attachEvent("onXLE", function () {
             cargadorpeche(0, idCargador);
         });
         /////////////fin cargador ///////////////////////
         miTablaCie.setSkin("dhx_skyblue");
         miTablaCie.init();
-        miTablaCie.loadXML(pathRequestControl + '?' + parametros, function() {
+        miTablaCie.loadXML(pathRequestControl + '?' + parametros, function () {
             cn = 1;
         });
-    //setTimeout('x=1',1000);
+        //setTimeout('x=1',1000);
     }
     if (numero > 4 && cn == 1) {
         //miTablaCie.filterBy(1,$('textNombreCie').value);
@@ -1475,19 +1482,19 @@ function buscarCieCodigo() {
         //////////para cargador peche////////////////
         contadorCargador++;
         var idCargador = contadorCargador;
-        miTablaCie.attachEvent("onXLS", function() {
+        miTablaCie.attachEvent("onXLS", function () {
             cargadorpeche(1, idCargador);
         });
-        miTablaCie.attachEvent("onXLE", function() {
+        miTablaCie.attachEvent("onXLE", function () {
             cargadorpeche(0, idCargador);
         });
         /////////////fin cargador ///////////////////////
         miTablaCie.setSkin("dhx_skyblue");
         miTablaCie.init();
-        miTablaCie.loadXML(pathRequestControl + '?' + parametros, function() {
+        miTablaCie.loadXML(pathRequestControl + '?' + parametros, function () {
             cc = 1;
         });
-    //setTimeout('x=1',1000);
+        //setTimeout('x=1',1000);
     }
     if (numero > 2 && cc == 1) {
         miTablaCie.filterBy(0, $('textCodigoCie').value);
@@ -1501,10 +1508,11 @@ function preguardarAntecedente() {
     var parametros = new Array();
     var respuesta = new Array();
     var cadena = new Array();
+    var idCargador = new Array();
     var i;
     var j;
     var hEstado;
-    var numeroParentescos=14
+    var numeroParentescos = 14
     for (i = 1; i < numeroAntecedentes + 1; i++) {
 
 
@@ -1512,16 +1520,16 @@ function preguardarAntecedente() {
         //alert($(hEstado).value);
         if ($(hEstado).value == 0 || $(hEstado).value == 4 || $(hEstado).value == 1) {
             //alert($(hEstado).value);
+            // debugger;
             j = 1;
             cadena[i] = '';
-            for(j=1;j<numeroParentescos+1;j++){
-                if ($('checkParentesco_' + i + '_' + j))
-                {
+            for (j = 1; j < numeroParentescos + 1; j++) {
+                if ($('checkParentesco_' + i + '_' + j)) {
                     cadena[i] += j + '_' + $('checkParentesco_' + i + '_' + j).value + '_' + $('checkVive_' + i + '_' + j).value + '|';
-                
-                }  
+
+                }
             }
-            
+
             patron[i] = 'preGrabarAntecedente';
             parametros[i] = '';
             parametros[i] += 'p1=' + patron[i];
@@ -1532,14 +1540,14 @@ function preguardarAntecedente() {
             parametros[i] += '&p6=' + $(hEstado).value;
             parametros[i] += '&p7=' + $('hIdAntecedente_' + i).value;
             contadorCargador++;
-            var idCargador = contadorCargador;
+            idCargador[i] = contadorCargador;
             new Ajax.Request(pathRequestControl, {
                 method: 'post',
                 asynchronous: false,
                 parameters: parametros[i],
-                onLoading: cargadorpeche(1, idCargador),
-                onComplete: function(transport) {
-                    cargadorpeche(0, idCargador);
+                onLoading: cargadorpeche(1, idCargador[i]),
+                onComplete: function (transport) {
+                    cargadorpeche(0, idCargador[i]);
                     respuesta[i] = transport.responseText;
                     $('hIdAntecedente_' + i).value = respuesta[i];
                 }
@@ -1591,7 +1599,7 @@ function clonarExamenes() {
         method: 'get',
         parameters: parametros,
         onLoading: micargador(1),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             micargador(0);
             respuesta = transport.responseText;
             alert(respuesta);
@@ -1607,7 +1615,7 @@ function pasarProduccion() {
         method: 'get',
         parameters: parametros,
         onLoading: micargador(1),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             micargador(0);
             respuesta = transport.responseText;
             alert(respuesta);
@@ -1656,14 +1664,14 @@ function verificarExisteDesarrollo() {
         method: 'get',
         parameters: parametros,
         onLoading: micargador(1),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             micargador(0);
             respuesta = transport.responseText;
             array = respuesta.split("|");
             //            alert(array[0]);
             if (array[0] == 1) {
                 if (array[1] == "disponible") {
-                //mensajear se puede clonar
+                    //mensajear se puede clonar
                 } else {
                     stdBotones(2, descVersion);
                 }
@@ -1770,7 +1778,7 @@ function accionesVersion(accion) {
         method: 'get',
         parameters: parametros,
         onLoading: micargador(1),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             micargador(0);
             respuesta = transport.responseText;
             examenesFisicos();
@@ -1873,7 +1881,7 @@ function preguardarPruebaCorregido(idPrueba) {
                     asynchronous: false,
                     parameters: parametros,
                     onLoading: micargador(1),
-                    onComplete: function(transport) {
+                    onComplete: function (transport) {
                         micargador(0);
                         respuesta = transport.responseText;
                         //alert(respuesta);
@@ -1941,7 +1949,7 @@ function preguardarPruebaCorregido(idPrueba) {
                 asynchronous: false,
                 parameters: parametros,
                 onLoading: micargador(1),
-                onComplete: function(transport) {
+                onComplete: function (transport) {
                     micargador(0);
                     respuesta = transport.responseText;
                     //alert(respuesta);
@@ -2013,13 +2021,15 @@ function preguardarPrueba(idPrueba) {
                 parametros += '&p6=' + cadenaCampoPrueba;//contiene los id de los campos
                 parametros += '&p7=' + iCodigoProgramacion; //es el codigo de la programacion
                 parametros += '&p8=' + iIdVersion; //contiene la version
+                contadorCargador++;
+                var idCargador = contadorCargador;
                 new Ajax.Request(pathRequestControl, {
                     method: 'get',
                     asynchronous: false,
                     parameters: parametros,
-                    onLoading: micargador(1),
-                    onComplete: function(transport) {
-                        micargador(0);
+                    onLoading: cargadorpeche(1, idCargador),
+                    onComplete: function (transport) {
+                        cargadorpeche(0, idCargador);
                         respuesta = transport.responseText;
                         //alert(respuesta);
                         arrayRespuesta = respuesta.split("|")
@@ -2081,13 +2091,15 @@ function preguardarPrueba(idPrueba) {
             parametros += '&p6=' + cadenaCampoPrueba;//contiene los id de los campos
             parametros += '&p7=' + iCodigoProgramacion; //es el codigo de la programacion
             parametros += '&p8=' + iIdVersion; //contiene la version
+            contadorCargador++;
+            var idCargador = contadorCargador;
             new Ajax.Request(pathRequestControl, {
                 method: 'get',
                 asynchronous: false,
                 parameters: parametros,
-                onLoading: micargador(1),
-                onComplete: function(transport) {
-                    micargador(0);
+                onLoading: cargadorpeche(1, idCargador),
+                onComplete: function (transport) {
+                    cargadorpeche(0, idCargador);
                     respuesta = transport.responseText;
                     //alert(respuesta);
                     arrayRespuesta = respuesta.split("|")
@@ -2102,9 +2114,9 @@ function preguardarPrueba(idPrueba) {
             })
         }
     }
-//Base64.encode(datos);
-//alert(cadenaCampos);
-//alert(cadenaEstados);
+    //Base64.encode(datos);
+    //alert(cadenaCampos);
+    //alert(cadenaEstados);
 }
 function cambioEstado(idCampoEstado) {
     //alert(idCampoEstado);
@@ -2132,7 +2144,7 @@ function cargarHC() {
         method: 'get',
         parameters: parametros,
         onLoading: micargador(1),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             micargador(0);
             respuesta = transport.responseText;
             $('divHC_cuerpo').update(respuesta);
@@ -2161,7 +2173,7 @@ function cargarHCPacientes(idPaciente) {
         method: 'get',
         parameters: parametros,
         onLoading: micargador(1),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             micargador(0);
             respuesta = transport.responseText;
             $('historia_paciente').update(respuesta);
@@ -2186,7 +2198,7 @@ function verHistoriaFecha(id) {
         method: 'get',
         parameters: parametros,
         onLoading: micargador(1),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             micargador(0);
             respuesta = transport.responseText;
             $('divDerechaVerHC').update(respuesta);
@@ -2234,7 +2246,7 @@ function clickArbolHCItems(id, text) {
     if ($('Detalle2') != null) {
         $('Detalle2').hide();
     }
-//$('Detalle2').hide();
+    //$('Detalle2').hide();
 }
 
 
@@ -2269,7 +2281,7 @@ function iniciarActoMedico(codigoProgramacion) {
         method: 'get',
         parameters: parametros,
         onLoading: cargadorpeche(1, idCargador),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             cargadorpeche(0, idCargador);
             respuesta = transport.responseText;
             $('Div_filiacionHC').update(respuesta);
@@ -2288,7 +2300,7 @@ function cargaFiliacionActoMedico() {
     //cargaDiagnosticos();//Carga tabla CIE
     cargaPreguardados();//cargaTratamientosMedicamentososPreguardados(); cargaTratamientosPracticasMedicasPreguardados(); cargaDiagnosticosPreguardados();
     cargarTriaje();
-// cargaFechaVencimientoRecetaMedica();
+    // cargaFechaVencimientoRecetaMedica();
 }
 function cargaFechaVencimientoRecetaMedica() {
     idProgramacion = $('hcodigoProgramacion').value;
@@ -2302,7 +2314,7 @@ function cargaFechaVencimientoRecetaMedica() {
         method: 'get',
         parameters: parametros,
         onLoading: cargadorpeche(1, idCargador),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             cargadorpeche(0, idCargador);
             respuesta = transport.responseText;
             $("txtfechavencimientoreceta").value = respuesta;
@@ -2337,16 +2349,17 @@ function verHcReciente() {
     parametros = '';
     parametros += 'p1=' + patronModulo;
     parametros += '&p2=' + idProgramacion;
-
+    contadorCargador++;
+    var idCargador = contadorCargador;
     new Ajax.Request(pathRequestControl, {
         method: 'get',
         parameters: parametros,
-        onLoading: micargador(1),
-        onComplete: function(transport) {
-            micargador(0);
+        onLoading: cargadorpeche(1, idCargador),
+        onComplete: function (transport) {
+            cargadorpeche(0, idCargador);
             respuesta = transport.responseText;
             $('Div_HCRecienteContenido').update(respuesta);
-        //            document.getElementById("divDerechaVerHC").style.overflow='auto';
+            //            document.getElementById("divDerechaVerHC").style.overflow='auto';
         }
     })
 }
@@ -2370,7 +2383,7 @@ function cancelarAtencionMedica() {
             method: 'get',
             parameters: parametros,
             onLoading: micargador(1),
-            onComplete: function(transport) {
+            onComplete: function (transport) {
                 micargador(0);
                 reiniciarDatosDiagnosticos();
                 tablaPacienteProgramados.clearSelection();
@@ -2399,7 +2412,7 @@ function tablaProductosTratamientosHC() {
     tablaProductosTratamientos.setImagePath("../../../../fastmedical_front/imagen/icono/");
     tablaProductosTratamientos.setSkin("dhx_skyblue");
     //tablaProductosTratamientos.attachEvent("onRowSelect", agregarMedicamentoHC);
-    tablaProductosTratamientos.attachEvent("onRowSelect", function(rId, cInd) {
+    tablaProductosTratamientos.attachEvent("onRowSelect", function (rId, cInd) {
         agregarMedicamentoHC(rId, cInd, '');
     });
     tablaProductosTratamientos.init();
@@ -2463,7 +2476,7 @@ function agregarMedicamentoHC(rowId, cellInd, data) {
                     numeroProducto = $('hNumeroProductos_' + nroReceta).value;
                     numeroProducto++;
                     $('hNumeroProductos_' + nroReceta).value = numeroProducto;
-                // alert('si existe');
+                    // alert('si existe');
                 }
                 nombreMedicamento = tablaProductosTratamientos.cells(rowId, 1).getValue();
 
@@ -2483,7 +2496,7 @@ function agregarMedicamentoHC(rowId, cellInd, data) {
                     numeroProducto = $('hNumeroProductos_' + nroReceta).value;
                     numeroProducto++;
                     $('hNumeroProductos_' + nroReceta).value = numeroProducto;
-                // alert('si existe');
+                    // alert('si existe');
                 }
                 nombreMedicamento = arreglo[1];
                 codigoProducto = arreglo[2];
@@ -2517,7 +2530,7 @@ function agregarMedicamentoHC(rowId, cellInd, data) {
                 asynchronous: false,
                 parameters: parametros,
                 onLoading: cargadorpeche(1, idCargador),
-                onComplete: function(transport) {
+                onComplete: function (transport) {
                     cargadorpeche(0, idCargador);
                     var respuesta = transport.responseText;
                     var para = document.getElementById(divAumentar);
@@ -2581,7 +2594,7 @@ function duplicarReceta(numeroReceta) {
         method: 'get',
         parameters: parametros,
         onLoading: cargadorpeche(1, idCargador),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             cargadorpeche(0, idCargador);
             var respuesta = transport.responseText;
             eval(respuesta);
@@ -2626,7 +2639,7 @@ function preguardarRectaMedica(idReceta, idProducto) {
         asynchronous: false,
         parameters: parametros,
         onLoading: cargadorpeche(1, idCargador),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             cargadorpeche(0, idCargador);
             var respuesta = transport.responseText;
             //$(divReemplazar).update(respuesta);
@@ -2667,7 +2680,7 @@ function eliminarMedicamentoHC(numeroReceta, numeroProducto, opcion) {
         asynchronous: false,
         parameters: parametros,
         onLoading: cargadorpeche(1, idCargador),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             cargadorpeche(0, idCargador);
             var respuesta = transport.responseText;
             $('divProducto_' + numeroReceta + '_' + numeroProducto).hide();
@@ -2688,7 +2701,7 @@ function eliminarReceta(numeroReceta) {
         //alert(i)
         eliminarMedicamentoHC(numeroReceta, i, 0)
     }
-// $('divReceta_'+numeroReceta).hide();
+    // $('divReceta_'+numeroReceta).hide();
 }
 
 function tablaPracticasMedicasTratamientosHC() {
@@ -2709,6 +2722,7 @@ function tablaPracticasMedicasTratamientosHC() {
 }
 
 function agregarPracticaMedicaHC(rowId, cellInd, data) {
+    
     //$('imgPreguardarTratatamientoPracticasMedicas').src='../../../../fastmedical_front/imagen/btn/btn_preguardar.gif';
     if (data == undefined) {
         codigopracticamedica = tablaPracticasMedicasTratamientos.cells(rowId, 0).getValue();
@@ -2747,11 +2761,11 @@ function agregarPracticaMedicaHC(rowId, cellInd, data) {
     }
     var codigos = document.getElementById("htxtcodigosServicios").value;
     if (cellInd != 3) {
-        if ($('contadorBK')){
-            
-            if (codigopracticamedica=='XXXX200301'){
-                if ($('txtNumeroDiasSintomatico').value>=15){
-                    if ($('contadorBK').value<2){
+        if ($('contadorBK')) {
+
+            if (codigopracticamedica == 'XXXX200301') {
+                if ($('txtNumeroDiasSintomatico').value >= 15) {
+                    if ($('contadorBK').value < 2) {
                         if (codigos.length > 0) {
                             codigos = codigos + "|" + codigopracticamedica;
                         }
@@ -2778,7 +2792,7 @@ function agregarPracticaMedicaHC(rowId, cellInd, data) {
                             asynchronous: false,
                             parameters: parametros,
                             onLoading: cargadorpeche(1, idCargador),
-                            onComplete: function(transport) {
+                            onComplete: function (transport) {
                                 cargadorpeche(0, idCargador);
                                 respuesta = transport.responseText;
                                 nombrediv = "Div_PracticaMedica" + numerodivpracticamedica;
@@ -2787,16 +2801,16 @@ function agregarPracticaMedicaHC(rowId, cellInd, data) {
                                 contadorDivsPracticaMedica++;
                                 $('hNumeroTratamientoPracticasMedicas').value = parseInt($('hNumeroTratamientoPracticasMedicas').value) + 1;
                                 $('contadorBK').value++;
-                                $('txtNumeroBK').value=$('txtNumeroBK').value+numerodivpracticamedica+'|';
+                                $('txtNumeroBK').value = $('txtNumeroBK').value + numerodivpracticamedica + '|';
                                 preguardarTratatamientoPracticasMedicas();
-                                if ($('contadorBK').value==1){
-                                    
+                                if ($('contadorBK').value == 1) {
+
                                     $('div_btnGenerarOrdenDK').update('1 Orden Generada');
-                                }else{
+                                } else {
                                     $('div_btnGenerarOrdenDK').addClassName('btnReportes1');
                                     $('div_btnGenerarOrdenDK').update('2 Ordenes Generadas');
                                 }
-                            //document.getElementById("hNumeroTratamientoPracticasMedicas").value = contadorDivsPracticaMedica;
+                                //document.getElementById("hNumeroTratamientoPracticasMedicas").value = contadorDivsPracticaMedica;
                             }
                         })
                     }
@@ -2830,7 +2844,7 @@ function agregarPracticaMedicaHC(rowId, cellInd, data) {
                 asynchronous: false,
                 parameters: parametros,
                 onLoading: cargadorpeche(1, idCargador),
-                onComplete: function(transport) {
+                onComplete: function (transport) {
                     cargadorpeche(0, idCargador);
                     respuesta = transport.responseText;
                     nombrediv = "Div_PracticaMedica" + numerodivpracticamedica;
@@ -2839,7 +2853,7 @@ function agregarPracticaMedicaHC(rowId, cellInd, data) {
                     contadorDivsPracticaMedica++;
                     $('hNumeroTratamientoPracticasMedicas').value = parseInt($('hNumeroTratamientoPracticasMedicas').value) + 1;
                     preguardarTratatamientoPracticasMedicas();
-                //document.getElementById("hNumeroTratamientoPracticasMedicas").value = contadorDivsPracticaMedica;
+                    //document.getElementById("hNumeroTratamientoPracticasMedicas").value = contadorDivsPracticaMedica;
                 }
             })
         }
@@ -2863,8 +2877,7 @@ function tablaPreciosTratamientoAtencionMedica(codigo) {
     tablaPreciosAtencionMedicaTratamiento.init();
     tablaPreciosAtencionMedicaTratamiento.loadXML(pathRequestControl + '?' + parametros);
 }
-function CargarVentanaPreciosAtencionMedica(vformname, vtitle, vwidth, vheight, vcenter, vresizable, vmodal, vstyle, vopacity, vposx1, vposx2, vposy1, vposy2, parametros, posFuncion)
-{
+function CargarVentanaPreciosAtencionMedica(vformname, vtitle, vwidth, vheight, vcenter, vresizable, vmodal, vstyle, vopacity, vposx1, vposx2, vposy1, vposy2, parametros, posFuncion) {
     myRand = parseInt(Math.random() * 999999999999999);
     if (vwidth == undefined || vwidth == 0)
         vwidth = 700;
@@ -2898,8 +2911,7 @@ function CargarVentanaPreciosAtencionMedica(vformname, vtitle, vwidth, vheight, 
         vcenter = false;
     if (vtitle == undefined)
         vtitle = vformname;
-    if (!ExisteObjeto("Div_" + vformname))
-    {
+    if (!ExisteObjeto("Div_" + vformname)) {
         var vidfrm;
         // file02=decodeURIComponent(file02);
         var vid = "Div_" + vformname;
@@ -2942,15 +2954,15 @@ function CargarVentanaPreciosAtencionMedica(vformname, vtitle, vwidth, vheight, 
         win.toFront();
 
         new Ajax.Request(pathRequestControl,
-        {
-            method: 'get',
-            parameters: parametros,
-            onComplete: function(transport) {
-                respuesta = transport.responseText;
-                $(vidfrm).update(respuesta);
-                eval(posFuncion);
+            {
+                method: 'get',
+                parameters: parametros,
+                onComplete: function (transport) {
+                    respuesta = transport.responseText;
+                    $(vidfrm).update(respuesta);
+                    eval(posFuncion);
+                }
             }
-        }
         )
     }
 }
@@ -2996,32 +3008,32 @@ function eliminarPracticaMedicaHC(nombreDiv, codigoServicio, numeroPracticaMedic
         codigos = codigos.replace("|" + codigoServicio, '');
         codigos = codigos.replace(codigoServicio, '');
     }
-    if ($('Div_Sintomatico')){
-        if ($('txtNumeroBK').value.indexOf(numeroPracticaMedica+"|")!=-1) {
-            $('txtNumeroBK').value = $('txtNumeroBK').value.replace(numeroPracticaMedica+"|",'');//Eliminar de la cadena en el caso el elmento se encuentre en el inicio o antes de llegar al final
+    if ($('Div_Sintomatico')) {
+        if ($('txtNumeroBK').value.indexOf(numeroPracticaMedica + "|") != -1) {
+            $('txtNumeroBK').value = $('txtNumeroBK').value.replace(numeroPracticaMedica + "|", '');//Eliminar de la cadena en el caso el elmento se encuentre en el inicio o antes de llegar al final
         }
-        if ($('txtNumeroBK').value.indexOf(numeroPracticaMedica)!=-1) {
-            $('txtNumeroBK').value = $('txtNumeroBK').value.replace("|"+numeroPracticaMedica,'');//Eliminar de la cadena en el caso el elemento se encuentre al final
-            $('txtNumeroBK').value = $('txtNumeroBK').value.replace(numeroPracticaMedica,'');//Eliminar de la cadena en el caso solo haya uno
+        if ($('txtNumeroBK').value.indexOf(numeroPracticaMedica) != -1) {
+            $('txtNumeroBK').value = $('txtNumeroBK').value.replace("|" + numeroPracticaMedica, '');//Eliminar de la cadena en el caso el elemento se encuentre al final
+            $('txtNumeroBK').value = $('txtNumeroBK').value.replace(numeroPracticaMedica, '');//Eliminar de la cadena en el caso solo haya uno
         }
         document.getElementById("txtNumeroBK").value = $('txtNumeroBK').value;
-                            
-        $('contadorBK').value=  $('contadorBK').value-1;
+
+        $('contadorBK').value = $('contadorBK').value - 1;
         $('div_btnGenerarOrdenDK').removeClassName('btnReportes1');
-        if ( $('contadorBK').value==1){
+        if ($('contadorBK').value == 1) {
             $('div_btnGenerarOrdenDK').update('Generar 1 Orden BK');
-        }else{
+        } else {
             $('div_btnGenerarOrdenDK').update('Generar 2 Ordenes BK');
         }
     }
 
-    
+
     document.getElementById("hEstadoAgregarTratamientoPracticaMedica_" + numeroPracticaMedica).value = 1;
     //alert(numeroPracticaMedica);
     document.getElementById("htxtcodigosServicios").value = codigos;
     preguardarTratatamientoPracticasMedicas();
     $(nombreDiv).hide();//Ocultamos el hidden
-    
+
 }
 
 
@@ -3150,7 +3162,7 @@ function preguardarTratatamientoMedicamentosoCorregido() {
                     asynchronous: false,
                     parameters: parametros[i],
                     onLoading: micargador(1),
-                    onComplete: function(transport) {
+                    onComplete: function (transport) {
                         micargador(0);
                         respuesta[i] = transport.responseText;
 
@@ -3163,8 +3175,8 @@ function preguardarTratatamientoMedicamentosoCorregido() {
 
         }
     }
-//preguardarFechaVencimientoReceta();
-// $('imgPreguardarTratatamientoMedicamentoso').src='../../../../fastmedical_front/imagen/btn/btn_preguardar_off.gif';
+    //preguardarFechaVencimientoReceta();
+    // $('imgPreguardarTratatamientoMedicamentoso').src='../../../../fastmedical_front/imagen/btn/btn_preguardar_off.gif';
 }
 
 function preguardarTratatamientoMedicamentoso() {
@@ -3246,7 +3258,7 @@ function preguardarTratatamientoMedicamentoso() {
                     asynchronous: false,
                     parameters: parametros[i],
                     onLoading: micargador(1),
-                    onComplete: function(transport) {
+                    onComplete: function (transport) {
                         micargador(0);
                         respuesta[i] = transport.responseText;
 
@@ -3259,8 +3271,8 @@ function preguardarTratatamientoMedicamentoso() {
 
         }
     }
-// preguardarFechaVencimientoReceta();
-//$('imgPreguardarTratatamientoMedicamentoso').src='../../../../fastmedical_front/imagen/btn/btn_preguardar_off.gif';
+    // preguardarFechaVencimientoReceta();
+    //$('imgPreguardarTratatamientoMedicamentoso').src='../../../../fastmedical_front/imagen/btn/btn_preguardar_off.gif';
 }
 
 function preguardarFechaVencimientoReceta() {
@@ -3278,7 +3290,7 @@ function preguardarFechaVencimientoReceta() {
         method: 'get',
         parameters: parametros,
         onLoading: cargadorpeche(1, idCargador),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             cargadorpeche(0, idCargador);
             respuesta = transport.responseText;
         }
@@ -3322,17 +3334,19 @@ function preguardarTratatamientoPracticasMedicas(estado) {
                 parametros[i] += '&p3=' + observaciones;
                 parametros[i] += '&p4=' + $('hcodigoProgramacion').value;
                 parametros[i] += '&p5=' + $(hEstado).value;
-                parametros[i] += '&p6=' + $('hIdTratamientoPracticaMedica_' + i).value;
+                parametros[i] += '&p6=' + trimJunny($('hIdTratamientoPracticaMedica_' + i).value);
                 parametros[i] += '&p7=' + estado;
                 //codigopracticamedica = $('hcodigoPracticaMedica_'+i).value;
                 //if ((codigos.indexOf(codigopracticamedica+"|")!=-1)||(codigos.indexOf(codigopracticamedica)!=-1)){
+                contadorCargador++;
+                var idCargador = contadorCargador;
                 new Ajax.Request(pathRequestControl, {
                     method: 'get',
                     asynchronous: false,
                     parameters: parametros[i],
-                    onLoading: micargador(1),
-                    onComplete: function(transport) {
-                        micargador(0);
+                    onLoading: cargadorpeche(1, idCargador),
+                    onComplete: function (transport) {
+                        cargadorpeche(0, idCargador);
                         respuesta[i] = transport.responseText;
                         // alert(respuesta[i]);
                         if (respuesta[i] == 'elimi') {
@@ -3347,13 +3361,13 @@ function preguardarTratatamientoPracticasMedicas(estado) {
                 })
 
 
-            //}
+                //}
             }
         }
     }
-//}else{
-//    window.alert("No hay prácticas médicas agregadas")
-//}
+    //}else{
+    //    window.alert("No hay prácticas médicas agregadas")
+    //}
 }
 function cambiarEstadoTratamientoMedicamentoso(n) {
     // $('imgPreguardarTratatamientoMedicamentoso').src='../../../../fastmedical_front/imagen/btn/btn_preguardar.gif';
@@ -3373,7 +3387,7 @@ function cambiarEstadoTratamientoPracticasMedicas(n) {
 
 }
 function cambiarFechaVencimientoRecetaUnica() {
-// $('imgPreguardarTratatamientoMedicamentoso').src='../../../../fastmedical_front/imagen/btn/btn_preguardar.gif';
+    // $('imgPreguardarTratatamientoMedicamentoso').src='../../../../fastmedical_front/imagen/btn/btn_preguardar.gif';
 }
 /*----------busquedas---------*/
 
@@ -3395,25 +3409,25 @@ function busquedaTratamientoMedicamentosoNombre(evento) {
         tablaProductosTratamientos = new dhtmlXGridObject('Div_TablaTratamientoMedicamentosoHC');
         tablaProductosTratamientos.setImagePath("../../../../fastmedical_front/imagen/icono/");
         //tablaProductosTratamientos.attachEvent("onRowSelect", agregarMedicamentoHC);
-        tablaProductosTratamientos.attachEvent("onRowSelect", function(rId, cInd) {
+        tablaProductosTratamientos.attachEvent("onRowSelect", function (rId, cInd) {
             agregarMedicamentoHC(rId, cInd, '');
         });
         //////////para cargador peche////////////////
         contadorCargador++;
         var idCargador = contadorCargador;
-        tablaProductosTratamientos.attachEvent("onXLS", function() {
+        tablaProductosTratamientos.attachEvent("onXLS", function () {
             cargadorpeche(1, idCargador);
         });
-        tablaProductosTratamientos.attachEvent("onXLE", function() {
+        tablaProductosTratamientos.attachEvent("onXLE", function () {
             cargadorpeche(0, idCargador);
         });
         /////////////fin cargador ///////////////////////
         tablaProductosTratamientos.setSkin("dhx_skyblue");
         tablaProductosTratamientos.init();
-        tablaProductosTratamientos.loadXML(pathRequestControl + '?' + parametros, function() {
+        tablaProductosTratamientos.loadXML(pathRequestControl + '?' + parametros, function () {
             tmn = 1;
         });
-    //miTablaCie.clearAll();loadXML
+        //miTablaCie.clearAll();loadXML
     }
     if (numero > 4 && tmn == 1) {
         var palabra = $('txtbusquedaNombreTratamientoMedicamentoso').value;
@@ -3447,25 +3461,25 @@ function buscarTratamientoMedicamentosoCodigo() {
         tablaProductosTratamientos = new dhtmlXGridObject('Div_TablaTratamientoMedicamentosoHC');
         tablaProductosTratamientos.setImagePath("../../../../fastmedical_front/imagen/icono/");
         //tablaProductosTratamientos.attachEvent("onRowSelect", agregarMedicamentoHC);
-        tablaProductosTratamientos.attachEvent("onRowSelect", function(rId, cInd) {
+        tablaProductosTratamientos.attachEvent("onRowSelect", function (rId, cInd) {
             agregarMedicamentoHC(rId, cInd, '');
         });
         //////////para cargador peche////////////////
         contadorCargador++;
         var idCargador = contadorCargador;
-        tablaProductosTratamientos.attachEvent("onXLS", function() {
+        tablaProductosTratamientos.attachEvent("onXLS", function () {
             cargadorpeche(1, idCargador);
         });
-        tablaProductosTratamientos.attachEvent("onXLE", function() {
+        tablaProductosTratamientos.attachEvent("onXLE", function () {
             cargadorpeche(0, idCargador);
         });
         /////////////fin cargador ///////////////////////
         tablaProductosTratamientos.setSkin("dhx_skyblue");
         tablaProductosTratamientos.init();
-        tablaProductosTratamientos.loadXML(pathRequestControl + '?' + parametros, function() {
+        tablaProductosTratamientos.loadXML(pathRequestControl + '?' + parametros, function () {
             tmc = 1;
         });
-    //miTablaCie.clearAll();loadXML
+        //miTablaCie.clearAll();loadXML
     }
     if (numero > 3 && tmc == 1) {
         //alert('jjjjj');
@@ -3492,19 +3506,19 @@ function busquedaTratamientoPracticaNombre(evento) {                            
         //////////para cargador peche////////////////
         contadorCargador++;
         var idCargador = contadorCargador;
-        tablaPracticasMedicasTratamientos.attachEvent("onXLS", function() {
+        tablaPracticasMedicasTratamientos.attachEvent("onXLS", function () {
             cargadorpeche(1, idCargador);
         });
-        tablaPracticasMedicasTratamientos.attachEvent("onXLE", function() {
+        tablaPracticasMedicasTratamientos.attachEvent("onXLE", function () {
             cargadorpeche(0, idCargador);
         });
         /////////////fin cargador ///////////////////////
         tablaPracticasMedicasTratamientos.setSkin("dhx_skyblue");
         tablaPracticasMedicasTratamientos.init();
-        tablaPracticasMedicasTratamientos.loadXML(pathRequestControl + '?' + parametros, function() {
+        tablaPracticasMedicasTratamientos.loadXML(pathRequestControl + '?' + parametros, function () {
             tmp = 1;
         });
-    //miTablaCie.clearAll();
+        //miTablaCie.clearAll();
     }
     if (numero > 4 && tmp == 1) {
         //tablaPracticasMedicasTratamientos.filterBy(1,$('txtbusquedaNombrePracticasMedicas').value);
@@ -3543,19 +3557,19 @@ function buscarTratamientoPracticaCodigo() {
         //////////para cargador peche////////////////
         contadorCargador++;
         var idCargador = contadorCargador;
-        tablaPracticasMedicasTratamientos.attachEvent("onXLS", function() {
+        tablaPracticasMedicasTratamientos.attachEvent("onXLS", function () {
             cargadorpeche(1, idCargador);
         });
-        tablaPracticasMedicasTratamientos.attachEvent("onXLE", function() {
+        tablaPracticasMedicasTratamientos.attachEvent("onXLE", function () {
             cargadorpeche(0, idCargador);
         });
         /////////////fin cargador ///////////////////////
         tablaPracticasMedicasTratamientos.setSkin("dhx_skyblue");
         tablaPracticasMedicasTratamientos.init();
-        tablaPracticasMedicasTratamientos.loadXML(pathRequestControl + '?' + parametros, function() {
+        tablaPracticasMedicasTratamientos.loadXML(pathRequestControl + '?' + parametros, function () {
             tmpc = 1;
         });
-    //miTablaCie.clearAll();
+        //miTablaCie.clearAll();
     }
     if (numero > 3 && tmpc == 1) {
         tablaPracticasMedicasTratamientos.filterBy(0, $('txtbusquedaCodigoPracticasMedicas').value);
@@ -3576,7 +3590,7 @@ function cargaTratamientosMedicamentososPreguardados() {
         method: 'get',
         parameters: parametros,
         onLoading: cargadorpeche(1, idCargador),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             cargadorpeche(0, idCargador);
             var respuesta = transport.responseText;
             eval(respuesta);
@@ -3602,7 +3616,7 @@ function cargaTratamientosPracticasMedicasPreguardados() {
         method: 'get',
         parameters: parametros,
         onLoading: cargadorpeche(1, idCargador),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             cargadorpeche(0, idCargador);
             var respuesta = transport.responseText;
             //window.alert(respuesta);
@@ -3730,7 +3744,7 @@ function cargaNumeroSesiones() {
         method: 'get',
         parameters: parametros,
         onLoading: cargadorpeche(1, idCargador),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             cargadorpeche(0, idCargador);
             var respuesta = transport.responseText;
             //alert (respuesta)
@@ -3760,10 +3774,10 @@ function cargaDiagnosticos() {
     //////////para cargador peche////////////////
     contadorCargador++;
     var idCargador = contadorCargador;
-    tablaDiagnosticos.attachEvent("onXLS", function() {
+    tablaDiagnosticos.attachEvent("onXLS", function () {
         cargadorpeche(1, idCargador);
     });
-    tablaDiagnosticos.attachEvent("onXLE", function() {
+    tablaDiagnosticos.attachEvent("onXLE", function () {
         cargadorpeche(0, idCargador);
     });
     /////////////fin cargador ///////////////////////
@@ -3781,7 +3795,7 @@ function agregarOtro_ActoMedico(opcion) {
         asynchronous: false,
         parameters: parametros,
         onLoading: micargador(1),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             micargador(0);
             respuesta = transport.responseText;
             data = respuesta;
@@ -3793,11 +3807,11 @@ function agregarOtro_ActoMedico(opcion) {
          rowId = data.split("|")[0];
          agregarMotivoDeConsulta(rowId,3);//Esto es el anterior
          break;*/ //Esto ya fue
-        case 'antecedentes' :
+        case 'antecedentes':
             rowId = data.split("|")[0];
             agregarAntecedente(rowId, 2);
             break;
-        case 'diagnostico' :
+        case 'diagnostico':
             //agregarDiagnosticoHC('','',data);
             agregarOtroDiagnostico('', '', data);//Al agregar otro si hay data que viene de la BD
             break;
@@ -3816,7 +3830,7 @@ function agregarOtroMotivoDeConsultaDesdeBoton() {
         asynchronous: false,
         parameters: parametros,
         onLoading: micargador(1),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             micargador(0);
             respuesta = transport.responseText;
             data = respuesta;
@@ -3860,7 +3874,7 @@ function agregarOtroMotivoDeConsultaEnVista(idCieSintoma, cCodigoCie, vDescripci
             method: 'post',
             parameters: parametros,
             onLoading: micargador(1),
-            onComplete: function(transport) {
+            onComplete: function (transport) {
                 micargador(0);
                 respuesta = transport.responseText;
                 $('Div_sintomas').innerHTML = $('Div_sintomas').innerHTML + respuesta;
@@ -3943,7 +3957,7 @@ function agregarOtroDiagnostico(rowId, cellInd, data) {
             asynchronous: false,
             parameters: parametros,
             onLoading: micargador(1),
-            onComplete: function(transport) {
+            onComplete: function (transport) {
                 micargador(0);
                 respuesta = transport.responseText;
                 nombreDiv = "Div_CIE_asignado_" + numerodiv;
@@ -3967,6 +3981,7 @@ function agregarDiagnosticoHC(rowId, cellInd, data) {
     var idDiagnosticoCIE;
     var diagnosticoMedico;
     var estadoregistroDiagnostico;
+    //debugger;
     if (data == undefined) {
 
         if ($('hNumeroDiagnostico').value == '0') {
@@ -4032,14 +4047,15 @@ function agregarDiagnosticoHC(rowId, cellInd, data) {
         parametros += '&p8=' + idDiagnosticoCIE;
         parametros += '&p9=' + diagnosticoMedico;
         parametros += '&p10=' + estadoregistroDiagnostico;
-
+        contadorCargador++;
+        var idCargador = contadorCargador;
         new Ajax.Request(pathRequestControl, {
             method: 'get',
             asynchronous: false,
             parameters: parametros,
-            onLoading: micargador(1),
-            onComplete: function(transport) {
-                micargador(0);
+            onLoading: cargadorpeche(1, idCargador),
+            onComplete: function (transport) {
+                cargadorpeche(0, idCargador);
                 respuesta = transport.responseText;
                 nombreDiv = "Div_CIE_asignado_" + numerodiv;
                 creaDiagnostico(nombreDiv);
@@ -4048,10 +4064,10 @@ function agregarDiagnosticoHC(rowId, cellInd, data) {
             }
         })
         $('hNumeroDiagnostico').value = parseInt($('hNumeroDiagnostico').value) + 1;
-    //$('hNumeroDiagnostico').value = $('hNumeroDiagnostico').value + "|" + contadorDivsDiagnosticos;
+        //$('hNumeroDiagnostico').value = $('hNumeroDiagnostico').value + "|" + contadorDivsDiagnosticos;
     }
     preguardarDiagnosticosCorregido();
-//validaryPreguardarDiagnosticosCorregido();
+    //validaryPreguardarDiagnosticosCorregido();
 
 }
 function agregarDiagnosticoPreguardadoHC(rowId, cellInd, data) {
@@ -4131,7 +4147,7 @@ function agregarDiagnosticoPreguardadoHC(rowId, cellInd, data) {
             asynchronous: false,
             parameters: parametros,
             onLoading: cargadorpeche(1, idCargador),
-            onComplete: function(transport) {
+            onComplete: function (transport) {
                 cargadorpeche(0, idCargador);
                 respuesta = transport.responseText;
                 nombreDiv = "Div_CIE_asignado_" + numerodiv;
@@ -4141,7 +4157,7 @@ function agregarDiagnosticoPreguardadoHC(rowId, cellInd, data) {
             }
         })
         $('hNumeroDiagnostico').value = parseInt($('hNumeroDiagnostico').value) + 1;
-    //$('hNumeroDiagnostico').value = $('hNumeroDiagnostico').value + "|" + contadorDivsDiagnosticos;
+        //$('hNumeroDiagnostico').value = $('hNumeroDiagnostico').value + "|" + contadorDivsDiagnosticos;
     }
 
 }
@@ -4180,7 +4196,7 @@ function eliminarDiagnostico(numeroDiagnostico, codigointernoCIE) {
             asynchronous: false,
             parameters: parametros,
             onLoading: micargador(1),
-            onComplete: function(transport) {
+            onComplete: function (transport) {
                 micargador(0);
                 respuesta = transport.responseText;
 
@@ -4226,11 +4242,11 @@ function validarLlenadoTiposDiagnosticosCorregido() {
                         });
                         todoOK = -3;
                     }
-                //                    else{
-                //                        
-                //                        todoOK=1;
-                //
-                //                    }
+                    //                    else{
+                    //                        
+                    //                        todoOK=1;
+                    //
+                    //                    }
                 }
             }
 
@@ -4290,13 +4306,8 @@ function preguardarDiagnosticosCorregido() {
     var tipoconsultaEssalud = "";
     var numerosesion = "";
     var esEssalud = '0';
+    // debugger;
 
-    //    if ($("htxtEsESSALUD").value == '1') {
-    //        destinoCitaEssalud = $("lstDestinoCitaEssalud").value;
-    //        tipoconsultaEssalud = $("lstTipoCitaEssalud").value;
-    //        numerosesion = $("txtCantidadCitasEssalud").value;
-    //        esEssalud = '1';
-    //    }
 
     var cadena = '';
     for (i = 0; i < cantidadCies; i++) {
@@ -4332,14 +4343,15 @@ function preguardarDiagnosticosCorregido() {
         parametros += '&p11=' + $('htxtcodigopaciente').value;
         parametros += '&p12=' + $('hcodigoCronograma').value;
 
-
+        contadorCargador++;
+        var idCargador = contadorCargador;
         new Ajax.Request(pathRequestControl, {
             method: 'post',
             asynchronous: false,
             parameters: parametros,
-            onLoading: micargador(1),
-            onComplete: function(transport) {
-                micargador(0);
+            onLoading: cargadorpeche(1, idCargador),
+            onComplete: function (transport) {
+                cargadorpeche(0, idCargador);
                 respuesta = transport.responseText;
                 arreglo = respuesta.split("|")
                 if (arreglo[0] == '0') {
@@ -4494,7 +4506,7 @@ function preguardarDiagnosticos() {
                     asynchronous: false,
                     parameters: parametros,
                     onLoading: micargador(1),
-                    onComplete: function(transport) {
+                    onComplete: function (transport) {
                         micargador(0);
                         respuesta = transport.responseText;
                         arreglo = respuesta.split("|")
@@ -4510,26 +4522,26 @@ function preguardarDiagnosticos() {
 
             }
         }
-    //        }else{
-    //            window.alert("No hay diagnósticos agregados")
-    //        }
+        //        }else{
+        //            window.alert("No hay diagnósticos agregados")
+        //        }
     } else {
         switch (opcionpreguardarDiagnosticos) {
-            case 1 :
-            {
-                window.alert("Destino de Cita no Seleccionada(EsSalud)");
-                break;
-            }
-            case 2 :
-            {
-                window.alert("Tipo de Cita no Seleccionada(EsSalud)");
-                break;
-            }
-            case 3 :
-            {
-                window.alert("Tipo de Diagnóstico no Seleccionado");
-                break;
-            }
+            case 1:
+                {
+                    window.alert("Destino de Cita no Seleccionada(EsSalud)");
+                    break;
+                }
+            case 2:
+                {
+                    window.alert("Tipo de Cita no Seleccionada(EsSalud)");
+                    break;
+                }
+            case 3:
+                {
+                    window.alert("Tipo de Diagnóstico no Seleccionado");
+                    break;
+                }
         }
     }
 
@@ -4563,16 +4575,16 @@ function busquedaDiagnosticoNombre(evento) {
         //////////para cargador peche////////////////
         contadorCargador++;
         var idCargador = contadorCargador;
-        tablaDiagnosticos.attachEvent("onXLS", function() {
+        tablaDiagnosticos.attachEvent("onXLS", function () {
             cargadorpeche(1, idCargador);
         });
-        tablaDiagnosticos.attachEvent("onXLE", function() {
+        tablaDiagnosticos.attachEvent("onXLE", function () {
             cargadorpeche(0, idCargador);
         });
         /////////////fin cargador ///////////////////////
         tablaDiagnosticos.setSkin("dhx_skyblue");
         tablaDiagnosticos.init();
-        tablaDiagnosticos.loadXML(pathRequestControl + '?' + parametros, function() {
+        tablaDiagnosticos.loadXML(pathRequestControl + '?' + parametros, function () {
             dn = 1;
         });
     }
@@ -4607,7 +4619,7 @@ function verificarPaqueteEtaero(rowId, cellInd, data) {
             method: 'get',
             parameters: parametros,
             onLoading: cargadorpeche(1, idCargador),
-            onComplete: function(transport) {
+            onComplete: function (transport) {
                 cargadorpeche(0, idCargador);
                 var respuesta = transport.responseText;
                 //window.alert(respuesta);
@@ -4648,7 +4660,7 @@ function refrescarVPaquetes(codigoProgramacion) {
         method: 'get',
         parameters: parametros,
         onLoading: cargadorpeche(1, idCargador),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             cargadorpeche(0, idCargador);
             var respuesta = transport.responseText;
             $('Div_PaquetesCuerpo').update(respuesta);
@@ -4677,7 +4689,7 @@ function cargarPaqueteDiagnostico(idGrupoEtaero) {
     var patronModulo = 'cargarPaqueteDiagnostico';
     var parametros = '';
     parametros += 'p1=' + patronModulo;
-    parametros += '&p2=' +  parseInt(idGrupoEtaero);
+    parametros += '&p2=' + parseInt(idGrupoEtaero);
     parametros += '&p3=' + c_cod_per;
     contadorCargador++;
     var idCargador = contadorCargador;
@@ -4685,11 +4697,11 @@ function cargarPaqueteDiagnostico(idGrupoEtaero) {
         method: 'get',
         parameters: parametros,
         onLoading: cargadorpeche(1, idCargador),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             cargadorpeche(0, idCargador);
             var respuesta = transport.responseText;
 
-        // alert(respuesta);
+            // alert(respuesta);
         }
     })
 }
@@ -4712,10 +4724,10 @@ function buscarDiagnosticoCodigo() {
         tablaDiagnosticos.attachEvent("onRowSelect", agregarDiagnosticoHC);
         tablaDiagnosticos.setSkin("dhx_skyblue");
         tablaDiagnosticos.init();
-        tablaDiagnosticos.loadXML(pathRequestControl + '?' + parametros, function() {
+        tablaDiagnosticos.loadXML(pathRequestControl + '?' + parametros, function () {
             dc = 1;
         });
-    //miTablaCie.clearAll();
+        //miTablaCie.clearAll();
     }
     if (numero > 2 && dc == 1) {
         tablaDiagnosticos.filterBy(0, $('txtbusquedaCodigoDiagnostico').value);
@@ -4738,7 +4750,7 @@ function cargaDiagnosticosPreguardados() {
         method: 'get',
         parameters: parametros,
         onLoading: cargadorpeche(1, idCargador),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             cargadorpeche(0, idCargador);
             var respuesta = transport.responseText;
             //window.alert(respuesta);
@@ -5050,13 +5062,13 @@ function validarPreguardarExamenes() {
                 }
             }
         }
-    //        if(idPrueba==74){ // ide de evalucion
-    //            
-    //            //Evolucion de la version actual, no se debe agregar nuevas versiones, se debe dejar alli
-    //            //Minimo 50 caracteres
-    //            rpta=validarEvolucionDePruebas();//Cero si hay error, uno si hay exito
-    //            break;
-    //        }
+        //        if(idPrueba==74){ // ide de evalucion
+        //            
+        //            //Evolucion de la version actual, no se debe agregar nuevas versiones, se debe dejar alli
+        //            //Minimo 50 caracteres
+        //            rpta=validarEvolucionDePruebas();//Cero si hay error, uno si hay exito
+        //            break;
+        //        }
     }
     return rpta;
 }
@@ -5086,7 +5098,7 @@ function preguardarExamenes() {
     numeroP = arrayPruebas.length;
     for (ii = 0; ii < numeroP; ii++) {
         preguardarPrueba(arrayPruebas[ii])
-    // alert(arrayPruebas[ii]);
+        // alert(arrayPruebas[ii]);
     }
 }
 function guardarAtencionMedicaHC() {
@@ -5105,14 +5117,14 @@ function guardarAtencionMedicaHC() {
         asynchronous: false,
         parameters: parametros,
         onLoading: cargadorpeche(1, idCargador),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             cargadorpeche(0, idCargador);
             var respuesta = transport.responseText;
             window.alert(respuesta.split("|")[1]);
             if (respuesta.split("|")[0] == 0) {
                 $("Div_GeneralActoMedicoHC").hide();
                 $("Div_GeneralActoMedico").show();
-            //calculaAtendidosyNoAtendidosMensualActoMedico(codigocronograma);
+                //calculaAtendidosyNoAtendidosMensualActoMedico(codigocronograma);
             }
             /*
             if (confirm("\xbfDesea Imprimir la Receta?")) {
@@ -5124,13 +5136,13 @@ function guardarAtencionMedicaHC() {
             var htxtestadoatencion = '0005';
             var htxtcodigopaciente = $('htxtcodigopaciente').value;
             var htxtcodigoservicio = $('htxtcodigoservicio').value;
-            var htxtEsESSALUD =$('htxtEsESSALUD').value;
-            var parametross=hcodigoProgramacion+"|"+"|"+htxtestadoatencion+"|"+htxtcodigopaciente+"|"+htxtcodigoservicio+"|"+htxtEsESSALUD;
+            var htxtEsESSALUD = $('htxtEsESSALUD').value;
+            var parametross = hcodigoProgramacion + "|" + "|" + htxtestadoatencion + "|" + htxtcodigopaciente + "|" + htxtcodigoservicio + "|" + htxtEsESSALUD;
             atenderPacienteActoMedico(parametross);
 
         }
     })
-//idtablacronogramas = $("hidtablacronogramas").value;
+    //idtablacronogramas = $("hidtablacronogramas").value;
 
 }
 /********************fin de funciones de luis***************************/
@@ -5149,7 +5161,7 @@ function paginaPrueba() {
         method: 'get',
         parameters: parametros,
         onLoading: micargador(1),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             micargador(0);
             respuesta = transport.responseText;
             $('divMantenimiento').update(respuesta);
@@ -5203,7 +5215,7 @@ function mostrarStdDesarrollo() {
         method: 'get',
         parameters: parametros,
         onLoading: micargador(1),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             micargador(0);
             respuesta = transport.responseText;
             var miarray = respuesta.split("|");
@@ -5223,8 +5235,7 @@ function mostrarStdDesarrollo() {
     })
 }
 
-function arbolExamenFisico()
-{
+function arbolExamenFisico() {
     var idVersion = document.getElementById("cboVersion").value;
     parametros = "p1=arbolExamenFisico&p2=" + idVersion;
     divMostrar = document.getElementById('divTreeExamen');
@@ -5232,7 +5243,7 @@ function arbolExamenFisico()
     treex = new dhtmlXTreeObject("divTreeExamen", "100%", "100%", 0);
     treex.setSkin('dhx_skyblue');
     treex.setImagePath("../../../../fastmedical_front/imagen/csh_bluebooks_simedh/");
-    treex.attachEvent("onClick", function() {
+    treex.attachEvent("onClick", function () {
         preeditaExamenFisico(treex.getSelectedItemId(), treex.getSelectedItemText());
         return true;
     });
@@ -5249,7 +5260,7 @@ function asignarPadreExamenFisico() {
     tree = new dhtmlXTreeObject("divAsignarPadre", "100%", "100%", 0);
     tree.setSkin('dhx_skyblue');
     tree.setImagePath("../../../../fastmedical_front/imagen/csh_bluebooks_simedh/");
-    tree.attachEvent("onClick", function() {
+    tree.attachEvent("onClick", function () {
         capturarPadreExamenFisico(tree.getSelectedItemId(), tree.getSelectedItemText());
         return true;
     });
@@ -5266,7 +5277,7 @@ function asignarPadreExamenFisico() {
         $('txtNivel').value = "0";
         Windows.close("Div_asignarPadre");
     }
-/******************************************************************/
+    /******************************************************************/
 }
 function preeditaExamenFisico(id) {
     patronModulo = 'editaExamenFisico';
@@ -5276,7 +5287,7 @@ function preeditaExamenFisico(id) {
         method: 'get',
         parameters: parametros,
         onLoading: micargador(1),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             micargador(0);
             respuesta = transport.responseText;
             var miarray = respuesta.split("|");
@@ -5345,7 +5356,7 @@ function capturarPadreExamenFisico(id) {
         method: 'get',
         parameters: parametros,
         onLoading: micargador(1),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             micargador(0);
             respuesta = transport.responseText;
             var miarray = respuesta.split("|");
@@ -5358,8 +5369,7 @@ function capturarPadreExamenFisico(id) {
     })
 }
 
-function CargarVentanaPopPapExamenPadre(vformname, vtitle, vwidth, vheight, vcenter, vresizable, vmodal, vstyle, vopacity, vposx1, vposx2, vposy1, vposy2, parametros, posFuncion)
-{
+function CargarVentanaPopPapExamenPadre(vformname, vtitle, vwidth, vheight, vcenter, vresizable, vmodal, vstyle, vopacity, vposx1, vposx2, vposy1, vposy2, parametros, posFuncion) {
     myRand = parseInt(Math.random() * 999999999999999);
     if (vwidth == undefined || vwidth == 0)
         vwidth = 700;
@@ -5393,8 +5403,7 @@ function CargarVentanaPopPapExamenPadre(vformname, vtitle, vwidth, vheight, vcen
         vcenter = false;
     if (vtitle == undefined)
         vtitle = vformname;
-    if (!ExisteObjeto("Div_" + vformname))
-    {
+    if (!ExisteObjeto("Div_" + vformname)) {
         var vidfrm;
         // file02=decodeURIComponent(file02);
         var vid = "Div_" + vformname;
@@ -5437,16 +5446,16 @@ function CargarVentanaPopPapExamenPadre(vformname, vtitle, vwidth, vheight, vcen
         win.toFront();
 
         new Ajax.Request(pathRequestControl,
-        {
-            method: 'get',
-            parameters: parametros,
-            onComplete: function(transport) {
-                respuesta = transport.responseText;
-                $(vidfrm).update(respuesta);
-                posFuncion += "('')";
-                eval(posFuncion);
-            }
-        })
+            {
+                method: 'get',
+                parameters: parametros,
+                onComplete: function (transport) {
+                    respuesta = transport.responseText;
+                    $(vidfrm).update(respuesta);
+                    posFuncion += "('')";
+                    eval(posFuncion);
+                }
+            })
     }
 }
 
@@ -5475,40 +5484,40 @@ function nue_actExamenFisico(opt) {
     parametros += '&p10=' + opt;
 
     new Ajax.Request(pathRequestControl,
-    {
-        method: 'post',
-        parameters: parametros,
-        onLoading: micargador(1),
-        onComplete: function(transport) {
-            micargador(0);
-            respuesta = transport.responseText;
-            //            $('Div_programacionMedicosActoMedico').update(respuesta);
-            if (opt == 'nuevo') {
-                document.getElementById("divEdita").style.display = 'block';
-                document.getElementById("divGraba").style.display = 'none';
-                document.getElementById("divActualiza").style.display = 'none';
-                document.getElementById("divElimina").style.display = 'none';
-                document.getElementById("btnAsignarPadre").style.visibility = 'visible';
-                document.getElementById("txtTitulo").disabled = true;
-                document.getElementById("cboEstado").disabled = true;
-                document.getElementById("txtOrden").disabled = true;
-            } else if (opt == 'actualizar') {
-                document.getElementById("txtPadre").value = '';
-                document.getElementById("txtJerarquia").value = '';
-                document.getElementById("txtTitulo").value = '';
-                document.getElementById("cboEstado").value = '';
-                document.getElementById("txtOrden").value = '';
-                document.getElementById("txtNivel").value = '';
-                document.getElementById("txtDescripcionPadre").value = '';
-                document.getElementById("divEdita").style.display = 'none';
-                document.getElementById("divGraba").style.display = 'block';
-                document.getElementById("divActualiza").style.display = 'none';
-                document.getElementById("divElimina").style.display = 'none';
-                document.getElementById("btnAsignarPadre").style.visibility = 'visible';
+        {
+            method: 'post',
+            parameters: parametros,
+            onLoading: micargador(1),
+            onComplete: function (transport) {
+                micargador(0);
+                respuesta = transport.responseText;
+                //            $('Div_programacionMedicosActoMedico').update(respuesta);
+                if (opt == 'nuevo') {
+                    document.getElementById("divEdita").style.display = 'block';
+                    document.getElementById("divGraba").style.display = 'none';
+                    document.getElementById("divActualiza").style.display = 'none';
+                    document.getElementById("divElimina").style.display = 'none';
+                    document.getElementById("btnAsignarPadre").style.visibility = 'visible';
+                    document.getElementById("txtTitulo").disabled = true;
+                    document.getElementById("cboEstado").disabled = true;
+                    document.getElementById("txtOrden").disabled = true;
+                } else if (opt == 'actualizar') {
+                    document.getElementById("txtPadre").value = '';
+                    document.getElementById("txtJerarquia").value = '';
+                    document.getElementById("txtTitulo").value = '';
+                    document.getElementById("cboEstado").value = '';
+                    document.getElementById("txtOrden").value = '';
+                    document.getElementById("txtNivel").value = '';
+                    document.getElementById("txtDescripcionPadre").value = '';
+                    document.getElementById("divEdita").style.display = 'none';
+                    document.getElementById("divGraba").style.display = 'block';
+                    document.getElementById("divActualiza").style.display = 'none';
+                    document.getElementById("divElimina").style.display = 'none';
+                    document.getElementById("btnAsignarPadre").style.visibility = 'visible';
+                }
+                arbolExamenFisico();
             }
-            arbolExamenFisico();
         }
-    }
     )
 }
 
@@ -5541,7 +5550,7 @@ function eliminaExamenFisico() {
             method: 'get',
             parameters: parametros,
             onLoading: micargador(1),
-            onComplete: function(transport) {
+            onComplete: function (transport) {
                 micargador(0);
                 respuesta = transport.responseText;
             }
@@ -5571,7 +5580,7 @@ function asignarExamenPrueba() {
             method: 'get',
             parameters: parametros,
             onLoading: micargador(1),
-            onComplete: function(transport) {
+            onComplete: function (transport) {
                 micargador(0);
                 respuesta = transport.responseText;
                 var dato = respuesta.split("|");
@@ -5650,13 +5659,13 @@ function desactivarExamenPrueba(event_id, native_event_object) {
                 method: 'get',
                 parameters: parametros,
                 onLoading: micargador(1),
-                onComplete: function(transport) {
+                onComplete: function (transport) {
                     micargador(0);
                     mostrartablaExamenPrueba(idExamen);
-                // respuesta = transport.responseText;
-                // var miarray=respuesta.split("|");
-                //                    mostrartablaExamenPrueba();
-                //                    mostrartablaExamenServicio();
+                    // respuesta = transport.responseText;
+                    // var miarray=respuesta.split("|");
+                    //                    mostrartablaExamenPrueba();
+                    //                    mostrartablaExamenServicio();
                 }
             })
         }
@@ -5748,7 +5757,7 @@ function resultadoPrueba(nomPrueba) {
     TablaresultadoPrueba.setSkin("dhx_skyblue");
 
     TablaresultadoPrueba.enableRowsHover(true, 'grid_hover');
-    TablaresultadoPrueba.attachEvent("onRowSelect", function(rId, cInd) {
+    TablaresultadoPrueba.attachEvent("onRowSelect", function (rId, cInd) {
         var idPrueba = TablaresultadoPrueba.cells(TablaresultadoPrueba.getSelectedId(), 1).getValue();
         var Estado = TablaresultadoPrueba.cells(TablaresultadoPrueba.getSelectedId(), 4).getValue();
         if (cInd <= 5) {
@@ -5760,16 +5769,16 @@ function resultadoPrueba(nomPrueba) {
     });
     contadorCargador++;
     var idCargador = contadorCargador;
-    TablaresultadoPrueba.attachEvent("onXLS", function() {
+    TablaresultadoPrueba.attachEvent("onXLS", function () {
         cargadorpeche(1, idCargador);
     });
-    TablaresultadoPrueba.attachEvent("onXLE", function() {
+    TablaresultadoPrueba.attachEvent("onXLE", function () {
         cargadorpeche(0, idCargador);
     });
     TablaresultadoPrueba.setSkin("dhx_skyblue");
     TablaresultadoPrueba.init();
-    TablaresultadoPrueba.loadXML(pathRequestControl + '?' + parametros, function() {
-        });
+    TablaresultadoPrueba.loadXML(pathRequestControl + '?' + parametros, function () {
+    });
 
 }
 function dbclickeditarPrueba(rId, cInd) {
@@ -5803,8 +5812,8 @@ function editarPrueba(idPrueba, nomPrueba) {
     document.getElementById("divEditar").style.display = 'block';
     document.getElementById("divActualizar").style.display = 'none';
     document.getElementById("divRestaurar").style.display = 'none';
-//        }
-//    } )
+    //        }
+    //    } )
 }
 function postEditarPrueba() {
     idPrueba = document.getElementById("hidIdPrueba").value;
@@ -5820,7 +5829,7 @@ function postEditarPrueba() {
         method: 'get',
         parameters: parametros,
         onLoading: micargador(1),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             micargador(0);
             respuesta = transport.responseText;
             $('divMantenimiento').update(respuesta);
@@ -5862,7 +5871,7 @@ function editelimPrueba(event_id, native_event_object, bEstado) {
             method: 'get',
             parameters: parametros,
             onLoading: micargador(1),
-            onComplete: function(transport) {
+            onComplete: function (transport) {
                 micargador(0);
                 // respuesta = transport.responseText;
                 // var miarray=respuesta.split("|");
@@ -5893,7 +5902,7 @@ function grabarPrueba(hacer) {
         parameters: data,
         onLoading: micargador(1),
         asynchronous: false,
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             micargador(0);
             respuesta = transport.responseText;
             $('divMostrarCampo').update(respuesta);
@@ -5970,7 +5979,7 @@ function agregaMasCampo(id, kk) {
     img.src = "../../../imagen/inicio/eliminar.gif";
     link.setAttribute("href", "#");
     if (navigator.userAgent.indexOf("MSIE") != -1)
-        link.setAttribute("onclick", function() {
+        link.setAttribute("onclick", function () {
             eliminaRowCampo(kk)
         });
     else
@@ -6060,45 +6069,45 @@ function agregaMasCampo(id, kk) {
         control = 'recuperarCombosCampos';
         data = 'p1=' + control + '&p2=' + opcion;
         new Ajax.Request(url,
-        {
-            method: 'get',
-            parameters: data,
-            onLoading: micargador(1),
-            onComplete: function(transport) {
-                micargador(0);
-                if (transport.readyState == '4') {
-                    xml = transport.responseXML;
-                    indice = xml.getElementsByTagName('indice');
-                    descripcion = xml.getElementsByTagName('descripcion');
-                    a = nomcbo + "[" + kk + "]";
-                    var f;
-                    if (k == 1) {
-                        select1 = document.getElementById(a);
-                        select1.options.length = 0;
-                        for (f = 0; f < indice.length; f++) {
-                            opt = document.createElement('option');
-                            codigo = indice[f].firstChild.nodeValue;
-                            texto = document.createTextNode(descripcion[f].firstChild.nodeValue);
-                            opt.value = codigo;
-                            opt.appendChild(texto)
-                            select1.appendChild(opt);
+            {
+                method: 'get',
+                parameters: data,
+                onLoading: micargador(1),
+                onComplete: function (transport) {
+                    micargador(0);
+                    if (transport.readyState == '4') {
+                        xml = transport.responseXML;
+                        indice = xml.getElementsByTagName('indice');
+                        descripcion = xml.getElementsByTagName('descripcion');
+                        a = nomcbo + "[" + kk + "]";
+                        var f;
+                        if (k == 1) {
+                            select1 = document.getElementById(a);
+                            select1.options.length = 0;
+                            for (f = 0; f < indice.length; f++) {
+                                opt = document.createElement('option');
+                                codigo = indice[f].firstChild.nodeValue;
+                                texto = document.createTextNode(descripcion[f].firstChild.nodeValue);
+                                opt.value = codigo;
+                                opt.appendChild(texto)
+                                select1.appendChild(opt);
+                            }
                         }
-                    }
-                    if (k == 2) {
-                        select2 = document.getElementById(a);
-                        select2.options.length = 0;
-                        for (f = 0; f < indice.length; f++) {
-                            opt2 = document.createElement('option');
-                            codigo = indice[f].firstChild.nodeValue;
-                            texto = document.createTextNode(descripcion[f].firstChild.nodeValue);
-                            opt2.value = codigo;
-                            opt2.appendChild(texto)
-                            select2.appendChild(opt2);
+                        if (k == 2) {
+                            select2 = document.getElementById(a);
+                            select2.options.length = 0;
+                            for (f = 0; f < indice.length; f++) {
+                                opt2 = document.createElement('option');
+                                codigo = indice[f].firstChild.nodeValue;
+                                texto = document.createTextNode(descripcion[f].firstChild.nodeValue);
+                                opt2.value = codigo;
+                                opt2.appendChild(texto)
+                                select2.appendChild(opt2);
+                            }
                         }
                     }
                 }
             }
-        }
         )
     }
 
@@ -6120,7 +6129,7 @@ function editarCampos(idPrueba, nomPrueba) {
         method: 'get',
         parameters: parametros,
         onLoading: micargador(1),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             micargador(0);
             respuesta = transport.responseText;
             $('divMostrarCampo').update(respuesta);
@@ -6199,7 +6208,7 @@ function eliminarDbCampo(val) {
             method: 'get',
             parameters: parametros,
             onLoading: micargador(1),
-            onComplete: function(transport) {
+            onComplete: function (transport) {
                 micargador(0);
                 respuesta = transport.responseText;
                 // var miarray=respuesta.split("|");
@@ -6232,7 +6241,7 @@ function grabarCampo(form, hacer) {
         method: 'get',
         parameters: parametros,
         onLoading: micargador(1),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             micargador(0);
             respuesta = transport.responseText;
             document.getElementById("divGrabar1").style.display = 'none';
@@ -6243,7 +6252,7 @@ function grabarCampo(form, hacer) {
             deshabilitarCampoArreglo();
             resultadoPrueba("");
             editarCampos(idPrueba, nomPrueba)
-        //            setTimeout(function(){dbclickeditarPrueba('','')},200);
+            //            setTimeout(function(){dbclickeditarPrueba('','')},200);
         }
     })
 }
@@ -6278,7 +6287,7 @@ function mantenimientoCombo(nroTipoCampo, opt, idCompo) {
         /*---------------------------------------*/
         parametros = '';
         parametros += 'p1=' + patronModulo;
-    /*--------------------------------------*/
+        /*--------------------------------------*/
     } else if (opt == 'modificar') {
         titulo = 'Modificar'
         vformname = 'editarCombo'
@@ -6287,7 +6296,7 @@ function mantenimientoCombo(nroTipoCampo, opt, idCompo) {
         /*---------------------------------------*/
         parametros = '';
         parametros += 'p1=' + patronModulo + '&p2=' + idCompo;
-    /*--------------------------------------*/
+        /*--------------------------------------*/
     }
     vcenter = 't'
     vresizable = ''
@@ -6308,8 +6317,7 @@ function mantenimientoCombo(nroTipoCampo, opt, idCompo) {
     mostrarVentana(vformname, vtitle, vwidth, vheight, vcenter, vresizable, vmodal, vstyle, vopacity, vposx1, vposx2, vposy1, vposy2, parametros, posFuncion, aux, opt)
 }
 
-function mostrarVentana(vformname, vtitle, vwidth, vheight, vcenter, vresizable, vmodal, vstyle, vopacity, vposx1, vposx2, vposy1, vposy2, parametros, posFuncion, aux, opt)
-{
+function mostrarVentana(vformname, vtitle, vwidth, vheight, vcenter, vresizable, vmodal, vstyle, vopacity, vposx1, vposx2, vposy1, vposy2, parametros, posFuncion, aux, opt) {
     myRand = parseInt(Math.random() * 999999999999999);
     if (vwidth == undefined || vwidth == 0)
         vwidth = 700;
@@ -6343,8 +6351,7 @@ function mostrarVentana(vformname, vtitle, vwidth, vheight, vcenter, vresizable,
         vcenter = false;
     if (vtitle == undefined)
         vtitle = vformname;
-    if (!ExisteObjeto("Div_" + vformname))
-    {
+    if (!ExisteObjeto("Div_" + vformname)) {
         var vidfrm;
         // file02=decodeURIComponent(file02);
         var vid = "Div_" + vformname;
@@ -6387,25 +6394,25 @@ function mostrarVentana(vformname, vtitle, vwidth, vheight, vcenter, vresizable,
         win.toFront();
 
         new Ajax.Request(pathRequestControl,
-        {
-            method: 'get',
-            parameters: parametros,
-            onComplete: function(transport) {
-                respuesta = transport.responseText;
-                $(vidfrm).update(respuesta);
-                /*------------------------*/
-                $("hidnroTipoCampo").value = aux;
-                if (opt == 'nuevo') {
-                    document.getElementById("nuevoCombo").style.display = 'block';
-                    document.getElementById("verCombo").style.display = 'block';
-                }
-                else if (opt == 'modificar') {
-                    document.getElementById("nuevoCombo").style.display = 'none';
-                    document.getElementById("modificarCombo").style.display = 'block';
-                    document.getElementById("verCombo").style.display = 'none';
+            {
+                method: 'get',
+                parameters: parametros,
+                onComplete: function (transport) {
+                    respuesta = transport.responseText;
+                    $(vidfrm).update(respuesta);
+                    /*------------------------*/
+                    $("hidnroTipoCampo").value = aux;
+                    if (opt == 'nuevo') {
+                        document.getElementById("nuevoCombo").style.display = 'block';
+                        document.getElementById("verCombo").style.display = 'block';
+                    }
+                    else if (opt == 'modificar') {
+                        document.getElementById("nuevoCombo").style.display = 'none';
+                        document.getElementById("modificarCombo").style.display = 'block';
+                        document.getElementById("verCombo").style.display = 'none';
+                    }
                 }
             }
-        }
         )
     }
 }
@@ -6458,7 +6465,7 @@ function agregaMasItemsCombo(id, kk) {
     img.src = "../../../imagen/inicio/eliminar.gif";
     link.setAttribute("href", "#");
     if (navigator.userAgent.indexOf("MSIE") != -1)
-        link.setAttribute("onclick", function() {
+        link.setAttribute("onclick", function () {
             eliminaRowCombo(kk)
         });
     else
@@ -6505,7 +6512,7 @@ function eliminaDbCombo(val) {
             method: 'get',
             parameters: parametros,
             onLoading: micargador(1),
-            onComplete: function(transport) {
+            onComplete: function (transport) {
                 micargador(0);
                 respuesta = transport.responseText;
                 eliminaRowCombo(val);
@@ -6522,7 +6529,7 @@ function grabarCombo(form, opt) {
         method: 'post',
         parameters: parametros,
         onLoading: micargador(1),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             micargador(0);
             respuesta = transport.responseText;
             var idCombo = respuesta.split("|");
@@ -6566,7 +6573,7 @@ function verValorCombo(event_id, native_event_object) {
         mygridY.loadXML(pathRequestControl + '?' + parametros);
         contadorGrid++;
     }
-    setTimeout(function() {
+    setTimeout(function () {
         iniciarContador()
     }, 3600);
 }
@@ -6611,7 +6618,7 @@ function asignarExamenServicio() {
             method: 'get',
             parameters: parametros,
             onLoading: micargador(1),
-            onComplete: function(transport) {
+            onComplete: function (transport) {
                 micargador(0);
                 respuesta = transport.responseText;
                 var dato = respuesta.split("|");
@@ -6657,7 +6664,7 @@ function recargarArbolCCostosActividadServicio() {
     divArbol.innerHTML = " ";
     arbolCentroCosto = new dhtmlXTreeObject("divArbolCCostos", "100%", "100%", 0);
     arbolCentroCosto.setImagePath("../../../../fastmedical_front/imagen/icono/tree/");
-    arbolCentroCosto.attachEvent("onClick", function() {
+    arbolCentroCosto.attachEvent("onClick", function () {
         //funcionArbolCentroCosto(funcion,arbolCentroCosto.getSelectedItemId());
         var idNodo = arbolCentroCosto.getSelectedItemId();
         cargarTablaCentroCostosServicios(idNodo);
@@ -6679,22 +6686,22 @@ function cargarTablaCentroCostosServicios(IdCenrroCosto) {
     oCostosServicios.setImagePath("../../../imagen/dhtmlxgrid/imgs/");
     oCostosServicios.setSkin("dhx_skyblue");
     oCostosServicios.enableRowsHover(true, 'grid_hover');
-    oCostosServicios.attachEvent("onRowSelect", function(rId, cInd) {
+    oCostosServicios.attachEvent("onRowSelect", function (rId, cInd) {
         IdServicio = oCostosServicios.cells(oCostosServicios.getSelectedId(), 0).getValue();
         asignarExamenAServicioPorActividadDeCCosto('', '', IdServicio)
     });
     contadorCargador++;
     var idCargador = contadorCargador;
-    oCostosServicios.attachEvent("onXLS", function() {
+    oCostosServicios.attachEvent("onXLS", function () {
         cargadorpeche(1, idCargador);
     });
-    oCostosServicios.attachEvent("onXLE", function() {
+    oCostosServicios.attachEvent("onXLE", function () {
         cargadorpeche(0, idCargador);
     });
     oCostosServicios.setSkin("dhx_skyblue");
     oCostosServicios.init();
-    oCostosServicios.loadXML(pathRequestControl + '?' + parametros, function() {
-        });
+    oCostosServicios.loadXML(pathRequestControl + '?' + parametros, function () {
+    });
 }
 
 
@@ -6761,8 +6768,7 @@ function cargarVentanaEmergente(vformname, vtitle, vwidth, vheight, vcenter, vre
         vcenter = false;
     if (vtitle == undefined)
         vtitle = vformname;
-    if (!ExisteObjeto("Div_" + vformname))
-    {
+    if (!ExisteObjeto("Div_" + vformname)) {
         var vidfrm;
         // file02=decodeURIComponent(file02);
         var vid = "Div_" + vformname;
@@ -6805,18 +6811,18 @@ function cargarVentanaEmergente(vformname, vtitle, vwidth, vheight, vcenter, vre
         win.toFront();
 
         new Ajax.Request(pathRequestControl,
-        {
-            method: 'get',
-            parameters: parametros,
-            //onLoading : micargador(1),
-            onComplete: function(transport) {
-                //micargador(0);
-                respuesta = transport.responseText;
-                $(vidfrm).update(respuesta);
-                posFuncion += "('')";
-                eval(posFuncion);
+            {
+                method: 'get',
+                parameters: parametros,
+                //onLoading : micargador(1),
+                onComplete: function (transport) {
+                    //micargador(0);
+                    respuesta = transport.responseText;
+                    $(vidfrm).update(respuesta);
+                    posFuncion += "('')";
+                    eval(posFuncion);
+                }
             }
-        }
         )
     }
 }
@@ -6831,7 +6837,7 @@ function recargarArbolCCostosActividadServicios(funcion) {
     divArbol.innerHTML = " ";
     arbolCentroCosto = new dhtmlXTreeObject("divArbolCCostos", "100%", "100%", 0);
     arbolCentroCosto.setImagePath("../../../../fastmedical_front/imagen/icono/tree/");
-    arbolCentroCosto.attachEvent("onClick", function() {
+    arbolCentroCosto.attachEvent("onClick", function () {
         //funcionArbolCentroCosto(funcion,arbolCentroCosto.getSelectedItemId());
         var idNodo = arbolCentroCosto.getSelectedItemId();
         var textofuncion = funcion + "('" + idNodo + "')";
@@ -6850,7 +6856,7 @@ function buscarEnArbolCCostosActividadServicios() {
 
 function verServiciosPorActividadDeCCosto(idNodo) {
     verServicios(idNodo, '', 'asignarExamenAServicioPorActividadDeCCosto');
-//seleccionarCentroCostoPuesto(id);
+    //seleccionarCentroCostoPuesto(id);
 }
 
 function verServicios(id, event, funcion) {
@@ -6862,7 +6868,7 @@ function verServicios(id, event, funcion) {
     } else {
         document.getElementById('hdnCCosto').value = id;
         idCCosto = id;
-    //document.getElementById('txtServicioPorActividadDeCCosto').value='Buscar...';
+        //document.getElementById('txtServicioPorActividadDeCCosto').value='Buscar...';
     }
     nomServicio = document.getElementById('txtServicioPorActividadDeCCosto').value;
     if (nomServicio == 'Buscar...') {
@@ -6888,18 +6894,18 @@ function verServicios(id, event, funcion) {
     }
     if (tecla == 13) {
         new Ajax.Request(pathRequestControl,
-        {
-            method: 'get',
-            parameters: parametros,
-            //onLoading : micargador(1),
-            onComplete: function(transport) {
-                //micargador(0);
-                respuesta = transport.responseText;
-                $('divResultadoServiciosCCostos').update(respuesta);
-            //limpiarDetallePuesto();
-            //$('imagenEditar').hide();
+            {
+                method: 'get',
+                parameters: parametros,
+                //onLoading : micargador(1),
+                onComplete: function (transport) {
+                    //micargador(0);
+                    respuesta = transport.responseText;
+                    $('divResultadoServiciosCCostos').update(respuesta);
+                    //limpiarDetallePuesto();
+                    //$('imagenEditar').hide();
+                }
             }
-        }
         )
     }
 }
@@ -6925,7 +6931,7 @@ function asignarExamenAServicioPorActividadDeCCosto(elementoFila, elementoEvento
             method: 'get',
             parameters: parametros,
             onLoading: micargador(1),
-            onComplete: function(transport) {
+            onComplete: function (transport) {
                 micargador(0);
                 respuesta = transport.responseText;
                 var dato = respuesta.split("|");
@@ -6978,7 +6984,7 @@ function mostrartablaExamenServicio(idExamen) {
     //    mygridL.attachEvent("onRowDblClicked", dbclickeditarPrueba);
     mygridL.init();
     mygridL.loadXML(pathRequestControl + '?' + parametros);
-//    mygridL.enableRowsHover(true,'grid_hover');
+    //    mygridL.enableRowsHover(true,'grid_hover');
 }
 
 function desactivarExamenServicio(event_id, native_event_object) {
@@ -7002,7 +7008,7 @@ function desactivarExamenServicio(event_id, native_event_object) {
                 method: 'get',
                 parameters: parametros,
                 onLoading: micargador(1),
-                onComplete: function(transport) {
+                onComplete: function (transport) {
                     micargador(0);
                     //                mostrartablaExamenPrueba(idExamen);
                     mostrartablaExamenServicio(idExamen);
@@ -7047,7 +7053,7 @@ function tablaLaboratorioHc() {
     aLaboratorioHc.setSkin("dhx_terrace");
 
     aLaboratorioHc.enableRowsHover(true, 'grid_hover');
-    aLaboratorioHc.attachEvent("onRowSelect", function(rId, cInd) {
+    aLaboratorioHc.attachEvent("onRowSelect", function (rId, cInd) {
         var Sistema = aLaboratorioHc.cells(rId, 4).getValue();
         if (Sistema == '1') {
             detalleLaboratorioExamenes(rId);
@@ -7058,16 +7064,16 @@ function tablaLaboratorioHc() {
     });
     contadorCargador++;
     var idCargador = contadorCargador;
-    aLaboratorioHc.attachEvent("onXLS", function() {
+    aLaboratorioHc.attachEvent("onXLS", function () {
         cargadorpeche(1, idCargador);
     });
-    aLaboratorioHc.attachEvent("onXLE", function() {
+    aLaboratorioHc.attachEvent("onXLE", function () {
         cargadorpeche(0, idCargador);
     });
     aLaboratorioHc.setSkin("dhx_terrace");
     aLaboratorioHc.init();
-    aLaboratorioHc.loadXML(pathRequestControl + '?' + parametros, function() {
-        });
+    aLaboratorioHc.loadXML(pathRequestControl + '?' + parametros, function () {
+    });
 }
 
 
@@ -7088,7 +7094,7 @@ function detalleLaboratorioExamenes(rId) {
             method: 'get',
             parameters: parametros,
             onLoading: cargadorpeche(1, idCargador),
-            onComplete: function(transport) {
+            onComplete: function (transport) {
                 cargadorpeche(0, idCargador);
                 var respuesta = transport.responseText;
                 $('Detalle').update(respuesta);
@@ -7177,7 +7183,7 @@ function buscarLaboratorio() {
     control = "cargarTablaLaboratorio_confiltro";
     parametros = "&p1=" + control + "&fechaIni=" + fechaIni + "&fechaFin=" + fechaFin + "&dato=" + dato + "&hacer=" + hacer;
     cargarTablaLaboratorio(parametros);
-//    alert("fechaIni"+fechaIni+"fechaFin"+fechaFin+"dato"+dato+"opcion"+opcion+"hacer"+hacer);
+    //    alert("fechaIni"+fechaIni+"fechaFin"+fechaFin+"dato"+dato+"opcion"+opcion+"hacer"+hacer);
 }
 function editarDatosPersona() {
     codPersona = $("hidCodPersona").value;
@@ -7201,7 +7207,7 @@ function cargarTriaje() {
         method: 'get',
         parameters: parametros,
         onLoading: cargadorpeche(1, idCargador),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             cargadorpeche(0, idCargador);
             var respuesta = transport.responseText;
             //$('Div_sintomas').update(respuesta);
@@ -7236,7 +7242,7 @@ function calendarioFechaVencimiento(id) {
     mCalendario.setYearsRange(1900, aniolimite);
     mCalendario.loadUserLanguage('es');
 
-    mCalendario.attachEvent("onClick", function(date) {
+    mCalendario.attachEvent("onClick", function (date) {
         var factual = new Date();
         var fechaLimite = new Date(date.getFullYear(), date.getMonth(), date.getDate());
         var diferencia = -factual.getTime() + fechaLimite.getTime();
@@ -7246,9 +7252,9 @@ function calendarioFechaVencimiento(id) {
         if (elemento != 0) {
             preguardarRectaMedica(id, '1');
         }
-    //preguardarRectaMedica(id,'1');
+        //preguardarRectaMedica(id,'1');
 
-    //alert(fecha);
+        //alert(fecha);
     });
     // mCalendario.attachEvent("onClick", funcion);
     mCalendario.draw();
@@ -7289,7 +7295,7 @@ function grabarDestinoEssalud() {
         method: 'get',
         parameters: parametros,
         onLoading: cargadorpeche(1, idCargador),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             cargadorpeche(0, idCargador);
             var respuesta = transport.responseText;
         }
@@ -7310,7 +7316,7 @@ function grabarTipoCitaEssalud() {
         method: 'get',
         parameters: parametros,
         onLoading: cargadorpeche(1, idCargador),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             cargadorpeche(0, idCargador);
             var respuesta = transport.responseText;
         }
@@ -7329,7 +7335,7 @@ function cargarDatosDestinoCita() {
         method: 'get',
         parameters: parametros,
         onLoading: cargadorpeche(1, idCargador),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             cargadorpeche(0, idCargador);
             var respuesta = transport.responseText;
             document.getElementById('lstDestinoCitaEssalud').selectedIndex = (respuesta);
@@ -7352,7 +7358,7 @@ function cargarDatosTipoCita() {
         method: 'get',
         parameters: parametros,
         onLoading: cargadorpeche(1, idCargador),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             cargadorpeche(0, idCargador);
             var respuesta = transport.responseText;
             document.getElementById('lstTipoCitaEssalud').selectedIndex = (respuesta);
@@ -7388,16 +7394,16 @@ function cargarTablaGrupoEtario(icboAfiliacionGrupoEtario) {
     var header = ["", "", "", "", "", filtroPeril, ""];
     tablaGrupoEtario.attachHeader(header);
     //--------------
-    tablaGrupoEtario.attachEvent("onRowSelect", function(fila, columna) {
+    tablaGrupoEtario.attachEvent("onRowSelect", function (fila, columna) {
         seleccionarGrupoEtario(fila, columna);
     });
     //////////para cargador peche////////////////
     contadorCargador++;
     var idCargador = contadorCargador;
-    tablaGrupoEtario.attachEvent("onXLS", function() {
+    tablaGrupoEtario.attachEvent("onXLS", function () {
         cargadorpeche(1, idCargador);
     });
-    tablaGrupoEtario.attachEvent("onXLE", function() {
+    tablaGrupoEtario.attachEvent("onXLE", function () {
         cargadorpeche(0, idCargador);
     });
     /////////////fin cargador ///////////////////////
@@ -7448,35 +7454,35 @@ function seleccionarGrupoEtario(fila, columna) {
     //    var header = ["","","","","",filtroPeril,""];  
     //    tablaServicioGrupoEtarioSeleccionadosCPT.attachHeader(header); 
     //--------------
-    tablaServicioGrupoEtarioSeleccionadosCPT.attachEvent("onRowSelect", function(fila, columna) {
+    tablaServicioGrupoEtarioSeleccionadosCPT.attachEvent("onRowSelect", function (fila, columna) {
         eliminarseleccionarServicioGrupoEtario(fila, columna);
     });
     //////////para cargador peche////////////////
     contadorCargador++;
     var idCargador = contadorCargador;
-    tablaServicioGrupoEtarioSeleccionadosCPT.attachEvent("onXLS", function() {
+    tablaServicioGrupoEtarioSeleccionadosCPT.attachEvent("onXLS", function () {
         cargadorpeche(1, idCargador);
     });
-    tablaServicioGrupoEtarioSeleccionadosCPT.attachEvent("onXLE", function() {
+    tablaServicioGrupoEtarioSeleccionadosCPT.attachEvent("onXLE", function () {
         cargadorpeche(0, idCargador);
     });
     /////////////fin cargador ///////////////////////
     tablaServicioGrupoEtarioSeleccionadosCPT.setSkin("dhx_skyblue");
     tablaServicioGrupoEtarioSeleccionadosCPT.init();
     //    tablaServicioGrupoEtarioSeleccionadosCPT.loadXML(pathRequestControl + '?' + parametros);
-    tablaServicioGrupoEtarioSeleccionadosCPT.loadXML(pathRequestControl+'?'+parametros, function(){   
+    tablaServicioGrupoEtarioSeleccionadosCPT.loadXML(pathRequestControl + '?' + parametros, function () {
         //        setColorTablaEstadoResultado();
-        CargarCkeckMinimo(); 
-         
+        CargarCkeckMinimo();
+
     });
 
 }
-function   eliminarseleccionarServicioGrupoEtario(fila, columna) {
+function eliminarseleccionarServicioGrupoEtario(fila, columna) {
     var iIdServicioGrupoEtareo = tablaServicioGrupoEtarioSeleccionadosCPT.cells(fila, 0).getValue();
     var iOrden = tablaServicioGrupoEtarioSeleccionadosCPT.cells(fila, 6).getValue();
     var iIdGrupoEtario = $('txtidGrupoEtario').value;
     if (columna == 11) {// Eliminar
-        if(confirm("Esta Seguro que desea Eliminar")){
+        if (confirm("Esta Seguro que desea Eliminar")) {
             var patronModulo = 'eliminarseleccionarServicioGrupoEtario';
             var parametros = '';
             parametros += 'p1=' + patronModulo;
@@ -7489,7 +7495,7 @@ function   eliminarseleccionarServicioGrupoEtario(fila, columna) {
                 method: 'get',
                 parameters: parametros,
                 onLoading: cargadorpeche(1, idCargador),
-                onComplete: function(transport) {
+                onComplete: function (transport) {
                     cargadorpeche(0, idCargador);
                     var respuesta = transport.responseText;
                     refrescarServiciosSeleccionado();
@@ -7500,7 +7506,7 @@ function   eliminarseleccionarServicioGrupoEtario(fila, columna) {
         }
     }
     if (columna == 12) {// Modifico
-           
+
         var Titulo = tablaServicioGrupoEtarioSeleccionadosCPT.cells(fila, 2).getValue();
         var iorden = tablaServicioGrupoEtarioSeleccionadosCPT.cells(fila, 6).getValue();
         var iIdTipoServicioCPT = tablaServicioGrupoEtarioSeleccionadosCPT.cells(fila, 13).getValue();
@@ -7508,8 +7514,8 @@ function   eliminarseleccionarServicioGrupoEtario(fila, columna) {
         var edad = tablaServicioGrupoEtarioSeleccionadosCPT.cells(fila, 3).getValue();
         var nroAtencion = tablaServicioGrupoEtarioSeleccionadosCPT.cells(fila, 7).getValue();
         var vMensaje = tablaServicioGrupoEtarioSeleccionadosCPT.cells(fila, 16).getValue();
-        if(edad==0){
-            edad=''; 
+        if (edad == 0) {
+            edad = '';
         }
         var vformname = 'formularioServicioGrupoEtario'
         var vtitle = '<h1>' + Titulo + '</h1><br>'
@@ -7543,9 +7549,9 @@ function   eliminarseleccionarServicioGrupoEtario(fila, columna) {
     }
 }
 
-function modificarServicioGrupoEtario(){
+function modificarServicioGrupoEtario() {
     var iIdServicioGrupoEtareo = $('txtiIdServicioGrupoEtareo').value;
-    
+
     var c_cod_pro = $('txtc_cod_prod').value;
     var iIdGrupoEtario = $('txtidGrupoEtario').value;
     var cboTipoServicioCPT = $('cboTipoServicioCPT').value;
@@ -7575,7 +7581,7 @@ function modificarServicioGrupoEtario(){
         method: 'get',
         parameters: parametros,
         onLoading: cargadorpeche(1, idCargador),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             cargadorpeche(0, idCargador);
             var respuesta = transport.responseText;
             Windows.close("Div_formularioServicioGrupoEtario");
@@ -7644,16 +7650,16 @@ function cargarTablaServicioGrupoEtario() {
         //    var header = ["","","","","",filtroPeril,""];  
         //    tablaServicioGrupoEtario.attachHeader(header); 
         //--------------
-        tablaServicioGrupoEtario.attachEvent("onRowSelect", function(fila, columna) {
+        tablaServicioGrupoEtario.attachEvent("onRowSelect", function (fila, columna) {
             seleccionarServicioGrupoEtario(fila, columna);
         });
         //////////para cargador peche////////////////
         contadorCargador++;
         var idCargador = contadorCargador;
-        tablaServicioGrupoEtario.attachEvent("onXLS", function() {
+        tablaServicioGrupoEtario.attachEvent("onXLS", function () {
             cargadorpeche(1, idCargador);
         });
-        tablaServicioGrupoEtario.attachEvent("onXLE", function() {
+        tablaServicioGrupoEtario.attachEvent("onXLE", function () {
             cargadorpeche(0, idCargador);
         });
         /////////////fin cargador ///////////////////////
@@ -7705,17 +7711,14 @@ function seleccionarServicioGrupoEtario(fila, columna) {
 }
 
 
-function checkKey(key, elemento, dato)
-{
+function checkKey(key, elemento, dato) {
     var a = document.getElementById("txtidGrupoEtariov").value;
 
     var unicode
-    if (key.charCode)
-    {
+    if (key.charCode) {
         unicode = key.charCode;
     }
-    else
-    {
+    else {
         unicode = key.keyCode;
     }
     //alert(unicode); // Para saber que codigo de tecla presiono , descomentar
@@ -7770,7 +7773,7 @@ function guardarServicioGrupoEtario() {
         method: 'get',
         parameters: parametros,
         onLoading: cargadorpeche(1, idCargador),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             cargadorpeche(0, idCargador);
             var respuesta = transport.responseText;
             Windows.close("Div_formularioServicioGrupoEtario");
@@ -7800,24 +7803,24 @@ function buscarTablaCPT(a, b, evento) {
         vcpt = 0;
         tablaCPT = new dhtmlXGridObject('div_TablaCPT');
         tablaCPT.setImagePath("../../../../fastmedical_front/imagen/icono/");
-        tablaCPT.attachEvent("onRowSelect", function(fila, columna) {
+        tablaCPT.attachEvent("onRowSelect", function (fila, columna) {
             $('txtiIdCPT').value = tablaCPT.cells(fila, 0).getValue();
             reporteEquivalenciaCPT(fila, columna);
-        //        reporteEquivalenciaMxserpro(codCPT);
+            //        reporteEquivalenciaMxserpro(codCPT);
         });
         //////////para cargador peche////////////////
         contadorCargador++;
         var idCargador = contadorCargador;
-        tablaCPT.attachEvent("onXLS", function() {
+        tablaCPT.attachEvent("onXLS", function () {
             cargadorpeche(1, idCargador);
         });
-        tablaCPT.attachEvent("onXLE", function() {
+        tablaCPT.attachEvent("onXLE", function () {
             cargadorpeche(0, idCargador);
         });
         /////////////fin cargador ///////////////////////
         tablaCPT.setSkin("dhx_skyblue");
         tablaCPT.init();
-        tablaCPT.loadXML(pathRequestControl + '?' + parametros, function() {
+        tablaCPT.loadXML(pathRequestControl + '?' + parametros, function () {
             vcpt = 1;
         });
     }
@@ -7870,17 +7873,17 @@ function buscarCPTcod(event) {
     tablaCPT.setImagePath("../../../imagen/dhtmlxgrid/imgs/");
     tablaCPT.setSkin("dhx_skyblue");
     tablaCPT.enableRowsHover(true, 'grid_hover');
-    tablaCPT.attachEvent("onRowSelect", function(fila, columna) {
+    tablaCPT.attachEvent("onRowSelect", function (fila, columna) {
         $('txtiIdCPT').value = tablaCPT.cells(fila, 0).getValue();
         reporteEquivalenciaCPT(fila, columna);
     });
     //////////para cargador peche////////////////
     contadorCargador++;
     var idCargador = contadorCargador;
-    tablaCPT.attachEvent("onXLS", function() {
+    tablaCPT.attachEvent("onXLS", function () {
         cargadorpeche(1, idCargador);
     });
-    tablaCPT.attachEvent("onXLE", function() {
+    tablaCPT.attachEvent("onXLE", function () {
         cargadorpeche(0, idCargador);
     });
     /////////////fin cargador ///////////////////////
@@ -7898,7 +7901,7 @@ function actualizarTablaEquivalente(fila, columna) {
 
     tablaEquivalencia.cells(1, 3).setValue(mxSerpro);
     tablaEquivalencia.cells(1, 4).setValue(decProd);
-//////////////////////////////////////////////
+    //////////////////////////////////////////////
 }
 
 function buscarMxserpro(a, b, evento) {
@@ -7915,23 +7918,23 @@ function buscarMxserpro(a, b, evento) {
         vmxserpro = 0;
         tablaMxserpro = new dhtmlXGridObject('div_TablaMxserpro');
         tablaMxserpro.setImagePath("../../../../fastmedical_front/imagen/icono/");
-        tablaMxserpro.attachEvent("onRowSelect", function(fila, columna) {
+        tablaMxserpro.attachEvent("onRowSelect", function (fila, columna) {
             actualizarTablaEquivalente(fila, columna);
-        //        reporteEquivalenciaMxserpro(codCPT);
+            //        reporteEquivalenciaMxserpro(codCPT);
         });
         //////////para cargador peche////////////////
         contadorCargador++;
         var idCargador = contadorCargador;
-        tablaMxserpro.attachEvent("onXLS", function() {
+        tablaMxserpro.attachEvent("onXLS", function () {
             cargadorpeche(1, idCargador);
         });
-        tablaMxserpro.attachEvent("onXLE", function() {
+        tablaMxserpro.attachEvent("onXLE", function () {
             cargadorpeche(0, idCargador);
         });
         /////////////fin cargador ///////////////////////
         tablaMxserpro.setSkin("dhx_skyblue");
         tablaMxserpro.init();
-        tablaMxserpro.loadXML(pathRequestControl + '?' + parametros, function() {
+        tablaMxserpro.loadXML(pathRequestControl + '?' + parametros, function () {
             vmxserpro = 1;
         });
     }
@@ -7970,16 +7973,16 @@ function buscarMxSerProcod(event) {
     tablaMxserpro.setImagePath("../../../imagen/dhtmlxgrid/imgs/");
     tablaMxserpro.setSkin("dhx_skyblue");
     tablaMxserpro.enableRowsHover(true, 'grid_hover');
-    tablaMxserpro.attachEvent("onRowSelect", function(fila, columna) {
+    tablaMxserpro.attachEvent("onRowSelect", function (fila, columna) {
         actualizarTablaEquivalente(fila, columna);
     });
     //////////para cargador peche////////////////
     contadorCargador++;
     var idCargador = contadorCargador;
-    tablaMxserpro.attachEvent("onXLS", function() {
+    tablaMxserpro.attachEvent("onXLS", function () {
         cargadorpeche(1, idCargador);
     });
-    tablaMxserpro.attachEvent("onXLE", function() {
+    tablaMxserpro.attachEvent("onXLE", function () {
         cargadorpeche(0, idCargador);
     });
     /////////////fin cargador ///////////////////////
@@ -8007,16 +8010,16 @@ function reporteEquivalenciaCPT(fila, columna) {
     tablaEquivalencia.enableRowsHover(true, 'grid_hover');
 
     //////////////////////////////////////////////////////////// 
-    tablaEquivalencia.attachEvent("onRowSelect", function(fila, columna) {
+    tablaEquivalencia.attachEvent("onRowSelect", function (fila, columna) {
         guardarRegistroServicio(fila, columna);
     });
     //////////para cargador peche////////////////
     contadorCargador++;
     var idCargador = contadorCargador;
-    tablaEquivalencia.attachEvent("onXLS", function() {
+    tablaEquivalencia.attachEvent("onXLS", function () {
         cargadorpeche(1, idCargador);
     });
-    tablaEquivalencia.attachEvent("onXLE", function() {
+    tablaEquivalencia.attachEvent("onXLE", function () {
         cargadorpeche(0, idCargador);
 
     });
@@ -8025,11 +8028,11 @@ function reporteEquivalenciaCPT(fila, columna) {
     tablaEquivalencia.init();
     //    tablaBuscarPersona.loadXML(pathRequestControl+'?'+parametros);
 
-    tablaEquivalencia.loadXML(pathRequestControl + '?' + parametros, function() {
+    tablaEquivalencia.loadXML(pathRequestControl + '?' + parametros, function () {
 
-        });
-    tablaEquivalencia.attachEvent("onEditCell", function(stage, rId, cInd, nValue, oValue) {
-        });
+    });
+    tablaEquivalencia.attachEvent("onEditCell", function (stage, rId, cInd, nValue, oValue) {
+    });
 }
 
 
@@ -8053,7 +8056,7 @@ function guardarRegistroServicio(fila, columna) {
                 parameters: parametros,
                 asynchronous: false,
                 onLoading: micargador(1),
-                onComplete: function(transport) {
+                onComplete: function (transport) {
                     cargadorpeche(0, idCargador);
                     respuesta = transport.responseText;
                     datos = respuesta.split("|");
@@ -8080,14 +8083,14 @@ function examenesRelacionados() {
     tablaexamenesRelacionados = new dhtmlXGridObject('div_Equivalencias');
     tablaexamenesRelacionados.setImagePath("../../../../fastmedical_front/imagen/icono/");
     tablaexamenesRelacionados.setSkin("dhx_skyblue");
-    tablaexamenesRelacionados.attachEvent("onRowSelect", function(fila, columna) {
+    tablaexamenesRelacionados.attachEvent("onRowSelect", function (fila, columna) {
         var iIdRelacion = tablaexamenesRelacionados.cells(fila, 0).getValue();
         var estado = tablaexamenesRelacionados.cells(fila, 4).getValue();
-        cambiarEstadoServicioRelacionado(iIdRelacion,estado);
+        cambiarEstadoServicioRelacionado(iIdRelacion, estado);
     });
     tablaexamenesRelacionados.init();
     tablaexamenesRelacionados.loadXML(pathRequestControl + '?' + parametros);
-    
+
 }
 
 //----------------------------------------------------------------------------------------------------
@@ -8142,7 +8145,7 @@ function buscarExamenesLaboratorio() {
     var header = ["#numeric_filter", "#text_filter", filtroPeril];
     tablaExamenesLaboratorio.attachHeader(header);
     //--------------
-    tablaExamenesLaboratorio.attachEvent("onRowSelect", function(fila, columna) {
+    tablaExamenesLaboratorio.attachEvent("onRowSelect", function (fila, columna) {
         reporteDePuntoControlXExamen(fila, columna);
 
         $('div_MostrarMaterialesSeleccionadosXpuntoControlExamenLabo').innerHTML = "";
@@ -8156,10 +8159,10 @@ function buscarExamenesLaboratorio() {
     //////////para cargador peche////////////////
     contadorCargador++;
     var idCargador = contadorCargador;
-    tablaExamenesLaboratorio.attachEvent("onXLS", function() {
+    tablaExamenesLaboratorio.attachEvent("onXLS", function () {
         cargadorpeche(1, idCargador);
     });
-    tablaExamenesLaboratorio.attachEvent("onXLE", function() {
+    tablaExamenesLaboratorio.attachEvent("onXLE", function () {
 
         // $("txtNombreExamenfiltro").value=$("txtNombreExamen").value;
 
@@ -8170,12 +8173,12 @@ function buscarExamenesLaboratorio() {
     tablaExamenesLaboratorio.setSkin("dhx_skyblue");
     tablaExamenesLaboratorio.init();
     tablaExamenesLaboratorio.loadXML(pathRequestControl + '?' + parametros);
-//    }
+    //    }
 }
 
 
 
-function  refrescarServiciosSeleccionado() {
+function refrescarServiciosSeleccionado() {
     var iIdGrupoEtario = $('txtidGrupoEtario').value;
     var patronModulo = '';
     patronModulo = 'serviciosSeleccionadoPorGrupoEtario';
@@ -8192,50 +8195,50 @@ function  refrescarServiciosSeleccionado() {
     //    var header = ["","","","","",filtroPeril,""];  
     //    tablaServicioGrupoEtarioSeleccionadosCPT.attachHeader(header); 
     //--------------
-    tablaServicioGrupoEtarioSeleccionadosCPT.attachEvent("onRowSelect", function(fila, columna) {
+    tablaServicioGrupoEtarioSeleccionadosCPT.attachEvent("onRowSelect", function (fila, columna) {
         eliminarseleccionarServicioGrupoEtario(fila, columna);
     });
     //////////para cargador peche////////////////
     contadorCargador++;
     var idCargador = contadorCargador;
-    tablaServicioGrupoEtarioSeleccionadosCPT.attachEvent("onXLS", function() {
+    tablaServicioGrupoEtarioSeleccionadosCPT.attachEvent("onXLS", function () {
         cargadorpeche(1, idCargador);
     });
-    tablaServicioGrupoEtarioSeleccionadosCPT.attachEvent("onXLE", function() {
+    tablaServicioGrupoEtarioSeleccionadosCPT.attachEvent("onXLE", function () {
         cargadorpeche(0, idCargador);
     });
     /////////////fin cargador ///////////////////////
     tablaServicioGrupoEtarioSeleccionadosCPT.setSkin("dhx_skyblue");
     tablaServicioGrupoEtarioSeleccionadosCPT.init();
     //    tablaServicioGrupoEtarioSeleccionadosCPT.loadXML(pathRequestControl + '?' + parametros);
-    tablaServicioGrupoEtarioSeleccionadosCPT.loadXML(pathRequestControl+'?'+parametros, function(){   
+    tablaServicioGrupoEtarioSeleccionadosCPT.loadXML(pathRequestControl + '?' + parametros, function () {
         //        setColorTablaEstadoResultado();
-        CargarCkeckMinimo(); 
-         
+        CargarCkeckMinimo();
+
     });
 }
 
-function CargarCkeckMinimo(){
-    for(i=0;i<tablaServicioGrupoEtarioSeleccionadosCPT.getRowsNum();i++){
-        tablaServicioGrupoEtarioSeleccionadosCPT.cells(i,17).setValue('<input id="cboObligatorio'+i+'" onclick= "if(this.checked){this.value=1}else{this.value=0;};actualizarEstadoObligatorio('+i+')" type="checkbox" title="Seleccionar" name="cboObligatorio" value="0">'); 
-        var bObligatorio= tablaServicioGrupoEtarioSeleccionadosCPT.cells(i,15).getValue();
-        if(bObligatorio==1){
-            document.getElementById('cboObligatorio'+i).checked=true;
-            document.getElementById('cboObligatorio'+i).value=1;          
-        } else{
-            document.getElementById('cboObligatorio'+i).checked=false;
-            document.getElementById('cboObligatorio'+i).value=0;
+function CargarCkeckMinimo() {
+    for (i = 0; i < tablaServicioGrupoEtarioSeleccionadosCPT.getRowsNum(); i++) {
+        tablaServicioGrupoEtarioSeleccionadosCPT.cells(i, 17).setValue('<input id="cboObligatorio' + i + '" onclick= "if(this.checked){this.value=1}else{this.value=0;};actualizarEstadoObligatorio(' + i + ')" type="checkbox" title="Seleccionar" name="cboObligatorio" value="0">');
+        var bObligatorio = tablaServicioGrupoEtarioSeleccionadosCPT.cells(i, 15).getValue();
+        if (bObligatorio == 1) {
+            document.getElementById('cboObligatorio' + i).checked = true;
+            document.getElementById('cboObligatorio' + i).value = 1;
+        } else {
+            document.getElementById('cboObligatorio' + i).checked = false;
+            document.getElementById('cboObligatorio' + i).value = 0;
 
-        }    
+        }
 
-    }  
- 
-} 
-function actualizarEstadoObligatorio(fila){
+    }
+
+}
+function actualizarEstadoObligatorio(fila) {
     //    alert(fila);
-    var iIdServicioGrupoEtareo= tablaServicioGrupoEtarioSeleccionadosCPT.cells(fila,0).getValue();
+    var iIdServicioGrupoEtareo = tablaServicioGrupoEtarioSeleccionadosCPT.cells(fila, 0).getValue();
     //    alert(iIdServicioGrupoEtareo);
-    var estado=document.getElementById('cboObligatorio'+fila).value
+    var estado = document.getElementById('cboObligatorio' + fila).value
 
     var patronModulo = 'actualizarEstadoObligatorio';
     var parametros = '';
@@ -8248,7 +8251,7 @@ function actualizarEstadoObligatorio(fila){
         method: 'get',
         parameters: parametros,
         onLoading: cargadorpeche(1, idCargador),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             cargadorpeche(0, idCargador);
             var respuesta = transport.responseText;
             //                $('contenedorServicios').update(respuesta);
@@ -8272,7 +8275,7 @@ function filtrarServiciosManteni(evento) {
             method: 'get',
             parameters: parametros,
             onLoading: cargadorpeche(1, idCargador),
-            onComplete: function(transport) {
+            onComplete: function (transport) {
                 cargadorpeche(0, idCargador);
                 var respuesta = transport.responseText;
                 $('contenedorServicios').update(respuesta);
@@ -8298,7 +8301,7 @@ function filtrarAfiliacioanManteni(evento) {
             method: 'get',
             parameters: parametros,
             onLoading: cargadorpeche(1, idCargador),
-            onComplete: function(transport) {
+            onComplete: function (transport) {
                 cargadorpeche(0, idCargador);
                 var respuesta = transport.responseText;
                 $('contenedorAFiliaciones').update(respuesta);
@@ -8319,7 +8322,7 @@ function cargarMantenimiento(id, nombre) {
         method: 'get',
         parameters: parametros,
         onLoading: cargadorpeche(1, idCargador),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             cargadorpeche(0, idCargador);
             var respuesta = transport.responseText;
             $('contenidoMantenimiento').update(respuesta);
@@ -8486,7 +8489,7 @@ function guardarModulosPorArea() {
             method: 'get',
             parameters: parametros,
             onLoading: micargador(1),
-            onComplete: function(transport) {
+            onComplete: function (transport) {
                 micargador(0);
                 var respuesta = transport.responseText;
                 alert("Se guardo exitosamente...");
@@ -8503,7 +8506,7 @@ function guardarModulosPorArea() {
             method: 'get',
             parameters: parametros,
             onLoading: micargador(1),
-            onComplete: function(transport) {
+            onComplete: function (transport) {
                 micargador(0);
                 var respuesta = transport.responseText;
                 guardarNuevaSeleccion(arrayCombo2, arrayNum2);
@@ -8525,11 +8528,11 @@ function guardarNuevaSeleccion(arrayCombo2, arrayNum2) {
         method: 'get',
         parameters: parametros,
         onLoading: micargador(1),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             micargador(0);
             var respuesta = transport.responseText;
             alert("Se guardo exitosamente...");
-        //cargarMantenimientoServicios();
+            //cargarMantenimientoServicios();
         }
     })
 }
@@ -8559,7 +8562,7 @@ function ventanaDiagnosticoDiente(numeroAntecedenteOdontograma) {
 }
 function cargarElementos() {
     cargarArbolDiagnostico();
-//cargarDientesseleccionados();
+    //cargarDientesseleccionados();
 }
 function cargarDientesseleccionados() {
 
@@ -8580,7 +8583,7 @@ function cargarArbolDiagnostico() {
     arbolOdontograma.setImagePath("../../../../fastmedical_front/imagen/csh_bluebooks_simedh/");
     arbolOdontograma.enableMultiLineItems("250px");
     arbolOdontograma.enableTreeLines(true);
-    arbolOdontograma.attachEvent("onDblClick", function() {
+    arbolOdontograma.attachEvent("onDblClick", function () {
 
         arbolOdontograma.focusItem(arbolOdontograma.getSelectedItemId());
         diagnosticoOdontogramaSeleccionado(arbolOdontograma.getSelectedItemId(), arbolOdontograma.getSelectedItemText());
@@ -8589,7 +8592,7 @@ function cargarArbolDiagnostico() {
     //arbolOdontograma.openAllItems(0);
 
     //    treex.setXMLAutoLoading(pathRequestControl+'?'+parametros);
-    arbolOdontograma.loadXML(pathRequestControl + '?' + parametros, function() {
+    arbolOdontograma.loadXML(pathRequestControl + '?' + parametros, function () {
         //arbolOdontograma.closeItem(82,92);
         //alert(arbolOdontograma.getSubItems(1))
         var array = arbolOdontograma.getSubItems(1).split(",");
@@ -8614,7 +8617,7 @@ function diagnosticoOdontogramaSeleccionado(id, nombre) {
         parameters: parametros,
         asynchronous: false,
         onLoading: cargadorpeche(1, idCargador),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             cargadorpeche(0, idCargador);
             var arrayRespuesta = transport.responseText.split("-");
 
@@ -8671,7 +8674,7 @@ function buscarTablaOdontologia(evento) {
         tod = 0;
         tablaProcedimientoOdontologico = new dhtmlXGridObject('tablaOdontologia');
         tablaProcedimientoOdontologico.setImagePath("../../../../fastmedical_front/imagen/icono/");
-        tablaProcedimientoOdontologico.attachEvent("onRowSelect", function(fila, columna) {
+        tablaProcedimientoOdontologico.attachEvent("onRowSelect", function (fila, columna) {
             var nombre = tablaProcedimientoOdontologico.cells(fila, 1).getValue();
             diagnosticoOdontogramaSeleccionado(fila, nombre)
 
@@ -8679,19 +8682,19 @@ function buscarTablaOdontologia(evento) {
         //////////para cargador peche////////////////
         contadorCargador++;
         var idCargador = contadorCargador;
-        tablaProcedimientoOdontologico.attachEvent("onXLS", function() {
+        tablaProcedimientoOdontologico.attachEvent("onXLS", function () {
             cargadorpeche(1, idCargador);
         });
-        tablaProcedimientoOdontologico.attachEvent("onXLE", function() {
+        tablaProcedimientoOdontologico.attachEvent("onXLE", function () {
             cargadorpeche(0, idCargador);
         });
         /////////////fin cargador ///////////////////////
         tablaProcedimientoOdontologico.setSkin("dhx_skyblue");
         tablaProcedimientoOdontologico.init();
-        tablaProcedimientoOdontologico.loadXML(pathRequestControl + '?' + parametros, function() {
+        tablaProcedimientoOdontologico.loadXML(pathRequestControl + '?' + parametros, function () {
             tod = 1;
         });
-    //miTablaCie.clearAll();
+        //miTablaCie.clearAll();
     }
     if (numero > 3 && tod == 1) {
         //tablaPracticasMedicasTratamientos.filterBy(1,$('txtbusquedaNombrePracticasMedicas').value);
@@ -8729,7 +8732,7 @@ function nuevoAgregarNuevoantecedenteOdontograma() {
 
     var posFuncion = 'cargarDientesseleccionados';
     CargarVentanaPopPap(vformname, vtitle, vwidth, vheight, vcenter, vresizable, vmodal, vstyle, vopacity, vposx1, vposx2, vposy1, vposy2, parametros, posFuncion)
-//grabarAntecedenteOdontograma(numeroAntecedenteOdontograma);
+    //grabarAntecedenteOdontograma(numeroAntecedenteOdontograma);
 }
 function cancelarDiagnosticoDientes() {
     Windows.close("Div_FormularioDientesSeleccionados", '');
@@ -8948,7 +8951,7 @@ function agregarAntecedenteOdontograma(datos) {
         parameters: parametros,
         asynchronous: false,
         onLoading: cargadorpeche(1, idCargador),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             cargadorpeche(0, idCargador);
             var respuesta = transport.responseText;
             var para = document.getElementById("divAntecedentesOdontograma");
@@ -9033,7 +9036,7 @@ function grabarAntecedenteOdontograma(numeroAntecedenteOdontograma) {
         parameters: parametros,
         asynchronous: false,
         onLoading: cargadorpeche(1, idCargador),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             cargadorpeche(0, idCargador);
             var respuesta = transport.responseText;
             $("idAntecedenteOdontograma_" + numeroAntecedenteOdontograma).value = respuesta
@@ -9056,7 +9059,7 @@ function dibujarCanvas() {
         parameters: parametros,
         asynchronous: false,
         onLoading: cargadorpeche(1, idCargador),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             cargadorpeche(0, idCargador);
             var respuesta = transport.responseText;
             eval(respuesta);
@@ -9229,17 +9232,17 @@ function animacionDiente(processing) {
             //            processing.endShape();
 
             contadorDiente++;
-        //alert('peche6');
+            //alert('peche6');
         }
 
     }
 
-    processing.setup = function() {
+    processing.setup = function () {
         processing.size(980, 80);
 
     };
     var numeroDientes = (numeroAux - 1) / 2;
-    processing.draw = function() {
+    processing.draw = function () {
         var distancia = 65;
         var contadorDiente = 0;
         var cara;
@@ -9294,7 +9297,7 @@ function animacionDiente(processing) {
                     processing.fill(255, 0, 0, 80);
                 } else {
                     processing.fill(255, 255, 255, 80);
-                //alert((i-1)*5+4);
+                    //alert((i-1)*5+4);
                 }
                 processing.vertex(x1 + contadorDiente * distancia, y1);
                 processing.vertex(x5 + contadorDiente * distancia, y5);
@@ -9325,7 +9328,7 @@ function animacionDiente(processing) {
         }
 
     }
-    processing.mouseMoved = function() {
+    processing.mouseMoved = function () {
         posX2 = processing.mouseX;
         posY2 = processing.mouseY;
         //alert(arrayPuntosAux);
@@ -9348,9 +9351,9 @@ function animacionDiente(processing) {
                             }
                             if ((posX2 <= aux1) || (arrayCarasDientesAux[z][j][0] == arrayCarasDientesAux[z][j + 1][0])) {
                                 cont1++;
-                            //aux2=aux1;
-                            //puntoDatos='px1:'+arrayDientesAux[z][j][0]+'py1:'+arrayDientesAux[z][j][1];
-                            // puntoDatos1='px2:'+arrayDientesAux[z][j+1][0]+'py2:'+arrayDientesAux[z][j+1][1];
+                                //aux2=aux1;
+                                //puntoDatos='px1:'+arrayDientesAux[z][j][0]+'py1:'+arrayDientesAux[z][j][1];
+                                // puntoDatos1='px2:'+arrayDientesAux[z][j+1][0]+'py2:'+arrayDientesAux[z][j+1][1];
                             }
                         }
                     }
@@ -9370,7 +9373,7 @@ function animacionDiente(processing) {
         }
 
     }
-    processing.mouseClicked = function() {
+    processing.mouseClicked = function () {
         //alert(processing.mouseY + 'xxxx'+processing.mouseX);
         var numero = arrayPuntosAux.length;
         var indice = 0;
@@ -9381,9 +9384,9 @@ function animacionDiente(processing) {
                     seleccionadoCara[indice] = 0;
                 } else {
                     seleccionadoCara[indice] = 1;
-                //seleccionado[arrayDatosDientesCara[w1][0]]=1;
-                //seleccionado[arrayDatosDientesCara[w1][0]+52]=1;
-                //alert('id'+w1)
+                    //seleccionado[arrayDatosDientesCara[w1][0]]=1;
+                    //seleccionado[arrayDatosDientesCara[w1][0]+52]=1;
+                    //alert('id'+w1)
 
                 }
             }
@@ -9470,7 +9473,7 @@ function actualizarArrayCaras() {
                                 arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 4] = 1;
                             }
                         }
-                    //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+4]=1;
+                        //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+4]=1;
                     }
 
                     if (iIdCara == 3) {
@@ -9487,7 +9490,7 @@ function actualizarArrayCaras() {
                                 arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5] = 1;
                             }
                         }
-                    // arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5]=1;
+                        // arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5]=1;
                     }
 
                     if (iIdCara == 4) {
@@ -9504,7 +9507,7 @@ function actualizarArrayCaras() {
                                 arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 1] = 1;
                             }
                         }
-                    //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+1]=1;
+                        //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+1]=1;
                     }
 
                     if (iIdCara == 5) {
@@ -9526,7 +9529,7 @@ function actualizarArrayCaras() {
                                 arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 3] = 1;
                             }
                         }
-                    //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+3]=1;
+                        //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+3]=1;
                     }
                 }
                 if ((dienteSeleccionado > 8 && dienteSeleccionado < 17) || (dienteSeleccionado > 37 && dienteSeleccionado < 43)) {
@@ -9544,7 +9547,7 @@ function actualizarArrayCaras() {
                                 arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5] = 1;
                             }
                         }
-                    //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5]=1;
+                        //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5]=1;
                     }
 
                     if (iIdCara == 2) {
@@ -9561,7 +9564,7 @@ function actualizarArrayCaras() {
                                 arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 4] = 1;
                             }
                         }
-                    //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+4]=1;
+                        //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+4]=1;
                     }
 
                     if (iIdCara == 3) {
@@ -9579,7 +9582,7 @@ function actualizarArrayCaras() {
                                 arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 2] = 1;
                             }
                         }
-                    //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+2]=1;
+                        //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+2]=1;
                     }
 
                     if (iIdCara == 4) {
@@ -9596,7 +9599,7 @@ function actualizarArrayCaras() {
                                 arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 1] = 1;
                             }
                         }
-                    //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+1]=1;
+                        //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+1]=1;
                     }
 
                     if (iIdCara == 5) {
@@ -9617,7 +9620,7 @@ function actualizarArrayCaras() {
                                 arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 3] = 1;
                             }
                         }
-                    //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+3]=1;
+                        //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+3]=1;
                     }
                 }
                 if ((dienteSeleccionado > 16 && dienteSeleccionado < 25) || (dienteSeleccionado > 42 && dienteSeleccionado < 48)) {
@@ -9635,7 +9638,7 @@ function actualizarArrayCaras() {
                                 arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5] = 1;
                             }
                         }
-                    //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5]=1;
+                        //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5]=1;
                     }
 
                     if (iIdCara == 2) {
@@ -9653,7 +9656,7 @@ function actualizarArrayCaras() {
                                 arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 4] = 1;
                             }
                         }
-                    //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+4]=1;
+                        //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+4]=1;
                     }
 
                     if (iIdCara == 3) {
@@ -9670,7 +9673,7 @@ function actualizarArrayCaras() {
                                 arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 2] = 1;
                             }
                         }
-                    //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+2]=1;
+                        //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+2]=1;
                     }
 
                     if (iIdCara == 4) {
@@ -9687,7 +9690,7 @@ function actualizarArrayCaras() {
                                 arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 3] = 1;
                             }
                         }
-                    //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+3]=1;
+                        //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+3]=1;
                     }
 
                     if (iIdCara == 5) {
@@ -9704,7 +9707,7 @@ function actualizarArrayCaras() {
                                 arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 1] = 1;
                             }
                         }
-                    //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+1]=1;
+                        //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+1]=1;
                     }
 
                     if (iIdCara == 6) {
@@ -9727,7 +9730,7 @@ function actualizarArrayCaras() {
                                 arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 2] = 1;
                             }
                         }
-                    //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+2]=1;
+                        //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+2]=1;
                     }
 
                     if (iIdCara == 2) {
@@ -9744,7 +9747,7 @@ function actualizarArrayCaras() {
                                 arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 4] = 1;
                             }
                         }
-                    //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+4]=1;
+                        //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+4]=1;
                     }
 
                     if (iIdCara == 3) {
@@ -9762,7 +9765,7 @@ function actualizarArrayCaras() {
                                 arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5] = 1;
                             }
                         }
-                    //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5]=1;
+                        //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5]=1;
                     }
 
                     if (iIdCara == 4) {
@@ -9779,7 +9782,7 @@ function actualizarArrayCaras() {
                                 arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 3] = 1;
                             }
                         }
-                    //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+3]=1;
+                        //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+3]=1;
                     }
 
                     if (iIdCara == 5) {
@@ -9796,7 +9799,7 @@ function actualizarArrayCaras() {
                                 arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 1] = 1;
                             }
                         }
-                    //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+1]=1;
+                        //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+1]=1;
                     }
 
                     if (iIdCara == 6) {
@@ -9804,8 +9807,8 @@ function actualizarArrayCaras() {
                     }
 
                 }
-            //////////////////////////////////////
-            //arrayCarasAzulesHistoria[numerCara]=1;
+                //////////////////////////////////////
+                //arrayCarasAzulesHistoria[numerCara]=1;
             }
         }
     }
@@ -9836,7 +9839,7 @@ function animacionHistoria(processing) {
     var adentroHistoria = new Array();
     for (var w = 0; w < numeroAuxHistoria; w++) {
         seleccionadoHistoria[w] = 0;
-    //adentroHistoria[w]=0;
+        //adentroHistoria[w]=0;
     }
     numeroAux1Historia = arrayCaraDientesHistoria.length;
     seleccionadoCaraHistoria = new Array();
@@ -9847,7 +9850,7 @@ function animacionHistoria(processing) {
     arrayCarasAzulesHistoria = new Array();
     arrayCarasRojasHistoria = new Array();
 
-    processing.setup = function() {
+    processing.setup = function () {
         processing.size(800, 400);
         imgHistorial = processing.loadImage("../../../../fastmedical_front/imagen/odontograma/odontograma.png");
         var numeroSimbolos = arraySimbolosHistoria.length;
@@ -9913,7 +9916,7 @@ function animacionHistoria(processing) {
                                 arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 4] = 1;
                             }
                         }
-                    //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+4]=1;
+                        //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+4]=1;
                     }
 
                     if (iIdCara == 3) {
@@ -9930,7 +9933,7 @@ function animacionHistoria(processing) {
                                 arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5] = 1;
                             }
                         }
-                    // arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5]=1;
+                        // arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5]=1;
                     }
 
                     if (iIdCara == 4) {
@@ -9947,7 +9950,7 @@ function animacionHistoria(processing) {
                                 arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 1] = 1;
                             }
                         }
-                    //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+1]=1;
+                        //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+1]=1;
                     }
 
                     if (iIdCara == 5) {
@@ -9968,7 +9971,7 @@ function animacionHistoria(processing) {
                                 arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 3] = 1;
                             }
                         }
-                    //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+3]=1;
+                        //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+3]=1;
                     }
                 }
                 if ((dienteSeleccionado > 8 && dienteSeleccionado < 17) || (dienteSeleccionado > 37 && dienteSeleccionado < 43)) {
@@ -9986,7 +9989,7 @@ function animacionHistoria(processing) {
                                 arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5] = 1;
                             }
                         }
-                    //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5]=1;
+                        //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5]=1;
                     }
 
                     if (iIdCara == 2) {
@@ -10003,7 +10006,7 @@ function animacionHistoria(processing) {
                                 arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 4] = 1;
                             }
                         }
-                    //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+4]=1;
+                        //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+4]=1;
                     }
 
                     if (iIdCara == 3) {
@@ -10020,7 +10023,7 @@ function animacionHistoria(processing) {
                                 arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 2] = 1;
                             }
                         }
-                    //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+2]=1;
+                        //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+2]=1;
                     }
 
                     if (iIdCara == 4) {
@@ -10037,7 +10040,7 @@ function animacionHistoria(processing) {
                                 arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 1] = 1;
                             }
                         }
-                    //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+1]=1;
+                        //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+1]=1;
                     }
 
                     if (iIdCara == 5) {
@@ -10058,7 +10061,7 @@ function animacionHistoria(processing) {
                                 arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 3] = 1;
                             }
                         }
-                    //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+3]=1;
+                        //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+3]=1;
                     }
                 }
                 if ((dienteSeleccionado > 16 && dienteSeleccionado < 25) || (dienteSeleccionado > 42 && dienteSeleccionado < 48)) {
@@ -10076,7 +10079,7 @@ function animacionHistoria(processing) {
                                 arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5] = 1;
                             }
                         }
-                    //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5]=1;
+                        //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5]=1;
                     }
 
                     if (iIdCara == 2) {
@@ -10093,7 +10096,7 @@ function animacionHistoria(processing) {
                                 arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 4] = 1;
                             }
                         }
-                    //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+4]=1;
+                        //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+4]=1;
                     }
 
                     if (iIdCara == 3) {
@@ -10110,7 +10113,7 @@ function animacionHistoria(processing) {
                                 arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 2] = 1;
                             }
                         }
-                    //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+2]=1;
+                        //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+2]=1;
                     }
 
                     if (iIdCara == 4) {
@@ -10127,7 +10130,7 @@ function animacionHistoria(processing) {
                                 arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 3] = 1;
                             }
                         }
-                    //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+3]=1;
+                        //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+3]=1;
                     }
 
                     if (iIdCara == 5) {
@@ -10144,7 +10147,7 @@ function animacionHistoria(processing) {
                                 arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 1] = 1;
                             }
                         }
-                    //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+1]=1;
+                        //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+1]=1;
                     }
 
                     if (iIdCara == 6) {
@@ -10167,7 +10170,7 @@ function animacionHistoria(processing) {
                                 arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 2] = 1;
                             }
                         }
-                    //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+2]=1;
+                        //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+2]=1;
                     }
 
                     if (iIdCara == 2) {
@@ -10184,7 +10187,7 @@ function animacionHistoria(processing) {
                                 arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 4] = 1;
                             }
                         }
-                    //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+4]=1;
+                        //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+4]=1;
                     }
 
                     if (iIdCara == 3) {
@@ -10202,7 +10205,7 @@ function animacionHistoria(processing) {
                                 arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5] = 1;
                             }
                         }
-                    //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5]=1;
+                        //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5]=1;
                     }
 
                     if (iIdCara == 4) {
@@ -10219,7 +10222,7 @@ function animacionHistoria(processing) {
                                 arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 3] = 1;
                             }
                         }
-                    //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+3]=1;
+                        //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+3]=1;
                     }
 
                     if (iIdCara == 5) {
@@ -10236,7 +10239,7 @@ function animacionHistoria(processing) {
                                 arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 1] = 1;
                             }
                         }
-                    //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+1]=1;
+                        //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+1]=1;
                     }
 
                     if (iIdCara == 6) {
@@ -10244,12 +10247,12 @@ function animacionHistoria(processing) {
                     }
 
                 }
-            //////////////////////////////////////
-            //arrayCarasAzulesHistoria[numerCara]=1;
+                //////////////////////////////////////
+                //arrayCarasAzulesHistoria[numerCara]=1;
             }
         }
     }
-    processing.draw = function() {
+    processing.draw = function () {
 
 
         var numeroImagen = 0;
@@ -10442,8 +10445,8 @@ function animacionHistoria(processing) {
             if (adentroHistoria[i] == 0) {
                 if (seleccionadoHistoria[i] == 0) {
                     processing.noFill();
-                // processing.noStroke()
-                //processing.fill(255, 255, 250,80);
+                    // processing.noStroke()
+                    //processing.fill(255, 255, 250,80);
                 } else {
                     if (seleccionadoHistoria[i] == 1) {
                         processing.fill(255, 0, 0, 80);
@@ -10498,7 +10501,7 @@ function animacionHistoria(processing) {
                         processing.stroke(0, 0, 0)
                         processing.fill(211, 6, 6)
                     }
-                //processing.fill(255, 12, 250,80);
+                    //processing.fill(255, 12, 250,80);
                 }
                 else {
                     if (seleccionadoCaraHistoria[i] == 1) {
@@ -10528,11 +10531,11 @@ function animacionHistoria(processing) {
             }
             processing.endShape();
         }
-    /////////fin de dibujar cara
+        /////////fin de dibujar cara
 
 
     }
-    processing.mouseMoved = function() {
+    processing.mouseMoved = function () {
         // processing.loop();
         posXHistoria = processing.mouseX;
         posYHistoria = processing.mouseY;
@@ -10554,9 +10557,9 @@ function animacionHistoria(processing) {
                             }
                             if ((posXHistoria <= aux) || (arrayDientesAux[z][j][0] == arrayDientesAux[z][j + 1][0])) {
                                 cont++;
-                            //aux2=aux;
-                            //puntoDatos='px1:'+arrayDientesAux[z][j][0]+'py1:'+arrayDientesAux[z][j][1];
-                            // puntoDatos1='px2:'+arrayDientesAux[z][j+1][0]+'py2:'+arrayDientesAux[z][j+1][1];
+                                //aux2=aux;
+                                //puntoDatos='px1:'+arrayDientesAux[z][j][0]+'py1:'+arrayDientesAux[z][j][1];
+                                // puntoDatos1='px2:'+arrayDientesAux[z][j+1][0]+'py2:'+arrayDientesAux[z][j+1][1];
                             }
                         }
                     }
@@ -10565,7 +10568,7 @@ function animacionHistoria(processing) {
             if (cont % 2 == 1) {
                 mause = 1;
                 adentroHistoria[z] = 1;
-            //alert(arrayDatosDientes[i][0]+'---'+arrayDatosDientes[i][1]+'---'+arrayDatosDientes[i][2]+'---'+i) 
+                //alert(arrayDatosDientes[i][0]+'---'+arrayDatosDientes[i][1]+'---'+arrayDatosDientes[i][2]+'---'+i) 
             } else {
                 adentroHistoria[z] = 0;
             }
@@ -10599,9 +10602,9 @@ function animacionHistoria(processing) {
                             }
                             if ((posXHistoria <= aux1) || (arrayCarasDientesAux[z][j][0] == arrayCarasDientesAux[z][j + 1][0])) {
                                 cont1++;
-                            //aux2=aux1;
-                            //puntoDatos='px1:'+arrayDientesAux[z][j][0]+'py1:'+arrayDientesAux[z][j][1];
-                            // puntoDatos1='px2:'+arrayDientesAux[z][j+1][0]+'py2:'+arrayDientesAux[z][j+1][1];
+                                //aux2=aux1;
+                                //puntoDatos='px1:'+arrayDientesAux[z][j][0]+'py1:'+arrayDientesAux[z][j][1];
+                                // puntoDatos1='px2:'+arrayDientesAux[z][j+1][0]+'py2:'+arrayDientesAux[z][j+1][1];
                             }
                         }
                     }
@@ -10624,7 +10627,7 @@ function animacionHistoria(processing) {
             processing.cursor(processing.ARROW)
         }
     }
-    processing.mouseClicked = function() {
+    processing.mouseClicked = function () {
         //alert(processing.mouseY + 'xxxx'+processing.mouseX);
         //var numeroAux=arrayDientes.length;
 
@@ -10635,52 +10638,52 @@ function animacionHistoria(processing) {
                 seleccionadoHistoria[w + 52] = 1;
                 $('dienteSeleccionado').value = w;
                 cambiarSelectedValueCombo();
-            //                if(seleccionadoHistoria[w]==1){
-            //                    seleccionadoHistoria[w]=0;
-            //                    /*
-            //                    seleccionadoCara[(w-1)*5]=0;
-            //                    seleccionadoCara[(w-1)*5+1]=0;
-            //                    seleccionadoCara[(w-1)*5+2]=0;
-            //                    seleccionadoCara[(w-1)*5+3]=0;
-            //                    seleccionadoCara[(w-1)*5+4]=0;
-            //                    */
-            //                }else{
-            //                    seleccionadoHistoria[w]=1;
-            //                    /*
-            //                    seleccionadoCara[(w-1)*5]=1;
-            //                    seleccionadoCara[(w-1)*5+1]=1;
-            //                    seleccionadoCara[(w-1)*5+2]=1;
-            //                    seleccionadoCara[(w-1)*5+3]=1;
-            //                    seleccionadoCara[(w-1)*5+4]=1;
-            //                    */
-            //                    
-            //                }
+                //                if(seleccionadoHistoria[w]==1){
+                //                    seleccionadoHistoria[w]=0;
+                //                    /*
+                //                    seleccionadoCara[(w-1)*5]=0;
+                //                    seleccionadoCara[(w-1)*5+1]=0;
+                //                    seleccionadoCara[(w-1)*5+2]=0;
+                //                    seleccionadoCara[(w-1)*5+3]=0;
+                //                    seleccionadoCara[(w-1)*5+4]=0;
+                //                    */
+                //                }else{
+                //                    seleccionadoHistoria[w]=1;
+                //                    /*
+                //                    seleccionadoCara[(w-1)*5]=1;
+                //                    seleccionadoCara[(w-1)*5+1]=1;
+                //                    seleccionadoCara[(w-1)*5+2]=1;
+                //                    seleccionadoCara[(w-1)*5+3]=1;
+                //                    seleccionadoCara[(w-1)*5+4]=1;
+                //                    */
+                //                    
+                //                }
             }
             else {
                 seleccionadoHistoria[w] = 0;
                 seleccionadoHistoria[w + 52] = 0;
             }
         }
-    /*
-         for(var w1=0;w1<numeroAux1;w1++){
-         
-         if(adentroCara[w1]==1){
-         if(seleccionadoCara[w1]==1){
-         seleccionadoCara[w1]=0;
-         }else{
-         seleccionadoCara[w1]=1;
-         seleccionado[arrayDatosDientesCara[w1][0]]=1;
-         seleccionado[arrayDatosDientesCara[w1][0]+52]=1;
-         //alert('id'+w1)
-         
-         }
-         
-         }
-         }
-         */
+        /*
+             for(var w1=0;w1<numeroAux1;w1++){
+             
+             if(adentroCara[w1]==1){
+             if(seleccionadoCara[w1]==1){
+             seleccionadoCara[w1]=0;
+             }else{
+             seleccionadoCara[w1]=1;
+             seleccionado[arrayDatosDientesCara[w1][0]]=1;
+             seleccionado[arrayDatosDientesCara[w1][0]+52]=1;
+             //alert('id'+w1)
+             
+             }
+             
+             }
+             }
+             */
     }
     cargarTablaHistoriaOdontograma();
-///////////////////////////////////////////
+    ///////////////////////////////////////////
 }
 function animacion2(processing) {
     var img = processing.PImage;
@@ -10701,7 +10704,7 @@ function animacion2(processing) {
         seleccionadoCara[w2] = 0;
         adentroCara[w2] = 0
     }
-    processing.setup = function() {
+    processing.setup = function () {
         processing.size(800, 400);
         img = processing.loadImage("../../../../fastmedical_front/imagen/odontograma/odontograma.png");
         var numeroSimbolos = arraySimbolos.length;
@@ -10719,7 +10722,7 @@ function animacion2(processing) {
         }
 
     };
-    processing.draw = function() {
+    processing.draw = function () {
 
         processing.image(img, 0, 0, ancho, alto);
 
@@ -11013,8 +11016,8 @@ function animacion2(processing) {
                 }
 
             }
-        /////////////////////////
-        //alert(dienteSeleccionado);
+            /////////////////////////
+            //alert(dienteSeleccionado);
         }
 
         //dibujar diente
@@ -11033,8 +11036,8 @@ function animacion2(processing) {
             if (adentro[i] == 0) {
                 if (seleccionado[i] == 0) {
                     processing.noFill();
-                // processing.noStroke()
-                //processing.fill(255, 255, 250,80);
+                    // processing.noStroke()
+                    //processing.fill(255, 255, 250,80);
                 } else {
                     if (seleccionado[i] == 1) {
                         processing.fill(255, 0, 0, 80);
@@ -11090,7 +11093,7 @@ function animacion2(processing) {
                         processing.stroke(0, 0, 0)
                         processing.fill(211, 6, 6)
                     }
-                //processing.fill(255, 12, 250,80);
+                    //processing.fill(255, 12, 250,80);
                 }
                 else {
                     if (seleccionadoCara[i] == 1) {
@@ -11120,10 +11123,10 @@ function animacion2(processing) {
             processing.endShape();
         }
 
-    ////////////////////////////////////////
-    //processing.noLoop();
+        ////////////////////////////////////////
+        //processing.noLoop();
     }
-    processing.mouseMoved = function() {
+    processing.mouseMoved = function () {
         // processing.loop();
         posX = processing.mouseX;
         posY = processing.mouseY;
@@ -11145,9 +11148,9 @@ function animacion2(processing) {
                             }
                             if ((posX <= aux) || (arrayDientesAux[z][j][0] == arrayDientesAux[z][j + 1][0])) {
                                 cont++;
-                            //aux2=aux;
-                            //puntoDatos='px1:'+arrayDientesAux[z][j][0]+'py1:'+arrayDientesAux[z][j][1];
-                            // puntoDatos1='px2:'+arrayDientesAux[z][j+1][0]+'py2:'+arrayDientesAux[z][j+1][1];
+                                //aux2=aux;
+                                //puntoDatos='px1:'+arrayDientesAux[z][j][0]+'py1:'+arrayDientesAux[z][j][1];
+                                // puntoDatos1='px2:'+arrayDientesAux[z][j+1][0]+'py2:'+arrayDientesAux[z][j+1][1];
                             }
                         }
                     }
@@ -11156,7 +11159,7 @@ function animacion2(processing) {
             if (cont % 2 == 1) {
                 mause = 1;
                 adentro[z] = 1;
-            //alert(arrayDatosDientes[i][0]+'---'+arrayDatosDientes[i][1]+'---'+arrayDatosDientes[i][2]+'---'+i) 
+                //alert(arrayDatosDientes[i][0]+'---'+arrayDatosDientes[i][1]+'---'+arrayDatosDientes[i][2]+'---'+i) 
             } else {
                 adentro[z] = 0;
             }
@@ -11189,9 +11192,9 @@ function animacion2(processing) {
                             }
                             if ((posX <= aux1) || (arrayCarasDientesAux[z][j][0] == arrayCarasDientesAux[z][j + 1][0])) {
                                 cont1++;
-                            //aux2=aux1;
-                            //puntoDatos='px1:'+arrayDientesAux[z][j][0]+'py1:'+arrayDientesAux[z][j][1];
-                            // puntoDatos1='px2:'+arrayDientesAux[z][j+1][0]+'py2:'+arrayDientesAux[z][j+1][1];
+                                //aux2=aux1;
+                                //puntoDatos='px1:'+arrayDientesAux[z][j][0]+'py1:'+arrayDientesAux[z][j][1];
+                                // puntoDatos1='px2:'+arrayDientesAux[z][j+1][0]+'py2:'+arrayDientesAux[z][j+1][1];
                             }
                         }
                     }
@@ -11211,7 +11214,7 @@ function animacion2(processing) {
             processing.cursor(processing.ARROW)
         }
     }
-    processing.mouseClicked = function() {
+    processing.mouseClicked = function () {
         //alert(processing.mouseY + 'xxxx'+processing.mouseX);
         //var numeroAux=arrayDientes.length;
 
@@ -11246,7 +11249,7 @@ function animacion2(processing) {
                     seleccionadoCara[w1] = 1;
                     seleccionado[arrayDatosDientesCara[w1][0]] = 1;
                     seleccionado[arrayDatosDientesCara[w1][0] + 52] = 1;
-                //alert('id'+w1)
+                    //alert('id'+w1)
 
                 }
 
@@ -11299,12 +11302,12 @@ function ActualizarServicios(numeroPaquetes, iIdGrupoEtarioPersonas, c_cod_per) 
         method: 'get',
         parameters: parametros,
         onLoading: cargadorpeche(1, idCargadora),
-        onComplete: function(transport) {
-            
+        onComplete: function (transport) {
+
             new Ajax.Request(pathRequestControl, {
                 method: 'get',
-                parameters: "p1=cargarPaquetesActualizados&p2="+iIdGrupoEtarioPersonas+"&p3="+c_cod_per,
-                onComplete: function(transport) {
+                parameters: "p1=cargarPaquetesActualizados&p2=" + iIdGrupoEtarioPersonas + "&p3=" + c_cod_per,
+                onComplete: function (transport) {
                     cargadorpeche(0, idCargadora)
                     respuesta = transport.responseText;
                     alert(respuesta)
@@ -11333,47 +11336,47 @@ function GeneralServicos(numeroPaquetes, iIdGrupoEtarioPersonas) {
         for (var i = 0; i < numeroFilas; i++) {
             var iIdServicioGrupoEtareoPersona = tablaTablaPAquete.cells(i, 0).getValue();
             //            alert(iIdServicioGrupoEtareoPersona);  
-            var cantidad=tablaTablaPAquete.cells(i,3).getValue();
-            var   codigopracticamedica = tablaTablaPAquete.cells(i,5).getValue();// codigo Producto
-            var descripcionpracticamedica =tablaTablaPAquete.cells(i,4).getValue();
-            var nombreTratamiento=tablaTablaPAquete.cells(i,17).getValue();
-            var nombre = Base64.encode(nombreTratamiento); 
-            var valorServicio=NombreGrupo+'  '+descripcionpracticamedica
+            var cantidad = tablaTablaPAquete.cells(i, 3).getValue();
+            var codigopracticamedica = tablaTablaPAquete.cells(i, 5).getValue();// codigo Producto
+            var descripcionpracticamedica = tablaTablaPAquete.cells(i, 4).getValue();
+            var nombreTratamiento = tablaTablaPAquete.cells(i, 17).getValue();
+            var nombre = Base64.encode(nombreTratamiento);
+            var valorServicio = NombreGrupo + '  ' + descripcionpracticamedica
             //             alert(valorServicio);
-            valorServicio=Base64.encode(valorServicio);
-            
-            var nroAte =tablaTablaPAquete.cells(i,6).getValue();
-            var nroAtemin=tablaTablaPAquete.cells(i,10).getValue();
-            var iGrupoEtario =tablaTablaPAquete.cells(i,13).getValue();
-            var ctp=tablaTablaPAquete.cells(i,1).getValue();
-            var iColor =tablaTablaPAquete.cells(i,14).getValue();
-            var bReceta =tablaTablaPAquete.cells(i,18).getValue();
-            var vDescripcionReceta =tablaTablaPAquete.cells(i,21).getValue();
-            var iFrecuenciaDias =tablaTablaPAquete.cells(i,22).getValue();
-            var iCantidadReceta =tablaTablaPAquete.cells(i,23).getValue();
-            var vIndicaciones =tablaTablaPAquete.cells(i,24).getValue();
+            valorServicio = Base64.encode(valorServicio);
+
+            var nroAte = tablaTablaPAquete.cells(i, 6).getValue();
+            var nroAtemin = tablaTablaPAquete.cells(i, 10).getValue();
+            var iGrupoEtario = tablaTablaPAquete.cells(i, 13).getValue();
+            var ctp = tablaTablaPAquete.cells(i, 1).getValue();
+            var iColor = tablaTablaPAquete.cells(i, 14).getValue();
+            var bReceta = tablaTablaPAquete.cells(i, 18).getValue();
+            var vDescripcionReceta = tablaTablaPAquete.cells(i, 21).getValue();
+            var iFrecuenciaDias = tablaTablaPAquete.cells(i, 22).getValue();
+            var iCantidadReceta = tablaTablaPAquete.cells(i, 23).getValue();
+            var vIndicaciones = tablaTablaPAquete.cells(i, 24).getValue();
 
             var numerodivpracticamedica = contadorDivsPracticaMedica;
             var idtratamiento = '';
             var modoaplicacion = '';
             var estadoregistro = 0;
 
-            if(bReceta!=1){
-                if( cantidad >1){
-                    if(iColor!=1){
-                        if(nroAte==nroAtemin){
+            if (bReceta != 1) {
+                if (cantidad > 1) {
+                    if (iColor != 1) {
+                        if (nroAte == nroAtemin) {
                             codigos = document.getElementById("htxtcodigosServicios").value;
-                            var a=myvariosServicios.length;
-                            var indicador=0;
-                            for(var h=0;h<a;h++){  
-                                var arrayPalabrasServcios2 =myvariosServicios[h].split("*");
-                                var ctp1=arrayPalabrasServcios2[3];
-                                if(ctp1==ctp){
-                                    indicador=1;                        
-                                }                                       
+                            var a = myvariosServicios.length;
+                            var indicador = 0;
+                            for (var h = 0; h < a; h++) {
+                                var arrayPalabrasServcios2 = myvariosServicios[h].split("*");
+                                var ctp1 = arrayPalabrasServcios2[3];
+                                if (ctp1 == ctp) {
+                                    indicador = 1;
+                                }
                             }
-                            if(indicador!=1){
-                                myvariosServicios[j]=nroAte+'*'+iGrupoEtario+'*'+i+'*'+ctp+'*'+ iIdServicioGrupoEtareoPersona+'*'+descripcionpracticamedica+'*'+NombreGrupo+'*'+k;   
+                            if (indicador != 1) {
+                                myvariosServicios[j] = nroAte + '*' + iGrupoEtario + '*' + i + '*' + ctp + '*' + iIdServicioGrupoEtareoPersona + '*' + descripcionpracticamedica + '*' + NombreGrupo + '*' + k;
                                 j++
                             }
                             tablaTablaPAquete.deleteRow(i);
@@ -11381,54 +11384,54 @@ function GeneralServicos(numeroPaquetes, iIdGrupoEtarioPersonas) {
                     }
                 } else {
                     // FIN
-                    if(cantidad==1 ){
+                    if (cantidad == 1) {
                         //                    tablaTablaPAquete.deleteRow(i);
-                        if(iColor!=1){
-                            if(nroAte==nroAtemin){
-                                if(codigopracticamedica!=0){
+                        if (iColor != 1) {
+                            if (nroAte == nroAtemin) {
+                                if (codigopracticamedica != 0) {
                                     tablaTablaPAquete.deleteRow(i);
                                 }
-                                
+
                                 codigos = document.getElementById("htxtcodigosServicios").value;
                                 if (!((codigos.indexOf(codigopracticamedica + "|") != -1) || (codigos.indexOf(codigopracticamedica) != -1))) {
-                                    var patronModulo='agregarPracticaMedicaHC';
-                                    var parametros='';
-                                    parametros+='p1='+patronModulo;
-                                    parametros+='&p2='+nombre;// ya
-                                    parametros+='&p3='+numerodivpracticamedica;//ya
-                                    parametros+='&p4='+codigopracticamedica;
-                                    parametros+='&p5='+idtratamiento;//ya
-                                    parametros+='&p6='+modoaplicacion;//ya
-                                    parametros+='&p7='+estadoregistro;//ya
-                                    parametros+='&p8='+'';
-                                    parametros+='&p9='+estado;// ya
-                                    parametros+='&p10='+valorServicio;// ya
+                                    var patronModulo = 'agregarPracticaMedicaHC';
+                                    var parametros = '';
+                                    parametros += 'p1=' + patronModulo;
+                                    parametros += '&p2=' + nombre;// ya
+                                    parametros += '&p3=' + numerodivpracticamedica;//ya
+                                    parametros += '&p4=' + codigopracticamedica;
+                                    parametros += '&p5=' + idtratamiento;//ya
+                                    parametros += '&p6=' + modoaplicacion;//ya
+                                    parametros += '&p7=' + estadoregistro;//ya
+                                    parametros += '&p8=' + '';
+                                    parametros += '&p9=' + estado;// ya
+                                    parametros += '&p10=' + valorServicio;// ya
                                     contadorCargador++;
-                                    var idCargador=contadorCargador;
-                                    new Ajax.Request( pathRequestControl,{
-                                        method : 'get',
-                                        asynchronous : false,
-                                        parameters : parametros,
-                                        onLoading : cargadorpeche(1,idCargador),
-                                        onComplete : function(transport){
-                                            cargadorpeche(0,idCargador);
+                                    var idCargador = contadorCargador;
+                                    new Ajax.Request(pathRequestControl, {
+                                        method: 'get',
+                                        asynchronous: false,
+                                        parameters: parametros,
+                                        onLoading: cargadorpeche(1, idCargador),
+                                        onComplete: function (transport) {
+                                            cargadorpeche(0, idCargador);
                                             var respuesta = transport.responseText;
-                                            var nombrediv = "Div_PracticaMedica"+numerodivpracticamedica;
+                                            var nombrediv = "Div_PracticaMedica" + numerodivpracticamedica;
                                             creaPracticaMedica(nombrediv);
                                             $(nombrediv).innerHTML = respuesta;
                                             contadorDivsPracticaMedica++;
                                             $('hNumeroTratamientoPracticasMedicas').value = parseInt($('hNumeroTratamientoPracticasMedicas').value) + 1;
                                             preguardarTratatamientoPracticasMedicas(estado);
-                                            actualizarEstadoDeServicioGrupoEtarioPersona(iIdServicioGrupoEtareoPersona,iCantidad); 
-                                            if (codigos.length > 0){
+                                            actualizarEstadoDeServicioGrupoEtarioPersona(iIdServicioGrupoEtareoPersona, iCantidad);
+                                            if (codigos.length > 0) {
                                                 codigos = codigos + "|" + codigopracticamedica;
-                                            }else {
+                                            } else {
                                                 codigos = codigopracticamedica;
                                             }
-                                            document.getElementById("htxtcodigosServicios").value=codigos;
-                                    
+                                            document.getElementById("htxtcodigosServicios").value = codigos;
+
                                         }
-                                    } )
+                                    })
                                 }
 
                             }
@@ -11436,8 +11439,8 @@ function GeneralServicos(numeroPaquetes, iIdGrupoEtarioPersonas) {
                         }
                     }
                 }
-            }else {
-                if(bReceta==1 && iColor!=1){
+            } else {
+                if (bReceta == 1 && iColor != 1) {
                     var divAumentar = 'divRecetaGeneral'
                     var nroReceta;
                     var elemento;
@@ -11455,8 +11458,8 @@ function GeneralServicos(numeroPaquetes, iIdGrupoEtarioPersonas) {
                     if (cantidadRecetas >= (nroReceta - 1)) {
                         codigoProducto = codigopracticamedica;//tablaProductosTratamientos.cells(rowId, 0).getValue();
                         elemento = document.getElementById('hAgregados_' + nroReceta)
-                        
-                        if(elemento == null){
+
+                        if (elemento == null) {
                             nroReceta = $('nroReceta').value;
                             var elemento1 = document.getElementById('divReceta_' + nroReceta);
                             if (elemento1 == null) {//verificamos si existe un div para la receta
@@ -11491,7 +11494,7 @@ function GeneralServicos(numeroPaquetes, iIdGrupoEtarioPersonas) {
                                 asynchronous: false,
                                 parameters: parametros,
                                 onLoading: cargadorpeche(1, idCargador),
-                                onComplete: function(transport) {
+                                onComplete: function (transport) {
                                     cargadorpeche(0, idCargador);
                                     var respuesta = transport.responseText;
                                     var para = document.getElementById(divAumentar);
@@ -11501,21 +11504,21 @@ function GeneralServicos(numeroPaquetes, iIdGrupoEtarioPersonas) {
                                     var documentFragment = range.createContextualFragment(s);
                                     para.appendChild(documentFragment);
                                     //                                     alert(codigoProducto);
-                                    $('hAgregados_' + nroReceta).value = codigoProducto+ '|' ;
-                                    if(codigopracticamedica!=0){
+                                    $('hAgregados_' + nroReceta).value = codigoProducto + '|';
+                                    if (codigopracticamedica != 0) {
                                         tablaTablaPAquete.deleteRow(i);
-                                    } 
-                                    $('cantidad_' + nroReceta+'_'+numeroProducto).value=30;
-                                    $('dosis_' + nroReceta+'_'+numeroProducto).value=codigoProducto;
-                                    
+                                    }
+                                    $('cantidad_' + nroReceta + '_' + numeroProducto).value = 30;
+                                    $('dosis_' + nroReceta + '_' + numeroProducto).value = codigoProducto;
+
                                     preguardarRectaMedica(nroReceta, numeroProducto)
                                 }
-                            })  
+                            })
                         } else {
                             if (!($('hAgregados_' + nroReceta).value.indexOf(codigoProducto) != -1)) {
                                 nroReceta = $('nroReceta').value;
                                 elemento1 = document.getElementById('divReceta_' + nroReceta);
-                                 
+
                                 if (elemento1 == null) {//verificamos si existe un div para la receta
                                     divAumentar = 'divRecetaGeneral'
                                     existe = 0;
@@ -11529,11 +11532,11 @@ function GeneralServicos(numeroPaquetes, iIdGrupoEtarioPersonas) {
                                     numeroProducto = $('hNumeroProductos_' + nroReceta).value;
                                     numeroProducto++;
                                     $('hNumeroProductos_' + nroReceta).value = numeroProducto;
-                                //                                   alert('si existe');
+                                    //                                   alert('si existe');
                                 }
                                 nombreMedicamento = nombreTratamiento;
                                 presentacion = vDescripcionReceta;
- 
+
                                 var patronModulo = 'agregarMedicamentoHC';
                                 var parametros = '';
                                 parametros += 'p1=' + patronModulo;
@@ -11551,7 +11554,7 @@ function GeneralServicos(numeroPaquetes, iIdGrupoEtarioPersonas) {
                                     asynchronous: false,
                                     parameters: parametros,
                                     onLoading: cargadorpeche(1, idCargador),
-                                    onComplete: function(transport) {
+                                    onComplete: function (transport) {
                                         cargadorpeche(0, idCargador);
                                         var respuesta = transport.responseText;
                                         var para = document.getElementById(divAumentar);
@@ -11563,27 +11566,27 @@ function GeneralServicos(numeroPaquetes, iIdGrupoEtarioPersonas) {
                                         //                                        alert(codigoProducto);
                                         $('hAgregados_' + nroReceta).value = $('hAgregados_' + nroReceta).value + '|' + codigoProducto;
                                         //                                        alert($('hAgregados_' + nroReceta).value);
-                                        tablaTablaPAquete.deleteRow(i); 
-                                        $('cantidad_' + nroReceta+'_'+numeroProducto).value=30;
-                                        $('dosis_' + nroReceta+'_'+numeroProducto).value=vIndicaciones;
-                                        
-                                        preguardarRectaMedica(nroReceta, numeroProducto)             
+                                        tablaTablaPAquete.deleteRow(i);
+                                        $('cantidad_' + nroReceta + '_' + numeroProducto).value = 30;
+                                        $('dosis_' + nroReceta + '_' + numeroProducto).value = vIndicaciones;
+
+                                        preguardarRectaMedica(nroReceta, numeroProducto)
                                     }
-                                })        
-                                                                                                                                    
-                            }else {
+                                })
+
+                            } else {
                                 //                                alert("repetido");
-                                tablaTablaPAquete.deleteRow(i);  
-                            }                  
+                                tablaTablaPAquete.deleteRow(i);
+                            }
                         }
-                    }                    
+                    }
                 }
             }
         }
     }
 
     var m = myvariosServicios.length;
-    if(m>0){
+    if (m > 0) {
         var h = 0;
         //    for(var h=0;h<m;h++){    
         var arrayPalabrasServcios = new Array();
@@ -11597,24 +11600,24 @@ function GeneralServicos(numeroPaquetes, iIdGrupoEtarioPersonas) {
         NombreGrupo = arrayPalabrasServcios[6];
         var k1 = arrayPalabrasServcios[7];
         //        alert(nroAte+'---'+iGrupoEtario+'---'+p+'---'+ctp+'---'+iIdServicioGrupoEtareoPersona)
-        var posFuncion ="cargarServiciosDuplicados("+nroAte+","+iGrupoEtario+","+p+","+cantidad+","+ iIdServicioGrupoEtareoPersona+","+ ctp+","+k1+","+m+","+h+")";
-        var vtitle='<b>'+NombreGrupo+'<br>'+descripcionpracticamedica +' '+nroAte+'<br> </b><input id="txtNombreCpt" value="'+descripcionpracticamedica+'" > ';
-        var vformname='vpopudServico'+nroAte+iIdServicioGrupoEtareoPersona;
-        var vwidth='816';
-        var vheight='280';
-        var patronModulo1='popapserviciosDuplicados';
-        var vcenter='t';
-        var vresizable='';
-        var vmodal='false';
-        var vstyle='';
-        var vopacity='';
-        var veffect='';
-        var vposx1='';
-        var vposx2='';
-        var vposy1='';
-        var vposy2=''; 
-        var parametros1='';
-        parametros1+='p1='+patronModulo1 +'&p2='+ ctp+'&p3='+ nroAte+'&p4='+ iIdServicioGrupoEtareoPersona;
+        var posFuncion = "cargarServiciosDuplicados(" + nroAte + "," + iGrupoEtario + "," + p + "," + cantidad + "," + iIdServicioGrupoEtareoPersona + "," + ctp + "," + k1 + "," + m + "," + h + ")";
+        var vtitle = '<b>' + NombreGrupo + '<br>' + descripcionpracticamedica + ' ' + nroAte + '<br> </b><input id="txtNombreCpt" value="' + descripcionpracticamedica + '" > ';
+        var vformname = 'vpopudServico' + nroAte + iIdServicioGrupoEtareoPersona;
+        var vwidth = '816';
+        var vheight = '280';
+        var patronModulo1 = 'popapserviciosDuplicados';
+        var vcenter = 't';
+        var vresizable = '';
+        var vmodal = 'false';
+        var vstyle = '';
+        var vopacity = '';
+        var veffect = '';
+        var vposx1 = '';
+        var vposx2 = '';
+        var vposy1 = '';
+        var vposy2 = '';
+        var parametros1 = '';
+        parametros1 += 'p1=' + patronModulo1 + '&p2=' + ctp + '&p3=' + nroAte + '&p4=' + iIdServicioGrupoEtareoPersona;
         CargarVentanaPopPapJorge(vformname, vtitle, vwidth, vheight, vcenter, vresizable, vmodal, vstyle, vopacity, vposx1, vposx2, vposy1, vposy2, parametros1, posFuncion);
 
     }
@@ -11636,23 +11639,23 @@ function cargarServiciosDuplicados(nroAte, iGrupoEtario, i, iCantidad, iIdServic
     tablaTablaPAqueteExtra.setImagePath("../../../imagen/dhtmlxgrid/imgs/");
     tablaTablaPAqueteExtra.setSkin("dhx_skyblue");
     tablaTablaPAqueteExtra.enableRowsHover(true, 'grid_hover');
-    tablaTablaPAqueteExtra.attachEvent("onRowSelect", function(fila, columna) {
+    tablaTablaPAqueteExtra.attachEvent("onRowSelect", function (fila, columna) {
         //        actualizarEntregaExtra(fila,columna,nroAte,iCantidad,iIdServicioGrupoEtareoPersona,tablaTablaPAqueteExtra,NombreGrupo);
-        if(m==1){
-            actualizarEntregaExtra(fila,columna,nroAte,iCantidad,iIdServicioGrupoEtareoPersona,tablaTablaPAqueteExtra,NombreGrupo); 
-        //Windows.close("Div_vpopudServico" + nroAte + iIdServicioGrupoEtareoPersona); 
-        } else{
-            if(m>1 && h< (m-1)){
-                var v=actualizarEntregaExtra(fila,columna,nroAte,iCantidad,iIdServicioGrupoEtareoPersona,tablaTablaPAqueteExtra,NombreGrupo); 
+        if (m == 1) {
+            actualizarEntregaExtra(fila, columna, nroAte, iCantidad, iIdServicioGrupoEtareoPersona, tablaTablaPAqueteExtra, NombreGrupo);
+            //Windows.close("Div_vpopudServico" + nroAte + iIdServicioGrupoEtareoPersona); 
+        } else {
+            if (m > 1 && h < (m - 1)) {
+                var v = actualizarEntregaExtra(fila, columna, nroAte, iCantidad, iIdServicioGrupoEtareoPersona, tablaTablaPAqueteExtra, NombreGrupo);
                 //                alert("valor:  "+ v);
-                if(v!=1){
-                    h=h+1;
-                    siguientePupapServicios(fila,columna,h,k,i,iCantidad); 
+                if (v != 1) {
+                    h = h + 1;
+                    siguientePupapServicios(fila, columna, h, k, i, iCantidad);
                 }
-            } else{
-                if(h==(m-1)){
-                    actualizarEntregaExtra(fila,columna,nroAte,iCantidad,iIdServicioGrupoEtareoPersona,tablaTablaPAqueteExtra,NombreGrupo);  
-                //                    Windows.close("Div_vpopudServico" + nroAte + iIdServicioGrupoEtareoPersona); 
+            } else {
+                if (h == (m - 1)) {
+                    actualizarEntregaExtra(fila, columna, nroAte, iCantidad, iIdServicioGrupoEtareoPersona, tablaTablaPAqueteExtra, NombreGrupo);
+                    //                    Windows.close("Div_vpopudServico" + nroAte + iIdServicioGrupoEtareoPersona); 
                 }
             }
         }
@@ -11660,10 +11663,10 @@ function cargarServiciosDuplicados(nroAte, iGrupoEtario, i, iCantidad, iIdServic
     //////////para cargador peche////////////////
     contadorCargador++;
     var idCargador = contadorCargador;
-    tablaTablaPAqueteExtra.attachEvent("onXLS", function() {
+    tablaTablaPAqueteExtra.attachEvent("onXLS", function () {
         cargadorpeche(1, idCargador);
     });
-    tablaTablaPAqueteExtra.attachEvent("onXLE", function() {
+    tablaTablaPAqueteExtra.attachEvent("onXLE", function () {
         cargadorpeche(0, idCargador);
 
     });
@@ -11671,11 +11674,11 @@ function cargarServiciosDuplicados(nroAte, iGrupoEtario, i, iCantidad, iIdServic
     tablaTablaPAqueteExtra.setSkin("dhx_skyblue");
     tablaTablaPAqueteExtra.init();
     //    tablaBuscarPersona.loadXML(pathRequestControl+'?'+parametros);
-    tablaTablaPAqueteExtra.loadXML(pathRequestControl+'?'+parametros, function(){   
-        $("Div_vpopudServico"+nroAte+iIdServicioGrupoEtareoPersona+"_close").hide();       
+    tablaTablaPAqueteExtra.loadXML(pathRequestControl + '?' + parametros, function () {
+        $("Div_vpopudServico" + nroAte + iIdServicioGrupoEtareoPersona + "_close").hide();
     });
-    tablaTablaPAqueteExtra.attachEvent("onEditCell", function(stage,rId,cInd,nValue,oValue){
-        });
+    tablaTablaPAqueteExtra.attachEvent("onEditCell", function (stage, rId, cInd, nValue, oValue) {
+    });
 }
 /// tengo que modificar y cambiar de nombre a esta funciones
 
@@ -11694,28 +11697,29 @@ function siguientePupapServicios(fila, columna, h, k, i, iCantidad) {
     NombreGrupo = arrayPalabrasServcios[6];
     var k1 = arrayPalabrasServcios[7];
     //        alert(nroAte+'---'+iGrupoEtario+'---'+p+'---'+ctp+'---'+iIdServicioGrupoEtareoPersona)
-    var posFuncion ="cargarServiciosDuplicados("+nroAte+","+iGrupoEtario+","+p+","+iCantidad+","+ iIdServicioGrupoEtareoPersona+","+ ctp+","+k1+","+m+","+h+")";
-    var vtitle=NombreGrupo+'<br>'+descripcionpracticamedica +' '+nroAte+'<br><input id="txtNombreCpt" value="'+descripcionpracticamedica+'" > ';
-    var vformname='vpopudServico'+nroAte+iIdServicioGrupoEtareoPersona;
-    var vwidth='816';
-    var vheight='280';
-    var patronModulo1='popapserviciosDuplicados';
-    var vcenter='t';
-    var vresizable='';
-    var vmodal='false';
-    var vstyle='';
-    var vopacity='';
-    var veffect='';
-    var vposx1='';
-    var vposx2='';
-    var vposy1='';
-    var vposy2=''; 
-    var parametros1='';
-    parametros1+='p1='+patronModulo1 +'&p2='+ ctp+'&p3='+ nroAte+'&p4='+ iIdServicioGrupoEtareoPersona;
-    CargarVentanaPopPapJorge(vformname, vtitle, vwidth, vheight, vcenter, vresizable, vmodal, vstyle, vopacity, vposx1, vposx2, vposy1, vposy2, parametros1, posFuncion);         
+    var posFuncion = "cargarServiciosDuplicados(" + nroAte + "," + iGrupoEtario + "," + p + "," + iCantidad + "," + iIdServicioGrupoEtareoPersona + "," + ctp + "," + k1 + "," + m + "," + h + ")";
+    var vtitle = NombreGrupo + '<br>' + descripcionpracticamedica + ' ' + nroAte + '<br><input id="txtNombreCpt" value="' + descripcionpracticamedica + '" > ';
+    var vformname = 'vpopudServico' + nroAte + iIdServicioGrupoEtareoPersona;
+    var vwidth = '816';
+    var vheight = '280';
+    var patronModulo1 = 'popapserviciosDuplicados';
+    var vcenter = 't';
+    var vresizable = '';
+    var vmodal = 'false';
+    var vstyle = '';
+    var vopacity = '';
+    var veffect = '';
+    var vposx1 = '';
+    var vposx2 = '';
+    var vposy1 = '';
+    var vposy2 = '';
+    var parametros1 = '';
+    parametros1 += 'p1=' + patronModulo1 + '&p2=' + ctp + '&p3=' + nroAte + '&p4=' + iIdServicioGrupoEtareoPersona;
+    CargarVentanaPopPapJorge(vformname, vtitle, vwidth, vheight, vcenter, vresizable, vmodal, vstyle, vopacity, vposx1, vposx2, vposy1, vposy2, parametros1, posFuncion);
 }
 
 function actualizarEntregaExtra(fila, columna, nroAte, iCantidad, iIdServicioGrupoEtareoPersona, tablaTablaPAqueteExtram, NombreGrupo) {
+
     codigos = document.getElementById("htxtcodigosServicios").value;
     if (!((codigos.indexOf(codigopracticamedica + "|") != -1) || (codigos.indexOf(codigopracticamedica) != -1))) {
         var estado = 1;
@@ -11724,7 +11728,7 @@ function actualizarEntregaExtra(fila, columna, nroAte, iCantidad, iIdServicioGru
             var codigopracticamedica = tablaTablaPAqueteExtram.cells(fila, 9).getValue();
             var codigosegus = tablaTablaPAqueteExtram.cells(fila, 7).getValue();
             //var descripcionpracticamedica = tablaTablaPAqueteExtram.cells(fila, 8).getValue();
-            var descripcionpracticamedica=$('txtNombreCpt').value;
+            var descripcionpracticamedica = $('txtNombreCpt').value;
             var ctp = tablaTablaPAqueteExtram.cells(fila, 2).getValue();
 
             var valorServicio = Base64.encode(NombreGrupo + '  ' + descripcionpracticamedica);
@@ -11763,7 +11767,7 @@ function actualizarEntregaExtra(fila, columna, nroAte, iCantidad, iIdServicioGru
                 asynchronous: false,
                 parameters: parametros,
                 onLoading: cargadorpeche(1, idCargador),
-                onComplete: function(transport) {
+                onComplete: function (transport) {
                     cargadorpeche(0, idCargador);
                     respuesta = transport.responseText;
                     nombrediv = "Div_PracticaMedica" + numerodivpracticamedica;
@@ -11777,8 +11781,8 @@ function actualizarEntregaExtra(fila, columna, nroAte, iCantidad, iIdServicioGru
                     Windows.close("Div_vpopudServico" + nroAte + iIdServicioGrupoEtareoPersona)
                 }
             })
-        // return 0;
-        }else{
+            // return 0;
+        } else {
             return 1;
         }
     }
@@ -11799,7 +11803,7 @@ function actualizarEstadoDeServicioGrupoEtarioPersona(iIdServicioGrupoEtareoPers
         parameters: parametros,
         asynchronous: false,
         onLoading: cargadorpeche(1, idCargador),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             cargadorpeche(0, idCargador);
             var respuesta = transport.responseText;
 
@@ -11822,7 +11826,7 @@ function validarSeleccion(idObjet) {
         method: 'post',
         parameters: parametros,
         onLoading: cargadorpeche(1, idCargador),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             cargadorpeche(0, idCargador);
             var respuesta = transport.responseText;
 
@@ -11847,7 +11851,7 @@ function quitarImagen(id) {
             method: 'post',
             parameters: parametros,
             onLoading: cargadorpeche(1, idCargador),
-            onComplete: function(transport) {
+            onComplete: function (transport) {
                 cargadorpeche(0, idCargador);
                 $('Vista' + id).update("");
                 alert("La Imagen se borro Correctamente");
@@ -11876,7 +11880,7 @@ function updateObsHistoriaDiente(IdNumeric) {
         method: 'post',
         parameters: parametros,
         onLoading: cargadorpeche(1, idCargador),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             cargadorpeche(0, idCargador);
 
 
@@ -11908,7 +11912,7 @@ function updateCarasDiente(id, idCara, objeto) {
         method: 'post',
         parameters: parametros,
         onLoading: cargadorpeche(1, idCargador),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             cargadorpeche(0, idCargador);
 
 
@@ -11932,7 +11936,7 @@ function cerrarAntecedenteOdontograma(numeroAntecedente) {
         method: 'post',
         parameters: parametros,
         onLoading: cargadorpeche(1, idCargador),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             cargadorpeche(0, idCargador);
             $('antecedenteOdontograma_' + numeroAntecedente).hide();
             $('estadoAntecedenteOdontograma_' + numeroAntecedente).value = 1;
@@ -11954,7 +11958,7 @@ function volverAcargar(idAuto) {
         method: 'post',
         parameters: parametros,
         onLoading: cargadorpeche(1, idCargador),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             cargadorpeche(0, idCargador);
             $('adjuntarFotoOdontograma' + idAuto).show();
             $('button' + idAuto).style.visibility = "visible";
@@ -11979,7 +11983,7 @@ function abrirNuevoVisorImagen(autonumerico) {
         method: 'post',
         parameters: parametros,
         onLoading: cargadorpeche(1, idCargador),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             cargadorpeche(0, idCargador);
 
 
@@ -12044,7 +12048,7 @@ function cargarTablaHistoriaOdontograma() {
     var idCargador = contadorCargador;
     rHistoriaOdontogramaXAtencion = new dhtmlXGridObject('contenedorTablaHistoria');
     rHistoriaOdontogramaXAtencion.setImagePath("../../../../fastmedical_front/imagen/icono/");
-    rHistoriaOdontogramaXAtencion.attachEvent("onRowSelect", function(fila, columna) {
+    rHistoriaOdontogramaXAtencion.attachEvent("onRowSelect", function (fila, columna) {
         var fecha = rHistoriaOdontogramaXAtencion.cells(fila, 0).getValue();
         var diagnostico = rHistoriaOdontogramaXAtencion.cells(fila, 1).getValue();
         var diente = rHistoriaOdontogramaXAtencion.cells(fila, 2).getValue();
@@ -12064,15 +12068,15 @@ function cargarTablaHistoriaOdontograma() {
     });
     contadorCargador++;
     var idCargador = contadorCargador;
-    rHistoriaOdontogramaXAtencion.attachEvent("onXLS", function() {
+    rHistoriaOdontogramaXAtencion.attachEvent("onXLS", function () {
         cargadorpeche(1, idCargador);
     });
-    rHistoriaOdontogramaXAtencion.attachEvent("onXLE", function() {
+    rHistoriaOdontogramaXAtencion.attachEvent("onXLE", function () {
         cargadorpeche(0, idCargador);
     });
     rHistoriaOdontogramaXAtencion.setSkin("dhx_skyblue");
     rHistoriaOdontogramaXAtencion.init();
-    rHistoriaOdontogramaXAtencion.loadXML(pathRequestControl + '?' + parametros, function() {
+    rHistoriaOdontogramaXAtencion.loadXML(pathRequestControl + '?' + parametros, function () {
         seleccionarPrimeraFila();
     });
 
@@ -12094,7 +12098,7 @@ function cargarDetalleHIstoriaODontograma(fecha, diagnostico, tecero, estado, do
     } else {
         $('imagenHistoriaDetalle').update('');
     }
-//cargarDetalleHIstoriaODontograma(fecha,diagnostico,tecero,estado,doctor,imagen);
+    //cargarDetalleHIstoriaODontograma(fecha,diagnostico,tecero,estado,doctor,imagen);
 }
 
 
@@ -12120,7 +12124,7 @@ function cambiarSelectedValueCombo() {
             alert("No existe antecedente o procedimeito para este diente la fecha seleccionada");
         }
 
-    //cargarFechaAtencionOdontograma();
+        //cargarFechaAtencionOdontograma();
     }
 }
 
@@ -12153,11 +12157,11 @@ function mostrarLeyenda() {
         method: 'get',
         parameters: parametros,
         onLoading: micargador(1),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             micargador(0);
             respuesta = transport.responseText;
             $('Div_Leyenda').update(respuesta);
-        // alert (respuesta);
+            // alert (respuesta);
         }
     })
 }
@@ -12186,11 +12190,11 @@ function historiaLeyenda() {
         method: 'get',
         parameters: parametros,
         onLoading: micargador(1),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             micargador(0);
             respuesta = transport.responseText;
             $('Div_HistoriaLeyenda').update(respuesta);
-        // alert (respuesta);
+            // alert (respuesta);
         }
     })
 }
@@ -12209,7 +12213,7 @@ function cargarMantenimientoAfiliacionesModulo(id, nombre) {
         method: 'get',
         parameters: parametros,
         onLoading: cargadorpeche(1, idCargador),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             cargadorpeche(0, idCargador);
             var respuesta = transport.responseText;
             $('contenidoMantenimiento').update(respuesta);
@@ -12248,7 +12252,7 @@ function guardarModulosAfiliacion() {
             method: 'get',
             parameters: parametros,
             onLoading: micargador(1),
-            onComplete: function(transport) {
+            onComplete: function (transport) {
                 micargador(0);
                 var respuesta = transport.responseText;
                 alert("Se guardo exitosamente...");
@@ -12265,7 +12269,7 @@ function guardarModulosAfiliacion() {
             method: 'get',
             parameters: parametros,
             onLoading: micargador(1),
-            onComplete: function(transport) {
+            onComplete: function (transport) {
                 micargador(0);
                 var respuesta = transport.responseText;
                 guardarNuevaSeleccionAfiliaciones(arrayCombo2, arrayNum2);
@@ -12287,11 +12291,11 @@ function guardarNuevaSeleccionAfiliaciones(arrayCombo2, arrayNum2) {
         method: 'get',
         parameters: parametros,
         onLoading: micargador(1),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             micargador(0);
             var respuesta = transport.responseText;
             alert("Se guardo exitosamente...");
-        //cargarMantenimientoServicios();
+            //cargarMantenimientoServicios();
         }
     })
 
@@ -12309,7 +12313,7 @@ function verListaDeCiePorGrupoEtareo(idGrupoEtareo, nombre) {
         method: 'get',
         parameters: parametros,
         onLoading: micargador(1),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             micargador(0);
             var respuesta = transport.responseText;
             $('tablaCIeGRupoEtareo').update(respuesta);
@@ -12331,7 +12335,7 @@ function buscarCie(event) {
             method: 'get',
             parameters: parametros,
             onLoading: cargadorpeche(1, idCargador),
-            onComplete: function(transport) {
+            onComplete: function (transport) {
                 cargadorpeche(0, idCargador);
                 var respuesta = transport.responseText;
                 $('DivCIe').update(respuesta);
@@ -12355,7 +12359,7 @@ function agregarCIEaGrupoEtareo(idCie) {
             method: 'get',
             parameters: parametros,
             onLoading: cargadorpeche(1, idCargador),
-            onComplete: function(transport) {
+            onComplete: function (transport) {
                 cargadorpeche(0, idCargador);
                 var respuesta = transport.responseText;
                 alert(respuesta);
@@ -12384,7 +12388,7 @@ function cambiarEstadoCieGrupoEtareo(idCie) {
             method: 'get',
             parameters: parametros,
             onLoading: cargadorpeche(1, idCargador),
-            onComplete: function(transport) {
+            onComplete: function (transport) {
                 cargadorpeche(0, idCargador);
                 var respuesta = transport.responseText;
                 alert('Se finalizo el cambio de Estado Correctamente...');
@@ -12400,15 +12404,15 @@ function cambiarEstadoCieGrupoEtareo(idCie) {
 
 
 
-function cambiarEstadoServicioRelacionado(iIdRelacion,estado) {
+function cambiarEstadoServicioRelacionado(iIdRelacion, estado) {
     var bEstado = 0;
-    if (estado==1){
+    if (estado == 1) {
         bEstado = 0;
     }
-    else if (estado ==0){
-        bEstado=1;
+    else if (estado == 0) {
+        bEstado = 1;
     }
-    if(confirm("Seguro que desea Cambiar de Estado)")){
+    if (confirm("Seguro que desea Cambiar de Estado)")) {
         var patronModulo = 'cambiarEstadoServicioRelacionado';
         var parametros = '';
         parametros += 'p1=' + patronModulo;
@@ -12420,7 +12424,7 @@ function cambiarEstadoServicioRelacionado(iIdRelacion,estado) {
             method: 'get',
             parameters: parametros,
             onLoading: cargadorpeche(1, idCargador),
-            onComplete: function(transport) {
+            onComplete: function (transport) {
                 cargadorpeche(0, idCargador);
                 var respuesta = transport.responseText;
                 alert('Se finalizo el cambio de Estado Correctamente...');
@@ -12432,36 +12436,36 @@ function cambiarEstadoServicioRelacionado(iIdRelacion,estado) {
 
 
 
-function cargarVistaPopudResporteHistorialTriaje(iNumeroReporete,vReporte){
+function cargarVistaPopudResporteHistorialTriaje(iNumeroReporete, vReporte) {
     var iCodigoPaciente = $('htxtcodigopaciente').value;
     var dFechaNacimiento = $('txtFechaNacimientoTriaje').value;
-    posFuncion ="cargarGraficoHistoriaTriaje("+iNumeroReporete+",'"+vReporte+"')";
+    posFuncion = "cargarGraficoHistoriaTriaje(" + iNumeroReporete + ",'" + vReporte + "')";
     // posFuncion="";
-    vtitle="Reporte Historico Triaje -  "+ vReporte;
-    vformname='vReporteHistoricoTriajePaciente';
-    vwidth='1000';
-    vheight='600';
-    patronModulo='vReporteHistoricoTriajePaciente';
-    vcenter='t';
-    vresizable='';
-    vmodal='false';
-    vstyle='';
-    vopacity='';
-    veffect='';
-    vposx1='';
-    vposx2='';
-    vposy1='';
-    vposy2='';
-    parametros='';
-    parametros+='p1='+patronModulo;
-    parametros+='&p2='+iNumeroReporete;
-    parametros+='&p3='+vReporte;
-    parametros+='&p4='+iCodigoPaciente;
-    parametros+='&p5='+dFechaNacimiento;
+    vtitle = "Reporte Historico Triaje -  " + vReporte;
+    vformname = 'vReporteHistoricoTriajePaciente';
+    vwidth = '1000';
+    vheight = '600';
+    patronModulo = 'vReporteHistoricoTriajePaciente';
+    vcenter = 't';
+    vresizable = '';
+    vmodal = 'false';
+    vstyle = '';
+    vopacity = '';
+    veffect = '';
+    vposx1 = '';
+    vposx2 = '';
+    vposy1 = '';
+    vposy2 = '';
+    parametros = '';
+    parametros += 'p1=' + patronModulo;
+    parametros += '&p2=' + iNumeroReporete;
+    parametros += '&p3=' + vReporte;
+    parametros += '&p4=' + iCodigoPaciente;
+    parametros += '&p5=' + dFechaNacimiento;
     CargarVentanaPopPapJorge(vformname, vtitle, vwidth, vheight, vcenter, vresizable, vmodal, vstyle, vopacity, vposx1, vposx2, vposy1, vposy2, parametros, posFuncion);
 }
 
-function cargarGraficoHistoriaTriajeDestrucTor(iNumeroReporete,vReporte){ 
+function cargarGraficoHistoriaTriajeDestrucTor(iNumeroReporete, vReporte) {
     chart.destructor();
     var iCodigoPaciente = $('htxtcodigopaciente').value;
     var patronModulo = 'cargarGraficoHistoriaTriaje';
@@ -12471,24 +12475,24 @@ function cargarGraficoHistoriaTriajeDestrucTor(iNumeroReporete,vReporte){
     parametros += '&p3=' + iNumeroReporete;
     parametros += '&p4=' + vReporte;
     parametros += '&p5=' + $('cbxDesde').value;
-    parametros += '&p6=' +  $('cbxHasta').value;
-    
+    parametros += '&p6=' + $('cbxHasta').value;
+
     contadorCargador++;
     var idCargador = contadorCargador;
     new Ajax.Request(pathRequestControl, {
         method: 'get',
         parameters: parametros,
         onLoading: cargadorpeche(1, idCargador),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             cargadorpeche(0, idCargador);
             var respuesta = transport.responseText;
             eval(respuesta);
-        //cargarTablaLeyendaTriaje(iNumeroReporete,iCodigoPaciente);
+            //cargarTablaLeyendaTriaje(iNumeroReporete,iCodigoPaciente);
         }
     })
 }
 
-function cargarGraficoHistoriaTriaje(iNumeroReporete,vReporte){ 
+function cargarGraficoHistoriaTriaje(iNumeroReporete, vReporte) {
     var iCodigoPaciente = $('htxtcodigopaciente').value;
     var patronModulo = 'cargarGraficoHistoriaTriaje';
     var parametros = '';
@@ -12497,58 +12501,58 @@ function cargarGraficoHistoriaTriaje(iNumeroReporete,vReporte){
     parametros += '&p3=' + iNumeroReporete;
     parametros += '&p4=' + vReporte;
     parametros += '&p5=' + $('cbxDesde').value;
-    parametros += '&p6=' +  $('cbxHasta').value;
+    parametros += '&p6=' + $('cbxHasta').value;
     contadorCargador++;
     var idCargador = contadorCargador;
     new Ajax.Request(pathRequestControl, {
         method: 'get',
         parameters: parametros,
         onLoading: cargadorpeche(1, idCargador),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             cargadorpeche(0, idCargador);
             var respuesta = transport.responseText;
             eval(respuesta);
-        //cargarTablaLeyendaTriaje(iNumeroReporete,iCodigoPaciente);
+            //cargarTablaLeyendaTriaje(iNumeroReporete,iCodigoPaciente);
         }
     })
 }
 
-function cargarTablaLeyendaTriaje(iNumeroReporete,iCodigoPaciente){
-    var patronModulo='listarTablaLeyendaReporteTriaje';
-    var parametros='';
-    parametros+='p1='+patronModulo;
-    parametros+='&p2='+iNumeroReporete;
-    parametros+='&p3='+iCodigoPaciente;
-    listarTablaLeyendaReporteTriaje=new dhtmlXGridObject('contenedorTablaLeyenda');
+function cargarTablaLeyendaTriaje(iNumeroReporete, iCodigoPaciente) {
+    var patronModulo = 'listarTablaLeyendaReporteTriaje';
+    var parametros = '';
+    parametros += 'p1=' + patronModulo;
+    parametros += '&p2=' + iNumeroReporete;
+    parametros += '&p3=' + iCodigoPaciente;
+    listarTablaLeyendaReporteTriaje = new dhtmlXGridObject('contenedorTablaLeyenda');
     listarTablaLeyendaReporteTriaje.setImagePath("../../../imagen/dhtmlxgrid/imgs/");
     listarTablaLeyendaReporteTriaje.setSkin("dhx_terrace");
-    listarTablaLeyendaReporteTriaje.enableRowsHover(true,'grid_hover');
-    listarTablaLeyendaReporteTriaje.attachEvent("onRowSelect", function(rId,cInd){ 
+    listarTablaLeyendaReporteTriaje.enableRowsHover(true, 'grid_hover');
+    listarTablaLeyendaReporteTriaje.attachEvent("onRowSelect", function (rId, cInd) {
 
-        });  
-    contadorCargador++;
-    var idCargador=contadorCargador;
-    listarTablaLeyendaReporteTriaje.attachEvent("onXLS", function(){
-        cargadorpeche(1,idCargador);
     });
-    listarTablaLeyendaReporteTriaje.attachEvent("onXLE", function(){
-        cargadorpeche(0,idCargador);;
+    contadorCargador++;
+    var idCargador = contadorCargador;
+    listarTablaLeyendaReporteTriaje.attachEvent("onXLS", function () {
+        cargadorpeche(1, idCargador);
+    });
+    listarTablaLeyendaReporteTriaje.attachEvent("onXLE", function () {
+        cargadorpeche(0, idCargador);;
     });
     listarTablaLeyendaReporteTriaje.setSkin("dhx_terrace");
     listarTablaLeyendaReporteTriaje.init();
-    listarTablaLeyendaReporteTriaje.loadXML(pathRequestControl+'?'+parametros,function(){
+    listarTablaLeyendaReporteTriaje.loadXML(pathRequestControl + '?' + parametros, function () {
         var casa;
-        for(i=0;i<listarTablaLeyendaReporteTriaje.getRowsNum();i++){
-            casa = listarTablaLeyendaReporteTriaje.cells(i,2).getValue();
-            if(casa=='1')
-                listarTablaLeyendaReporteTriaje.setRowTextStyle(listarTablaLeyendaReporteTriaje.getRowId(i) ,'background-color:#69C22C;color:black;border-top: 0px solid #FAFAF8;');
-            else if(casa=='2')
-                listarTablaLeyendaReporteTriaje.setRowTextStyle(listarTablaLeyendaReporteTriaje.getRowId(i) ,'background-color:#F98C33;color:black;border-top: 0px solid #FAFAF8;');
+        for (i = 0; i < listarTablaLeyendaReporteTriaje.getRowsNum(); i++) {
+            casa = listarTablaLeyendaReporteTriaje.cells(i, 2).getValue();
+            if (casa == '1')
+                listarTablaLeyendaReporteTriaje.setRowTextStyle(listarTablaLeyendaReporteTriaje.getRowId(i), 'background-color:#69C22C;color:black;border-top: 0px solid #FAFAF8;');
+            else if (casa == '2')
+                listarTablaLeyendaReporteTriaje.setRowTextStyle(listarTablaLeyendaReporteTriaje.getRowId(i), 'background-color:#F98C33;color:black;border-top: 0px solid #FAFAF8;');
         }
-    }); 
+    });
 }
 
-function generarComboHasta(iHasta,iNumeroReporte,vReporte){
+function generarComboHasta(iHasta, iNumeroReporte, vReporte) {
     var iDesde = $('cbxDesde').value;
     var patronModulo = 'generarComboHastaMenorseis';
     var parametros = '';
@@ -12563,7 +12567,7 @@ function generarComboHasta(iHasta,iNumeroReporte,vReporte){
         method: 'get',
         parameters: parametros,
         onLoading: cargadorpeche(1, idCargador),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             cargadorpeche(0, idCargador);
             var respuesta = transport.responseText;
             $('contenedorComboHasta').update(respuesta);
@@ -12572,8 +12576,8 @@ function generarComboHasta(iHasta,iNumeroReporte,vReporte){
 }
 
 
-function generarComboHasta2(iHasta,iNumeroReporte,vReporte){
-    var iDesde =  document.getElementById('cbxDesde').options[document.getElementById('cbxDesde').selectedIndex].text;
+function generarComboHasta2(iHasta, iNumeroReporte, vReporte) {
+    var iDesde = document.getElementById('cbxDesde').options[document.getElementById('cbxDesde').selectedIndex].text;
     var patronModulo = 'generarComboHastaMayoresseis';
     var parametros = '';
     parametros += 'p1=' + patronModulo;
@@ -12587,7 +12591,7 @@ function generarComboHasta2(iHasta,iNumeroReporte,vReporte){
         method: 'get',
         parameters: parametros,
         onLoading: cargadorpeche(1, idCargador),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             cargadorpeche(0, idCargador);
             var respuesta = transport.responseText;
             $('contenedorComboHasta').update(respuesta);
@@ -12596,61 +12600,57 @@ function generarComboHasta2(iHasta,iNumeroReporte,vReporte){
 }
 
 
-function insertaActualizaSintomatico(){
+function insertaActualizaSintomatico() {
     var numeroksekedo;
-    var  splitiando;
+    var splitiando;
     var angelsayes
-    if($('cbxSintomatico').value==0){
+    if ($('cbxSintomatico').value == 0) {
         $('div_nroDiasSintomatico').hide();
         $('div_btnGenerarOrdenDK').hide();
-        try
-        {
-            if ($('txtNumeroBK').value!=''){
-                numeroksekedo=$('txtNumeroBK').value; 
+        try {
+            if ($('txtNumeroBK').value != '') {
+                numeroksekedo = $('txtNumeroBK').value;
                 splitiando = numeroksekedo.split("|");
-                for(angelsayes=0;angelsayes<=splitiando.length-2;angelsayes++){
-                    eliminarPracticaMedicaHC('Div_PracticaMedica'+splitiando[angelsayes],'XXXX200301',splitiando[angelsayes]);
+                for (angelsayes = 0; angelsayes <= splitiando.length - 2; angelsayes++) {
+                    eliminarPracticaMedicaHC('Div_PracticaMedica' + splitiando[angelsayes], 'XXXX200301', splitiando[angelsayes]);
                     $('div_btnGenerarOrdenDK').removeClassName('btnReportes1');
-                    if (angelsayes==0){
+                    if (angelsayes == 0) {
                         $('div_btnGenerarOrdenDK').update('Generar 1 Orden BK');
-                    }else{
+                    } else {
                         $('div_btnGenerarOrdenDK').update('Generar 2 Ordenes BK');
                     }
-                    
-                }              
+
+                }
             }
         }
-        catch(err)
-        {
-            $('txtNumeroBK').value='';
-            $('contadorBK').value='';
+        catch (err) {
+            $('txtNumeroBK').value = '';
+            $('contadorBK').value = '';
         }
-        $('txtNumeroDiasSintomatico').value=0
-    }else{
-        try
-        {
-            if ($('txtNumeroBK').value!=''){
-                numeroksekedo=$('txtNumeroBK').value; 
+        $('txtNumeroDiasSintomatico').value = 0
+    } else {
+        try {
+            if ($('txtNumeroBK').value != '') {
+                numeroksekedo = $('txtNumeroBK').value;
                 splitiando = numeroksekedo.split("|");
-                for(angelsayes=0;angelsayes<=splitiando.length-2;angelsayes++){
-                    eliminarPracticaMedicaHC('Div_PracticaMedica'+splitiando[angelsayes],'XXXX200301',splitiando[angelsayes]);
+                for (angelsayes = 0; angelsayes <= splitiando.length - 2; angelsayes++) {
+                    eliminarPracticaMedicaHC('Div_PracticaMedica' + splitiando[angelsayes], 'XXXX200301', splitiando[angelsayes]);
                     $('div_btnGenerarOrdenDK').removeClassName('btnReportes1');
-                    if (angelsayes==0){
+                    if (angelsayes == 0) {
                         $('div_btnGenerarOrdenDK').update('Generar 1 Orden BK');
-                    }else{
+                    } else {
                         $('div_btnGenerarOrdenDK').update('Generar 2 Ordenes BK');
                     }
-                }              
+                }
             }
         }
-        catch(err)
-        {
-            $('txtNumeroBK').value='';
-            $('contadorBK').value='';
+        catch (err) {
+            $('txtNumeroBK').value = '';
+            $('contadorBK').value = '';
         }
         $('div_nroDiasSintomatico').show();
         $('div_btnGenerarOrdenDK').hide();
-        $('txtNumeroDiasSintomatico').value=0
+        $('txtNumeroDiasSintomatico').value = 0
     }
     var patronModulo = 'insertaActualizaSintomatico';
     var parametros = '';
@@ -12664,7 +12664,7 @@ function insertaActualizaSintomatico(){
         method: 'get',
         parameters: parametros,
         onLoading: cargadorpeche(1, idCargador),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             cargadorpeche(0, idCargador);
             var respuesta = transport.responseText;
             $('contenedorComboHasta').update(respuesta);
@@ -12672,66 +12672,62 @@ function insertaActualizaSintomatico(){
     })
 }
 
-function validarNumeroDias(){
+function validarNumeroDias() {
     var numeroksekedo;
-    var  splitiando;
+    var splitiando;
     var angelsayes
-    if(isNaN($('txtNumeroDiasSintomatico').value)!=false){
-        try
-        {
-            if ($('txtNumeroBK').value!=''){
-                numeroksekedo=$('txtNumeroBK').value; 
+    if (isNaN($('txtNumeroDiasSintomatico').value) != false) {
+        try {
+            if ($('txtNumeroBK').value != '') {
+                numeroksekedo = $('txtNumeroBK').value;
                 splitiando = numeroksekedo.split("|");
-                for(angelsayes=0;angelsayes<=splitiando.length-2;angelsayes++){
-                    eliminarPracticaMedicaHC('Div_PracticaMedica'+splitiando[angelsayes],'XXXX200301',splitiando[angelsayes]);
+                for (angelsayes = 0; angelsayes <= splitiando.length - 2; angelsayes++) {
+                    eliminarPracticaMedicaHC('Div_PracticaMedica' + splitiando[angelsayes], 'XXXX200301', splitiando[angelsayes]);
                     $('div_btnGenerarOrdenDK').removeClassName('btnReportes1');
-                    if (angelsayes==0){
+                    if (angelsayes == 0) {
                         $('div_btnGenerarOrdenDK').update('Generar 1 Orden BK');
-                    }else{
+                    } else {
                         $('div_btnGenerarOrdenDK').update('Generar 2 Ordenes BK');
                     }
-                }  
-            }
-        }
-        catch(err)
-        {
-            $('txtNumeroBK').value='';
-            $('contadorBK').value='';
-        }
-        
-        $('txtNumeroDiasSintomatico').value=0;
-    }
-    else{
-        if($('txtNumeroDiasSintomatico').value>=15){
-            $('div_btnGenerarOrdenDK').show();
-        }else{
-            $('div_btnGenerarOrdenDK').hide();
-            try
-            {
-                if ($('txtNumeroBK').value!=''){
-                    numeroksekedo=$('txtNumeroBK').value; 
-                    splitiando = numeroksekedo.split("|");
-                    for(angelsayes=0;angelsayes<=splitiando.length-2;angelsayes++){
-                        eliminarPracticaMedicaHC('Div_PracticaMedica'+splitiando[angelsayes],'XXXX200301',splitiando[angelsayes]);
-                        $('div_btnGenerarOrdenDK').removeClassName('btnReportes1');
-                        if (angelsayes==0){
-                            $('div_btnGenerarOrdenDK').update('Generar 1 Orden BK');
-                        }else{
-                            $('div_btnGenerarOrdenDK').update('Generar 2 Ordenes BK');
-                        }
-                    }  
                 }
             }
-            catch(err)
-            {
-                $('txtNumeroBK').value='';
-                $('contadorBK').value='';
+        }
+        catch (err) {
+            $('txtNumeroBK').value = '';
+            $('contadorBK').value = '';
+        }
+
+        $('txtNumeroDiasSintomatico').value = 0;
+    }
+    else {
+        if ($('txtNumeroDiasSintomatico').value >= 15) {
+            $('div_btnGenerarOrdenDK').show();
+        } else {
+            $('div_btnGenerarOrdenDK').hide();
+            try {
+                if ($('txtNumeroBK').value != '') {
+                    numeroksekedo = $('txtNumeroBK').value;
+                    splitiando = numeroksekedo.split("|");
+                    for (angelsayes = 0; angelsayes <= splitiando.length - 2; angelsayes++) {
+                        eliminarPracticaMedicaHC('Div_PracticaMedica' + splitiando[angelsayes], 'XXXX200301', splitiando[angelsayes]);
+                        $('div_btnGenerarOrdenDK').removeClassName('btnReportes1');
+                        if (angelsayes == 0) {
+                            $('div_btnGenerarOrdenDK').update('Generar 1 Orden BK');
+                        } else {
+                            $('div_btnGenerarOrdenDK').update('Generar 2 Ordenes BK');
+                        }
+                    }
+                }
+            }
+            catch (err) {
+                $('txtNumeroBK').value = '';
+                $('contadorBK').value = '';
             }
         }
     }
 }
 
-function actualizarNumeroDiasSintomatico(){
+function actualizarNumeroDiasSintomatico() {
     var patronModulo = 'actualizarNumeroDiasSintomatico';
     var parametros = '';
     parametros += 'p1=' + patronModulo;
@@ -12744,7 +12740,7 @@ function actualizarNumeroDiasSintomatico(){
         method: 'get',
         parameters: parametros,
         onLoading: cargadorpeche(1, idCargador),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             cargadorpeche(0, idCargador);
             var respuesta = transport.responseText;
             $('contenedorComboHasta').update(respuesta);
@@ -12753,7 +12749,7 @@ function actualizarNumeroDiasSintomatico(){
 }
 
 
-function generarSintomaticoRespiratorio(){
+function generarSintomaticoRespiratorio() {
     var patronModulo1 = 'generarSintomaticoRespiratorio';
     var parametros1 = '';
     parametros1 += 'p1=' + patronModulo1;
@@ -12767,12 +12763,12 @@ function generarSintomaticoRespiratorio(){
         asynchronous: true,
         parameters: parametros1,
         onLoading: cargadorpeche(1, idCargador1),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             cargadorpeche(0, idCargador1);
             var respuesta1 = transport.responseText;
-            var codificar=Base64.encode(respuesta1);
+            var codificar = Base64.encode(respuesta1);
             var angel;
-            for(angel=0;angel<=1;angel++){
+            for (angel = 0; angel <= 1; angel++) {
                 numerodivpracticamedica = contadorDivsPracticaMedica;
                 codigopracticamedica = 'XXXX200301';
                 nombre = 'KE1JQ1JPQklPTE9HSUEpQksgRElSRUNUTyAoMyBNVUVTVFJBUyk=';
@@ -12786,13 +12782,13 @@ function generarSintomaticoRespiratorio(){
             $('div_btnGenerarOrdenDK').update("2 Ordenes Generadas");
         }
     })
-    
-    
+
+
 }
 
-function agregarBK(){
-    if ($('contadorBK').value<2){
-        var patronModulo; 
+function agregarBK() {
+    if ($('contadorBK').value < 2) {
+        var patronModulo;
         var parametros;
         var idCargador;
 
@@ -12817,7 +12813,7 @@ function agregarBK(){
         parametros += '&p7=' + estadoregistro;
         parametros += '&p8=' + codigosegus;
         parametros += '&p9=' + estado1;
- 
+
         contadorCargador++;
         var idCargador = contadorCargador;
         new Ajax.Request(pathRequestControl, {
@@ -12825,7 +12821,7 @@ function agregarBK(){
             asynchronous: false,
             parameters: parametros,
             onLoading: cargadorpeche(1, idCargador),
-            onComplete: function(transport) {
+            onComplete: function (transport) {
                 cargadorpeche(0, idCargador);
                 respuesta = transport.responseText;
                 nombrediv = "Div_PracticaMedica" + numerodivpracticamedica;
@@ -12834,7 +12830,7 @@ function agregarBK(){
                 contadorDivsPracticaMedica++;
                 $('hNumeroTratamientoPracticasMedicas').value = parseInt($('hNumeroTratamientoPracticasMedicas').value) + 1;
                 $('contadorBK').value++;
-                $('txtNumeroBK').value=$('txtNumeroBK').value+numerodivpracticamedica+'|';
+                $('txtNumeroBK').value = $('txtNumeroBK').value + numerodivpracticamedica + '|';
                 preguardarTratatamientoPracticasMedicas();
             }
         })
@@ -12843,7 +12839,7 @@ function agregarBK(){
 
 
 
-function actualizarTriajeActoMedico(){
+function actualizarTriajeActoMedico() {
     var codigoProgramacion = trimJunny($('hcodigoProgramacion').value);
     var datos = 'angelaugusto' + '|' + 'sayesmalpartida' + '|' + codigoProgramacion;
 
@@ -12879,28 +12875,28 @@ function manteTriajeActoMedico(accion, horaProgramacion, codCronograma) {
 
         var data = 'p1=manteTriaje&datos=' + datos + '&accion=' + accion;
         new Ajax.Request(pathRequestControl,
-        {
-            method: 'post',
-            parameters: data,
-            onLoading: function(transport) {
-                micargador(1);
-            },
-            onComplete: function(transport) {
-                micargador(0);
-                alert(transport.responseText);
-                Windows.close("Div_popupRegistroTriaje");
-                $('txttemperatura').value=$('txtTemp').value;
-                $('txtfrecuenciacardiaca').value=$('txtFrecCardiaca').value;
-                $('txtfrecuenciarespiratoria').value=$('txtFrecRespiratoria').value;
-                $('txtpresionaarterial').value=$('txtPresArterial').value;
-                $('txtsaturacionoxigeno').value=$('txtSatOxigeno').value;
-                $('txtpeso').value= $('txtPeso').value;
-                $('txttalla').value=$('txtTalla').value;       
-                $('txtimc').value= precise_round(parseFloat(($('txtPeso').value/ Math.pow($('txtTalla').value,2))),2);
-                
-                
+            {
+                method: 'post',
+                parameters: data,
+                onLoading: function (transport) {
+                    micargador(1);
+                },
+                onComplete: function (transport) {
+                    micargador(0);
+                    alert(transport.responseText);
+                    Windows.close("Div_popupRegistroTriaje");
+                    $('txttemperatura').value = $('txtTemp').value;
+                    $('txtfrecuenciacardiaca').value = $('txtFrecCardiaca').value;
+                    $('txtfrecuenciarespiratoria').value = $('txtFrecRespiratoria').value;
+                    $('txtpresionaarterial').value = $('txtPresArterial').value;
+                    $('txtsaturacionoxigeno').value = $('txtSatOxigeno').value;
+                    $('txtpeso').value = $('txtPeso').value;
+                    $('txttalla').value = $('txtTalla').value;
+                    $('txtimc').value = precise_round(parseFloat(($('txtPeso').value / Math.pow($('txtTalla').value, 2))), 2);
+
+
+                }
             }
-        }
         )
     }
 }
