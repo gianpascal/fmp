@@ -1,26 +1,3 @@
-<style type="text/css">
-    <!--
-    .filalabel{font-size: 13px; font-weight: bold;font-family: Arial;}
-    /*  .accordion_cabecera{
-          background-color: yellow;
-          width:100%;
-          height: auto;
-          display:block;
-          border-style: solid;
-          border-width: 1px;
-          cursor: pointer;
-          margin-top: 5px
-
-      }*/
-    .accordion_title{
-        width:97%;
-        font-family: Verdana;
-        font-size: 11px;
-        margin-top: 0.25%
-    }
-    -->
-</style>
-
 <div id="Div_filiacionHC" align ="center" style="width:100%;border-style: solid;border-width: 1px">
     <?php
     $datosPersona = $this->obtenerDatosFiliacionActoMedico($datos);

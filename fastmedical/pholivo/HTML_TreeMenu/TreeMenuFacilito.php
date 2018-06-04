@@ -1,6 +1,7 @@
 <?php
-    require_once('../../../pholivo/HTML_TreeMenu/TreeMenu.php');;
-
+	echo "<br>Tree Menu Facilito: 1";
+    require_once('../../../pholivo/HTML_TreeMenu/TreeMenu.php');
+	echo "<br>Tree Menu Facilito: 2";
     class HTML_TreeMenuFacilito{
      	private $menu;
      	private $nodos;
@@ -39,7 +40,7 @@
      		$this->menu = new HTML_TreeMenu();
      		//$nodoPrincipal = new HTML_TreeNode(array('text' => "First level", 'link' => "#", 'icon' => $icon, 'expandedIcon' => $expandedIcon, 'expanded' => true), array('onclick' => "alert('foo'); return false"));
      	}
-
+		 
      	public function setParametros($_iconos='',$_iconosExpandidos='',$estilo=''){
      		return;
      	}
@@ -75,20 +76,24 @@
      			}
      		}
      		return $nodo;
-     	}
+		 }
+		 
      	private  function getNodos($arrayArbol=array()){
      		$arrayArbol = is_array($arrayArbol)?array():$arrayArbol;
      		$arrayArbol = empty($arrayArbol)?$this->arrayRecursivo:$arrayArbol;
      		$this->nodos = $this->crearNodos($arrayArbol);
      		return $this->nodos;
-     	}
+		 }
+		/* 
      	public function getTreeMenuJS(){
      		//../../../imagen/imagenTreeMenu
      		$pathImagen = $this->pathImagen;
      		$this->menu->addItem($this->getNodos());
-     		$treeMenu = &new HTML_TreeMenu_DHTML($this->menu,$this->divContenedorArbol,array('images' => $pathImagen, 'defaultClass' => $this->estiloItem));//3er parametro displayar o no: true;
+			 $treeMenu = new HTML_TreeMenu_DHTML($this->menu,$this->divContenedorArbol,array('images' => $pathImagen, 'defaultClass' => $this->estiloItem));//3er parametro displayar o no: true;
+			 //$treeMenu = &new HTML_TreeMenu_DHTML($this->menu,$this->divContenedorArbol,array('images' => $pathImagen, 'defaultClass' => $this->estiloItem));//3er parametro displayar o no: true;
      		return $treeMenu->printMenu();
-     	}
+		 }
+		 */
      	public function getTreeMenuJSAjax(){
      		$scriptJSArbolDeMierda= $this->getTreeMenuJS();
 
@@ -165,6 +170,7 @@
                         }
                 }
                 return $itemPadreN;
-        }
+		}
+		
      }
  ?>

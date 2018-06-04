@@ -11,11 +11,11 @@ class LLogin{
 	}
 
         public function getArrayUsuarioBD($parametros){
-		$this->dLogin->getArrayUsuarioBD($parametros['p4'],$parametros['p2'],$parametros['p3']);
+		$array=$this->dLogin->getArrayUsuarioBD($parametros['p4'],$parametros['p2'],$parametros['p3']);
                 //sistema,usuario,clave
-                if($this->dLogin->pTotRows>0)
+                if(count($array)>0)
 		{
-                    $array=$this->dLogin->GetRow();
+                    //$array=$this->dLogin->GetRow();
                     $_SESSION["vnom_usuariobd"] = $array['vnom_usuariobd'];
                     $_SESSION["vclave_usuariobd"] = $array['vclave_usuariobd'];
                     return 1;
@@ -27,25 +27,27 @@ class LLogin{
 	}
 
         public function getArrayUsuario($parametros){
-		$this->dLogin->getArrayUsuario($parametros['p4'],$parametros['p2'],$parametros['p3']);
+		$array=$this->dLogin->getArrayUsuario($parametros['p4'],$parametros['p2'],$parametros['p3']);
                 //sistema,usuario,clave
-                if($this->dLogin->pTotRows>0)
+		//if($this->dLogin->pTotRows>0)
+		if(count($array)>0)
 		{
-                        $array=$this->dLogin->GetRow();
+                        //$array=$this->dLogin->GetRow();
                         //session_start();
-                        //print_r($array);
-                        $_SESSION["iid_usuario"] = $array['iid_usuario'];
-                        $_SESSION["iid_sistema"] = $array['iid_sistema'];
-                        $_SESSION["iid_perfil"] = $array['iid_perfil'];
-                        $_SESSION["vlogin_usuario"] = $array['vlogin_usuario'];
-                        $_SESSION["c_cod_per"] = $array['c_cod_per'];
-                        $_SESSION["c_iddide"] = $array['c_iddide'];
-                        $_SESSION["c_ndide"] = $array['c_ndide'];
-                        $_SESSION["v_nomper"] = $array['v_nomper'];
-                        $_SESSION["v_apepat"] = $array['v_apepat'];
-                        $_SESSION["v_apemat"] = $array['v_apemat'];
+                        
+                        $_SESSION["iid_usuario"] = $array[0]['iid_usuario'];
+                        $_SESSION["iid_sistema"] = $array[0]['iid_sistema'];
+                        $_SESSION["iid_perfil"] = $array[0]['iid_perfil'];
+                        $_SESSION["vlogin_usuario"] = $array[0]['vlogin_usuario'];
+                        $_SESSION["c_cod_per"] = $array[0]['c_cod_per'];
+                        $_SESSION["c_iddide"] = $array[0]['c_iddide'];
+                        $_SESSION["c_ndide"] = $array[0]['c_ndide'];
+                        $_SESSION["v_nomper"] = $array[0]['v_nomper'];
+                        $_SESSION["v_apepat"] = $array[0]['v_apepat'];
+                        $_SESSION["v_apemat"] = $array[0]['v_apemat'];
                         //$_SESSION['ccosto'] = $array['v_desc_ccos'];
-                        $_SESSION["path_principal"] = '../../../';
+			$_SESSION["path_principal"] = '../../../';
+			//var_dump($_SESSION);
                         return 1;
 		}
 		else
@@ -55,14 +57,14 @@ class LLogin{
 	}
 	
 	public function getUsuarioOficina($idpersona,$idempresa){
-		$this->dLogin->getArrayUsuarioOficina($idpersona,$idempresa);
-		if($this->dLogin->pTotRows>0){
+		$array=$this->dLogin->getArrayUsuarioOficina($idpersona,$idempresa);
+		if(count($array)>0){
 			$array=$this->dLogin->GetRow();
 			//session_name("SIMEDH");
 			//session_start();
-                        $_SESSION["c_cod_ccos"] = $array['c_cod_ccos'];
-                        $_SESSION["c_cod_cargo"] = $array['c_cod_cargo'];
-			$_SESSION["v_desc_ccos"] = $array['v_desc_ccos'];
+                        $_SESSION["c_cod_ccos"] = $array[0]['c_cod_ccos'];
+                        $_SESSION["c_cod_cargo"] = $array[0]['c_cod_cargo'];
+			$_SESSION["v_desc_ccos"] = $array[0]['v_desc_ccos'];
 		}
 		return false;
 	}
@@ -72,9 +74,9 @@ class LLogin{
 		if(!empty($array)){
 			//session_name("SIMEDH");
 			//session_start();
-                        $_SESSION["v_noment"] = $array['v_noment'];
-			$_SESSION["c_nro_ruc"] = $array['c_nro_ruc'];
-			$_SESSION["c_dirleg"] = $array['c_dirleg'];
+                        $_SESSION["v_noment"] = $array[0]['v_noment'];
+			$_SESSION["c_nro_ruc"] = $array[0]['c_nro_ruc'];
+			$_SESSION["c_dirleg"] = $array[0]['c_dirleg'];
 		}
 		return false;
 	}

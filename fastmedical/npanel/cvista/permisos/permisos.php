@@ -7,7 +7,7 @@
     $idpersona=$_SESSION["c_cod_per"];
 
     $o_ActionFormulario = new ActionFormulario();
-    $htmlPermiso = $o_ActionFormulario->listaDetallePermiso($id_sistema,$idpersona);
+    $htmlPermiso = $o_ActionFormulario->listaDetallePermiso($id_sistema,$idpersona,'');
 ?>
 <form action="" id="form_detalle" name="form_detalle" method="get" onsubmit="return false">
     <div id="detalle">

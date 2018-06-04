@@ -4,14 +4,20 @@ if (!isset($_SESSION)) {
     session_start();
 }
 
+
 require_once("ActionLogin.php");
+
 //require_once("ActionCita.php");
 require_once("ActionFormulario.php");
+
 require_once("ActionPermisos.php");
 //include_once("../../../pholivo/Html.php");
 //include_once("../../../pholivo/Calendario.php");
+
 require_once("../../../pholivo/Html.php");
+
 require_once("../../../pholivo/Calendario.php");
+
 //require_once('../../ccontrol/control/loadsession.php');
 
 if ($_GET) {
@@ -27,11 +33,14 @@ $resultado = '';
 switch (trim($action)) {
 ///////////****LOGIN****////////////////		
     case 'valida_usuario': {
+        $_SESSION=null;
+        
             $oActionLogin = new ActionLogin();
             $oActionLogin->validaUsuario($parametros);
             break;
         }
     case 'permiso_usuario': {
+       
             $oActionLogin = new ActionLogin();
             $oActionLogin->getUsuarioOficina();
             $oActionLogin->getDatosInstitucion();
