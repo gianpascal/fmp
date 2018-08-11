@@ -28,10 +28,13 @@ function micargador(estado) {
     }
 }*/
 function cargadorpeche(estado, id) {
+    
     $('VentanaTransparente').setStyle({
         visibility: 'visible'
     });
+    
     if (estado == 1) {
+        //
         arrayEstadosCargador[id] = 1;
         var alto = document.body.scrollHeight;
         //alto=100;
@@ -39,9 +42,12 @@ function cargadorpeche(estado, id) {
         $('overlayPeche').setStyle({
             height: alto + 'px'
         });
+        console.log($('VentanaTransparente'));
         $('VentanaTransparente').setStyle({
             display: 'block'
         });
+        $('VentanaTransparente').show();
+        console.log('aaa');
        // $('VentanaTransparente').show();
         //alert('ventana trans');
 
@@ -60,7 +66,7 @@ function cargadorpeche(estado, id) {
         if (estadoGeneral == 0) {
             $('VentanaTransparente').hide();
         }
-
+        console.log("fin");
     }
 // alert('estado='+estado+'id='+id);
 }

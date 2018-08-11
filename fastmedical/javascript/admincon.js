@@ -209,6 +209,7 @@ function aprobar_registro(objeto)
 var cnt_mensaje=0;
 function parpadear_mensaje()
 {
+	debugger;
 	if(ObtenerValorObjeto("NombreFormulario")=="CuadroNecesidad" && ObtenerValorObjeto("actualizarcampos")=='1')
 	{
 	 ColocarValorObjeto("tip_actproy",ObtenerValorObjeto("tip_actproy2"));

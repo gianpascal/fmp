@@ -59,6 +59,19 @@ if (!isset($_SESSION)) {
                 float:right;
             }
         </style>
+        <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+        <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDR9uIGZ7dzeZOwUmhvSMIWMC2Nofr3RWs",
+            authDomain: "fastmedical-2197c.firebaseapp.com",
+            databaseURL: "https://fastmedical-2197c.firebaseio.com",
+            projectId: "fastmedical-2197c",
+            storageBucket: "fastmedical-2197c.appspot.com",
+            messagingSenderId: "1008905646985"
+        };
+        firebase.initializeApp(config);
+        </script>
         <!-- ================ DHTML MENU   ========================== -->
         <script type="text/javascript" src="../../../javascript/stmenu.js"></script>
         <!-- ================ DHTML CALENDAR   ========================== -->
@@ -144,11 +157,11 @@ if (!isset($_SESSION)) {
         <script type="text/javascript" src="../../../javascript/js_Simi.js"></script>
         <script type="text/javascript" src="../../../javascript/uploader.js"></script>
         <!-- ================ FUNCIONES - MODULOS ============= -->
-        <script type="text/javascript" src="../../../javascript/cronograma.js"></script>        
+        <script type="text/javascript" src="../../../javascript/cronograma.js"></script>
         <!--CRONOGRAMA-->
         <!--=============================CAJA===================================-->
         <script type="text/javascript" src="../../../javascript/caja/caja.js"></script>
-        <script src="../../../javascript/HTML_TreeMenu/TreeMenu.js" type="text/javascript"></script> 
+        <script src="../../../javascript/HTML_TreeMenu/TreeMenu.js" type="text/javascript"></script>
         <!--HTML_TreeMenu-->
         <!-- poo_pholivo-->
         <script type="text/javascript" src="../../../javascript/pholivo/poo_pholivo.js"></script>
@@ -243,11 +256,14 @@ if (!isset($_SESSION)) {
         <!-- ===================           fin           =================== -->
         <!-----------       CARGAR IMAGEN DE FONDO    --------- -->
         <script type="text/javascript" src="../../../javascript/inicio.js"></script>
-        
+
         <link rel="icon" type="image/png" href="../../../../fastmedical_front/fotos/icono.png" />
     </head>
-    <!-----------       VENTANA DE CARGA DE DATOS    --------- -->
-    <div id="VentanaTransparente">
+   
+   
+    <body onLoad="cargar_form();" onunload="actualiza_sesion()">
+     <!-----------       VENTANA DE CARGA DE DATOS    --------- -->
+     <div id="VentanaTransparente">
         <div id="overlayPeche" class="overlay_absolute"></div>
         <div id="cargador" style="z-index:2000">
             <table width="100%" height="100%" border="0">
@@ -277,7 +293,6 @@ if (!isset($_SESSION)) {
 
         </div>
     </div>
-    <body onLoad="myajax = new isiAJAX('Contenido', 'VentanaTransparente'); myajax2 = new isiAJAX('Contenido', 'VentanaTransparente'); myajax3 = new isiAJAX('Contenido', 'VentanaTransparente'); myajax4 = new isiAJAX('Contenido', 'VentanaTransparente');  cargar_form();  parpadear_mensaje();" onunload="actualiza_sesion()">
         <!-----------       CABECERA CON DATOS DEL USUARIO   ----------->
         <div id="Main">
             <div id="Fondo"></div>
@@ -301,7 +316,7 @@ if (!isset($_SESSION)) {
                 <div id="salir" style="cursor:pointer;"  onClick="cierra_sesionSimedh();"></div>
                 <div id="MainMenu">
                     <div id="Menu">
-                        <?php include '../menu/menu.php'; ?>
+                        <?php include '../menu/menu.php';?>
                     </div>
                 </div>
             </div>
@@ -313,7 +328,7 @@ if (!isset($_SESSION)) {
             </div>
             <div id="Footer">
                 <div id="textizq">Copyright &copy; Todos los Derechos Reservados - 2017</div>
-                <div id="textder"><?php echo "Ing. Giancarlo Arroyo - gianpascal@gmail.com"; //$_SESSION["nom_empresa"]                                                ?></div>
+                <div id="textder"><?php echo "Ing. Giancarlo Arroyo - gianpascal@gmail.com"; //$_SESSION["nom_empresa"]                                                 ?></div>
             </div>
         </div>
     </body>

@@ -7,6 +7,7 @@ var teclapresionada = window.Event ? true : false;
 
 function parpadear_mensaje()
 {
+	debugger;
 	if(ObtenerValorObjeto("sw_mensaje")==1)
 	{
 		if(ObtenerValorObjeto("mensaje","style.display")=="none")

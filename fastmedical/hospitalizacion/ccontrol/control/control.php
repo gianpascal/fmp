@@ -11,7 +11,7 @@ require_once ("ActionPersona.php");
 require_once("ActionAfiliaciones.php");
 require_once ("ActionLaboratorio.php");
 
-
+//sleep(3);
 
 
 if ($_GET) {

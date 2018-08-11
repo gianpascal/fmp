@@ -167,7 +167,7 @@ function getBuscarPersonasNombre(event,elemento,op){
         var idCargador=contadorCargador;
         new Ajax.Request( pathRequestControl,{
             method : 'get',
-            asynchronous:false,
+            asynchronous:true,
             parameters : parametros,
             onLoading : cargadorpeche(1,idCargador),
             onComplete : function(transport){

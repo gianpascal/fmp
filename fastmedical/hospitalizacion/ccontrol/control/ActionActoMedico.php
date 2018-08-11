@@ -166,7 +166,7 @@ class ActionActoMedico {
         $tabla = new TablaAngelSayes();
         $oLActoMedico = new LActoMedico();
         $array = $oLActoMedico->cargarTablaServicios($datos);
-        $count = count($resultado);
+        //$count = count($resultado);
         $arrayWidth = array(0 => "120", 1 => "372");
         $arrayTitulos = array(0 => "Id", 1 => "Servicio");
         $arrayAlign = array(0 => "center", 1 => "left");

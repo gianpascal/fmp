@@ -522,6 +522,9 @@ function atenderPacienteActoMedico(parametro) {
         var mensajeAfiliacion = afiliacionCorrecta(codigoProgramacion);
         if (mensajeAfiliacion == 'ok') {
             cargarCuerpoHC(codigoservicio, codigoProgramacion);
+
+            loguerfirebase();
+
             if (estadoatencion == '0004') {
                 $("hNumeroDiagnostico").value = '0';
                 contadorDivsDiagnosticos = 0;
@@ -580,6 +583,97 @@ function atenderPacienteActoMedico(parametro) {
 
 
 }
+
+function loguerfirebase() {
+    authService = firebase.auth();
+    storageService = firebase.storage();
+    authService.signInAnonymously()
+        .catch(function (error) {
+            console.error('Detectado error de autenticación', error);
+        });
+
+    //manejador de evento para el input file
+    document.getElementById('campoarchivo').addEventListener('change', function (evento) {
+        evento.preventDefault();
+        var archivo = evento.target.files[0];
+        subirArchivo(archivo);
+    });
+
+    //manejadores de eventos para los botones de control de la subida
+    document.getElementById('pausar').addEventListener('click', function () {
+        if (uploadTask && uploadTask.snapshot.state == 'running') {
+            uploadTask.pause();
+            console.log('pausada');
+        }
+    });
+    document.getElementById('reanudar').addEventListener('click', function () {
+        if (uploadTask && uploadTask.snapshot.state == 'paused') {
+            uploadTask.resume();
+            console.log('reanudada');
+        }
+    });
+    document.getElementById('cancelar').addEventListener('click', function () {
+        if (uploadTask && (uploadTask.snapshot.state == 'paused' || uploadTask.snapshot.state == 'running')) {
+            if (uploadTask.snapshot.state == 'paused') {
+                uploadTask.resume();
+            }
+            uploadTask.cancel();
+            console.log('cancelada');
+        };
+    });
+}
+var uploadTask;
+function subirArchivo(archivo) {
+
+    var refStorage = storageService.ref('ruta/de/la/subida').child(archivo.name);
+    uploadTask = refStorage.put(archivo);
+
+    // El evento donde comienza el control del estado de la subida
+    uploadTask.on('state_changed', registrandoEstadoSubida, errorSubida, finSubida);
+
+    //Callbacks para controlar los distintos instantes de la subida
+    function registrandoEstadoSubida(uploadSnapshot) {
+        var calculoPorcentaje = (uploadSnapshot.bytesTransferred / uploadSnapshot.totalBytes) * 100;
+        calculoPorcentaje = Math.round(calculoPorcentaje);
+        registrarPorcentaje(calculoPorcentaje);
+    }
+    function errorSubida(err) {
+        console.log('Error al subir el archivo', err);
+    }
+    function finSubida() {
+        console.log('Subida completada');
+        refStorage.getDownloadURL().then(function (url) {
+            document.getElementById('enlace').href = url;
+            document.getElementById('archivo').style.display = 'block';
+        })
+      
+      
+    
+    }
+
+}
+
+
+
+// mostramos el porcentaje en cada instante de la subida
+function registrarPorcentaje(porcentaje) {
+    var elMensaje = document.getElementById('mensaje');
+    var textoMensaje = '<p>Porcentaje de subida: ' + porcentaje + '%</p>';
+    elMensaje.innerHTML = textoMensaje;
+}
+
+
+
+// a esta función la invocamos para mostrar el mensaje final después del upload
+function mensajeFinalizado(url, bytes) {
+    var elMensaje = document.getElementById('mensaje');
+    var textoMensaje = '<p>Subido el archivo!';
+    textoMensaje += '<br>Bytes subidos: ' + bytes;
+    textoMensaje += '<br><a href="' + url + '">Ver el fichero</a></p>';
+    elMensaje.innerHTML = textoMensaje;
+}
+
+
 function cargarTablaPAquete2(codigopaciente, key, iIdGrupoEtarioPersonas, iIdGrupoEtareo) {
     // Lobo
     //    alert(iIdGrupoEtarioPersonas)
@@ -2722,7 +2816,7 @@ function tablaPracticasMedicasTratamientosHC() {
 }
 
 function agregarPracticaMedicaHC(rowId, cellInd, data) {
-    
+
     //$('imgPreguardarTratatamientoPracticasMedicas').src='../../../../fastmedical_front/imagen/btn/btn_preguardar.gif';
     if (data == undefined) {
         codigopracticamedica = tablaPracticasMedicasTratamientos.cells(rowId, 0).getValue();
@@ -8487,12 +8581,14 @@ function guardarModulosPorArea() {
         var parametros = '';
         parametros += 'p1=' + patronModulo;
         parametros += '&p2=' + IdSer;
+        contadorCargador++;
+        var idCargador = contadorCargador;
         new Ajax.Request(pathRequestControl, {
             method: 'get',
             parameters: parametros,
-            onLoading: micargador(1),
+            onLoading: cargadorpeche(1, idCargador),
             onComplete: function (transport) {
-                micargador(0);
+                cargadorpeche(0, idCargador);
                 var respuesta = transport.responseText;
                 alert("Se guardo exitosamente...");
             }
@@ -8504,12 +8600,14 @@ function guardarModulosPorArea() {
         var parametros = '';
         parametros += 'p1=' + patronModulo;
         parametros += '&p2=' + IdSer;
+        contadorCargador++;
+        var idCargador = contadorCargador;
         new Ajax.Request(pathRequestControl, {
             method: 'get',
             parameters: parametros,
-            onLoading: micargador(1),
+            onLoading: cargadorpeche(1, idCargador),
             onComplete: function (transport) {
-                micargador(0);
+                cargadorpeche(0, idCargador);
                 var respuesta = transport.responseText;
                 guardarNuevaSeleccion(arrayCombo2, arrayNum2);
             }
@@ -8526,12 +8624,14 @@ function guardarNuevaSeleccion(arrayCombo2, arrayNum2) {
     parametros += '&p2=' + arrayCombo2;
     parametros += '&p3=' + IdSer;
     parametros += '&p4=' + arrayNum2;
+    contadorCargador++;
+    var idCargador = contadorCargador;
     new Ajax.Request(pathRequestControl, {
         method: 'get',
         parameters: parametros,
-        onLoading: micargador(1),
+        onLoading: cargadorpeche(1, idCargador),
         onComplete: function (transport) {
-            micargador(0);
+            cargadorpeche(0, idCargador);
             var respuesta = transport.responseText;
             alert("Se guardo exitosamente...");
             //cargarMantenimientoServicios();
@@ -12267,12 +12367,14 @@ function guardarModulosAfiliacion() {
         var parametros = '';
         parametros += 'p1=' + patronModulo;
         parametros += '&p2=' + IdSer;
+        contadorCargador++;
+        var idCargador = contadorCargador;
         new Ajax.Request(pathRequestControl, {
             method: 'get',
             parameters: parametros,
-            onLoading: micargador(1),
+            onLoading: cargadorpeche(1, idCargador),
             onComplete: function (transport) {
-                micargador(0);
+                cargadorpeche(0, idCargador);
                 var respuesta = transport.responseText;
                 guardarNuevaSeleccionAfiliaciones(arrayCombo2, arrayNum2);
             }
@@ -12289,12 +12391,14 @@ function guardarNuevaSeleccionAfiliaciones(arrayCombo2, arrayNum2) {
     parametros += '&p2=' + arrayCombo2;
     parametros += '&p3=' + IdSer;
     parametros += '&p4=' + arrayNum2;
+    contadorCargador++;
+    var idCargador = contadorCargador;
     new Ajax.Request(pathRequestControl, {
         method: 'get',
         parameters: parametros,
-        onLoading: micargador(1),
+        onLoading: cargadorpeche(1, idCargador),
         onComplete: function (transport) {
-            micargador(0);
+            cargadorpeche(0, idCargador);
             var respuesta = transport.responseText;
             alert("Se guardo exitosamente...");
             //cargarMantenimientoServicios();

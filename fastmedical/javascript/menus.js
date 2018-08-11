@@ -162,13 +162,14 @@ function registroDatosPacientes() {
     patronModulo = 'registroDatosPacientes';
     parametros = '';
     parametros += 'p1=' + patronModulo;
-
+    contadorCargador++;
+    var idCargador=contadorCargador;
     new Ajax.Request(pathRequestControl, {
         method: 'get',
         parameters: parametros,
-        onLoading: micargador(1),
-        onComplete: function (transport) {
-            micargador(0);
+        onLoading : cargadorpeche(1,idCargador),
+        onComplete : function(transport){    
+            cargadorpeche(0,idCargador);
             respuesta = transport.responseText;
             $('Contenido').update(respuesta);
             //            recargarArbolAyuda();
