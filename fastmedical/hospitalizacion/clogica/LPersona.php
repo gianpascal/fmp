@@ -351,7 +351,7 @@ class LPersona {
     }
 public function formatoEdadCitas($fecha_de_nacimiento = "") {
         $fecha_actual = date("Y-m-d");
-// print_r($fecha_de_nacimiento);
+ //print_r($fecha_de_nacimiento);
 
         $fecha_de_nacimiento = empty($fecha_de_nacimiento) ? $fecha_actual : $fecha_de_nacimiento;
         $fx = strtotime($fecha_de_nacimiento);
@@ -407,6 +407,7 @@ public function formatoEdadCitas($fecha_de_nacimiento = "") {
             $meses = $meses + 12;
         }
         $rpta = $anos . " años, " . $meses . " meses, " . $dias . " días ";
+        //echo $rpta;
         return $rpta;
     }
 

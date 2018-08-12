@@ -42,12 +42,12 @@ function cargadorpeche(estado, id) {
         $('overlayPeche').setStyle({
             height: alto + 'px'
         });
-        console.log($('VentanaTransparente'));
+       
         $('VentanaTransparente').setStyle({
             display: 'block'
         });
         $('VentanaTransparente').show();
-        console.log('aaa');
+        
        // $('VentanaTransparente').show();
         //alert('ventana trans');
 
@@ -66,7 +66,7 @@ function cargadorpeche(estado, id) {
         if (estadoGeneral == 0) {
             $('VentanaTransparente').hide();
         }
-        console.log("fin");
+        
     }
 // alert('estado='+estado+'id='+id);
 }

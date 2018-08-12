@@ -383,10 +383,13 @@ class LCita {
         if ($resultadoArray[0]['dFechaNacimiento'] == 'sindata') {
             $edadvista = "-";
         } else {
-            $datetime = date_create($resultadoArray[0]['dFechaNacimiento']);
-            $fechaNacimiento = date_format($datetime, 'd/m/y'); //agregado
-            $fch = date_format($datetime, 'm/d/Y');
+           
+            //$datetime = date_create($resultadoArray[0]['dFechaNacimiento']);
+           
+            $fechaNacimiento = $resultadoArray[0]['dFechaNacimiento'];
+            $fch =  str_replace('/','-',$resultadoArray[0]['dFechaNacimiento']);
             $edadvista = $o_Persona->formatoEdadCitas($fch);
+            
         }
         $fechaNacimiento = strtotime($resultadoArray[0]['dFechaNacimiento']);
         $nombreCompleto = utf8_encode($resultadoArray[0]['vApellidoPaterno'] . " " . $resultadoArray[0]['vApellidoMaterno'] . ', ' . $resultadoArray[0]['vNombre']);
@@ -412,7 +415,7 @@ class LCita {
             $cadena .= "</tr>";
         $cadena .= "<tr><td class=\"Estilo6_ReservaCita\">Nombres:</td><td class=\"Estilo7_ReservaCita\">" . $nombreCompleto . "</td></tr>"
                 . "<tr><td class=\"Estilo6_ReservaCita\">N. Documento</td><td class=\"Estilo7_ReservaCita\">" . ($resultadoArray[0]['DocumentoIdentificacion']) . "</td></tr>"
-                . "<tr><td class=\"Estilo6_ReservaCita\">Edad</td><td class=\"Estilo7_ReservaCita\">" . htmlentities(utf8_decode(trim($edadvista))) . "</td></tr>"
+                . "<tr><td class=\"Estilo6_ReservaCita\">Edad </td><td class=\"Estilo7_ReservaCita\">" . ($edadvista) . "</td></tr>"
                 . "</table>"
                 . "</fieldset>"
                 . "";

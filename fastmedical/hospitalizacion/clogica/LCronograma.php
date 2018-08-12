@@ -675,6 +675,7 @@ class LCronograma
             while ($i <= $resultado[$indice]['iContador']) {
                 if ($i == 0 || $i == 1) {
                     if ($bandera == 1) {
+
                         $cadena = $cadena . $coma . $dias[date('w', strtotime($resultado[$indice]['dFechaServicio']))] . " " . date('d', strtotime($resultado[$indice]['dFechaServicio'])) . " " . $meses[date('n', strtotime($resultado[$indice]['dFechaServicio'])) - 1] . " " . date('Y', strtotime($resultado[$indice]['dFechaServicio']));
                     }
                     $bandera = 0;
@@ -685,7 +686,8 @@ class LCronograma
                 $i = $i + 1;
             }
         }
-//echo $cadena;
+
+
         return "\"" . $cadena . "\"";
     }
 

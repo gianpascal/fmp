@@ -1017,13 +1017,48 @@ function nuevaCita(codigoHora, codigoCronograma, tipocitaprogramada) {
 
 
 
-    pathLink = pathRequestControl + "?p1=reservarCitaInformesCronograma&p2=" + codigoCronograma;//muestra los datos del cronograma en la capa divCronogramaCitasInformes de citas.php
+    //pathLink = pathRequestControl + "?p1=reservarCitaInformesCronograma&p2=" + codigoCronograma;//muestra los datos del cronograma en la capa divCronogramaCitasInformes de citas.php
+    //myajax.Link(pathLink, "divCronogramaCitasInformes");
+    var parametros = "p1=reservarCitaInformesCronograma&p2=" + codigoCronograma;//muestra los datos del cronograma en la capa divCronogramaCitasInformes de citas.php
+    contadorCargador++;
+        var idCargador=contadorCargador;
+        new Ajax.Request( pathRequestControl,{
+            method : 'get',
+            asynchronous:true,
+            parameters : parametros,
+            onLoading : cargadorpeche(1,idCargador),
+            onComplete : function(transport){
+                cargadorpeche(0,idCargador);
+                var respuesta = transport.responseText;
+                $('divCronogramaCitasInformes').update(respuesta);
+            }
+        } );
+    
 
+    
 
-    pathLink2 = pathRequestControl + "?p1=reservarCitaInformesServicio&p2=" + codigoHora + "&p3=" + codigoCronograma + "&p4=" + tipocitaprogramada;//muestras los datos de la cita en la capa divProgramacionCitasInformes en citas.php
+    //pathLink2 = pathRequestControl + "?p1=reservarCitaInformesServicio&p2=" + codigoHora + "&p3=" + codigoCronograma + "&p4=" + tipocitaprogramada;//muestras los datos de la cita en la capa divProgramacionCitasInformes en citas.php
+   // myajax2.Link(pathLink2, "divProgramacionCitasInformes");
+   var parametros1="p1=reservarCitaInformesServicio&p2=" + codigoHora + "&p3=" + codigoCronograma + "&p4=" + tipocitaprogramada;//muestras los datos de la cita en la capa divProgramacionCitasInformes en citas.php
+   contadorCargador++;
+        var idCargador1=contadorCargador;
+        new Ajax.Request( pathRequestControl,{
+            method : 'get',
+            asynchronous:true,
+            parameters : parametros1,
+            onLoading : cargadorpeche(1,idCargador1),
+            onComplete : function(transport){
+                cargadorpeche(0,idCargador1);
+                var respuesta = transport.responseText;
+                $('divProgramacionCitasInformes').update(respuesta);
+            }
+        } )
+    
 
-    myajax.Link(pathLink, "divCronogramaCitasInformes");
-    myajax2.Link(pathLink2, "divProgramacionCitasInformes");
+    
+        //        path="../../ccontrol/control/control.php?"+parametros;
+        //        myajax2.Link(path,'divResultadoBusqueda');
+        
 }
 /*********************citas Adicionales****************************************/
 function nuevaCitaAdicional(codigoCronograma) {
