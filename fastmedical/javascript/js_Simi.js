@@ -128,7 +128,7 @@ function CargarVentanaFormulario(vFormaAbrir, vformname, vtitle, file02, vwidth,
 				//myajax.Link(fileallamar, vidfrm, 0, vfunctionjava);
 				
 				
-				pathRequestControl=fileallamar;
+				var pathRequestControl=fileallamar;
 				var parametros = "";//muestra los datos del cronograma en la capa divCronogramaCitasInformes de citas.php
 				contadorCargador++;
 				var idCargador = contadorCargador;

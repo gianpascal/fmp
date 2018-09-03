@@ -42,6 +42,7 @@ function ocupacionesXCentroCosto() {
 }
 
 function programacionCitasInformes_Old() {
+
     var codigoCentroCosto = $('hCodigoCentroCosto').value;
     var patronModulo = 'programacionCitasInformes';
     parametros = '';
@@ -53,8 +54,8 @@ function programacionCitasInformes_Old() {
         method: 'get',
         parameters: parametros,
         onLoading: cargadorpeche(1, idCargador),
-            onComplete: function (transport) {
-                cargadorpeche(0, idCargador);
+        onComplete: function (transport) {
+            cargadorpeche(0, idCargador);
             respuesta = transport.responseText;
             $('Contenido').update(respuesta);
             recargarTablaServicios();
@@ -163,13 +164,13 @@ function registroDatosPacientes() {
     parametros = '';
     parametros += 'p1=' + patronModulo;
     contadorCargador++;
-    var idCargador=contadorCargador;
+    var idCargador = contadorCargador;
     new Ajax.Request(pathRequestControl, {
         method: 'get',
         parameters: parametros,
-        onLoading : cargadorpeche(1,idCargador),
-        onComplete : function(transport){    
-            cargadorpeche(0,idCargador);
+        onLoading: cargadorpeche(1, idCargador),
+        onComplete: function (transport) {
+            cargadorpeche(0, idCargador);
             respuesta = transport.responseText;
             $('Contenido').update(respuesta);
             //            recargarArbolAyuda();
@@ -321,16 +322,16 @@ function mantenimientoAmbientesFisicos() {
     parametros = 'p1=' + patronModulo;
 
     new Ajax.Request(pathRequestControl,
-            {
-                method: 'get',
-                parameters: parametros,
-                onLoading: micargador(1),
-                onComplete: function (transport) {
-                    micargador(0);
-                    respuesta = transport.responseText;
-                    $('Contenido').update(respuesta);
-                }
+        {
+            method: 'get',
+            parameters: parametros,
+            onLoading: micargador(1),
+            onComplete: function (transport) {
+                micargador(0);
+                respuesta = transport.responseText;
+                $('Contenido').update(respuesta);
             }
+        }
     )
 }
 
@@ -339,17 +340,17 @@ function mantenimientoTurnos() {
     parametros = 'p1=' + patronModulo;
 
     new Ajax.Request(pathRequestControl,
-            {
-                method: 'get',
-                parameters: parametros,
-                onLoading: micargador(1),
-                onComplete: function (transport) {
-                    micargador(0);
-                    respuesta = transport.responseText;
-                    $('Contenido').update(respuesta);
-                    cargarTablaTurno();
-                }
+        {
+            method: 'get',
+            parameters: parametros,
+            onLoading: micargador(1),
+            onComplete: function (transport) {
+                micargador(0);
+                respuesta = transport.responseText;
+                $('Contenido').update(respuesta);
+                cargarTablaTurno();
             }
+        }
     )
 }
 
@@ -518,10 +519,10 @@ function menuActoMedicoConsultorio() {
         }
     })
     mostrarprogramacionMedicosActoMedico();
-//mostrarPacientesProgramados('');
-// mostrarPacientesAdicionales('');
-//calculaAtendidosyNoAtendidosDiarioActoMedico('');
-//calculaAtendidosyNoAtendidosMensualActoMedico('');    
+    //mostrarPacientesProgramados('');
+    // mostrarPacientesAdicionales('');
+    //calculaAtendidosyNoAtendidosDiarioActoMedico('');
+    //calculaAtendidosyNoAtendidosMensualActoMedico('');    
 }
 
 
@@ -763,22 +764,22 @@ function regularizarHorarios() {
         }
     })
 
-//    patronModulo='pruebaHorarios';
-//    parametros='';
-//    parametros+='p1='+patronModulo;
-//    //window.alert("holaaaaaaaaa eeeee");
-//
-//    new Ajax.Request(pathRequestControl,{
-//        method : 'get',
-//        parameters : parametros,
-//        onLoading : micargador(1),
-//        onComplete : function(transport){
-//            micargador(0);
-//            respuesta = transport.responseText;
-//            $('Contenido').update(respuesta);
-//            //document.getElementById("txtHoraEntrada").value=fechaActualX();
-//        }
-//    } )
+    //    patronModulo='pruebaHorarios';
+    //    parametros='';
+    //    parametros+='p1='+patronModulo;
+    //    //window.alert("holaaaaaaaaa eeeee");
+    //
+    //    new Ajax.Request(pathRequestControl,{
+    //        method : 'get',
+    //        parameters : parametros,
+    //        onLoading : micargador(1),
+    //        onComplete : function(transport){
+    //            micargador(0);
+    //            respuesta = transport.responseText;
+    //            $('Contenido').update(respuesta);
+    //            //document.getElementById("txtHoraEntrada").value=fechaActualX();
+    //        }
+    //    } )
 
 }
 
@@ -873,7 +874,7 @@ function mantenimientoExamenes() {
     })
 }
 //agregado
-function  cargarComboTipoExamenesjcx() {
+function cargarComboTipoExamenesjcx() {
 
     var patronModulo = 'cargarComboTipoExamenesjcx';
 
@@ -1049,22 +1050,22 @@ function menuReporteActuElimInsert() {//cargaHorariosRrhh
 
 /*********************************FARMACIA SOP*********************************/
 function mostrarCIFarmaciaSOP() {
-//    patronModulo='mostrarCIFarmaciaSOP';
-//    parametros='';
-//    parametros+='p1='+patronModulo;
-//
-//
-//    new Ajax.Request( pathRequestControl,{
-//        method : 'get',
-//        parameters : parametros,
-//        onLoading : micargador(1),
-//        onComplete : function(transport){
-//            micargador(0);
-//            respuesta = transport.responseText;
-//            $('Contenido').update(respuesta);
-//            mostrarTablaGeneracionPreOrdenFarmaciaSOP();
-//        }
-//    } )
+    //    patronModulo='mostrarCIFarmaciaSOP';
+    //    parametros='';
+    //    parametros+='p1='+patronModulo;
+    //
+    //
+    //    new Ajax.Request( pathRequestControl,{
+    //        method : 'get',
+    //        parameters : parametros,
+    //        onLoading : micargador(1),
+    //        onComplete : function(transport){
+    //            micargador(0);
+    //            respuesta = transport.responseText;
+    //            $('Contenido').update(respuesta);
+    //            mostrarTablaGeneracionPreOrdenFarmaciaSOP();
+    //        }
+    //    } )
 }
 /******************************************************************************/
 

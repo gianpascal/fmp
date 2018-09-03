@@ -44,13 +44,15 @@ function enviarFormularioSincronizado(form,parametros,funcion,destino){
 
 function traerData(parametros){
     var datos;
+    contadorCargador++;
+    var idCargador = contadorCargador;
     new Ajax.Request( pathRequestControl,{
         method : 'post',
         parameters : parametros,
         asynchronous:false,
-        onLoading : micargador(1),
-        onComplete : function(transport){
-            micargador(0);
+        onLoading: cargadorpeche(1, idCargador),
+        onComplete: function (transport) {
+            cargadorpeche(0, idCargador);
             respuesta = transport.responseText;
             datos = respuesta.split("|");
         }

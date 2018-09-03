@@ -646,9 +646,9 @@ function subirArchivo(archivo) {
             document.getElementById('enlace').href = url;
             document.getElementById('archivo').style.display = 'block';
         })
-      
-      
-    
+
+
+
     }
 
 }
@@ -2234,12 +2234,14 @@ function cargarHC() {
     var parametros = '';
     parametros += 'p1=' + patronModulo;
     parametros += '&p2=' + codigoPaciente;
+    contadorCargador++;
+    var idCargador = contadorCargador;
     new Ajax.Request(pathRequestControl, {
         method: 'get',
         parameters: parametros,
-        onLoading: micargador(1),
+        onLoading: cargadorpeche(1, idCargador),
         onComplete: function (transport) {
-            micargador(0);
+            cargadorpeche(0, idCargador);
             respuesta = transport.responseText;
             $('divHC_cuerpo').update(respuesta);
             document.getElementById("divDerechaVerHC").style.overflow = 'auto';
@@ -2287,13 +2289,14 @@ function verHistoriaFecha(id) {
     parametros = '';
     parametros += 'p1=' + patronModulo;
     parametros += '&p2=' + id; //id--> codigo de programacion
-
+    contadorCargador++;
+    var idCargador = contadorCargador;
     new Ajax.Request(pathRequestControl, {
         method: 'get',
         parameters: parametros,
-        onLoading: micargador(1),
+        onLoading: cargadorpeche(1, idCargador),
         onComplete: function (transport) {
-            micargador(0);
+            cargadorpeche(0, idCargador);
             respuesta = transport.responseText;
             $('divDerechaVerHC').update(respuesta);
         }
@@ -12955,6 +12958,7 @@ function actualizarTriajeActoMedico() {
 }
 
 function manteTriajeActoMedico(accion, horaProgramacion, codCronograma) {
+   
     var peso = trim($('txtPeso').value);
     var talla = trim($('txtTalla').value);
     var temp = trim($('txtTemp').value);
@@ -12980,15 +12984,15 @@ function manteTriajeActoMedico(accion, horaProgramacion, codCronograma) {
         datos = Base64.encode(datos);
 
         var data = 'p1=manteTriaje&datos=' + datos + '&accion=' + accion;
+        contadorCargador++;
+    var idCargador = contadorCargador;
         new Ajax.Request(pathRequestControl,
             {
                 method: 'post',
                 parameters: data,
-                onLoading: function (transport) {
-                    micargador(1);
-                },
+                onLoading: cargadorpeche(1, idCargador),
                 onComplete: function (transport) {
-                    micargador(0);
+                    cargadorpeche(0, idCargador);
                     alert(transport.responseText);
                     Windows.close("Div_popupRegistroTriaje");
                     $('txttemperatura').value = $('txtTemp').value;
