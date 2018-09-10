@@ -24,7 +24,7 @@ function mostrardatosMedicosActoMedico() {
             respuesta = transport.responseText;
             window.alert(respuesta);
         }
-    })
+    });
 }
 function mostrarprogramacionMedicosActoMedico() {
     var mes = document.getElementById("cb_filtro_mes").value;
@@ -69,7 +69,7 @@ function mostrarAtenciones() {
 
         var array = tablaProgramacionMedico.getRowId(i).split("|");
         var seleccion = array[2];
-        if (seleccion == 1) {
+        if (seleccion === 1) {
             numero++;
             cadenaCronogramas = cadenaCronogramas + '|' + array[0];
             $('henHora').value = seleccion;
@@ -83,14 +83,14 @@ function mostrarAtenciones() {
 
     var id = tablaProgramacionMedico.getRowId(fila);
     var servicio = tablaProgramacionMedico.cells(id, 4).getValue();
-    if (numero > 1 && servicio == 'TERAPIA FISICA (TARIFA A) ESSALUD') {
+    if (numero > 1 && servicio === 'TERAPIA FISICA (TARIFA A) ESSALUD') {
         motrarTodasAtencionesProgramados(cadenaCronogramas);
         // mostrarTodosPacientesAdicionales(cadenaCronogramas);
         llenardatosPersonalesMedicoActoMedico(codigocronograma);
 
 
     } else {
-        if (numero == 1) {
+        if (numero === 1) {
             tablaProgramacionMedico.selectRow(fila, true, true, true);
         }
 
@@ -148,15 +148,15 @@ function motrarTodasAtencionesProgramados(cadenaCronogramas) {
         for (i = 0; i < tablaPacienteProgramados.getRowsNum(); i++) {
             array = tablaPacienteProgramados.getRowId(i).split("|");
             estadoatencion = array[2];
-            if (estadoatencion == '0005') {
+            if (estadoatencion === '0005') {
                 atendidos++;
                 tablaPacienteProgramados.setRowTextStyle(tablaPacienteProgramados.getRowId(i), 'background-color:orange;color:black;border-top: 1px solid black;');
             }
-            if (estadoatencion == '0007') {
+            if (estadoatencion === '0007') {
                 regularizar++;
                 tablaPacienteProgramados.setRowTextStyle(tablaPacienteProgramados.getRowId(i), 'background-color:#D1FCD2;color:black;border-top: 1px solid black;');
             }
-            if (estadoatencion == '0004') {
+            if (estadoatencion === '0004') {
                 noAtendidos++;
                 tablaPacienteProgramados.setRowTextStyle(tablaPacienteProgramados.getRowId(i), 'background-color:#ffffff;color:black;border-top: 1px solid black;');
             }
@@ -203,15 +203,15 @@ function mostrarTodosPacientesAdicionales(cadenaCronogramas) {
         for (i = 0; i < tablaPacienteAdicionales.getRowsNum(); i++) {
             array = tablaPacienteAdicionales.getRowId(i).split("|");
             estadoatencion = array[2];
-            if (estadoatencion == '0005') {
+            if (estadoatencion === '0005') {
                 atendidos++;
                 tablaPacienteAdicionales.setRowTextStyle(tablaPacienteAdicionales.getRowId(i), 'background-color:orange;color:black;border-top: 1px solid black;');
             }
-            if (estadoatencion == '0007') {
+            if (estadoatencion === '0007') {
                 regularizar++;
                 tablaPacienteAdicionales.setRowTextStyle(tablaPacienteAdicionales.getRowId(i), 'background-color:#D1FCD2;color:black;border-top: 1px solid black;');
             }
-            if (estadoatencion == '0004') {
+            if (estadoatencion === '0004') {
                 noAtendidos++;
                 tablaPacienteAdicionales.setRowTextStyle(tablaPacienteAdicionales.getRowId(i), 'background-color:#ffffff;color:black;border-top: 1px solid black;');
             }
@@ -257,13 +257,13 @@ function mostrarPacientesProgramados(codigocronograma) {
         for (i = 0; i < tablaPacienteProgramados.getRowsNum(); i++) {
             array = tablaPacienteProgramados.getRowId(i).split("|");
             estadoatencion = array[2];
-            if (estadoatencion == '0005') {
+            if (estadoatencion === '0005') {
                 tablaPacienteProgramados.setRowTextStyle(tablaPacienteProgramados.getRowId(i), 'background-color:orange;color:black;border-top: 1px solid black;');
             }
-            if (estadoatencion == '0007') {
+            if (estadoatencion === '0007') {
                 tablaPacienteProgramados.setRowTextStyle(tablaPacienteProgramados.getRowId(i), 'background-color:#D1FCD2;color:black;border-top: 1px solid black;');
             }
-            if (estadoatencion == '0004') {
+            if (estadoatencion === '0004') {
                 tablaPacienteProgramados.setRowTextStyle(tablaPacienteProgramados.getRowId(i), 'background-color:#ffffff;color:black;border-top: 1px solid black;');
             }
         }
@@ -303,13 +303,13 @@ function mostrarPacientesAdicionales(codigocronograma) {
         for (i = 0; i < tablaPacienteAdicionales.getRowsNum(); i++) {
             array = tablaPacienteAdicionales.getRowId(i).split("|");
             estadoatencion = array[2];
-            if (estadoatencion == '0005') {
+            if (estadoatencion === '0005') {
                 tablaPacienteAdicionales.setRowTextStyle(tablaPacienteAdicionales.getRowId(i), 'background-color:orange;color:black;border-top: 1px solid black;');
             }
-            if (estadoatencion == '0007') {
+            if (estadoatencion === '0007') {
                 tablaPacienteAdicionales.setRowTextStyle(tablaPacienteAdicionales.getRowId(i), 'background-color:#D1FCD2;color:black;border-top: 1px solid black;');
             }
-            if (estadoatencion == '0004') {
+            if (estadoatencion === '0004') {
                 tablaPacienteAdicionales.setRowTextStyle(tablaPacienteAdicionales.getRowId(i), 'background-color:#ffffff;color:black;border-top: 1px solid black;');
             }
         }
@@ -319,39 +319,39 @@ function mostrarPacientesAdicionales(codigocronograma) {
 }
 
 function eventoPacienteProgramado(rowId, cellInd) {
-    if (cellInd == 7) {
+    if (cellInd === 7) {
         llamaralPacienteActoMedico(rowId);
     }
-    if (cellInd == 8) {
+    if (cellInd === 8) {
         $("hidtablapacientes").value = rowId;
         $("hidtipoprogramacion").value = 0;
         atenderPacienteActoMedico(rowId);
     }
-    if (cellInd == 9) {
+    if (cellInd === 9) {
         $("hidtablapacientes").value = rowId;
         $("hidtipoprogramacion").value = 0;
-        if ($('henHora').value == 1) {
+        if ($('henHora').value === 1) {
             atencionInmediataXRegularizar(rowId);
         } else {
-            alert('Solo se puede Cambiar de Estado durante su turno')
+            alert('Solo se puede Cambiar de Estado durante su turno');
         }
 
     }
 }
 
 function eventoPacienteAdicional(rowId, cellInd) {
-    if (cellInd == 7) {
+    if (cellInd === 7) {
         llamaralPacienteActoMedico(rowId);
     }
-    if (cellInd == 8) {
+    if (cellInd === 8) {
         $("hidtablapacientes").value = rowId;
         $("hidtipoprogramacion").value = 1;
         atenderPacienteActoMedico(rowId);
     }
-    if (cellInd == 9) {
+    if (cellInd === 9) {
         $("hidtablapacientes").value = rowId;
         $("hidtipoprogramacion").value = 0;
-        if ($('henHora').value == 1) {
+        if ($('henHora').value === 1) {
             atencionInmediataXRegularizar(rowId);
         } else {
             alert('Solo se puede Cambiar de Estado durante su turno');
@@ -381,7 +381,7 @@ function afiliacionCorrecta(codigoProgramacion) {
             respuesta = transport.responseText;
 
         }
-    })
+    });
     // alert(respuesta)
     return trimJunny(respuesta);
 }
@@ -400,7 +400,7 @@ function calculaAtendidosyNoAtendidosDiarioActoMedico(codigoCronograma) {
             respuesta = transport.responseText;
             $('Div_atencionesdiaria').update(respuesta);
         }
-    })
+    });
 }
 
 function calculaAtendidosyNoAtendidosMensualActoMedico(codigoCronograma) {
@@ -424,7 +424,7 @@ function calculaAtendidosyNoAtendidosMensualActoMedico(codigoCronograma) {
             var respuesta = transport.responseText;
             $('Div_atencionesmensuales').update(respuesta);
         }
-    })
+    });
 }
 
 function seleccionCronogramaActoMedico(event, html, valores) {
@@ -447,7 +447,7 @@ function seleccionCronogramaActoMedico(event, html, valores) {
             calculaAtendidosyNoAtendidosDiarioActoMedico(codigoCronograma);
             llenardatosPersonalesMedicoActoMedico(codigoCronograma);
         }
-    })
+    });
 }
 function atencionInmediataXRegularizar(parametro) {
     var array = parametro.split("|");
@@ -472,7 +472,7 @@ function atencionInmediataXRegularizar(parametro) {
 
             window.alert(respuesta);
         }
-    })
+    });
 
 }
 function cargarCuerpoHC(codigoservicio, codigoProgramacion) {
@@ -506,7 +506,7 @@ function cargarCuerpoHC(codigoservicio, codigoProgramacion) {
             var respuesta = transport.responseText;
             $('Div_GeneralActoMedicoHC').update(respuesta);
         }
-    })
+    });
 }
 function atenderPacienteActoMedico(parametro) {
     //  alert(parametro);
@@ -518,14 +518,14 @@ function atenderPacienteActoMedico(parametro) {
     var esEssalud = array[5];
     $("htxtcodigopaciente").value = codigopaciente;
     $("htxtestadoatencion").value = estadoatencion;
-    if (estadoatencion == '0004' || estadoatencion == '0007') {
+    if (estadoatencion === '0004' || estadoatencion === '0007') {
         var mensajeAfiliacion = afiliacionCorrecta(codigoProgramacion);
-        if (mensajeAfiliacion == 'ok') {
+        if (mensajeAfiliacion === 'ok') {
             cargarCuerpoHC(codigoservicio, codigoProgramacion);
 
             loguerfirebase();
 
-            if (estadoatencion == '0004') {
+            if (estadoatencion === '0004') {
                 $("hNumeroDiagnostico").value = '0';
                 contadorDivsDiagnosticos = 0;
                 $("Div_TablaDiagnosticoCIE").hide();
@@ -548,8 +548,7 @@ function atenderPacienteActoMedico(parametro) {
             alert(mensajeAfiliacion);
         }
 
-    }
-    else {
+    } else {
         //alert('peche 2')
         var divs_hc = ["Div_Triaje", "Div_ConsultaMedica", "Div_Antecedentes", "Div_ExamenMedico", "Div_Diagnostico", "Div_Tratamiento", "Opc_proximaCita"];
         cargarCuerpoHC('', codigoProgramacion);
@@ -569,10 +568,10 @@ function atenderPacienteActoMedico(parametro) {
         //iniciarActoMedico(codigoProgramacion);
         verHcReciente();
         /*
-             for (var i=0;i<divs_hc.length;i++){
-             $(divs_hc[i]).hide();
-             }
-             */
+         for (var i=0;i<divs_hc.length;i++){
+         $(divs_hc[i]).hide();
+         }
+         */
     }
 
     /*
@@ -588,9 +587,9 @@ function loguerfirebase() {
     authService = firebase.auth();
     storageService = firebase.storage();
     authService.signInAnonymously()
-        .catch(function (error) {
-            console.error('Detectado error de autenticación', error);
-        });
+            .catch(function (error) {
+                console.error('Detectado error de autenticación', error);
+            });
 
     //manejador de evento para el input file
     document.getElementById('campoarchivo').addEventListener('change', function (evento) {
@@ -601,25 +600,26 @@ function loguerfirebase() {
 
     //manejadores de eventos para los botones de control de la subida
     document.getElementById('pausar').addEventListener('click', function () {
-        if (uploadTask && uploadTask.snapshot.state == 'running') {
+        if (uploadTask && uploadTask.snapshot.state === 'running') {
             uploadTask.pause();
             console.log('pausada');
         }
     });
     document.getElementById('reanudar').addEventListener('click', function () {
-        if (uploadTask && uploadTask.snapshot.state == 'paused') {
+        if (uploadTask && uploadTask.snapshot.state === 'paused') {
             uploadTask.resume();
             console.log('reanudada');
         }
     });
     document.getElementById('cancelar').addEventListener('click', function () {
-        if (uploadTask && (uploadTask.snapshot.state == 'paused' || uploadTask.snapshot.state == 'running')) {
-            if (uploadTask.snapshot.state == 'paused') {
+        if (uploadTask && (uploadTask.snapshot.state === 'paused' || uploadTask.snapshot.state === 'running')) {
+            if (uploadTask.snapshot.state === 'paused') {
                 uploadTask.resume();
             }
             uploadTask.cancel();
             console.log('cancelada');
-        };
+        }
+        ;
     });
 }
 var uploadTask;
@@ -645,7 +645,7 @@ function subirArchivo(archivo) {
         refStorage.getDownloadURL().then(function (url) {
             document.getElementById('enlace').href = url;
             document.getElementById('archivo').style.display = 'block';
-        })
+        });
 
 
 
@@ -764,7 +764,7 @@ function setColorTablaPaquetes() {
             if (nroAte > nroAtemin) {
                 tablaTablaPAquete.setRowTextStyle(tablaTablaPAquete.getRowId(i), 'background-color:#FF0000;color:black;border-top: 1px solid #FF0000;');
             }
-            if (nroAte == nroAtemin) {
+            if (nroAte === nroAtemin) {
                 tablaTablaPAquete.setRowTextStyle(tablaTablaPAquete.getRowId(i), 'background-color:#CCE2FE;color:black;border-top: 1px solid #CCE2FE;');
             }
 
@@ -788,7 +788,7 @@ function pintarDivExamenes(codigoservicio, codigoProgramacion) {
             respuesta = transport.responseText;
             $('Div_ExamenMedicoCuerpo').update(respuesta);
         }
-    })
+    });
 }
 
 function tablaSintomas() {
@@ -822,14 +822,14 @@ function cargarMotivoDeConsulta(codigoProgramacion) {
             $('Div_ConsultaMedicaCuerpo').update(respuesta);
             //tablaSintomas();
         }
-    })
+    });
 }
 //Este caso solo es valido para agregar desde la tabla de sintomas
 function agregarMotivoDeConsulta(rowId, cellInd) {
     var idCieSintoma = rowId;//var idCieSintoma = miTablaSintoma.getSelectedId();
     var cadenaIdCieSintomas = document.getElementById("hdnCadenaIdCieSintomas").value;
 
-    if ((cadenaIdCieSintomas.indexOf(idCieSintoma + "|") == -1) && (cadenaIdCieSintomas.indexOf(idCieSintoma) == -1)) {
+    if ((cadenaIdCieSintomas.indexOf(idCieSintoma + "|") === -1) && (cadenaIdCieSintomas.indexOf(idCieSintoma) === -1)) {
         if (cadenaIdCieSintomas.length > 0)
             cadenaIdCieSintomas = cadenaIdCieSintomas + "|" + idCieSintoma;
         else
@@ -868,20 +868,20 @@ function agregarMotivoDeConsulta(rowId, cellInd) {
 
                 preguardarMotivoDeConsulta();
             }
-        })
+        });
     }
 }
 
 function cambiarMotivoDeConsulta(n) {
     //$('imgPreguardarMotivoDeConsulta').src='../../../../fastmedical_front/imagen/btn/btn_preguardar.gif';
-    if ($('hdnEstadoSintoma_' + n).value == '2') {
+    if ($('hdnEstadoSintoma_' + n).value === '2') {
         $('hdnEstadoSintoma_' + n).value = 4;
     }
     preguardarMotivoDeConsulta();
 }
 
 function verMotivoConsultaAnteriores() {
-    if ($('hdnAbiertoMotivoConsultaAnteriores').value == 0) {
+    if ($('hdnAbiertoMotivoConsultaAnteriores').value === 0) {
         $('hdnAbiertoMotivoConsultaAnteriores').value = 1;
         $('icono_abrirMotivoConsultaAnteriores').src = '../../../../fastmedical_front/imagen/icono/cerrarVentana.png';
         codigoProgramacion = $('hcodigoProgramacion').value;
@@ -931,7 +931,7 @@ function preguardarMotivoDeConsulta() {
     var datos;
     for (var i = 1; i < numeroSintomas + 1; i++) {
         hdnEstadoSintoma = 'hdnEstadoSintoma_' + i;
-        if ($(hdnEstadoSintoma).value == 0 || $(hdnEstadoSintoma).value == 4 || $(hdnEstadoSintoma).value == 1) {
+        if ($(hdnEstadoSintoma).value === 0 || $(hdnEstadoSintoma).value === 4 || $(hdnEstadoSintoma).value === 1) {
             estadoEnVista = trimJunny($(hdnEstadoSintoma).value);
             idMotivoConsulta = trimJunny($('hdnIdMotivoDeConsulta_' + i).value);
             idSintomaCie = trimJunny($('hdnSintomaCIE_' + i).value);
@@ -958,7 +958,7 @@ function preguardarMotivoDeConsulta() {
                 onComplete: function (transport) {
                     cargadorpeche(0, idCargador);
                     respuesta = transport.responseText;
-                    if (respuesta == 'eliminado') {
+                    if (respuesta === 'eliminado') {
 
                     } else {
                         $('hdnIdMotivoDeConsulta_' + i).value = respuesta;
@@ -966,7 +966,7 @@ function preguardarMotivoDeConsulta() {
                     }
 
                 }
-            })
+            });
 
         }
     }
@@ -984,10 +984,10 @@ function cerrarMotivoDeConsulta(numeroSintoma) {
     //var idCieSintoma = document.getElementById("hdnIdMotivoDeConsulta_"+numeroSintoma).value;
     var idCieSintoma = document.getElementById("hdnSintomaCIE_" + numeroSintoma).value;
 
-    if (cadenaIdCieSintomas.indexOf(idCieSintoma + "|") != -1) {
+    if (cadenaIdCieSintomas.indexOf(idCieSintoma + "|") !== -1) {
         cadenaIdCieSintomas = cadenaIdCieSintomas.replace(idCieSintoma + "|", '');//Eliminar de la cadena en el caso el elmento se encuentre en el inicio o antes de llegar al final
     }
-    if (cadenaIdCieSintomas.indexOf(idCieSintoma) != -1) {
+    if (cadenaIdCieSintomas.indexOf(idCieSintoma) !== -1) {
         cadenaIdCieSintomas = cadenaIdCieSintomas.replace("|" + idCieSintoma, '');//Eliminar de la cadena en el caso el elemento se encuentre al final
         cadenaIdCieSintomas = cadenaIdCieSintomas.replace(idCieSintoma, '');//Eliminar de la cadena en el caso solo haya uno
     }
@@ -1005,8 +1005,8 @@ function buscarSintomaNombre(evento) {
     parametros += 'p1=' + patronModulo;
     parametros += '&p2=' + nombre;
     parametros += '&p3=' + accion;
-    var tecla = evento.keyCode
-    if (numero == 4 || tecla == 13) {
+    var tecla = evento.keyCode;
+    if (numero === 4 || tecla === 13) {
         sn = 0;
         miTablaSintoma = new dhtmlXGridObject('divTblSintomas');
         miTablaSintoma.setImagePath("../../../../fastmedical_front/imagen/icono/");
@@ -1029,7 +1029,7 @@ function buscarSintomaNombre(evento) {
         });
     }
 
-    if (numero > 4 && sn == 1) {
+    if (numero > 4 && sn === 1) {
         //alert('sn: '+ sn);
         //miTablaSintoma.filterBy(2,$('txtNombreSintoma').value);
         var palabra = $('txtNombreSintoma').value;
@@ -1058,7 +1058,7 @@ function buscarSintomaCodigo() {
     parametros += '&p2=' + codigo;
     parametros += '&p3=' + accion;
 
-    if (numero == 2) {
+    if (numero === 2) {
         sc = 0;
         miTablaSintoma = new dhtmlXGridObject('divTblSintomas');
         miTablaSintoma.setImagePath("../../../../fastmedical_front/imagen/icono/");
@@ -1079,36 +1079,31 @@ function buscarSintomaCodigo() {
             sc = 1;
         });
     }
-    if (numero > 2 && sc == 1) {
+    if (numero > 2 && sc === 1) {
         miTablaSintoma.filterBy(1, $('txtCodigoSintoma').value);
     }
 }
 
 function validarManteSintomaMotivoConsulta(accion, numDivSintoma) {
     indiceTipoIngreso = $('cboTipoIngreso' + numDivSintoma).selectedIndex;
-    if (indiceTipoIngreso == 0) {
+    if (indiceTipoIngreso === 0) {
         alert('Seleccione tipo de ingreso');
-    }
-    else {
+    } else {
         indiceClasifMotivoConsulta = $('cboClasifMotivoConsulta' + numDivSintoma).selectedIndex;
-        if (indiceClasifMotivoConsulta == 0) {
+        if (indiceClasifMotivoConsulta === 0) {
             alert('Seleccione clasificaci\xF3n');
-        }
-        else {
+        } else {
             descSintomaMotivoConsulta = $('txaDescSintoma' + numDivSintoma).value;
-            if (descSintomaMotivoConsulta == null) {
+            if (descSintomaMotivoConsulta === null) {
                 alert('Ingrese descripci\xF3n');
-            }
-            else {
+            } else {
                 descSintomaMotivoConsulta = js_trim(descSintomaMotivoConsulta);
-                if (descSintomaMotivoConsulta.length == 0) {
+                if (descSintomaMotivoConsulta.length === 0) {
                     alert('Ingrese descripci\xF3n distinto de espacios en blanco');
-                }
-                else {
+                } else {
                     if (descSintomaMotivoConsulta.length < 5) {
                         alert('Ingrese como m\xEDnimo 5 caracteres para la descripci\xF3n');
-                    }
-                    else {
+                    } else {
                         idCondicionIngreso = $('cboTipoIngreso' + numDivSintoma).value;
                         idClasifMotivoConsulta = $('cboClasifMotivoConsulta' + numDivSintoma).value;
                         descSintomaMotivoConsulta = descSintomaMotivoConsulta.replace(/\n/gi, "<br/>");
@@ -1127,22 +1122,21 @@ function validarManteSintomaMotivoConsulta(accion, numDivSintoma) {
 function manteMotivosDeConsulta(accion, datos) {
     pathLink = "p1=manteMotivosDeConsulta&accion=" + accion + "&datos=" + datos;
     new Ajax.Request(pathRequestControl,
-        {
-            method: 'get',
-            parameters: pathLink,
-            onLoading: micargador(1),
-            onComplete: function (transport) {
-                micargador(0);
-                respuesta = transport.responseText;
-                if (respuesta == 1) {
-                    alert('Se realiz\xF3 la acci\xF3n con \xE9xito');
-                }
-                else {
-                    alert('No se concret\xF3 la acci\xF3n, int\xE9ntelo nuevamente o cont\xE1ctese con su administrador');
+            {
+                method: 'get',
+                parameters: pathLink,
+                onLoading: micargador(1),
+                onComplete: function (transport) {
+                    micargador(0);
+                    respuesta = transport.responseText;
+                    if (respuesta === 1) {
+                        alert('Se realiz\xF3 la acci\xF3n con \xE9xito');
+                    } else {
+                        alert('No se concret\xF3 la acci\xF3n, int\xE9ntelo nuevamente o cont\xE1ctese con su administrador');
+                    }
                 }
             }
-        }
-    )
+    );
 }
 //editarSintomaMotivoConsulta('actualizar',".$arrayFilas[$i]["idMotivoConsulta"].")
 function editarSintomaMotivoConsulta(accion, idMotivoConsulta, numDivSintoma) {
@@ -1164,26 +1158,25 @@ function eliminarSintoma2(accion, idMotivoConsulta, idDivSintoma) {
     if (confirm('\xBFDesea eliminar s\xEDntoma?')) {
         pathLink = "p1=manteMotivosDeConsulta&accion=" + accion + "&idMotivoConsulta=" + idMotivoConsulta;
         new Ajax.Request(pathRequestControl,
-            {
-                method: 'post',
-                parameters: pathLink,
-                onLoading: micargador(1),
-                onComplete: function (transport) {
-                    micargador(0);
-                    respuesta = transport.responseText;
-                    //alert(respuesta);
-                    if (respuesta == 1) {
-                        var nodoHijo = document.getElementById(idDivSintoma);
-                        var nodoPadre = nodoHijo.parentNode;
-                        nodoPadre.removeChild(nodoHijo);
-                        alert('Se realiz\xF3 la acci\xF3n con \xE9xito');
-                    }
-                    else {
-                        alert('No se concret\xF3 la acci\xF3n, int\xE9ntelo nuevamente o cont\xE1ctese con su administrador');
+                {
+                    method: 'post',
+                    parameters: pathLink,
+                    onLoading: micargador(1),
+                    onComplete: function (transport) {
+                        micargador(0);
+                        respuesta = transport.responseText;
+                        //alert(respuesta);
+                        if (respuesta === 1) {
+                            var nodoHijo = document.getElementById(idDivSintoma);
+                            var nodoPadre = nodoHijo.parentNode;
+                            nodoPadre.removeChild(nodoHijo);
+                            alert('Se realiz\xF3 la acci\xF3n con \xE9xito');
+                        } else {
+                            alert('No se concret\xF3 la acci\xF3n, int\xE9ntelo nuevamente o cont\xE1ctese con su administrador');
+                        }
                     }
                 }
-            }
-        )
+        );
     }
 }
 
@@ -1203,54 +1196,54 @@ function llamaralPacienteActoMedico(parametro) {
 
     switch (estadoatencion) {
         case '0004':
-            {
-                var patronModulo = 'llamaralPacienteActoMedico';
-                parametros = '';
-                parametros += 'p1=' + patronModulo;
-                parametros += '&p2=' + codigoProgramacion;
-                parametros += '&p3=' + codigoambientefisico;
+        {
+            var patronModulo = 'llamaralPacienteActoMedico';
+            parametros = '';
+            parametros += 'p1=' + patronModulo;
+            parametros += '&p2=' + codigoProgramacion;
+            parametros += '&p3=' + codigoambientefisico;
 
-                //pathLink = "p1=llamaralPacienteActoMedico&p2="+codigoProgramacion+"&p3="+codigoambientefisico;
-                new Ajax.Request(pathRequestControl, {
-                    method: 'get',
-                    parameters: parametros,
-                    onLoading: micargador(1),
-                    onComplete: function (transport) {
-                        micargador(0);
-                        respuesta = transport.responseText;
-                        window.alert(respuesta);
-                    }
-                })
-                break;
-            }
+            //pathLink = "p1=llamaralPacienteActoMedico&p2="+codigoProgramacion+"&p3="+codigoambientefisico;
+            new Ajax.Request(pathRequestControl, {
+                method: 'get',
+                parameters: parametros,
+                onLoading: micargador(1),
+                onComplete: function (transport) {
+                    micargador(0);
+                    respuesta = transport.responseText;
+                    window.alert(respuesta);
+                }
+            });
+            break;
+        }
         case '0005':
-            {
-                window.alert("El paciente ya fue atendido!!");
-                break;
-            }
+        {
+            window.alert("El paciente ya fue atendido!!");
+            break;
+        }
         case '0007':
-            {
-                //            window.alert("La atencion del paciente debe ser regularizada!!");
-                //            break;    
-                patronModulo = 'llamaralPacienteActoMedico';
-                parametros = '';
-                parametros += 'p1=' + patronModulo;
-                parametros += '&p2=' + codigoProgramacion;
-                parametros += '&p3=' + codigoambientefisico;
+        {
+            //            window.alert("La atencion del paciente debe ser regularizada!!");
+            //            break;    
+            patronModulo = 'llamaralPacienteActoMedico';
+            parametros = '';
+            parametros += 'p1=' + patronModulo;
+            parametros += '&p2=' + codigoProgramacion;
+            parametros += '&p3=' + codigoambientefisico;
 
-                //pathLink = "p1=llamaralPacienteActoMedico&p2="+codigoProgramacion+"&p3="+codigoambientefisico;
-                new Ajax.Request(pathRequestControl, {
-                    method: 'get',
-                    parameters: parametros,
-                    onLoading: micargador(1),
-                    onComplete: function (transport) {
-                        micargador(0);
-                        respuesta = transport.responseText;
-                        window.alert(respuesta);
-                    }
-                })
-                break;
-            }
+            //pathLink = "p1=llamaralPacienteActoMedico&p2="+codigoProgramacion+"&p3="+codigoambientefisico;
+            new Ajax.Request(pathRequestControl, {
+                method: 'get',
+                parameters: parametros,
+                onLoading: micargador(1),
+                onComplete: function (transport) {
+                    micargador(0);
+                    respuesta = transport.responseText;
+                    window.alert(respuesta);
+                }
+            });
+            break;
+        }
     }
 }
 function llenardatosPersonalesMedicoActoMedico(codigoCronograma) {
@@ -1275,13 +1268,13 @@ function llenardatosPersonalesMedicoActoMedico(codigoCronograma) {
             document.getElementById("txtnombrecompleto").value = datos[1];
             document.getElementById("txtconsultorio").value = datos[2];
         }
-    })
+    });
 }
 
 function actualizaradicionalesActoMedico() {
     var codigoCronograma = $("hcodigoCronograma").value;
     var cantidadadicionales = $("txtcuposadicionales").value;
-    if (codigoCronograma != '') {
+    if (codigoCronograma !== '') {
         var patronModulo = 'actualizaradicionalesActoMedico';
         var parametros = '';
         parametros += 'p1=' + patronModulo;
@@ -1298,9 +1291,8 @@ function actualizaradicionalesActoMedico() {
                 mostrarprogramacionMedicosActoMedico();
                 window.alert(respuesta);
             }
-        })
-    }
-    else {
+        });
+    } else {
         window.alert("Seleccionar una programacion del medico,por favor!!");
     }
 }
@@ -1316,7 +1308,7 @@ function llamarCreacionMantPantallas() {
             micargador(0);
             respuesta = transport.responseText;
             creaAccordionLlamadasPacientes();
-            respuesta = respuesta.replace(/'/gi, "\"")
+            respuesta = respuesta.replace(/'/gi, "\"");
             //window.alert(respuesta);
             eval(respuesta);
             codigopantalla = document.getElementById("hidPantalla").value;
@@ -1325,11 +1317,11 @@ function llamarCreacionMantPantallas() {
             dhxAccordion.setEffect(true);
             mostrarTablaAmbientesFisicosxPantalla();
         }
-    })
+    });
 }
 
 function agregarAmbienteFisicoaPantalla() {
-    window.alert("Falta implementar..agregarlo directo a base de datos")
+    window.alert("Falta implementar..agregarlo directo a base de datos");
 }
 function creaAccordionLlamadasPacientes() {
     dhxAccordion = new dhtmlXAccordion("Div_MantenimientoLlamadasPacientes");
@@ -1364,7 +1356,7 @@ function mostrarTablaAmbientesFisicosxPantalla() {
             respuesta = transport.responseText;
             $('Div_tablaMantAmbienteFisicoxPantallas').update(respuesta);
         }
-    })
+    });
 }
 
 
@@ -1407,7 +1399,7 @@ function agregarAntecedente(rowId, cellInd) {
     var idCieAntecedente = rowId;//var idCieSintoma = miTablaSintoma.getSelectedId();
     var cadenaIdCieAntecedentes = document.getElementById("hdnCadenaIdCieAntecedentes").value;
     //Validacion para que en vista no agregue repetidos
-    if ((cadenaIdCieAntecedentes.indexOf(idCieAntecedente + "|") == -1) && (cadenaIdCieAntecedentes.indexOf(idCieAntecedente) == -1)) {
+    if ((cadenaIdCieAntecedentes.indexOf(idCieAntecedente + "|") === -1) && (cadenaIdCieAntecedentes.indexOf(idCieAntecedente) === -1)) {
         if (cadenaIdCieAntecedentes.length > 0)
             cadenaIdCieAntecedentes = cadenaIdCieAntecedentes + "|" + idCieAntecedente;
         else
@@ -1441,12 +1433,12 @@ function agregarAntecedente(rowId, cellInd) {
                 para.appendChild(documentFragment);
                 preguardarAntecedente();
             }
-        })
+        });
     }
 }
 
 function cargaAntecedentes() {
-    var codigoProgramacion = $('hcodigoProgramacion').value
+    var codigoProgramacion = $('hcodigoProgramacion').value;
     var c_cod_per = '';
 
     var patronModulo = 'antecedentes';
@@ -1467,12 +1459,12 @@ function cargaAntecedentes() {
             //tablaCie();
 
         }
-    })
+    });
 
 }
 
 function antecedentesPreguardados() {
-    codigoProgramacion = $('hcodigoProgramacion').value
+    codigoProgramacion = $('hcodigoProgramacion').value;
     patronModulo = 'antecedentesPreguardados';
     parametros = '';
     parametros += 'p1=' + patronModulo;
@@ -1486,7 +1478,7 @@ function antecedentesPreguardados() {
             respuesta = transport.responseText;
             $('divAntecedentes').update(respuesta);
         }
-    })
+    });
 }
 
 function cerrarAntecedente(numeroAntecedente) {
@@ -1499,10 +1491,10 @@ function cerrarAntecedente(numeroAntecedente) {
     var cadenaIdCieAntecedentes = document.getElementById("hdnCadenaIdCieAntecedentes").value;
     var idCieAntecedente = document.getElementById("hcie_" + numeroAntecedente).value;
 
-    if (cadenaIdCieAntecedentes.indexOf(idCieAntecedente + "|") != -1) {
+    if (cadenaIdCieAntecedentes.indexOf(idCieAntecedente + "|") !== -1) {
         cadenaIdCieAntecedentes = cadenaIdCieAntecedentes.replace(idCieAntecedente + "|", '');//Eliminar de la cadena en el caso el elmento se encuentre en el inicio o antes de llegar al final
     }
-    if (cadenaIdCieAntecedentes.indexOf(idCieAntecedente) != -1) {
+    if (cadenaIdCieAntecedentes.indexOf(idCieAntecedente) !== -1) {
         cadenaIdCieAntecedentes = cadenaIdCieAntecedentes.replace("|" + idCieAntecedente, '');//Eliminar de la cadena en el caso el elemento se encuentre al final
         cadenaIdCieAntecedentes = cadenaIdCieAntecedentes.replace(idCieAntecedente, '');//Eliminar de la cadena en el caso solo haya uno
     }
@@ -1517,8 +1509,8 @@ function buscarCieNombre(evento) {
     var parametros = '';
     parametros += 'p1=' + patronModulo;
     parametros += '&p2=' + nombre;
-    var tecla = evento.keyCode
-    if (numero == 4 || tecla == 13) {
+    var tecla = evento.keyCode;
+    if (numero === 4 || tecla === 13) {
         cn = 0;
         miTablaCie = new dhtmlXGridObject('tablaCie');
         miTablaCie.setImagePath("../../../../fastmedical_front/imagen/icono/");
@@ -1540,7 +1532,7 @@ function buscarCieNombre(evento) {
         });
         //setTimeout('x=1',1000);
     }
-    if (numero > 4 && cn == 1) {
+    if (numero > 4 && cn === 1) {
         //miTablaCie.filterBy(1,$('textNombreCie').value);
         var palabra = $('textNombreCie').value;
         var arrayPalabras = new Array();
@@ -1568,7 +1560,7 @@ function buscarCieCodigo() {
     parametros += '&p2=' + codigo;
     parametros += '&p3=' + '3';  //para la busqueda de cie por codigo
 
-    if (numero == 2) {
+    if (numero === 2) {
         cc = 0;
         miTablaCie = new dhtmlXGridObject('tablaCie');
         miTablaCie.setImagePath("../../../../fastmedical_front/imagen/icono/");
@@ -1590,7 +1582,7 @@ function buscarCieCodigo() {
         });
         //setTimeout('x=1',1000);
     }
-    if (numero > 2 && cc == 1) {
+    if (numero > 2 && cc === 1) {
         miTablaCie.filterBy(0, $('textCodigoCie').value);
     }
 }
@@ -1606,13 +1598,13 @@ function preguardarAntecedente() {
     var i;
     var j;
     var hEstado;
-    var numeroParentescos = 14
+    var numeroParentescos = 14;
     for (i = 1; i < numeroAntecedentes + 1; i++) {
 
 
         hEstado = 'hEstadoAgregar_' + i;
         //alert($(hEstado).value);
-        if ($(hEstado).value == 0 || $(hEstado).value == 4 || $(hEstado).value == 1) {
+        if ($(hEstado).value === 0 || $(hEstado).value === 4 || $(hEstado).value === 1) {
             //alert($(hEstado).value);
             // debugger;
             j = 1;
@@ -1645,7 +1637,7 @@ function preguardarAntecedente() {
                     respuesta[i] = transport.responseText;
                     $('hIdAntecedente_' + i).value = respuesta[i];
                 }
-            })
+            });
 
             $(hEstado).value = 2;
         }
@@ -1654,13 +1646,13 @@ function preguardarAntecedente() {
 }
 function cambiarAntecedente(n) {
     // $('imgPreguardarAntecedentes').src='../../../../fastmedical_front/imagen/btn/btn_preguardar.gif';
-    if ($('hEstadoAgregar_' + n).value == '2') {
+    if ($('hEstadoAgregar_' + n).value === '2') {
         $('hEstadoAgregar_' + n).value = 4;
     }
     preguardarAntecedente();
 }
 function verAntecedentesAnteriores() {
-    if ($('habierto').value == 0) {
+    if ($('habierto').value === 0) {
         $('habierto').value = 1;
         $('icono_abrir').src = '../../../../fastmedical_front/imagen/icono/cerrarVentana.png';
         var codigoPaciente = $('htxtcodigopaciente').value;
@@ -1698,7 +1690,7 @@ function clonarExamenes() {
             respuesta = transport.responseText;
             alert(respuesta);
         }
-    })
+    });
 }
 function pasarProduccion() {
     patronModulo = 'pasarProduccion';
@@ -1714,7 +1706,7 @@ function pasarProduccion() {
             respuesta = transport.responseText;
             alert(respuesta);
         }
-    })
+    });
 }
 
 function accionesExamenes() {
@@ -1724,18 +1716,18 @@ function accionesExamenes() {
     vestadoDesarrollo = $('stdDesarrollo').innerHTML;
     vformname = 'formBuscadorPersonas';
     vtitle = 'Acciones Versiones Estados';
-    vwidth = '600'
-    vheight = '400'
-    vcenter = 't'
-    vresizable = ''
-    vmodal = 'false'
-    vstyle = ''
-    vopacity = ''
+    vwidth = '600';
+    vheight = '400';
+    vcenter = 't';
+    vresizable = '';
+    vmodal = 'false';
+    vstyle = '';
+    vopacity = '';
 
-    vposx1 = ''
-    vposx2 = ''
-    vposy1 = ''
-    vposy2 = ''
+    vposx1 = '';
+    vposx2 = '';
+    vposy1 = '';
+    vposy2 = '';
     patronModulo = 'ventanaAccionesExamenes';
     parametros = '';
     parametros += 'p1=' + patronModulo;
@@ -1745,7 +1737,7 @@ function accionesExamenes() {
     parametros += '&p5=' + vestadoDesarrollo;
 
     posFuncion = 'verificarExisteDesarrollo';
-    CargarVentanaPopPap(vformname, vtitle, vwidth, vheight, vcenter, vresizable, vmodal, vstyle, vopacity, vposx1, vposx2, vposy1, vposy2, parametros, posFuncion)
+    CargarVentanaPopPap(vformname, vtitle, vwidth, vheight, vcenter, vresizable, vmodal, vstyle, vopacity, vposx1, vposx2, vposy1, vposy2, parametros, posFuncion);
 
 }
 function verificarExisteDesarrollo() {
@@ -1763,32 +1755,29 @@ function verificarExisteDesarrollo() {
             respuesta = transport.responseText;
             array = respuesta.split("|");
             //            alert(array[0]);
-            if (array[0] == 1) {
-                if (array[1] == "disponible") {
+            if (array[0] === 1) {
+                if (array[1] === "disponible") {
                     //mensajear se puede clonar
                 } else {
                     stdBotones(2, descVersion);
                 }
                 stdBotones(1, descVersion);
 
-            }
-            else if (array[0] == 2) {
+            } else if (array[0] === 2) {
                 //pasar a produccion
                 stdBotones(2, descVersion);
-            }
-            else if (array[0] == 0) {
-                if (array[1] == "disponible") {
+            } else if (array[0] === 0) {
+                if (array[1] === "disponible") {
                     //mensajear se puede clonar
                     stdBotones(3, descVersion);
                 } else {
                     stdBotones(4, descVersion);
                 }
-            }
-            else {
+            } else {
                 stdBotones(5, "");
             }
         }
-    })
+    });
 }
 
 function stdBotones(opt, descVersion) {
@@ -1838,24 +1827,24 @@ function vistaPreviaExamenes() {
     version = $('cboVersion').value;
     vformname = 'vistaPrevia';
     vtitle = 'vista Previa';
-    vwidth = '900'
-    vheight = '500'
-    vcenter = 't'
-    vresizable = ''
-    vmodal = 'false'
-    vstyle = ''
-    vopacity = ''
-    vposx1 = ''
-    vposx2 = ''
-    vposy1 = ''
-    vposy2 = ''
+    vwidth = '900';
+    vheight = '500';
+    vcenter = 't';
+    vresizable = '';
+    vmodal = 'false';
+    vstyle = '';
+    vopacity = '';
+    vposx1 = '';
+    vposx2 = '';
+    vposy1 = '';
+    vposy2 = '';
     patronModulo = 'vistaPrevia';
     parametros = '';
     parametros += 'p1=' + patronModulo;
     parametros += '&p2=' + version;
     parametros += '&p3=' + idExamen;
     posFuncion = '';
-    CargarVentanaPopPap(vformname, vtitle, vwidth, vheight, vcenter, vresizable, vmodal, vstyle, vopacity, vposx1, vposx2, vposy1, vposy2, parametros, posFuncion)
+    CargarVentanaPopPap(vformname, vtitle, vwidth, vheight, vcenter, vresizable, vmodal, vstyle, vopacity, vposx1, vposx2, vposy1, vposy2, parametros, posFuncion);
 
 }
 
@@ -1877,54 +1866,53 @@ function accionesVersion(accion) {
             respuesta = transport.responseText;
             examenesFisicos();
         }
-    })
+    });
 }
 
 
 function validaIntegers(evento, elemento, dato) {
-    if (evento == '') {
+    if (evento === '') {
         tecla = 13;
     } else {
-        tecla = evento.keyCode
+        tecla = evento.keyCode;
     }
     valor = elemento.value;
     longitud = valor.length;
     ultimoCaracter = valor.substr(valor.length - 1, valor.length);
     //alert(ultimoCaracter);
-    if (("0123456789").indexOf(ultimoCaracter) == -1) {
+    if (("0123456789").indexOf(ultimoCaracter) === -1) {
         elemento.value = valor.substr(0, valor.length - 1);
     }
 }
 
 function validaDecimal(evento, elemento, dato) {
-    if (evento == '') {
+    if (evento === '') {
         tecla = 13;
     } else {
-        tecla = evento.keyCode
+        tecla = evento.keyCode;
     }
     valor = elemento.value;
     longitud = valor.length;
     ultimoCaracter = valor.substr(valor.length - 1, valor.length);
-    if (ultimoCaracter == '.') {
-        if (valor.substr(0, valor.length - 1).indexOf(ultimoCaracter) != -1) {
+    if (ultimoCaracter === '.') {
+        if (valor.substr(0, valor.length - 1).indexOf(ultimoCaracter) !== -1) {
             elemento.value = valor.substr(0, valor.length - 1);
         }
     }
     //alert(ultimoCaracter);
-    if (("0123456789.").indexOf(ultimoCaracter) == -1) {
+    if (("0123456789.").indexOf(ultimoCaracter) === -1) {
         elemento.value = valor.substr(0, valor.length - 1);
     }
 }
 
 function preguardarPruebaCorregido(idPrueba) {
     //alert(idPrueba);
-    if (idPrueba == 6) {//Evolucion de la version actual, no se debe agregar nuevas versiones, se debe dejar alli
+    if (idPrueba === 6) {//Evolucion de la version actual, no se debe agregar nuevas versiones, se debe dejar alli
         //valorCampo_6_1
         textoEvolucion = trimJunny($('valorCampo_6_1').value);
         if (textoEvolucion.length < 50) {
             alert("Ingrese como m\xEDnimo 50 caracteres\nen la evoluci\xF3n");
-        }
-        else {
+        } else {
             // $('imgPreguardarPrueba'+idPrueba).src='../../../../fastmedical_front/imagen/btn/btn_preguardar_off.gif';
             iCodigoProgramacion = $('hcodigoProgramacion').value;
             numeroCampos = parseInt($('numeroCampos_' + idPrueba).value);
@@ -1943,7 +1931,7 @@ function preguardarPruebaCorregido(idPrueba) {
                 idTipoCampo = 'idTipoCampo_' + idPrueba + '_' + i;
                 campoPrueba = 'campoPrueba_' + idPrueba + '_' + i;
                 //si el estado es nuevo y diferente de null o el estado es editado
-                if (($(idEstadoCampo).value == '' && $(idValorCampo).value != '') || $(idEstadoCampo).value == 4) {
+                if (($(idEstadoCampo).value === '' && $(idValorCampo).value !== '') || $(idEstadoCampo).value === 4) {
                     cadenaCampos = cadenaCampos + $(idValorCampo).value + '|';
                     cadenaEstados = cadenaEstados + $(idEstadoCampo).value + '|';
                     cadenaIdCampos = cadenaIdCampos + $(idCampoExamen).value + '|';
@@ -1959,7 +1947,7 @@ function preguardarPruebaCorregido(idPrueba) {
             cadenaCampos = cadenaCampos.replace(/'/gi, "\'\'");
             cadenaCamposCodificada = Base64.encode(cadenaCampos);
             //alert(cadenaCamposCodificada);
-            if (n != 0) {
+            if (n !== 0) {
                 patronModulo = 'preguardarExamenes';
                 parametros = '';
                 parametros += 'p1=' + patronModulo;
@@ -1979,7 +1967,7 @@ function preguardarPruebaCorregido(idPrueba) {
                         micargador(0);
                         respuesta = transport.responseText;
                         //alert(respuesta);
-                        arrayRespuesta = respuesta.split("|")
+                        arrayRespuesta = respuesta.split("|");
                         numero = arrayRespuesta.length - 1;
                         for (j = 0; j < numero; j++) {
                             idCampoExamen = 'idCampoExamen_' + idPrueba + '_' + arrayCamposAfectados[j];
@@ -1988,11 +1976,10 @@ function preguardarPruebaCorregido(idPrueba) {
                             $(idCampoExamen).value = arrayRespuesta[j];
                         }
                     }
-                })
+                });
             }
         }
-    }
-    else {
+    } else {
         // $('imgPreguardarPrueba'+idPrueba).src='../../../../fastmedical_front/imagen/btn/btn_preguardar_off.gif';
         iCodigoProgramacion = $('hcodigoProgramacion').value;
         numeroCampos = parseInt($('numeroCampos_' + idPrueba).value);
@@ -2011,7 +1998,7 @@ function preguardarPruebaCorregido(idPrueba) {
             idTipoCampo = 'idTipoCampo_' + idPrueba + '_' + i;
             campoPrueba = 'campoPrueba_' + idPrueba + '_' + i;
             //si el estado es nuevo y diferente de null o el estado es editado
-            if (($(idEstadoCampo).value == '' && $(idValorCampo).value != '') || $(idEstadoCampo).value == 4) {
+            if (($(idEstadoCampo).value === '' && $(idValorCampo).value !== '') || $(idEstadoCampo).value === 4) {
                 cadenaCampos = cadenaCampos + $(idValorCampo).value + '|';
                 cadenaEstados = cadenaEstados + $(idEstadoCampo).value + '|';
                 cadenaIdCampos = cadenaIdCampos + $(idCampoExamen).value + '|';
@@ -2027,7 +2014,7 @@ function preguardarPruebaCorregido(idPrueba) {
         cadenaCampos = cadenaCampos.replace(/'/gi, "\'\'");
         cadenaCamposCodificada = Base64.encode(cadenaCampos);
         //alert(cadenaCamposCodificada);
-        if (n != 0) {
+        if (n !== 0) {
             patronModulo = 'preguardarExamenes';
             parametros = '';
             parametros += 'p1=' + patronModulo;
@@ -2047,7 +2034,7 @@ function preguardarPruebaCorregido(idPrueba) {
                     micargador(0);
                     respuesta = transport.responseText;
                     //alert(respuesta);
-                    arrayRespuesta = respuesta.split("|")
+                    arrayRespuesta = respuesta.split("|");
                     numero = arrayRespuesta.length - 1;
                     for (j = 0; j < numero; j++) {
                         idCampoExamen = 'idCampoExamen_' + idPrueba + '_' + arrayCamposAfectados[j];
@@ -2056,20 +2043,19 @@ function preguardarPruebaCorregido(idPrueba) {
                         $(idCampoExamen).value = arrayRespuesta[j];
                     }
                 }
-            })
+            });
         }
     }
 }
 
 function preguardarPrueba(idPrueba) {
     //alert(idPrueba);
-    if (idPrueba == 6) {//Evolucion de la version actual, no se debe agregar nuevas versiones, se debe dejar alli
+    if (idPrueba === 6) {//Evolucion de la version actual, no se debe agregar nuevas versiones, se debe dejar alli
         //valorCampo_6_1
         textoEvolucion = trimJunny($('valorCampo_6_1').value);
         if (textoEvolucion.length < 50) {
             alert("Ingrese como m\xEDnimo 50 caracteres\nen la evoluci\xF3n");
-        }
-        else {
+        } else {
             //$('imgPreguardarPrueba'+idPrueba).src='../../../../fastmedical_front/imagen/btn/btn_preguardar_off.gif';
             iCodigoProgramacion = $('hcodigoProgramacion').value;
             numeroCampos = parseInt($('numeroCampos_' + idPrueba).value);
@@ -2088,7 +2074,7 @@ function preguardarPrueba(idPrueba) {
                 idTipoCampo = 'idTipoCampo_' + idPrueba + '_' + i;
                 campoPrueba = 'campoPrueba_' + idPrueba + '_' + i;
                 //si el estado es nuevo y diferente de null o el estado es editado
-                if (($(idEstadoCampo).value == '' && $(idValorCampo).value != '') || $(idEstadoCampo).value == 4) {
+                if (($(idEstadoCampo).value === '' && $(idValorCampo).value !== '') || $(idEstadoCampo).value === 4) {
                     cadenaCampos = cadenaCampos + $(idValorCampo).value + '|';
                     cadenaEstados = cadenaEstados + $(idEstadoCampo).value + '|';
                     cadenaIdCampos = cadenaIdCampos + $(idCampoExamen).value + '|';
@@ -2104,7 +2090,7 @@ function preguardarPrueba(idPrueba) {
             cadenaCampos = cadenaCampos.replace(/'/gi, "\'\'");
             cadenaCamposCodificada = Base64.encode(cadenaCampos);
             //alert(cadenaCamposCodificada);
-            if (n != 0) {
+            if (n !== 0) {
                 patronModulo = 'preguardarExamenes';
                 parametros = '';
                 parametros += 'p1=' + patronModulo;
@@ -2126,7 +2112,7 @@ function preguardarPrueba(idPrueba) {
                         cargadorpeche(0, idCargador);
                         respuesta = transport.responseText;
                         //alert(respuesta);
-                        arrayRespuesta = respuesta.split("|")
+                        arrayRespuesta = respuesta.split("|");
                         numero = arrayRespuesta.length - 1;
                         for (j = 0; j < numero; j++) {
                             idCampoExamen = 'idCampoExamen_' + idPrueba + '_' + arrayCamposAfectados[j];
@@ -2135,11 +2121,10 @@ function preguardarPrueba(idPrueba) {
                             $(idCampoExamen).value = arrayRespuesta[j];
                         }
                     }
-                })
+                });
             }
         }
-    }
-    else {
+    } else {
         //$('imgPreguardarPrueba'+idPrueba).src='../../../../fastmedical_front/imagen/btn/btn_preguardar_off.gif';
         iCodigoProgramacion = $('hcodigoProgramacion').value;
         numeroCampos = parseInt($('numeroCampos_' + idPrueba).value);
@@ -2158,7 +2143,7 @@ function preguardarPrueba(idPrueba) {
             idTipoCampo = 'idTipoCampo_' + idPrueba + '_' + i;
             campoPrueba = 'campoPrueba_' + idPrueba + '_' + i;
             //si el estado es nuevo y diferente de null o el estado es editado
-            if (($(idEstadoCampo).value == '' && $(idValorCampo).value != '') || $(idEstadoCampo).value == 4) {
+            if (($(idEstadoCampo).value === '' && $(idValorCampo).value !== '') || $(idEstadoCampo).value === 4) {
                 cadenaCampos = cadenaCampos + $(idValorCampo).value + '|';
                 cadenaEstados = cadenaEstados + $(idEstadoCampo).value + '|';
                 cadenaIdCampos = cadenaIdCampos + $(idCampoExamen).value + '|';
@@ -2174,7 +2159,7 @@ function preguardarPrueba(idPrueba) {
         cadenaCampos = cadenaCampos.replace(/'/gi, "\'\'");
         cadenaCamposCodificada = Base64.encode(cadenaCampos);
         //alert(cadenaCamposCodificada);
-        if (n != 0) {
+        if (n !== 0) {
             patronModulo = 'preguardarExamenes';
             parametros = '';
             parametros += 'p1=' + patronModulo;
@@ -2196,7 +2181,7 @@ function preguardarPrueba(idPrueba) {
                     cargadorpeche(0, idCargador);
                     respuesta = transport.responseText;
                     //alert(respuesta);
-                    arrayRespuesta = respuesta.split("|")
+                    arrayRespuesta = respuesta.split("|");
                     numero = arrayRespuesta.length - 1;
                     for (j = 0; j < numero; j++) {
                         idCampoExamen = 'idCampoExamen_' + idPrueba + '_' + arrayCamposAfectados[j];
@@ -2205,7 +2190,7 @@ function preguardarPrueba(idPrueba) {
                         $(idCampoExamen).value = arrayRespuesta[j];
                     }
                 }
-            })
+            });
         }
     }
     //Base64.encode(datos);
@@ -2219,7 +2204,7 @@ function cambioEstado(idCampoEstado) {
 
     //$('imgPreguardarPrueba'+idPrueba).src='../../../../fastmedical_front/imagen/btn/btn_preguardar.gif';
     var estado = $(idCampoEstado).value;
-    if (estado == 2) {
+    if (estado === 2) {
         $(idCampoEstado).value = 4;
     }
     preguardarPrueba(idPrueba);
@@ -2247,7 +2232,7 @@ function cargarHC() {
             document.getElementById("divDerechaVerHC").style.overflow = 'auto';
             arbolHCFechas(codigoPaciente);
         }
-    })
+    });
 }
 function obtenerCodigoPaciente() {
     codigopersona = $('txtCodigoPersona').value;
@@ -2275,11 +2260,11 @@ function cargarHCPacientes(idPaciente) {
             $('historia_paciente').update(respuesta);
             arbolHCFechas(idPaciente);
         }
-    })
+    });
 }
 function clickArbolHC(id) {
     var patron = /-|_/i;         //i, en caso de letras le indica que mayuscula o minuscula es indiferente
-    if (id.search(patron) == -1) {   //-1  significa que (-,_)no se encuentran en la cadena
+    if (id.search(patron) === -1) {   //-1  significa que (-,_)no se encuentran en la cadena
         //alert(id);
         verHistoriaFecha(id);
     }
@@ -2300,7 +2285,7 @@ function verHistoriaFecha(id) {
             respuesta = transport.responseText;
             $('divDerechaVerHC').update(respuesta);
         }
-    })
+    });
 }
 function arbolHCFechas(codigopaciente) {
     var p = "p1=arbolHCFechas";
@@ -2311,12 +2296,11 @@ function arbolHCFechas(codigopaciente) {
 }
 function tipoDeVista() {
     var id = $("cboPor").value;
-    if (id == 0) {
+    if (id === 0) {
         var codigopaciente = $("htxtcodigopaciente").value;
         document.getElementById("divDerechaVerHC").innerHTML = "";
         this.arbolHCFechas(codigopaciente);
-    }
-    else if (id == 1) {
+    } else if (id === 1) {
         document.getElementById("divDerechaVerHC").innerHTML = "";
         var p = "p1=arbolHCItems";
         var funcionClick = "clickArbolHCItems";
@@ -2329,7 +2313,7 @@ function clickArbolHCItems(id, text) {
     //    alert(codigopaciente);
     var destino = "divDerechaVerHC";
     var funcion = "";
-    if (id == 8) {
+    if (id === 8) {
         //alert("laboratorio");
         funcion = "tablaLaboratorioHc";
     }
@@ -2337,10 +2321,10 @@ function clickArbolHCItems(id, text) {
     parametros += '&p2=' + id + '&p3=' + text + '&p4=' + codigopaciente;
     enviarFormulario("", parametros, funcion, destino);
     //    alert("ehhhehehe"+text);
-    if ($('Detalle') != null) {
+    if ($('Detalle') !== null) {
         $('Detalle').hide();
     }
-    if ($('Detalle2') != null) {
+    if ($('Detalle2') !== null) {
         $('Detalle2').hide();
     }
     //$('Detalle2').hide();
@@ -2362,7 +2346,7 @@ function iniciarActoMedico(codigoProgramacion) {
     var codigopaciente = document.getElementById("htxtcodigopaciente").value;
     var codigoservicio = document.getElementById("htxtcodigoservicio").value;
     //alert(estadoatencion);
-    if (estadoatencion == '0004') {
+    if (estadoatencion === '0004') {
         reiniciarDatosDiagnosticos();
     }
 
@@ -2383,13 +2367,12 @@ function iniciarActoMedico(codigoProgramacion) {
             respuesta = transport.responseText;
             $('Div_filiacionHC').update(respuesta);
             //            codigoAfiliacion = document.getElementById("htxtcodigoafiliacion").value;
-            if (estadoatencion == '0004' || estadoatencion == '0007') {
-            }
-            else {
+            if (estadoatencion === '0004' || estadoatencion === '0007') {
+            } else {
                 verHcReciente(codigoProgramacion);
             }
         }
-    })
+    });
 }
 function cargaFiliacionActoMedico() {
     //tablaProductosTratamientosHC();//Esto es de LUIS
@@ -2416,15 +2399,14 @@ function cargaFechaVencimientoRecetaMedica() {
             respuesta = transport.responseText;
             $("txtfechavencimientoreceta").value = respuesta;
         }
-    })
+    });
 }
 function abrirDiv(nombreDiv) {
-    if (document.getElementById(nombreDiv).style.display == 'none') {
+    if (document.getElementById(nombreDiv).style.display === 'none') {
         $(nombreDiv).show();
         $(nombreDiv + "icono").src = '../../../../fastmedical_front/imagen/icono/plegar.png';
         $(nombreDiv + "icono").title = 'Desplegar';
-    }
-    else {
+    } else {
         $(nombreDiv).hide();
         $(nombreDiv + "icono").src = '../../../../fastmedical_front/imagen/icono/desplegar.png';
         $(nombreDiv + "icono").title = 'Plegar';
@@ -2432,10 +2414,9 @@ function abrirDiv(nombreDiv) {
 }
 
 function abrirDivSimple(nombreDiv) {
-    if (document.getElementById(nombreDiv).style.display == 'none') {
+    if (document.getElementById(nombreDiv).style.display === 'none') {
         $(nombreDiv).show();
-    }
-    else {
+    } else {
         $(nombreDiv).hide();
     }
 }
@@ -2458,7 +2439,7 @@ function verHcReciente() {
             $('Div_HCRecienteContenido').update(respuesta);
             //            document.getElementById("divDerechaVerHC").style.overflow='auto';
         }
-    })
+    });
 }
 function regresarAgendaMedica() {
     $("Div_GeneralActoMedicoHC").hide();
@@ -2489,7 +2470,7 @@ function cancelarAtencionMedica() {
                 $("Div_GeneralActoMedico").show();
                 mostrarprogramacionMedicosActoMedico();
             }
-        })
+        });
 
     }
 }
@@ -2518,7 +2499,7 @@ function tablaProductosTratamientosHC() {
 
 function agregarMedicamentoHC(rowId, cellInd, data) {
     //var nombre='nombre Medicamento'
-    var divAumentar = 'divRecetaGeneral'
+    var divAumentar = 'divRecetaGeneral';
     var nroReceta;
     var elemento;
     var existe = 0;
@@ -2530,7 +2511,7 @@ function agregarMedicamentoHC(rowId, cellInd, data) {
     var stock;
 
     nroReceta = $('nroReceta').value;
-    if (cellInd == 4) {
+    if (cellInd === 4) {
         //alert('pece')
         nombreMedicamento = tablaProductosTratamientos.cells(rowId, 1).getValue();
         codigoProducto = tablaProductosTratamientos.cells(rowId, 0).getValue();
@@ -2539,18 +2520,18 @@ function agregarMedicamentoHC(rowId, cellInd, data) {
 
         var cantidadRecetas = $('hcantidadRecetas').value;
         if (cantidadRecetas >= (nroReceta - 1)) {
-            if (data == '') {
+            if (data === '') {
                 codigoProducto = tablaProductosTratamientos.cells(rowId, 0).getValue();
-                elemento = document.getElementById('hAgregados_' + nroReceta)
-                if (elemento != null) {
+                elemento = document.getElementById('hAgregados_' + nroReceta);
+                if (elemento !== null) {
 
-                    if ($('hAgregados_' + nroReceta).value.indexOf(codigoProducto) != -1) {
+                    if ($('hAgregados_' + nroReceta).value.indexOf(codigoProducto) !== -1) {
                         return;
                     }
                 }
 
                 stock = tablaProductosTratamientos.cells(rowId, 3).getValue();
-                if (stock == 0) {
+                if (stock === 0) {
                     if (!window.confirm("¿El Producto no cuenta con Stock en almacén desea Continuar?")) {
                         return;
                     }
@@ -2560,14 +2541,13 @@ function agregarMedicamentoHC(rowId, cellInd, data) {
                 elemento = document.getElementById('divReceta_' + nroReceta);
 
 
-                if (elemento == null) {//verificamos si existe un div para la receta
-                    divAumentar = 'divRecetaGeneral'
+                if (elemento === null) {//verificamos si existe un div para la receta
+                    divAumentar = 'divRecetaGeneral';
                     existe = 0;
                     numeroRecetas = $('hcantidadRecetas').value;
                     numeroRecetas++;
                     $('hcantidadRecetas').value = numeroRecetas;
-                }
-                else {
+                } else {
                     divAumentar = 'divReceta_' + nroReceta;
                     existe = 1;
                     numeroProducto = $('hNumeroProductos_' + nroReceta).value;
@@ -2582,8 +2562,8 @@ function agregarMedicamentoHC(rowId, cellInd, data) {
                 var arreglo = data.split("|");
                 nroReceta = arreglo[0];
                 elemento = document.getElementById('divReceta_' + nroReceta);
-                if (elemento == null) {//verificamos si existe un div para la receta
-                    divAumentar = 'divRecetaGeneral'
+                if (elemento === null) {//verificamos si existe un div para la receta
+                    divAumentar = 'divRecetaGeneral';
                     numeroRecetas = $('hcantidadRecetas').value;
                     numeroRecetas++;
                     $('hcantidadRecetas').value = numeroRecetas;
@@ -2599,7 +2579,7 @@ function agregarMedicamentoHC(rowId, cellInd, data) {
                 codigoProducto = arreglo[2];
                 presentacion = arreglo[3];
                 //alert(data)
-                if (codigoProducto == '') {
+                if (codigoProducto === '') {
                     nombreMedicamento = arreglo[7];
                     codigoProducto = '0000000';
                     presentacion = arreglo[8];
@@ -2637,13 +2617,13 @@ function agregarMedicamentoHC(rowId, cellInd, data) {
                     var documentFragment = range.createContextualFragment(s);
                     para.appendChild(documentFragment);
 
-                    $('hAgregados_' + nroReceta).value = $('hAgregados_' + nroReceta).value + '|' + codigoProducto
-                    if (data != '') {
+                    $('hAgregados_' + nroReceta).value = $('hAgregados_' + nroReceta).value + '|' + codigoProducto;
+                    if (data !== '') {
                         // alert('peche1');
                         $('hreceta_' + nroReceta).value = arreglo[4];
                         $('hIdTratamiento_' + nroReceta + '_' + numeroProducto).value = arreglo[5];
                         $('cantidad_' + nroReceta + '_' + numeroProducto).value = arreglo[6];
-                        if (codigoProducto == '0000000') {
+                        if (codigoProducto === '0000000') {
                             $('dosis_' + nroReceta + '_' + numeroProducto).value = trimJunny(arreglo[9]);
                             $('fechaVencimiento_' + nroReceta).value = arreglo[10];
                         } else {
@@ -2659,16 +2639,16 @@ function agregarMedicamentoHC(rowId, cellInd, data) {
                         var fechaLimite = new Date(arrayFecha[2], arrayFecha[1] - 1, arrayFecha[0]);
                         //alert(fechaLimite);
                         var diferencia = -factual.getTime() + fechaLimite.getTime();
-                        var dias = Math.floor(diferencia / (1000 * 60 * 60 * 24)) + 1
+                        var dias = Math.floor(diferencia / (1000 * 60 * 60 * 24)) + 1;
                         $('diasValidos_' + nroReceta).value = dias;
 
                     }
 
                 }
-            })
+            });
         } else {
             cantidadRecetas++;
-            alert('la receta nro:' + cantidadRecetas + ' aun no ha sido registrada')
+            alert('la receta nro:' + cantidadRecetas + ' aun no ha sido registrada');
         }
     }
 }
@@ -2696,7 +2676,7 @@ function duplicarReceta(numeroReceta) {
             var respuesta = transport.responseText;
             eval(respuesta);
         }
-    })
+    });
 }
 function preguardarRectaMedica(idReceta, idProducto) {
 
@@ -2709,7 +2689,7 @@ function preguardarRectaMedica(idReceta, idProducto) {
     var vModoAplicacion;//=$('dosis_'+idReceta+'_'+idProducto).value;
     var patronModulo = 'preguardarRectaMedica';
     var codigoProgramacion = $('hcodigoProgramacion').value;
-    if (c_cod_ser_pro == '0000000') {
+    if (c_cod_ser_pro === '0000000') {
         vModoAplicacion = $('hOtros_' + idReceta + '_' + idProducto).value + '|' + $('hOtrosPresentacion_' + idReceta + '_' + idProducto).value;
         vModoAplicacion = vModoAplicacion + '|' + $('dosis_' + idReceta + '_' + idProducto).value;
     } else {
@@ -2746,7 +2726,7 @@ function preguardarRectaMedica(idReceta, idProducto) {
 
 
         }
-    })
+    });
 }
 function creaReceta(nombrediv) {
     var divPadre = document.getElementById("Div_TablaTratamientoMedicamentos");
@@ -2758,7 +2738,7 @@ function creaReceta(nombrediv) {
 function eliminarMedicamentoHC(numeroReceta, numeroProducto, opcion) {
 
     //window.alert(document.getElementById("\'"+codigoMedicamento+"\'").value);
-    if (opcion == 1) {
+    if (opcion === 1) {
         if (!window.confirm("¿Desea eliminar el producto de la Receta Medica?")) {
             return;
         }
@@ -2787,7 +2767,7 @@ function eliminarMedicamentoHC(numeroReceta, numeroProducto, opcion) {
             $('hAgregados_' + numeroReceta).value = cadenaProducto;
 
         }
-    })
+    });
 
 }
 function eliminarReceta(numeroReceta) {
@@ -2796,7 +2776,7 @@ function eliminarReceta(numeroReceta) {
     // $('divReceta_'+numeroReceta).hide();
     for (i = 1; i <= cantidad; i++) {
         //alert(i)
-        eliminarMedicamentoHC(numeroReceta, i, 0)
+        eliminarMedicamentoHC(numeroReceta, i, 0);
     }
     // $('divReceta_'+numeroReceta).hide();
 }
@@ -2821,10 +2801,10 @@ function tablaPracticasMedicasTratamientosHC() {
 function agregarPracticaMedicaHC(rowId, cellInd, data) {
 
     //$('imgPreguardarTratatamientoPracticasMedicas').src='../../../../fastmedical_front/imagen/btn/btn_preguardar.gif';
-    if (data == undefined) {
+    if (data === undefined) {
         codigopracticamedica = tablaPracticasMedicasTratamientos.cells(rowId, 0).getValue();
         descripcionpracticamedica = tablaPracticasMedicasTratamientos.cells(rowId, 1).getValue();
-        if (cellInd == 3) {
+        if (cellInd === 3) {
             mostrarPreciosAtencionMedica(codigopracticamedica, descripcionpracticamedica);
         } else {
 
@@ -2836,8 +2816,7 @@ function agregarPracticaMedicaHC(rowId, cellInd, data) {
             codigosegus = tablaPracticasMedicasTratamientos.cells(rowId, 2).getValue();
 
         }
-    }
-    else {
+    } else {
         //data=Base64.decode(data);
         arreglo = data.split("|");
         // alert(arreglo);
@@ -2851,22 +2830,21 @@ function agregarPracticaMedicaHC(rowId, cellInd, data) {
         //modoaplicacion = Base64.encode(arreglo[3]);
         estadoregistro = arreglo[4];
         codigosegus = arreglo[5];
-        if (codigosegus == '') {
+        if (codigosegus === '') {
             codigosegus = '----';
         }
 
     }
     var codigos = document.getElementById("htxtcodigosServicios").value;
-    if (cellInd != 3) {
+    if (cellInd !== 3) {
         if ($('contadorBK')) {
 
-            if (codigopracticamedica == 'XXXX200301') {
+            if (codigopracticamedica === 'XXXX200301') {
                 if ($('txtNumeroDiasSintomatico').value >= 15) {
                     if ($('contadorBK').value < 2) {
                         if (codigos.length > 0) {
                             codigos = codigos + "|" + codigopracticamedica;
-                        }
-                        else {
+                        } else {
                             codigos = codigopracticamedica;
                         }
                         document.getElementById("htxtcodigosServicios").value = codigos;
@@ -2900,7 +2878,7 @@ function agregarPracticaMedicaHC(rowId, cellInd, data) {
                                 $('contadorBK').value++;
                                 $('txtNumeroBK').value = $('txtNumeroBK').value + numerodivpracticamedica + '|';
                                 preguardarTratatamientoPracticasMedicas();
-                                if ($('contadorBK').value == 1) {
+                                if ($('contadorBK').value === 1) {
 
                                     $('div_btnGenerarOrdenDK').update('1 Orden Generada');
                                 } else {
@@ -2909,16 +2887,15 @@ function agregarPracticaMedicaHC(rowId, cellInd, data) {
                                 }
                                 //document.getElementById("hNumeroTratamientoPracticasMedicas").value = contadorDivsPracticaMedica;
                             }
-                        })
+                        });
                     }
                 }
             }
         }
-        if (!((codigos.indexOf(codigopracticamedica + "|") != -1) || (codigos.indexOf(codigopracticamedica) != -1))) {
+        if (!((codigos.indexOf(codigopracticamedica + "|") !== -1) || (codigos.indexOf(codigopracticamedica) !== -1))) {
             if (codigos.length > 0) {
                 codigos = codigos + "|" + codigopracticamedica;
-            }
-            else {
+            } else {
                 codigos = codigopracticamedica;
             }
             document.getElementById("htxtcodigosServicios").value = codigos;
@@ -2952,7 +2929,7 @@ function agregarPracticaMedicaHC(rowId, cellInd, data) {
                     preguardarTratatamientoPracticasMedicas();
                     //document.getElementById("hNumeroTratamientoPracticasMedicas").value = contadorDivsPracticaMedica;
                 }
-            })
+            });
         }
     }
 }
@@ -2976,37 +2953,37 @@ function tablaPreciosTratamientoAtencionMedica(codigo) {
 }
 function CargarVentanaPreciosAtencionMedica(vformname, vtitle, vwidth, vheight, vcenter, vresizable, vmodal, vstyle, vopacity, vposx1, vposx2, vposy1, vposy2, parametros, posFuncion) {
     myRand = parseInt(Math.random() * 999999999999999);
-    if (vwidth == undefined || vwidth == 0)
+    if (vwidth === undefined || vwidth === 0)
         vwidth = 700;
-    if (vheight == undefined || vheight == 0)
+    if (vheight === undefined || vheight === 0)
         vheight = 400;
-    if (vposx1 == undefined || vposx1 == 0)
+    if (vposx1 === undefined || vposx1 === 0)
         vposx1 = 25;
-    if (vposy1 == undefined || vposy1 == 0)
+    if (vposy1 === undefined || vposy1 === 0)
         vposy1 = 110;
-    if (vposx2 == undefined || vposx2 == 0)
+    if (vposx2 === undefined || vposx2 === 0)
         vposx2 = 25;
-    if (vposy2 == undefined || vposy2 == 0)
+    if (vposy2 === undefined || vposy2 === 0)
         vposy2 = 110;
 
-    if (vresizable == undefined || vresizable == 0)
+    if (vresizable === undefined || vresizable === 0)
         vresizable = true;
     else
         vresizable = false;
-    if (vstyle == undefined || vstyle == 0)
+    if (vstyle === undefined || vstyle === 0)
         vstyle = "alphacube";   // fondo y estilo
     //if(veffect==veffect || veffect==0) veffect="popup_effect";
-    if (vmodal == undefined || vmodal == 0)
+    if (vmodal === undefined || vmodal === 0)
         vmodal = false;
     else
         vmodal = true;
-    if (vopacity == undefined || vopacity == 0)
+    if (vopacity === undefined || vopacity === 0)
         vopacity = 1;
-    if (vcenter == undefined || vcenter == 0 || vcenter == 't')
+    if (vcenter === undefined || vcenter === 0 || vcenter === 't')
         vcenter = true;
     else
         vcenter = false;
-    if (vtitle == undefined)
+    if (vtitle === undefined)
         vtitle = vformname;
     if (!ExisteObjeto("Div_" + vformname)) {
         var vidfrm;
@@ -3015,7 +2992,7 @@ function CargarVentanaPreciosAtencionMedica(vformname, vtitle, vwidth, vheight, 
         vidfrm = "Frm_" + vformname;
         var vzindex = 100;
         var win;
-        if (vmodal == true || vmodal == 1)
+        if (vmodal === true || vmodal === 1)
             win = new Window({
                 id: vid,
                 className: vstyle,
@@ -3038,7 +3015,7 @@ function CargarVentanaPreciosAtencionMedica(vformname, vtitle, vwidth, vheight, 
         win.getContent().innerHTML = "<div id='" + vidfrm + "'></div>";
         //win.getContent().innerHTML = "<h1>No Constraint</h1>Wired mode<br><a href='#' onclick='Windows.getWindow(\"win3\").maximize()'>Maximize me</a>";
         win.setDestroyOnClose();
-        if (vcenter == true || vcenter == 1)
+        if (vcenter === true || vcenter === 1)
             win.showCenter(vmodal);
         else
             win.show(vmodal);
@@ -3047,42 +3024,42 @@ function CargarVentanaPreciosAtencionMedica(vformname, vtitle, vwidth, vheight, 
             right: vposx2,
             top: vposy1,
             bottom: 'auto'
-        })
+        });
         win.toFront();
 
         new Ajax.Request(pathRequestControl,
-            {
-                method: 'get',
-                parameters: parametros,
-                onComplete: function (transport) {
-                    respuesta = transport.responseText;
-                    $(vidfrm).update(respuesta);
-                    eval(posFuncion);
+                {
+                    method: 'get',
+                    parameters: parametros,
+                    onComplete: function (transport) {
+                        respuesta = transport.responseText;
+                        $(vidfrm).update(respuesta);
+                        eval(posFuncion);
+                    }
                 }
-            }
-        )
+        );
     }
 }
 function mostrarPreciosAtencionMedica(codigo, descripcion) {
-    titulo = 'Precios Atencion Medica'
-    vFormaAbrir = 'VENTANA'
-    vformname = 'PreciosAtencionMedica'
-    vtitle = 'Precios Atencion Medica'
-    vwidth = '520'
-    vheight = '400'
+    titulo = 'Precios Atencion Medica';
+    vFormaAbrir = 'VENTANA';
+    vformname = 'PreciosAtencionMedica';
+    vtitle = 'Precios Atencion Medica';
+    vwidth = '520';
+    vheight = '400';
     patronModulo = 'mostrarPreciosAtencionMedica';
-    vcenter = 't'
-    vresizable = ''
-    vmodal = 'false'
-    vstyle = ''
-    vopacity = ''
-    veffect = ''
-    vposx1 = ''
-    vposx2 = ''
-    vposy1 = ''
-    vposy2 = ''
-    file01 = ''
-    vfunctionjava = ''
+    vcenter = 't';
+    vresizable = '';
+    vmodal = 'false';
+    vstyle = '';
+    vopacity = '';
+    veffect = '';
+    vposx1 = '';
+    vposx2 = '';
+    vposy1 = '';
+    vposy2 = '';
+    file01 = '';
+    vfunctionjava = '';
     //posFuncion = ''
     /*---------------------------------------*/
     /*--------------------------------------*/
@@ -3092,24 +3069,24 @@ function mostrarPreciosAtencionMedica(codigo, descripcion) {
     parametros += '&p2=' + encodeURIComponent(descripcion);
     //parametros=encodeURIComponent(parametros);
     posFuncion = "tablaPreciosTratamientoAtencionMedica('" + codigo + "')";
-    CargarVentanaPreciosAtencionMedica(vformname, vtitle, vwidth, vheight, vcenter, vresizable, vmodal, vstyle, vopacity, vposx1, vposx2, vposy1, vposy2, parametros, posFuncion)
+    CargarVentanaPreciosAtencionMedica(vformname, vtitle, vwidth, vheight, vcenter, vresizable, vmodal, vstyle, vopacity, vposx1, vposx2, vposy1, vposy2, parametros, posFuncion);
 
 }
 function eliminarPracticaMedicaHC(nombreDiv, codigoServicio, numeroPracticaMedica) {
     // $(nombreDiv).hide();//Ocultamos el hidden
     var codigos = document.getElementById("htxtcodigosServicios").value;
-    if (codigos.indexOf(codigoServicio + "|") != -1) {
+    if (codigos.indexOf(codigoServicio + "|") !== -1) {
         codigos = codigos.replace(codigoServicio + "|", '');
     }
-    if (codigos.indexOf(codigoServicio) != -1) {
+    if (codigos.indexOf(codigoServicio) !== -1) {
         codigos = codigos.replace("|" + codigoServicio, '');
         codigos = codigos.replace(codigoServicio, '');
     }
     if ($('Div_Sintomatico')) {
-        if ($('txtNumeroBK').value.indexOf(numeroPracticaMedica + "|") != -1) {
+        if ($('txtNumeroBK').value.indexOf(numeroPracticaMedica + "|") !== -1) {
             $('txtNumeroBK').value = $('txtNumeroBK').value.replace(numeroPracticaMedica + "|", '');//Eliminar de la cadena en el caso el elmento se encuentre en el inicio o antes de llegar al final
         }
-        if ($('txtNumeroBK').value.indexOf(numeroPracticaMedica) != -1) {
+        if ($('txtNumeroBK').value.indexOf(numeroPracticaMedica) !== -1) {
             $('txtNumeroBK').value = $('txtNumeroBK').value.replace("|" + numeroPracticaMedica, '');//Eliminar de la cadena en el caso el elemento se encuentre al final
             $('txtNumeroBK').value = $('txtNumeroBK').value.replace(numeroPracticaMedica, '');//Eliminar de la cadena en el caso solo haya uno
         }
@@ -3117,7 +3094,7 @@ function eliminarPracticaMedicaHC(nombreDiv, codigoServicio, numeroPracticaMedic
 
         $('contadorBK').value = $('contadorBK').value - 1;
         $('div_btnGenerarOrdenDK').removeClassName('btnReportes1');
-        if ($('contadorBK').value == 1) {
+        if ($('contadorBK').value === 1) {
             $('div_btnGenerarOrdenDK').update('Generar 1 Orden BK');
         } else {
             $('div_btnGenerarOrdenDK').update('Generar 2 Ordenes BK');
@@ -3146,11 +3123,11 @@ function validarTratamientoMedicamentoso() {
 
         for (var j = 1; j <= productosReceta; j++) {
 
-            if ($('divProducto_' + i + '_' + j).style.display != 'none') {
+            if ($('divProducto_' + i + '_' + j).style.display !== 'none') {
 
 
-                if (trimJunny($('hcodigoProducto_' + i + '_' + j).value) == '0000000') {
-                    if (trimJunny($('hOtros_' + i + '_' + j).value) == 'otros') {
+                if (trimJunny($('hcodigoProducto_' + i + '_' + j).value) === '0000000') {
+                    if (trimJunny($('hOtros_' + i + '_' + j).value) === 'otros') {
                         alert('Ingrese Nuevo Producto');
                         todoOK = -1;
                         $('hOtros_' + i + '_' + j).setStyle({
@@ -3159,7 +3136,7 @@ function validarTratamientoMedicamentoso() {
                         });
                         break;
                     }
-                    if (trimJunny($('hOtrosPresentacion_' + i + '_' + j).value) == 'otros') {
+                    if (trimJunny($('hOtrosPresentacion_' + i + '_' + j).value) === 'otros') {
                         alert('Ingrese la Presentacion del nuevo producto');
                         todoOK = -2;
                         $('hOtrosPresentacion_' + i + '_' + j).setStyle({
@@ -3169,7 +3146,7 @@ function validarTratamientoMedicamentoso() {
                         break;
                     }
                 }
-                if (trimJunny($('cantidad_' + i + '_' + j).value) == '') {
+                if (trimJunny($('cantidad_' + i + '_' + j).value) === '') {
                     alert('ingresar Cantidad');
                     todoOK = -3;
                     $('cantidad_' + i + '_' + j).setStyle({
@@ -3178,7 +3155,7 @@ function validarTratamientoMedicamentoso() {
                     });
                     break;
                 }
-                if (trimJunny($('dosis_' + i + '_' + j).value) == '') {
+                if (trimJunny($('dosis_' + i + '_' + j).value) === '') {
                     alert('ingresar las indicaciones');
                     todoOK = -4;
                     $('dosis_' + i + '_' + j).setStyle({
@@ -3190,7 +3167,7 @@ function validarTratamientoMedicamentoso() {
             }
 
         }
-        if (todoOK != 1) {
+        if (todoOK !== 1) {
             break;
         }
     }
@@ -3201,23 +3178,19 @@ function validaryPreguardarTratamientoMedicamentoso() {
 
     var rptaValidacion = validarTratamientoMedicamentoso();
 
-    if (rptaValidacion == -1) {
+    if (rptaValidacion === -1) {
         window.alert("Falta ingresar nombre de medicamento!!!");
-    }
-    else {
-        if (rptaValidacion == -2) {
+    } else {
+        if (rptaValidacion === -2) {
             window.alert("Falta ingresar presentaci\xF3n del medicamento!!!");
-        }
-        else {
-            if (rptaValidacion == -3) {
+        } else {
+            if (rptaValidacion === -3) {
                 window.alert("Falta ingresar cantidad del medicamento!!!");
-            }
-            else {
-                if (rptaValidacion == -4) {
+            } else {
+                if (rptaValidacion === -4) {
                     window.alert("Falta ingresar las indicaciones del medicamento!!!");
-                }
-                else {
-                    if (rptaValidacion == 1) {//Todo OK
+                } else {
+                    if (rptaValidacion === 1) {//Todo OK
                         preguardarTratatamientoMedicamentosoCorregido();
                     }
                 }
@@ -3236,9 +3209,9 @@ function preguardarTratatamientoMedicamentosoCorregido() {
     for (i = 0; i < numtratamientomedicamentoso; i++) {
         hEstado = 'hEstadoAgregarTratamientoMedicamentoso_' + i;
         tipodosis = 0;
-        if ($("Div_Receta" + i).style.display != 'none') {
-            if ($(hEstado).value == 0 || $(hEstado).value == 4) {
-                if ($('hcodigoMedicamento_' + i).value == '0000000') {
+        if ($("Div_Receta" + i).style.display !== 'none') {
+            if ($(hEstado).value === 0 || $(hEstado).value === 4) {
+                if ($('hcodigoMedicamento_' + i).value === '0000000') {
                     observaciones = Base64.encode(($('otromedicamentonombre_' + i).value).toUpperCase() + "|" + ($('otromedicamentopresentacion_' + i).value).toUpperCase() + "|" + $('txtcantidadmedicamento_' + i).value + "|" + $('txtareaObservacionMedicamento_' + i).value);
                 } else {
                     observaciones = Base64.encode($('txtareaObservacionMedicamento_' + i).value);
@@ -3265,7 +3238,7 @@ function preguardarTratatamientoMedicamentosoCorregido() {
 
                         $('hIdTratamientoMedicamentoso_' + i).value = trimJunny(respuesta[i]);
                     }
-                })
+                });
 
                 $(hEstado).value = 2;
             }
@@ -3288,53 +3261,53 @@ function preguardarTratatamientoMedicamentoso() {
     //if(numerotratamientomedicamentoso>0){
     //Valida datos ingresados...
     for (i = 0; i < numerotratamientomedicamentoso; i++) {
-        if ($("Div_Receta" + i).style.display != 'none') {
-            if ($('hcodigoMedicamento_' + i).value == '0000000') {
-                if ($('otromedicamentonombre_' + i).value == '') {
-                    window.alert("Falta ingresar nombre de medicamento!!")
-                    return
+        if ($("Div_Receta" + i).style.display !== 'none') {
+            if ($('hcodigoMedicamento_' + i).value === '0000000') {
+                if ($('otromedicamentonombre_' + i).value === '') {
+                    window.alert("Falta ingresar nombre de medicamento!!");
+                    return;
                 }
-                if ($('otromedicamentopresentacion_' + i).value == '') {
+                if ($('otromedicamentopresentacion_' + i).value === '') {
                     window.alert("Falta ingresar presentación del medicamento '" + $('otromedicamentonombre_' + i).value + "'");
-                    return
+                    return;
                 }
-                if ($('txtcantidadmedicamento_' + i).value == '') {
+                if ($('txtcantidadmedicamento_' + i).value === '') {
                     window.alert("Falta ingresar cantidad del medicamento '" + $('otromedicamentonombre_' + i).value + "'");
-                    return
+                    return;
                 }
-                if ($('txtareaObservacionMedicamento_' + i).value == '') {
+                if ($('txtareaObservacionMedicamento_' + i).value === '') {
                     window.alert("Falta ingresar las indicaciones del medicamento '" + $('otromedicamentonombre_' + i).value + "'");
-                    return
+                    return;
                 }
             }
-            if ($('txtcantidadmedicamento_' + i).value == '') {
+            if ($('txtcantidadmedicamento_' + i).value === '') {
                 window.alert("La CANTIDAD TOTAL del medicamento "
-                    + $($('hcodigoMedicamento_' + i).value).innerHTML
-                    + " no ha sido ingresado!!!")
-                return
+                        + $($('hcodigoMedicamento_' + i).value).innerHTML
+                        + " no ha sido ingresado!!!");
+                return;
             }
-            if ($('txtareaObservacionMedicamento_' + i).value == '') {
+            if ($('txtareaObservacionMedicamento_' + i).value === '') {
                 window.alert("Las INDICACIONES del medicamento "
-                    + $($('hcodigoMedicamento_' + i).value).innerHTML
-                    + " no ha sido ingresado!!!")
-                return
+                        + $($('hcodigoMedicamento_' + i).value).innerHTML
+                        + " no ha sido ingresado!!!");
+                return;
             }
 
         }
     }
-    //    if($('txtfechavencimientoreceta').value == ''){
+    //    if($('txtfechavencimientoreceta').value === ''){
     //        window.alert("Ingrese la fecha de vencimiento de la Receta Unica");
     //        return;
     //    }
     for (i = 0; i < numerotratamientomedicamentoso; i++) {
         hEstado = 'hEstadoAgregarTratamientoMedicamentoso_' + i;
         //alert(i);
-        //        if($('lstTipoDosis_'+i).value == '0000') tipodosis = 0;
+        //        if($('lstTipoDosis_'+i).value === '0000') tipodosis = 0;
         //        else tipodosis = $('lstTipoDosis_'+i).value;
         tipodosis = 0;
-        if ($("Div_Receta" + i).style.display != 'none') {
-            if ($(hEstado).value == 0 || $(hEstado).value == 4) {
-                if ($('hcodigoMedicamento_' + i).value == '0000000') {
+        if ($("Div_Receta" + i).style.display !== 'none') {
+            if ($(hEstado).value === 0 || $(hEstado).value === 4) {
+                if ($('hcodigoMedicamento_' + i).value === '0000000') {
                     observaciones = Base64.encode(($('otromedicamentonombre_' + i).value).toUpperCase() + "|" + ($('otromedicamentopresentacion_' + i).value).toUpperCase() + "|" + $('txtcantidadmedicamento_' + i).value + "|" + $('txtareaObservacionMedicamento_' + i).value);
                 } else {
                     observaciones = Base64.encode($('txtareaObservacionMedicamento_' + i).value);
@@ -3361,7 +3334,7 @@ function preguardarTratatamientoMedicamentoso() {
 
                         $('hIdTratamientoMedicamentoso_' + i).value = respuesta[i];
                     }
-                })
+                });
 
                 $(hEstado).value = 2;
             }
@@ -3373,7 +3346,7 @@ function preguardarTratatamientoMedicamentoso() {
 }
 
 function preguardarFechaVencimientoReceta() {
-    var codigoProgramacion = $('hcodigoProgramacion').value
+    var codigoProgramacion = $('hcodigoProgramacion').value;
     var fechavencimiento = $("txtfechavencimientoreceta").value;
     var patronModulo = 'preguardarFechaVencimientoReceta';
 
@@ -3391,13 +3364,13 @@ function preguardarFechaVencimientoReceta() {
             cargadorpeche(0, idCargador);
             respuesta = transport.responseText;
         }
-    })
+    });
 }
 
 function preguardarTratatamientoPracticasMedicas(estado) {
     //$('imgPreguardarTratatamientoPracticasMedicas').src='../../../../fastmedical_front/imagen/btn/btn_preguardar_off.gif';
 
-    if (estado == undefined) {
+    if (estado === undefined) {
         estado = 0;
     }
 
@@ -3415,10 +3388,10 @@ function preguardarTratatamientoPracticasMedicas(estado) {
         //alert(i);
 
         //Solo debe guardar los divs que son visibles
-        if ($("Div_PracticaMedica" + i).style.display != 'none') {
-            if ($(hEstado).value == 0 || $(hEstado).value == 4 || $(hEstado).value == 1) {
+        if ($("Div_PracticaMedica" + i).style.display !== 'none') {
+            if ($(hEstado).value === 0 || $(hEstado).value === 4 || $(hEstado).value === 1) {
 
-                if ($('hcodigoPracticaMedica_' + i).value == '0000000') {
+                if ($('hcodigoPracticaMedica_' + i).value === '0000000') {
                     observaciones = Base64.encode("OTROS" + "|" + $("txtareaObservacionPracticaMedica_" + i).value);
                 } else {
                     observaciones = Base64.encode($("txtareaObservacionPracticaMedica_" + i).value);
@@ -3446,7 +3419,7 @@ function preguardarTratatamientoPracticasMedicas(estado) {
                         cargadorpeche(0, idCargador);
                         respuesta[i] = transport.responseText;
                         // alert(respuesta[i]);
-                        if (respuesta[i] == 'elimi') {
+                        if (respuesta[i] === 'elimi') {
                             $(hEstado).value = 1;
                         } else {
                             $('hIdTratamientoPracticaMedica_' + i).value = respuesta[i];
@@ -3455,7 +3428,7 @@ function preguardarTratatamientoPracticasMedicas(estado) {
                         }
 
                     }
-                })
+                });
 
 
                 //}
@@ -3469,7 +3442,7 @@ function preguardarTratatamientoPracticasMedicas(estado) {
 function cambiarEstadoTratamientoMedicamentoso(n) {
     // $('imgPreguardarTratatamientoMedicamentoso').src='../../../../fastmedical_front/imagen/btn/btn_preguardar.gif';
 
-    if ($('hEstadoAgregarTratamientoMedicamentoso_' + n).value == '2') {
+    if ($('hEstadoAgregarTratamientoMedicamentoso_' + n).value === '2') {
         $('hEstadoAgregarTratamientoMedicamentoso_' + n).value = 4;
     }
     preguardarTratatamientoMedicamentosoCorregido();
@@ -3477,7 +3450,7 @@ function cambiarEstadoTratamientoMedicamentoso(n) {
 function cambiarEstadoTratamientoPracticasMedicas(n) {
     // $('imgPreguardarTratatamientoPracticasMedicas').src='../../../../fastmedical_front/imagen/btn/btn_preguardar.gif';
 
-    if ($('hEstadoAgregarTratamientoPracticaMedica_' + n).value == '2') {
+    if ($('hEstadoAgregarTratamientoPracticaMedica_' + n).value === '2') {
         $('hEstadoAgregarTratamientoPracticaMedica_' + n).value = 4;
         preguardarTratatamientoPracticasMedicas();
     }
@@ -3500,8 +3473,8 @@ function busquedaTratamientoMedicamentosoNombre(evento) {
     parametros += '&p2=' + parametronombre;
     parametros += '&p3=' + accion;
     parametros += '&p4=' + afiliacion;
-    var tecla = evento.keyCode
-    if (numero == 4 || tecla == 13) {
+    var tecla = evento.keyCode;
+    if (numero === 4 || tecla === 13) {
         tmn = 0;
         tablaProductosTratamientos = new dhtmlXGridObject('Div_TablaTratamientoMedicamentosoHC');
         tablaProductosTratamientos.setImagePath("../../../../fastmedical_front/imagen/icono/");
@@ -3526,7 +3499,7 @@ function busquedaTratamientoMedicamentosoNombre(evento) {
         });
         //miTablaCie.clearAll();loadXML
     }
-    if (numero > 4 && tmn == 1) {
+    if (numero > 4 && tmn === 1) {
         var palabra = $('txtbusquedaNombreTratamientoMedicamentoso').value;
         var arrayPalabras = new Array();
         arrayPalabras = palabra.split(" ");
@@ -3553,7 +3526,7 @@ function buscarTratamientoMedicamentosoCodigo() {
     parametros += '&p3=' + accion;
     parametros += '&p4=' + afiliacion;
 
-    if (numero == 3) {
+    if (numero === 3) {
         tmc = 0;
         tablaProductosTratamientos = new dhtmlXGridObject('Div_TablaTratamientoMedicamentosoHC');
         tablaProductosTratamientos.setImagePath("../../../../fastmedical_front/imagen/icono/");
@@ -3578,7 +3551,7 @@ function buscarTratamientoMedicamentosoCodigo() {
         });
         //miTablaCie.clearAll();loadXML
     }
-    if (numero > 3 && tmc == 1) {
+    if (numero > 3 && tmc === 1) {
         //alert('jjjjj');
         tablaProductosTratamientos.filterBy(0, $('txtbusquedaCodigoTratamientoMedicamentoso').value);
     }
@@ -3594,8 +3567,8 @@ function busquedaTratamientoPracticaNombre(evento) {                            
     parametros += '&p2=' + parametronombre;
     parametros += '&p3=' + accion;
     parametros += '&p4=' + afiliacion;
-    var tecla = evento.keyCode
-    if (numero == 4 || tecla == 13) {
+    var tecla = evento.keyCode;
+    if (numero === 4 || tecla === 13) {
         tmp = 0;
         tablaPracticasMedicasTratamientos = new dhtmlXGridObject('Div_TablaTratamientoPracticasMedicasHC');
         tablaPracticasMedicasTratamientos.setImagePath("../../../../fastmedical_front/imagen/icono/");
@@ -3617,7 +3590,7 @@ function busquedaTratamientoPracticaNombre(evento) {                            
         });
         //miTablaCie.clearAll();
     }
-    if (numero > 4 && tmp == 1) {
+    if (numero > 4 && tmp === 1) {
         //tablaPracticasMedicasTratamientos.filterBy(1,$('txtbusquedaNombrePracticasMedicas').value);
         var palabra = $('txtbusquedaNombrePracticasMedicas').value;
         var arrayPalabras = new Array();
@@ -3646,7 +3619,7 @@ function buscarTratamientoPracticaCodigo() {
     parametros += '&p2=' + codigo;
     parametros += '&p3=' + accion;
     parametros += '&p4=' + afiliacion;
-    if (numero == 3) {
+    if (numero === 3) {
         tmpc = 0;
         tablaPracticasMedicasTratamientos = new dhtmlXGridObject('Div_TablaTratamientoPracticasMedicasHC');
         tablaPracticasMedicasTratamientos.setImagePath("../../../../fastmedical_front/imagen/icono/");
@@ -3668,13 +3641,13 @@ function buscarTratamientoPracticaCodigo() {
         });
         //miTablaCie.clearAll();
     }
-    if (numero > 3 && tmpc == 1) {
+    if (numero > 3 && tmpc === 1) {
         tablaPracticasMedicasTratamientos.filterBy(0, $('txtbusquedaCodigoPracticasMedicas').value);
     }
 }
 /*-------------------------------------------------------------------------------*/
 function cargaTratamientosMedicamentososPreguardados() {
-    var codigoProgramacion = $('hcodigoProgramacion').value
+    var codigoProgramacion = $('hcodigoProgramacion').value;
     //alert($('hcodigoProgramacion').value)
     var patronModulo = 'cargaTratamientosMedicamentososPreguardados';
 
@@ -3692,7 +3665,7 @@ function cargaTratamientosMedicamentososPreguardados() {
             var respuesta = transport.responseText;
             eval(respuesta);
         }
-    })
+    });
 }
 
 function cargaFechaVencimientoReceta(fechavencimiento) {
@@ -3700,7 +3673,7 @@ function cargaFechaVencimientoReceta(fechavencimiento) {
 }
 function cargaTratamientosPracticasMedicasPreguardados() {
     contadorDivsPracticaMedica = 0;
-    var codigoProgramacion = $('hcodigoProgramacion').value
+    var codigoProgramacion = $('hcodigoProgramacion').value;
     //alert($('hcodigoProgramacion').value)
     var patronModulo = 'cargaTratamientosPracticasMedicasPreguardados';
 
@@ -3719,14 +3692,14 @@ function cargaTratamientosPracticasMedicasPreguardados() {
             //window.alert(respuesta);
             eval(respuesta);
         }
-    })
+    });
 }
 
 
 
 /*-------------------------Consultas Anteriores-------------------------*/
 function verRecetasAnteriores() {
-    if ($('habiertoRecetasAnteriores').value == 0) {
+    if ($('habiertoRecetasAnteriores').value === 0) {
         $('habiertoRecetasAnteriores').value = 1;
         $('icono_abrirRecetasAnteriores').src = '../../../../fastmedical_front/imagen/icono/cerrarVentana.png';
         var codigopaciente = $('htxtcodigopaciente').value;
@@ -3744,8 +3717,7 @@ function verRecetasAnteriores() {
         tablaRecetasAnteriores.setSkin("dhx_skyblue");
         tablaRecetasAnteriores.init();
         tablaRecetasAnteriores.loadXML(pathRequestControl + '?' + parametros);
-    }
-    else {
+    } else {
         $('habiertoRecetasAnteriores').value = 0;
         $('Div_RecetasAnteriores').hide();
         $('icono_abrirRecetasAnteriores').src = '../../../../fastmedical_front/imagen/icono/abrir.png';
@@ -3753,14 +3725,14 @@ function verRecetasAnteriores() {
 
 }
 function verReceta(rowId, cellInd) {
-    if (cellInd == 7) {
+    if (cellInd === 7) {
         var idtratamiento = this.cells(rowId, 0).getValue();
         mostrarTratamientoAnterior(idtratamiento);
 
     }
 }
 function verPracticasMedicasAnteriores() {
-    if ($('habiertoPracticasMedicasAnteriores').value == 0) {
+    if ($('habiertoPracticasMedicasAnteriores').value === 0) {
         $('habiertoPracticasMedicasAnteriores').value = 1;
         $('icono_abrirPracticasMedicasAnteriores').src = '../../../../fastmedical_front/imagen/icono/cerrarVentana.png';
         codigopaciente = $('htxtcodigopaciente').value;
@@ -3786,25 +3758,25 @@ function verPracticasMedicasAnteriores() {
 }
 
 function mostrarTratamientoAnterior(idtratamiento) {
-    titulo = 'Consulta de Recetas'
-    vFormaAbrir = 'VENTANA'
-    vformname = 'RecetaAnteriorMedica'
-    vtitle = 'Receta Anterior Medica'
-    vwidth = '520'
-    vheight = '350'
+    titulo = 'Consulta de Recetas';
+    vFormaAbrir = 'VENTANA';
+    vformname = 'RecetaAnteriorMedica';
+    vtitle = 'Receta Anterior Medica';
+    vwidth = '520';
+    vheight = '350';
     patronModulo = 'mostrarVentanaTratamientoAnterior';
-    vcenter = 't'
-    vresizable = ''
-    vmodal = 'false'
-    vstyle = ''
-    vopacity = ''
-    veffect = ''
-    vposx1 = ''
-    vposx2 = ''
-    vposy1 = ''
-    vposy2 = ''
-    file01 = ''
-    vfunctionjava = ''
+    vcenter = 't';
+    vresizable = '';
+    vmodal = 'false';
+    vstyle = '';
+    vopacity = '';
+    veffect = '';
+    vposx1 = '';
+    vposx2 = '';
+    vposy1 = '';
+    vposy2 = '';
+    file01 = '';
+    vfunctionjava = '';
     //posFuncion = ''
     /*---------------------------------------*/
     /*--------------------------------------*/
@@ -3814,7 +3786,7 @@ function mostrarTratamientoAnterior(idtratamiento) {
     parametros += '&p2=' + idtratamiento;
     posFuncion = '';
     //posFuncion="tablaPreciosTratamientoAtencionMedica('"+codigo+"')";
-    CargarVentanaPopPap(vformname, vtitle, vwidth, vheight, vcenter, vresizable, vmodal, vstyle, vopacity, vposx1, vposx2, vposy1, vposy2, parametros, posFuncion)
+    CargarVentanaPopPap(vformname, vtitle, vwidth, vheight, vcenter, vresizable, vmodal, vstyle, vopacity, vposx1, vposx2, vposy1, vposy2, parametros, posFuncion);
 }
 
 
@@ -3828,7 +3800,7 @@ function reiniciarDatosDiagnosticos() {
     $("txtbusquedaNombreDiagnostico").value = '';
 }
 function cargaNumeroSesiones() {
-    codigoPaciente = $('htxtcodigopaciente').value
+    codigoPaciente = $('htxtcodigopaciente').value;
     //alert($('hcodigoProgramacion').value)
     patronModulo = 'cargaNumeroSesiones';
 
@@ -3847,12 +3819,12 @@ function cargaNumeroSesiones() {
             //alert (respuesta)
             $('txtCantidadCitasEssalud').value = respuesta;
         }
-    })
+    });
 }
 function cargaDiagnosticos() {
-    if ($("htxtEsESSALUD").value == 1)
+    if ($("htxtEsESSALUD").value === 1)
         $("Div_diagnosticoESSALUD").show();
-    if ($("htxtEsESSALUD").value == 0)
+    if ($("htxtEsESSALUD").value === 0)
         $("Div_diagnosticoESSALUD").hide();
     $('Div_TablaDiagnosticoHC').innerHTML = "";
 
@@ -3898,7 +3870,7 @@ function agregarOtro_ActoMedico(opcion) {
             data = respuesta;
 
         }
-    })
+    });
     switch (opcion) {
         /*case 'motivoconsulta' :
          rowId = data.split("|")[0];
@@ -3939,7 +3911,7 @@ function agregarOtroMotivoDeConsultaDesdeBoton() {
             //agregarOtroMotivoDeConsultaEnVista(rowId,3);
             agregarOtroMotivoDeConsultaEnVista(idSintomaCie, cCodigoCie, vDescripcion);
         }
-    })
+    });
 }
 
 function agregarOtroMotivoDeConsultaEnVista(idCieSintoma, cCodigoCie, vDescripcion) {
@@ -3949,7 +3921,7 @@ function agregarOtroMotivoDeConsultaEnVista(idCieSintoma, cCodigoCie, vDescripci
     //var idCieSintoma = rowId;//var idCieSintoma = miTablaSintoma.getSelectedId();
     var cadenaIdCieSintomas = document.getElementById("hdnCadenaIdCieSintomas").value;
 
-    if ((cadenaIdCieSintomas.indexOf(idCieSintoma + "|") == -1) && (cadenaIdCieSintomas.indexOf(idCieSintoma) == -1)) {
+    if ((cadenaIdCieSintomas.indexOf(idCieSintoma + "|") === -1) && (cadenaIdCieSintomas.indexOf(idCieSintoma) === -1)) {
         if (cadenaIdCieSintomas.length > 0)
             cadenaIdCieSintomas = cadenaIdCieSintomas + "|" + idCieSintoma;
         else
@@ -3976,7 +3948,7 @@ function agregarOtroMotivoDeConsultaEnVista(idCieSintoma, cCodigoCie, vDescripci
                 respuesta = transport.responseText;
                 $('Div_sintomas').innerHTML = $('Div_sintomas').innerHTML + respuesta;
             }
-        })
+        });
     }
 }
 
@@ -3985,7 +3957,7 @@ function agregarOtroDiagnostico(rowId, cellInd, data) {
     //$('imgPreguardarDiagnosticos').src='../../../../fastmedical_front/imagen/btn/btn_preguardar.gif';
     /*if(data==undefined){
      
-     if($('hNumeroDiagnostico').value == '0'){
+     if($('hNumeroDiagnostico').value === '0'){
      $("Div_TablaDiagnosticoCIE").show();
      $("Div_ObservacionDiagnostico").show();
      }
@@ -4005,7 +3977,7 @@ function agregarOtroDiagnostico(rowId, cellInd, data) {
      
      
      } else{*/
-    if ($('hNumeroDiagnostico').value == '0') {
+    if ($('hNumeroDiagnostico').value === '0') {
         $("Div_TablaDiagnosticoCIE").show();
         $("Div_ObservacionDiagnostico").show();
     }
@@ -4017,7 +3989,7 @@ function agregarOtroDiagnostico(rowId, cellInd, data) {
     descripcionDiagnosticoCIE = arreglo[2];
     nombreCIE = Base64.encode(descripcionDiagnosticoCIE);
     idTipoDiagnostico = arreglo[3];
-    if (arreglo[6] == 0)
+    if (arreglo[6] === 0)
         idTipoIngreso = '';
     else
         idTipoIngreso = arreglo[6];
@@ -4030,7 +4002,7 @@ function agregarOtroDiagnostico(rowId, cellInd, data) {
 
     //}
     codigos = document.getElementById("htxtcodigosDiagnosticos").value;
-    if (!((codigos.indexOf(codigointernoCIE + "|") != -1) || (codigos.indexOf(codigointernoCIE) != -1))) {
+    if (!((codigos.indexOf(codigointernoCIE + "|") !== -1) || (codigos.indexOf(codigointernoCIE) !== -1))) {
         if (codigos.length > 0)
             codigos = codigos + "|" + codigointernoCIE;
         else
@@ -4062,7 +4034,7 @@ function agregarOtroDiagnostico(rowId, cellInd, data) {
                 $(nombreDiv).innerHTML = respuesta;
                 contadorDivsDiagnosticos++;
             }
-        })
+        });
         $('hNumeroDiagnostico').value = parseInt($('hNumeroDiagnostico').value) + 1;
     }
 }
@@ -4079,9 +4051,9 @@ function agregarDiagnosticoHC(rowId, cellInd, data) {
     var diagnosticoMedico;
     var estadoregistroDiagnostico;
     //debugger;
-    if (data == undefined) {
+    if (data === undefined) {
 
-        if ($('hNumeroDiagnostico').value == '0') {
+        if ($('hNumeroDiagnostico').value === '0') {
             $("Div_TablaDiagnosticoCIE").show();
             $("Div_ObservacionDiagnostico").show();
         }
@@ -4094,14 +4066,14 @@ function agregarDiagnosticoHC(rowId, cellInd, data) {
         idTipoIngreso = '';
         idDiagnosticoCIE = '';
         diagnosticoMedico = '';
-        if ($("hEstadoAgregarDiagnostico").value == '2') {
+        if ($("hEstadoAgregarDiagnostico").value === '2') {
             $("hEstadoAgregarDiagnostico").value = 4;
         }
         estadoregistroDiagnostico = $("hEstadoAgregarDiagnostico").value;
 
 
     } else {
-        if ($('hNumeroDiagnostico').value == '0') {
+        if ($('hNumeroDiagnostico').value === '0') {
             $("Div_TablaDiagnosticoCIE").show();
             $("Div_ObservacionDiagnostico").show();
         }
@@ -4113,7 +4085,7 @@ function agregarDiagnosticoHC(rowId, cellInd, data) {
         descripcionDiagnosticoCIE = arreglo[2];
         nombreCIE = Base64.encode(descripcionDiagnosticoCIE);
         idTipoDiagnostico = arreglo[3];
-        if (arreglo[6] == 0)
+        if (arreglo[6] === 0)
             idTipoIngreso = '';
         else
             idTipoIngreso = arreglo[6];
@@ -4126,7 +4098,7 @@ function agregarDiagnosticoHC(rowId, cellInd, data) {
 
     }
     codigos = document.getElementById("htxtcodigosDiagnosticos").value;
-    if (!((codigos.indexOf(codigointernoCIE + "|") != -1) || (codigos.indexOf(codigointernoCIE) != -1))) {
+    if (!((codigos.indexOf(codigointernoCIE + "|") !== -1) || (codigos.indexOf(codigointernoCIE) !== -1))) {
         if (codigos.length > 0)
             codigos = codigos + "|" + codigointernoCIE;
         else
@@ -4159,7 +4131,7 @@ function agregarDiagnosticoHC(rowId, cellInd, data) {
                 $(nombreDiv).innerHTML = respuesta;
                 contadorDivsDiagnosticos++;
             }
-        })
+        });
         $('hNumeroDiagnostico').value = parseInt($('hNumeroDiagnostico').value) + 1;
         //$('hNumeroDiagnostico').value = $('hNumeroDiagnostico').value + "|" + contadorDivsDiagnosticos;
     }
@@ -4171,8 +4143,8 @@ function agregarDiagnosticoPreguardadoHC(rowId, cellInd, data) {
 
     //$('imgPreguardarDiagnosticos').src='../../../../fastmedical_front/imagen/btn/btn_preguardar.gif';
     //    alert(1);
-    if (data == undefined) {
-        if ($('hNumeroDiagnostico').value == '0') {
+    if (data === undefined) {
+        if ($('hNumeroDiagnostico').value === '0') {
             $("Div_TablaDiagnosticoCIE").show();
             $("Div_ObservacionDiagnostico").show();
         }
@@ -4185,14 +4157,14 @@ function agregarDiagnosticoPreguardadoHC(rowId, cellInd, data) {
         idTipoIngreso = '';
         idDiagnosticoCIE = '';
         diagnosticoMedico = '';
-        if ($("hEstadoAgregarDiagnostico").value == '2') {
+        if ($("hEstadoAgregarDiagnostico").value === '2') {
             $("hEstadoAgregarDiagnostico").value = 4;
         }
         estadoregistroDiagnostico = $("hEstadoAgregarDiagnostico").value;
 
 
     } else {
-        if ($('hNumeroDiagnostico').value == '0') {
+        if ($('hNumeroDiagnostico').value === '0') {
             $("Div_TablaDiagnosticoCIE").show();
             $("Div_ObservacionDiagnostico").show();
         }
@@ -4205,7 +4177,7 @@ function agregarDiagnosticoPreguardadoHC(rowId, cellInd, data) {
         descripcionDiagnosticoCIE = arreglo[2];
         nombreCIE = Base64.encode(descripcionDiagnosticoCIE);
         idTipoDiagnostico = arreglo[3];
-        if (arreglo[6] == 0)
+        if (arreglo[6] === 0)
             idTipoIngreso = '';
         else
             idTipoIngreso = arreglo[6];
@@ -4218,7 +4190,7 @@ function agregarDiagnosticoPreguardadoHC(rowId, cellInd, data) {
 
     }
     codigos = document.getElementById("htxtcodigosDiagnosticos").value;
-    if (!((codigos.indexOf(codigointernoCIE + "|") != -1) || (codigos.indexOf(codigointernoCIE) != -1))) {
+    if (!((codigos.indexOf(codigointernoCIE + "|") !== -1) || (codigos.indexOf(codigointernoCIE) !== -1))) {
         if (codigos.length > 0)
             codigos = codigos + "|" + codigointernoCIE;
         else
@@ -4252,7 +4224,7 @@ function agregarDiagnosticoPreguardadoHC(rowId, cellInd, data) {
                 $(nombreDiv).innerHTML = respuesta;
                 contadorDivsDiagnosticos++;
             }
-        })
+        });
         $('hNumeroDiagnostico').value = parseInt($('hNumeroDiagnostico').value) + 1;
         //$('hNumeroDiagnostico').value = $('hNumeroDiagnostico').value + "|" + contadorDivsDiagnosticos;
     }
@@ -4270,10 +4242,10 @@ function eliminarDiagnostico(numeroDiagnostico, codigointernoCIE) {
     $(div).hide();
 
     var codigos = document.getElementById("htxtcodigosDiagnosticos").value;
-    if (codigos.indexOf(codigointernoCIE + "|") != -1) {
+    if (codigos.indexOf(codigointernoCIE + "|") !== -1) {
         codigos = codigos.replace(codigointernoCIE + "|", '');//Eliminar de la cadena en el caso el elmento se encuentre en el inicio o antes de llegar al final
     }
-    if (codigos.indexOf(codigointernoCIE) != -1) {
+    if (codigos.indexOf(codigointernoCIE) !== -1) {
         codigos = codigos.replace("|" + codigointernoCIE, '');//Eliminar de la cadena en el caso el elemento se encuentre al final
         codigos = codigos.replace(codigointernoCIE, '');//Eliminar de la cadena en el caso solo haya uno
     }
@@ -4281,7 +4253,7 @@ function eliminarDiagnostico(numeroDiagnostico, codigointernoCIE) {
 
     //alert("Valorcito encontrado a eliminar: "+$("hIdDiagnostico").value);
     //if($("hIdDiagnostico").value!=''){
-    if ($("hIdDiagnostico").value != '' && $("hIdDiagnostico").value != '0') {
+    if ($("hIdDiagnostico").value !== '' && $("hIdDiagnostico").value !== '0') {
         var patronModulo = 'eliminarDiagnosticoHC';
         parametros = '';
         parametros += 'p1=' + patronModulo;
@@ -4298,7 +4270,7 @@ function eliminarDiagnostico(numeroDiagnostico, codigointernoCIE) {
                 respuesta = transport.responseText;
 
             }
-        })
+        });
     }
 }
 
@@ -4312,27 +4284,25 @@ function validarLlenadoTiposDiagnosticosCorregido() {
     var z;
 
     for (z = 0; z < cantidadCies; z++) {
-        if ($("Div_CIE_asignado_" + z).style.display != 'none') {
+        if ($("Div_CIE_asignado_" + z).style.display !== 'none') {
             numCiesVisibles = numCiesVisibles + 1;
         }
     }
 
-    if (numCiesVisibles == 0) {
+    if (numCiesVisibles === 0) {
         //alert("Seleccione como m\xEDnimo un CIE");
         todoOK = -1;
-    }
-    else {
+    } else {
         if (numCiesVisibles > 0) {
-            if (isEssalud == '1') {
-                if ($("lstDestinoCitaEssalud").value == '0000') {
+            if (isEssalud === '1') {
+                if ($("lstDestinoCitaEssalud").value === '0000') {
                     //alert("Destino de cita no seleccionada (ESSALUD)");
                     $("lstDestinoCitaEssalud").setStyle({
                         background: color
                     });
                     todoOK = -2;
-                }
-                else {
-                    if ($("lstTipoCitaEssalud").value == '0000') {
+                } else {
+                    if ($("lstTipoCitaEssalud").value === '0000') {
                         //alert("Tipo de cita no seleccionada (ESSALUD)");
                         $("lstTipoCitaEssalud").setStyle({
                             background: color
@@ -4353,16 +4323,15 @@ function validarLlenadoTiposDiagnosticosCorregido() {
             var indiceFaltaTipoIngreso = -1;
 
             for (var i = 0; i < cantidadCies; i++) {//El indice de los agregados inicia en cero
-                if (document.getElementById("Div_CIE_asignado_" + i).style.display != "none") {
-                    if ($("lstTipoDiagnostico_" + i).value == '0000') {
+                if (document.getElementById("Div_CIE_asignado_" + i).style.display !== "none") {
+                    if ($("lstTipoDiagnostico_" + i).value === '0000') {
                         indiceFaltaTipoDiagnostico = i;
                         $("lstTipoDiagnostico_" + i).setStyle({
                             background: color
                         });
                         break;
-                    }
-                    else {
-                        if ($("lstTipoIngreso_" + i).value == '0000') {
+                    } else {
+                        if ($("lstTipoIngreso_" + i).value === '0000') {
                             indiceFaltaTipoIngreso = i;
                             $("lstTipoIngreso_" + i).setStyle({
                                 background: color
@@ -4373,14 +4342,12 @@ function validarLlenadoTiposDiagnosticosCorregido() {
                 }
             }
 
-            if (indiceFaltaTipoDiagnostico != -1) {
+            if (indiceFaltaTipoDiagnostico !== -1) {
                 todoOK = -4;
-            }
-            else {
-                if (indiceFaltaTipoIngreso != -1) {
+            } else {
+                if (indiceFaltaTipoIngreso !== -1) {
                     todoOK = -5;
-                }
-                else {
+                } else {
 
                     todoOK = 1;
                 }
@@ -4408,12 +4375,11 @@ function preguardarDiagnosticosCorregido() {
 
     var cadena = '';
     for (i = 0; i < cantidadCies; i++) {
-        if ($(hEstado).value == 0 || $(hEstado).value == 4) {
-            if ($("Div_CIE_asignado_" + i).style.display != 'none') {
-                if ($('lstTipoIngreso_' + i).value == '0000') {
+        if ($(hEstado).value === 0 || $(hEstado).value === 4) {
+            if ($("Div_CIE_asignado_" + i).style.display !== 'none') {
+                if ($('lstTipoIngreso_' + i).value === '0000') {
                     ingreso = 0;
-                }
-                else {
+                } else {
                     ingreso = $('lstTipoIngreso_' + i).value;
                 }
                 cadena += $('hcodigoDiagnostico_' + i).value + '_' + $('lstTipoDiagnostico_' + i).value + '_' + ingreso;
@@ -4424,7 +4390,7 @@ function preguardarDiagnosticosCorregido() {
         }
     }
 
-    if (cadena != '') {
+    if (cadena !== '') {
         var patron = 'preGrabarDiagnostico';
         var parametros = '';
         parametros += 'p1=' + patron;
@@ -4450,16 +4416,16 @@ function preguardarDiagnosticosCorregido() {
             onComplete: function (transport) {
                 cargadorpeche(0, idCargador);
                 respuesta = transport.responseText;
-                arreglo = respuesta.split("|")
-                if (arreglo[0] == '0') {
+                arreglo = respuesta.split("|");
+                if (arreglo[0] === '0') {
                     $("hIdDiagnostico").value = arreglo[1];
                     $(hEstado).value = '2';
                 }
-                if (arreglo[0] == '1') {
+                if (arreglo[0] === '1') {
                     window.alert(arreglo[1]);
                 }
             }
-        })
+        });
     }
 }
 
@@ -4469,41 +4435,35 @@ function validaryPreguardarDiagnosticosCorregido() {
     var z;
 
     for (z = 0; z < cantidadCies; z++) {
-        if ($("Div_CIE_asignado_" + z).style.display != 'none') {
+        if ($("Div_CIE_asignado_" + z).style.display !== 'none') {
             numCiesVisibles = numCiesVisibles + 1;
         }
     }
 
-    if (numCiesVisibles == 0) {
+    if (numCiesVisibles === 0) {
         alert("Seleccione como m\xEDnimo un CIE");
-    }
-    else {
+    } else {
         if (confirm("\xBFDesea preguardar los CIE?\nUna vez preguardados no podr\xE1n ser eliminados!!!")) {
             var rptaValidacion = validarLlenadoTiposDiagnosticosCorregido();
 
-            if (rptaValidacion == -1) {
+            if (rptaValidacion === -1) {
                 alert("Seleccione como m\xEDnimo un CIE");
-            }
-            else {
-                if (rptaValidacion == -2) {
+            } else {
+                if (rptaValidacion === -2) {
                     alert("Destino de cita no seleccionada (ESSALUD)");
-                }
-                else {
-                    if (rptaValidacion == -3) {
+                } else {
+                    if (rptaValidacion === -3) {
                         alert("Tipo de cita no seleccionada (ESSALUD)");
-                    }
-                    else {
-                        if (rptaValidacion == -4) {
+                    } else {
+                        if (rptaValidacion === -4) {
                             //alert("Ingrese tipo de diagn\xF3stico del\nCIE: " + $("divNombreCieDiagnostico_"+indiceFaltaTipoDiagnostico).firstChild.nodeValue);
                             alert("Ingrese tipo de diagn\xF3stico del CIE");
-                        }
-                        else {
-                            if (rptaValidacion == -5) {
+                        } else {
+                            if (rptaValidacion === -5) {
                                 //alert("Ingrese tipo de ingreso del\nCIE: " + $("divNombreCieDiagnostico_"+indiceFaltaTipoIngreso).firstChild.nodeValue);
                                 alert("Ingrese tipo de ingreso del CIE");
-                            }
-                            else {
-                                if (rptaValidacion == 1) {//Todo Ok
+                            } else {
+                                if (rptaValidacion === 1) {//Todo Ok
                                     preguardarDiagnosticosCorregido();
                                 }
                             }
@@ -4519,15 +4479,15 @@ function validarLlenadoTiposDiagnosticos() {
     isEssalud = $("htxtEsESSALUD").value;
     cantidadCies = $("hNumeroDiagnostico").value;
     faltaregistrar = 0;
-    if (isEssalud == '1') {
-        if ($("lstDestinoCitaEssalud").value == '0000')
+    if (isEssalud === '1') {
+        if ($("lstDestinoCitaEssalud").value === '0000')
             faltaregistrar = 1;
-        if ($("lstTipoCitaEssalud").value == '0000')
+        if ($("lstTipoCitaEssalud").value === '0000')
             faltaregistrar = 2;
     }
 
     for (i = 0; i < cantidadCies; i++) {
-        if ($("lstTipoDiagnostico_" + i).value == '0000')
+        if ($("lstTipoDiagnostico_" + i).value === '0000')
             faltaregistrar = 3;
     }
     return faltaregistrar;
@@ -4536,7 +4496,7 @@ function preguardarDiagnosticos() {
 
     // $('imgPreguardarDiagnosticos').src='../../../../fastmedical_front/imagen/btn/btn_preguardar_off.gif';
     opcionpreguardarDiagnosticos = validarLlenadoTiposDiagnosticos();
-    if (opcionpreguardarDiagnosticos == 0) {
+    if (opcionpreguardarDiagnosticos === 0) {
         cantidadCies = parseInt($("hNumeroDiagnostico").value);
         //    codigos = document.getElementById("htxtcodigosServicios").value;
         observacion = $("txtareaObservacionDiagnostico").value;
@@ -4548,7 +4508,7 @@ function preguardarDiagnosticos() {
         esEssalud = '0';
 
 
-        if ($("htxtEsESSALUD").value == '1') {
+        if ($("htxtEsESSALUD").value === '1') {
             destinoCitaEssalud = $("lstDestinoCitaEssalud").value;
             tipoconsultaEssalud = $("lstTipoCitaEssalud").value;
             numerosesion = $("txtCantidadCitasEssalud").value;
@@ -4564,13 +4524,12 @@ function preguardarDiagnosticos() {
         if (cantidadCies > 0) {
             for (i = 0; i < cantidadCies; i++) {
                 //                hEstado='hEstadoAgregarDiagnostico_'+i;
-                if ($(hEstado).value == 0 || $(hEstado).value == 4) {
+                if ($(hEstado).value === 0 || $(hEstado).value === 4) {
                     //                    $('hIdDiagnostico_'+i).value==''?id = '0':id = $('hIdDiagnostico_'+i).value;
-                    if ($("Div_CIE_asignado_" + i).style.display != 'none') {
-                        if ($('lstTipoIngreso_' + i).value == '0000') {
+                    if ($("Div_CIE_asignado_" + i).style.display !== 'none') {
+                        if ($('lstTipoIngreso_' + i).value === '0000') {
                             ingreso = 0;
-                        }
-                        else {
+                        } else {
                             ingreso = $('lstTipoIngreso_' + i).value;
                         }
                         cadena += $('hcodigoDiagnostico_' + i).value + '_' + $('lstTipoDiagnostico_' + i).value + '_' + ingreso;
@@ -4581,7 +4540,7 @@ function preguardarDiagnosticos() {
                 }
             }
 
-            if (cadena != '') {
+            if (cadena !== '') {
                 patron = 'preGrabarDiagnostico';
                 parametros = '';
                 parametros += 'p1=' + patron;
@@ -4606,15 +4565,15 @@ function preguardarDiagnosticos() {
                     onComplete: function (transport) {
                         micargador(0);
                         respuesta = transport.responseText;
-                        arreglo = respuesta.split("|")
-                        if (arreglo[0] == '0') {
+                        arreglo = respuesta.split("|");
+                        if (arreglo[0] === '0') {
                             $("hIdDiagnostico").value = arreglo[1];
                             $(hEstado).value = '2';
                         }
-                        if (arreglo[0] == '1')
+                        if (arreglo[0] === '1')
                             window.alert(arreglo[1]);
                     }
-                })
+                });
 
 
             }
@@ -4625,20 +4584,20 @@ function preguardarDiagnosticos() {
     } else {
         switch (opcionpreguardarDiagnosticos) {
             case 1:
-                {
-                    window.alert("Destino de Cita no Seleccionada(EsSalud)");
-                    break;
-                }
+            {
+                window.alert("Destino de Cita no Seleccionada(EsSalud)");
+                break;
+            }
             case 2:
-                {
-                    window.alert("Tipo de Cita no Seleccionada(EsSalud)");
-                    break;
-                }
+            {
+                window.alert("Tipo de Cita no Seleccionada(EsSalud)");
+                break;
+            }
             case 3:
-                {
-                    window.alert("Tipo de Diagnóstico no Seleccionado");
-                    break;
-                }
+            {
+                window.alert("Tipo de Diagnóstico no Seleccionado");
+                break;
+            }
         }
     }
 
@@ -4646,7 +4605,7 @@ function preguardarDiagnosticos() {
 
 function cambiarEstadoDiagnostico() {
     //$('imgPreguardarDiagnosticos').src='../../../../fastmedical_front/imagen/btn/btn_preguardar.gif';
-    if ($('hEstadoAgregarDiagnostico').value == '2') {
+    if ($('hEstadoAgregarDiagnostico').value === '2') {
         $('hEstadoAgregarDiagnostico').value = 4;
     }
     preguardarDiagnosticosCorregido();
@@ -4663,8 +4622,8 @@ function busquedaDiagnosticoNombre(evento) {
     parametros += 'p1=' + patronModulo;
     parametros += '&p2=' + parametronombrediagnostico;
     parametros += '&p3=' + accion;
-    var tecla = evento.keyCode
-    if (numero == 3 || tecla == 13) {
+    var tecla = evento.keyCode;
+    if (numero === 3 || tecla === 13) {
         dn = 0;
         tablaDiagnosticos = new dhtmlXGridObject('Div_TablaDiagnosticoHC');
         tablaDiagnosticos.setImagePath("../../../../fastmedical_front/imagen/icono/");
@@ -4685,7 +4644,7 @@ function busquedaDiagnosticoNombre(evento) {
             dn = 1;
         });
     }
-    if (numero > 3 && dn == 1) {
+    if (numero > 3 && dn === 1) {
         var palabra = $('txtbusquedaNombreDiagnostico').value;
         var arrayPalabras = new Array();
         arrayPalabras = palabra.split(" ");
@@ -4702,7 +4661,7 @@ function verificarPaqueteEtaero(rowId, cellInd, data) {
     var c_cod_per = $('hidCodPersona').value;
     var cie = tablaDiagnosticos.getSelectedId();
     //alert(cie);
-    if (afiliacioPaciente == '0027') {
+    if (afiliacioPaciente === '0027') {
         var patronModulo = 'verificarPaqueteEtareo';
 
         var parametros = '';
@@ -4720,7 +4679,7 @@ function verificarPaqueteEtaero(rowId, cellInd, data) {
                 cargadorpeche(0, idCargador);
                 var respuesta = transport.responseText;
                 //window.alert(respuesta);
-                if (respuesta == 0) {
+                if (respuesta === 0) {
                     agregarDiagnosticoHC(rowId, cellInd, data);
                 } else {
                     if (respuesta > 0) {
@@ -4737,7 +4696,7 @@ function verificarPaqueteEtaero(rowId, cellInd, data) {
                 }
 
             }
-        })
+        });
     } else {
         agregarDiagnosticoHC(rowId, cellInd, data);
     }
@@ -4762,7 +4721,7 @@ function refrescarVPaquetes(codigoProgramacion) {
             var respuesta = transport.responseText;
             $('Div_PaquetesCuerpo').update(respuesta);
         }
-    })
+    });
 }
 
 //function paginaPrueba() {
@@ -4779,7 +4738,7 @@ function refrescarVPaquetes(codigoProgramacion) {
 //            $('divMantenimiento').update(respuesta);
 //            document.getElementById("divGrabar").style.display = 'block';
 //        }
-//    })
+//    });
 //}
 function cargarPaqueteDiagnostico(idGrupoEtaero) {
     var c_cod_per = $('hidCodPersona').value;
@@ -4800,7 +4759,7 @@ function cargarPaqueteDiagnostico(idGrupoEtaero) {
 
             // alert(respuesta);
         }
-    })
+    });
 }
 //
 function buscarDiagnosticoCodigo() {
@@ -4814,7 +4773,7 @@ function buscarDiagnosticoCodigo() {
     parametros += '&p2=' + codigo;
     parametros += '&p3=' + accion;
 
-    if (numero == 2) {
+    if (numero === 2) {
         dc = 0;
         tablaDiagnosticos = new dhtmlXGridObject('Div_TablaDiagnosticoHC');
         tablaDiagnosticos.setImagePath("../../../../fastmedical_front/imagen/icono/");
@@ -4826,7 +4785,7 @@ function buscarDiagnosticoCodigo() {
         });
         //miTablaCie.clearAll();
     }
-    if (numero > 2 && dc == 1) {
+    if (numero > 2 && dc === 1) {
         tablaDiagnosticos.filterBy(0, $('txtbusquedaCodigoDiagnostico').value);
     }
 }
@@ -4834,7 +4793,7 @@ function buscarDiagnosticoCodigo() {
 /*-------------------------------------------------------------------------------*/
 function cargaDiagnosticosPreguardados() {
     contadorDivsDiagnosticos = 0;
-    var codigoProgramacion = $('hcodigoProgramacion').value
+    var codigoProgramacion = $('hcodigoProgramacion').value;
     //alert($('hcodigoProgramacion').value)
     var patronModulo = 'cargaDiagnosticosPreguardados';
 
@@ -4854,11 +4813,11 @@ function cargaDiagnosticosPreguardados() {
             eval(respuesta);
             cargaNumeroSesiones();
         }
-    })
+    });
 }
 
 function verDiagnosticosAnteriores() {
-    if ($('habiertoDiagnosticosAnteriores').value == 0) {
+    if ($('habiertoDiagnosticosAnteriores').value === 0) {
         $('habiertoDiagnosticosAnteriores').value = 1;
         $('icono_abrirDiagnosticosAnteriores').src = '../../../../fastmedical_front/imagen/icono/cerrarVentana.png';
         codigopaciente = $('htxtcodigopaciente').value;
@@ -4874,40 +4833,39 @@ function verDiagnosticosAnteriores() {
         tablaDiagnosticosAnteriores.setSkin("dhx_skyblue");
         tablaDiagnosticosAnteriores.init();
         tablaDiagnosticosAnteriores.loadXML(pathRequestControl + '?' + parametros);
-    }
-    else {
+    } else {
         $('habiertoDiagnosticosAnteriores').value = 0;
         $('Div_DiagnosticosAnteriores').hide();
         $('icono_abrirDiagnosticosAnteriores').src = '../../../../fastmedical_front/imagen/icono/abrir.png';
     }
 }
 function verDiagnostico(rowId, cellInd) {
-    if (cellInd == 6) {
+    if (cellInd === 6) {
         idprogramacion = this.cells(rowId, 1).getValue();
         mostrarDiagnosticoAnterior(idprogramacion);
 
     }
 }
 function mostrarDiagnosticoAnterior(codigoprogramacion) {
-    titulo = 'Consulta de Diagnosticos'
-    vFormaAbrir = 'VENTANA'
-    vformname = 'DiagnosticoAnterior'
-    vtitle = 'Diagnostico Anterior Medica'
-    vwidth = '800'
-    vheight = '500'
+    titulo = 'Consulta de Diagnosticos';
+    vFormaAbrir = 'VENTANA';
+    vformname = 'DiagnosticoAnterior';
+    vtitle = 'Diagnostico Anterior Medica';
+    vwidth = '800';
+    vheight = '500';
     patronModulo = 'mostrarVentanaDiagnosticoAnterior';
-    vcenter = 't'
-    vresizable = ''
-    vmodal = 'false'
-    vstyle = ''
-    vopacity = ''
-    veffect = ''
-    vposx1 = ''
-    vposx2 = ''
-    vposy1 = ''
-    vposy2 = ''
-    file01 = ''
-    vfunctionjava = ''
+    vcenter = 't';
+    vresizable = '';
+    vmodal = 'false';
+    vstyle = '';
+    vopacity = '';
+    veffect = '';
+    vposx1 = '';
+    vposx2 = '';
+    vposy1 = '';
+    vposy2 = '';
+    file01 = '';
+    vfunctionjava = '';
     //posFuncion = ''
     /*---------------------------------------*/
     /*--------------------------------------*/
@@ -4917,7 +4875,7 @@ function mostrarDiagnosticoAnterior(codigoprogramacion) {
     parametros += '&p2=' + idprogramacion;
     posFuncion = "tablaDiagnosticoAnteriorPopUp('" + codigoprogramacion + "')";
     //posFuncion="tablaPreciosTratamientoAtencionMedica('"+codigo+"')";
-    CargarVentanaPopPap(vformname, vtitle, vwidth, vheight, vcenter, vresizable, vmodal, vstyle, vopacity, vposx1, vposx2, vposy1, vposy2, parametros, posFuncion)
+    CargarVentanaPopPap(vformname, vtitle, vwidth, vheight, vcenter, vresizable, vmodal, vstyle, vopacity, vposx1, vposx2, vposy1, vposy2, parametros, posFuncion);
 
 }
 function tablaDiagnosticoAnteriorPopUp(codigoprogramacion) {
@@ -4971,7 +4929,7 @@ function darxAtencionCompletada() {
     //1. examenes méddicos
     ///////////////////////////////////////////////////////////////
     var respuesta = '';
-    if ($('existeExamenMedico') != null) {
+    if ($('existeExamenMedico') !== null) {
         var color = '#F27F7D';
         var cadenaPruebas = $('hdnPruebasDeExamenMedico').value;
         var arrayPruebas = new Array();
@@ -4989,9 +4947,9 @@ function darxAtencionCompletada() {
             numeroCampos = $('numeroCampos_' + idPrueba).value;
             for (var j = 1; j <= numeroCampos; j++) {
                 obligatorio = $('idObligatorio' + idPrueba + '_' + j).value;
-                if (obligatorio == 1) {
+                if (obligatorio === 1) {
                     valor = $('valorCampo_' + idPrueba + '_' + j).value;
-                    if (valor == '') {
+                    if (valor === '') {
                         $('valorCampo_' + idPrueba + '_' + j).setStyle({
                             background: color
                         });
@@ -5003,19 +4961,18 @@ function darxAtencionCompletada() {
     }    ///////////////////////////////////////////////////////////////
     //////////////////////////////////////////////////////////////
     //2. Diagnostico
-    if ($('existeDiagnostico') != null) {
+    if ($('existeDiagnostico') !== null) {
         var numCiesVisibles = 0;
         var cantidadCies = parseInt($("hNumeroDiagnostico").value);
         var z;
         for (z = 0; z < cantidadCies; z++) {
-            if ($("Div_CIE_asignado_" + z).style.display != 'none') {
+            if ($("Div_CIE_asignado_" + z).style.display !== 'none') {
                 numCiesVisibles = numCiesVisibles + 1;
             }
         }
-        if (numCiesVisibles == 0) {
+        if (numCiesVisibles === 0) {
             respuesta = respuesta + '---Debe ingresar un diagnostico CIE como minimo';
-        }
-        else {
+        } else {
             ///////////validando llenado completo de los diagnisticos
             var todoOK = 0;
             //Validar tipo de diagnostico del CIE
@@ -5023,16 +4980,15 @@ function darxAtencionCompletada() {
             //Validar tipo de ingreso del CIE
             var indiceFaltaTipoIngreso = -1;
             for (i = 0; i < cantidadCies; i++) {//El indice de los agregados inicia en cero
-                if (document.getElementById("Div_CIE_asignado_" + i).style.display != "none") {
-                    if ($("lstTipoDiagnostico_" + i).value == '0000') {
+                if (document.getElementById("Div_CIE_asignado_" + i).style.display !== "none") {
+                    if ($("lstTipoDiagnostico_" + i).value === '0000') {
                         indiceFaltaTipoDiagnostico = i;
                         $("lstTipoDiagnostico_" + i).setStyle({
                             background: color
                         });
                         break;
-                    }
-                    else {
-                        if ($("lstTipoIngreso_" + i).value == '0000') {
+                    } else {
+                        if ($("lstTipoIngreso_" + i).value === '0000') {
                             indiceFaltaTipoIngreso = i;
                             $("lstTipoIngreso_" + i).setStyle({
                                 background: color
@@ -5042,10 +4998,10 @@ function darxAtencionCompletada() {
                     }
                 }
             }
-            if (indiceFaltaTipoDiagnostico != -1) {
+            if (indiceFaltaTipoDiagnostico !== -1) {
                 respuesta = respuesta + '---Debe ingresar El tipo de Diagnostico';
             }
-            if (indiceFaltaTipoIngreso != -1) {
+            if (indiceFaltaTipoIngreso !== -1) {
                 respuesta = respuesta + '---Debe ingresar El tipo de Ingreso de Diagnostico';
             }
         }
@@ -5054,22 +5010,22 @@ function darxAtencionCompletada() {
     //3. tratamientos medicamentosos
     ////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////
-    if ($('existeTratamientos') != null) {
+    if ($('existeTratamientos') !== null) {
         var numeroRecetas = parseInt($('hcantidadRecetas').value);
         var productosReceta;
         for (i = 1; i <= numeroRecetas; i++) {
             productosReceta = $('hNumeroProductos_' + i).value;
             for (j = 1; j <= productosReceta; j++) {
-                if ($('divProducto_' + i + '_' + j).style.display != 'none') {
-                    if (trimJunny($('hcodigoProducto_' + i + '_' + j).value) == '0000000') {
-                        if (trimJunny($('hOtros_' + i + '_' + j).value) == 'otros') {
+                if ($('divProducto_' + i + '_' + j).style.display !== 'none') {
+                    if (trimJunny($('hcodigoProducto_' + i + '_' + j).value) === '0000000') {
+                        if (trimJunny($('hOtros_' + i + '_' + j).value) === 'otros') {
                             respuesta = respuesta + '---Ingrese Nuevo Producto';
                             $('hOtros_' + i + '_' + j).setStyle({
                                 background: color
                             });
                             break;
                         }
-                        if (trimJunny($('hOtrosPresentacion_' + i + '_' + j).value) == 'otros') {
+                        if (trimJunny($('hOtrosPresentacion_' + i + '_' + j).value) === 'otros') {
                             respuesta = respuesta + '---Ingrese la Presentacion del nuevo producto';
                             $('hOtrosPresentacion_' + i + '_' + j).setStyle({
                                 background: color
@@ -5077,7 +5033,7 @@ function darxAtencionCompletada() {
                             break;
                         }
                     }
-                    if (trimJunny($('cantidad_' + i + '_' + j).value) == '') {
+                    if (trimJunny($('cantidad_' + i + '_' + j).value) === '') {
                         respuesta = respuesta + '---ingresar Cantidad';
                         $('cantidad_' + i + '_' + j).setStyle({
                             background: color
@@ -5085,7 +5041,7 @@ function darxAtencionCompletada() {
                         });
                         break;
                     }
-                    if (trimJunny($('dosis_' + i + '_' + j).value) == '') {
+                    if (trimJunny($('dosis_' + i + '_' + j).value) === '') {
                         respuesta = respuesta + '---ingresar las indicaciones';
                         $('dosis_' + i + '_' + j).setStyle({
                             background: color
@@ -5107,23 +5063,23 @@ function darxAtencionCompletada() {
     //
     //5. destino de cita
     /*
-    if ($("lstDestinoCitaEssalud").value == '0000') {
-        //alert("Destino de cita no seleccionada (ESSALUD)");
-        $("lstDestinoCitaEssalud").setStyle({
-            background: color
-        });
-        respuesta = respuesta + '---Destino de cita no seleccionada';
-    }
-
-    if ($("lstTipoCitaEssalud").value == '0000') {
-        //alert("Tipo de cita no seleccionada (ESSALUD)");
-        $("lstTipoCitaEssalud").setStyle({
-            background: color
-        });
-        respuesta = respuesta + '---Tipo de cita no seleccionada';
-    }
-    */
-    if (respuesta == '') {
+     if ($("lstDestinoCitaEssalud").value === '0000') {
+     //alert("Destino de cita no seleccionada (ESSALUD)");
+     $("lstDestinoCitaEssalud").setStyle({
+     background: color
+     });
+     respuesta = respuesta + '---Destino de cita no seleccionada';
+     }
+     
+     if ($("lstTipoCitaEssalud").value === '0000') {
+     //alert("Tipo de cita no seleccionada (ESSALUD)");
+     $("lstTipoCitaEssalud").setStyle({
+     background: color
+     });
+     respuesta = respuesta + '---Tipo de cita no seleccionada';
+     }
+     */
+    if (respuesta === '') {
         guardarAtencionMedicaHC();
     } else {
         alert(respuesta);
@@ -5149,9 +5105,9 @@ function validarPreguardarExamenes() {
 
         for (var j = 1; j <= numeroCampos; j++) {
             obligatorio = $('idObligatorio' + idPrueba + '_' + j).value;
-            if (obligatorio == 1) {
+            if (obligatorio === 1) {
                 valor = $('valorCampo_' + idPrueba + '_' + j).value;
-                if (valor == '') {
+                if (valor === '') {
                     $('valorCampo_' + idPrueba + '_' + j).setStyle({
                         background: color
                     });
@@ -5194,7 +5150,7 @@ function preguardarExamenes() {
     arrayPruebas = cadenaPruebas.split("|");
     numeroP = arrayPruebas.length;
     for (ii = 0; ii < numeroP; ii++) {
-        preguardarPrueba(arrayPruebas[ii])
+        preguardarPrueba(arrayPruebas[ii]);
         // alert(arrayPruebas[ii]);
     }
 }
@@ -5218,16 +5174,16 @@ function guardarAtencionMedicaHC() {
             cargadorpeche(0, idCargador);
             var respuesta = transport.responseText;
             window.alert(respuesta.split("|")[1]);
-            if (respuesta.split("|")[0] == 0) {
+            if (respuesta.split("|")[0] === 0) {
                 $("Div_GeneralActoMedicoHC").hide();
                 $("Div_GeneralActoMedico").show();
                 //calculaAtendidosyNoAtendidosMensualActoMedico(codigocronograma);
             }
             /*
-            if (confirm("\xbfDesea Imprimir la Receta?")) {
-                imprimirRecetaUnicaEstandarizadaTodas();
-            }
-            */
+             if (confirm("\xbfDesea Imprimir la Receta?")) {
+             imprimirRecetaUnicaEstandarizadaTodas();
+             }
+             */
             // mostrarAtenciones();
             var hcodigoProgramacion = $('hcodigoProgramacion').value;
             var htxtestadoatencion = '0005';
@@ -5238,7 +5194,7 @@ function guardarAtencionMedicaHC() {
             atenderPacienteActoMedico(parametross);
 
         }
-    })
+    });
     //idtablacronogramas = $("hidtablacronogramas").value;
 
 }
@@ -5266,28 +5222,28 @@ function paginaPrueba() {
             $('divMantenimiento').update(respuesta);
             document.getElementById("divGrabar").style.display = 'block';
         }
-    })
+    });
 }
 
 function padreExamenFisico() {
-    titulo = 'Busqueda...'
-    vFormaAbrir = 'VENTANA'
-    vformname = 'asignarPadre'
-    vtitle = 'ASIGNAR EXAMEN PADRE'
-    vwidth = '400'
-    vheight = '520'
-    vcenter = 't'
-    vresizable = ''
-    vmodal = 'false'
-    vstyle = ''
-    vopacity = ''
-    veffect = ''
-    vposx1 = ''
-    vposx2 = ''
-    vposy1 = ''
-    vposy2 = ''
-    file01 = ''
-    vfunctionjava = ''
+    titulo = 'Busqueda...';
+    vFormaAbrir = 'VENTANA';
+    vformname = 'asignarPadre';
+    vtitle = 'ASIGNAR EXAMEN PADRE';
+    vwidth = '400';
+    vheight = '520';
+    vcenter = 't';
+    vresizable = '';
+    vmodal = 'false';
+    vstyle = '';
+    vopacity = '';
+    veffect = '';
+    vposx1 = '';
+    vposx2 = '';
+    vposy1 = '';
+    vposy2 = '';
+    file01 = '';
+    vfunctionjava = '';
     /*---------------------------------------*/
     patronModulo = 'divExamenFisico'; //p1: va al control y recuperar la data para armar el arbol arbol_manuales.xml
     parametros = '';
@@ -5295,7 +5251,7 @@ function padreExamenFisico() {
     /*--------------------------------------*/
     posFuncion = 'asignarPadreExamenFisico';
 
-    CargarVentanaPopPapExamenPadre(vformname, vtitle, vwidth, vheight, vcenter, vresizable, vmodal, vstyle, vopacity, vposx1, vposx2, vposy1, vposy2, parametros, posFuncion)
+    CargarVentanaPopPapExamenPadre(vformname, vtitle, vwidth, vheight, vcenter, vresizable, vmodal, vstyle, vopacity, vposx1, vposx2, vposy1, vposy2, parametros, posFuncion);
 }
 function cambiarVersion() {
     arbolExamenFisico();
@@ -5318,7 +5274,7 @@ function mostrarStdDesarrollo() {
             micargador(0);
             respuesta = transport.responseText;
             var miarray = respuesta.split("|");
-            if (miarray[0] == 2) {
+            if (miarray[0] === 2) {
                 $("divBtnNuevo").style.display = 'block';
                 $("tr_prueba").style.display = 'block';
                 $("tr_servicio").style.display = 'block';
@@ -5331,7 +5287,7 @@ function mostrarStdDesarrollo() {
             $('hidFechCreacionVersion').value = miarray[2];
             $('stdDesarrollo').innerHTML = miarray[1];
         }
-    })
+    });
 }
 
 function arbolExamenFisico() {
@@ -5370,7 +5326,7 @@ function asignarPadreExamenFisico() {
     var xx = treex.getAllFatItems();
     var xy = treex.getAllLeafs();
 
-    if (xx == "" && xy == "") {
+    if (xx === "" && xy === "") {
         $('txtJerarquia').value = "01";
         $('txtOrden').value = "1";
         $('txtNivel').value = "0";
@@ -5410,7 +5366,7 @@ function preeditaExamenFisico(id) {
             Asignaciones();
             document.getElementById("divExamenPrueba").style.display = 'block';
         }
-    })
+    });
 }
 function tabsEstadosInicial() {
     $('ultab1').className = 'tabs_1';
@@ -5422,14 +5378,14 @@ function Asignaciones() {
     idExamen = $("hidIdExamen").value;
     flagTab1 = $("hidFlagTab1").value;
     flagTab2 = $("hidFlagTab2").value;
-    if (flagTab1 == 0 && flagTab2 == 0) {
+    if (flagTab1 === 0 && flagTab2 === 0) {
         mostrarTblPruebas();
         mostrartablaExamenPrueba(idExamen);
         $("hidFlagTab1").value = 1;
         $('tab1').show();
         $('tab2').hide();
     }
-    if (flagTab1 == 1 && flagTab2 == 0) {
+    if (flagTab1 === 1 && flagTab2 === 0) {
         mostrarTblServicios();
         mostrartablaExamenServicio(idExamen);
         $("hidFlagTab2").value = 1;
@@ -5465,42 +5421,42 @@ function capturarPadreExamenFisico(id) {
             document.getElementById("txtNivel").value = miarray[3];
             document.getElementById("txtOrden").value = miarray[4];
         }
-    })
+    });
 }
 
 function CargarVentanaPopPapExamenPadre(vformname, vtitle, vwidth, vheight, vcenter, vresizable, vmodal, vstyle, vopacity, vposx1, vposx2, vposy1, vposy2, parametros, posFuncion) {
     myRand = parseInt(Math.random() * 999999999999999);
-    if (vwidth == undefined || vwidth == 0)
+    if (vwidth === undefined || vwidth === 0)
         vwidth = 700;
-    if (vheight == undefined || vheight == 0)
+    if (vheight === undefined || vheight === 0)
         vheight = 400;
-    if (vposx1 == undefined || vposx1 == 0)
+    if (vposx1 === undefined || vposx1 === 0)
         vposx1 = 25;
-    if (vposy1 == undefined || vposy1 == 0)
+    if (vposy1 === undefined || vposy1 === 0)
         vposy1 = 110;
-    if (vposx2 == undefined || vposx2 == 0)
+    if (vposx2 === undefined || vposx2 === 0)
         vposx2 = 25;
-    if (vposy2 == undefined || vposy2 == 0)
+    if (vposy2 === undefined || vposy2 === 0)
         vposy2 = 110;
 
-    if (vresizable == undefined || vresizable == 0)
+    if (vresizable === undefined || vresizable === 0)
         vresizable = true;
     else
         vresizable = false;
-    if (vstyle == undefined || vstyle == 0)
+    if (vstyle === undefined || vstyle === 0)
         vstyle = "alphacube";   // fondo y estilo
     //if(veffect==veffect || veffect==0) veffect="popup_effect";
-    if (vmodal == undefined || vmodal == 0)
+    if (vmodal === undefined || vmodal === 0)
         vmodal = false;
     else
         vmodal = true;
-    if (vopacity == undefined || vopacity == 0)
+    if (vopacity === undefined || vopacity === 0)
         vopacity = 1;
-    if (vcenter == undefined || vcenter == 0 || vcenter == 't')
+    if (vcenter === undefined || vcenter === 0 || vcenter === 't')
         vcenter = true;
     else
         vcenter = false;
-    if (vtitle == undefined)
+    if (vtitle === undefined)
         vtitle = vformname;
     if (!ExisteObjeto("Div_" + vformname)) {
         var vidfrm;
@@ -5509,7 +5465,7 @@ function CargarVentanaPopPapExamenPadre(vformname, vtitle, vwidth, vheight, vcen
         vidfrm = "Frm_" + vformname;
         var vzindex = 100;
         var win;
-        if (vmodal == true || vmodal == 1)
+        if (vmodal === true || vmodal === 1)
             win = new Window({
                 id: vid,
                 className: vstyle,
@@ -5532,7 +5488,7 @@ function CargarVentanaPopPapExamenPadre(vformname, vtitle, vwidth, vheight, vcen
         win.getContent().innerHTML = "<div id='" + vidfrm + "'></div>";
         //win.getContent().innerHTML = "<h1>No Constraint</h1>Wired mode<br><a href='#' onclick='Windows.getWindow(\"win3\").maximize()'>Maximize me</a>";
         win.setDestroyOnClose();
-        if (vcenter == true || vcenter == 1)
+        if (vcenter === true || vcenter === 1)
             win.showCenter(vmodal);
         else
             win.show(vmodal);
@@ -5541,20 +5497,20 @@ function CargarVentanaPopPapExamenPadre(vformname, vtitle, vwidth, vheight, vcen
             right: vposx2,
             top: vposy1,
             bottom: 'auto'
-        })
+        });
         win.toFront();
 
         new Ajax.Request(pathRequestControl,
-            {
-                method: 'get',
-                parameters: parametros,
-                onComplete: function (transport) {
-                    respuesta = transport.responseText;
-                    $(vidfrm).update(respuesta);
-                    posFuncion += "('')";
-                    eval(posFuncion);
-                }
-            })
+                {
+                    method: 'get',
+                    parameters: parametros,
+                    onComplete: function (transport) {
+                        respuesta = transport.responseText;
+                        $(vidfrm).update(respuesta);
+                        posFuncion += "('')";
+                        eval(posFuncion);
+                    }
+                });
     }
 }
 
@@ -5583,41 +5539,41 @@ function nue_actExamenFisico(opt) {
     parametros += '&p10=' + opt;
 
     new Ajax.Request(pathRequestControl,
-        {
-            method: 'post',
-            parameters: parametros,
-            onLoading: micargador(1),
-            onComplete: function (transport) {
-                micargador(0);
-                respuesta = transport.responseText;
-                //            $('Div_programacionMedicosActoMedico').update(respuesta);
-                if (opt == 'nuevo') {
-                    document.getElementById("divEdita").style.display = 'block';
-                    document.getElementById("divGraba").style.display = 'none';
-                    document.getElementById("divActualiza").style.display = 'none';
-                    document.getElementById("divElimina").style.display = 'none';
-                    document.getElementById("btnAsignarPadre").style.visibility = 'visible';
-                    document.getElementById("txtTitulo").disabled = true;
-                    document.getElementById("cboEstado").disabled = true;
-                    document.getElementById("txtOrden").disabled = true;
-                } else if (opt == 'actualizar') {
-                    document.getElementById("txtPadre").value = '';
-                    document.getElementById("txtJerarquia").value = '';
-                    document.getElementById("txtTitulo").value = '';
-                    document.getElementById("cboEstado").value = '';
-                    document.getElementById("txtOrden").value = '';
-                    document.getElementById("txtNivel").value = '';
-                    document.getElementById("txtDescripcionPadre").value = '';
-                    document.getElementById("divEdita").style.display = 'none';
-                    document.getElementById("divGraba").style.display = 'block';
-                    document.getElementById("divActualiza").style.display = 'none';
-                    document.getElementById("divElimina").style.display = 'none';
-                    document.getElementById("btnAsignarPadre").style.visibility = 'visible';
+            {
+                method: 'post',
+                parameters: parametros,
+                onLoading: micargador(1),
+                onComplete: function (transport) {
+                    micargador(0);
+                    respuesta = transport.responseText;
+                    //            $('Div_programacionMedicosActoMedico').update(respuesta);
+                    if (opt === 'nuevo') {
+                        document.getElementById("divEdita").style.display = 'block';
+                        document.getElementById("divGraba").style.display = 'none';
+                        document.getElementById("divActualiza").style.display = 'none';
+                        document.getElementById("divElimina").style.display = 'none';
+                        document.getElementById("btnAsignarPadre").style.visibility = 'visible';
+                        document.getElementById("txtTitulo").disabled = true;
+                        document.getElementById("cboEstado").disabled = true;
+                        document.getElementById("txtOrden").disabled = true;
+                    } else if (opt === 'actualizar') {
+                        document.getElementById("txtPadre").value = '';
+                        document.getElementById("txtJerarquia").value = '';
+                        document.getElementById("txtTitulo").value = '';
+                        document.getElementById("cboEstado").value = '';
+                        document.getElementById("txtOrden").value = '';
+                        document.getElementById("txtNivel").value = '';
+                        document.getElementById("txtDescripcionPadre").value = '';
+                        document.getElementById("divEdita").style.display = 'none';
+                        document.getElementById("divGraba").style.display = 'block';
+                        document.getElementById("divActualiza").style.display = 'none';
+                        document.getElementById("divElimina").style.display = 'none';
+                        document.getElementById("btnAsignarPadre").style.visibility = 'visible';
+                    }
+                    arbolExamenFisico();
                 }
-                arbolExamenFisico();
             }
-        }
-    )
+    );
 }
 
 function nuevoExamen() {
@@ -5653,7 +5609,7 @@ function eliminaExamenFisico() {
                 micargador(0);
                 respuesta = transport.responseText;
             }
-        })
+        });
     }
 }
 
@@ -5670,9 +5626,9 @@ function asignarExamenPrueba() {
     //    nomPrueba= $("cboPrueba").options[$("cboPrueba").selectedIndex].text;
     //    alert("hidIdEmanenx  "+idExamen+"  cboPrueba  "+idPrueba);
     parametros = 'p1=asignarExamenPrueba' + '&p2=' + idExamen + '&p3=' + idPrueba + '&p4=' + idVersion;
-    if (idPrueba == "") {
+    if (idPrueba === "") {
         alert("por favor seleccione una prueba ...!");
-        return
+        return;
     }
     if (window.confirm("Desea asignar el Exámen " + nomExamen + " a la Prueba : " + nomPrueba + "?")) {
         new Ajax.Request(pathRequestControl, {
@@ -5687,7 +5643,7 @@ function asignarExamenPrueba() {
                     mostrartablaExamenPrueba(idExamen);
                 }
             }
-        })
+        });
     }
 }
 
@@ -5743,11 +5699,11 @@ function desactivarExamenPrueba(event_id, native_event_object) {
     estadoExPr = mygridX.cells(mygridX.getSelectedId(), 9).getValue();
     //    alert("idExPr"+idExPr+" estadoExPr"+estadoExPr+" hidIdExamen"+idExamen);
     //        return;
-    if (native_event_object == 10) {
-        if (estadoExPr == 0) {
+    if (native_event_object === 10) {
+        if (estadoExPr === 0) {
             //msjActivar
             msj = "Esta seguro que desea desactivar, pienselo bién ...?";
-        } else if (estadoExPr == 1) {
+        } else if (estadoExPr === 1) {
             //msjDesactivar
             msj = "Esta seguro de querer activar ...?";
         }
@@ -5766,7 +5722,7 @@ function desactivarExamenPrueba(event_id, native_event_object) {
                     //                    mostrartablaExamenPrueba();
                     //                    mostrartablaExamenServicio();
                 }
-            })
+            });
         }
     }
 
@@ -5834,10 +5790,9 @@ function desactivarExamenPrueba(event_id, native_event_object) {
 function resultadoPrueba(nomPrueba) {
     //----------------------------------------------
     parametros = '';
-    if (nomPrueba == "") {
+    if (nomPrueba === "") {
         parametros += 'p1=resultado_prueba';
-    }
-    else {
+    } else {
         parametros += "p1=buscarPrueba&p2=" + nomPrueba;
     }
     //----------------------------------------------
@@ -5861,9 +5816,8 @@ function resultadoPrueba(nomPrueba) {
         var Estado = TablaresultadoPrueba.cells(TablaresultadoPrueba.getSelectedId(), 4).getValue();
         if (cInd <= 5) {
             dbclickeditarPrueba(rId, cInd);
-        }
-        else if (cInd == 6) {
-            editelimPrueba(rId, cInd, Estado)
+        } else if (cInd === 6) {
+            editelimPrueba(rId, cInd, Estado);
         }
     });
     contadorCargador++;
@@ -5941,7 +5895,7 @@ function postEditarPrueba() {
             document.getElementById("divActualizar").style.display = 'block';
             document.getElementById("divRestaurar").style.display = 'block';
         }
-    })
+    });
 }
 function restaurarPrueba() {
     $('formPrueba').reset();
@@ -5957,10 +5911,10 @@ function editelimPrueba(event_id, native_event_object, bEstado) {
     idPrueba = TablaresultadoPrueba.cells(TablaresultadoPrueba.getSelectedId(), 1).getValue();
     patronModulo = 'act_desPrueba';
     var estado = "";
-    if (bEstado == 1) {
+    if (bEstado === 1) {
         parametros = 'p1=' + patronModulo + '&p2=' + idPrueba + '&p3=desactivar';
         estado = "desactivar";
-    } else if (bEstado == 0) {
+    } else if (bEstado === 0) {
         parametros = 'p1=' + patronModulo + '&p2=' + idPrueba + '&p3=activar';
         estado = "activar";
     }
@@ -5976,7 +5930,7 @@ function editelimPrueba(event_id, native_event_object, bEstado) {
                 // var miarray=respuesta.split("|");
                 resultadoPrueba("");
             }
-        })
+        });
     }
 }
 function buscarPrueba() {
@@ -6007,16 +5961,16 @@ function grabarPrueba(hacer) {
             $('divMostrarCampo').update(respuesta);
             deshabilitarCampos(miCampo);
             document.getElementById("divGrabar1").style.display = 'block';
-            if (hacer == 'nuevo') {
+            if (hacer === 'nuevo') {
                 document.getElementById("divGrabar").style.display = 'none';
                 document.getElementById("divEditar").style.display = 'block';
                 document.getElementById("divActualizar").style.display = 'none';
                 document.getElementById("divRestaurar").style.display = 'none';
             }
         }
-    })
+    });
     resultadoPrueba("");
-    if (hacer == 'modificar') {
+    if (hacer === 'modificar') {
         document.getElementById("divGrabar").style.display = 'none';
         document.getElementById("divEditar").style.display = 'block';
         document.getElementById("divActualizar").style.display = 'none';
@@ -6077,9 +6031,9 @@ function agregaMasCampo(id, kk) {
     cbEs = "cbEstado[" + kk + "]";
     img.src = "../../../imagen/inicio/eliminar.gif";
     link.setAttribute("href", "#");
-    if (navigator.userAgent.indexOf("MSIE") != -1)
+    if (navigator.userAgent.indexOf("MSIE") !== -1)
         link.setAttribute("onclick", function () {
-            eliminaRowCampo(kk)
+            eliminaRowCampo(kk);
         });
     else
         link.setAttribute("onclick", "eliminaRowCampo(" + kk + ");");
@@ -6150,7 +6104,7 @@ function agregaMasCampo(id, kk) {
     td4.appendChild(sel1);
     td4.appendChild(caja3);
     td5.appendChild(chk);
-    link.appendChild(img)
+    link.appendChild(img);
 
     td1.appendChild(link);
     row.appendChild(td4);
@@ -6168,46 +6122,46 @@ function agregaMasCampo(id, kk) {
         control = 'recuperarCombosCampos';
         data = 'p1=' + control + '&p2=' + opcion;
         new Ajax.Request(url,
-            {
-                method: 'get',
-                parameters: data,
-                onLoading: micargador(1),
-                onComplete: function (transport) {
-                    micargador(0);
-                    if (transport.readyState == '4') {
-                        xml = transport.responseXML;
-                        indice = xml.getElementsByTagName('indice');
-                        descripcion = xml.getElementsByTagName('descripcion');
-                        a = nomcbo + "[" + kk + "]";
-                        var f;
-                        if (k == 1) {
-                            select1 = document.getElementById(a);
-                            select1.options.length = 0;
-                            for (f = 0; f < indice.length; f++) {
-                                opt = document.createElement('option');
-                                codigo = indice[f].firstChild.nodeValue;
-                                texto = document.createTextNode(descripcion[f].firstChild.nodeValue);
-                                opt.value = codigo;
-                                opt.appendChild(texto)
-                                select1.appendChild(opt);
+                {
+                    method: 'get',
+                    parameters: data,
+                    onLoading: micargador(1),
+                    onComplete: function (transport) {
+                        micargador(0);
+                        if (transport.readyState === '4') {
+                            xml = transport.responseXML;
+                            indice = xml.getElementsByTagName('indice');
+                            descripcion = xml.getElementsByTagName('descripcion');
+                            a = nomcbo + "[" + kk + "]";
+                            var f;
+                            if (k === 1) {
+                                select1 = document.getElementById(a);
+                                select1.options.length = 0;
+                                for (f = 0; f < indice.length; f++) {
+                                    opt = document.createElement('option');
+                                    codigo = indice[f].firstChild.nodeValue;
+                                    texto = document.createTextNode(descripcion[f].firstChild.nodeValue);
+                                    opt.value = codigo;
+                                    opt.appendChild(texto);
+                                    select1.appendChild(opt);
+                                }
                             }
-                        }
-                        if (k == 2) {
-                            select2 = document.getElementById(a);
-                            select2.options.length = 0;
-                            for (f = 0; f < indice.length; f++) {
-                                opt2 = document.createElement('option');
-                                codigo = indice[f].firstChild.nodeValue;
-                                texto = document.createTextNode(descripcion[f].firstChild.nodeValue);
-                                opt2.value = codigo;
-                                opt2.appendChild(texto)
-                                select2.appendChild(opt2);
+                            if (k === 2) {
+                                select2 = document.getElementById(a);
+                                select2.options.length = 0;
+                                for (f = 0; f < indice.length; f++) {
+                                    opt2 = document.createElement('option');
+                                    codigo = indice[f].firstChild.nodeValue;
+                                    texto = document.createTextNode(descripcion[f].firstChild.nodeValue);
+                                    opt2.value = codigo;
+                                    opt2.appendChild(texto);
+                                    select2.appendChild(opt2);
+                                }
                             }
                         }
                     }
                 }
-            }
-        )
+        );
     }
 
 }
@@ -6223,7 +6177,7 @@ function editarCampos(idPrueba, nomPrueba) {
     //    alert(idPrueba);
     //    alert(nomPrueba);
     patronModulo = 'editaCampos';
-    parametros = 'p1=' + patronModulo + '&p2=' + idPrueba + '&p3=' + nomPrueba
+    parametros = 'p1=' + patronModulo + '&p2=' + idPrueba + '&p3=' + nomPrueba;
     new Ajax.Request(pathRequestControl, {
         method: 'get',
         parameters: parametros,
@@ -6239,7 +6193,7 @@ function editarCampos(idPrueba, nomPrueba) {
             document.getElementById("divActualizar1").style.display = 'none';
             document.getElementById("divRestaurar1").style.display = 'none';
         }
-    })
+    });
 }
 function postEditarCampo() {
     document.getElementById("divGrabar1").style.display = 'none';
@@ -6314,7 +6268,7 @@ function eliminarDbCampo(val) {
                 //                    resultadoPrueba("");
                 eliminaRowCampo(val);
             }
-        })
+        });
     }
 }
 
@@ -6350,19 +6304,19 @@ function grabarCampo(form, hacer) {
             document.getElementById("divRestaurar1").style.display = 'none';
             deshabilitarCampoArreglo();
             resultadoPrueba("");
-            editarCampos(idPrueba, nomPrueba)
+            editarCampos(idPrueba, nomPrueba);
             //            setTimeout(function(){dbclickeditarPrueba('','')},200);
         }
-    })
+    });
 }
 
 
 function verficaTipo(combo) {
     //    varTipo=document.getElementById("cbTipoCampo["+nro+"]").options.text;
     varname = combo.options[combo.selectedIndex].text;
-    nroTipoCampo = $('divCampo').innerHTML
+    nroTipoCampo = $('divCampo').innerHTML;
 
-    if (varname == "Combo" || varname == "combo" || varname == "COMBO") { //4 es el id del item combo
+    if (varname === "Combo" || varname === "combo" || varname === "COMBO") { //4 es el id del item combo
         mantenimientoCombo(nroTipoCampo, 'nuevo', '');
     }
 
@@ -6375,80 +6329,80 @@ function editarCombo(nroTipoCampo) {    //nroTipoCampo para recuperar el combo c
 
 function mantenimientoCombo(nroTipoCampo, opt, idCompo) {
 
-    vFormaAbrir = 'VENTANA'
-    vwidth = '400'
-    vheight = '400'
-    if (opt == 'nuevo') {
-        titulo = 'Nuevo'
-        vformname = 'nuevoCombo'
-        vtitle = 'REGISTRAR NUEVO COMBO'
-        patronModulo = 'nuevoCombo'
+    vFormaAbrir = 'VENTANA';
+    vwidth = '400';
+    vheight = '400';
+    if (opt === 'nuevo') {
+        titulo = 'Nuevo';
+        vformname = 'nuevoCombo';
+        vtitle = 'REGISTRAR NUEVO COMBO';
+        patronModulo = 'nuevoCombo';
         /*---------------------------------------*/
         parametros = '';
         parametros += 'p1=' + patronModulo;
         /*--------------------------------------*/
-    } else if (opt == 'modificar') {
-        titulo = 'Modificar'
-        vformname = 'editarCombo'
-        vtitle = 'MODIFICAR COMBO'
-        patronModulo = 'editarCombo'
+    } else if (opt === 'modificar') {
+        titulo = 'Modificar';
+        vformname = 'editarCombo';
+        vtitle = 'MODIFICAR COMBO';
+        patronModulo = 'editarCombo';
         /*---------------------------------------*/
         parametros = '';
         parametros += 'p1=' + patronModulo + '&p2=' + idCompo;
         /*--------------------------------------*/
     }
-    vcenter = 't'
-    vresizable = ''
-    vmodal = 'false'
-    vstyle = ''
-    vopacity = ''
-    veffect = ''
-    vposx1 = ''
-    vposx2 = ''
-    vposy1 = ''
-    vposy2 = ''
-    file01 = ''
-    vfunctionjava = ''
-    aux = nroTipoCampo
+    vcenter = 't';
+    vresizable = '';
+    vmodal = 'false';
+    vstyle = '';
+    vopacity = '';
+    veffect = '';
+    vposx1 = '';
+    vposx2 = '';
+    vposy1 = '';
+    vposy2 = '';
+    file01 = '';
+    vfunctionjava = '';
+    aux = nroTipoCampo;
     //    posFuncion='asignarPadreExamenFisico';
     posFuncion = '';
 
-    mostrarVentana(vformname, vtitle, vwidth, vheight, vcenter, vresizable, vmodal, vstyle, vopacity, vposx1, vposx2, vposy1, vposy2, parametros, posFuncion, aux, opt)
+    mostrarVentana(vformname, vtitle, vwidth, vheight, vcenter, vresizable, vmodal, vstyle, vopacity, vposx1, vposx2, vposy1, vposy2, parametros, posFuncion, aux, opt);
 }
 
 function mostrarVentana(vformname, vtitle, vwidth, vheight, vcenter, vresizable, vmodal, vstyle, vopacity, vposx1, vposx2, vposy1, vposy2, parametros, posFuncion, aux, opt) {
     myRand = parseInt(Math.random() * 999999999999999);
-    if (vwidth == undefined || vwidth == 0)
+    if (vwidth === undefined || vwidth === 0)
         vwidth = 700;
-    if (vheight == undefined || vheight == 0)
+    if (vheight === undefined || vheight === 0)
         vheight = 400;
-    if (vposx1 == undefined || vposx1 == 0)
+    if (vposx1 === undefined || vposx1 === 0)
         vposx1 = 25;
-    if (vposy1 == undefined || vposy1 == 0)
+    if (vposy1 === undefined || vposy1 === 0)
         vposy1 = 110;
-    if (vposx2 == undefined || vposx2 == 0)
+    if (vposx2 === undefined || vposx2 === 0)
         vposx2 = 25;
-    if (vposy2 == undefined || vposy2 == 0)
+    if (vposy2 === undefined || vposy2 === 0)
         vposy2 = 110;
 
-    if (vresizable == undefined || vresizable == 0)
+    if (vresizable === undefined || vresizable === 0)
         vresizable = true;
     else
         vresizable = false;
-    if (vstyle == undefined || vstyle == 0)
+    if (vstyle === undefined || vstyle === 0)
         vstyle = "alphacube";   // fondo y estilo
     //if(veffect==veffect || veffect==0) veffect="popup_effect";
-    if (vmodal == undefined || vmodal == 0)
+    if (vmodal === undefined || vmodal === 0)
         vmodal = false;
     else
         vmodal = true;
-    if (vopacity == undefined || vopacity == 0)
+    if (vopacity === undefined || vopacity === 0)
         vopacity = 1;
-    if (vcenter == undefined || vcenter == 0 || vcenter == 't')
+    if (vcenter === undefined || vcenter === 0 || vcenter === 't')
         vcenter = true;
     else
         vcenter = false;
-    if (vtitle == undefined)
+    if (vtitle === undefined)
         vtitle = vformname;
     if (!ExisteObjeto("Div_" + vformname)) {
         var vidfrm;
@@ -6457,7 +6411,7 @@ function mostrarVentana(vformname, vtitle, vwidth, vheight, vcenter, vresizable,
         vidfrm = "Frm_" + vformname;
         var vzindex = 100;
         var win;
-        if (vmodal == true || vmodal == 1)
+        if (vmodal === true || vmodal === 1)
             win = new Window({
                 id: vid,
                 className: vstyle,
@@ -6480,7 +6434,7 @@ function mostrarVentana(vformname, vtitle, vwidth, vheight, vcenter, vresizable,
         win.getContent().innerHTML = "<div id='" + vidfrm + "'></div>";
         //win.getContent().innerHTML = "<h1>No Constraint</h1>Wired mode<br><a href='#' onclick='Windows.getWindow(\"win3\").maximize()'>Maximize me</a>";
         win.setDestroyOnClose();
-        if (vcenter == true || vcenter == 1)
+        if (vcenter === true || vcenter === 1)
             win.showCenter(vmodal);
         else
             win.show(vmodal);
@@ -6489,30 +6443,29 @@ function mostrarVentana(vformname, vtitle, vwidth, vheight, vcenter, vresizable,
             right: vposx2,
             top: vposy1,
             bottom: 'auto'
-        })
+        });
         win.toFront();
 
         new Ajax.Request(pathRequestControl,
-            {
-                method: 'get',
-                parameters: parametros,
-                onComplete: function (transport) {
-                    respuesta = transport.responseText;
-                    $(vidfrm).update(respuesta);
-                    /*------------------------*/
-                    $("hidnroTipoCampo").value = aux;
-                    if (opt == 'nuevo') {
-                        document.getElementById("nuevoCombo").style.display = 'block';
-                        document.getElementById("verCombo").style.display = 'block';
-                    }
-                    else if (opt == 'modificar') {
-                        document.getElementById("nuevoCombo").style.display = 'none';
-                        document.getElementById("modificarCombo").style.display = 'block';
-                        document.getElementById("verCombo").style.display = 'none';
+                {
+                    method: 'get',
+                    parameters: parametros,
+                    onComplete: function (transport) {
+                        respuesta = transport.responseText;
+                        $(vidfrm).update(respuesta);
+                        /*------------------------*/
+                        $("hidnroTipoCampo").value = aux;
+                        if (opt === 'nuevo') {
+                            document.getElementById("nuevoCombo").style.display = 'block';
+                            document.getElementById("verCombo").style.display = 'block';
+                        } else if (opt === 'modificar') {
+                            document.getElementById("nuevoCombo").style.display = 'none';
+                            document.getElementById("modificarCombo").style.display = 'block';
+                            document.getElementById("verCombo").style.display = 'none';
+                        }
                     }
                 }
-            }
-        )
+        );
     }
 }
 
@@ -6563,9 +6516,9 @@ function agregaMasItemsCombo(id, kk) {
     txtValue = "txtValue[" + kk + "]";
     img.src = "../../../imagen/inicio/eliminar.gif";
     link.setAttribute("href", "#");
-    if (navigator.userAgent.indexOf("MSIE") != -1)
+    if (navigator.userAgent.indexOf("MSIE") !== -1)
         link.setAttribute("onclick", function () {
-            eliminaRowCombo(kk)
+            eliminaRowCombo(kk);
         });
     else
         link.setAttribute("onclick", "eliminaRowCombo(" + kk + ");");
@@ -6585,7 +6538,7 @@ function agregaMasItemsCombo(id, kk) {
 
     td2.appendChild(caja2);
     td3.appendChild(caja1);
-    link.appendChild(img)
+    link.appendChild(img);
     td1.appendChild(link);
     row.appendChild(td3);
     row.appendChild(td2);
@@ -6616,13 +6569,13 @@ function eliminaDbCombo(val) {
                 respuesta = transport.responseText;
                 eliminaRowCombo(val);
             }
-        })
+        });
     }
 }
 function grabarCombo(form, opt) {
     patronModulo = 'grabarCombo';
     parametros = '';
-    parametros += 'p1=' + patronModulo + '&p2=' + opt + '&' + $(form).serialize()
+    parametros += 'p1=' + patronModulo + '&p2=' + opt + '&' + $(form).serialize();
     indice = $('hidnroTipoCampo').value;
     new Ajax.Request(pathRequestControl, {
         method: 'post',
@@ -6632,13 +6585,13 @@ function grabarCombo(form, opt) {
             micargador(0);
             respuesta = transport.responseText;
             var idCombo = respuesta.split("|");
-            if (idCombo[0] > 0 && opt == 'nuevo') {
+            if (idCombo[0] > 0 && opt === 'nuevo') {
                 Windows.close("Div_nuevoCombo", '');
                 alert("Se creo el Combo con ID :" + idCombo[0] + " de manera satisfactória !");
                 document.getElementById("hidIdCombo[" + indice + "]").value = idCombo[0];
             }
         }
-    })
+    });
 }
 
 function verCombo() {
@@ -6660,7 +6613,7 @@ function verCombo() {
 
 function verValorCombo(event_id, native_event_object) {
     idCombo = mygridX.cells(mygridX.getSelectedId(), 0).getValue();
-    if (native_event_object == 1 && contadorGrid < 1) {
+    if (native_event_object === 1 && contadorGrid < 1) {
         document.getElementById("divValorCombo1").style.display = 'block';
         parametros = '';
         parametros += "p1=selectValorCombo&p2=" + idCombo;
@@ -6673,7 +6626,7 @@ function verValorCombo(event_id, native_event_object) {
         contadorGrid++;
     }
     setTimeout(function () {
-        iniciarContador()
+        iniciarContador();
     }, 3600);
 }
 function asignarCombo(fil, col) {
@@ -6689,8 +6642,7 @@ function noespacios() {
     if (er.test(web)) {
         alert('No se permiten espacios');
         return false;
-    }
-    else
+    } else
         return true;
 }
 
@@ -6708,9 +6660,9 @@ function asignarExamenServicio() {
     nomServicio = $("hidNomServicio").value;
     //    alert("idServicio "+idServicio+"idExamen "+idExamen+"idVersion "+idVersion);
     parametros = 'p1=asignarExamenServicio' + '&p2=' + idExamen + '&p3=' + idServicio + '&p4=' + idVersion;
-    if (idServicio == "") {
+    if (idServicio === "") {
         alert("por favor seleccione un servicio ...!");
-        return
+        return;
     }
     if (window.confirm("Desea asignar el Exámen " + nomExamen + " al Servicio : " + nomServicio + "?")) {
         new Ajax.Request(pathRequestControl, {
@@ -6725,7 +6677,7 @@ function asignarExamenServicio() {
                     mostrartablaExamenServicio(idExamen);
                 }
             }
-        })
+        });
     }
 }
 
@@ -6754,7 +6706,7 @@ function mostrarServiciosPorCCostos() {
     parametros += 'p1=' + patronModulo;
     posFuncion = 'recargarArbolCCostosActividadServicio';
 
-    cargarVentanaEmergente(vformname, vtitle, vwidth, vheight, vcenter, vresizable, vmodal, vstyle, vopacity, vposx1, vposx2, vposy1, vposy2, parametros, posFuncion)
+    cargarVentanaEmergente(vformname, vtitle, vwidth, vheight, vcenter, vresizable, vmodal, vstyle, vopacity, vposx1, vposx2, vposy1, vposy2, parametros, posFuncion);
 }
 
 
@@ -6769,10 +6721,10 @@ function recargarArbolCCostosActividadServicio() {
         cargarTablaCentroCostosServicios(idNodo);
         return true;
     }
-    )
+    );
     arbolCentroCosto.loadXML("../../../../carpetaDocumentos/arbol_centroCostos.xml");
     arbolCentroCosto.openAllItems(1);
-    cargarTablaCentroCostosServicios('%%%')
+    cargarTablaCentroCostosServicios('%%%');
 }
 
 function cargarTablaCentroCostosServicios(IdCenrroCosto) {
@@ -6787,7 +6739,7 @@ function cargarTablaCentroCostosServicios(IdCenrroCosto) {
     oCostosServicios.enableRowsHover(true, 'grid_hover');
     oCostosServicios.attachEvent("onRowSelect", function (rId, cInd) {
         IdServicio = oCostosServicios.cells(oCostosServicios.getSelectedId(), 0).getValue();
-        asignarExamenAServicioPorActividadDeCCosto('', '', IdServicio)
+        asignarExamenAServicioPorActividadDeCCosto('', '', IdServicio);
     });
     contadorCargador++;
     var idCargador = contadorCargador;
@@ -6830,42 +6782,42 @@ function mostrarServiciosPorCCosto() {
     parametros += 'p1=' + patronModulo;
     posFuncion = 'cargarArbolEnVentanaEmergente';
 
-    cargarVentanaEmergente(vformname, vtitle, vwidth, vheight, vcenter, vresizable, vmodal, vstyle, vopacity, vposx1, vposx2, vposy1, vposy2, parametros, posFuncion)
+    cargarVentanaEmergente(vformname, vtitle, vwidth, vheight, vcenter, vresizable, vmodal, vstyle, vopacity, vposx1, vposx2, vposy1, vposy2, parametros, posFuncion);
 }
 
 function cargarVentanaEmergente(vformname, vtitle, vwidth, vheight, vcenter, vresizable, vmodal, vstyle, vopacity, vposx1, vposx2, vposy1, vposy2, parametros, posFuncion) {
     myRand = parseInt(Math.random() * 999999999999999);
-    if (vwidth == undefined || vwidth == 0)
+    if (vwidth === undefined || vwidth === 0)
         vwidth = 700;
-    if (vheight == undefined || vheight == 0)
+    if (vheight === undefined || vheight === 0)
         vheight = 400;
-    if (vposx1 == undefined || vposx1 == 0)
+    if (vposx1 === undefined || vposx1 === 0)
         vposx1 = 25;
-    if (vposy1 == undefined || vposy1 == 0)
+    if (vposy1 === undefined || vposy1 === 0)
         vposy1 = 110;
-    if (vposx2 == undefined || vposx2 == 0)
+    if (vposx2 === undefined || vposx2 === 0)
         vposx2 = 25;
-    if (vposy2 == undefined || vposy2 == 0)
+    if (vposy2 === undefined || vposy2 === 0)
         vposy2 = 110;
 
-    if (vresizable == undefined || vresizable == 0)
+    if (vresizable === undefined || vresizable === 0)
         vresizable = true;
     else
         vresizable = false;
-    if (vstyle == undefined || vstyle == 0)
+    if (vstyle === undefined || vstyle === 0)
         vstyle = "alphacube";   // fondo y estilo
     //if(veffect==veffect || veffect==0) veffect="popup_effect";
-    if (vmodal == undefined || vmodal == 0)
+    if (vmodal === undefined || vmodal === 0)
         vmodal = false;
     else
         vmodal = true;
-    if (vopacity == undefined || vopacity == 0)
+    if (vopacity === undefined || vopacity === 0)
         vopacity = 1;
-    if (vcenter == undefined || vcenter == 0 || vcenter == 't')
+    if (vcenter === undefined || vcenter === 0 || vcenter === 't')
         vcenter = true;
     else
         vcenter = false;
-    if (vtitle == undefined)
+    if (vtitle === undefined)
         vtitle = vformname;
     if (!ExisteObjeto("Div_" + vformname)) {
         var vidfrm;
@@ -6874,7 +6826,7 @@ function cargarVentanaEmergente(vformname, vtitle, vwidth, vheight, vcenter, vre
         vidfrm = "Frm_" + vformname;
         var vzindex = 100;
         var win;
-        if (vmodal == true || vmodal == 1)
+        if (vmodal === true || vmodal === 1)
             win = new Window({
                 id: vid,
                 className: vstyle,
@@ -6897,7 +6849,7 @@ function cargarVentanaEmergente(vformname, vtitle, vwidth, vheight, vcenter, vre
         win.getContent().innerHTML = "<div id='" + vidfrm + "'></div>";
         //win.getContent().innerHTML = "<h1>No Constraint</h1>Wired mode<br><a href='#' onclick='Windows.getWindow(\"win3\").maximize()'>Maximize me</a>";
         win.setDestroyOnClose();
-        if (vcenter == true || vcenter == 1)
+        if (vcenter === true || vcenter === 1)
             win.showCenter(vmodal);
         else
             win.show(vmodal);
@@ -6906,23 +6858,23 @@ function cargarVentanaEmergente(vformname, vtitle, vwidth, vheight, vcenter, vre
             right: vposx2,
             top: vposy1,
             bottom: 'auto'
-        })
+        });
         win.toFront();
 
         new Ajax.Request(pathRequestControl,
-            {
-                method: 'get',
-                parameters: parametros,
-                //onLoading : micargador(1),
-                onComplete: function (transport) {
-                    //micargador(0);
-                    respuesta = transport.responseText;
-                    $(vidfrm).update(respuesta);
-                    posFuncion += "('')";
-                    eval(posFuncion);
+                {
+                    method: 'get',
+                    parameters: parametros,
+                    //onLoading : micargador(1),
+                    onComplete: function (transport) {
+                        //micargador(0);
+                        respuesta = transport.responseText;
+                        $(vidfrm).update(respuesta);
+                        posFuncion += "('')";
+                        eval(posFuncion);
+                    }
                 }
-            }
-        )
+        );
     }
 }
 
@@ -6943,7 +6895,7 @@ function recargarArbolCCostosActividadServicios(funcion) {
         eval(textofuncion);
         return true;
     }
-    )
+    );
     //tree2.setXMLAutoLoading("../../../javascript/xml/tree_oficinas.xml");
     arbolCentroCosto.loadXML("../../../../carpetaDocumentos/arbol_centroCostos.xml");
     arbolCentroCosto.openAllItems(1);
@@ -6962,7 +6914,7 @@ function verServicios(id, event, funcion) {
     opcion = '';
     codActividad = '';
     nomServicio = '';
-    if (id == 'x') {
+    if (id === 'x') {
         idCCosto = 1;
     } else {
         document.getElementById('hdnCCosto').value = id;
@@ -6970,10 +6922,9 @@ function verServicios(id, event, funcion) {
         //document.getElementById('txtServicioPorActividadDeCCosto').value='Buscar...';
     }
     nomServicio = document.getElementById('txtServicioPorActividadDeCCosto').value;
-    if (nomServicio == 'Buscar...') {
+    if (nomServicio === 'Buscar...') {
         nomServicio = '';
-    }
-    else {
+    } else {
 
     }
     //estado=$('comboEstados').value;
@@ -6986,26 +6937,26 @@ function verServicios(id, event, funcion) {
     parametros += '&p4=' + codActividad;
     parametros += '&p5=' + nomServicio;
     parametros += '&p6=' + funcion;
-    if (event == '') {
+    if (event === '') {
         tecla = 13;
     } else {
         tecla = event.keyCode;
     }
-    if (tecla == 13) {
+    if (tecla === 13) {
         new Ajax.Request(pathRequestControl,
-            {
-                method: 'get',
-                parameters: parametros,
-                //onLoading : micargador(1),
-                onComplete: function (transport) {
-                    //micargador(0);
-                    respuesta = transport.responseText;
-                    $('divResultadoServiciosCCostos').update(respuesta);
-                    //limpiarDetallePuesto();
-                    //$('imagenEditar').hide();
+                {
+                    method: 'get',
+                    parameters: parametros,
+                    //onLoading : micargador(1),
+                    onComplete: function (transport) {
+                        //micargador(0);
+                        respuesta = transport.responseText;
+                        $('divResultadoServiciosCCostos').update(respuesta);
+                        //limpiarDetallePuesto();
+                        //$('imagenEditar').hide();
+                    }
                 }
-            }
-        )
+        );
     }
 }
 
@@ -7021,7 +6972,7 @@ function asignarExamenAServicioPorActividadDeCCosto(elementoFila, elementoEvento
     var nomServicio = $("hidNomServicio").value;
     //    alert("idServicio "+idServicio+"idExamen "+idExamen+"idVersion "+idVersion);
     parametros = 'p1=asignarExamenServicio' + '&p2=' + idExamen + '&p3=' + idServicio + '&p4=' + idVersion;
-    if (idServicio == "") {
+    if (idServicio === "") {
         alert("por favor seleccione un servicio ...!");
         return;
     }
@@ -7038,7 +6989,7 @@ function asignarExamenAServicioPorActividadDeCCosto(elementoFila, elementoEvento
                     mostrartablaExamenServicio(idExamen);
                 }
             }
-        })
+        });
     }
 }
 
@@ -7092,11 +7043,11 @@ function desactivarExamenServicio(event_id, native_event_object) {
     idExSe = mygridL.cells(mygridL.getSelectedId(), 11).getValue();
     estadoExSe = mygridL.cells(mygridL.getSelectedId(), 9).getValue();
     //    alert("idExSe"+idExSe+" estadoExSe"+estadoExSe+" hidIdExamen"+idExamen);
-    if (native_event_object == 10) {
-        if (estadoExSe == 0) {
+    if (native_event_object === 10) {
+        if (estadoExSe === 0) {
             //msjActivar
             msj = "Esta seguro que desea desactivar, pienselo bién ...?";
-        } else if (estadoExSe == 1) {
+        } else if (estadoExSe === 1) {
             //msjDesactivar
             msj = "Esta seguro de querer activar ...?";
         }
@@ -7112,7 +7063,7 @@ function desactivarExamenServicio(event_id, native_event_object) {
                     //                mostrartablaExamenPrueba(idExamen);
                     mostrartablaExamenServicio(idExamen);
                 }
-            })
+            });
         }
     }
 
@@ -7123,7 +7074,7 @@ function tablaLaboratorio() {
 }
 function cargarTablaLaboratorio(param) {
     codPersona = $("txtCodigoPersona").value;
-    if (param == "")
+    if (param === "")
         parametros = "p1=cargarTablaLaboratorio&p2=" + codPersona;
     else
         parametros = "p2=" + codPersona + "" + param;
@@ -7154,10 +7105,10 @@ function tablaLaboratorioHc() {
     aLaboratorioHc.enableRowsHover(true, 'grid_hover');
     aLaboratorioHc.attachEvent("onRowSelect", function (rId, cInd) {
         var Sistema = aLaboratorioHc.cells(rId, 4).getValue();
-        if (Sistema == '1') {
+        if (Sistema === '1') {
             detalleLaboratorioExamenes(rId);
         }
-        if (Sistema == '2') {
+        if (Sistema === '2') {
             detalleLaboratorio(rId, cInd);
         }
     });
@@ -7179,7 +7130,7 @@ function tablaLaboratorioHc() {
 function detalleLaboratorioExamenes(rId) {
     $('Detalle2').update("");
     var IdResult = aLaboratorioHc.cells(rId, 5).getValue();
-    if (IdResult == "") {
+    if (IdResult === "") {
         document.getElementById("Detalle2").update("<p style='color:red;font-size:22px;'>Laboratorio aun no a registrado los resultados");
 
     } else {
@@ -7200,7 +7151,7 @@ function detalleLaboratorioExamenes(rId) {
                 $('Detalle').show();
                 $('Detalle2').hide();
             }
-        })
+        });
     }
 }
 
@@ -7211,10 +7162,9 @@ function detalleLaboratorioExamenes(rId) {
 
 function detalleLaboratorio(fil, col) {
     var idResult = aLaboratorioHc.cells(fil, 6).getValue();
-    if (idResult == "") {
+    if (idResult === "") {
         document.getElementById("Detalle2").update("<p style='color:red;font-size:22px;'>Laboratorio aun no a registrado los resultados");
-    }
-    else {
+    } else {
         $('Detalle').update("");
         $('Detalle').hide();
         $('Detalle2').show();
@@ -7233,10 +7183,10 @@ function colorDetalleLaboratorio() {
         tipo = mygridy.cells(i, 5).getValue();
         orden = mygridy.cells(i, 6).getValue();
 
-        if (tipo == '1') {
+        if (tipo === '1') {
             mygridy.setRowTextStyle(mygridy.getRowId(i), 'background-color:#C6CEDD;color:black;border-top: 1px solid black;');
         } else {
-            if (orden == '0')
+            if (orden === '0')
                 mygridy.setRowTextStyle(mygridy.getRowId(i), 'background-color:#98A8C2;color:black;border-top: 1px solid black;');
             else
                 mygridy.setRowTextStyle(mygridy.getRowId(i), 'background-color:#E4E8FE;color:black;border-top: 1px solid #7CA5CD;');
@@ -7255,26 +7205,24 @@ function buscarLaboratorio() {
             opcion = document.formOpcion.btnOpcion[i].value;
         }
     }
-    if (fechaIni == "" && fechaFin == "" && dato == "") {
+    if (fechaIni === "" && fechaFin === "" && dato === "") {
         this.cargarTablaLaboratorio('');
         return;
-    }
-    else if (dato != "") {
-        if (fechaIni == "" && fechaFin == "")
+    } else if (dato !== "") {
+        if (fechaIni === "" && fechaFin === "")
             hacer = opcion;
         else {
-            if (fechaIni == "" && fechaFin != "")
+            if (fechaIni === "" && fechaFin !== "")
                 hacer = "desde_dato";
-            else if (fechaIni != "" && fechaFin == "")
+            else if (fechaIni !== "" && fechaFin === "")
                 hacer = "hasta_dato";
             else
                 hacer = "all";
         }
-    }
-    else if (dato == "") {
-        if (fechaIni == "" && fechaFin != "")
+    } else if (dato === "") {
+        if (fechaIni === "" && fechaFin !== "")
             hacer = "hasta";
-        else if (fechaIni != "" && fechaFin == "")
+        else if (fechaIni !== "" && fechaFin === "")
             hacer = "desde";
         else
             hacer = "entre";
@@ -7312,7 +7260,7 @@ function cargarTriaje() {
             //$('Div_sintomas').update(respuesta);
             $('Div_TriajeCuerpo').update(respuesta);
         }
-    })
+    });
 }
 function calendarioFechaVencimiento(id) {
     window.dhx_globalImgPath = "../dhtmlxCalendar/";
@@ -7330,8 +7278,8 @@ function calendarioFechaVencimiento(id) {
         msgClose: "Cerrar",
         msgMinimize: "Minimizar",
         msgToday: "Hoy"
-    }
-    var campo = 'fechaVencimiento_' + id
+    };
+    var campo = 'fechaVencimiento_' + id;
     mCalendario = new dhtmlxCalendarObject(campo, false, {
         isMonthEditable: true,
         isYearEditable: true,
@@ -7345,10 +7293,10 @@ function calendarioFechaVencimiento(id) {
         var factual = new Date();
         var fechaLimite = new Date(date.getFullYear(), date.getMonth(), date.getDate());
         var diferencia = -factual.getTime() + fechaLimite.getTime();
-        var dias = Math.floor(diferencia / (1000 * 60 * 60 * 24)) + 1
+        var dias = Math.floor(diferencia / (1000 * 60 * 60 * 24)) + 1;
         $('diasValidos_' + id).value = dias;
-        var elemento = $('hreceta_' + id).value
-        if (elemento != 0) {
+        var elemento = $('hreceta_' + id).value;
+        if (elemento !== 0) {
             preguardarRectaMedica(id, '1');
         }
         //preguardarRectaMedica(id,'1');
@@ -7364,10 +7312,10 @@ function calcularFechaValidez(id) {
 
     var dias = $('diasValidos_' + id).value;
 
-    var fechaInicial = new Date() // 22 de Marzo del 2010 -  los meses comienzan a contar desde 0
-    var valorFecha = fechaInicial.valueOf()  // 1269226800000
+    var fechaInicial = new Date(); // 22 de Marzo del 2010 -  los meses comienzan a contar desde 0
+    var valorFecha = fechaInicial.valueOf() ; // 1269226800000
     var valorFechaTermino = valorFecha + (dias * 24 * 60 * 60 * 1000); // 60 días después, como milisegundos ( días * horas * minutos * segundos * milisegundos )
-    var fechaTermino = new Date(valorFechaTermino) // nuevo objeto de fecha: 20 de mayo - Thu May 20 2010 23:00:00 GMT-0400 (CLT)
+    var fechaTermino = new Date(valorFechaTermino); // nuevo objeto de fecha: 20 de mayo - Thu May 20 2010 23:00:00 GMT-0400 (CLT)
     var mes = fechaTermino.getMonth() + 1;
     var dia = fechaTermino.getDate();
     if (mes < 10) {
@@ -7398,7 +7346,7 @@ function grabarDestinoEssalud() {
             cargadorpeche(0, idCargador);
             var respuesta = transport.responseText;
         }
-    })
+    });
 }
 
 function grabarTipoCitaEssalud() {
@@ -7419,7 +7367,7 @@ function grabarTipoCitaEssalud() {
             cargadorpeche(0, idCargador);
             var respuesta = transport.responseText;
         }
-    })
+    });
 }
 
 function cargarDatosDestinoCita() {
@@ -7441,7 +7389,7 @@ function cargarDatosDestinoCita() {
 
         }
 
-    })
+    });
 }
 
 
@@ -7463,7 +7411,7 @@ function cargarDatosTipoCita() {
             document.getElementById('lstTipoCitaEssalud').selectedIndex = (respuesta);
         }
 
-    })
+    });
 }
 
 
@@ -7580,7 +7528,7 @@ function eliminarseleccionarServicioGrupoEtario(fila, columna) {
     var iIdServicioGrupoEtareo = tablaServicioGrupoEtarioSeleccionadosCPT.cells(fila, 0).getValue();
     var iOrden = tablaServicioGrupoEtarioSeleccionadosCPT.cells(fila, 6).getValue();
     var iIdGrupoEtario = $('txtidGrupoEtario').value;
-    if (columna == 11) {// Eliminar
+    if (columna === 11) {// Eliminar
         if (confirm("Esta Seguro que desea Eliminar")) {
             var patronModulo = 'eliminarseleccionarServicioGrupoEtario';
             var parametros = '';
@@ -7600,11 +7548,11 @@ function eliminarseleccionarServicioGrupoEtario(fila, columna) {
                     refrescarServiciosSeleccionado();
                 }
 
-            })
+            });
 
         }
     }
-    if (columna == 12) {// Modifico
+    if (columna === 12) {// Modifico
 
         var Titulo = tablaServicioGrupoEtarioSeleccionadosCPT.cells(fila, 2).getValue();
         var iorden = tablaServicioGrupoEtarioSeleccionadosCPT.cells(fila, 6).getValue();
@@ -7613,22 +7561,22 @@ function eliminarseleccionarServicioGrupoEtario(fila, columna) {
         var edad = tablaServicioGrupoEtarioSeleccionadosCPT.cells(fila, 3).getValue();
         var nroAtencion = tablaServicioGrupoEtarioSeleccionadosCPT.cells(fila, 7).getValue();
         var vMensaje = tablaServicioGrupoEtarioSeleccionadosCPT.cells(fila, 16).getValue();
-        if (edad == 0) {
+        if (edad === 0) {
             edad = '';
         }
-        var vformname = 'formularioServicioGrupoEtario'
-        var vtitle = '<h1>' + Titulo + '</h1><br>'
-        var vwidth = '450'
-        var vheight = '380'
-        var vcenter = 't'
-        var vresizable = ''
-        var vmodal = 'false'
-        var vstyle = ''
-        var vopacity = ''
-        var vposx1 = ''
-        var vposx2 = ''
-        var vposy1 = ''
-        var vposy2 = ''
+        var vformname = 'formularioServicioGrupoEtario';
+        var vtitle = '<h1>' + Titulo + '</h1><br>';
+        var vwidth = '450';
+        var vheight = '380';
+        var vcenter = 't';
+        var vresizable = '';
+        var vmodal = 'false';
+        var vstyle = '';
+        var vopacity = '';
+        var vposx1 = '';
+        var vposx2 = '';
+        var vposy1 = '';
+        var vposy2 = '';
 
         var patronModulo = 'editarServicioGrupoEtario';
         var parametros = '';
@@ -7643,7 +7591,7 @@ function eliminarseleccionarServicioGrupoEtario(fila, columna) {
         parametros += '&p9=' + nroAtencion;
         parametros += '&p10=' + vMensaje;
         var posFuncion = '';
-        CargarVentanaPopPap(vformname, vtitle, vwidth, vheight, vcenter, vresizable, vmodal, vstyle, vopacity, vposx1, vposx2, vposy1, vposy2, parametros, posFuncion)
+        CargarVentanaPopPap(vformname, vtitle, vwidth, vheight, vcenter, vresizable, vmodal, vstyle, vopacity, vposx1, vposx2, vposy1, vposy2, parametros, posFuncion);
 
     }
 }
@@ -7687,30 +7635,30 @@ function modificarServicioGrupoEtario() {
             refrescarServiciosSeleccionado();
         }
 
-    })
+    });
 }
 
 function buscarGrupoEtarioPorAfiliacion() {
     var icboAfiliacionGrupoEtario = document.getElementById("cboAfiliacionGrupoEtario").value;
-    cargarTablaGrupoEtario(icboAfiliacionGrupoEtario)
+    cargarTablaGrupoEtario(icboAfiliacionGrupoEtario);
 }
 
 function agregarNuevoServicioPorGRupoEtario() {
     var idGrupoEtario = document.getElementById("txtidGrupoEtario").value;
-    if (idGrupoEtario != '') {
-        var vformname = 'formularioContratof'
-        var vtitle = 'MANTENIMIENTO DE LOS SERVICIOS DE GRUPO ETARIO'
-        var vwidth = '650'
-        var vheight = '480'
-        var vcenter = 't'
-        var vresizable = ''
-        var vmodal = 'false'
-        var vstyle = ''
-        var vopacity = ''
-        var vposx1 = ''
-        var vposx2 = ''
-        var vposy1 = ''
-        var vposy2 = ''
+    if (idGrupoEtario !== '') {
+        var vformname = 'formularioContratof';
+        var vtitle = 'MANTENIMIENTO DE LOS SERVICIOS DE GRUPO ETARIO';
+        var vwidth = '650';
+        var vheight = '480';
+        var vcenter = 't';
+        var vresizable = '';
+        var vmodal = 'false';
+        var vstyle = '';
+        var vopacity = '';
+        var vposx1 = '';
+        var vposx2 = '';
+        var vposy1 = '';
+        var vposy2 = '';
 
         var patronModulo = 'agregarNuevoServicioPorGRupoEtario';
         var parametros = '';
@@ -7719,9 +7667,8 @@ function agregarNuevoServicioPorGRupoEtario() {
         //    parametros+='&p3='+idContrato;
         //    parametros+='&p4='+idPuestoEmpleado;
         var posFuncion = '';
-        CargarVentanaPopPap(vformname, vtitle, vwidth, vheight, vcenter, vresizable, vmodal, vstyle, vopacity, vposx1, vposx2, vposy1, vposy2, parametros, posFuncion)
-    }
-    else {
+        CargarVentanaPopPap(vformname, vtitle, vwidth, vheight, vcenter, vresizable, vmodal, vstyle, vopacity, vposx1, vposx2, vposy1, vposy2, parametros, posFuncion);
+    } else {
         alert("No ah Seleccionado un Grupo Etario");
     }
 
@@ -7785,19 +7732,19 @@ function seleccionarServicioGrupoEtario(fila, columna) {
     //    alert(c_cod_prod)
     var iIdGrupoEtario = $('txtidGrupoEtario').value;
 
-    var vformname = 'formularioServicioGrupoEtario'
-    var vtitle = '<h1>' + Titulo + '</h1><br>'
-    var vwidth = '450'
-    var vheight = '380'
-    var vcenter = 't'
-    var vresizable = ''
-    var vmodal = 'false'
-    var vstyle = ''
-    var vopacity = ''
-    var vposx1 = ''
-    var vposx2 = ''
-    var vposy1 = ''
-    var vposy2 = ''
+    var vformname = 'formularioServicioGrupoEtario';
+    var vtitle = '<h1>' + Titulo + '</h1><br>';
+    var vwidth = '450';
+    var vheight = '380';
+    var vcenter = 't';
+    var vresizable = '';
+    var vmodal = 'false';
+    var vstyle = '';
+    var vopacity = '';
+    var vposx1 = '';
+    var vposx2 = '';
+    var vposy1 = '';
+    var vposy2 = '';
 
     var patronModulo = 'seleccionarServicioGrupoEtario';
     var parametros = '';
@@ -7806,27 +7753,26 @@ function seleccionarServicioGrupoEtario(fila, columna) {
     parametros += '&p3=' + iIdGrupoEtario;
     //    parametros+='&p4='+idPuestoEmpleado;
     var posFuncion = '';
-    CargarVentanaPopPap(vformname, vtitle, vwidth, vheight, vcenter, vresizable, vmodal, vstyle, vopacity, vposx1, vposx2, vposy1, vposy2, parametros, posFuncion)
+    CargarVentanaPopPap(vformname, vtitle, vwidth, vheight, vcenter, vresizable, vmodal, vstyle, vopacity, vposx1, vposx2, vposy1, vposy2, parametros, posFuncion);
 }
 
 
 function checkKey(key, elemento, dato) {
     var a = document.getElementById("txtidGrupoEtariov").value;
 
-    var unicode
+    var unicode;
     if (key.charCode) {
         unicode = key.charCode;
-    }
-    else {
+    } else {
         unicode = key.keyCode;
     }
     //alert(unicode); // Para saber que codigo de tecla presiono , descomentar
 
-    if (unicode == 13) {
+    if (unicode === 13) {
         alert("Presiono enter");
     }
-    if (unicode == 32) {
-        if (document.getElementById("txtidGrupoEtariov").value == " ") {
+    if (unicode === 32) {
+        if (document.getElementById("txtidGrupoEtariov").value === " ") {
 
             document.getElementById("txtidGrupoEtariov").value = trim(document.getElementById("txtidGrupoEtariov").value);
             //            elemento.value=valor.substr(0, valor.length-1);
@@ -7834,13 +7780,12 @@ function checkKey(key, elemento, dato) {
         } else {
             document.getElementById("1").value = parseInt(document.getElementById("1").value) + 1;
 
-            if (parseInt(document.getElementById("1").value) == 2) {
+            if (parseInt(document.getElementById("1").value) === 2) {
                 document.getElementById("txtidGrupoEtariov").value = trim(a) + ' ';
                 document.getElementById("1").value = 1;
             }
         }
-    }
-    else {
+    } else {
         document.getElementById("1").value = 0;
     }
 }
@@ -7879,7 +7824,7 @@ function guardarServicioGrupoEtario() {
             refrescarServiciosSeleccionado();
         }
 
-    })
+    });
 }
 
 
@@ -7897,8 +7842,8 @@ function buscarTablaCPT(a, b, evento) {
     parametros += '&p2=' + nombreCTP;
     // parametros+='&p3='+codCTP;
 
-    var tecla = evento.keyCode
-    if (numero == 4 || tecla == 13) {
+    var tecla = evento.keyCode;
+    if (numero === 4 || tecla === 13) {
         vcpt = 0;
         tablaCPT = new dhtmlXGridObject('div_TablaCPT');
         tablaCPT.setImagePath("../../../../fastmedical_front/imagen/icono/");
@@ -7924,7 +7869,7 @@ function buscarTablaCPT(a, b, evento) {
         });
     }
 
-    if (numero > 4 && vcpt == 1) {
+    if (numero > 4 && vcpt === 1) {
         //alert('0')
         var palabra = $('txtNombreCPT').value;
         var arrayPalabras = new Array();
@@ -7945,7 +7890,7 @@ function validaCodCPT() {
     array_asociativo['0001'] = 8;
     for (var i in array_asociativo) {
         tipoDato = typeof array_asociativo[i];
-        if (tipoDato == "number" && indice == i) {
+        if (tipoDato === "number" && indice === i) {
             $(txtCodCPT).value = "";
             $(txtCodCPT).maxLength = array_asociativo[i];
             $(txtCodCPT).focus();
@@ -7955,7 +7900,7 @@ function validaCodCPT() {
 
 function cargarLetras(event) {
     e = event;
-    if (e.keyCode == 13) {
+    if (e.keyCode === 13) {
         buscarCPTcod();
     }
 }
@@ -8012,8 +7957,8 @@ function buscarMxserpro(a, b, evento) {
     parametros += '&p2=' + nombreMxserpro;
     // parametros+='&p3='+codCTP;
 
-    var tecla = evento.keyCode
-    if (numero == 4 || tecla == 13) {
+    var tecla = evento.keyCode;
+    if (numero === 4 || tecla === 13) {
         vmxserpro = 0;
         tablaMxserpro = new dhtmlXGridObject('div_TablaMxserpro');
         tablaMxserpro.setImagePath("../../../../fastmedical_front/imagen/icono/");
@@ -8038,7 +7983,7 @@ function buscarMxserpro(a, b, evento) {
         });
     }
 
-    if (numero > 4 && vmxserpro == 1) {
+    if (numero > 4 && vmxserpro === 1) {
         //alert('0')
         var palabra = $('txtNombreCPT').value;
         var arrayPalabras = new Array();
@@ -8055,7 +8000,7 @@ function buscarMxserpro(a, b, evento) {
 
 function cargarLetrasMxSerPro(event) {
     e = event;
-    if (e.keyCode == 13) {
+    if (e.keyCode === 13) {
         buscarMxSerProcod();
     }
 }
@@ -8136,7 +8081,7 @@ function reporteEquivalenciaCPT(fila, columna) {
 
 
 function guardarRegistroServicio(fila, columna) {
-    if (columna == 5) {
+    if (columna === 5) {
         if (confirm("¿Esta Seguro de realizar la equivalencia de los Servicios?")) {
             var iIdCPT = tablaEquivalencia.cells(fila, 1).getValue();
             var mxSerpro = tablaEquivalencia.cells(fila, 3).getValue();
@@ -8321,7 +8266,7 @@ function CargarCkeckMinimo() {
     for (i = 0; i < tablaServicioGrupoEtarioSeleccionadosCPT.getRowsNum(); i++) {
         tablaServicioGrupoEtarioSeleccionadosCPT.cells(i, 17).setValue('<input id="cboObligatorio' + i + '" onclick= "if(this.checked){this.value=1}else{this.value=0;};actualizarEstadoObligatorio(' + i + ')" type="checkbox" title="Seleccionar" name="cboObligatorio" value="0">');
         var bObligatorio = tablaServicioGrupoEtarioSeleccionadosCPT.cells(i, 15).getValue();
-        if (bObligatorio == 1) {
+        if (bObligatorio === 1) {
             document.getElementById('cboObligatorio' + i).checked = true;
             document.getElementById('cboObligatorio' + i).value = 1;
         } else {
@@ -8337,7 +8282,7 @@ function actualizarEstadoObligatorio(fila) {
     //    alert(fila);
     var iIdServicioGrupoEtareo = tablaServicioGrupoEtarioSeleccionadosCPT.cells(fila, 0).getValue();
     //    alert(iIdServicioGrupoEtareo);
-    var estado = document.getElementById('cboObligatorio' + fila).value
+    var estado = document.getElementById('cboObligatorio' + fila).value;
 
     var patronModulo = 'actualizarEstadoObligatorio';
     var parametros = '';
@@ -8356,14 +8301,14 @@ function actualizarEstadoObligatorio(fila) {
             //                $('contenedorServicios').update(respuesta);
             refrescarServiciosSeleccionado();
         }
-    })
+    });
 
 }
 
 function filtrarServiciosManteni(evento) {
     var nombre = $('txtBusquedaServicio').value;
-    var tecla = evento.keyCode
-    if (tecla == 13 || nombre.length >= 4) {
+    var tecla = evento.keyCode;
+    if (tecla === 13 || nombre.length >= 4) {
         var patronModulo = 'filtrarServicios ';
         var parametros = '';
         parametros += 'p1=' + patronModulo;
@@ -8379,7 +8324,7 @@ function filtrarServiciosManteni(evento) {
                 var respuesta = transport.responseText;
                 $('contenedorServicios').update(respuesta);
             }
-        })
+        });
     }
 }
 
@@ -8388,8 +8333,8 @@ function filtrarServiciosManteni(evento) {
 
 function filtrarAfiliacioanManteni(evento) {
     var nombre = $('txtBusquedaAfiliacion').value;
-    var tecla = evento.keyCode
-    if (tecla == 13 || nombre.length >= 4) {
+    var tecla = evento.keyCode;
+    if (tecla === 13 || nombre.length >= 4) {
         var patronModulo = 'filtrarAfiliacioanManteni ';
         var parametros = '';
         parametros += 'p1=' + patronModulo;
@@ -8405,7 +8350,7 @@ function filtrarAfiliacioanManteni(evento) {
                 var respuesta = transport.responseText;
                 $('contenedorAFiliaciones').update(respuesta);
             }
-        })
+        });
     }
 }
 
@@ -8428,7 +8373,7 @@ function cargarMantenimiento(id, nombre) {
             $('idServicio').value = id;
             $('nombreServicio').update(nombre);
         }
-    })
+    });
 }
 
 
@@ -8444,7 +8389,7 @@ function quitardSeleccion() {
     j = 0;
     numSeleccionados = 0;
     for (k = 0; k < afiliacionesasignadas.length; k += 1) {
-        if (afiliacionesasignadas.item(k).selected == 1) {
+        if (afiliacionesasignadas.item(k).selected === 1) {
             asignacionauxiliar[j] = new Array(2);
             asignacionauxiliar[j][0] = afiliacionesasignadas.item(k).value;
             asignacionauxiliar[j][1] = afiliacionesasignadas.item(k).text;
@@ -8452,10 +8397,10 @@ function quitardSeleccion() {
         }
     }
     numSeleccionados = j;
-    if (numSeleccionados == 1) {
+    if (numSeleccionados === 1) {
         existeitem = false;
         for (k = 0; k < afiliacionesnoasignadas.length; k += 1) {
-            if (afiliacionesnoasignadas.item(k).value == asignacionauxiliar[0][0]) {
+            if (afiliacionesnoasignadas.item(k).value === asignacionauxiliar[0][0]) {
                 existeitem = true;
             }
         }
@@ -8463,29 +8408,26 @@ function quitardSeleccion() {
             try {
                 afiliacionesnoasignadas.add(new Option(asignacionauxiliar[0][1], asignacionauxiliar[0][0]), null);//Pasamos a ESSALUD como la unica afiliación activa excluyente
                 afiliacionesasignadas.remove(afiliacionesasignadas.selectedIndex);
-            }
-            catch (e) { //in IE, try the below version instead of add()
+            } catch (e) { //in IE, try the below version instead of add()
                 afiliacionesnoasignadas.add(new Option(asignacionauxiliar[0][1], asignacionauxiliar[0][0]), null);//Pasamos a ESSALUD como la unica afiliación activa excluyente
                 afiliacionesasignadas.remove(afiliacionesasignadas.selectedIndex);
             }
         }
-    }
-    else {
+    } else {
         if (numSeleccionados > 1) {
             for (i = 0; i < asignacionauxiliar.length; i += 1) {
                 existe = false;
                 for (k = 0; k < afiliacionesnoasignadas.length; k += 1) {
-                    if (afiliacionesnoasignadas.item(k).value == asignacionauxiliar[i][0]) {
+                    if (afiliacionesnoasignadas.item(k).value === asignacionauxiliar[i][0]) {
                         existe = true;
                     }
                 }
                 if (!existe) {
                     try {
-                        afiliacionesnoasignadas.add(new Option(asignacionauxiliar[i][1], asignacionauxiliar[i][0]), null) //add new option to end of "sample"
+                        afiliacionesnoasignadas.add(new Option(asignacionauxiliar[i][1], asignacionauxiliar[i][0]), null); //add new option to end of "sample"
                         afiliacionesasignadas.remove(afiliacionesasignadas.selectedIndex);
-                    }
-                    catch (e) { //in IE, try the below version instead of add()
-                        afiliacionesnoasignadas.add(new Option(asignacionauxiliar[i][1], asignacionauxiliar[i][0])) //add new option to end of "sample"
+                    } catch (e) { //in IE, try the below version instead of add()
+                        afiliacionesnoasignadas.add(new Option(asignacionauxiliar[i][1], asignacionauxiliar[i][0])); //add new option to end of "sample"
                         afiliacionesasignadas.remove(afiliacionesasignadas.selectedIndex);
                     }
                 }
@@ -8507,7 +8449,7 @@ function agregarSeleccion() {
     numSeleccionados = 0;
 
     for (k = 0; k < afiliacionesnoasignadas.length; k += 1) {
-        if (afiliacionesnoasignadas.item(k).selected == 1) {
+        if (afiliacionesnoasignadas.item(k).selected === 1) {
             asignacionauxiliar[j] = new Array(2);
             asignacionauxiliar[j][0] = afiliacionesnoasignadas.item(k).value;
             asignacionauxiliar[j][1] = afiliacionesnoasignadas.item(k).text;
@@ -8515,10 +8457,10 @@ function agregarSeleccion() {
         }
     }
     numSeleccionados = j;
-    if (numSeleccionados == 1) {
+    if (numSeleccionados === 1) {
         existeitem = false;
         for (k = 0; k < afiliacionesasignadas.length; k += 1) {
-            if (afiliacionesasignadas.item(k).value == asignacionauxiliar[0][0]) {
+            if (afiliacionesasignadas.item(k).value === asignacionauxiliar[0][0]) {
                 existeitem = true;
             }
         }
@@ -8526,29 +8468,26 @@ function agregarSeleccion() {
             try {
                 afiliacionesasignadas.add(new Option(asignacionauxiliar[0][1], asignacionauxiliar[0][0]), null);//Pasamos a ESSALUD como la unica afiliación activa excluyente
                 afiliacionesnoasignadas.remove(afiliacionesnoasignadas.selectedIndex);
-            }
-            catch (e) { //in IE, try the below version instead of add()
+            } catch (e) { //in IE, try the below version instead of add()
                 afiliacionesasignadas.add(new Option(asignacionauxiliar[0][1], asignacionauxiliar[0][0]), null);//Pasamos a ESSALUD como la unica afiliación activa excluyente
                 afiliacionesnoasignadas.remove(afiliacionesnoasignadas.selectedIndex);
             }
         }
-    }
-    else {
+    } else {
         if (numSeleccionados > 1) {
             for (i = 0; i < asignacionauxiliar.length; i += 1) {
                 existeitem = false;
                 for (k = 0; k < afiliacionesasignadas.length; k += 1) {
-                    if (afiliacionesasignadas.item(k).value == asignacionauxiliar[i][0]) {
+                    if (afiliacionesasignadas.item(k).value === asignacionauxiliar[i][0]) {
                         existeitem = true;
                     }
                 }
                 if (!existeitem) {
                     try {
-                        afiliacionesasignadas.add(new Option(asignacionauxiliar[i][1], asignacionauxiliar[i][0]), null) //add new option to end of "sample"
+                        afiliacionesasignadas.add(new Option(asignacionauxiliar[i][1], asignacionauxiliar[i][0]), null); //add new option to end of "sample"
                         afiliacionesnoasignadas.remove(afiliacionesnoasignadas.selectedIndex);
-                    }
-                    catch (e) { //in IE, try the below version instead of add()
-                        afiliacionesasignadas.add(new Option(asignacionauxiliar[i][1], asignacionauxiliar[i][0])) //add new option to end of "sample"
+                    } catch (e) { //in IE, try the below version instead of add()
+                        afiliacionesasignadas.add(new Option(asignacionauxiliar[i][1], asignacionauxiliar[i][0])); //add new option to end of "sample"
                         afiliacionesnoasignadas.remove(afiliacionesnoasignadas.selectedIndex);
                     }
                 }
@@ -8565,20 +8504,18 @@ function guardarModulosPorArea() {
     var arrayCombo2 = "";
     var arrayNum2 = "";
     for (var y = 0; y <= contadorCombo2 - 1; y++) {
-        if (y == 0) {
+        if (y === 0) {
             arrayCombo2 = $('lst_seleccionadas')[y].value + "|";
             arrayNum2 += (y + 1) + "|";
-        }
-        else if (y < contadorCombo2 - 1) {
+        } else if (y < contadorCombo2 - 1) {
             arrayCombo2 += $('lst_seleccionadas')[y].value + "|";
             arrayNum2 += (y + 1) + "|";
-        }
-        else if (y == contadorCombo2 - 1) {
+        } else if (y === contadorCombo2 - 1) {
             arrayCombo2 += $('lst_seleccionadas')[y].value;
             arrayNum2 += (y + 1);
         }
     }
-    if (contadorCombo2 == 0) {
+    if (contadorCombo2 === 0) {
         var IdSer = $("idServicio").value;
         var patronModulo = 'eliminarAnterioresSeleccionados';
         var parametros = '';
@@ -8595,9 +8532,8 @@ function guardarModulosPorArea() {
                 var respuesta = transport.responseText;
                 alert("Se guardo exitosamente...");
             }
-        })
-    }
-    else if (contadorCombo2 > 0) {
+        });
+    } else if (contadorCombo2 > 0) {
         var IdSer = $("idServicio").value;
         var patronModulo = 'eliminarAnterioresSeleccionados';
         var parametros = '';
@@ -8614,7 +8550,7 @@ function guardarModulosPorArea() {
                 var respuesta = transport.responseText;
                 guardarNuevaSeleccion(arrayCombo2, arrayNum2);
             }
-        })
+        });
     }
 
 }
@@ -8639,22 +8575,22 @@ function guardarNuevaSeleccion(arrayCombo2, arrayNum2) {
             alert("Se guardo exitosamente...");
             //cargarMantenimientoServicios();
         }
-    })
+    });
 }
 function ventanaDiagnosticoDiente(numeroAntecedenteOdontograma) {
-    var vformname = 'formularioDiagnosticoDiente'
-    var vtitle = 'Antecedente o Procedimiento'
-    var vwidth = '1000'
-    var vheight = '480'
-    var vcenter = 't'
-    var vresizable = ''
-    var vmodal = 'false'
-    var vstyle = ''
-    var vopacity = ''
-    var vposx1 = ''
-    var vposx2 = ''
-    var vposy1 = ''
-    var vposy2 = ''
+    var vformname = 'formularioDiagnosticoDiente';
+    var vtitle = 'Antecedente o Procedimiento';
+    var vwidth = '1000';
+    var vheight = '480';
+    var vcenter = 't';
+    var vresizable = '';
+    var vmodal = 'false';
+    var vstyle = '';
+    var vopacity = '';
+    var vposx1 = '';
+    var vposx2 = '';
+    var vposy1 = '';
+    var vposy2 = '';
 
     var patronModulo = 'buscadorDiagnosticoDiente';
     var parametros = '';
@@ -8663,7 +8599,7 @@ function ventanaDiagnosticoDiente(numeroAntecedenteOdontograma) {
     //    parametros+='&p3='+idContrato;
     //    parametros+='&p4='+idPuestoEmpleado;
     var posFuncion = 'cargarElementos';
-    CargarVentanaPopPap(vformname, vtitle, vwidth, vheight, vcenter, vresizable, vmodal, vstyle, vopacity, vposx1, vposx2, vposy1, vposy2, parametros, posFuncion)
+    CargarVentanaPopPap(vformname, vtitle, vwidth, vheight, vcenter, vresizable, vmodal, vstyle, vopacity, vposx1, vposx2, vposy1, vposy2, parametros, posFuncion);
 }
 function cargarElementos() {
     cargarArbolDiagnostico();
@@ -8733,24 +8669,22 @@ function diagnosticoOdontogramaSeleccionado(id, nombre) {
             $('divTerceroBit').value = arrayRespuesta[2];
             $('divEstadoBit').value = arrayRespuesta[0];
             $('divCarasBit').value = arrayRespuesta[3];
-            if (arrayRespuesta[0] == '3') {
+            if (arrayRespuesta[0] === '3') {
                 $("divEstado_ventana").show();
-            }
-            else {
+            } else {
                 $("divEstado_ventana").hide();
             }
-            if (arrayRespuesta[2] == 1) {
+            if (arrayRespuesta[2] === 1) {
                 $("divTercero_ventana").show();
             } else {
                 $("divTercero_ventana").hide();
             }
 
             var numeroAntecedenteSeleccionado = $('numeroAntecedenteOdontogramaSeleccionado').value;
-            if (numeroAntecedenteSeleccionado == '') {
+            if (numeroAntecedenteSeleccionado === '') {
                 $('txtAntecedenteId_ventana').value = id;
                 $('txtAntecedenteNombre_ventana').value = nombre;
-            }
-            else {
+            } else {
                 $('txtAntecedenteId_' + numeroAntecedenteSeleccionado).value = id;
                 $('txtAntecedenteNombre_' + numeroAntecedenteSeleccionado).value = nombre;
                 grabarAntecedenteOdontograma(numeroAntecedenteSeleccionado);
@@ -8759,7 +8693,7 @@ function diagnosticoOdontogramaSeleccionado(id, nombre) {
             Windows.close("Div_formularioDiagnosticoDiente", '');
 
         }
-    })
+    });
 
 }
 function buscarArbolDiagnosticoOdontolograma() {
@@ -8774,14 +8708,14 @@ function buscarTablaOdontologia(evento) {
     parametros += 'p1=' + patronModulo;
     parametros += '&p2=' + parametronombre;
 
-    var tecla = evento.keyCode
-    if (numero == 3 || tecla == 13) {
+    var tecla = evento.keyCode;
+    if (numero === 3 || tecla === 13) {
         tod = 0;
         tablaProcedimientoOdontologico = new dhtmlXGridObject('tablaOdontologia');
         tablaProcedimientoOdontologico.setImagePath("../../../../fastmedical_front/imagen/icono/");
         tablaProcedimientoOdontologico.attachEvent("onRowSelect", function (fila, columna) {
             var nombre = tablaProcedimientoOdontologico.cells(fila, 1).getValue();
-            diagnosticoOdontogramaSeleccionado(fila, nombre)
+            diagnosticoOdontogramaSeleccionado(fila, nombre);
 
         });
         //////////para cargador peche////////////////
@@ -8801,7 +8735,7 @@ function buscarTablaOdontologia(evento) {
         });
         //miTablaCie.clearAll();
     }
-    if (numero > 3 && tod == 1) {
+    if (numero > 3 && tod === 1) {
         //tablaPracticasMedicasTratamientos.filterBy(1,$('txtbusquedaNombrePracticasMedicas').value);
         var palabra = $('textoBusquedaTabla').value;
         var arrayPalabras = new Array();
@@ -8817,26 +8751,26 @@ function buscarTablaOdontologia(evento) {
 }
 
 function nuevoAgregarNuevoantecedenteOdontograma() {
-    var vformname = 'FormularioDientesSeleccionados'
-    var vtitle = 'Antecedente o Procedimiento'
-    var vwidth = '1000'
-    var vheight = '480'
-    var vcenter = 't'
-    var vresizable = ''
-    var vmodal = 'false'
-    var vstyle = ''
-    var vopacity = ''
-    var vposx1 = ''
-    var vposx2 = ''
-    var vposy1 = ''
-    var vposy2 = ''
+    var vformname = 'FormularioDientesSeleccionados';
+    var vtitle = 'Antecedente o Procedimiento';
+    var vwidth = '1000';
+    var vheight = '480';
+    var vcenter = 't';
+    var vresizable = '';
+    var vmodal = 'false';
+    var vstyle = '';
+    var vopacity = '';
+    var vposx1 = '';
+    var vposx2 = '';
+    var vposy1 = '';
+    var vposy2 = '';
 
     var patronModulo = 'nuevoAntecedenteDinete';
     var parametros = '';
     parametros += 'p1=' + patronModulo;
 
     var posFuncion = 'cargarDientesseleccionados';
-    CargarVentanaPopPap(vformname, vtitle, vwidth, vheight, vcenter, vresizable, vmodal, vstyle, vopacity, vposx1, vposx2, vposy1, vposy2, parametros, posFuncion)
+    CargarVentanaPopPap(vformname, vtitle, vwidth, vheight, vcenter, vresizable, vmodal, vstyle, vopacity, vposx1, vposx2, vposy1, vposy2, parametros, posFuncion);
     //grabarAntecedenteOdontograma(numeroAntecedenteOdontograma);
 }
 function cancelarDiagnosticoDientes() {
@@ -8846,21 +8780,18 @@ function agregarDiagnosticosDientes() {
     var numeroDientesAux = (numeroAux - 1) / 2;
     var numeroAntecedentesOdontograma = $('numeroAntecedentesOdontograma').value;
     var datos = new Array();
-    if ($('divTerceroBit').value == 1 && $('selectTercero_ventana').value != "") {
+    if ($('divTerceroBit').value === 1 && $('selectTercero_ventana').value !== "") {
         pasa = 1;
-    }
-    else if ($('divTerceroBit').value == 0 && $('selectTercero_ventana').value == "") {
-        pasa = 1
-    }
-
-    else {
+    } else if ($('divTerceroBit').value === 0 && $('selectTercero_ventana').value === "") {
+        pasa = 1;
+    } else {
         pasa = 0;
     }
-    if (pasa == 1) {
+    if (pasa === 1) {
 
-        if ($('dientesAfectados_ventana').value == 1) {
+        if ($('dientesAfectados_ventana').value === 1) {
             for (var i = 0; i <= numeroDientesAux; i++) {
-                if (seleccionado[i] == 1) {
+                if (seleccionado[i] === 1) {
                     numeroAntecedentesOdontograma = $('numeroAntecedentesOdontograma').value;
                     datos = new Array();
                     datos[0] = numeroAntecedentesOdontograma;
@@ -8880,43 +8811,43 @@ function agregarDiagnosticosDientes() {
                     datos[14] = 0;//6
 
 
-                    if (seleccionadoCara[(i - 1) * 5 + 1] == 1) {
-                        if (arrayDatosDientesCara[(i - 1) * 5 + 1][1] == 4) {
+                    if (seleccionadoCara[(i - 1) * 5 + 1] === 1) {
+                        if (arrayDatosDientesCara[(i - 1) * 5 + 1][1] === 4) {
                             datos[12] = 1;
                         }
-                        if (arrayDatosDientesCara[(i - 1) * 5 + 1][1] == 5) {
+                        if (arrayDatosDientesCara[(i - 1) * 5 + 1][1] === 5) {
                             datos[13] = 1;
                         }
                     }
-                    if (seleccionadoCara[(i - 1) * 5 + 2] == 1) {
-                        if (arrayDatosDientesCara[(i - 1) * 5 + 2][1] == 1) {
+                    if (seleccionadoCara[(i - 1) * 5 + 2] === 1) {
+                        if (arrayDatosDientesCara[(i - 1) * 5 + 2][1] === 1) {
                             datos[9] = 1;
                         }
-                        if (arrayDatosDientesCara[(i - 1) * 5 + 2][1] == 3) {
+                        if (arrayDatosDientesCara[(i - 1) * 5 + 2][1] === 3) {
                             datos[11] = 1;
                         }
                     }
-                    if (seleccionadoCara[(i - 1) * 5 + 3] == 1) {
-                        if (arrayDatosDientesCara[(i - 1) * 5 + 3][1] == 4) {
+                    if (seleccionadoCara[(i - 1) * 5 + 3] === 1) {
+                        if (arrayDatosDientesCara[(i - 1) * 5 + 3][1] === 4) {
                             datos[12] = 1;
                         }
-                        if (arrayDatosDientesCara[(i - 1) * 5 + 3][1] == 6) {
+                        if (arrayDatosDientesCara[(i - 1) * 5 + 3][1] === 6) {
                             datos[14] = 1;
                         }
                     }
-                    if (seleccionadoCara[(i - 1) * 5] == 1) {
-                        if (arrayDatosDientesCara[(i - 1) * 5][1] == 1) {
+                    if (seleccionadoCara[(i - 1) * 5] === 1) {
+                        if (arrayDatosDientesCara[(i - 1) * 5][1] === 1) {
                             datos[9] = 1;
                         }
-                        if (arrayDatosDientesCara[(i - 1) * 5][1] == 3) {
+                        if (arrayDatosDientesCara[(i - 1) * 5][1] === 3) {
                             datos[11] = 1;
                         }
                     }
-                    if (seleccionadoCara[(i - 1) * 5 + 4] == 1) {
-                        if (arrayDatosDientesCara[(i - 1) * 5 + 4][1] == 2) {
+                    if (seleccionadoCara[(i - 1) * 5 + 4] === 1) {
+                        if (arrayDatosDientesCara[(i - 1) * 5 + 4][1] === 2) {
                             datos[10] = 1;
                         }
-                        if (arrayDatosDientesCara[(i - 1) * 5 + 4][1] == 2) {
+                        if (arrayDatosDientesCara[(i - 1) * 5 + 4][1] === 2) {
                             datos[10] = 1;
                         }
                     }
@@ -8937,11 +8868,11 @@ function agregarDiagnosticosDientes() {
             ////igualar caras seleccionadas
             var numeroCaras = arrayCaraDientes.length;
             for (i = 0; i < numeroCaras; i++) {
-                if ($('colorSimbolo_ventana').value == 1) {
+                if ($('colorSimbolo_ventana').value === 1) {
                     arrayCarasRojas[i] = seleccionadoCara[i];
 
                 }
-                if ($('colorSimbolo_ventana').value == 2) {
+                if ($('colorSimbolo_ventana').value === 2) {
 
                     arrayCarasAzules[i] = seleccionadoCara[i];
                 }
@@ -8950,10 +8881,10 @@ function agregarDiagnosticosDientes() {
 
             //var numeroCaras=arrayCaraDientes.length;
             for (i = 0; i < numeroCaras; i++) {
-                seleccionadoCara[i] = 0
+                seleccionadoCara[i] = 0;
             }
         }
-        if ($('dientesAfectados_ventana').value == 2) {
+        if ($('dientesAfectados_ventana').value === 2) {
             numeroAntecedentesOdontograma = $('numeroAntecedentesOdontograma').value;
             datos = new Array();
             datos[0] = numeroAntecedentesOdontograma;
@@ -8973,12 +8904,12 @@ function agregarDiagnosticosDientes() {
             datos[14] = 0;//6
             var contadorDientes = 0;
             for (var i = 0; i <= numeroDientesAux; i++) {
-                if (seleccionado[i] == 1) {
-                    if (contadorDientes == 0) {
+                if (seleccionado[i] === 1) {
+                    if (contadorDientes === 0) {
                         datos[5] = arrayDatosDientes[i][0];
                         datos[6] = arrayDatosDientes[i][1];
                     }
-                    if (contadorDientes == 1) {
+                    if (contadorDientes === 1) {
                         datos[7] = arrayDatosDientes[i][0];
                         datos[8] = arrayDatosDientes[i][1];
                     }
@@ -9008,7 +8939,7 @@ function agregarDiagnosticosDientes() {
 
             //var numeroCaras=arrayCaraDientes.length;
             for (i = 0; i < numeroCaras; i++) {
-                seleccionadoCara[i] = 0
+                seleccionadoCara[i] = 0;
             }
         }
         mostrarLeyenda();
@@ -9070,7 +9001,7 @@ function agregarAntecedenteOdontograma(datos) {
             grabarAntecedenteOdontograma(datos[0]);
             cargarImagenesLeyenda(colorsimbolo, estado, dientAfectados);
         }
-    })
+    });
 }
 
 
@@ -9091,30 +9022,30 @@ function grabarAntecedenteOdontograma(numeroAntecedenteOdontograma) {
     var Lingual = 0;
     var Palatina = 0;
     var Observacion = $('observaciones_' + numeroAntecedenteOdontograma).value;
-    if ($('Mesial' + numeroAntecedenteOdontograma).checked == true) {
+    if ($('Mesial' + numeroAntecedenteOdontograma).checked === true) {
         Mesial = 1;
     }
 
-    if ($('Incisal' + numeroAntecedenteOdontograma).checked == true) {
+    if ($('Incisal' + numeroAntecedenteOdontograma).checked === true) {
         Incisal = 1;
     }
 
-    if ($('Distal' + numeroAntecedenteOdontograma).checked == true) {
+    if ($('Distal' + numeroAntecedenteOdontograma).checked === true) {
         Distal = 1;
     }
 
-    if ($('Vestibular' + numeroAntecedenteOdontograma).checked == true) {
+    if ($('Vestibular' + numeroAntecedenteOdontograma).checked === true) {
         Vestibular = 1;
     }
 
-    if ($('Lingual' + numeroAntecedenteOdontograma).checked == true) {
+    if ($('Lingual' + numeroAntecedenteOdontograma).checked === true) {
         Lingual = 1;
     }
 
-    if ($('Palatina' + numeroAntecedenteOdontograma).checked == true) {
+    if ($('Palatina' + numeroAntecedenteOdontograma).checked === true) {
         Palatina = 1;
     }
-    var codigoProgramacion = $('hcodigoProgramacion').value
+    var codigoProgramacion = $('hcodigoProgramacion').value;
     var patronModulo = 'preguardarAntecedenteOdontograma';
     var parametros = '';
     parametros += 'p1=' + patronModulo;
@@ -9144,10 +9075,10 @@ function grabarAntecedenteOdontograma(numeroAntecedenteOdontograma) {
         onComplete: function (transport) {
             cargadorpeche(0, idCargador);
             var respuesta = transport.responseText;
-            $("idAntecedenteOdontograma_" + numeroAntecedenteOdontograma).value = respuesta
+            $("idAntecedenteOdontograma_" + numeroAntecedenteOdontograma).value = respuesta;
 
         }
-    })
+    });
 
 }
 
@@ -9169,7 +9100,7 @@ function dibujarCanvas() {
             var respuesta = transport.responseText;
             eval(respuesta);
         }
-    })
+    });
 
 
 }
@@ -9201,7 +9132,7 @@ function animacionDiente(processing) {
     var distancia = 65;
     for (var i3 = 0; i3 <= numeroDientesAux; i3++) {
 
-        if (seleccionado[i3] == 1) {
+        if (seleccionado[i3] === 1) {
 
             //region 1
             arrayPuntosAux[numeroCara] = new Array();
@@ -9353,10 +9284,10 @@ function animacionDiente(processing) {
         var cara;
 
         for (var i = 0; i <= numeroDientes; i++) {
-            if (seleccionado[i] == 1) {
+            if (seleccionado[i] === 1) {
                 //region 1
                 processing.beginShape();
-                if (seleccionadoCara[(i - 1) * 5 + 1] == 1) {
+                if (seleccionadoCara[(i - 1) * 5 + 1] === 1) {
                     processing.fill(255, 0, 0, 80);
                 } else {
                     processing.fill(255, 255, 255, 80);
@@ -9370,7 +9301,7 @@ function animacionDiente(processing) {
 
                 //region 2
                 processing.beginShape();
-                if (seleccionadoCara[(i - 1) * 5 + 2] == 1) {
+                if (seleccionadoCara[(i - 1) * 5 + 2] === 1) {
                     processing.fill(255, 0, 0, 80);
                 } else {
                     processing.fill(255, 255, 255, 80);
@@ -9384,7 +9315,7 @@ function animacionDiente(processing) {
 
                 //region 3
                 processing.beginShape();
-                if (seleccionadoCara[(i - 1) * 5 + 3] == 1) {
+                if (seleccionadoCara[(i - 1) * 5 + 3] === 1) {
                     processing.fill(255, 0, 0, 80);
                 } else {
                     processing.fill(255, 255, 255, 80);
@@ -9398,7 +9329,7 @@ function animacionDiente(processing) {
 
                 //region 4
                 processing.beginShape();
-                if (seleccionadoCara[(i - 1) * 5] == 1) {
+                if (seleccionadoCara[(i - 1) * 5] === 1) {
                     processing.fill(255, 0, 0, 80);
                 } else {
                     processing.fill(255, 255, 255, 80);
@@ -9413,7 +9344,7 @@ function animacionDiente(processing) {
 
                 //region 5
                 processing.beginShape();
-                if (seleccionadoCara[(i - 1) * 5 + 4] == 1) {
+                if (seleccionadoCara[(i - 1) * 5 + 4] === 1) {
                     processing.fill(255, 0, 0, 80);
                 } else {
                     processing.fill(255, 255, 255, 80);
@@ -9432,7 +9363,7 @@ function animacionDiente(processing) {
 
         }
 
-    }
+    };
     processing.mouseMoved = function () {
         posX2 = processing.mouseX;
         posY2 = processing.mouseY;
@@ -9451,10 +9382,10 @@ function animacionDiente(processing) {
                 if (posY2 <= maximo(arrayCarasDientesAux[z][j][1], arrayCarasDientesAux[z][j + 1][1])) {
                     if (posY2 > minimo(arrayCarasDientesAux[z][j][1], arrayCarasDientesAux[z][j + 1][1])) {
                         if (posX2 <= maximo(arrayCarasDientesAux[z][j][0], arrayCarasDientesAux[z][j + 1][0])) {
-                            if (arrayCarasDientesAux[z][j][0] != arrayCarasDientesAux[z][j + 1][0]) {
+                            if (arrayCarasDientesAux[z][j][0] !== arrayCarasDientesAux[z][j + 1][0]) {
                                 aux1 = ((posY2 - arrayCarasDientesAux[z][j][1]) * (arrayCarasDientesAux[z][j + 1][0] - arrayCarasDientesAux[z][j][0])) / (arrayCarasDientesAux[z][j + 1][1] - arrayCarasDientesAux[z][j][1]) + arrayCarasDientesAux[z][j][0];
                             }
-                            if ((posX2 <= aux1) || (arrayCarasDientesAux[z][j][0] == arrayCarasDientesAux[z][j + 1][0])) {
+                            if ((posX2 <= aux1) || (arrayCarasDientesAux[z][j][0] === arrayCarasDientesAux[z][j + 1][0])) {
                                 cont1++;
                                 //aux2=aux1;
                                 //puntoDatos='px1:'+arrayDientesAux[z][j][0]+'py1:'+arrayDientesAux[z][j][1];
@@ -9464,28 +9395,28 @@ function animacionDiente(processing) {
                     }
                 }
             }
-            if (cont1 % 2 == 1) {
+            if (cont1 % 2 === 1) {
                 mause1 = 1;
                 adentroCaraAux[z] = 1;
             } else {
                 adentroCaraAux[z] = 0;
             }
         }
-        if (mause1 == 1) {
-            processing.cursor(processing.HAND)
+        if (mause1 === 1) {
+            processing.cursor(processing.HAND);
         } else {
-            processing.cursor(processing.ARROW)
+            processing.cursor(processing.ARROW);
         }
 
-    }
+    };
     processing.mouseClicked = function () {
         //alert(processing.mouseY + 'xxxx'+processing.mouseX);
         var numero = arrayPuntosAux.length;
         var indice = 0;
         for (var s = 0; s < numero; s++) {
-            if (adentroCaraAux[s] == 1) {
+            if (adentroCaraAux[s] === 1) {
                 indice = arrayRelacionCara[s];
-                if (seleccionadoCara[indice] == 1) {
+                if (seleccionadoCara[indice] === 1) {
                     seleccionadoCara[indice] = 0;
                 } else {
                     seleccionadoCara[indice] = 1;
@@ -9497,13 +9428,13 @@ function animacionDiente(processing) {
             }
         }
 
-    }
+    };
 
 }
 function cambiarProgramacionDiente() {
     var programacionSeleccionada = $('programacionSeleccionado').value;
     var numeroProgramaciones = arrayHistoriaDiente.length;
-    if (programacionSeleccionada == 'x') {
+    if (programacionSeleccionada === 'x') {
         for (var i = 0; i < numeroProgramaciones; i++) {
             arrayEstados[i] = 1;
             arrayEstadosCara[i] = 1;
@@ -9534,7 +9465,7 @@ function actualizarArrayCaras() {
     var iColorCara = 0;
     var bColorCara = 0;
     for (var i = 0; i < numeroHistoriaCaras; i++) {
-        if (arrayEstadosCara[i] == 1) {
+        if (arrayEstadosCara[i] === 1) {
             numeroHistoriaCaraDiente = arrayHistoriaCara[i].length;
             //alert(numeroHistoriaDiente);
             for (j = 0; j < numeroHistoriaCaraDiente; j++) {
@@ -9547,15 +9478,15 @@ function actualizarArrayCaras() {
                 ///////////////////////
 
                 if ((dienteSeleccionado < 9) || (dienteSeleccionado > 32 && dienteSeleccionado < 38)) {
-                    if (iIdCara == 1) {
-                        if (iColorCara == 1) {
+                    if (iIdCara === 1) {
+                        if (iColorCara === 1) {
                             arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5 + 2] = 1;
                         }
-                        if (iColorCara == 2) {
+                        if (iColorCara === 2) {
                             arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 2] = 1;
                         }
-                        if (iColorCara == 3) {
-                            if (bColorCara == 0) {
+                        if (iColorCara === 3) {
+                            if (bColorCara === 0) {
                                 arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5 + 2] = 1;
                             } else {
                                 arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 2] = 1;
@@ -9564,15 +9495,15 @@ function actualizarArrayCaras() {
 
                     }
 
-                    if (iIdCara == 2) {
-                        if (iColorCara == 1) {
+                    if (iIdCara === 2) {
+                        if (iColorCara === 1) {
                             arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5 + 4] = 1;
                         }
-                        if (iColorCara == 2) {
+                        if (iColorCara === 2) {
                             arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 4] = 1;
                         }
-                        if (iColorCara == 3) {
-                            if (bColorCara == 0) {
+                        if (iColorCara === 3) {
+                            if (bColorCara === 0) {
                                 arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5 + 4] = 1;
                             } else {
                                 arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 4] = 1;
@@ -9581,15 +9512,15 @@ function actualizarArrayCaras() {
                         //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+4]=1;
                     }
 
-                    if (iIdCara == 3) {
-                        if (iColorCara == 1) {
+                    if (iIdCara === 3) {
+                        if (iColorCara === 1) {
                             arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5] = 1;
                         }
-                        if (iColorCara == 2) {
+                        if (iColorCara === 2) {
                             arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5] = 1;
                         }
-                        if (iColorCara == 3) {
-                            if (bColorCara == 0) {
+                        if (iColorCara === 3) {
+                            if (bColorCara === 0) {
                                 arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5] = 1;
                             } else {
                                 arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5] = 1;
@@ -9598,15 +9529,15 @@ function actualizarArrayCaras() {
                         // arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5]=1;
                     }
 
-                    if (iIdCara == 4) {
-                        if (iColorCara == 1) {
+                    if (iIdCara === 4) {
+                        if (iColorCara === 1) {
                             arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5 + 1] = 1;
                         }
-                        if (iColorCara == 2) {
+                        if (iColorCara === 2) {
                             arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 1] = 1;
                         }
-                        if (iColorCara == 3) {
-                            if (bColorCara == 0) {
+                        if (iColorCara === 3) {
+                            if (bColorCara === 0) {
                                 arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5 + 1] = 1;
                             } else {
                                 arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 1] = 1;
@@ -9615,22 +9546,21 @@ function actualizarArrayCaras() {
                         //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+1]=1;
                     }
 
-                    if (iIdCara == 5) {
+                    if (iIdCara === 5) {
 
                     }
 
-                    if (iIdCara == 6) {
-                        if (iColorCara == 1) {
+                    if (iIdCara === 6) {
+                        if (iColorCara === 1) {
                             arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5 + 3] = 1;
                         }
-                        if (iColorCara == 2) {
+                        if (iColorCara === 2) {
                             arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 3] = 1;
                         }
-                        if (iColorCara == 3) {
-                            if (bColorCara == 0) {
+                        if (iColorCara === 3) {
+                            if (bColorCara === 0) {
                                 arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5 + 3] = 1;
-                            }
-                            else {
+                            } else {
                                 arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 3] = 1;
                             }
                         }
@@ -9638,15 +9568,15 @@ function actualizarArrayCaras() {
                     }
                 }
                 if ((dienteSeleccionado > 8 && dienteSeleccionado < 17) || (dienteSeleccionado > 37 && dienteSeleccionado < 43)) {
-                    if (iIdCara == 1) {
-                        if (iColorCara == 1) {
+                    if (iIdCara === 1) {
+                        if (iColorCara === 1) {
                             arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5] = 1;
                         }
-                        if (iColorCara == 2) {
+                        if (iColorCara === 2) {
                             arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5] = 1;
                         }
-                        if (iColorCara == 3) {
-                            if (bColorCara == 0) {
+                        if (iColorCara === 3) {
+                            if (bColorCara === 0) {
                                 arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5] = 1;
                             } else {
                                 arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5] = 1;
@@ -9655,15 +9585,15 @@ function actualizarArrayCaras() {
                         //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5]=1;
                     }
 
-                    if (iIdCara == 2) {
-                        if (iColorCara == 1) {
+                    if (iIdCara === 2) {
+                        if (iColorCara === 1) {
                             arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5 + 4] = 1;
                         }
-                        if (iColorCara == 2) {
+                        if (iColorCara === 2) {
                             arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 4] = 1;
                         }
-                        if (iColorCara == 3) {
-                            if (bColorCara == 0) {
+                        if (iColorCara === 3) {
+                            if (bColorCara === 0) {
                                 arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5 + 4] = 1;
                             } else {
                                 arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 4] = 1;
@@ -9672,33 +9602,32 @@ function actualizarArrayCaras() {
                         //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+4]=1;
                     }
 
-                    if (iIdCara == 3) {
-                        if (iColorCara == 1) {
+                    if (iIdCara === 3) {
+                        if (iColorCara === 1) {
                             arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5 + 2] = 1;
                         }
-                        if (iColorCara == 2) {
+                        if (iColorCara === 2) {
                             arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 2] = 1;
                         }
-                        if (iColorCara == 3) {
-                            if (bColorCara == 0) {
+                        if (iColorCara === 3) {
+                            if (bColorCara === 0) {
                                 arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5 + 2] = 1;
-                            }
-                            else {
+                            } else {
                                 arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 2] = 1;
                             }
                         }
                         //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+2]=1;
                     }
 
-                    if (iIdCara == 4) {
-                        if (iColorCara == 1) {
+                    if (iIdCara === 4) {
+                        if (iColorCara === 1) {
                             arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5 + 1] = 1;
                         }
-                        if (iColorCara == 2) {
+                        if (iColorCara === 2) {
                             arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 1] = 1;
                         }
-                        if (iColorCara == 3) {
-                            if (bColorCara == 0) {
+                        if (iColorCara === 3) {
+                            if (bColorCara === 0) {
                                 arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5 + 1] = 1;
                             } else {
                                 arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 1] = 1;
@@ -9707,19 +9636,19 @@ function actualizarArrayCaras() {
                         //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+1]=1;
                     }
 
-                    if (iIdCara == 5) {
+                    if (iIdCara === 5) {
 
                     }
 
-                    if (iIdCara == 6) {
-                        if (iColorCara == 1) {
+                    if (iIdCara === 6) {
+                        if (iColorCara === 1) {
                             arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5 + 3] = 1;
                         }
-                        if (iColorCara == 2) {
+                        if (iColorCara === 2) {
                             arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 3] = 1;
                         }
-                        if (iColorCara == 3) {
-                            if (bColorCara == 0) {
+                        if (iColorCara === 3) {
+                            if (bColorCara === 0) {
                                 arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5 + 3] = 1;
                             } else {
                                 arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 3] = 1;
@@ -9729,15 +9658,15 @@ function actualizarArrayCaras() {
                     }
                 }
                 if ((dienteSeleccionado > 16 && dienteSeleccionado < 25) || (dienteSeleccionado > 42 && dienteSeleccionado < 48)) {
-                    if (iIdCara == 1) {
-                        if (iColorCara == 1) {
+                    if (iIdCara === 1) {
+                        if (iColorCara === 1) {
                             arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5] = 1;
                         }
-                        if (iColorCara == 2) {
+                        if (iColorCara === 2) {
                             arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5] = 1;
                         }
-                        if (iColorCara == 3) {
-                            if (bColorCara == 0) {
+                        if (iColorCara === 3) {
+                            if (bColorCara === 0) {
                                 arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5] = 1;
                             } else {
                                 arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5] = 1;
@@ -9746,33 +9675,32 @@ function actualizarArrayCaras() {
                         //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5]=1;
                     }
 
-                    if (iIdCara == 2) {
-                        if (iColorCara == 1) {
+                    if (iIdCara === 2) {
+                        if (iColorCara === 1) {
                             arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5 + 4] = 1;
                         }
-                        if (iColorCara == 2) {
+                        if (iColorCara === 2) {
                             arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 4] = 1;
                         }
-                        if (iColorCara == 3) {
-                            if (bColorCara == 0) {
+                        if (iColorCara === 3) {
+                            if (bColorCara === 0) {
                                 arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5 + 4] = 1;
-                            }
-                            else {
+                            } else {
                                 arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 4] = 1;
                             }
                         }
                         //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+4]=1;
                     }
 
-                    if (iIdCara == 3) {
-                        if (iColorCara == 1) {
+                    if (iIdCara === 3) {
+                        if (iColorCara === 1) {
                             arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5 + 2] = 1;
                         }
-                        if (iColorCara == 2) {
+                        if (iColorCara === 2) {
                             arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 2] = 1;
                         }
-                        if (iColorCara == 3) {
-                            if (bColorCara == 0) {
+                        if (iColorCara === 3) {
+                            if (bColorCara === 0) {
                                 arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5 + 2] = 1;
                             } else {
                                 arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 2] = 1;
@@ -9781,15 +9709,15 @@ function actualizarArrayCaras() {
                         //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+2]=1;
                     }
 
-                    if (iIdCara == 4) {
-                        if (iColorCara == 1) {
+                    if (iIdCara === 4) {
+                        if (iColorCara === 1) {
                             arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5 + 3] = 1;
                         }
-                        if (iColorCara == 2) {
+                        if (iColorCara === 2) {
                             arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 3] = 1;
                         }
-                        if (iColorCara == 3) {
-                            if (bColorCara == 0) {
+                        if (iColorCara === 3) {
+                            if (bColorCara === 0) {
                                 arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5 + 3] = 1;
                             } else {
                                 arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 3] = 1;
@@ -9798,15 +9726,15 @@ function actualizarArrayCaras() {
                         //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+3]=1;
                     }
 
-                    if (iIdCara == 5) {
-                        if (iColorCara == 1) {
+                    if (iIdCara === 5) {
+                        if (iColorCara === 1) {
                             arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5 + 1] = 1;
                         }
-                        if (iColorCara == 2) {
+                        if (iColorCara === 2) {
                             arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 1] = 1;
                         }
-                        if (iColorCara == 3) {
-                            if (bColorCara == 0) {
+                        if (iColorCara === 3) {
+                            if (bColorCara === 0) {
                                 arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5 + 1] = 1;
                             } else {
                                 arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 1] = 1;
@@ -9815,21 +9743,21 @@ function actualizarArrayCaras() {
                         //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+1]=1;
                     }
 
-                    if (iIdCara == 6) {
+                    if (iIdCara === 6) {
 
                     }
 
                 }
                 if ((dienteSeleccionado > 24 && dienteSeleccionado < 33) || (dienteSeleccionado > 47 && dienteSeleccionado < 53)) {
-                    if (iIdCara == 1) {
-                        if (iColorCara == 1) {
+                    if (iIdCara === 1) {
+                        if (iColorCara === 1) {
                             arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5 + 2] = 1;
                         }
-                        if (iColorCara == 2) {
+                        if (iColorCara === 2) {
                             arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 2] = 1;
                         }
-                        if (iColorCara == 3) {
-                            if (bColorCara == 0) {
+                        if (iColorCara === 3) {
+                            if (bColorCara === 0) {
                                 arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5 + 2] = 1;
                             } else {
                                 arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 2] = 1;
@@ -9838,15 +9766,15 @@ function actualizarArrayCaras() {
                         //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+2]=1;
                     }
 
-                    if (iIdCara == 2) {
-                        if (iColorCara == 1) {
+                    if (iIdCara === 2) {
+                        if (iColorCara === 1) {
                             arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5 + 4] = 1;
                         }
-                        if (iColorCara == 2) {
+                        if (iColorCara === 2) {
                             arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 4] = 1;
                         }
-                        if (iColorCara == 3) {
-                            if (bColorCara == 0) {
+                        if (iColorCara === 3) {
+                            if (bColorCara === 0) {
                                 arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5 + 4] = 1;
                             } else {
                                 arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 4] = 1;
@@ -9855,33 +9783,32 @@ function actualizarArrayCaras() {
                         //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+4]=1;
                     }
 
-                    if (iIdCara == 3) {
-                        if (iColorCara == 1) {
+                    if (iIdCara === 3) {
+                        if (iColorCara === 1) {
                             arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5] = 1;
                         }
-                        if (iColorCara == 2) {
+                        if (iColorCara === 2) {
                             arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5] = 1;
                         }
-                        if (iColorCara == 3) {
-                            if (bColorCara == 0) {
+                        if (iColorCara === 3) {
+                            if (bColorCara === 0) {
                                 arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5] = 1;
-                            }
-                            else {
+                            } else {
                                 arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5] = 1;
                             }
                         }
                         //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5]=1;
                     }
 
-                    if (iIdCara == 4) {
-                        if (iColorCara == 1) {
+                    if (iIdCara === 4) {
+                        if (iColorCara === 1) {
                             arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5 + 3] = 1;
                         }
-                        if (iColorCara == 2) {
+                        if (iColorCara === 2) {
                             arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 3] = 1;
                         }
-                        if (iColorCara == 3) {
-                            if (bColorCara == 0) {
+                        if (iColorCara === 3) {
+                            if (bColorCara === 0) {
                                 arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5 + 3] = 1;
                             } else {
                                 arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 3] = 1;
@@ -9890,15 +9817,15 @@ function actualizarArrayCaras() {
                         //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+3]=1;
                     }
 
-                    if (iIdCara == 5) {
-                        if (iColorCara == 1) {
+                    if (iIdCara === 5) {
+                        if (iColorCara === 1) {
                             arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5 + 1] = 1;
                         }
-                        if (iColorCara == 2) {
+                        if (iColorCara === 2) {
                             arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 1] = 1;
                         }
-                        if (iColorCara == 3) {
-                            if (bColorCara == 0) {
+                        if (iColorCara === 3) {
+                            if (bColorCara === 0) {
                                 arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5 + 1] = 1;
                             } else {
                                 arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 1] = 1;
@@ -9907,7 +9834,7 @@ function actualizarArrayCaras() {
                         //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+1]=1;
                     }
 
-                    if (iIdCara == 6) {
+                    if (iIdCara === 6) {
 
                     }
 
@@ -9990,15 +9917,15 @@ function animacionHistoria(processing) {
                 ///////////////////////
 
                 if ((dienteSeleccionado < 9) || (dienteSeleccionado > 32 && dienteSeleccionado < 38)) {
-                    if (iIdCara == 1) {
-                        if (iColorCara == 1) {
+                    if (iIdCara === 1) {
+                        if (iColorCara === 1) {
                             arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5 + 2] = 1;
                         }
-                        if (iColorCara == 2) {
+                        if (iColorCara === 2) {
                             arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 2] = 1;
                         }
-                        if (iColorCara == 3) {
-                            if (bColorCara == 0) {
+                        if (iColorCara === 3) {
+                            if (bColorCara === 0) {
                                 arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5 + 2] = 1;
                             } else {
                                 arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 2] = 1;
@@ -10007,15 +9934,15 @@ function animacionHistoria(processing) {
 
                     }
 
-                    if (iIdCara == 2) {
-                        if (iColorCara == 1) {
+                    if (iIdCara === 2) {
+                        if (iColorCara === 1) {
                             arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5 + 4] = 1;
                         }
-                        if (iColorCara == 2) {
+                        if (iColorCara === 2) {
                             arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 4] = 1;
                         }
-                        if (iColorCara == 3) {
-                            if (bColorCara == 0) {
+                        if (iColorCara === 3) {
+                            if (bColorCara === 0) {
                                 arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5 + 4] = 1;
                             } else {
                                 arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 4] = 1;
@@ -10024,15 +9951,15 @@ function animacionHistoria(processing) {
                         //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+4]=1;
                     }
 
-                    if (iIdCara == 3) {
-                        if (iColorCara == 1) {
+                    if (iIdCara === 3) {
+                        if (iColorCara === 1) {
                             arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5] = 1;
                         }
-                        if (iColorCara == 2) {
+                        if (iColorCara === 2) {
                             arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5] = 1;
                         }
-                        if (iColorCara == 3) {
-                            if (bColorCara == 0) {
+                        if (iColorCara === 3) {
+                            if (bColorCara === 0) {
                                 arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5] = 1;
                             } else {
                                 arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5] = 1;
@@ -10041,15 +9968,15 @@ function animacionHistoria(processing) {
                         // arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5]=1;
                     }
 
-                    if (iIdCara == 4) {
-                        if (iColorCara == 1) {
+                    if (iIdCara === 4) {
+                        if (iColorCara === 1) {
                             arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5 + 1] = 1;
                         }
-                        if (iColorCara == 2) {
+                        if (iColorCara === 2) {
                             arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 1] = 1;
                         }
-                        if (iColorCara == 3) {
-                            if (bColorCara == 0) {
+                        if (iColorCara === 3) {
+                            if (bColorCara === 0) {
                                 arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5 + 1] = 1;
                             } else {
                                 arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 1] = 1;
@@ -10058,19 +9985,19 @@ function animacionHistoria(processing) {
                         //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+1]=1;
                     }
 
-                    if (iIdCara == 5) {
+                    if (iIdCara === 5) {
 
                     }
 
-                    if (iIdCara == 6) {
-                        if (iColorCara == 1) {
+                    if (iIdCara === 6) {
+                        if (iColorCara === 1) {
                             arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5 + 3] = 1;
                         }
-                        if (iColorCara == 2) {
+                        if (iColorCara === 2) {
                             arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 3] = 1;
                         }
-                        if (iColorCara == 3) {
-                            if (bColorCara == 0) {
+                        if (iColorCara === 3) {
+                            if (bColorCara === 0) {
                                 arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5 + 3] = 1;
                             } else {
                                 arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 3] = 1;
@@ -10080,15 +10007,15 @@ function animacionHistoria(processing) {
                     }
                 }
                 if ((dienteSeleccionado > 8 && dienteSeleccionado < 17) || (dienteSeleccionado > 37 && dienteSeleccionado < 43)) {
-                    if (iIdCara == 1) {
-                        if (iColorCara == 1) {
+                    if (iIdCara === 1) {
+                        if (iColorCara === 1) {
                             arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5] = 1;
                         }
-                        if (iColorCara == 2) {
+                        if (iColorCara === 2) {
                             arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5] = 1;
                         }
-                        if (iColorCara == 3) {
-                            if (bColorCara == 0) {
+                        if (iColorCara === 3) {
+                            if (bColorCara === 0) {
                                 arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5] = 1;
                             } else {
                                 arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5] = 1;
@@ -10097,15 +10024,15 @@ function animacionHistoria(processing) {
                         //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5]=1;
                     }
 
-                    if (iIdCara == 2) {
-                        if (iColorCara == 1) {
+                    if (iIdCara === 2) {
+                        if (iColorCara === 1) {
                             arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5 + 4] = 1;
                         }
-                        if (iColorCara == 2) {
+                        if (iColorCara === 2) {
                             arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 4] = 1;
                         }
-                        if (iColorCara == 3) {
-                            if (bColorCara == 0) {
+                        if (iColorCara === 3) {
+                            if (bColorCara === 0) {
                                 arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5 + 4] = 1;
                             } else {
                                 arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 4] = 1;
@@ -10114,15 +10041,15 @@ function animacionHistoria(processing) {
                         //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+4]=1;
                     }
 
-                    if (iIdCara == 3) {
-                        if (iColorCara == 1) {
+                    if (iIdCara === 3) {
+                        if (iColorCara === 1) {
                             arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5 + 2] = 1;
                         }
-                        if (iColorCara == 2) {
+                        if (iColorCara === 2) {
                             arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 2] = 1;
                         }
-                        if (iColorCara == 3) {
-                            if (bColorCara == 0) {
+                        if (iColorCara === 3) {
+                            if (bColorCara === 0) {
                                 arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5 + 2] = 1;
                             } else {
                                 arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 2] = 1;
@@ -10131,15 +10058,15 @@ function animacionHistoria(processing) {
                         //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+2]=1;
                     }
 
-                    if (iIdCara == 4) {
-                        if (iColorCara == 1) {
+                    if (iIdCara === 4) {
+                        if (iColorCara === 1) {
                             arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5 + 1] = 1;
                         }
-                        if (iColorCara == 2) {
+                        if (iColorCara === 2) {
                             arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 1] = 1;
                         }
-                        if (iColorCara == 3) {
-                            if (bColorCara == 0) {
+                        if (iColorCara === 3) {
+                            if (bColorCara === 0) {
                                 arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5 + 1] = 1;
                             } else {
                                 arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 1] = 1;
@@ -10148,19 +10075,19 @@ function animacionHistoria(processing) {
                         //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+1]=1;
                     }
 
-                    if (iIdCara == 5) {
+                    if (iIdCara === 5) {
 
                     }
 
-                    if (iIdCara == 6) {
-                        if (iColorCara == 1) {
+                    if (iIdCara === 6) {
+                        if (iColorCara === 1) {
                             arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5 + 3] = 1;
                         }
-                        if (iColorCara == 2) {
+                        if (iColorCara === 2) {
                             arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 3] = 1;
                         }
-                        if (iColorCara == 3) {
-                            if (bColorCara == 0) {
+                        if (iColorCara === 3) {
+                            if (bColorCara === 0) {
                                 arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5 + 3] = 1;
                             } else {
                                 arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 3] = 1;
@@ -10170,15 +10097,15 @@ function animacionHistoria(processing) {
                     }
                 }
                 if ((dienteSeleccionado > 16 && dienteSeleccionado < 25) || (dienteSeleccionado > 42 && dienteSeleccionado < 48)) {
-                    if (iIdCara == 1) {
-                        if (iColorCara == 1) {
+                    if (iIdCara === 1) {
+                        if (iColorCara === 1) {
                             arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5] = 1;
                         }
-                        if (iColorCara == 2) {
+                        if (iColorCara === 2) {
                             arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5] = 1;
                         }
-                        if (iColorCara == 3) {
-                            if (bColorCara == 0) {
+                        if (iColorCara === 3) {
+                            if (bColorCara === 0) {
                                 arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5] = 1;
                             } else {
                                 arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5] = 1;
@@ -10187,15 +10114,15 @@ function animacionHistoria(processing) {
                         //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5]=1;
                     }
 
-                    if (iIdCara == 2) {
-                        if (iColorCara == 1) {
+                    if (iIdCara === 2) {
+                        if (iColorCara === 1) {
                             arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5 + 4] = 1;
                         }
-                        if (iColorCara == 2) {
+                        if (iColorCara === 2) {
                             arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 4] = 1;
                         }
-                        if (iColorCara == 3) {
-                            if (bColorCara == 0) {
+                        if (iColorCara === 3) {
+                            if (bColorCara === 0) {
                                 arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5 + 4] = 1;
                             } else {
                                 arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 4] = 1;
@@ -10204,15 +10131,15 @@ function animacionHistoria(processing) {
                         //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+4]=1;
                     }
 
-                    if (iIdCara == 3) {
-                        if (iColorCara == 1) {
+                    if (iIdCara === 3) {
+                        if (iColorCara === 1) {
                             arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5 + 2] = 1;
                         }
-                        if (iColorCara == 2) {
+                        if (iColorCara === 2) {
                             arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 2] = 1;
                         }
-                        if (iColorCara == 3) {
-                            if (bColorCara == 0) {
+                        if (iColorCara === 3) {
+                            if (bColorCara === 0) {
                                 arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5 + 2] = 1;
                             } else {
                                 arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 2] = 1;
@@ -10221,15 +10148,15 @@ function animacionHistoria(processing) {
                         //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+2]=1;
                     }
 
-                    if (iIdCara == 4) {
-                        if (iColorCara == 1) {
+                    if (iIdCara === 4) {
+                        if (iColorCara === 1) {
                             arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5 + 3] = 1;
                         }
-                        if (iColorCara == 2) {
+                        if (iColorCara === 2) {
                             arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 3] = 1;
                         }
-                        if (iColorCara == 3) {
-                            if (bColorCara == 0) {
+                        if (iColorCara === 3) {
+                            if (bColorCara === 0) {
                                 arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5 + 3] = 1;
                             } else {
                                 arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 3] = 1;
@@ -10238,15 +10165,15 @@ function animacionHistoria(processing) {
                         //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+3]=1;
                     }
 
-                    if (iIdCara == 5) {
-                        if (iColorCara == 1) {
+                    if (iIdCara === 5) {
+                        if (iColorCara === 1) {
                             arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5 + 1] = 1;
                         }
-                        if (iColorCara == 2) {
+                        if (iColorCara === 2) {
                             arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 1] = 1;
                         }
-                        if (iColorCara == 3) {
-                            if (bColorCara == 0) {
+                        if (iColorCara === 3) {
+                            if (bColorCara === 0) {
                                 arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5 + 1] = 1;
                             } else {
                                 arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 1] = 1;
@@ -10255,21 +10182,21 @@ function animacionHistoria(processing) {
                         //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+1]=1;
                     }
 
-                    if (iIdCara == 6) {
+                    if (iIdCara === 6) {
 
                     }
 
                 }
                 if ((dienteSeleccionado > 24 && dienteSeleccionado < 33) || (dienteSeleccionado > 47 && dienteSeleccionado < 53)) {
-                    if (iIdCara == 1) {
-                        if (iColorCara == 1) {
+                    if (iIdCara === 1) {
+                        if (iColorCara === 1) {
                             arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5 + 2] = 1;
                         }
-                        if (iColorCara == 2) {
+                        if (iColorCara === 2) {
                             arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 2] = 1;
                         }
-                        if (iColorCara == 3) {
-                            if (bColorCara == 0) {
+                        if (iColorCara === 3) {
+                            if (bColorCara === 0) {
                                 arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5 + 2] = 1;
                             } else {
                                 arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 2] = 1;
@@ -10278,15 +10205,15 @@ function animacionHistoria(processing) {
                         //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+2]=1;
                     }
 
-                    if (iIdCara == 2) {
-                        if (iColorCara == 1) {
+                    if (iIdCara === 2) {
+                        if (iColorCara === 1) {
                             arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5 + 4] = 1;
                         }
-                        if (iColorCara == 2) {
+                        if (iColorCara === 2) {
                             arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 4] = 1;
                         }
-                        if (iColorCara == 3) {
-                            if (bColorCara == 0) {
+                        if (iColorCara === 3) {
+                            if (bColorCara === 0) {
                                 arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5 + 4] = 1;
                             } else {
                                 arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 4] = 1;
@@ -10295,33 +10222,32 @@ function animacionHistoria(processing) {
                         //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+4]=1;
                     }
 
-                    if (iIdCara == 3) {
-                        if (iColorCara == 1) {
+                    if (iIdCara === 3) {
+                        if (iColorCara === 1) {
                             arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5] = 1;
                         }
-                        if (iColorCara == 2) {
+                        if (iColorCara === 2) {
                             arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5] = 1;
                         }
-                        if (iColorCara == 3) {
-                            if (bColorCara == 0) {
+                        if (iColorCara === 3) {
+                            if (bColorCara === 0) {
                                 arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5] = 1;
-                            }
-                            else {
+                            } else {
                                 arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5] = 1;
                             }
                         }
                         //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5]=1;
                     }
 
-                    if (iIdCara == 4) {
-                        if (iColorCara == 1) {
+                    if (iIdCara === 4) {
+                        if (iColorCara === 1) {
                             arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5 + 3] = 1;
                         }
-                        if (iColorCara == 2) {
+                        if (iColorCara === 2) {
                             arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 3] = 1;
                         }
-                        if (iColorCara == 3) {
-                            if (bColorCara == 0) {
+                        if (iColorCara === 3) {
+                            if (bColorCara === 0) {
                                 arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5 + 3] = 1;
                             } else {
                                 arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 3] = 1;
@@ -10330,15 +10256,15 @@ function animacionHistoria(processing) {
                         //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+3]=1;
                     }
 
-                    if (iIdCara == 5) {
-                        if (iColorCara == 1) {
+                    if (iIdCara === 5) {
+                        if (iColorCara === 1) {
                             arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5 + 1] = 1;
                         }
-                        if (iColorCara == 2) {
+                        if (iColorCara === 2) {
                             arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 1] = 1;
                         }
-                        if (iColorCara == 3) {
-                            if (bColorCara == 0) {
+                        if (iColorCara === 3) {
+                            if (bColorCara === 0) {
                                 arrayCarasRojasHistoria[(dienteSeleccionado - 1) * 5 + 1] = 1;
                             } else {
                                 arrayCarasAzulesHistoria[(dienteSeleccionado - 1) * 5 + 1] = 1;
@@ -10347,7 +10273,7 @@ function animacionHistoria(processing) {
                         //arrayCarasAzulesHistoria[(dienteSeleccionado-1)*5+1]=1;
                     }
 
-                    if (iIdCara == 6) {
+                    if (iIdCara === 6) {
 
                     }
 
@@ -10356,7 +10282,7 @@ function animacionHistoria(processing) {
                 //arrayCarasAzulesHistoria[numerCara]=1;
             }
         }
-    }
+    };
     processing.draw = function () {
 
 
@@ -10409,30 +10335,30 @@ function animacionHistoria(processing) {
                 iColor = arrayHistoriaDiente[i][j][7];
                 bColor = arrayHistoriaDiente[i][j][14];
 
-                if (dientesAfectados == 1) {
-                    if (iColor == 1) {
+                if (dientesAfectados === 1) {
+                    if (iColor === 1) {
                         processing.image(arrayImagenRojasHistoria[numeroImagen], posicionX - ancho / 2, posicionY - largo / 2 + arrayDesplazamiento[i], ancho, largo);
                     }
-                    if (iColor == 2) {
+                    if (iColor === 2) {
                         processing.image(arrayImagenAzulesHistoria[numeroImagen], posicionX - ancho / 2, posicionY - largo / 2 + arrayDesplazamiento[i], ancho, largo);
                     }
-                    if (iColor == 3) {
-                        if (bColor == 0) {
+                    if (iColor === 3) {
+                        if (bColor === 0) {
                             processing.image(arrayImagenRojasHistoria[numeroImagen], posicionX - ancho / 2, posicionY - largo / 2 + arrayDesplazamiento[i], ancho, largo);
                         } else {
                             processing.image(arrayImagenAzulesHistoria[numeroImagen], posicionX - ancho / 2, posicionY - largo / 2 + arrayDesplazamiento[i], ancho, largo);
                         }
                     }
                 }
-                if (dientesAfectados == 2) {
-                    if (iColor == 1) {
+                if (dientesAfectados === 2) {
+                    if (iColor === 1) {
                         processing.image(arrayImagenRojasHistoria[numeroImagen], posicionX - ancho / 2, posicionY - largo / 2 + arrayDesplazamiento[i], ancho, largo);
                     }
-                    if (iColor == 2) {
+                    if (iColor === 2) {
                         processing.image(arrayImagenAzulesHistoria[numeroImagen], posicionX - ancho / 2, posicionY - largo / 2 + arrayDesplazamiento[i], ancho, largo);
                     }
-                    if (iColor == 3) {
-                        if (bColor == 0) {
+                    if (iColor === 3) {
+                        if (bColor === 0) {
                             processing.image(arrayImagenRojasHistoria[numeroImagen], posicionX - ancho / 2, posicionY - largo / 2 + arrayDesplazamiento[i], ancho, largo);
                         } else {
                             processing.image(arrayImagenAzulesHistoria[numeroImagen], posicionX - ancho / 2, posicionY - largo / 2 + arrayDesplazamiento[i], ancho, largo);
@@ -10455,14 +10381,14 @@ function animacionHistoria(processing) {
                     dientesAfectados2 = arrayHistoriaDiente[i][j + 2][6];
                     iColor2 = arrayHistoriaDiente[i][j + 2][7];
                     bColor2 = arrayHistoriaDiente[i][j + 2][14];
-                    if (iColor2 == 1) {
+                    if (iColor2 === 1) {
                         processing.image(arrayImagenRojasHistoria[numeroImagen2], posicionX2 - ancho2 / 2, posicionY2 - largo2 / 2 + arrayDesplazamiento[i], ancho2, largo2);
                     }
-                    if (iColor2 == 2) {
+                    if (iColor2 === 2) {
                         processing.image(arrayImagenAzulesHistoria[numeroImagen2], posicionX2 - ancho2 / 2, posicionY2 - largo2 / 2 + arrayDesplazamiento[i], ancho2, largo2);
                     }
-                    if (iColor2 == 3) {
-                        if (bColor2 == 0) {
+                    if (iColor2 === 3) {
+                        if (bColor2 === 0) {
                             processing.image(arrayImagenRojasHistoria[numeroImagen2], posicionX2 - ancho2 / 2, posicionY2 - largo2 / 2 + arrayDesplazamiento[i], ancho2, largo2);
                         } else {
                             processing.image(arrayImagenAzulesHistoria[numeroImagen2], posicionX2 - ancho2 / 2, posicionY2 - largo2 / 2 + arrayDesplazamiento[i], ancho2, largo2);
@@ -10493,14 +10419,14 @@ function animacionHistoria(processing) {
                     for (var i7 = 0; i7 < numeroRepeticiones; i7++) {
                         anchoSimbolo = anchoSimbolo4;
                         altoSimbolo = largo1;
-                        if (iColor == '1') {
+                        if (iColor === '1') {
                             processing.image(arrayImagenRojasHistoria[numeroImagen1], xp1 + anchoSimbolo4 * i7, posicionY1 - altoSimbolo / 2 + arrayDesplazamiento[i], anchoSimbolo, altoSimbolo);
                         }
-                        if (iColor == '2') {
+                        if (iColor === '2') {
                             processing.image(arrayImagenAzulesHistoria[numeroImagen1], xp1 + anchoSimbolo4 * i7, posicionY1 - altoSimbolo / 2 + arrayDesplazamiento[i], anchoSimbolo, altoSimbolo);
                         }
-                        if (iColor == '3') {
-                            if (bColor == '0') {
+                        if (iColor === '3') {
+                            if (bColor === '0') {
                                 //alert(anchoSimbolo);
                                 processing.image(arrayImagenRojasHistoria[numeroImagen1], xp1 + anchoSimbolo4 * i7, posicionY1 - altoSimbolo / 2 + arrayDesplazamiento[i], anchoSimbolo, altoSimbolo);
                             } else {
@@ -10518,7 +10444,7 @@ function animacionHistoria(processing) {
                 }
 
             }
-            if (arrayEstados[i] == 1) {
+            if (arrayEstados[i] === 1) {
                 if (arrayDesplazamiento[i] <= 0) {
                     arrayDesplazamiento[i] = 0;
                 } else {
@@ -10528,8 +10454,7 @@ function animacionHistoria(processing) {
             } else {
                 if (arrayDesplazamiento[i] >= 400) {
                     arrayDesplazamiento[i] = 400;
-                }
-                else {
+                } else {
                     arrayDesplazamiento[i] = arrayDesplazamiento[i] + 100;
 
                 }
@@ -10547,25 +10472,24 @@ function animacionHistoria(processing) {
             //processing.noStroke()
             processing.beginShape();
             //processing.fill(255, 255, 255,100);
-            if (adentroHistoria[i] == 0) {
-                if (seleccionadoHistoria[i] == 0) {
+            if (adentroHistoria[i] === 0) {
+                if (seleccionadoHistoria[i] === 0) {
                     processing.noFill();
                     // processing.noStroke()
                     //processing.fill(255, 255, 250,80);
                 } else {
-                    if (seleccionadoHistoria[i] == 1) {
+                    if (seleccionadoHistoria[i] === 1) {
                         processing.fill(255, 0, 0, 80);
                     }
 
                 }
 
-            }
-            else {
-                if (adentroHistoria[i] == 1) {
-                    if (seleccionadoHistoria[i] == 0) {
+            } else {
+                if (adentroHistoria[i] === 1) {
+                    if (seleccionadoHistoria[i] === 0) {
                         processing.fill(0, 255, 0, 80);
                     } else {
-                        if (seleccionadoHistoria[i] == 0) {
+                        if (seleccionadoHistoria[i] === 0) {
                             processing.fill(0, 0, 255, 80);
                         }
 
@@ -10586,41 +10510,40 @@ function animacionHistoria(processing) {
         //alert(numeroCaras);
         for (var i = 0; i < numeroCaras; i++) {
             processing.noFill();
-            processing.noStroke()
+            processing.noStroke();
             processing.beginShape();
             //processing.fill(0, 0, 255,80);
 
-            if (adentroCaraHistoria[i] == 0) {
-                if (seleccionadoCaraHistoria[i] == 0) {
+            if (adentroCaraHistoria[i] === 0) {
+                if (seleccionadoCaraHistoria[i] === 0) {
                     processing.noFill();
                     processing.noStroke();
                     //arrayCarasAzules[i]=0;
                     //arrayCarasRojas[i]=0;
-                    if (arrayCarasAzulesHistoria[i] == 1) {
+                    if (arrayCarasAzulesHistoria[i] === 1) {
                         //alert(i);
-                        processing.stroke(0, 0, 0)
-                        processing.fill(0, 51, 102)
+                        processing.stroke(0, 0, 0);
+                        processing.fill(0, 51, 102);
                     }
-                    if (arrayCarasRojasHistoria[i] == 1) {
+                    if (arrayCarasRojasHistoria[i] === 1) {
                         //alert(i);
-                        processing.stroke(0, 0, 0)
-                        processing.fill(211, 6, 6)
+                        processing.stroke(0, 0, 0);
+                        processing.fill(211, 6, 6);
                     }
                     //processing.fill(255, 12, 250,80);
-                }
-                else {
-                    if (seleccionadoCaraHistoria[i] == 1) {
+                } else {
+                    if (seleccionadoCaraHistoria[i] === 1) {
                         processing.fill(255, 0, 0, 80);
                     }
 
                 }
 
             } else {
-                if (adentroCaraHistoria[i] == 1) {
-                    if (seleccionadoCaraHistoria[i] == 0) {
+                if (adentroCaraHistoria[i] === 1) {
+                    if (seleccionadoCaraHistoria[i] === 0) {
                         processing.fill(0, 255, 0, 80);
                     } else {
-                        if (seleccionadoCaraHistoria[i] == 0) {
+                        if (seleccionadoCaraHistoria[i] === 0) {
                             processing.fill(0, 0, 255, 80);
                         }
 
@@ -10639,7 +10562,7 @@ function animacionHistoria(processing) {
         /////////fin de dibujar cara
 
 
-    }
+    };
     processing.mouseMoved = function () {
         // processing.loop();
         posXHistoria = processing.mouseX;
@@ -10657,10 +10580,10 @@ function animacionHistoria(processing) {
                 if (posYHistoria <= maximo(arrayDientesAux[z][j][1], arrayDientesAux[z][j + 1][1])) {
                     if (posYHistoria > minimo(arrayDientesAux[z][j][1], arrayDientesAux[z][j + 1][1])) {
                         if (posXHistoria <= maximo(arrayDientesAux[z][j][0], arrayDientesAux[z][j + 1][0])) {
-                            if (arrayDientesAux[z][j][0] != arrayDientesAux[z][j + 1][0]) {
+                            if (arrayDientesAux[z][j][0] !== arrayDientesAux[z][j + 1][0]) {
                                 aux = ((posYHistoria - arrayDientesAux[z][j][1]) * (arrayDientesAux[z][j + 1][0] - arrayDientesAux[z][j][0])) / (arrayDientesAux[z][j + 1][1] - arrayDientesAux[z][j][1]) + arrayDientesAux[z][j][0];
                             }
-                            if ((posXHistoria <= aux) || (arrayDientesAux[z][j][0] == arrayDientesAux[z][j + 1][0])) {
+                            if ((posXHistoria <= aux) || (arrayDientesAux[z][j][0] === arrayDientesAux[z][j + 1][0])) {
                                 cont++;
                                 //aux2=aux;
                                 //puntoDatos='px1:'+arrayDientesAux[z][j][0]+'py1:'+arrayDientesAux[z][j][1];
@@ -10670,7 +10593,7 @@ function animacionHistoria(processing) {
                     }
                 }
             }
-            if (cont % 2 == 1) {
+            if (cont % 2 === 1) {
                 mause = 1;
                 adentroHistoria[z] = 1;
                 //alert(arrayDatosDientes[i][0]+'---'+arrayDatosDientes[i][1]+'---'+arrayDatosDientes[i][2]+'---'+i) 
@@ -10679,9 +10602,9 @@ function animacionHistoria(processing) {
             }
         }
         for (var j2 = 0; j2 < numeroDientes; j2++) {
-            if (adentroHistoria[j2] == 1) {
+            if (adentroHistoria[j2] === 1) {
                 for (var i2 = 0; i2 < numeroDientes; i2++) {
-                    if (arrayDatosDientesHistoria[i2][0] == arrayDatosDientesHistoria[j2][0]) {
+                    if (arrayDatosDientesHistoria[i2][0] === arrayDatosDientesHistoria[j2][0]) {
                         adentroHistoria[i2] = 1;
                     }
                 }
@@ -10702,10 +10625,10 @@ function animacionHistoria(processing) {
                 if (posYHistoria <= maximo(arrayCarasDientesAux[z][j][1], arrayCarasDientesAux[z][j + 1][1])) {
                     if (posYHistoria > minimo(arrayCarasDientesAux[z][j][1], arrayCarasDientesAux[z][j + 1][1])) {
                         if (posXHistoria <= maximo(arrayCarasDientesAux[z][j][0], arrayCarasDientesAux[z][j + 1][0])) {
-                            if (arrayCarasDientesAux[z][j][0] != arrayCarasDientesAux[z][j + 1][0]) {
+                            if (arrayCarasDientesAux[z][j][0] !== arrayCarasDientesAux[z][j + 1][0]) {
                                 aux1 = ((posYHistoria - arrayCarasDientesAux[z][j][1]) * (arrayCarasDientesAux[z][j + 1][0] - arrayCarasDientesAux[z][j][0])) / (arrayCarasDientesAux[z][j + 1][1] - arrayCarasDientesAux[z][j][1]) + arrayCarasDientesAux[z][j][0];
                             }
-                            if ((posXHistoria <= aux1) || (arrayCarasDientesAux[z][j][0] == arrayCarasDientesAux[z][j + 1][0])) {
+                            if ((posXHistoria <= aux1) || (arrayCarasDientesAux[z][j][0] === arrayCarasDientesAux[z][j + 1][0])) {
                                 cont1++;
                                 //aux2=aux1;
                                 //puntoDatos='px1:'+arrayDientesAux[z][j][0]+'py1:'+arrayDientesAux[z][j][1];
@@ -10715,29 +10638,28 @@ function animacionHistoria(processing) {
                     }
                 }
             }
-            if (cont1 % 2 == 1) {
+            if (cont1 % 2 === 1) {
                 mause1 = 1;
                 adentroCaraHistoria[z] = 1;
-            }
-            else {
+            } else {
                 adentroCaraHistoria[z] = 0;
             }
         }
 
         //////////////////////////////////////////////////////
-        if (mause == 1 || mause1 == 1) {
+        if (mause === 1 || mause1 === 1) {
             //if(mause==1){
-            processing.cursor(processing.HAND)
+            processing.cursor(processing.HAND);
         } else {
-            processing.cursor(processing.ARROW)
+            processing.cursor(processing.ARROW);
         }
-    }
+    };
     processing.mouseClicked = function () {
         //alert(processing.mouseY + 'xxxx'+processing.mouseX);
         //var numeroAux=arrayDientes.length;
 
         for (var w = 0; w < numeroAuxHistoria / 2; w++) {
-            if (adentroHistoria[w] == 1) {
+            if (adentroHistoria[w] === 1) {
 
                 seleccionadoHistoria[w] = 1;
                 seleccionadoHistoria[w + 52] = 1;
@@ -10763,30 +10685,29 @@ function animacionHistoria(processing) {
                 //                    */
                 //                    
                 //                }
-            }
-            else {
+            } else {
                 seleccionadoHistoria[w] = 0;
                 seleccionadoHistoria[w + 52] = 0;
             }
         }
         /*
-             for(var w1=0;w1<numeroAux1;w1++){
-             
-             if(adentroCara[w1]==1){
-             if(seleccionadoCara[w1]==1){
-             seleccionadoCara[w1]=0;
-             }else{
-             seleccionadoCara[w1]=1;
-             seleccionado[arrayDatosDientesCara[w1][0]]=1;
-             seleccionado[arrayDatosDientesCara[w1][0]+52]=1;
-             //alert('id'+w1)
-             
-             }
-             
-             }
-             }
-             */
-    }
+         for(var w1=0;w1<numeroAux1;w1++){
+         
+         if(adentroCara[w1]==1){
+         if(seleccionadoCara[w1]==1){
+         seleccionadoCara[w1]=0;
+         }else{
+         seleccionadoCara[w1]=1;
+         seleccionado[arrayDatosDientesCara[w1][0]]=1;
+         seleccionado[arrayDatosDientesCara[w1][0]+52]=1;
+         //alert('id'+w1)
+         
+         }
+         
+         }
+         }
+         */
+    };
     cargarTablaHistoriaOdontograma();
     ///////////////////////////////////////////
 }
@@ -10807,7 +10728,7 @@ function animacion2(processing) {
     }
     for (var w2 = 0; w2 < numeroAux1; w2++) {
         seleccionadoCara[w2] = 0;
-        adentroCara[w2] = 0
+        adentroCara[w2] = 0;
     }
     processing.setup = function () {
         processing.size(800, 400);
@@ -10863,8 +10784,8 @@ function animacion2(processing) {
             arrayCarasRojas[ic] = 0;
         }
         for (var i5 = 0; i5 < numeroAntecedentes; i5++) {
-            if ($('idSimbolo_' + i5).value != '') {
-                if ($('dientesAfectados_' + i5).value == 1) {
+            if ($('idSimbolo_' + i5).value !== '') {
+                if ($('dientesAfectados_' + i5).value === 1) {
                     arraySimboloPeche = $('idSimbolo_' + i5).value.split("-");
                     arrayAnchoPeche = $('ancho_' + i5).value.split("-");
                     arrayAltoPeche = $('alto_' + i5).value.split("-");
@@ -10874,14 +10795,14 @@ function animacion2(processing) {
                     for (var i6 = 0; i6 < numeroPeche; i6++) {
                         anchoSimbolo = arrayAnchoPeche[i6];
                         altoSimbolo = arrayAltoPeche[i6];
-                        if ($('colorSimbolo_' + i5).value == '1') {
+                        if ($('colorSimbolo_' + i5).value === '1') {
                             processing.image(arrayImagenRojas[arraySimboloPeche[i6] - 1], arrayPxPeche[i6] - anchoSimbolo / 2, arrayPyPeche[i6] - altoSimbolo / 2, anchoSimbolo, altoSimbolo);
                         }
-                        if ($('colorSimbolo_' + i5).value == '2') {
+                        if ($('colorSimbolo_' + i5).value === '2') {
                             processing.image(arrayImagenAzules[arraySimboloPeche[i6] - 1], arrayPxPeche[i6] - anchoSimbolo / 2, arrayPyPeche[i6] - altoSimbolo / 2, anchoSimbolo, altoSimbolo);
                         }
-                        if ($('colorSimbolo_' + i5).value == '3') {
-                            if ($('selectestado_' + i5).value == '0') {
+                        if ($('colorSimbolo_' + i5).value === '3') {
+                            if ($('selectestado_' + i5).value === '0') {
                                 processing.image(arrayImagenRojas[arraySimboloPeche[i6] - 1], arrayPxPeche[i6] - anchoSimbolo / 2, arrayPyPeche[i6] - altoSimbolo / 2, anchoSimbolo, altoSimbolo);
                             } else {
                                 processing.image(arrayImagenAzules[arraySimboloPeche[i6] - 1], arrayPxPeche[i6] - anchoSimbolo / 2, arrayPyPeche[i6] - altoSimbolo / 2, anchoSimbolo, altoSimbolo);
@@ -10890,7 +10811,7 @@ function animacion2(processing) {
                         }
                     }
                 }
-                if ($('dientesAfectados_' + i5).value == 2) {
+                if ($('dientesAfectados_' + i5).value === 2) {
                     arraySimboloPeche = $('idSimbolo_' + i5).value.split("-");
                     arrayAnchoPeche = $('ancho_' + i5).value.split("-");
                     arrayAltoPeche = $('alto_' + i5).value.split("-");
@@ -10899,15 +10820,15 @@ function animacion2(processing) {
                     anchoSimbolo = arrayAnchoPeche[0];
 
                     altoSimbolo = arrayAltoPeche[0];
-                    if ($('colorSimbolo_' + i5).value == '1') {
+                    if ($('colorSimbolo_' + i5).value === '1') {
 
                         processing.image(arrayImagenRojas[arraySimboloPeche[0] - 1], arrayPxPeche[0] - anchoSimbolo / 2, arrayPyPeche[0] - altoSimbolo / 2, anchoSimbolo, altoSimbolo);
                     }
-                    if ($('colorSimbolo_' + i5).value == '2') {
+                    if ($('colorSimbolo_' + i5).value === '2') {
                         processing.image(arrayImagenAzules[arraySimboloPeche[0] - 1], arrayPxPeche[0] - anchoSimbolo / 2, arrayPyPeche[0] - altoSimbolo / 2, anchoSimbolo, altoSimbolo);
                     }
-                    if ($('colorSimbolo_' + i5).value == '3') {
-                        if ($('selectestado_' + i5).value == '0') {
+                    if ($('colorSimbolo_' + i5).value === '3') {
+                        if ($('selectestado_' + i5).value === '0') {
                             processing.image(arrayImagenRojas[arraySimboloPeche[0] - 1], arrayPxPeche[0] - anchoSimbolo / 2, arrayPyPeche[0] - altoSimbolo / 2, anchoSimbolo, altoSimbolo);
                         } else {
                             processing.image(arrayImagenAzules[arraySimboloPeche[0] - 1], arrayPxPeche[0] - anchoSimbolo / 2, arrayPyPeche[0] - altoSimbolo / 2, anchoSimbolo, altoSimbolo);
@@ -10917,17 +10838,16 @@ function animacion2(processing) {
                     anchoSimbolo = arrayAnchoPeche[2];
 
                     altoSimbolo = arrayAltoPeche[2];
-                    if ($('colorSimbolo_' + i5).value == '1') {
+                    if ($('colorSimbolo_' + i5).value === '1') {
                         processing.image(arrayImagenRojas[arraySimboloPeche[2] - 1], arrayPxPeche[2] - anchoSimbolo / 2, arrayPyPeche[2] - altoSimbolo / 2, anchoSimbolo, altoSimbolo);
                     }
-                    if ($('colorSimbolo_' + i5).value == '2') {
+                    if ($('colorSimbolo_' + i5).value === '2') {
                         processing.image(arrayImagenAzules[arraySimboloPeche[2] - 1], arrayPxPeche[2] - anchoSimbolo / 2, arrayPyPeche[2] - altoSimbolo / 2, anchoSimbolo, altoSimbolo);
                     }
-                    if ($('colorSimbolo_' + i5).value == '3') {
-                        if ($('selectestado_' + i5).value == '0') {
+                    if ($('colorSimbolo_' + i5).value === '3') {
+                        if ($('selectestado_' + i5).value === '0') {
                             processing.image(arrayImagenRojas[arraySimboloPeche[2] - 1], arrayPxPeche[2] - anchoSimbolo / 2, arrayPyPeche[2] - altoSimbolo / 2, anchoSimbolo, altoSimbolo);
-                        }
-                        else {
+                        } else {
                             processing.image(arrayImagenAzules[arraySimboloPeche[2] - 1], arrayPxPeche[2] - anchoSimbolo / 2, arrayPyPeche[2] - altoSimbolo / 2, anchoSimbolo, altoSimbolo);
                         }
 
@@ -10954,14 +10874,14 @@ function animacion2(processing) {
                     for (var i7 = 0; i7 < numeroRepeticiones; i7++) {
                         anchoSimbolo = anchoSimbolo4;
                         altoSimbolo = arrayAltoPeche[1];
-                        if ($('colorSimbolo_' + i5).value == '1') {
+                        if ($('colorSimbolo_' + i5).value === '1') {
                             processing.image(arrayImagenRojas[arraySimboloPeche[1] - 1], xp1 + anchoSimbolo4 * i7, arrayPyPeche[1] - altoSimbolo / 2, anchoSimbolo, altoSimbolo);
                         }
-                        if ($('colorSimbolo_' + i5).value == '2') {
+                        if ($('colorSimbolo_' + i5).value === '2') {
                             processing.image(arrayImagenAzules[arraySimboloPeche[1] - 1], xp1 + anchoSimbolo4 * i7, arrayPyPeche[1] - altoSimbolo / 2, anchoSimbolo, altoSimbolo);
                         }
-                        if ($('colorSimbolo_' + i5).value == '3') {
-                            if ($('selectestado_' + i5).value == '0') {
+                        if ($('colorSimbolo_' + i5).value === '3') {
+                            if ($('selectestado_' + i5).value === '0') {
                                 processing.image(arrayImagenRojas[arraySimboloPeche[1] - 1], xp1 + anchoSimbolo4 * i7, arrayPyPeche[1] - altoSimbolo / 2, anchoSimbolo, altoSimbolo);
                             } else {
                                 processing.image(arrayImagenAzules[arraySimboloPeche[1] - 1], xp1 + anchoSimbolo4 * i7, arrayPyPeche[1] - altoSimbolo / 2, anchoSimbolo, altoSimbolo);
@@ -10974,38 +10894,37 @@ function animacion2(processing) {
 
             }
             /////////////////////////para las caras/
-            dienteSeleccionado = $('txt_idDiente1_' + i5).value
+            dienteSeleccionado = $('txt_idDiente1_' + i5).value;
             if ((dienteSeleccionado < 9) || (dienteSeleccionado > 32 && dienteSeleccionado < 38)) {
-                if ($('Mesial' + i5).checked == true) {
+                if ($('Mesial' + i5).checked === true) {
                     arrayCarasRojas[(dienteSeleccionado - 1) * 5 + 2] = 1;
-                }
-                else {
+                } else {
                     arrayCarasRojas[(dienteSeleccionado - 1) * 5 + 2] = 0;
                 }
 
-                if ($('Incisal' + i5).checked == true) {
+                if ($('Incisal' + i5).checked === true) {
                     arrayCarasRojas[(dienteSeleccionado - 1) * 5 + 4] = 1;
                 } else {
                     arrayCarasRojas[(dienteSeleccionado - 1) * 5 + 4] = 0;
                 }
 
-                if ($('Distal' + i5).checked == true) {
+                if ($('Distal' + i5).checked === true) {
                     arrayCarasRojas[(dienteSeleccionado - 1) * 5] = 1;
                 } else {
                     arrayCarasRojas[(dienteSeleccionado - 1) * 5] = 0;
                 }
 
-                if ($('Vestibular' + i5).checked == true) {
+                if ($('Vestibular' + i5).checked === true) {
                     arrayCarasRojas[(dienteSeleccionado - 1) * 5 + 1] = 1;
                 } else {
                     arrayCarasRojas[(dienteSeleccionado - 1) * 5 + 1] = 0;
                 }
 
-                if ($('Lingual' + i5).checked == true) {
+                if ($('Lingual' + i5).checked === true) {
 
                 }
 
-                if ($('Palatina' + i5).checked == true) {
+                if ($('Palatina' + i5).checked === true) {
                     arrayCarasRojas[(dienteSeleccionado - 1) * 5 + 3] = 1;
 
                 } else {
@@ -11013,110 +10932,108 @@ function animacion2(processing) {
                 }
             }
             if ((dienteSeleccionado > 8 && dienteSeleccionado < 17) || (dienteSeleccionado > 37 && dienteSeleccionado < 43)) {
-                if ($('Mesial' + i5).checked == true) {
+                if ($('Mesial' + i5).checked === true) {
                     arrayCarasRojas[(dienteSeleccionado - 1) * 5] = 1;
                 } else {
                     arrayCarasRojas[(dienteSeleccionado - 1) * 5] = 0;
                 }
 
-                if ($('Incisal' + i5).checked == true) {
+                if ($('Incisal' + i5).checked === true) {
                     arrayCarasRojas[(dienteSeleccionado - 1) * 5 + 4] = 1;
                 } else {
                     arrayCarasRojas[(dienteSeleccionado - 1) * 5 + 4] = 0;
                 }
 
-                if ($('Distal' + i5).checked == true) {
+                if ($('Distal' + i5).checked === true) {
                     arrayCarasRojas[(dienteSeleccionado - 1) * 5 + 2] = 1;
                 } else {
                     arrayCarasRojas[(dienteSeleccionado - 1) * 5 + 2] = 0;
                 }
 
-                if ($('Vestibular' + i5).checked == true) {
+                if ($('Vestibular' + i5).checked === true) {
                     arrayCarasRojas[(dienteSeleccionado - 1) * 5 + 1] = 1;
-                }
-                else {
+                } else {
                     arrayCarasRojas[(dienteSeleccionado - 1) * 5 + 1] = 0;
                 }
 
-                if ($('Lingual' + i5).checked == true) {
+                if ($('Lingual' + i5).checked === true) {
 
                 }
 
-                if ($('Palatina' + i5).checked == true) {
+                if ($('Palatina' + i5).checked === true) {
                     arrayCarasRojas[(dienteSeleccionado - 1) * 5 + 3] = 1;
                 } else {
                     arrayCarasRojas[(dienteSeleccionado - 1) * 5 + 3] = 0;
                 }
             }
             if ((dienteSeleccionado > 16 && dienteSeleccionado < 25) || (dienteSeleccionado > 42 && dienteSeleccionado < 48)) {
-                if ($('Mesial' + i5).checked == true) {
+                if ($('Mesial' + i5).checked === true) {
                     arrayCarasRojas[(dienteSeleccionado - 1) * 5] = 1;
                 } else {
                     arrayCarasRojas[(dienteSeleccionado - 1) * 5] = 0;
                 }
 
-                if ($('Incisal' + i5).checked == true) {
+                if ($('Incisal' + i5).checked === true) {
                     arrayCarasRojas[(dienteSeleccionado - 1) * 5 + 4] = 1;
                 } else {
                     arrayCarasRojas[(dienteSeleccionado - 1) * 5 + 4] = 0;
                 }
 
-                if ($('Distal' + i5).checked == true) {
+                if ($('Distal' + i5).checked === true) {
                     arrayCarasRojas[(dienteSeleccionado - 1) * 5 + 2] = 1;
-                }
-                else {
+                } else {
                     arrayCarasRojas[(dienteSeleccionado - 1) * 5 + 2] = 0;
                 }
 
-                if ($('Vestibular' + i5).checked == true) {
+                if ($('Vestibular' + i5).checked === true) {
                     arrayCarasRojas[(dienteSeleccionado - 1) * 5 + 3] = 1;
                 } else {
                     arrayCarasRojas[(dienteSeleccionado - 1) * 5 + 3] = 0;
                 }
 
-                if ($('Lingual' + i5).checked == true) {
+                if ($('Lingual' + i5).checked === true) {
                     arrayCarasRojas[(dienteSeleccionado - 1) * 5 + 1] = 1;
                 } else {
                     arrayCarasRojas[(dienteSeleccionado - 1) * 5 + 1] = 0;
                 }
 
-                if ($('Palatina' + i5).checked == true) {
+                if ($('Palatina' + i5).checked === true) {
 
                 }
 
             }
             if ((dienteSeleccionado > 24 && dienteSeleccionado < 33) || (dienteSeleccionado > 47 && dienteSeleccionado < 53)) {
-                if ($('Mesial' + i5).checked == true) {
+                if ($('Mesial' + i5).checked === true) {
                     arrayCarasRojas[(dienteSeleccionado - 1) * 5 + 2] = 1;
                 } else {
                     arrayCarasRojas[(dienteSeleccionado - 1) * 5 + 2] = 0;
                 }
 
-                if ($('Incisal' + i5).checked == true) {
+                if ($('Incisal' + i5).checked === true) {
                     arrayCarasRojas[(dienteSeleccionado - 1) * 5 + 4] = 1;
                 } else {
                     arrayCarasRojas[(dienteSeleccionado - 1) * 5 + 4] = 0;
                 }
 
-                if ($('Distal' + i5).checked == true) {
+                if ($('Distal' + i5).checked === true) {
                     arrayCarasRojas[(dienteSeleccionado - 1) * 5] = 1;
                 } else {
                     arrayCarasRojas[(dienteSeleccionado - 1) * 5] = 0;
                 }
 
-                if ($('Vestibular' + i5).checked == true) {
+                if ($('Vestibular' + i5).checked === true) {
                     arrayCarasRojas[(dienteSeleccionado - 1) * 5 + 3] = 1;
                 } else {
                     arrayCarasRojas[(dienteSeleccionado - 1) * 5 + 3] = 0;
                 }
 
-                if ($('Lingual' + i5).checked == true) {
+                if ($('Lingual' + i5).checked === true) {
                     arrayCarasRojas[(dienteSeleccionado - 1) * 5 + 1] = 1;
                 } else {
                     arrayCarasRojas[(dienteSeleccionado - 1) * 5 + 1] = 0;
                 }
 
-                if ($('Palatina' + i5).checked == true) {
+                if ($('Palatina' + i5).checked === true) {
 
                 }
 
@@ -11138,25 +11055,24 @@ function animacion2(processing) {
             processing.beginShape();
             //processing.fill(255, 255, 255,100);
 
-            if (adentro[i] == 0) {
-                if (seleccionado[i] == 0) {
+            if (adentro[i] === 0) {
+                if (seleccionado[i] === 0) {
                     processing.noFill();
                     // processing.noStroke()
                     //processing.fill(255, 255, 250,80);
                 } else {
-                    if (seleccionado[i] == 1) {
+                    if (seleccionado[i] === 1) {
                         processing.fill(255, 0, 0, 80);
                     }
 
                 }
 
             } else {
-                if (adentro[i] == 1) {
-                    if (seleccionado[i] == 0) {
+                if (adentro[i] === 1) {
+                    if (seleccionado[i] === 0) {
                         processing.fill(0, 255, 0, 80);
-                    }
-                    else {
-                        if (seleccionado[i] == 0) {
+                    } else {
+                        if (seleccionado[i] === 0) {
                             processing.fill(0, 0, 255, 80);
                         }
 
@@ -11178,41 +11094,40 @@ function animacion2(processing) {
         var numeroCaras = arrayCaraDientes.length;
         for (var i = 0; i < numeroCaras; i++) {
             processing.noFill();
-            processing.noStroke()
+            processing.noStroke();
             processing.beginShape();
             // processing.fill(0, 0, 255,80);
 
-            if (adentroCara[i] == 0) {
-                if (seleccionadoCara[i] == 0) {
+            if (adentroCara[i] === 0) {
+                if (seleccionadoCara[i] === 0) {
                     processing.noFill();
                     processing.noStroke();
                     //arrayCarasAzules[i]=0;
                     //arrayCarasRojas[i]=0;
-                    if (arrayCarasAzules[i] == 1) {
+                    if (arrayCarasAzules[i] === 1) {
                         //alert(i);
-                        processing.stroke(0, 0, 0)
-                        processing.fill(0, 51, 102)
+                        processing.stroke(0, 0, 0);
+                        processing.fill(0, 51, 102);
                     }
-                    if (arrayCarasRojas[i] == 1) {
+                    if (arrayCarasRojas[i] === 1) {
                         //alert(i);
-                        processing.stroke(0, 0, 0)
-                        processing.fill(211, 6, 6)
+                        processing.stroke(0, 0, 0);
+                        processing.fill(211, 6, 6);
                     }
                     //processing.fill(255, 12, 250,80);
-                }
-                else {
-                    if (seleccionadoCara[i] == 1) {
+                } else {
+                    if (seleccionadoCara[i] === 1) {
                         processing.fill(255, 0, 0, 80);
                     }
 
                 }
 
             } else {
-                if (adentroCara[i] == 1) {
-                    if (seleccionadoCara[i] == 0) {
+                if (adentroCara[i] === 1) {
+                    if (seleccionadoCara[i] === 0) {
                         processing.fill(0, 255, 0, 80);
                     } else {
-                        if (seleccionadoCara[i] == 0) {
+                        if (seleccionadoCara[i] === 0) {
                             processing.fill(0, 0, 255, 80);
                         }
 
@@ -11230,7 +11145,7 @@ function animacion2(processing) {
 
         ////////////////////////////////////////
         //processing.noLoop();
-    }
+    };
     processing.mouseMoved = function () {
         // processing.loop();
         posX = processing.mouseX;
@@ -11248,10 +11163,10 @@ function animacion2(processing) {
                 if (posY <= maximo(arrayDientesAux[z][j][1], arrayDientesAux[z][j + 1][1])) {
                     if (posY > minimo(arrayDientesAux[z][j][1], arrayDientesAux[z][j + 1][1])) {
                         if (posX <= maximo(arrayDientesAux[z][j][0], arrayDientesAux[z][j + 1][0])) {
-                            if (arrayDientesAux[z][j][0] != arrayDientesAux[z][j + 1][0]) {
+                            if (arrayDientesAux[z][j][0] !== arrayDientesAux[z][j + 1][0]) {
                                 aux = ((posY - arrayDientesAux[z][j][1]) * (arrayDientesAux[z][j + 1][0] - arrayDientesAux[z][j][0])) / (arrayDientesAux[z][j + 1][1] - arrayDientesAux[z][j][1]) + arrayDientesAux[z][j][0];
                             }
-                            if ((posX <= aux) || (arrayDientesAux[z][j][0] == arrayDientesAux[z][j + 1][0])) {
+                            if ((posX <= aux) || (arrayDientesAux[z][j][0] === arrayDientesAux[z][j + 1][0])) {
                                 cont++;
                                 //aux2=aux;
                                 //puntoDatos='px1:'+arrayDientesAux[z][j][0]+'py1:'+arrayDientesAux[z][j][1];
@@ -11261,7 +11176,7 @@ function animacion2(processing) {
                     }
                 }
             }
-            if (cont % 2 == 1) {
+            if (cont % 2 === 1) {
                 mause = 1;
                 adentro[z] = 1;
                 //alert(arrayDatosDientes[i][0]+'---'+arrayDatosDientes[i][1]+'---'+arrayDatosDientes[i][2]+'---'+i) 
@@ -11270,9 +11185,9 @@ function animacion2(processing) {
             }
         }
         for (var j2 = 0; j2 < numeroDientes; j2++) {
-            if (adentro[j2] == 1) {
+            if (adentro[j2] === 1) {
                 for (var i2 = 0; i2 < numeroDientes; i2++) {
-                    if (arrayDatosDientes[i2][0] == arrayDatosDientes[j2][0]) {
+                    if (arrayDatosDientes[i2][0] === arrayDatosDientes[j2][0]) {
                         adentro[i2] = 1;
                     }
                 }
@@ -11292,10 +11207,10 @@ function animacion2(processing) {
                 if (posY <= maximo(arrayCarasDientesAux[z][j][1], arrayCarasDientesAux[z][j + 1][1])) {
                     if (posY > minimo(arrayCarasDientesAux[z][j][1], arrayCarasDientesAux[z][j + 1][1])) {
                         if (posX <= maximo(arrayCarasDientesAux[z][j][0], arrayCarasDientesAux[z][j + 1][0])) {
-                            if (arrayCarasDientesAux[z][j][0] != arrayCarasDientesAux[z][j + 1][0]) {
+                            if (arrayCarasDientesAux[z][j][0] !== arrayCarasDientesAux[z][j + 1][0]) {
                                 aux1 = ((posY - arrayCarasDientesAux[z][j][1]) * (arrayCarasDientesAux[z][j + 1][0] - arrayCarasDientesAux[z][j][0])) / (arrayCarasDientesAux[z][j + 1][1] - arrayCarasDientesAux[z][j][1]) + arrayCarasDientesAux[z][j][0];
                             }
-                            if ((posX <= aux1) || (arrayCarasDientesAux[z][j][0] == arrayCarasDientesAux[z][j + 1][0])) {
+                            if ((posX <= aux1) || (arrayCarasDientesAux[z][j][0] === arrayCarasDientesAux[z][j + 1][0])) {
                                 cont1++;
                                 //aux2=aux1;
                                 //puntoDatos='px1:'+arrayDientesAux[z][j][0]+'py1:'+arrayDientesAux[z][j][1];
@@ -11305,7 +11220,7 @@ function animacion2(processing) {
                     }
                 }
             }
-            if (cont1 % 2 == 1) {
+            if (cont1 % 2 === 1) {
                 mause1 = 1;
                 adentroCara[z] = 1;
             } else {
@@ -11313,19 +11228,19 @@ function animacion2(processing) {
             }
         }
         //////////////////////////////////////////////////////
-        if (mause == 1 || mause1 == 1) {
-            processing.cursor(processing.HAND)
+        if (mause === 1 || mause1 === 1) {
+            processing.cursor(processing.HAND);
         } else {
-            processing.cursor(processing.ARROW)
+            processing.cursor(processing.ARROW);
         }
-    }
+    };
     processing.mouseClicked = function () {
         //alert(processing.mouseY + 'xxxx'+processing.mouseX);
         //var numeroAux=arrayDientes.length;
 
         for (var w = 0; w < numeroAux; w++) {
-            if (adentro[w] == 1) {
-                if (seleccionado[w] == 1) {
+            if (adentro[w] === 1) {
+                if (seleccionado[w] === 1) {
                     seleccionado[w] = 0;
                     seleccionadoCara[(w - 1) * 5] = 0;
                     seleccionadoCara[(w - 1) * 5 + 1] = 0;
@@ -11346,11 +11261,10 @@ function animacion2(processing) {
         }
         for (var w1 = 0; w1 < numeroAux1; w1++) {
 
-            if (adentroCara[w1] == 1) {
-                if (seleccionadoCara[w1] == 1) {
+            if (adentroCara[w1] === 1) {
+                if (seleccionadoCara[w1] === 1) {
                     seleccionadoCara[w1] = 0;
-                }
-                else {
+                } else {
                     seleccionadoCara[w1] = 1;
                     seleccionado[arrayDatosDientesCara[w1][0]] = 1;
                     seleccionado[arrayDatosDientesCara[w1][0] + 52] = 1;
@@ -11360,7 +11274,7 @@ function animacion2(processing) {
 
             }
         }
-    }
+    };
 }
 
 
@@ -11368,8 +11282,7 @@ function animacion2(processing) {
 function maximo(a, b) {
     if (a > b) {
         return a;
-    }
-    else {
+    } else {
         return b;
     }
 }
@@ -11413,14 +11326,14 @@ function ActualizarServicios(numeroPaquetes, iIdGrupoEtarioPersonas, c_cod_per) 
                 method: 'get',
                 parameters: "p1=cargarPaquetesActualizados&p2=" + iIdGrupoEtarioPersonas + "&p3=" + c_cod_per,
                 onComplete: function (transport) {
-                    cargadorpeche(0, idCargadora)
+                    cargadorpeche(0, idCargadora);
                     respuesta = transport.responseText;
-                    alert(respuesta)
+                    alert(respuesta);
                     $('nuevo_refresca').update(respuesta);
                 }
-            })
+            });
         }
-    })
+    });
 }
 function GeneralServicos(numeroPaquetes, iIdGrupoEtarioPersonas) {
     var icodigoProgramacion = $('hcodigoProgramacion').value;
@@ -11446,7 +11359,7 @@ function GeneralServicos(numeroPaquetes, iIdGrupoEtarioPersonas) {
             var descripcionpracticamedica = tablaTablaPAquete.cells(i, 4).getValue();
             var nombreTratamiento = tablaTablaPAquete.cells(i, 17).getValue();
             var nombre = Base64.encode(nombreTratamiento);
-            var valorServicio = NombreGrupo + '  ' + descripcionpracticamedica
+            var valorServicio = NombreGrupo + '  ' + descripcionpracticamedica;
             //             alert(valorServicio);
             valorServicio = Base64.encode(valorServicio);
 
@@ -11466,39 +11379,39 @@ function GeneralServicos(numeroPaquetes, iIdGrupoEtarioPersonas) {
             var modoaplicacion = '';
             var estadoregistro = 0;
 
-            if (bReceta != 1) {
+            if (bReceta !== 1) {
                 if (cantidad > 1) {
-                    if (iColor != 1) {
-                        if (nroAte == nroAtemin) {
+                    if (iColor !== 1) {
+                        if (nroAte === nroAtemin) {
                             codigos = document.getElementById("htxtcodigosServicios").value;
                             var a = myvariosServicios.length;
                             var indicador = 0;
                             for (var h = 0; h < a; h++) {
                                 var arrayPalabrasServcios2 = myvariosServicios[h].split("*");
                                 var ctp1 = arrayPalabrasServcios2[3];
-                                if (ctp1 == ctp) {
+                                if (ctp1 === ctp) {
                                     indicador = 1;
                                 }
                             }
-                            if (indicador != 1) {
+                            if (indicador !== 1) {
                                 myvariosServicios[j] = nroAte + '*' + iGrupoEtario + '*' + i + '*' + ctp + '*' + iIdServicioGrupoEtareoPersona + '*' + descripcionpracticamedica + '*' + NombreGrupo + '*' + k;
-                                j++
+                                j++;
                             }
                             tablaTablaPAquete.deleteRow(i);
                         }
                     }
                 } else {
                     // FIN
-                    if (cantidad == 1) {
+                    if (cantidad === 1) {
                         //                    tablaTablaPAquete.deleteRow(i);
-                        if (iColor != 1) {
-                            if (nroAte == nroAtemin) {
-                                if (codigopracticamedica != 0) {
+                        if (iColor !== 1) {
+                            if (nroAte === nroAtemin) {
+                                if (codigopracticamedica !== 0) {
                                     tablaTablaPAquete.deleteRow(i);
                                 }
 
                                 codigos = document.getElementById("htxtcodigosServicios").value;
-                                if (!((codigos.indexOf(codigopracticamedica + "|") != -1) || (codigos.indexOf(codigopracticamedica) != -1))) {
+                                if (!((codigos.indexOf(codigopracticamedica + "|") !== -1) || (codigos.indexOf(codigopracticamedica) !== -1))) {
                                     var patronModulo = 'agregarPracticaMedicaHC';
                                     var parametros = '';
                                     parametros += 'p1=' + patronModulo;
@@ -11536,7 +11449,7 @@ function GeneralServicos(numeroPaquetes, iIdGrupoEtarioPersonas) {
                                             document.getElementById("htxtcodigosServicios").value = codigos;
 
                                         }
-                                    })
+                                    });
                                 }
 
                             }
@@ -11545,8 +11458,8 @@ function GeneralServicos(numeroPaquetes, iIdGrupoEtarioPersonas) {
                     }
                 }
             } else {
-                if (bReceta == 1 && iColor != 1) {
-                    var divAumentar = 'divRecetaGeneral'
+                if (bReceta === 1 && iColor !== 1) {
+                    var divAumentar = 'divRecetaGeneral';
                     var nroReceta;
                     var elemento;
                     var existe = 0;
@@ -11562,13 +11475,13 @@ function GeneralServicos(numeroPaquetes, iIdGrupoEtarioPersonas) {
                     var cantidadRecetas = $('hcantidadRecetas').value;
                     if (cantidadRecetas >= (nroReceta - 1)) {
                         codigoProducto = codigopracticamedica;//tablaProductosTratamientos.cells(rowId, 0).getValue();
-                        elemento = document.getElementById('hAgregados_' + nroReceta)
+                        elemento = document.getElementById('hAgregados_' + nroReceta);
 
-                        if (elemento == null) {
+                        if (elemento === null) {
                             nroReceta = $('nroReceta').value;
                             var elemento1 = document.getElementById('divReceta_' + nroReceta);
-                            if (elemento1 == null) {//verificamos si existe un div para la receta
-                                divAumentar = 'divRecetaGeneral'
+                            if (elemento1 === null) {//verificamos si existe un div para la receta
+                                divAumentar = 'divRecetaGeneral';
                                 existe = 0;
                                 numeroRecetas = $('hcantidadRecetas').value;
                                 numeroRecetas++;
@@ -11610,28 +11523,27 @@ function GeneralServicos(numeroPaquetes, iIdGrupoEtarioPersonas) {
                                     para.appendChild(documentFragment);
                                     //                                     alert(codigoProducto);
                                     $('hAgregados_' + nroReceta).value = codigoProducto + '|';
-                                    if (codigopracticamedica != 0) {
+                                    if (codigopracticamedica !== 0) {
                                         tablaTablaPAquete.deleteRow(i);
                                     }
                                     $('cantidad_' + nroReceta + '_' + numeroProducto).value = 30;
                                     $('dosis_' + nroReceta + '_' + numeroProducto).value = codigoProducto;
 
-                                    preguardarRectaMedica(nroReceta, numeroProducto)
+                                    preguardarRectaMedica(nroReceta, numeroProducto);
                                 }
-                            })
+                            });
                         } else {
-                            if (!($('hAgregados_' + nroReceta).value.indexOf(codigoProducto) != -1)) {
+                            if (!($('hAgregados_' + nroReceta).value.indexOf(codigoProducto) !== -1)) {
                                 nroReceta = $('nroReceta').value;
                                 elemento1 = document.getElementById('divReceta_' + nroReceta);
 
-                                if (elemento1 == null) {//verificamos si existe un div para la receta
-                                    divAumentar = 'divRecetaGeneral'
+                                if (elemento1 === null) {//verificamos si existe un div para la receta
+                                    divAumentar = 'divRecetaGeneral';
                                     existe = 0;
                                     numeroRecetas = $('hcantidadRecetas').value;
                                     numeroRecetas++;
                                     $('hcantidadRecetas').value = numeroRecetas;
-                                }
-                                else {
+                                } else {
                                     divAumentar = 'divReceta_' + nroReceta;
                                     existe = 1;
                                     numeroProducto = $('hNumeroProductos_' + nroReceta).value;
@@ -11675,9 +11587,9 @@ function GeneralServicos(numeroPaquetes, iIdGrupoEtarioPersonas) {
                                         $('cantidad_' + nroReceta + '_' + numeroProducto).value = 30;
                                         $('dosis_' + nroReceta + '_' + numeroProducto).value = vIndicaciones;
 
-                                        preguardarRectaMedica(nroReceta, numeroProducto)
+                                        preguardarRectaMedica(nroReceta, numeroProducto);
                                     }
-                                })
+                                });
 
                             } else {
                                 //                                alert("repetido");
@@ -11746,19 +11658,19 @@ function cargarServiciosDuplicados(nroAte, iGrupoEtario, i, iCantidad, iIdServic
     tablaTablaPAqueteExtra.enableRowsHover(true, 'grid_hover');
     tablaTablaPAqueteExtra.attachEvent("onRowSelect", function (fila, columna) {
         //        actualizarEntregaExtra(fila,columna,nroAte,iCantidad,iIdServicioGrupoEtareoPersona,tablaTablaPAqueteExtra,NombreGrupo);
-        if (m == 1) {
+        if (m === 1) {
             actualizarEntregaExtra(fila, columna, nroAte, iCantidad, iIdServicioGrupoEtareoPersona, tablaTablaPAqueteExtra, NombreGrupo);
             //Windows.close("Div_vpopudServico" + nroAte + iIdServicioGrupoEtareoPersona); 
         } else {
             if (m > 1 && h < (m - 1)) {
                 var v = actualizarEntregaExtra(fila, columna, nroAte, iCantidad, iIdServicioGrupoEtareoPersona, tablaTablaPAqueteExtra, NombreGrupo);
                 //                alert("valor:  "+ v);
-                if (v != 1) {
+                if (v !== 1) {
                     h = h + 1;
                     siguientePupapServicios(fila, columna, h, k, i, iCantidad);
                 }
             } else {
-                if (h == (m - 1)) {
+                if (h === (m - 1)) {
                     actualizarEntregaExtra(fila, columna, nroAte, iCantidad, iIdServicioGrupoEtareoPersona, tablaTablaPAqueteExtra, NombreGrupo);
                     //                    Windows.close("Div_vpopudServico" + nroAte + iIdServicioGrupoEtareoPersona); 
                 }
@@ -11826,7 +11738,7 @@ function siguientePupapServicios(fila, columna, h, k, i, iCantidad) {
 function actualizarEntregaExtra(fila, columna, nroAte, iCantidad, iIdServicioGrupoEtareoPersona, tablaTablaPAqueteExtram, NombreGrupo) {
 
     codigos = document.getElementById("htxtcodigosServicios").value;
-    if (!((codigos.indexOf(codigopracticamedica + "|") != -1) || (codigos.indexOf(codigopracticamedica) != -1))) {
+    if (!((codigos.indexOf(codigopracticamedica + "|") !== -1) || (codigos.indexOf(codigopracticamedica) !== -1))) {
         var estado = 1;
         //    alert(tablaTablaPAqueteExtra);
         if (confirm("Esta Seguro que Desea Registrar el producto")) {
@@ -11883,9 +11795,9 @@ function actualizarEntregaExtra(fila, columna, nroAte, iCantidad, iIdServicioGru
                     preguardarTratatamientoPracticasMedicas(estado);
                     actualizarEstadoDeServicioGrupoEtarioPersona(iIdServicioGrupoEtareoPersona, iCantidad);
                     //                    alert(iIdServicioGrupoEtareoPersona);
-                    Windows.close("Div_vpopudServico" + nroAte + iIdServicioGrupoEtareoPersona)
+                    Windows.close("Div_vpopudServico" + nroAte + iIdServicioGrupoEtareoPersona);
                 }
-            })
+            });
             // return 0;
         } else {
             return 1;
@@ -11913,7 +11825,7 @@ function actualizarEstadoDeServicioGrupoEtarioPersona(iIdServicioGrupoEtareoPers
             var respuesta = transport.responseText;
 
         }
-    })
+    });
 }
 
 
@@ -11937,7 +11849,7 @@ function validarSeleccion(idObjet) {
 
 
         }
-    })
+    });
 }
 
 
@@ -11964,9 +11876,8 @@ function quitarImagen(id) {
                 $('button' + id).show();
 
             }
-        })
-    }
-    else {
+        });
+    } else {
 
     }
 }
@@ -11990,7 +11901,7 @@ function updateObsHistoriaDiente(IdNumeric) {
 
 
         }
-    })
+    });
 }
 
 
@@ -12000,9 +11911,9 @@ function updateObsHistoriaDiente(IdNumeric) {
 function updateCarasDiente(id, idCara, objeto) {
 
 
-    var bit = 0
+    var bit = 0;
     var idHistoriaDiente = $('idAntecedenteOdontograma_' + id).value;
-    if ($(objeto + id).checked == true) {
+    if ($(objeto + id).checked === true) {
         bit = 1;
     }
     var patronModulo = 'updateCarasDiente';
@@ -12022,7 +11933,7 @@ function updateCarasDiente(id, idCara, objeto) {
 
 
         }
-    })
+    });
 
 }
 
@@ -12047,7 +11958,7 @@ function cerrarAntecedenteOdontograma(numeroAntecedente) {
             $('estadoAntecedenteOdontograma_' + numeroAntecedente).value = 1;
 
         }
-    })
+    });
 }
 
 
@@ -12070,7 +11981,7 @@ function volverAcargar(idAuto) {
             $('Vista' + idAuto).update("");
 
         }
-    })
+    });
 
 }
 
@@ -12093,7 +12004,7 @@ function abrirNuevoVisorImagen(autonumerico) {
 
 
         }
-    })
+    });
 }
 function cargarFechaAtencionOdontograma() {
     var cadena = $('comboFechaAtenciones').value;
@@ -12102,17 +12013,16 @@ function cargarFechaAtencionOdontograma() {
     var n = cadena.split("//");
     $('programacionSeleccionado').value = n[0];
     var palabra;
-    if (n[0] == "x") {
+    if (n[0] === "x") {
         palabra = '';
-    }
-    else {
-        palabra = n[1]
+    } else {
+        palabra = n[1];
     }
     var arrayPalabras = new Array();
     arrayPalabras = palabra.split(" ");
     var numeroPalabras = arrayPalabras.length;
     $("hCodProgramacionHistoria").value = palabra;
-    historiaLeyenda()
+    historiaLeyenda();
     rHistoriaOdontogramaXAtencion.filterBy(7, palabra);
     seleccionarPrimeraFila();
     cambiarProgramacionDiente();
@@ -12120,16 +12030,15 @@ function cargarFechaAtencionOdontograma() {
 
 function cargarIdDienteOdontograma() {
 
-    var cadena = $('comboDientesAtenciones').value
+    var cadena = $('comboDientesAtenciones').value;
     var combo = $('comboDientesAtenciones');
     var valor = combo.options[combo.selectedIndex].text;
     $('comboFechaAtenciones').value = 'x';
     $('dienteSeleccionado').value = cadena;
     var palabra;
-    if (cadena == "x") {
+    if (cadena === "x") {
         palabra = '';
-    }
-    else {
+    } else {
         // alert(valor);
         var n = valor.split(" ");
         palabra = n[0];
@@ -12168,7 +12077,7 @@ function cargarTablaHistoriaOdontograma() {
         var cara4 = rHistoriaOdontogramaXAtencion.cells(fila, 13).getValue();
         var cara5 = rHistoriaOdontogramaXAtencion.cells(fila, 14).getValue();
         var cara6 = rHistoriaOdontogramaXAtencion.cells(fila, 15).getValue();
-        cargarDetalleHIstoriaODontograma(fecha, diagnostico, tecero, estado, dosctor, imagen, descripcion, cara1, cara2, cara3, cara4, cara5, cara6, diente)
+        cargarDetalleHIstoriaODontograma(fecha, diagnostico, tecero, estado, dosctor, imagen, descripcion, cara1, cara2, cara3, cara4, cara5, cara6, diente);
 
     });
     contadorCargador++;
@@ -12197,7 +12106,7 @@ function cargarDetalleHIstoriaODontograma(fecha, diagnostico, tecero, estado, do
     $('obsHistoriaDetalle').value = descripcion;
     $('DienteHistoriaDetalle').value = diente;
     $('carasHistoriaDiente').value = cara1 + ' ' + cara2 + ' ' + cara3 + ' ' + cara4 + ' ' + cara5 + ' ' + cara6;
-    if (imagen != 'vacio') {
+    if (imagen !== 'vacio') {
         var n = imagen.split("/");
         $('imagenHistoriaDetalle').update("<p>Imagen: <a href='../../../hospitalizacion/visorImagen/visor.php?url=../../carpetaDocumentos/" + n[5] + " &rotacion=rot0' target='_blank'>Ver Imagen.</a>");
     } else {
@@ -12212,18 +12121,17 @@ function cambiarSelectedValueCombo() {
     var valor = $('dienteSeleccionado').value;
     var contador = $('comboDientesAtenciones').options.length;
     for (x = 0; x <= contador - 1; x++) {
-        if ($('comboDientesAtenciones').options[x].value == valor) {
+        if ($('comboDientesAtenciones').options[x].value === valor) {
             $('comboDientesAtenciones').value = $('dienteSeleccionado').value;
             x = contador - 1;
             cargarIdDienteOdontograma();
             comodin = 1;
-        }
-        else {
+        } else {
             comodin = 0;
         }
     }
-    if (comodin == 0) {
-        if ($('comboDientesAtenciones').value == "x") {
+    if (comodin === 0) {
+        if ($('comboDientesAtenciones').value === "x") {
             alert("No existe antecedente o procedimeito para este diente todas la atenciones del paciente");
         } else {
             alert("No existe antecedente o procedimeito para este diente la fecha seleccionada");
@@ -12235,7 +12143,7 @@ function cambiarSelectedValueCombo() {
 
 
 function seleccionarPrimeraFila() {
-    var contador = rHistoriaOdontogramaXAtencion.getRowsNum()
+    var contador = rHistoriaOdontogramaXAtencion.getRowsNum();
     // alert(contador);
     if (contador >= 1) {
         rHistoriaOdontogramaXAtencion.selectRow(0, true, true, true);
@@ -12268,7 +12176,7 @@ function mostrarLeyenda() {
             $('Div_Leyenda').update(respuesta);
             // alert (respuesta);
         }
-    })
+    });
 }
 
 
@@ -12301,7 +12209,7 @@ function historiaLeyenda() {
             $('Div_HistoriaLeyenda').update(respuesta);
             // alert (respuesta);
         }
-    })
+    });
 }
 
 // =============================================================
@@ -12325,7 +12233,7 @@ function cargarMantenimientoAfiliacionesModulo(id, nombre) {
             $('idAfiliacion').value = id;
             $('nombreAfiliacion').update(nombre);
         }
-    })
+    });
 }
 
 
@@ -12334,20 +12242,18 @@ function guardarModulosAfiliacion() {
     var arrayCombo2 = "";
     var arrayNum2 = "";
     for (var y = 0; y <= contadorCombo2 - 1; y++) {
-        if (y == 0) {
+        if (y === 0) {
             arrayCombo2 = $('lst_seleccionadas')[y].value + "|";
             arrayNum2 += (y + 1) + "|";
-        }
-        else if (y < contadorCombo2 - 1) {
+        } else if (y < contadorCombo2 - 1) {
             arrayCombo2 += $('lst_seleccionadas')[y].value + "|";
             arrayNum2 += (y + 1) + "|";
-        }
-        else if (y == contadorCombo2 - 1) {
+        } else if (y === contadorCombo2 - 1) {
             arrayCombo2 += $('lst_seleccionadas')[y].value;
             arrayNum2 += (y + 1);
         }
     }
-    if (contadorCombo2 == 0) {
+    if (contadorCombo2 === 0) {
         var IdSer = $("idAfiliacion").value;
         var patronModulo = 'eliminarAnterioresSeleccionadosAfiliaciones';
         var parametros = '';
@@ -12362,9 +12268,8 @@ function guardarModulosAfiliacion() {
                 var respuesta = transport.responseText;
                 alert("Se guardo exitosamente...");
             }
-        })
-    }
-    else if (contadorCombo2 > 0) {
+        });
+    } else if (contadorCombo2 > 0) {
         var IdSer = $("idAfiliacion").value;
         var patronModulo = 'eliminarAnterioresSeleccionadosAfiliaciones';
         var parametros = '';
@@ -12381,7 +12286,7 @@ function guardarModulosAfiliacion() {
                 var respuesta = transport.responseText;
                 guardarNuevaSeleccionAfiliaciones(arrayCombo2, arrayNum2);
             }
-        })
+        });
     }
 
 }
@@ -12406,7 +12311,7 @@ function guardarNuevaSeleccionAfiliaciones(arrayCombo2, arrayNum2) {
             alert("Se guardo exitosamente...");
             //cargarMantenimientoServicios();
         }
-    })
+    });
 
 }
 
@@ -12427,13 +12332,13 @@ function verListaDeCiePorGrupoEtareo(idGrupoEtareo, nombre) {
             var respuesta = transport.responseText;
             $('tablaCIeGRupoEtareo').update(respuesta);
         }
-    })
+    });
 }
 
 function buscarCie(event) {
     var cie = $('busquedaCie').value;
-    var tecla = event.keyCode
-    if (tecla == 13 || cie.length > 4) {
+    var tecla = event.keyCode;
+    if (tecla === 13 || cie.length > 4) {
         var patronModulo = 'buscarCieListado';
         var parametros = '';
         parametros += 'p1=' + patronModulo;
@@ -12449,13 +12354,13 @@ function buscarCie(event) {
                 var respuesta = transport.responseText;
                 $('DivCIe').update(respuesta);
             }
-        })
+        });
     }
 }
 
 
 function agregarCIEaGrupoEtareo(idCie) {
-    if ($('idGrupoEtareo').value != '') {
+    if ($('idGrupoEtareo').value !== '') {
         var idGrupoEtareo = $('idGrupoEtareo').value;
         var patronModulo = 'agregarCIEaGrupoEtareo';
         var parametros = '';
@@ -12475,16 +12380,15 @@ function agregarCIEaGrupoEtareo(idCie) {
                 var nombre = $('nombreGrupoEtareo').value;
                 verListaDeCiePorGrupoEtareo(idGrupoEtareo, nombre);
             }
-        })
-    }
-    else {
+        });
+    } else {
         alert("Debe visualizar el detalle de algun Grupo Etareo...");
     }
 
 }
 
 function cambiarEstadoCieGrupoEtareo(idCie) {
-    if ($('idGrupoEtareo').value != '') {
+    if ($('idGrupoEtareo').value !== '') {
         var idGrupoEtareo = $('idGrupoEtareo').value;
         var patronModulo = 'cambiarEstadoCieGrupoEtareo';
         var parametros = '';
@@ -12503,10 +12407,9 @@ function cambiarEstadoCieGrupoEtareo(idCie) {
                 alert('Se finalizo el cambio de Estado Correctamente...');
                 verListaDeCiePorGrupoEtareo(idGrupoEtareo);
             }
-        })
-    }
-    else {
-        alert("Error en procedimientos de Mantenimiento Seleccione un Grupo Etareo Para continuar.")
+        });
+    } else {
+        alert("Error en procedimientos de Mantenimiento Seleccione un Grupo Etareo Para continuar.");
     }
 }
 
@@ -12515,10 +12418,9 @@ function cambiarEstadoCieGrupoEtareo(idCie) {
 
 function cambiarEstadoServicioRelacionado(iIdRelacion, estado) {
     var bEstado = 0;
-    if (estado == 1) {
+    if (estado === 1) {
         bEstado = 0;
-    }
-    else if (estado == 0) {
+    } else if (estado === 0) {
         bEstado = 1;
     }
     if (confirm("Seguro que desea Cambiar de Estado)")) {
@@ -12539,7 +12441,7 @@ function cambiarEstadoServicioRelacionado(iIdRelacion, estado) {
                 alert('Se finalizo el cambio de Estado Correctamente...');
                 examenesRelacionados();
             }
-        })
+        });
     }
 }
 
@@ -12598,7 +12500,7 @@ function cargarGraficoHistoriaTriajeDestrucTor(iNumeroReporete, vReporte) {
             eval(respuesta);
             //cargarTablaLeyendaTriaje(iNumeroReporete,iCodigoPaciente);
         }
-    })
+    });
 }
 
 function cargarGraficoHistoriaTriaje(iNumeroReporete, vReporte) {
@@ -12623,7 +12525,7 @@ function cargarGraficoHistoriaTriaje(iNumeroReporete, vReporte) {
             eval(respuesta);
             //cargarTablaLeyendaTriaje(iNumeroReporete,iCodigoPaciente);
         }
-    })
+    });
 }
 
 function cargarTablaLeyendaTriaje(iNumeroReporete, iCodigoPaciente) {
@@ -12645,7 +12547,8 @@ function cargarTablaLeyendaTriaje(iNumeroReporete, iCodigoPaciente) {
         cargadorpeche(1, idCargador);
     });
     listarTablaLeyendaReporteTriaje.attachEvent("onXLE", function () {
-        cargadorpeche(0, idCargador);;
+        cargadorpeche(0, idCargador);
+        ;
     });
     listarTablaLeyendaReporteTriaje.setSkin("dhx_terrace");
     listarTablaLeyendaReporteTriaje.init();
@@ -12653,9 +12556,9 @@ function cargarTablaLeyendaTriaje(iNumeroReporete, iCodigoPaciente) {
         var casa;
         for (i = 0; i < listarTablaLeyendaReporteTriaje.getRowsNum(); i++) {
             casa = listarTablaLeyendaReporteTriaje.cells(i, 2).getValue();
-            if (casa == '1')
+            if (casa === '1')
                 listarTablaLeyendaReporteTriaje.setRowTextStyle(listarTablaLeyendaReporteTriaje.getRowId(i), 'background-color:#69C22C;color:black;border-top: 0px solid #FAFAF8;');
-            else if (casa == '2')
+            else if (casa === '2')
                 listarTablaLeyendaReporteTriaje.setRowTextStyle(listarTablaLeyendaReporteTriaje.getRowId(i), 'background-color:#F98C33;color:black;border-top: 0px solid #FAFAF8;');
         }
     });
@@ -12681,7 +12584,7 @@ function generarComboHasta(iHasta, iNumeroReporte, vReporte) {
             var respuesta = transport.responseText;
             $('contenedorComboHasta').update(respuesta);
         }
-    })
+    });
 }
 
 
@@ -12705,25 +12608,25 @@ function generarComboHasta2(iHasta, iNumeroReporte, vReporte) {
             var respuesta = transport.responseText;
             $('contenedorComboHasta').update(respuesta);
         }
-    })
+    });
 }
 
 
 function insertaActualizaSintomatico() {
     var numeroksekedo;
     var splitiando;
-    var angelsayes
-    if ($('cbxSintomatico').value == 0) {
+    var angelsayes;
+    if ($('cbxSintomatico').value === 0) {
         $('div_nroDiasSintomatico').hide();
         $('div_btnGenerarOrdenDK').hide();
         try {
-            if ($('txtNumeroBK').value != '') {
+            if ($('txtNumeroBK').value !== '') {
                 numeroksekedo = $('txtNumeroBK').value;
                 splitiando = numeroksekedo.split("|");
                 for (angelsayes = 0; angelsayes <= splitiando.length - 2; angelsayes++) {
                     eliminarPracticaMedicaHC('Div_PracticaMedica' + splitiando[angelsayes], 'XXXX200301', splitiando[angelsayes]);
                     $('div_btnGenerarOrdenDK').removeClassName('btnReportes1');
-                    if (angelsayes == 0) {
+                    if (angelsayes === 0) {
                         $('div_btnGenerarOrdenDK').update('Generar 1 Orden BK');
                     } else {
                         $('div_btnGenerarOrdenDK').update('Generar 2 Ordenes BK');
@@ -12731,35 +12634,33 @@ function insertaActualizaSintomatico() {
 
                 }
             }
-        }
-        catch (err) {
+        } catch (err) {
             $('txtNumeroBK').value = '';
             $('contadorBK').value = '';
         }
-        $('txtNumeroDiasSintomatico').value = 0
+        $('txtNumeroDiasSintomatico').value = 0;
     } else {
         try {
-            if ($('txtNumeroBK').value != '') {
+            if ($('txtNumeroBK').value !== '') {
                 numeroksekedo = $('txtNumeroBK').value;
                 splitiando = numeroksekedo.split("|");
                 for (angelsayes = 0; angelsayes <= splitiando.length - 2; angelsayes++) {
                     eliminarPracticaMedicaHC('Div_PracticaMedica' + splitiando[angelsayes], 'XXXX200301', splitiando[angelsayes]);
                     $('div_btnGenerarOrdenDK').removeClassName('btnReportes1');
-                    if (angelsayes == 0) {
+                    if (angelsayes === 0) {
                         $('div_btnGenerarOrdenDK').update('Generar 1 Orden BK');
                     } else {
                         $('div_btnGenerarOrdenDK').update('Generar 2 Ordenes BK');
                     }
                 }
             }
-        }
-        catch (err) {
+        } catch (err) {
             $('txtNumeroBK').value = '';
             $('contadorBK').value = '';
         }
         $('div_nroDiasSintomatico').show();
         $('div_btnGenerarOrdenDK').hide();
-        $('txtNumeroDiasSintomatico').value = 0
+        $('txtNumeroDiasSintomatico').value = 0;
     }
     var patronModulo = 'insertaActualizaSintomatico';
     var parametros = '';
@@ -12778,57 +12679,54 @@ function insertaActualizaSintomatico() {
             var respuesta = transport.responseText;
             $('contenedorComboHasta').update(respuesta);
         }
-    })
+    });
 }
 
 function validarNumeroDias() {
     var numeroksekedo;
     var splitiando;
-    var angelsayes
-    if (isNaN($('txtNumeroDiasSintomatico').value) != false) {
+    var angelsayes;
+    if (isNaN($('txtNumeroDiasSintomatico').value) !== false) {
         try {
-            if ($('txtNumeroBK').value != '') {
+            if ($('txtNumeroBK').value !== '') {
                 numeroksekedo = $('txtNumeroBK').value;
                 splitiando = numeroksekedo.split("|");
                 for (angelsayes = 0; angelsayes <= splitiando.length - 2; angelsayes++) {
                     eliminarPracticaMedicaHC('Div_PracticaMedica' + splitiando[angelsayes], 'XXXX200301', splitiando[angelsayes]);
                     $('div_btnGenerarOrdenDK').removeClassName('btnReportes1');
-                    if (angelsayes == 0) {
+                    if (angelsayes === 0) {
                         $('div_btnGenerarOrdenDK').update('Generar 1 Orden BK');
                     } else {
                         $('div_btnGenerarOrdenDK').update('Generar 2 Ordenes BK');
                     }
                 }
             }
-        }
-        catch (err) {
+        } catch (err) {
             $('txtNumeroBK').value = '';
             $('contadorBK').value = '';
         }
 
         $('txtNumeroDiasSintomatico').value = 0;
-    }
-    else {
+    } else {
         if ($('txtNumeroDiasSintomatico').value >= 15) {
             $('div_btnGenerarOrdenDK').show();
         } else {
             $('div_btnGenerarOrdenDK').hide();
             try {
-                if ($('txtNumeroBK').value != '') {
+                if ($('txtNumeroBK').value !== '') {
                     numeroksekedo = $('txtNumeroBK').value;
                     splitiando = numeroksekedo.split("|");
                     for (angelsayes = 0; angelsayes <= splitiando.length - 2; angelsayes++) {
                         eliminarPracticaMedicaHC('Div_PracticaMedica' + splitiando[angelsayes], 'XXXX200301', splitiando[angelsayes]);
                         $('div_btnGenerarOrdenDK').removeClassName('btnReportes1');
-                        if (angelsayes == 0) {
+                        if (angelsayes === 0) {
                             $('div_btnGenerarOrdenDK').update('Generar 1 Orden BK');
                         } else {
                             $('div_btnGenerarOrdenDK').update('Generar 2 Ordenes BK');
                         }
                     }
                 }
-            }
-            catch (err) {
+            } catch (err) {
                 $('txtNumeroBK').value = '';
                 $('contadorBK').value = '';
             }
@@ -12854,7 +12752,7 @@ function actualizarNumeroDiasSintomatico() {
             var respuesta = transport.responseText;
             $('contenedorComboHasta').update(respuesta);
         }
-    })
+    });
 }
 
 
@@ -12890,7 +12788,7 @@ function generarSintomaticoRespiratorio() {
             $('div_btnGenerarOrdenDK').addClassName("btnReportes1");
             $('div_btnGenerarOrdenDK').update("2 Ordenes Generadas");
         }
-    })
+    });
 
 
 }
@@ -12905,8 +12803,7 @@ function agregarBK() {
 
         if (codigos.length > 0) {
             codigos = codigos + "|" + codigopracticamedica;
-        }
-        else {
+        } else {
             codigos = codigopracticamedica;
         }
         document.getElementById("htxtcodigosServicios").value = codigos;
@@ -12942,7 +12839,7 @@ function agregarBK() {
                 $('txtNumeroBK').value = $('txtNumeroBK').value + numerodivpracticamedica + '|';
                 preguardarTratatamientoPracticasMedicas();
             }
-        })
+        });
     }
 }
 
@@ -12958,7 +12855,7 @@ function actualizarTriajeActoMedico() {
 }
 
 function manteTriajeActoMedico(accion, horaProgramacion, codCronograma) {
-   
+
     var peso = trim($('txtPeso').value);
     var talla = trim($('txtTalla').value);
     var temp = trim($('txtTemp').value);
@@ -12968,11 +12865,10 @@ function manteTriajeActoMedico(accion, horaProgramacion, codCronograma) {
     var satOxigeno = trim($('txtSatOxigeno').value);
     var codigoProgramacion = trimJunny($('hcodigoProgramacion').value);
 
-    if (peso == '' && talla == '' && temp == '' && frecCardiaca == '' && presArterial == '' && frecRespiratoria == '' && satOxigeno == '') {
+    if (peso === '' && talla === '' && temp === '' && frecCardiaca === '' && presArterial === '' && frecRespiratoria === '' && satOxigeno === '') {
         alert('Debe ingresar como m\xEDnimo uno de los campos para registrar triaje');
-    }
-    else {
-        if ($('unidadTalla').value == 2) {
+    } else {
+        if ($('unidadTalla').value === 2) {
             //De centimetros convertimos a metros
             talla = parseFloat(talla) / 100;
             talla = talla.toFixed(2);
@@ -12985,28 +12881,28 @@ function manteTriajeActoMedico(accion, horaProgramacion, codCronograma) {
 
         var data = 'p1=manteTriaje&datos=' + datos + '&accion=' + accion;
         contadorCargador++;
-    var idCargador = contadorCargador;
+        var idCargador = contadorCargador;
         new Ajax.Request(pathRequestControl,
-            {
-                method: 'post',
-                parameters: data,
-                onLoading: cargadorpeche(1, idCargador),
-                onComplete: function (transport) {
-                    cargadorpeche(0, idCargador);
-                    alert(transport.responseText);
-                    Windows.close("Div_popupRegistroTriaje");
-                    $('txttemperatura').value = $('txtTemp').value;
-                    $('txtfrecuenciacardiaca').value = $('txtFrecCardiaca').value;
-                    $('txtfrecuenciarespiratoria').value = $('txtFrecRespiratoria').value;
-                    $('txtpresionaarterial').value = $('txtPresArterial').value;
-                    $('txtsaturacionoxigeno').value = $('txtSatOxigeno').value;
-                    $('txtpeso').value = $('txtPeso').value;
-                    $('txttalla').value = $('txtTalla').value;
-                    $('txtimc').value = precise_round(parseFloat(($('txtPeso').value / Math.pow($('txtTalla').value, 2))), 2);
+                {
+                    method: 'post',
+                    parameters: data,
+                    onLoading: cargadorpeche(1, idCargador),
+                    onComplete: function (transport) {
+                        cargadorpeche(0, idCargador);
+                        alert(transport.responseText);
+                        Windows.close("Div_popupRegistroTriaje");
+                        $('txttemperatura').value = $('txtTemp').value;
+                        $('txtfrecuenciacardiaca').value = $('txtFrecCardiaca').value;
+                        $('txtfrecuenciarespiratoria').value = $('txtFrecRespiratoria').value;
+                        $('txtpresionaarterial').value = $('txtPresArterial').value;
+                        $('txtsaturacionoxigeno').value = $('txtSatOxigeno').value;
+                        $('txtpeso').value = $('txtPeso').value;
+                        $('txttalla').value = $('txtTalla').value;
+                        $('txtimc').value = precise_round(parseFloat(($('txtPeso').value / Math.pow($('txtTalla').value, 2))), 2);
 
 
+                    }
                 }
-            }
-        )
+        );
     }
 }

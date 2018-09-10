@@ -7,7 +7,7 @@
                 </td>
                 <td style="width:3%">
                     <img id="Div_AdjuntarFileCuerpoicono" src='../../../../fastmedical_front/imagen/icono/plegar.png'
-                        title='plegar' alt="" />
+                         title='plegar' alt="" />
                 </td>
             </tr>
         </table>
@@ -25,13 +25,26 @@
             <table width="100%" border="0">
                 <tr>
                     <td>
-                    <div style>
+                        <div style="width: 80px; height: 120px; background: #dce2f3; float: left; margin: 5px;" >
+                            <img src="../../../../fastmedical_front/imagen/btn/Add_Image_icon-icons.com_54218.png" alt="add"
+                                 style="width: 80px; height: 120px; cursor: pointer">
+                        </div>
+                        <div style="width: 80px; height: 120px; background: #dce2f3; float: left; margin: 5px;" >
+                            <img src="../../../../fastmedical_front/imagen/btn/file-picture-icon_34432.png" alt="add"
+                                 style="width: 80px; height: 80px; cursor: pointer">
+                            <div style="width: 80px; height: 40px; background: red;color: #fff; 
+                                 padding: 10px; font-size: 15px; box-sizing:border-box; text-align:center" >
+                                <span style="display:inline-block;vertical-align:middle;line-height:normal;
+                                      cursor: pointer">
+                                    Eliminar
+                                </span>
+                            </div>
+                        </div>
 
-                    </div>
                     </td>
-                    
+
                 </tr>
-                
+
             </table>
             <input type="file" id="campoarchivo">
 
