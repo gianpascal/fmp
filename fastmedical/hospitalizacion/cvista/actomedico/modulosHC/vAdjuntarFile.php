@@ -27,7 +27,9 @@
                     <td>
                         <div style="width: 80px; height: 120px; background: #dce2f3; float: left; margin: 5px;" >
                             <img src="../../../../fastmedical_front/imagen/btn/Add_Image_icon-icons.com_54218.png" alt="add"
-                                 style="width: 80px; height: 120px; cursor: pointer">
+                                 style="width: 80px; height: 120px; cursor: pointer"
+                                 id="imgagenSubirFoto">
+                            <input type="file" id="fileSubirFoto" style="display: none;">
                         </div>
                         <div style="width: 80px; height: 120px; background: #dce2f3; float: left; margin: 5px;" >
                             <img src="../../../../fastmedical_front/imagen/btn/file-picture-icon_34432.png" alt="add"
@@ -46,7 +48,7 @@
                 </tr>
 
             </table>
-            <input type="file" id="campoarchivo">
+
 
             <div id="controles">
                 <button id="pausar">Pausar</button>
@@ -58,6 +60,15 @@
 
             <div id="archivo">
                 Archivo subido: <a href="" id="enlace">Click para ver</a>
+            </div>
+
+            <div id="divInputLoad">
+                <h1>Test it uploading your own image</h1>
+                <div id="divFileUpload">
+                    <input id="file-upload" type="file" accept="image/*" />
+                </div>
+                <div id="file-preview-zone">
+                </div>
             </div>
         </fieldset>
 

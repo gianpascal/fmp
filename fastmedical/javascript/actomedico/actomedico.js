@@ -591,8 +591,19 @@ function loguerfirebase() {
                 console.error('Detectado error de autenticación', error);
             });
 
+
+    var fileSubirFoto = document.getElementById("fileSubirFoto");
+
+    var imgagenSubirFoto = document.getElementById("imgagenSubirFoto");
+    imgagenSubirFoto.onclick = function () {
+        fileSubirFoto.click();
+    };
+
     //manejador de evento para el input file
-    document.getElementById('campoarchivo').addEventListener('change', function (evento) {
+    fileSubirFoto.addEventListener('change', function (evento) {
+        
+        
+        
         evento.preventDefault();
         var archivo = evento.target.files[0];
         subirArchivo(archivo);
@@ -7313,7 +7324,7 @@ function calcularFechaValidez(id) {
     var dias = $('diasValidos_' + id).value;
 
     var fechaInicial = new Date(); // 22 de Marzo del 2010 -  los meses comienzan a contar desde 0
-    var valorFecha = fechaInicial.valueOf() ; // 1269226800000
+    var valorFecha = fechaInicial.valueOf(); // 1269226800000
     var valorFechaTermino = valorFecha + (dias * 24 * 60 * 60 * 1000); // 60 días después, como milisegundos ( días * horas * minutos * segundos * milisegundos )
     var fechaTermino = new Date(valorFechaTermino); // nuevo objeto de fecha: 20 de mayo - Thu May 20 2010 23:00:00 GMT-0400 (CLT)
     var mes = fechaTermino.getMonth() + 1;

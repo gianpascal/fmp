@@ -118,7 +118,7 @@ function programacionMedicos() {
             $('Contenido').update(respuesta);
             recargarArbolServicios();
         }
-    })
+    });
 }
 
 //function mostrarManuales(){
@@ -332,7 +332,7 @@ function mantenimientoAmbientesFisicos() {
                 $('Contenido').update(respuesta);
             }
         }
-    )
+    );
 }
 
 function mantenimientoTurnos() {
