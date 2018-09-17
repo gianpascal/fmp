@@ -600,13 +600,59 @@ function loguerfirebase() {
     };
 
     //manejador de evento para el input file
+    var canvas, context, output;
+
+    canvas = document.getElementById("canvas");
+    context = canvas.getContext('2d');
+    output = document.getElementById("output");
     fileSubirFoto.addEventListener('change', function (evento) {
-        
-        
-        
+
+        //////
+        var reader = new FileReader();
+        reader.addEventListener("loadend", function (arg) {
+            var src_image = new Image();
+            
+            src_image.onload = function () {
+                /////////////////////
+                var MAX_WIDTH = 1200;
+                var MAX_HEIGHT = 900;
+                var width = src_image.width;
+                var height = src_image.height;
+
+                if (width > height) {
+                    if (width > MAX_WIDTH) {
+                        height *= MAX_WIDTH / width;
+                        width = MAX_WIDTH;
+                    }
+                } else {
+                    if (height > MAX_HEIGHT) {
+                        width *= MAX_HEIGHT / height;
+                        height = MAX_HEIGHT;
+                    }
+                }
+                
+
+                /////////////////////
+
+                canvas.height = height;
+                canvas.width = width;
+                context.drawImage(src_image, 0, 0, width, height);
+                canvas.toBlob(function (archivo) {
+                    subirArchivo(archivo, nombre);
+                });
+            };
+            src_image.src = this.result;
+            
+        });
+
+        /////
+
+
         evento.preventDefault();
         var archivo = evento.target.files[0];
-        subirArchivo(archivo);
+        var nombre=archivo.name;
+        reader.readAsDataURL(archivo);
+        //
     });
 
     //manejadores de eventos para los botones de control de la subida
@@ -634,9 +680,9 @@ function loguerfirebase() {
     });
 }
 var uploadTask;
-function subirArchivo(archivo) {
+function subirArchivo(archivo,nombre) {
 
-    var refStorage = storageService.ref('ruta/de/la/subida').child(archivo.name);
+    var refStorage = storageService.ref('ruta/de/la/subida').child(nombre);
     uploadTask = refStorage.put(archivo);
 
     // El evento donde comienza el control del estado de la subida

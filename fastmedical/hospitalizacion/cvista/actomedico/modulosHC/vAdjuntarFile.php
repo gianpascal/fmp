@@ -78,3 +78,5 @@
 
     </div>
 </div>
+<canvas id="canvas" ></canvas>
+<img id="output">

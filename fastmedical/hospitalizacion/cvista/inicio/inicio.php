@@ -253,6 +253,7 @@ if (!isset($_SESSION)) {
         <!--      fin plugin para upload      -->
         <!--       para módulo de carga de horarios      -->
         <!--     fin para módulo de carga de horarios    -->
+        <script type="text/javascript" src="../../../javascript/canvas-toBlob.js"></script>
         <!-- ===================           fin           =================== -->
         <!-----------       CARGAR IMAGEN DE FONDO    --------- -->
         <script type="text/javascript" src="../../../javascript/inicio.js"></script>
