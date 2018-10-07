@@ -64,21 +64,25 @@
                             </div>
                         </div>
                     </td>
-                    
+
                 </tr>
             </table>
         </div>
     </div>
     <body>
         <div id="centro">
-            <table width="350" height="500" border="0" align="center" cellpadding="0" cellspacing="0" background="../../fastmedical_front/imagen/inicio/login_copia.png" style="width:350px; height:400px; margin-top:100px">
+            <table width="350" height="500" border="0" align="center" cellpadding="0" cellspacing="0"
+                   style="width:350px; height:400px;
+                   background-image:url('../../fastmedical_front/imagen/inicio/login_fastmedical.png');
+                   background-repeat: no-repeat;
+                      "  >
                 <tr height="120" >
-                    <td width="150" height="232">&nbsp;</td>
-                    <td width="257">&nbsp;</td>
+                    <td width="150" height="120">&nbsp;</td>
+                    <td width="257" >&nbsp;</td>
                     <td width="43">&nbsp;</td>
                 </tr>
                 <tr>
-                    <td height="159">&nbsp;</td>
+                    <td height="120">&nbsp;</td>
                     <td valign="top">
                         <form id="formLogin" name="formLogin" action="" method="post" style="border:0; margin:0; padding:0">
                             <table border="0" cellspacing="3" cellpadding="0" style="width:160px; height:110px; margin-top:5px; padding-bottom:10px">

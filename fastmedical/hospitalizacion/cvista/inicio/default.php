@@ -8,7 +8,7 @@
 <body >
 <!-----------       IMAGEN DE FONDO    ----------->
 <!--<div style="background:url(../../../imagen/inicio/SAMSUNG1.jpg) no-repeat top  #DDEEF5 ; height:600px;"> -->
-<div style="background:url(../../../../fastmedical_front/fotos/fondo2.png) no-repeat top  #DDEEF5 ;background-size: 100% 100%; height:600px;">
+<div style="background:url(../../../../fastmedical_front/fotos/fondo2_f.png) no-repeat top  #DDEEF5 ;background-size: 100% 100%; height:600px;">
 
 
 </div>
