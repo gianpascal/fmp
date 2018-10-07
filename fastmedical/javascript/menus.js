@@ -97,7 +97,7 @@ function programacionCitasInformes() {
 
 
         }
-    })
+    });
 }
 
 function programacionMedicos() {
@@ -156,7 +156,7 @@ function mostrarManuales() {
             //            recargarArbolAyuda();
             seleccionarArbolManual();
         }
-    })
+    });
 }
 
 function registroDatosPacientes() {
@@ -177,12 +177,12 @@ function registroDatosPacientes() {
 
 
         }
-    })
+    });
 }
 
 function consultaTarifas() {
     //comboAfiliaciones()
-    comboCategorias()
+    comboCategorias();
 
 
 }
@@ -203,7 +203,7 @@ function comboCategorias() {
             //  mostrarTCategorias();
         }
     }
-    )
+    );
 
 }
 function comboAfiliaciones() {
@@ -221,7 +221,7 @@ function comboAfiliaciones() {
             $('Contenido').update(respuesta);
             //  mostrarTCategorias();
         }
-    })
+    });
 }
 
 function generacionOrdenes() {
@@ -251,7 +251,7 @@ function generacionOrdenes() {
              */
             //sino no es cajero y no muestro nada
         }
-    })
+    });
 }
 
 
@@ -275,27 +275,28 @@ function registroDatosPersonal() {
 
 
         }
-    })
+    });
 }
 
 function actualizaCCosto() {
     patronModulo = 'actualizaCCosto';
     parametros = '';
     parametros += 'p1=' + patronModulo;
-
+    contadorCargador++;
+    var idCargador = contadorCargador;
     new Ajax.Request(pathRequestControl, {
         method: 'get',
         parameters: parametros,
-        onLoading: micargador(1),
+        onLoading: cargadorpeche(1, idCargador),
         onComplete: function (transport) {
-            micargador(0);
+            cargadorpeche(0, idCargador);
             respuesta = transport.responseText;
             $('Contenido').update(respuesta);
             //actualizarArbolCCostos();
             seleccionarArbolCCostos();
 
         }
-    })
+    });
 }
 
 function mantenimientoAmbientesLogicos() {
