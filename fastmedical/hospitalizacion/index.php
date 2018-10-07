@@ -4,12 +4,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>.: Sistema M&eacute;dico Hospitalario :: SIMEDH :.</title>
+        <title>.: fastmedical :.</title>
 
-        <style type="text/css">
-            @import url("../../fastmedical_front/estilo/simedh.css");
 
-        </style>
         <style type="text/css" media="all">
             @import url("../../fastmedical_front/estilo/simedh.css");
             body {font-size:12px}
@@ -30,7 +27,7 @@
                     height: 500px;
             }
         </style>
-        <link rel="icon" type="image/png" href="../../fastmedical_front/fotos/icono.png" />
+        <link rel="icon" type="image/png" href="../../fastmedical_front/fotos/icono_f.png" />
          <script type="text/javascript" src="../javascript/windowsprotoype/prototype.js"></script>
          <script type="text/javascript" src="../javascript/usuario/usuarios.js"></script>
 
@@ -76,8 +73,8 @@
                    background-image:url('../../fastmedical_front/imagen/inicio/login_fastmedical.png');
                    background-repeat: no-repeat;
                       "  >
-                <tr height="120" >
-                    <td width="150" height="120">&nbsp;</td>
+                <tr height="240" >
+                    <td width="150" height="240">&nbsp;</td>
                     <td width="257" >&nbsp;</td>
                     <td width="43">&nbsp;</td>
                 </tr>

@@ -10,8 +10,8 @@ body {
     padding:0;
     font-family:"Arial Narrow", Verdana, Arial, Helvetica, sans-serif;
     font-size:0.8em;
-    background-color:#082418;
-    /*background-image:url(../imagen/inicio/ini_main.gif);*/
+    background-color:#C4D7CD;
+    /*background-image:url(../imagen/inicio/ini_main.jpg);*/
     background-repeat:repeat-x;
     color: #000000;
 
@@ -144,7 +144,7 @@ CABECERA
     top: 19px;
     /*z-index:100;*/
     position:absolute;
-    background-image: url(../../fastmedical_front/imagen/logo/logo_fast_medical.png);
+    background-image: url(../../fastmedical_front/imagen/logo/logo_fast_sin_fondo.png);
     background-repeat: no-repeat;
 }
 #MainLogo01{

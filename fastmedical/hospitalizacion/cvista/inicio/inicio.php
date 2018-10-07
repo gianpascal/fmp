@@ -6,7 +6,7 @@ if (!isset($_SESSION)) {
 ?>
 <html>
     <head>
-        <title>.: Sistema M&eacute;dico Hospitalario :: SIMEDH :.</title>
+        <title>.: fastmedical :.</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <!--<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">-->
         <!-- ================ ESTILOS CSS   ========================== -->
@@ -258,7 +258,7 @@ if (!isset($_SESSION)) {
         <!-----------       CARGAR IMAGEN DE FONDO    --------- -->
         <script type="text/javascript" src="../../../javascript/inicio.js"></script>
 
-        <link rel="icon" type="image/png" href="../../../../fastmedical_front/fotos/icono.png" />
+        <link rel="icon" type="image/png" href="../../../../fastmedical_front/fotos/icono_f.png" />
     </head>
 
 
