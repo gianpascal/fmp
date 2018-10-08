@@ -185,12 +185,14 @@ function generaCodCCHijo($id, $descH, $abrevH, $observacion) {
         parametros += '&p5=' + observacion;
         if (window.confirm("Desea insertar el Centro de Costo " + $descH + "?")) {
             //window.confirm("Desea insertar el item hijo "+$descH+"?");
+            contadorCargador++;
+            var idCargador = contadorCargador;
             new Ajax.Request(pathRequestControl, {
                 method: 'get',
                 parameters: parametros,
-                onLoading: micargador(1),
+                onLoading: cargadorpeche(1, idCargador),
                 onComplete: function (transport) {
-                    micargador(0);
+                    cargadorpeche(0, idCargador);
                     respuesta = transport.responseText;
                     if (document.getElementById("txtArbol").value == "Completo") {
                         seleccionarArbolCCostosCompleto();
@@ -200,7 +202,7 @@ function generaCodCCHijo($id, $descH, $abrevH, $observacion) {
                     document.getElementById("txtInsertar").value = $descH;
                     recuperaIdHijo(respuesta);
                 }
-            })
+            });
         } else {
             if (document.getElementById("txtArbol").value == "Completo") {
                 seleccionarArbolCCostosCompleto();
@@ -261,12 +263,14 @@ function editaItem($id, $descC, $abrev, $observacion, $cod) {
             parametros += '&p6=' + observacion;
             parametros += '&p7=' + codigo;
             if (window.confirm("Esta seguro que desea editar " + tree.getSelectedItemText(tree.getSelectedItemId()) + "?")) {
+                contadorCargador++;
+                var idCargador = contadorCargador;
                 new Ajax.Request(pathRequestControl, {
                     method: 'get',
                     parameters: parametros,
-                    onLoading: micargador(1),
+                    onLoading: cargadorpeche(1, idCargador),
                     onComplete: function (transport) {
-                        micargador(0);
+                        cargadorpeche(0, idCargador);
                         respuesta = transport.responseText;
                         //  $('divOpcInfActCCostos').update(respuesta);
                         // actualizarArbolCCostos();
@@ -380,7 +384,7 @@ function enableNuevoItem($opc) {
     //Para agregar un nuevo hijo
     if ($opc == 1) {
         if (document.getElementById("txtNivel").value == 4) {
-            window.alert("Ha llegado al máxmo nivel, no puede agregar más niveles. Si desea agregar el Centro de Costo consulte.")
+            window.alert("Ha llegado al máxmo nivel, no puede agregar más niveles. Si desea agregar el Centro de Costo consulte.");
             disableNuevoItem();
         } else {
             if (document.getElementById("chkEstado").checked == true) {
@@ -389,7 +393,7 @@ function enableNuevoItem($opc) {
                 estado = 0;
             }
             if (estado == 0) {
-                window.alert("Debe activar el Centro de Costo para aumentarle niveles dependientes.")
+                window.alert("Debe activar el Centro de Costo para aumentarle niveles dependientes.");
                 disableNuevoItem();
             } else {
                 // document.getElementById("txtDesc").value=tree.getItemText(tree.getSelectedItemId());
@@ -416,20 +420,21 @@ function enableNuevoItem($opc) {
                     parametros = '';
                     parametros += 'p1=' + patronModulo;
                     parametros += '&p2=' + cod;
-
+                    contadorCargador++;
+                    var idCargador = contadorCargador;
                     new Ajax.Request(pathRequestControl, {
                         method: 'get',
                         parameters: parametros,
-                        onLoading: micargador(1),
+                        onLoading: cargadorpeche(1, idCargador),
                         onComplete: function (transport) {
-                            micargador(0);
+                            cargadorpeche(0, idCargador);
                             respuesta = transport.responseText;
                             var miarray = respuesta.split("|");
                             document.getElementById("txtCod").value = miarray[0];
                             document.getElementById("txtDesc").value = miarray[1];
                             document.getElementById("txtNiv").value = miarray[2];
                         }
-                    })
+                    });
                     document.getElementById("txtInsertar").disabled = false;
                     document.getElementById("txtAbrev").disabled = false;
                     document.getElementById("chkEstado").disabled = false;

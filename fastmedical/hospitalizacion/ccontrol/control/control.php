@@ -2328,7 +2328,7 @@ if (ini_get('memory_limit') == "2048M" && ini_get('max_input_time') == "90000" &
             case 'editaCCosto': {
                     require_once("ActionRrhh.php");
                     $o_ActionRrhh = new ActionRrhh();
-                    $resultado = $o_ActionRrhh->editaItemCC($parametros['p2'], $parametros['p3'], $parametros["p4"], $parametros['p5'], $parametros["p6"]);
+                    $resultado = $o_ActionRrhh->editaItemCC($parametros['p2'], $parametros['p3'], $parametros["p4"], $parametros['p5'], $parametros["p6"],$parametros["p7"]);
                     break;
                 }
             case 'eliminaCCosto': {
@@ -2493,7 +2493,7 @@ if (ini_get('memory_limit') == "2048M" && ini_get('max_input_time') == "90000" &
             case 'mostrarDatosCC': {
                     require_once("ActionRrhh.php");
                     $o_ActionRrhh = new ActionRrhh();
-                    $resultado = $o_ActionRrhh->formCCostos($parametros["p2"]);
+                    $resultado = utf8_encode($o_ActionRrhh->formCCostos($parametros["p2"]));
                     break;
                 }
             case 'getNombreCC': {
