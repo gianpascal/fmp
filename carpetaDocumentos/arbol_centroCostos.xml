@@ -27,6 +27,8 @@
 <item text="Laboratorio" open="1" id="122" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
 </item>
 </item>
+<item text="Administracion" open="1" id="128" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
 </item>
 
 </tree>
