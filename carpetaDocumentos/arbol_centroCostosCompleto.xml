@@ -1,226 +1,18 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <tree id="0" radio="1">
 <item text="Fastmedical" open="1" id="1" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" checked="1" disabled="1" >
-<item text="Concejo Directivo - Presidencia Ejecutiva" open="1" id="2" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
+<item text="Administracion" open="1" id="128" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" checked="1" disabled="1" >
+<item text="Informes" open="1" id="129" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" checked="1" disabled="1" >
+</item>
+<item text="Soporte técnico" open="1" id="130" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" checked="1" disabled="1" >
+</item>
 </item>
 <item text="Consulta Externa" open="1" id="3" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" checked="1" disabled="1" >
-<item text="Dermatología" open="1" id="4" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" checked="1" disabled="1" >
-<item text="Unidad de Imagen, Aseguramiento y Atencion Personalizada" open="1" id="5" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-<item text="ESSALUD" open="1" id="104" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="Call Center" open="1" id="110" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-</item>
-<item text="Unidad de Informatica, Admision e Historias Clinicas" open="1" id="6" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="Unidad de Mantenimiento y Servicios Generales" open="1" id="7" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="Unidad de Logistica, Patrimonio y Almacen" open="1" id="8" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="Unidad de Economia y Finanzas" open="1" id="9" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="Unidad de Personal - Humanos" open="1" id="10" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="Contabilidad" open="1" id="11" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="SOAT-Seguros" open="1" id="12" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="Cafeteria" open="1" id="109" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="SEGURIDAD - HMLO" open="1" id="111" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
+<item text="Dermatologia" open="1" id="28" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" checked="1" disabled="1" >
 </item>
 <item text="Odontlogía" open="1" id="13" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" checked="1" disabled="1" >
 </item>
-<item text="Pediatría" open="1" id="14" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" checked="1" disabled="1" >
-</item>
-<item text="Oficina de Red Periferica Municipal de Salud" open="1" id="15" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="Dermatología" open="1" id="16" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-<item text="Servicio de Consulta Externa" open="1" id="17" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-<item text="Medicina General" open="1" id="18" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="Medicina Interna" open="1" id="19" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="Geriatria" open="1" id="20" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="Cardiologia" open="1" id="21" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="Neumologia" open="1" id="22" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="Neurologia" open="1" id="23" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="Psiquiatria" open="1" id="24" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="Oncologia" open="1" id="25" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="Gastroenterologia" open="1" id="26" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="Endocrinologia" open="1" id="27" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="Dermatologia" open="1" id="28" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="Reumatologia" open="1" id="29" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="Cirugia" open="1" id="30" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="Traumatologia" open="1" id="31" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="Psicologia" open="1" id="32" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="Neurocirugia" open="1" id="33" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="Oftalmologia" open="1" id="34" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="Otorrinolaringologia" open="1" id="35" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="Odontologia" open="1" id="36" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="Urologia" open="1" id="37" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="Cirugia Plastica" open="1" id="38" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="Gineco Obstetricia" open="1" id="39" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="Pediatria" open="1" id="40" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="Cirugia de Cabeza, Cuello y Maxilo Facial" open="1" id="41" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="Hematologia" open="1" id="42" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="Nefrologia" open="1" id="43" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="Cirugia Cardio Vascular" open="1" id="44" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="Fertilidad" open="1" id="45" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="Cirugia Pediatrica" open="1" id="46" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="Neurologia Pediatrica" open="1" id="47" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="Cardiologia Pediatrica" open="1" id="48" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="Flebologia" open="1" id="49" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="Neumologia Pediatrica" open="1" id="50" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="Medicina Fisica y Rehabitalización" open="1" id="51" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="Nutricion" open="1" id="52" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="Densitometria" open="1" id="53" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="Gastroenterologia Pediatrica" open="1" id="54" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="Medicina General Trebol" open="1" id="55" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="Vacunación" open="1" id="56" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="Crecimiento y Desarrollo" open="1" id="57" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="Crecimiento y Desarrollo Trebol" open="1" id="58" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="Vacunacion Trebol" open="1" id="59" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="Pediatria Trebol" open="1" id="60" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="Ginecologia Trebol" open="1" id="61" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="Psicologia Trebol" open="1" id="62" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="Talleres" open="1" id="63" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="Topico (Essalud -Trebol)" open="1" id="64" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="MEDICINA COMPLEMENTARIA - ACUPUNTURA" open="1" id="103" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="Atención Inmediata" open="1" id="105" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="Podologia" open="1" id="106" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="Infectologia" open="1" id="107" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-</item>
-<item text="Servicio de Emergencia" open="1" id="65" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-<item text="M.General - Topico Cx" open="1" id="66" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="E. Medicina" open="1" id="67" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="E. Cirugia" open="1" id="68" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="Trauma Shock" open="1" id="69" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="E. Pediatria" open="1" id="70" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="E. Gineco Obstetricia" open="1" id="71" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="Sala de Observación Adultos" open="1" id="72" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="Sala de Observacion Pediatrico" open="1" id="73" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="E. Neurocirugia" open="1" id="74" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="E. Traumatologia" open="1" id="75" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="E. Gastroenterologia" open="1" id="76" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-</item>
-<item text="Servicio de Centro Quirurgico" open="1" id="77" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-<item text="Anestesiologia" open="1" id="78" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="Uci Neonatos" open="1" id="79" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="Uci Adultos" open="1" id="80" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="Recuperacion" open="1" id="81" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="MEDICO EXTERNO" open="1" id="82" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="GASTROENTEROLOGIA PROCEDIMIENTOS" open="1" id="83" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-</item>
-<item text="Central de Esterilizacion" open="1" id="84" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="Hospitalizacion" open="1" id="85" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-<item text="Centro Obstetrico" open="1" id="86" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="UCI Neonatologia" open="1" id="87" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="Hospitalizacion 3 Piso" open="1" id="88" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="Hospitalizacion 4 Piso" open="1" id="89" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="Hospitalizacion 4 Piso Zona VIP" open="1" id="90" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-</item>
-</item>
-<item text="Departamento de Apoyo al Diagnostico y Tratamiento" open="1" id="91" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-<item text="Servicio de Farmacia" open="1" id="92" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-<item text="Farmacia Consulta Externa" open="1" id="93" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="Farmacia Hospitalizacion y Emergencia" open="1" id="94" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-</item>
-<item text="Servicio de Enfermeria" open="1" id="95" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="Servicio de Imagenologia" open="1" id="96" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-<item text="Radiologia" open="1" id="97" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="Ecografia." open="1" id="98" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="Tomografia." open="1" id="99" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-</item>
-<item text="Servicio de Laboratorio y Anatomia Patologica" open="1" id="100" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-<item text="Laboratorio Clinico Central" open="1" id="101" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="Anatomia Patologica" open="1" id="102" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-</item>
-</item>
-<item text="Dermatología" open="1" id="123" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
-</item>
-<item text="Pediatria" open="1" id="124" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" disabled="1" >
+<item text="Pediatria" open="1" id="18" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" checked="1" disabled="1" >
 </item>
 </item>
 <item text="Farmacia" open="1" id="108" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" checked="1" disabled="1" >
@@ -239,9 +31,6 @@
 </item>
 </item>
 <item text="Laboratorio" open="1" id="122" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" checked="1" disabled="1" >
-</item>
-</item>
-<item text="Administracion" open="1" id="128" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" checked="1" disabled="1" >
 </item>
 </item>
 </item>

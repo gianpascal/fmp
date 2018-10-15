@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <tree id="0" radio="1">
 <item text="Fastmedical" open="1" id="1" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+<item text="Administracion" open="1" id="128" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+<item text="Informes" open="1" id="129" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+<item text="Soporte técnico" open="1" id="130" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+</item>
+</item>
 <item text="Consulta Externa" open="1" id="3" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
-<item text="Dermatología" open="1" id="4" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+<item text="Dermatologia" open="1" id="28" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
 </item>
 <item text="Odontlogía" open="1" id="13" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
 </item>
-<item text="Pediatría" open="1" id="14" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
+<item text="Pediatria" open="1" id="18" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
 </item>
 </item>
 <item text="Farmacia" open="1" id="108" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
@@ -26,8 +32,6 @@
 </item>
 <item text="Laboratorio" open="1" id="122" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
 </item>
-</item>
-<item text="Administracion" open="1" id="128" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
 </item>
 </item>
 

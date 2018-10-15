@@ -1148,7 +1148,7 @@ function registrarEmpleado(evento, elemento, c_cod_per) {
                 Windows.close("Div_busquedaPersonas");
             }
         }
-        )
+        );
     }
 
 }

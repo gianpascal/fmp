@@ -444,6 +444,7 @@ class ActionAdmision {
                 $edadpaciente = "";
             } else {
                 $fch = $paciente[0]['dFechaNacimiento'];
+                echo $fch;
                 $datetime = date_create($fch);
                 $fch = date_format($datetime, 'm/d/Y');
                 $fecha_nacimiento = date_format($datetime, 'd/m/Y');

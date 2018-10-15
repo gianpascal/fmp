@@ -150,7 +150,7 @@ class ActionMantenimientoGeneral {
         //$opcionesHTML_02 = $o_Combo->getOptionsHTML($codSede);
 
         $row_ochg_empresa = "onchange=\"myajax.Link('../../ccontrol/control/control.php?p1=comboEmpresas&p2='+document.getElementById('cboEmpresa').value+'&p3='+document.getElementById('cboSede').value,'divEmpresas');\"";
-        $row_ochg_sede = "onchange=\"myajax.Link('../../ccontrol/control/control.php?p1=listaAmbientesFisicos&p2='+document.getElementById('cboSede').value,'contenido_detalle');\"";
+        $row_ochg_sede = "onchange=cargarListaAmbientesFisicos();";
 
         $row_ini = "<table><tr><td>Empresa</td><td>Sede</td></tr><tr><td>";
         $row_med = "</td><td>";
@@ -497,7 +497,7 @@ class ActionMantenimientoGeneral {
         $arrayCombo = $oLMantenimientoGeneral->getArrayListaSedes($codEmpresa, $nomSede);
         $o_Combo = new Combo($arrayCombo);
         $opcionesHTML_01 = $o_Combo->getOptionsHTML();
-        $row_ochg_sede = "onchange=\"myajax.Link('../../ccontrol/control/control.php?p1=seleccionAmbientesFisicos&p2='+document.getElementById('cboSede').value,'div_ambfisicos');\"";
+        $row_ochg_sede = "onchange='listarAmbientesFisicos();'";
         $row_sede = "<select tabindex=2 id=\"cboSede\" name=\"cboSede\"" . $row_ochg_sede . " title=\"Sede\">";
         $row_fin_cb = "</select>";
 

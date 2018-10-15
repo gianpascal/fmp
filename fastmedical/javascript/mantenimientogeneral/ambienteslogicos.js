@@ -37,12 +37,14 @@ function clickCargaCentroCosto(id,nombre){
     //            cargadorpeche(0,idCargador);
     //            codigoCentroCosto(id);
     //            var respuesta = transport.responseText;
+    contadorCargador++;
+    var idCargador = contadorCargador;
     new Ajax.Request( pathRequestControl,{
         method : 'get',
         parameters : pathLink,
-        onLoading : micargador(1),
-        onComplete : function(transport){
-            micargador(0);
+        onLoading: cargadorpeche(1, idCargador),
+        onComplete: function (transport) {
+            cargadorpeche(0, idCargador);
             var respuesta = transport.responseText;
             codigoCentroCosto(id);
             $('Div_TablaAmbientesLogicos').update(respuesta);
@@ -52,12 +54,14 @@ function clickCargaCentroCosto(id,nombre){
 
 function codigoCentroCosto(id){
     var pathLink = "p1=mantenimientoAmbientesLogicosCentroCosto&p2="+id;
+    contadorCargador++;
+    var idCargador = contadorCargador;
     new Ajax.Request( pathRequestControl,{
         method : 'get',
         parameters : pathLink,
-        onLoading : micargador(1),
-        onComplete : function(transport){
-            micargador(0);
+          onLoading: cargadorpeche(1, idCargador),
+        onComplete: function (transport) {
+            cargadorpeche(0, idCargador);
             var respuesta = transport.responseText;
             document.getElementById("txtcodigocentrocosto").value=respuesta;
 
@@ -102,12 +106,14 @@ function pintarDatosAmbienteLogico(nombrecentrocosto,nombreambientelogico,descri
 function refreshTablaAmbientesLogicos(){
     var id=document.getElementById("hidcentrocosto").value;
     var pathLink = "p1=mantenimientoAmbientesLogicos&p2="+id;
+    contadorCargador++;
+    var idCargador = contadorCargador;
     new Ajax.Request( pathRequestControl,{
         method : 'get',
         parameters : pathLink,
-        onLoading : micargador(1),
-        onComplete : function(transport){
-            micargador(0);
+          onLoading: cargadorpeche(1, idCargador),
+        onComplete: function (transport) {
+            cargadorpeche(0, idCargador);
             var respuesta = transport.responseText;
             $('Div_TablaAmbientesLogicos').update(respuesta);
             
@@ -127,19 +133,21 @@ function ventana_asignacion_ambientesfisicos(codigoAmbienteLogico,nombreAmbiente
 function irmostrarAmbienteLogico(html,event,codigoAmbienteLogico){
     document.getElementById("hcodigoambientelogico").value=codigoAmbienteLogico
     var pathLink = "p1=editarAmbientesLogicos&p2="+codigoAmbienteLogico;
+    contadorCargador++;
+    var idCargador = contadorCargador;
     new Ajax.Request( pathRequestControl,{
         method : 'get',
         parameters : pathLink,
-        onLoading : micargador(1),
-        onComplete : function(transport){
-            micargador(0);
+          onLoading: cargadorpeche(1, idCargador),
+        onComplete: function (transport) {
+            cargadorpeche(0, idCargador);
             var respuesta = transport.responseText;
             eval(respuesta);
             $('divGuardaryRegresar').show();
             $('divNuevo').hide();
 
         }
-    })
+    });
 }
 function irEditarAmbienteLogico(codigoAmbienteLogico){
     document.getElementById("hcodigoambientelogico").value=codigoAmbienteLogico
@@ -208,15 +216,17 @@ function agregarAmbienteFisicoaAmbienteLogico(){
     codigoactividad = document.getElementById("cboActividad").value;
     estadoasignacion = document.getElementById("checkhabilitarAsignacion").checked;
     pathLink = "p1=agregarAmbienteFisicoaAmbienteLogico&p2="+codigoambientelogico+"&p3="+codigoambientefisico+"&p4="+codigoactividad+"&p5="+estadoasignacion;
+    contadorCargador++;
+    var idCargador = contadorCargador;
     new Ajax.Request( pathRequestControl,{
         method : 'get',
         parameters : pathLink,
-        onLoading : micargador(1),
-        onComplete : function(transport){
-            micargador(0);
+        onLoading: cargadorpeche(1, idCargador),
+        onComplete: function (transport) {
+            cargadorpeche(0, idCargador);
             refreshTablaAsignacionAmbientesLogicos();
         }
-    })
+    });
 //window.alert(codigoambientelogico+","+codigoambientefisico+","+codigoactividad+","+estadoasignacion);
 
 }

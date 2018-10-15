@@ -260,13 +260,14 @@ function registroDatosPersonal() {
     var patronModulo = 'registroDatosPersonal';
     var parametros = '';
     parametros += 'p1=' + patronModulo;
-
+    contadorCargador++;
+    var idCargador = contadorCargador;
     new Ajax.Request(pathRequestControl, {
         method: 'get',
         parameters: parametros,
-        onLoading: micargador(1),
+        onLoading: cargadorpeche(1, idCargador),
         onComplete: function (transport) {
-            micargador(0);
+            cargadorpeche(0, idCargador);
             respuesta = transport.responseText;
             $('Contenido').update(respuesta);
             //verEmpleadoCaducaSuContrato();
@@ -304,54 +305,57 @@ function mantenimientoAmbientesLogicos() {
     var patronModulo = 'mantAmbientesLogicos';
     var parametros = '';
     parametros += 'p1=' + patronModulo;
-
+    contadorCargador++;
+    var idCargador = contadorCargador;
     new Ajax.Request(pathRequestControl, {
         method: 'get',
         parameters: parametros,
-        onLoading: micargador(1),
+        onLoading: cargadorpeche(1, idCargador),
         onComplete: function (transport) {
-            micargador(0);
+            cargadorpeche(0, idCargador);
             var respuesta = transport.responseText;
             $('Contenido').update(respuesta);
             cargarArbolCentroCostos();
         }
-    })
+    });
 }
 
 function mantenimientoAmbientesFisicos() {
     patronModulo = 'mantAmbientesFisicos';
     parametros = 'p1=' + patronModulo;
-
+    contadorCargador++;
+    var idCargador = contadorCargador;
     new Ajax.Request(pathRequestControl,
-        {
-            method: 'get',
-            parameters: parametros,
-            onLoading: micargador(1),
-            onComplete: function (transport) {
-                micargador(0);
-                respuesta = transport.responseText;
-                $('Contenido').update(respuesta);
+            {
+                method: 'get',
+                parameters: parametros,
+                onLoading: cargadorpeche(1, idCargador),
+                onComplete: function (transport) {
+                    cargadorpeche(0, idCargador);
+                    respuesta = transport.responseText;
+                    $('Contenido').update(respuesta);
+                }
             }
-        }
     );
 }
 
 function mantenimientoTurnos() {
     patronModulo = 'menuMantTurnos';
     parametros = 'p1=' + patronModulo;
-
+    contadorCargador++;
+    var idCargador = contadorCargador;
     new Ajax.Request(pathRequestControl,
-        {
-            method: 'get',
-            parameters: parametros,
-            onLoading: micargador(1),
-            onComplete: function (transport) {
-                micargador(0);
-                respuesta = transport.responseText;
-                $('Contenido').update(respuesta);
-                cargarTablaTurno();
+            {
+                method: 'get',
+                parameters: parametros,
+                onLoading: cargadorpeche(1, idCargador),
+                onComplete: function (transport) {
+                    cargadorpeche(0, idCargador);
+                    respuesta = transport.responseText;
+                    $('Contenido').update(respuesta);
+                    cargarTablaTurno();
+                }
             }
-        }
     )
 }
 
@@ -359,13 +363,14 @@ function puestosCCostos() {
     patronModulo = 'puestosCCostos';
     parametros = '';
     parametros += 'p1=' + patronModulo;
-
+    contadorCargador++;
+    var idCargador = contadorCargador;
     new Ajax.Request(pathRequestControl, {
         method: 'get',
         parameters: parametros,
-        onLoading: micargador(1),
+        onLoading: cargadorpeche(1, idCargador),
         onComplete: function (transport) {
-            micargador(0);
+            cargadorpeche(0, idCargador);
             respuesta = transport.responseText;
             $('Contenido').update(respuesta);
             //recargarArbolCCostosPuestos('verPuestosArbol');
@@ -401,13 +406,14 @@ function puestosxServicios() {
     patronModulo = 'serviciosXpuestos';
     parametros = '';
     parametros += 'p1=' + patronModulo;
-
+    contadorCargador++;
+    var idCargador = contadorCargador;
     new Ajax.Request(pathRequestControl, {
         method: 'get',
         parameters: parametros,
-        onLoading: micargador(1),
+        onLoading: cargadorpeche(1, idCargador),
         onComplete: function (transport) {
-            micargador(0);
+            cargadorpeche(0, idCargador);
             respuesta = transport.responseText;
             $('Contenido').update(respuesta);
             cargarArbolCentroCostosServiciosxPuestos();
@@ -460,13 +466,14 @@ function mantenimientoEspecialidadProfesion() {
     patronModulo = 'mantenimientoEspecialidadProfesion';
     parametros = '';
     parametros += 'p1=' + patronModulo;
-
+    contadorCargador++;
+    var idCargador = contadorCargador;
     new Ajax.Request(pathRequestControl, {
         method: 'get',
         parameters: parametros,
-        onLoading: micargador(1),
+        onLoading: cargadorpeche(1, idCargador),
         onComplete: function (transport) {
-            micargador(0);
+            cargadorpeche(0, idCargador);
             respuesta = transport.responseText;
             $('Contenido').update(respuesta);
 

@@ -1,16 +1,6 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <tree id="0" radio="1">
 <item text="Servicios" open="1" id="1" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
-<item text="Dermatologia" open="1" id="0102060914" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
-<item text="BIOPSIA" open="1" id="PRO0000005" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
-</item>
-<item text="C. DERMATOLOGIA" open="1" id="XXXX500601" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
-</item>
-</item>
-<item text="Pediatria" open="1" id="0102060944" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
-<item text="C. PEDIATRIA" open="1" id="PED0000001" im0="tombs.gif" im1="tombs_open.gif" im2="tombs.gif" >
-</item>
-</item>
 </item>
 
 </tree>

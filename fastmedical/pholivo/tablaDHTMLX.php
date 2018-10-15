@@ -97,7 +97,7 @@ class tablaDHTMLX
             $tab .= "</column>";
         }
         $tab .= "</head>";
-        $tab = utf8_decode($tab);
+        
 //----------fin cabecera
         foreach ($arrayFilas as $i => $value) {
             $tab .= "<row id='" . $i . "'>";
@@ -107,6 +107,7 @@ class tablaDHTMLX
             $tab .= "</row>";
         }
         $tab .= "</rows>";
+        
         return $tab;
     }
 
@@ -302,7 +303,7 @@ class tablaDHTMLX
         $cadena .= "\n</tree>";
 //        }
 
-        return $cadena;
+        return utf8_encode($cadena);
     }
 
     public function generarCombo($arrayDatos)
