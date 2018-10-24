@@ -1,15 +1,13 @@
 <!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 -->
+<!--peche-->
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>.: Sistema M&eacute;dico Hospitalario :: SIMEDH :.</title>
+        <title>.: fastmedical :.</title>
 
-        <style type="text/css">
-            @import url("../../fastmedical_front/estilo/simedh.css");
 
-        </style>
         <style type="text/css" media="all">
             @import url("../../fastmedical_front/estilo/simedh.css");
             body {font-size:12px}
@@ -30,7 +28,7 @@
                     height: 500px;
             }
         </style>
-        <link rel="icon" type="image/png" href="../../fastmedical_front/fotos/icono.png" />
+        <link rel="icon" type="image/png" href="../../fastmedical_front/fotos/icono_f.png" />
          <script type="text/javascript" src="../javascript/windowsprotoype/prototype.js"></script>
          <script type="text/javascript" src="../javascript/usuario/usuarios.js"></script>
 
@@ -64,21 +62,25 @@
                             </div>
                         </div>
                     </td>
-                    
+
                 </tr>
             </table>
         </div>
     </div>
     <body>
         <div id="centro">
-            <table width="350" height="500" border="0" align="center" cellpadding="0" cellspacing="0" background="../../fastmedical_front/imagen/inicio/login_copia.png" style="width:350px; height:400px; margin-top:100px">
-                <tr height="120" >
-                    <td width="150" height="232">&nbsp;</td>
-                    <td width="257">&nbsp;</td>
+            <table width="350" height="500" border="0" align="center" cellpadding="0" cellspacing="0"
+                   style="width:350px; height:400px;
+                   background-image:url('../../fastmedical_front/imagen/inicio/login_fastmedical.png');
+                   background-repeat: no-repeat;
+                      "  >
+                <tr height="240" >
+                    <td width="150" height="240">&nbsp;</td>
+                    <td width="257" >&nbsp;</td>
                     <td width="43">&nbsp;</td>
                 </tr>
                 <tr>
-                    <td height="159">&nbsp;</td>
+                    <td height="120">&nbsp;</td>
                     <td valign="top">
                         <form id="formLogin" name="formLogin" action="" method="post" style="border:0; margin:0; padding:0">
                             <table border="0" cellspacing="3" cellpadding="0" style="width:160px; height:110px; margin-top:5px; padding-bottom:10px">

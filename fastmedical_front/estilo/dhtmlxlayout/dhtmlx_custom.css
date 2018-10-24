@@ -2,7 +2,7 @@
 								"DHX_SKYBLUE" SKIN
 *****************************************************************************************************************************************************************/
 body{
-	background-color: #001860;
+	background-color: #4E8277;
 }
 
 table.dhtmlxLayoutPolyContainer_dhx_skyblue td.dhtmlxLayoutSinglePoly div.dhtmlxWindowMainContent {
@@ -145,7 +145,7 @@ table.dhtmlxLayoutPolyContainer_dhx_skyblue div.dhtmlxPolyInfoBarCollapsedVer di
 .dhx_tabbar_zone_dhx_skyblue .dhx_tabbar_lineD {
 	background-color: #ffffff;
 }
-	
+
 .dhx_tabbar_zone_dhx_skyblue .dhx_tab_element {
 	color: #000000;
 }
@@ -524,8 +524,8 @@ div.dhtmlxMenu_dhx_skyblue_SubLevelArea_ArrowDown_Disabled {
 .dhtmlxMenu_dhx_skyblue_Middle div.dhtmlxMenu_TopLevel_Text_left {
 	color: #000000;
 }
-div.dhtmlxMenu_dhx_skyblue_TopLevel_Item_Normal, 
-div.dhtmlxMenu_dhx_skyblue_TopLevel_Item_Disabled, 
+div.dhtmlxMenu_dhx_skyblue_TopLevel_Item_Normal,
+div.dhtmlxMenu_dhx_skyblue_TopLevel_Item_Disabled,
 div.dhtmlxMenu_dhx_skyblue_TopLevel_Item_Selected {
 	border-left:1px solid #ebebeb;
 	border-right:1px solid #ebebeb;
@@ -712,8 +712,8 @@ div.dhtmlxMenu_dhx_skyblue_SubLevelArea_Polygon {
  background-color: #c5eaa6;
  border: #a4bed4 1px solid;
  }
- 
- 
+
+
  div.dhxLayout_Sizer_dhx_skyblue {
 	background-color: #ffffffffffffff8d7dfffffffffffffeca;
 }
@@ -808,7 +808,7 @@ table.dhtmlxLayoutPolyContainer_dhx_skyblue div.dhxcont_content_blocker {
   background: url("./imgs/__dhxCal_skin_Skyblue/cell_select.gif") center no-repeat;
 }
 
-.dhtmlxcalendar_dhx_skyblue td.holiday{ 
+.dhtmlxcalendar_dhx_skyblue td.holiday{
 	color: #c66200;
 	font-family: tahoma;
 	font-size: 11px;
@@ -868,7 +868,7 @@ div.gridbox table.obj td.group_row {
 	color: #000000;
 	font-weight: bold;
 	font-style: normal;
-} 
+}
 
 .dragSpanDiv {
 	font-size : 12px;
@@ -1118,7 +1118,7 @@ div.dhx_acc_base_dhx_skyblue div.dhxcont_statusbar {
 .dhxlist_obj_dhx_skyblue table.dhxlist_items_set tr.disabled div.dhxlist_txt_label2 {
 	color: #b3b3b3;
 }
-	
+
 /* label, level 1 (for input and select) */
 .dhxlist_obj_dhx_skyblue table.dhxlist_items_set div.dhxlist_txt_label {
 	font-family: tahoma;

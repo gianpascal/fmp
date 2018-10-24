@@ -6,7 +6,7 @@ if (!isset($_SESSION)) {
 ?>
 <html>
     <head>
-        <title>.: Sistema M&eacute;dico Hospitalario :: SIMEDH :.</title>
+        <title>.: fastmedical :.</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <!--<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">-->
         <!-- ================ ESTILOS CSS   ========================== -->
@@ -258,10 +258,10 @@ if (!isset($_SESSION)) {
         <!-----------       CARGAR IMAGEN DE FONDO    --------- -->
         <script type="text/javascript" src="../../../javascript/inicio.js"></script>
 
-        <link rel="icon" type="image/png" href="../../../../fastmedical_front/fotos/icono.png" />
+        <link rel="icon" type="image/png" href="../../../../fastmedical_front/fotos/icono_f.png" />
     </head>
-   
-   
+
+
     <body onLoad="cargar_form();" onunload="actualiza_sesion()">
      <!-----------       VENTANA DE CARGA DE DATOS    --------- -->
      <div id="VentanaTransparente">
@@ -303,9 +303,9 @@ if (!isset($_SESSION)) {
                 <div id="user">
 
                     <p><span>
-                            <a href='#' onclick="abrirotraventana();"><img src="../../../../fastmedical_front/../fastmedical_front/imagen/icono/icono_mundo.png" title="Abrir otra ventana" border="0"></a>
+                            <a href='#' onclick="abrirotraventana();"><img src="../../../../fastmedical_front/../fastmedical_front/imagen/icono/icono_mundo_f.png" title="Abrir otra ventana" border="0"></a>
                             <a href='#' onclick="menuDatosUsuario();"><img src="../../../../fastmedical_front/../fastmedical_front/imagen/icono/kuser.png" alt='Opciones de Usuarios' title='Opciones de Usuarios' border='0'/></a>
-                            <a href='#' onclick="CargarVentana('popupManteUsuario', 'Cambiar Contraseña', '../usuario/manteUsuario.php', '265', '150', false, true, '', 1, '', 10, 10, 10, 10);"><img src="../../../../fastmedical_front/../fastmedical_front/imagen/icono/decrypted.png" alt='Cambiar contraseña' title='Cambiar contraseña' border='0'/></a>USUARIO :<?php echo strtoupper($_SESSION["login_user"]); ?></span></p>
+                            <a href='#' onclick="CargarVentana('popupManteUsuario', 'Cambiar Contraseña', '../usuario/manteUsuario.php', '265', '150', false, true, '', 1, '', 10, 10, 10, 10);"><img src="../../../../fastmedical_front/../fastmedical_front/imagen/icono/decrypted.png" alt='Cambiar contraseña' title='Cambiar contraseña' border='0'/></a><?php echo strtoupper($_SESSION["login_user"]); ?></span></p>
 
                 </div>
 
