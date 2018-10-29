@@ -91,7 +91,7 @@
                                     <td align="right"><input id="usuario" name="usuario" type="text" maxlength="20" style="width:140px; background-color:#FFFFFF" value="" onkeyup="saltoConEnter(event,this,'2');"/></td>
                                 </tr>
                                 <tr>
-                                    <td align="right"><label>Contraseñasss:</label></td>
+                                    <td align="right"><label>Contraseña:</label></td>
                                 </tr>
                                 <tr>
                                     <td align="right"><input  id="clave" name="clave" type="password" maxlength="20" style="width:140px; background-color:#FFFFFF" value="" onkeyup="saltoConEnter(event,this,'3');"/></td>

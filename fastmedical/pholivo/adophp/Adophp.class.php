@@ -944,7 +944,8 @@ class Adophp
             case "SQLSRV":
                 $this->Prepare_StoreProcedure();
                 $query = $this->pSql;
-                //var_dump($query);
+                $this->logQuery($query);
+ //               var_dump($query);
                 // echo "<br>Query:$query";
                 //var_dump($this->pConnection);
                 $this->RecordSet = sqlsrv_query($this->pConnection, $query, null); // or die("\"$query\" ".Language::pickMessage('adophp',2,$this->language));
@@ -1219,6 +1220,29 @@ class Adophp
     public function GetNameStoreProcedure()
     {
         return $this->pNameStoreProcedure;
+    }
+    
+    public function logQuery($query){
+        $nombre_archivo = "log_fastmedical.html";
+        $datos = file($nombre_archivo);
+        
+        if (count($datos) < 20) {
+            if ($archivo = fopen($nombre_archivo, "a")) {
+                fwrite($archivo, $query . "\n");
+                fclose($archivo);
+            }
+        } else {
+            array_splice($datos, 0, 1);
+            $datos[] = $query . "\n";
+            if ($archivo = fopen($nombre_archivo, "w+")) {
+                foreach ($datos as $linea) {
+                    fwrite($archivo, $linea);
+                }
+
+                fclose($archivo);
+            }
+
+        }
     }
 
 }
