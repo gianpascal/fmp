@@ -1,22 +1,21 @@
 <?php
 
 /* * **************************************************************
-/*** ADOdb Database Abstraction Library for PHP (and Python)  ***
-/****************************************************************
-/*** modificado por rene choque
-/*** fecha modificacion 04/05/2008
-/*** modificado por helmut pacheco
-/*** fecha modificacion 06/01/2009
+  /*** ADOdb Database Abstraction Library for PHP (and Python)  ***
+  /****************************************************************
+  /*** modificado por rene choque
+  /*** fecha modificacion 04/05/2008
+  /*** modificado por helmut pacheco
+  /*** fecha modificacion 06/01/2009
  * ** Mod. Por Motumbo Cel 996464642 Talla: 20cm ExecuteSPArrayCombo, ExecuteSPArrayObject, SetParameter
  */
 //Conexion con panel
 /* * **************************************************************
-/*************************************************************** */
+  /*************************************************************** */
 require_once "Config.inc.php";
 require_once "Language.inc.php";
 
-class Adophp
-{
+class Adophp {
 
     public $pConnection;
     public $pSchema;
@@ -69,25 +68,24 @@ class Adophp
     private $dbdriver;
     public $language;
 
-    public function __construct($language = "Spanish", $dsn = array())
-    {
+    public function __construct($language = "Spanish", $dsn = array()) {
         $this->language = $language;
         $this->BeginValues();
         /* $this->dbhost = "10.10.10.10";
-        $this->dbuser = "postgres";
-        $this->dbpasw = "123456";
-        $this->dbname = "allikay2_latin";
-        $this->dbdriver = "POSTGRES"; */
+          $this->dbuser = "postgres";
+          $this->dbpasw = "123456";
+          $this->dbname = "allikay2_latin";
+          $this->dbdriver = "POSTGRES"; */
         $this->dbhost = $dsn['dbhost'];
         $this->dbuser = $dsn['dbuser'];
         $this->dbpasw = $dsn['dbpasw'];
         $this->dbname = $dsn['dbname'];
         $this->dbdriver = $dsn['dbdriv'];
         /* $this->dbhost = "10.10.10.10";
-        $this->dbuser = "sa";
-        $this->dbpasw = "123456";
-        $this->dbname = "Simedhweb";
-        $this->dbdriver = "MSSQL"; */
+          $this->dbuser = "sa";
+          $this->dbpasw = "123456";
+          $this->dbname = "Simedhweb";
+          $this->dbdriver = "MSSQL"; */
         $this->pParameter = array();
         $this->pParameterName = array();
         $this->pParameterType = array();
@@ -106,8 +104,7 @@ class Adophp
         //echo "<br>Mirame primera vez".$this->dbdriver;
     }
 
-    public function setDsn($dsn = array())
-    {
+    public function setDsn($dsn = array()) {
 //        $this->dbhost = '192.168.31.231';
         //        $this->dbuser = 'postgres';
         //        $this->dbpasw = '123456';
@@ -120,13 +117,11 @@ class Adophp
         $this->dbdriver = $dsn['dbdriv'];
     }
 
-    public function __destruct()
-    {
+    public function __destruct() {
         $this->Close();
     }
 
-    public function ConnectionOpen($pSPName = "", $pSchema = "", $pSP = "SP")
-    {
+    public function ConnectionOpen($pSPName = "", $pSchema = "", $pSP = "SP") {
         $pSP = strtoupper($pSP);
         if ($pSP == "SP" or $pSP == "STOREPROCEDURE" or $pSP == "PROCEDURE") {
             $this->pSP = "PROCEDURE";
@@ -181,8 +176,7 @@ class Adophp
         }
     }
 
-    public function ConnectionClose()
-    {
+    public function ConnectionClose() {
         try {
             switch (strtoupper($this->dbdriver)) {
                 case "POSTGRES":
@@ -206,8 +200,7 @@ class Adophp
         unset($this->RecordSet);
     }
 
-    public function Close_over()
-    {
+    public function Close_over() {
         $this->Close();
         try {
             switch (strtoupper($this->dbdriver)) {
@@ -223,14 +216,12 @@ class Adophp
         }
     }
 
-    public function Close()
-    {
+    public function Close() {
         $this->ConnectionClose();
         $this->Liberar_Parametros();
     }
 
-    public function BeginValues()
-    {
+    public function BeginValues() {
         $this->pNumRows = -1;
         $this->pRowsPage = "ALL";
         $this->pFieldsSelect = "*";
@@ -240,26 +231,22 @@ class Adophp
         $this->pRowCursor = 0;
     }
 
-    public function ReiniciarSQL()
-    {
+    public function ReiniciarSQL() {
         $this->Liberar_Parametros();
         $this->BeginValues();
     }
 
-    public function ReiniciarStoreProcedure()
-    {
+    public function ReiniciarStoreProcedure() {
         $this->Liberar_Parametros();
         $this->BeginValues();
     }
 
-    public function ReiniciarSP()
-    {
+    public function ReiniciarSP() {
         $this->Liberar_Parametros();
         $this->BeginValues();
     }
 
-    public function Liberar_Parametros()
-    {
+    public function Liberar_Parametros() {
 
         unset($this->pFieldsSelect);
         unset($this->pTables);
@@ -288,8 +275,7 @@ class Adophp
         $this->Liberar_Proceso();
     }
 
-    public function Liberar_Proceso()
-    {
+    public function Liberar_Proceso() {
         unset($this->RecordSet);
         unset($this->sps);
         unset($this->pNumRows);
@@ -304,8 +290,7 @@ class Adophp
         unset($this->aFieldsType);
     }
 
-    public function GetBeginSchema($dbdriver, $pSchema)
-    {
+    public function GetBeginSchema($dbdriver, $pSchema) {
         if (trim($pSchema) != "") {
             return $pSchema;
         } else {
@@ -318,48 +303,37 @@ class Adophp
                     break;
             }
         }
-
     }
 
-    public function SetSchema($pSchema)
-    {
+    public function SetSchema($pSchema) {
         $this->pSchema = $this->GetBeginSchema($this->dbdriver, $pSchema);
     }
 
-    public function SetStoreProcedure($pName)
-    {
+    public function SetStoreProcedure($pName) {
         if (trim($pName) != "") {
             $this->pNameStoreProcedure = $pName;
         }
-
     }
 
-    public function SetSelect($pName)
-    {
+    public function SetSelect($pName) {
         if (trim($pName) != "") {
             $this->pFieldsSelect = $pName;
         }
-
     }
 
-    public function SetTables($pName)
-    {
+    public function SetTables($pName) {
         if (trim($pName) != "") {
             $this->pTables = $pName;
         }
-
     }
 
-    public function SetCondition($pName)
-    {
+    public function SetCondition($pName) {
         if (trim($pName) != "") {
             $this->pFieldsCondition = $pName;
         }
-
     }
 
-    public function SetParameterSP($pName, $pValue, $pType = "VARCHAR", $pIsOutput = false, $pIsNull = false, $plength = null)
-    {
+    public function SetParameterSP($pName, $pValue, $pType = "VARCHAR", $pIsOutput = false, $pIsNull = false, $plength = null) {
         if (trim($pType) == "") {
             $pType = "VARCHAR";
         }
@@ -447,8 +421,7 @@ class Adophp
         //echo strtoupper($pType);die();
     }
 
-    public function SetFilterSP($pField, $pType, $pValue1, $pValue2 = "")
-    {
+    public function SetFilterSP($pField, $pType, $pValue1, $pValue2 = "") {
         $i = count($this->pParamFilterField);
         $this->pParamFilterField[$i] = $pField;
         $this->pParamFilterType[$i] = $pType;
@@ -456,18 +429,15 @@ class Adophp
         $this->pParamFilterValue2[$i] = $pValue2;
     }
 
-    public function SetTextSearch($pTextSearch)
-    {
+    public function SetTextSearch($pTextSearch) {
         $this->pTextSearch = $pTextSearch;
     }
 
-    public function SetSql($pSql)
-    {
+    public function SetSql($pSql) {
         $this->pSql = $pSql;
     }
 
-    public function SetPagination($vRowsPage, $vPagina = "")
-    {
+    public function SetPagination($vRowsPage, $vPagina = "") {
         if (is_integer($vRowsPage) && $vRowsPage > 0) {
             $this->pRowsPage = $vRowsPage;
         } else {
@@ -479,11 +449,9 @@ class Adophp
         } else {
             $this->pOffset = ($vPagina - 1) * $this->pRowsPage;
         }
-
     }
 
-    private function setTotalPages($vRowsPage)
-    {
+    private function setTotalPages($vRowsPage) {
         if (is_integer($vRowsPage) and $vRowsPage > 0) {
             $this->pTotalPages = ceil($this->pNumRows / $vRowsPage);
         } else {
@@ -493,8 +461,7 @@ class Adophp
         return $this->pTotalPages;
     }
 
-    private function GetPagination()
-    {
+    private function GetPagination() {
         switch (strtoupper($this->dbdriver)) {
             case "POSTGRES":
                 $pagination = " LIMIT $this->pRowsPage";
@@ -510,8 +477,7 @@ class Adophp
         return $pagination;
     }
 
-    public function SetFieldsOrder($pName, $pOrder = "ASC")
-    {
+    public function SetFieldsOrder($pName, $pOrder = "ASC") {
         if (strtoupper($pOrder) == 'DESC') {
             $ord = " DESC";
         } else {
@@ -522,8 +488,7 @@ class Adophp
         $this->pTypeOrder = $ord;
     }
 
-    public function InitSp()
-    {
+    public function InitSp() {
         switch (strtoupper($this->dbdriver)) {
             case "POSTGRES":
                 break;
@@ -533,8 +498,7 @@ class Adophp
         }
     }
 
-    private function Prepare_Sql()
-    {
+    private function Prepare_Sql() {
 
         switch (strtoupper($this->dbdriver)) {
             case "POSTGRES":
@@ -577,8 +541,7 @@ class Adophp
         }
     }
 
-    private function Prepare_StoreProcedure()
-    {
+    private function Prepare_StoreProcedure() {
 
         switch (strtoupper($this->dbdriver)) {
             case "POSTGRES":
@@ -708,8 +671,7 @@ class Adophp
         }
     }
 
-    public function Move($MoveRow)
-    {
+    public function Move($MoveRow) {
         $result = true;
         if (isset($this->aRecords)) {
             switch ($MoveRow) {
@@ -754,18 +716,15 @@ class Adophp
         return $result;
     }
 
-    public function ExecuteStoreProcedure($outputType = "Message")
-    {
+    public function ExecuteStoreProcedure($outputType = "Message") {
         return $this->ExecuteSP($outputType);
     }
 
-    public function ExecuteFunction($outputType = "Message")
-    {
+    public function ExecuteFunction($outputType = "Message") {
         return $this->ExecuteSP($outputType);
     }
 
-    public function ExecuteSPArray($outputType = "Message")
-    {
+    public function ExecuteSPArray($outputType = "Message") {
         $this->Liberar_Proceso();
         switch (strtoupper($this->dbdriver)) {
             case "POSTGRES":
@@ -801,14 +760,13 @@ class Adophp
                 break;
             case "MSSQL":
                 /*                 * ********************************************
-                /*** NO IMPLEMENTADO APOYA COLABORA OPEN SOURCE
-                /********************************************* */
+                  /*** NO IMPLEMENTADO APOYA COLABORA OPEN SOURCE
+                  /********************************************* */
                 break;
         }
     }
 
-    public function executeSPArrayX()
-    {
+    public function executeSPArrayX() {
         $this->ExecuteSP();
         $array = array();
         switch (strtoupper($this->dbdriver)) {
@@ -842,38 +800,36 @@ class Adophp
                         }
                         $next_result = sqlsrv_next_result($this->RecordSet);
                     } while ($next_result);
-
                 }
 
                 break;
         }
         return $array;
         /*
-    $this->ExecuteSP();
-    $array = array();
-    if (strtoupper($this->dbdriver) == "POSTGRES") {
-    $array = pg_fetch_all($this->RecordSet);
-    } elseif (strtoupper($this->dbdriver) == "MSSQL") {
+          $this->ExecuteSP();
+          $array = array();
+          if (strtoupper($this->dbdriver) == "POSTGRES") {
+          $array = pg_fetch_all($this->RecordSet);
+          } elseif (strtoupper($this->dbdriver) == "MSSQL") {
 
-    $numFilas = @mssql_num_rows($this->RecordSet);
-    if ($numFilas == 1) {
-    $array[0] = $this->GetRow();
-    } else {
-    @mssql_data_seek($this->RecordSet, 0);
-    while ($f = @mssql_fetch_array($this->RecordSet)) {
-    //echo '---------------------gggg';
-    array_push($array, $f);
-    }
-    //$array=$this->aRecords;
-    }
-    //echo "Numero de Filas: ".$numFilas;
-    }
-    return $array;
-     */
+          $numFilas = @mssql_num_rows($this->RecordSet);
+          if ($numFilas == 1) {
+          $array[0] = $this->GetRow();
+          } else {
+          @mssql_data_seek($this->RecordSet, 0);
+          while ($f = @mssql_fetch_array($this->RecordSet)) {
+          //echo '---------------------gggg';
+          array_push($array, $f);
+          }
+          //$array=$this->aRecords;
+          }
+          //echo "Numero de Filas: ".$numFilas;
+          }
+          return $array;
+         */
     }
 
-    public function ExecuteSPArrayCombo($ms = '')
-    {
+    public function ExecuteSPArrayCombo($ms = '') {
         $resultado = $this->ExecuteSPArray($ms);
         $a = array();
         if (count($resultado) > 0) {
@@ -884,8 +840,7 @@ class Adophp
         return $a;
     }
 
-    public function ExecuteSPArrayObject($ms = '')
-    {
+    public function ExecuteSPArrayObject($ms = '') {
         $resultado = $this->ExecuteSPArray($ms);
         $resultadoObject = null;
         foreach ($resultado as $f) {
@@ -899,8 +854,7 @@ class Adophp
         return $resultadoObject;
     }
 
-    public function ExecuteSP($outputType = "Message")
-    {
+    public function ExecuteSP($outputType = "Message") {
         $this->Liberar_Proceso();
         switch (strtoupper($this->dbdriver)) {
             case "POSTGRES":
@@ -945,7 +899,7 @@ class Adophp
                 $this->Prepare_StoreProcedure();
                 $query = $this->pSql;
                 $this->logQuery($query);
- //               var_dump($query);
+                //               var_dump($query);
                 // echo "<br>Query:$query";
                 //var_dump($this->pConnection);
                 $this->RecordSet = sqlsrv_query($this->pConnection, $query, null); // or die("\"$query\" ".Language::pickMessage('adophp',2,$this->language));
@@ -973,8 +927,7 @@ class Adophp
         }
     }
 
-    public function ExecuteSQL()
-    {
+    public function ExecuteSQL() {
         $this->Liberar_Proceso();
         if (!$this->pSql or $this->pSql == "") {
             $this->Prepare_Sql();
@@ -1012,13 +965,11 @@ class Adophp
         return $this->_Execute();
     }
 
-    public function escribir_consulta()
-    {
+    public function escribir_consulta() {
         return $this->pSql;
     }
 
-    public function _Execute()
-    {
+    public function _Execute() {
         switch (strtoupper($this->dbdriver)) {
             case "POSTGRES":
                 for ($i = 0; $i < $this->pNumRows; $i++) {
@@ -1140,73 +1091,59 @@ class Adophp
         return $this->RecordSet;
     }
 
-    public function MoveFirst()
-    {
+    public function MoveFirst() {
         return $this->Move(1);
     }
 
-    public function MovePrevious()
-    {
+    public function MovePrevious() {
         return $this->Move(2);
     }
 
-    public function MoveNext()
-    {
+    public function MoveNext() {
         return $this->Move(3);
     }
 
-    public function MoveLast()
-    {
+    public function MoveLast() {
         return $this->Move(4);
     }
 
-    public function GetTotalRows()
-    {
+    public function GetTotalRows() {
         return $this->pTotRows;
     }
 
-    public function GetNumRows()
-    {
+    public function GetNumRows() {
         return $this->pNumRows;
     }
 
-    public function GetNumFields()
-    {
+    public function GetNumFields() {
         return $this->pNumFields;
     }
 
-    public function GetFieldName($col)
-    {
+    public function GetFieldName($col) {
         return $this->aFieldsName[$col];
     }
 
-    public function GetFieldType($col)
-    {
+    public function GetFieldType($col) {
         return $this->aFieldsType[$col];
     }
 
-    public function GetRow()
-    {
+    public function GetRow() {
         return $this->pRow;
     }
 
-    public function GetRowArray()
-    {
+    public function GetRowArray() {
         return $this->pRowArray;
     }
 
-    public function GetRowField()
-    {
+    public function GetRowField() {
         return $this->pRowFields;
     }
 
-    public function GetTotalPages()
-    {
+    public function GetTotalPages() {
         return $this->pTotalPages;
     }
 
-    public function GetSql()
-    {
+    public function GetSql() {
         if (!$this->pSql or $this->pSql == "") {
             if (!$this->pNameStoreProcedure or $this->pNameStoreProcedure == "") {
                 $this->Prepare_Sql();
@@ -1217,32 +1154,44 @@ class Adophp
         return $this->pSql;
     }
 
-    public function GetNameStoreProcedure()
-    {
+    public function GetNameStoreProcedure() {
         return $this->pNameStoreProcedure;
     }
-    
-    public function logQuery($query){
+
+    public function logQuery($query) {
         $nombre_archivo = "log_fastmedical.html";
         $datos = file($nombre_archivo);
-        
-        if (count($datos) < 20) {
-            if ($archivo = fopen($nombre_archivo, "a")) {
-                fwrite($archivo, $query . "\n");
-                fclose($archivo);
-            }
-        } else {
-            array_splice($datos, 0, 1);
-            $datos[] = $query . "\n";
-            if ($archivo = fopen($nombre_archivo, "w+")) {
-                foreach ($datos as $linea) {
-                    fwrite($archivo, $linea);
+        $query = date("m/d/y g:i a:s:u") . ":" . $query;
+
+        array_unshift($datos, $query . "<br>\n");
+        if ($archivo = fopen($nombre_archivo, "w+")) {
+            foreach ($datos as $id=>$linea) {
+                if($id<20){
+                   fwrite($archivo, $linea); 
                 }
-
-                fclose($archivo);
+                
             }
 
+            fclose($archivo);
         }
+
+//        if (count($datos) < 20) {
+//            if ($archivo = fopen($nombre_archivo, "a")) {
+//                fwrite($archivo, $query . "<br>\n");
+//                fclose($archivo);
+//            }
+//        } else {
+//            array_splice($datos, 0, 1);
+//            $datos[] = $query . "<br>\n";
+//        if ($archivo = fopen($nombre_archivo, "w+")) {
+//            foreach ($datos as $linea) {
+//                fwrite($archivo, $linea);
+//            }
+//
+//            fclose($archivo);
+//        }
+//
+//        }
     }
 
 }

@@ -108,8 +108,7 @@ function agregarProgramacion() {
         cronogramaxAfiliacion();
         mostrarbotonGrabar();
 
-    }
-    else {
+    } else {
         window.alert("Debe seleccionar un personal para agregar Programación");
     }
 }
@@ -163,8 +162,7 @@ function seleccionarFechasPorDia(elementoCheck, numDiaDeLaSemana, cal) {
             fecha = arrayInput[20].value + "-" + arrayInput[19].value + "-" + dias[i];//año-mes-dia
             if (cadenaFechasSeleccionadas == "") {
                 cadenaFechasSeleccionadas = fecha;
-            }
-            else {
+            } else {
                 //Eliminamos por si la fecha ya fue insertada anteriormente
                 if (cadenaFechasSeleccionadas.indexOf(fecha + "|") != -1) {
                     cadenaFechasSeleccionadas = cadenaFechasSeleccionadas.replace(fecha + "|", '');
@@ -179,8 +177,7 @@ function seleccionarFechasPorDia(elementoCheck, numDiaDeLaSemana, cal) {
             document.getElementById("hFechasAProgramar").value = cadenaFechasSeleccionadas;
             document.getElementById(nomIdDia).className = "estiloCasillaSeleccionada";
         }
-    }
-    else {//Si se deseleccionan todos los dias
+    } else {//Si se deseleccionan todos los dias
         for (i = 0; i < numDias; i++) {
             nomIdDia = cal + "-" + dias[i];
             fecha = arrayInput[20].value + "-" + arrayInput[19].value + "-" + dias[i];//año-mes-dia
@@ -362,8 +359,7 @@ function filtrobusquedasfechasProgramacionMedicos() {
 function seleccionaPuestoProgramacionMedicos() {
     if ($("cb_filtro_actividad").disabled) {
         $("cb_filtro_actividad").disabled = false;
-    }
-    else {
+    } else {
         $("cb_filtro_actividad").value = "0000";
         seleccionaActividadProgramacionMedicos();
     }
@@ -488,13 +484,13 @@ function cargaTurnoFinalProgramacionMedicos() {
             opt = document.getElementById("cb_filtro_turnofinal").options;
             i = 0;
             /*
-                while (i < opt.length) {
-                    if (opt[i].value == turnofinalauxiliar) {
-                        opt[i].selected = true;
-                    }
-                    i = i + 1;
-                }
-                */
+             while (i < opt.length) {
+             if (opt[i].value == turnofinalauxiliar) {
+             opt[i].selected = true;
+             }
+             i = i + 1;
+             }
+             */
         }
     })
 }
@@ -726,13 +722,11 @@ function calculaCantidadCupos() {
             parteDecimal = arrayTotalHorasTurno[1];
             if (parteDecimal == 7 || parteDecimal == 3) {
                 parteDecimal = "30";
-            }
-            else {
+            } else {
                 parteDecimal = "00";
             }
             totalHorasCalculadas = parteEntera + "." + parteDecimal;
-        }
-        else {
+        } else {
             if (parseFloat(horaFinalTurno) < parseFloat(horaInicioTurno)) {
                 horasRestantesDia = parseFloat(24) - parseFloat(horaInicioTurno);
                 horasSiguienteDia = horaFinalTurno;
@@ -744,13 +738,11 @@ function calculaCantidadCupos() {
 
                 if (parteDecimal == 7 || parteDecimal == 3) {
                     parteDecimal = "30";
-                }
-                else {
+                } else {
                     parteDecimal = "00";
                 }
                 totalHorasCalculadas = parteEntera + "." + parteDecimal;
-            }
-            else {
+            } else {
                 if (parseFloat(horaFinalTurno) == parseFloat(horaInicioTurno)) {
                     alert("Seleccione horas distintas");
                     totalHorasCalculadas = "0.00";
@@ -843,14 +835,12 @@ function agregarAfiliaciones() {
             try {
                 afiliacionesasignadas.add(new Option(asignacionauxiliar[0][1], asignacionauxiliar[0][0]), null);//Pasamos a ESSALUD como la unica afiliación activa excluyente
                 afiliacionesnoasignadas.remove(afiliacionesnoasignadas.selectedIndex);
-            }
-            catch (e) { //in IE, try the below version instead of add()
+            } catch (e) { //in IE, try the below version instead of add()
                 afiliacionesasignadas.add(new Option(asignacionauxiliar[0][1], asignacionauxiliar[0][0]), null);//Pasamos a ESSALUD como la unica afiliación activa excluyente
                 afiliacionesnoasignadas.remove(afiliacionesnoasignadas.selectedIndex);
             }
         }
-    }
-    else {
+    } else {
         if (numSeleccionados > 1) {
             for (i = 0; i < asignacionauxiliar.length; i += 1) {
                 existeitem = false;
@@ -863,8 +853,7 @@ function agregarAfiliaciones() {
                     try {
                         afiliacionesasignadas.add(new Option(asignacionauxiliar[i][1], asignacionauxiliar[i][0]), null) //add new option to end of "sample"
                         afiliacionesnoasignadas.remove(afiliacionesnoasignadas.selectedIndex);
-                    }
-                    catch (e) { //in IE, try the below version instead of add()
+                    } catch (e) { //in IE, try the below version instead of add()
                         afiliacionesasignadas.add(new Option(asignacionauxiliar[i][1], asignacionauxiliar[i][0])) //add new option to end of "sample"
                         afiliacionesnoasignadas.remove(afiliacionesnoasignadas.selectedIndex);
                     }
@@ -907,14 +896,12 @@ function agregarAfiliacionesPopad() {
             try {
                 afiliacionesasignadas.add(new Option(asignacionauxiliar[0][1], asignacionauxiliar[0][0]), null);//Pasamos a ESSALUD como la unica afiliación activa excluyente
                 afiliacionesnoasignadas.remove(afiliacionesnoasignadas.selectedIndex);
-            }
-            catch (e) { //in IE, try the below version instead of add()
+            } catch (e) { //in IE, try the below version instead of add()
                 afiliacionesasignadas.add(new Option(asignacionauxiliar[0][1], asignacionauxiliar[0][0]), null);//Pasamos a ESSALUD como la unica afiliación activa excluyente
                 afiliacionesnoasignadas.remove(afiliacionesnoasignadas.selectedIndex);
             }
         }
-    }
-    else {
+    } else {
         if (numSeleccionados > 1) {
             for (i = 0; i < asignacionauxiliar.length; i += 1) {
                 existeitem = false;
@@ -927,8 +914,7 @@ function agregarAfiliacionesPopad() {
                     try {
                         afiliacionesasignadas.add(new Option(asignacionauxiliar[i][1], asignacionauxiliar[i][0]), null) //add new option to end of "sample"
                         afiliacionesnoasignadas.remove(afiliacionesnoasignadas.selectedIndex);
-                    }
-                    catch (e) { //in IE, try the below version instead of add()
+                    } catch (e) { //in IE, try the below version instead of add()
                         afiliacionesasignadas.add(new Option(asignacionauxiliar[i][1], asignacionauxiliar[i][0])) //add new option to end of "sample"
                         afiliacionesnoasignadas.remove(afiliacionesnoasignadas.selectedIndex);
                     }
@@ -1078,14 +1064,12 @@ function quitarAfiliaciones() {
             try {
                 afiliacionesnoasignadas.add(new Option(asignacionauxiliar[0][1], asignacionauxiliar[0][0]), null);//Pasamos a ESSALUD como la unica afiliación activa excluyente
                 afiliacionesasignadas.remove(afiliacionesasignadas.selectedIndex);
-            }
-            catch (e) { //in IE, try the below version instead of add()
+            } catch (e) { //in IE, try the below version instead of add()
                 afiliacionesnoasignadas.add(new Option(asignacionauxiliar[0][1], asignacionauxiliar[0][0]), null);//Pasamos a ESSALUD como la unica afiliación activa excluyente
                 afiliacionesasignadas.remove(afiliacionesasignadas.selectedIndex);
             }
         }
-    }
-    else {
+    } else {
         if (numSeleccionados > 1) {
             for (i = 0; i < asignacionauxiliar.length; i += 1) {
                 existe = false;
@@ -1098,8 +1082,7 @@ function quitarAfiliaciones() {
                     try {
                         afiliacionesnoasignadas.add(new Option(asignacionauxiliar[i][1], asignacionauxiliar[i][0]), null) //add new option to end of "sample"
                         afiliacionesasignadas.remove(afiliacionesasignadas.selectedIndex);
-                    }
-                    catch (e) { //in IE, try the below version instead of add()
+                    } catch (e) { //in IE, try the below version instead of add()
                         afiliacionesnoasignadas.add(new Option(asignacionauxiliar[i][1], asignacionauxiliar[i][0])) //add new option to end of "sample"
                         afiliacionesasignadas.remove(afiliacionesasignadas.selectedIndex);
                     }
@@ -1141,14 +1124,12 @@ function quitarAfiliacionesPopad() {
             try {
                 afiliacionesnoasignadas.add(new Option(asignacionauxiliar[0][1], asignacionauxiliar[0][0]), null);//Pasamos a ESSALUD como la unica afiliación activa excluyente
                 afiliacionesasignadas.remove(afiliacionesasignadas.selectedIndex);
-            }
-            catch (e) { //in IE, try the below version instead of add()
+            } catch (e) { //in IE, try the below version instead of add()
                 afiliacionesnoasignadas.add(new Option(asignacionauxiliar[0][1], asignacionauxiliar[0][0]), null);//Pasamos a ESSALUD como la unica afiliación activa excluyente
                 afiliacionesasignadas.remove(afiliacionesasignadas.selectedIndex);
             }
         }
-    }
-    else {
+    } else {
         if (numSeleccionados > 1) {
             for (i = 0; i < asignacionauxiliar.length; i += 1) {
                 existe = false;
@@ -1161,8 +1142,7 @@ function quitarAfiliacionesPopad() {
                     try {
                         afiliacionesnoasignadas.add(new Option(asignacionauxiliar[i][1], asignacionauxiliar[i][0]), null) //add new option to end of "sample"
                         afiliacionesasignadas.remove(afiliacionesasignadas.selectedIndex);
-                    }
-                    catch (e) { //in IE, try the below version instead of add()
+                    } catch (e) { //in IE, try the below version instead of add()
                         afiliacionesnoasignadas.add(new Option(asignacionauxiliar[i][1], asignacionauxiliar[i][0])) //add new option to end of "sample"
                         afiliacionesasignadas.remove(afiliacionesasignadas.selectedIndex);
                     }
@@ -1312,18 +1292,18 @@ function validarCronogramaProgramacionMedicos() {
         error = 1
     }
     /* 
-    * SE COMENTO PARA QUE NO SEA OBLIGATORIO EL REGISTRO 
-    * AMBIENTE FISICO PARA EVITAR QUE EL CLIENTE TENGA
-    * PROBLEMAS CON EL REGISTRO DE LA PROGRAMACION YA QUE
-    * LES RESULTA ALGO FASTIDIOSO. 
-    * HECHO POR ANGEL AUGUSTO SAYES MALPARTIDA - (1993-2013)
-    *                    22-08-2013 
-    * 
-    * 
-    *   if (codigoambientefisico == "0000") {
-        window.alert("Seleccione Ambientes Físicos");
-        error = 1
-    }*/
+     * SE COMENTO PARA QUE NO SEA OBLIGATORIO EL REGISTRO 
+     * AMBIENTE FISICO PARA EVITAR QUE EL CLIENTE TENGA
+     * PROBLEMAS CON EL REGISTRO DE LA PROGRAMACION YA QUE
+     * LES RESULTA ALGO FASTIDIOSO. 
+     * HECHO POR ANGEL AUGUSTO SAYES MALPARTIDA - (1993-2013)
+     *                    22-08-2013 
+     * 
+     * 
+     *   if (codigoambientefisico == "0000") {
+     window.alert("Seleccione Ambientes Físicos");
+     error = 1
+     }*/
     if (codigoactividad == "0000") {
         window.alert("Seleccione Actividad");
         error = 1
@@ -1548,11 +1528,9 @@ function capturarValoresArray() {
     for (var x = 0; x <= contadorCombo1 - 1; x++) {
         if (x == 0) {
             arrayCombo1 = $('lst_afiliacionesnoseleccionadas')[x].value + "|";
-        }
-        else if (x < contadorCombo1 - 1) {
+        } else if (x < contadorCombo1 - 1) {
             arrayCombo1 += $('lst_afiliacionesnoseleccionadas')[x].value + "|";
-        }
-        else if (x == contadorCombo1 - 1) {
+        } else if (x == contadorCombo1 - 1) {
             arrayCombo1 += $('lst_afiliacionesnoseleccionadas')[x].value;
         }
     }
@@ -1561,11 +1539,9 @@ function capturarValoresArray() {
     for (var y = 0; y <= contadorCombo2 - 1; y++) {
         if (y == 0) {
             arrayCombo2 = $('lst_afiliacionesseleccionadas')[y].value + "|";
-        }
-        else if (y < contadorCombo2 - 1) {
+        } else if (y < contadorCombo2 - 1) {
             arrayCombo2 += $('lst_afiliacionesseleccionadas')[y].value + "|";
-        }
-        else if (y == contadorCombo2 - 1) {
+        } else if (y == contadorCombo2 - 1) {
             arrayCombo2 += $('lst_afiliacionesseleccionadas')[y].value;
         }
     }
@@ -1689,8 +1665,7 @@ function validarCronogramaReProgramacionMedicos() {
 
             if (ambientelogico == "" || ambientelogico == "0000") {
                 window.alert("Seleccionar ambiente l\xF3gico");
-            }
-            else {
+            } else {
                 if (ambientefisico == "" || ambientefisico == "0000")
                     window.alert("Seleccionar la localizaci\xF3n correctamente");
                 else {
@@ -1788,8 +1763,7 @@ function generarCodigoAutorizacionProgramacionMedicos() {
                 document.getElementById("txtcodigoverificacion").value = respuesta;
             }
         })
-    }
-    else {
+    } else {
         window.alert("Ingrese un documento valido!!");
     }
 }
@@ -1824,8 +1798,7 @@ function validarAutorizacionProgramacionMedicos() {
         document.getElementById("txaObsCambioPersonalMedico").value = obsCambioPersonal;
         document.getElementById("txaObsCambioPersonalMedico").focus();
         alert("Ingrese como m\xEDnimo 20 caracteres");
-    }
-    else {
+    } else {
         ventanaMostrarMedicosparaReprogramacionMedicos();
     }
 }
@@ -1955,32 +1928,26 @@ function getBusquedaMedicoParaReprogramacion(event) {
             //Armamos el query
             if (apPat != '' && apMat == '' && nombre == '') {
                 patron = apPat;
-            }
-            else {
+            } else {
                 if (apPat == '' && apMat != '' && nombre == '') {
                     patron = apMat;
-                }
-                else {
+                } else {
                     if (apPat == '' && apMat == '' && nombre != '') {
                         patron = nombre;
-                    }
-                    else {
+                    } else {
                         if (apPat != '' && apMat != '' && nombre == '') {
                             patron = apPat + ' ' + apMat;
-                        }
-                        else {
+                        } else {
                             if (apPat == '' && apMat != '' && nombre != '') {
                                 patron = apMat + ', ' + nombre;
-                            }
-                            else {
+                            } else {
                                 /*if(apPat!='' && apMat=='' && nombre!=''){
                                  patron = apPat+' '+$nombre;
                                  }
                                  else{*/
                                 if (apPat != '' && apMat != '' && nombre != '') {
                                     patron = apPat + ' ' + $apMat + ', ' + nombre;
-                                }
-                                else {
+                                } else {
                                     if (apPat == '' && apMat == '' && nombre == '') {
                                         patron = '';
                                     }
@@ -1993,14 +1960,12 @@ function getBusquedaMedicoParaReprogramacion(event) {
             }
             //patron=apPat+" "+apMat+", "+nombre;
             tablaMedicoParaReprogramacion.filterBy(3, patron);
-        }
-        else {
+        } else {
             patron = $("txtPatron").value;
 
             if (opcion == 2) {//Filtrar por DNI
                 tablaMedicoParaReprogramacion.filterBy(2, patron);
-            }
-            else {
+            } else {
                 if (opcion == 3) {//Filtrar por codigo de persona
                     tablaMedicoParaReprogramacion.filterBy(1, patron);
                 }
@@ -2015,11 +1980,9 @@ function guardarAfiliacionesXMedico() {
     for (var y = 0; y <= contadorCombo2 - 1; y++) {
         if (y == 0) {
             arrayCombo2 = $('lst_afiliacionesseleccionadas')[y].value + "|";
-        }
-        else if (y < contadorCombo2 - 1) {
+        } else if (y < contadorCombo2 - 1) {
             arrayCombo2 += $('lst_afiliacionesseleccionadas')[y].value + "|";
-        }
-        else if (y == contadorCombo2 - 1) {
+        } else if (y == contadorCombo2 - 1) {
             arrayCombo2 += $('lst_afiliacionesseleccionadas')[y].value;
         }
     }
@@ -2039,8 +2002,7 @@ function guardarAfiliacionesXMedico() {
                 alert("Se guardo exitosamente...");
             }
         })
-    }
-    else if (contadorCombo2 > 0) {
+    } else if (contadorCombo2 > 0) {
         CodCronograma = $("numProgramacion").value;
         patronModulo = 'EliminarAfiliacionesXMedico';
         parametros = '';
@@ -2222,12 +2184,14 @@ function eliminarProgramacionMedicos(codigocronograma, motivo) {
 
     if (confirm("¿Esta seguro de eliminar la Programacion?")) {
         pathLink = "p1=eliminarProgramacionMedicos&p2=" + codigocronograma + "&p3=" + motivo;
+        contadorCargador++;
+        var idCargador = contadorCargador;
         new Ajax.Request(pathRequestControl, {
             method: 'get',
             parameters: pathLink,
-            onLoading: micargador(1),
+            onLoading: cargadorpeche(1, idCargador),
             onComplete: function (transport) {
-                micargador(0);
+                cargadorpeche(0, idCargador);
                 respuesta = transport.responseText;
                 window.alert(respuesta);
                 seleccionaMedicoProgramacionMedicos('', '', codigoynombre);
@@ -2404,8 +2368,7 @@ function grabarMotivoEliminacion(codProgramacion) {
     if (longitud >= 25) {
         eliminarProgramacionMedicos(codProgramacion, cantidad);
         Windows.close("Div_abrirPopudEliminarProgramacion");
-    }
-    else {
+    } else {
         alert('La cantidad de Caracteres minimos es 25');
     }
 
@@ -2486,12 +2449,14 @@ function seleccionarTurnoProgramacionMedico(codigocronograma) {
 
 function seleccionarHoraFinal(horainicio) {
     var pathLink = "p1=seleccionarHoraFinal&p2=" + horainicio;
+    contadorCargador++;
+    var idCargador = contadorCargador;
     new Ajax.Request(pathRequestControl, {
         method: 'get',
         parameters: pathLink,
-        onLoading: micargador(1),
+        onLoading: cargadorpeche(1, idCargador),
         onComplete: function (transport) {
-            micargador(0);
+            cargadorpeche(0, idCargador);
             respuesta = transport.responseText;
             $("cboHoraFin").update(respuesta);
         }
@@ -2503,12 +2468,14 @@ function actualizarTurnoProgramacionMedico(codigocronograma) {
         if (motivo.length >= 20) {
             var codTur = $("cboHoraFin").value;
             pathLink = "p1=actualizarTurnoProgramacionMedico&p2=" + codigocronograma + "&p3=" + codTur + "&p4=" + motivo;
+            contadorCargador++;
+            var idCargador = contadorCargador;
             new Ajax.Request(pathRequestControl, {
                 method: 'get',
                 parameters: pathLink,
-                onLoading: micargador(1),
+                onLoading: cargadorpeche(1, idCargador),
                 onComplete: function (transport) {
-                    micargador(0);
+                    cargadorpeche(0, idCargador);
                     respuesta = transport.responseText;
                     alert(respuesta);
                     Windows.close('Div_seleccionarTurnoProgramacionMedico');
@@ -2516,11 +2483,9 @@ function actualizarTurnoProgramacionMedico(codigocronograma) {
                     seleccionaMedicoProgramacionMedicos("", "", $("hcodigopersona").value + "|" + $("hnombrepersona").value);
                 }
             });
-        }
-        else
+        } else
             alert("El motivo debe tener mínimo 20 caracteres.");
-    }
-    else
+    } else
         alert("El turno es el mismo. Elija otro para poder actualizar.");
 }
 
