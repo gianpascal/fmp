@@ -233,11 +233,25 @@ class LPersona {
         $fecha_actual = date("Y-m-d");
 // print_r($fecha_de_nacimiento);
 
-        $fecha_de_nacimiento = empty($fecha_de_nacimiento) ? $fecha_actual : $fecha_de_nacimiento;
-        $fx = strtotime($fecha_de_nacimiento);
+       
+        //$fx = strtotime($fecha_de_nacimiento);
 //      print_r($fx);
-        $arrfx = date("Y-m-d", $fx);
-//    print_r($arrfx);
+      //  $arrfx = date("Y-m-d", $fx);
+      //var_dump($fecha_de_nacimiento);
+        if (empty($fecha_de_nacimiento)){
+            $arrfx= $fecha_actual;
+        }else{
+            if(is_string($fecha_de_nacimiento)){
+                $var=explode("/", $fecha_de_nacimiento);
+                $arrfx=$var[2]."-".$var[1]."-".$var[0];
+            }else{
+                $arrfx= $fecha_de_nacimiento->format('Y-m-d');
+            }
+            
+        }
+        
+   // print_r($arrfx);
+        
         $array_nacimiento = explode("-", $arrfx);
         $array_actual = explode("-", $fecha_actual);
         $anos = $array_actual[0] - $array_nacimiento[0]; // calculamos años
