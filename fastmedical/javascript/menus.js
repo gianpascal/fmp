@@ -228,13 +228,14 @@ function generacionOrdenes() {
     var patronModulo = 'generacionOrdenes';
     var parametros = '';
     parametros += 'p1=' + patronModulo;
-
+    contadorCargador++;
+    var idCargador = contadorCargador;
     new Ajax.Request(pathRequestControl, {
         method: 'get',
         parameters: parametros,
-        onLoading: micargador(1),
+        onLoading: cargadorpeche(1, idCargador),
         onComplete: function (transport) {
-            micargador(0);
+            cargadorpeche(0, idCargador);
             var respuesta = transport.responseText;
             $('Contenido').update(respuesta);
             /*

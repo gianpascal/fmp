@@ -286,13 +286,15 @@ function DatosPersonasAdmision(iid_persona) {
     var control = iid_persona == '' ? 'mostrar_datos_paciente_admision_nuevo' : 'mostrar_datos_paciente_admision';
     var url = '../../ccontrol/control/control.php';
     var data = 'p1=' + control + '&p2=' + iid_persona + '&p3=&funcionJSEjecutar=';
+    contadorCargador++;
+    var idCargador = contadorCargador;
     new Ajax.Request(url,
     {
         method: 'get',
         parameters: data,
-        onLoading: micargador(1),
-        onComplete: function(transport) {
-            micargador(0);
+       onLoading: cargadorpeche(1, idCargador),
+        onComplete: function (transport) {
+            cargadorpeche(0, idCargador);
             $('datos_persona').update(transport.responseText);//Coloca el resultado en la capa "DATOS PERSONA"
             ListaPersonaHospitalizacion(iid_persona);
         }
