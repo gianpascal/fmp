@@ -657,7 +657,7 @@ function cancelarMontoComprobanteFacturacion() {
         cadenaObservacion = cadenaObservacion + "|" + tablaProductoServicioComprobanteFacturacion.cells(arrayItems[i], 12).getValue();
         cadenaPorcentaje = cadenaPorcentaje + "|" + tablaProductoServicioComprobanteFacturacion.cells(arrayItems[i], 9).getValue();
         cadenaNuevoPrecio = cadenaNuevoPrecio + "|" + tablaProductoServicioComprobanteFacturacion.cells(arrayItems[i], 7).getValue();
-        cadenaCantidad = cadenaCantidad + "|" + tablaProductoServicioComprobanteFacturacion.cells(arrayItems[i], 5).getValue();
+        cadenaCantidad = cadenaCantidad + "|" + parseInt(tablaProductoServicioComprobanteFacturacion.cells(arrayItems[i], 5).getValue());
         cadenaNuevoTotal = cadenaNuevoTotal + "|" + tablaProductoServicioComprobanteFacturacion.cells(arrayItems[i], 8).getValue();
     }
 
@@ -864,7 +864,7 @@ function aplicarDescuento(event_id, native_event_object) {
         var vformname = 'ventanaDescuento'
         var vtitle = 'Descuento'
         var vwidth = '400'
-        var vheight = '500'
+        var vheight = '330'
         var vcenter = 't'
         var vresizable = ''
         var vmodal = 'false'
