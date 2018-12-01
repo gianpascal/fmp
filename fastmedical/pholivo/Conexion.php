@@ -139,6 +139,8 @@ class Conexion
         //$arrayDsnMSSQL['dbhost'] = 'GARROYO-L\SQLEXPRESS2017';
         $arrayDsnMSSQL['dbhost'] = 'vm-db-fastmedical.database.windows.net';
         $arrayDsnMSSQL['dbdriv'] = 'SQLSRV';
+        $arrayDsnMSSQL['CharacterSet'] = 'UTF-8';
+       
         return $arrayDsnMSSQL;
     }
 
