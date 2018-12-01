@@ -696,7 +696,7 @@ function ubigeoPais() {
                 respuesta = transport.responseText;
                 $('ubigeo').update(respuesta);
             }
-        })
+        });
     }
 
 
@@ -3873,3 +3873,53 @@ function MostrarReceta() { // muestra la receta del paciente
     tablaMostrarReceta.loadXML(pathRequestControl + '?' + parametros);
 }
 
+function actualizaUbigeo(elemento){
+    
+     patronModulo = 'combo_ubigeo';
+        parametros = '';
+        parametros += 'p1=' + patronModulo;
+        parametros += '&p2=' + '';
+        parametros += '&p3=' + document.getElementById('cb_departamento').value;
+        parametros += '&p4=' + document.getElementById('cb_provincia').value;
+        parametros += '&p5=' + document.getElementById('cb_pais').value;
+
+        contadorCargador++;
+        var idCargador = contadorCargador;
+        new Ajax.Request(pathRequestControl, {
+            method: 'get',
+            asynchronous: false,
+            parameters: parametros,
+            onLoading: cargadorpeche(1, idCargador),
+            onComplete: function(transport) {
+                cargadorpeche(0, idCargador);
+                respuesta = transport.responseText;
+                $(elemento).update(respuesta);
+            }
+        })
+    //$row_ochg = "onchange=\"myajax.Link('../../ccontrol/control/control.php?p1=combo_ubigeo&p2=&p3='+document.getElementById('cb_departamento').value+'&p4='+document.getElementById('cb_provincia').value+'&p5='+document.getElementById('cb_pais').value,'ubigeo');\"";
+}
+function actualizaUbigeo2(elemento){
+
+     patronModulo = 'combo_ubigeo';
+        parametros = '';
+        parametros += 'p1=' + patronModulo;
+        parametros += '&p2=' + '';
+        parametros += '&p3=' + document.getElementById('cbNac_departamento').value;
+        parametros += '&p4=' + document.getElementById('cbNac_provincia').value;
+        parametros += '&p5=' + document.getElementById('cbNac_pais').value;
+
+        contadorCargador++;
+        var idCargador = contadorCargador;
+        new Ajax.Request(pathRequestControl, {
+            method: 'get',
+            asynchronous: false,
+            parameters: parametros,
+            onLoading: cargadorpeche(1, idCargador),
+            onComplete: function(transport) {
+                cargadorpeche(0, idCargador);
+                respuesta = transport.responseText;
+                $(elemento).update(respuesta);
+            }
+        })
+    //$row_ochg = "onchange=\"myajax.Link('../../ccontrol/control/control.php?p1=combo_ubigeo&p2=&p3='+document.getElementById('cb_departamento').value+'&p4='+document.getElementById('cb_provincia').value+'&p5='+document.getElementById('cb_pais').value,'ubigeo');\"";
+}
