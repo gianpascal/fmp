@@ -12,7 +12,7 @@ require_once("ActionAfiliaciones.php");
 require_once ("ActionLaboratorio.php");
 
 //sleep(3);
-
+echo mb_internal_encoding();
 
 if ($_GET) {
     $parametros = $_GET;
