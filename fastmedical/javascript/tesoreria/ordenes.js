@@ -17,13 +17,14 @@ function setOrdenesPersona(parametro, event, codigoPersona) {
     parametros += '&p3=' + parametro;
     var elemento = '';
     var nOrden = document.getElementById('txtOrden').value;
+    contadorCargador++;
+    var idCargador = contadorCargador;
     new Ajax.Request(pathRequestControl, {
         method: 'get',
         parameters: parametros,
-        onLoading: micargador(1),
-        //onLoaded:seleccionaOrden(elemento,nOrden),
+        onLoading: cargadorpeche(1, idCargador),
         onComplete: function (transport) {
-            micargador(0);
+            cargadorpeche(0, idCargador);
             var respuesta = transport.responseText;
            
             $('iddetalleOrden').update(respuesta);
