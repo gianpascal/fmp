@@ -947,7 +947,7 @@ class ActionAdmision {
         $row_fin_cb = "</select>";
 
         $comboHTML = $row_ini . $row_pais . $comboHTML_pais . $row_fin_cb . $row_med . $row_depa . $comboHTML_01 . $row_fin_cb . $row_med . $row_prov . $comboHTML_02 . $row_fin_cb . $row_med . $row_dist . $comboHTML_03 . $row_fin_cb . $row_fin;
-        return utf8_encode($comboHTML);
+        return utf8_decode($comboHTML);
     }
 
 //Combo del ubigeo de nacimiento, muestra departamento, provincia y distrito.
