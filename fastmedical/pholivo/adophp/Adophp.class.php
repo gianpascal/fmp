@@ -161,7 +161,7 @@ class Adophp {
                 case "SQLSRV":
 
                     //$serverName = "serverName\sqlexpress, 1542"; //serverName\instanceName, portNumber (por defecto es 1433)
-                    $connectionInfo = array("Database" => $this->dbname, "UID" => $this->dbuser, "PWD" => $this->dbpasw);
+                    $connectionInfo = array("Database" => $this->dbname, "UID" => $this->dbuser, "PWD" => $this->dbpasw,"CharacterSet" => "UTF-8");
                     //  var_dump($connectionInfo);
                     $this->pConnection = sqlsrv_connect($this->dbhost, $connectionInfo);
                     if (!$this->pConnection) {
