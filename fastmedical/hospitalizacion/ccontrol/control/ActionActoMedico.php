@@ -3097,8 +3097,6 @@ class ActionActoMedico {
 
     public function getArrayExamenPorServicioCompleto($arrayExamenPorServicio, $arrayExamenMedico) {//Arma el vector del arbol con los hijos encontrados en ServiciosExamenes con todos sus padres
         //$arrayExamenArbol = array();
-        var_dump($arrayExamenPorServicio);
-        echo "xxxxxx";
         foreach ($arrayExamenPorServicio as $indice => $valor) {
             //array_push($arrayExamenArbol, $indice);
             $arrayExamenArbol[$arrayExamenPorServicio[$indice]['iIdExamen']] = $arrayExamenPorServicio[$indice];
