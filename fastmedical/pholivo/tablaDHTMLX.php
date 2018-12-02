@@ -63,7 +63,7 @@ class tablaDHTMLX
             foreach ($indice as $campo) {
                 //$filasHTML.="<cell>".trim($fila[$campo])."</cell>";
                 //$filasHTML.="<cell>canción del niño ñano árbol </cell>";
-                $filasHTML .= "<cell>" .utf8_encode(trim($fila[$campo])) . "</cell>";
+                $filasHTML .= "<cell>" .trim($fila[$campo]) . "</cell>";
             }
 //            for($j=0; $j<$columnas;$j++){
             //              $filasHTML.="<cell>".$arrayFilas[$i][$j]."</cell>";
