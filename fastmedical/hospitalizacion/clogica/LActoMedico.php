@@ -1840,9 +1840,6 @@ class LActoMedico {
     public function spListaExamenPorServicio($codServicio, $idVersion, $idEstadoDesarrollo, $iCodigoProgramacion) {
         $o_DActoMedico = new DActoMedico();
         $rs = $o_DActoMedico->spListaExamenPorServicio($codServicio, $idVersion, $idEstadoDesarrollo, $iCodigoProgramacion);
-        echo "aaa";
-        var_dump($rs);
-        echo "bbb";
         foreach ($rs as $indice => $valor) {
             $arrayExamenPorServicio[$rs[$indice]['iIdExamen']] = $rs[$indice];
         }
