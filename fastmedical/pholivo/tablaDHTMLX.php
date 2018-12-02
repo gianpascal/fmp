@@ -97,7 +97,7 @@ class tablaDHTMLX
             $tab .= "</column>";
         }
         $tab .= "</head>";
-        $tab = utf8_decode($tab);
+        $tab = ($tab);
 //----------fin cabecera
         foreach ($arrayFilas as $i => $value) {
             $tab .= "<row id='" . $i . "'>";
