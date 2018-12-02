@@ -1161,12 +1161,12 @@ class Adophp {
     public function logQuery($query) {
         $nombre_archivo = "log_fastmedical.html";
         $datos = file($nombre_archivo);
-        $query = date("m/d/y g:i a:s:u") . ":" . $query;
+        //$query = date("m/d/y g:i a:s:u") . ":" . $query;
 
         array_unshift($datos, $query . "<br>\n");
         if ($archivo = fopen($nombre_archivo, "w+")) {
             foreach ($datos as $id=>$linea) {
-                if($id<20){
+                if($id<40){
                    fwrite($archivo, $linea); 
                 }
                 
