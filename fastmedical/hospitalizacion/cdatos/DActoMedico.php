@@ -2410,9 +2410,6 @@ class DActoMedico extends Adophp {
         parent::SetParameterSP("$3", $idEstadoDesarrollo);
         parent::SetParameterSP("$4", $iCodigoProgramacion);
         $resultado = parent::executeSPArrayX();
-        echo "<br>di";
-        var_dump($resultado);
-        echo "<br>di";
         parent::Close();
         return $resultado;
     }
