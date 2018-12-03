@@ -238,12 +238,12 @@ class ActionOrden {
         $oLOrden = new LOrden();
         $o_TablaHtmlx = new tablaDHTMLX();
         $arrayExp = Array();
-        $arrayCabecera = array("0" => "Producto", "1" => "Cantidad", "2" => "Precio", "3" => "Total", "4" => "Accion");
-        $arrayTamano = array("0" => "*", "1" => "70", "2" => "70", "3" => "70", "4" => "70");
-        $arrayTipo = array("0" => "ro", "1" => "ed", "2" => "ed", "3" => "ro", "4" => "img");
-        $arrayCursor = array("0" => "default", "1" => "lefth", "2" => "lefth", "3" => "lefth", "4" => "pointer");
-        $arrayHidden = array("0" => "false", "1" => "false", "2" => "false", "3" => "false", "4" => "false");
-        $arrayAling = array("0" => "lefth", "1" => "lefth", "2" => "center", "3" => "center", "4" => "center");
+        $arrayCabecera = array("0" => "Producto", "1" => "Cantidad", "2" => "Precio", "3" => "Total", "4" => "Accion","5"=>"Código");
+        $arrayTamano = array("0" => "*", "1" => "70", "2" => "70", "3" => "70", "4" => "70","5"=>"*");
+        $arrayTipo = array("0" => "ro", "1" => "ed", "2" => "ed", "3" => "ro", "4" => "img","5"=>"ro");
+        $arrayCursor = array("0" => "default", "1" => "lefth", "2" => "lefth", "3" => "lefth", "4" => "pointer","5"=>"default");
+        $arrayHidden = array("0" => "false", "1" => "false", "2" => "false", "3" => "false", "4" => "false","5"=>"false");
+        $arrayAling = array("0" => "lefth", "1" => "lefth", "2" => "center", "3" => "center", "4" => "center","5"=>"center");
         return $o_TablaHtmlx->generaTabla($arrayCabecera, $arrayExp, $arrayTamano, $arrayTipo, $arrayCursor, $arrayHidden, $arrayAling);
     }
 
