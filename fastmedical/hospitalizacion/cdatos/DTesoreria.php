@@ -52,6 +52,14 @@ class DTesoreria extends Adophp {
         $resultado = parent::executeSPArrayX();
         return $resultado;
     }
+     public function getdetalleOrden($c_nro_doc) {
+        parent::ConnectionOpen("pnsOrdenPersona", "dbweb");
+        parent::SetParameterSP("$1", '08');
+        parent::SetParameterSP("$2", $c_nro_doc);
+
+        $resultado = parent::executeSPArrayX();
+        return $resultado;
+    }
 
     public function dcargarTablaPacientes() {
         parent::ConnectionOpen("nsmPracticaDiego", "dbweb");
