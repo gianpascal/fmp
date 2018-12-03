@@ -70,7 +70,7 @@ foreach ($arrayOrdenes as $key => $value) {
     <td style=" width: 25%;">'.$value['c_cod_ser_pro'].'</td>
     <td style=" width: 55%;">'.$value['v_desc_ser_pro'].'</td>
     <td style=" width: 5%;">'.intval($value['n_canti']).'</td>
-    <td style=" width: 15%;">'.$value['n_total'].'</td>
+    <td style=" width: 15%;text-align: right">'.$value['n_total'].'</td>
     </tr>';
 }
 $productos.='<tr>
@@ -83,19 +83,19 @@ $productos.='<tr>
     <td style=" width: 25%;"></td>
     <td style=" width: 55%;"><b>BASE IMPONIBLE</b></td>
     <td style=" width: 5%;"></td>
-    <td style=" width: 15%;">'.$value['nBaseImponible'].'</td>
+    <td style=" width: 15%; text-align: right">'.$value['nBaseImponible'].'</td>
     </tr>';
         $productos.='<tr>
     <td style=" width: 25%;"></td>
     <td style=" width: 55%;"><b>IGV</b></td>
     <td style=" width: 5%;"></td>
-    <td style=" width: 15%;">'.$value['nIgv'].'</td>
+    <td style=" width: 15%; text-align: right">'.$value['nIgv'].'</td>
     </tr>';
         $productos.='<tr>
     <td style=" width: 25%;"></td>
     <td style=" width: 55%;"><b>IMPORTE TOTAL</b></td>
     <td style=" width: 5%;"></td>
-    <td style=" width: 15%;">'.$value['nTotal'].'</td>
+    <td style=" width: 15%; text-align: right">'.$value['nTotal'].'</td>
     </tr>';
         $productos.='</table>';
        
