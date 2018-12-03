@@ -26,7 +26,7 @@ function setOrdenesPersona(parametro, event, codigoPersona) {
         onComplete: function (transport) {
             cargadorpeche(0, idCargador);
             var respuesta = transport.responseText;
-           
+
             $('iddetalleOrden').update(respuesta);
             // seleccionaOrden(elemento, nOrden);
 
@@ -191,13 +191,11 @@ function agregarTipoComprobante() {
     var indiceCboTipoComprobante = $("cboTipoComprobante").selectedIndex;
     if (indiceCboTipoComprobante == 0) {
         alert("Seleccione tipo de comprobante");
-    }
-    else {
+    } else {
         var indiceCboSerieComprobante = $("cboSerieComprobante").selectedIndex;
         if (indiceCboSerieComprobante == 0) {
             alert("Seleccione serie de comprobante");
-        }
-        else {
+        } else {
             patronModulo = 'agregarTipoComprobante';
             codPerCajero = $("txtCodPerCajero").value;
             fechaHoy = $("txtFechaActualServidorEnCaja").value;
@@ -301,15 +299,15 @@ function anularItem(item) {
                         var respuesta = transport.responseText;
                         alert(respuesta);
                         var codigoPersona = $('txtCodPerDeOrdenGenerada').value;
-                        
+
                         setOrdenesPersona('', '', codigoPersona);
-                       
+
                     }
                 }
         );
     }
 }
-function anularComprobantePago(idPago){
+function anularComprobantePago(idPago) {
     if (window.confirm("Desea Anular el comprobante de Pago?")) {
         var patronModulo = 'anularComprobantePago';
         var parametros = '';
@@ -328,9 +326,9 @@ function anularComprobantePago(idPago){
                         var respuesta = transport.responseText;
                         alert(respuesta);
                         var codigoPersona = $('txtCodPerDeOrdenGenerada').value;
-                        
+
                         setOrdenesPersona('', '', codigoPersona);
-                       
+
                     }
                 }
         );
@@ -340,9 +338,7 @@ function mostrarVentanaFacturacionOrdenPaciente($nroOrden, c_cod_per, funcionTab
     //Validacion incluida
     if ($nroOrden === "") {
         alert("No hay ordenes seleccionadas");
-    }
-
-    else {
+    } else {
         var nroOrdenCompra = $nroOrden;
         var codPerPaciente = c_cod_per;
         /*
@@ -554,8 +550,7 @@ function verificarCajaNoCerrada() {
                         //alert("Se puede cobrar");
                         //cancelarMontoComprobanteFacturacion();
                         aplicarDescuentos();
-                    }
-                    else {
+                    } else {
                         alert("La caja del dia ya fue cerrada!!!");
                     }
                 }
@@ -1089,8 +1084,7 @@ function limpiaBusquedasAutoriza(opc, elemento, evento) {
     }
     if (evento == '') {
         tecla = 13;
-    }
-    else {
+    } else {
         tecla = evento.keyCode
     }
     if (tecla == 13) {
@@ -1153,9 +1147,7 @@ function EliminacionComprobantePago(numeroComprobante, codigoEmpleado, nroOrden,
 function EliminacionComprobantePagoa(nroOrden, c_cod_per, nombreCompleto, documentoPaciente, funcionTabla, funcionCerrar, numeroComprobante, bEstado) {
     if (nroOrden == "") {
         alert("No hay ordenes seleccionadas");
-    }
-
-    else {
+    } else {
         if (bEstado == 2) {
             var nroOrdenCompra = nroOrden;
             var codPerPaciente = c_cod_per;
@@ -1255,8 +1247,7 @@ function agregarOrdenes() {
         CargarVentanaPopPap(vformname, vtitle, vwidth, vheight, vcenter, vresizable, vmodal, vstyle, vopacity, vposx1, vposx2, vposy1, vposy2, parametros, posFuncion);
 
 
-    }
-    else
+    } else
     {
         alert("SELECCIONE UNA PERSONA..");
     }
@@ -1274,12 +1265,14 @@ function obtenerAfiliacionPersona() {
     parametros = '';
     parametros += 'p1=' + patronModulo;
     parametros += '&p2=' + codPersona;
+    contadorCargador++;
+    var idCargador = contadorCargador;
     new Ajax.Request(pathRequestControl, {
         method: 'get',
         parameters: parametros,
-        onLoading: micargador(1),
+        onLoading: cargadorpeche(1, idCargador),
         onComplete: function (transport) {
-            micargador(0);
+            cargadorpeche(0, idCargador);
             var respuesta = transport.responseText;
             var arrayRespuesta = respuesta.split('*');
             $('txtAfiliacion').value = arrayRespuesta[1];
@@ -1295,7 +1288,7 @@ function obtenerAfiliacionPersona() {
 function listartablaproductos(event) {
     var codAfiliacion = document.getElementById('txtCodAfiliacion').value;
     var productoBus = document.getElementById('txtBusqueda').value;
-    if (productoBus.length == 4 ||event.keyCode==13) {
+    if (productoBus.length == 4 || event.keyCode == 13) {
         sn = 0;
         document.getElementById('divTablaProductos');
         var patronModulo = 'tablaProductosxAfiliacion';
@@ -1329,7 +1322,7 @@ function listartablaproductos(event) {
 //                }
 //                else{
                 var idnuevo = aProductos.cells(rId, 0).getValue();
-                var Producto = aProductos.cells(rId, 0).getValue();
+                var Producto = aProductos.cells(rId, 1).getValue();
                 var Cantidd = 1;
                 var Precio = aProductos.cells(rId, 2).getValue();
                 var Total = Precio * Cantidd;
@@ -1366,12 +1359,14 @@ function verificarPaquete(idnuevo, Producto, Cantidd, Precio, Total, Imagen) {
     parametros += 'p1=' + patronModulo;
     parametros += '&p2=' + idnuevo;
     parametros += '&p3=' + CodigoAfilili;
+    contadorCargador++;
+    var idCargador = contadorCargador;
     new Ajax.Request(pathRequestControl, {
         method: 'get',
         parameters: parametros,
-        onLoading: micargador(1),
+        onLoading: cargadorpeche(1, idCargador),
         onComplete: function (transport) {
-            micargador(0);
+            cargadorpeche(0, idCargador);
             var respuesta = transport.responseText;
             var arrayRespuesta1 = respuesta.split('|');
             var existe = 0;
@@ -1391,15 +1386,14 @@ function verificarPaquete(idnuevo, Producto, Cantidd, Precio, Total, Imagen) {
 
                     });
                     if (existe == 0) {
-                        eOrdenGenerada.addRow(id2, [producto2, cantidad2, precio2, total2, Imagen])
+                        eOrdenGenerada.addRow(id2, [producto2, cantidad2, precio2, total2, Imagen,id2]);
                         contarTotal();
                     }
                     //                    eOrdenGenerada.addRow(id2, [idnuevo,producto2, cantidad2 ,precio2,total2,Imagen])
                     //                    contarTotal();
                 }
-            }
-            else {
-                eOrdenGenerada.addRow(idnuevo, [Producto, Cantidd, Precio, Total, Imagen]);
+            } else {
+                eOrdenGenerada.addRow(idnuevo, [Producto, Cantidd, Precio, Total, Imagen,idnuevo]);
                 contarTotal();
             }
         }
@@ -1543,19 +1537,20 @@ function grabarOrdenGenerada() {
     var CodActoMedico = document.getElementById('txtCodActoMedico').value;
     if (CodigoAfilili === "0027" && CodActoMedico === "") {
         alert("Seleccione un Acto Medico");
-    }
-    else {
+    } else {
         var patronModulo = 'grabarOrgenGenerada';
         var parametros = '';
         parametros += 'p1=' + patronModulo;
         parametros += '&p2=' + CodigoPer;
         parametros += '&p3=' + CodActoMedico;
+        contadorCargador++;
+        var idCargador = contadorCargador;
         new Ajax.Request(pathRequestControl, {
             method: 'get',
             parameters: parametros,
-            onLoading: micargador(1),
-            onComplete: function (transport) {
-                micargador(0);
+            onLoading: cargadorpeche(1, idCargador),
+            onComplete: function(transport) {
+                cargadorpeche(0, idCargador);
                 var respuesta = transport.responseText;
                 var CodGenerado = $('txtGenerado').value = respuesta;
                 grabarDetalleOrdenGenerada(CodGenerado);
@@ -1574,11 +1569,11 @@ function grabarDetalleOrdenGenerada(CodGenerado) {
         var precio = 0;
         var total = 0;
         var codigoPro = '';
-        codigoPro = codigoPro + (eOrdenGenerada.cells(id, 0).getValue());
+        codigoPro = codigoPro + (eOrdenGenerada.cells(id, 5).getValue());
         cantidad = cantidad + parseInt(eOrdenGenerada.cells(id, 1).getValue());
-        precio = precio + parseFloat(eOrdenGenerada.cells(id, 3).getValue());
+        precio = precio + parseFloat(eOrdenGenerada.cells(id, 2).getValue());
 //        alert(parseInt(eOrdenGenerada.cells(id,1).getValue()));
-        total = total + parseInt(eOrdenGenerada.cells(id, 1).getValue());
+        total = total + parseFloat(eOrdenGenerada.cells(id, 3).getValue());
         var patronModulo = 'grabarDetalleOrgenGenerada';
         var parametros = '';
         parametros += 'p1=' + patronModulo;
@@ -1589,13 +1584,15 @@ function grabarDetalleOrdenGenerada(CodGenerado) {
         parametros += '&p6=' + precio;
         parametros += '&p7=' + cantidad;
         parametros += '&p8=' + total;
+        contadorCargador++;
+        var idCargador = contadorCargador;
         new Ajax.Request(pathRequestControl, {
             method: 'get',
             asynchronous: false,
             parameters: parametros,
-            onLoading: micargador(1),
-            onComplete: function (transport) {
-                micargador(0);
+            onLoading: cargadorpeche(1, idCargador),
+            onComplete: function(transport) {
+                cargadorpeche(0, idCargador);
                 var respuesta = transport.responseText;
             }
         }
