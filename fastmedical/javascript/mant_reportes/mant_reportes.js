@@ -1744,6 +1744,7 @@ function imprimirComprobante(numerorecibo, codigoEmpleado) {
 }
 
 function cargarEstadisticas() {
+    debugger;
     $('Dia2').show();
     $('Dia').show();
     $('Mes').hide();
@@ -1772,9 +1773,13 @@ function cargarEstadisticas() {
     $('con8').hide();
     $('con9').hide();
     $('con10').show();
-    for (x = 1; x <= 50; x++) {
-        $("contenedorgraficotabla" + x).hide();
-        $("contenedorTablaLeyenda" + x).hide();
+    var contenedor="";
+    var contenedorLeyenda="";
+    for (var x = 1; x <= 50; x++) {
+        contenedor="contenedorgraficotabla" + x;
+        contenedorLeyenda="contenedorTablaLeyenda" + x;
+        $(contenedor).hide();
+        $(contenedorLeyenda).hide();
 
     }
 }
@@ -3370,8 +3375,9 @@ function layaoutiniciadorReportesEstadisiticos() {
     dhxLayout3.cells("a").setHeight(150);
     dhxLayout3.cells("b").setHeight(200);
     dhxLayout3.cells("c").setHeight(200);
+    debugger;
     cargarEstadisticas();
-    cargarTablaServicio()
+    cargarTablaServicio();
     cargarTablaAmbiLo();
     cargarTablaAmbiFi();
     cargarTablaSedes();
