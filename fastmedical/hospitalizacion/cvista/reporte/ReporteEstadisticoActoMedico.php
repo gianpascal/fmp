@@ -399,7 +399,7 @@
                 <?php
                 $x = 1;
                 for ($x = 1; $x <= 50; $x++) {
-                    echo "<table border='0' style='border:0px dotted #66A738;padding:5px;border-radius:15px;' cellspacing='0' id='" . contenedorgraficotabla . $x . "' >
+                    echo "<table border='0' style='border:0px dotted #66A738;padding:5px;border-radius:15px;' cellspacing='0' id='contenedorgraficotabla" . $x . "' >
                 <tr><td style='font-size:24;font-family:verdana;color:cadetblue;'><b><center>Gráfico Estadístico Nº " . ((50 - $x) + 1) . "</center></b></td></tr>
                         <tr height='25'>
                 <td>
@@ -413,7 +413,7 @@
                     </tr>
                     <tr>
                     <td>
-                    <div id='" . contenedorGraficos . $x . "' style='float:left;width:580px;height:350px;margin:20px;border:1px solid #A4BED4;'></div>
+                    <div id='contenedorGraficos" . $x . "' style='float:left;width:580px;height:350px;margin:20px;border:1px solid #A4BED4;'></div>
                     </td>
                     <td>
                     <input type='hidden' id='Estados.$x'>
@@ -443,7 +443,7 @@
                     </tr>
                     
                     <tr><td>
-                    <div id=" . contenedorTablaLeyenda . $x . " width='620'height='100' style='border:1px solid #66A738;'></div>
+                    <div id='contenedorTablaLeyenda" . $x . "' width='620'height='100' style='border:1px solid #66A738;'></div>
                     <br>
                     </td>
                     </tr>
