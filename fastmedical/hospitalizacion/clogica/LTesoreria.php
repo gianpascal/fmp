@@ -101,7 +101,11 @@ class LTesoreria {
 
         return $rs;
     }
-
+    public function ldetalleOrden($c_nro_doc){
+        $o_DTesoreria = new DTesoreria();
+        $array = $o_DTesoreria->getdetalleOrden($c_nro_doc);
+        return $array;
+    }
     public function obtenerOrdenes($codigoPersona) {
         $o_DTesoreria = new DTesoreria();
         $array = $o_DTesoreria->getArrayOrdenes($codigoPersona);
