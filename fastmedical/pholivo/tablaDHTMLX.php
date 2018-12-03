@@ -171,6 +171,7 @@ class tablaDHTMLX
     {
 //        header("Content-type: text/xml");
         if ($arrayColor == "") {
+            $arrayColor=array();
             foreach ($arrayCabecera as $i => $value) {
                 $arrayColor[$i] = "";
             }
