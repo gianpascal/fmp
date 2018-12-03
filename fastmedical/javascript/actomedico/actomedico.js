@@ -523,7 +523,7 @@ function atenderPacienteActoMedico(parametro) {
         if (mensajeAfiliacion == 'ok') {
             cargarCuerpoHC(codigoservicio, codigoProgramacion);
 
-            loguerfirebase();
+            //loguerfirebase();
 
             if (estadoatencion == '0004') {
                 $("hNumeroDiagnostico").value = '0';
