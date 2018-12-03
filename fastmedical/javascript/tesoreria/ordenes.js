@@ -681,6 +681,7 @@ function cancelarMontoComprobanteFacturacion() {
     parametros += '&p20=' + cadenaItems;
     parametros += '&p21=' + cadenaObservacion;
 
+    contadorCargador++;
     var idCargador = contadorCargador;
     new Ajax.Request(pathRequestControl,
             {
@@ -694,9 +695,29 @@ function cancelarMontoComprobanteFacturacion() {
                     salirVentanaFacturacionOrdenPaciente();
                     eval($('hfuncionCerrar').value);
                     //imprimirRecibo(respuesta);
+                    
                 }
             }
     )
+
+}
+function imprimirBoucherCita() {
+    
+    
+    var c_cod_per = document.getElementById("txtCodPerPacienteDeFacturacion").value;
+    var nroOrden = document.getElementById("hidNroOrden").value;
+    if(nroOrden===''){
+        nroOrden = document.getElementById("hdnNroOrdenCompraSeleccionado").value;
+     c_cod_per = document.getElementById("txtCodPerDeOrdenGenerada").value;
+    }
+     
+    
+    
+    var datos = "p1=boucherPago&p2=" + nroOrden;
+    datos += "&p3=" + c_cod_per;
+    //location.href="../../classReporte/reportes/setDatosReporte.php?"+datos;
+    var ruta = "../../classReporte/reportes/setDatosReporte.php?" + datos;
+    window.open(ruta);
 
 }
 function comprobantesEmitidos() {
@@ -785,6 +806,7 @@ function actualizarOrdenes() {
 
 }
 function salirVentanaFacturacionOrdenPaciente() {
+    imprimirBoucherCita();
     Windows.close("Div_popupVentanaFacturacionOrdenPaciente");
 }
 
