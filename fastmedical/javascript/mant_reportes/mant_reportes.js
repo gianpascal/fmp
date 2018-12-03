@@ -4425,3 +4425,14 @@ function cargarArbolGridNSIG() {
     dhtmlx_tree_grid_AngelSayes.kidsXmlFile = pathRequestControl + '?' + parametros;
     dhtmlx_tree_grid_AngelSayes.loadXML(pathRequestControl + '?' + parametros);
 }
+
+function imprimirBoucher() {
+    var nroOrden = $("hdnNroOrdenCompraSeleccionado").value;
+    var c_cod_per = $("txtCodPerDeOrdenGenerada").value;
+    var datos = "p1=boucherPago&p2=" + nroOrden;
+    datos += "&p3=" + c_cod_per;
+    //location.href="../../classReporte/reportes/setDatosReporte.php?"+datos;
+    var ruta = "../../classReporte/reportes/setDatosReporte.php?" + datos;
+    window.open(ruta);
+
+}
