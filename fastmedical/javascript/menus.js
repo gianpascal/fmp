@@ -97,7 +97,7 @@ function programacionCitasInformes() {
 
 
         }
-    })
+    });
 }
 
 function programacionMedicos() {

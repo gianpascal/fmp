@@ -935,7 +935,7 @@ class ActionAdmision {
         $comboHTML_pais = $o_Combo->getOptionsHTML($pais);
 //$comboHTML_pais='lista pais';
         $row_ochg = "onchange=\"myajax.Link('../../ccontrol/control/control.php?p1=combo_ubigeo&p2=&p3='+document.getElementById('cb_departamento').value+'&p4='+document.getElementById('cb_provincia').value+'&p5='+document.getElementById('cb_pais').value,'ubigeo');\"";
-
+        $row_ochg ="onchange=\"actualizarUbigeo('ubigeo')\"";
         $row_ochg_pais = "onchange=ubigeoPais();";
         $row_ini = "<table><tr><td>Pais*</td><td>Departamento*</td><td>Provincia*</td><td>Distrito*</td></tr><tr><td>";
         $row_med = "</td><td>";
