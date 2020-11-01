@@ -13,7 +13,7 @@ class User_model extends CI_Model {
 
 
 
-        $query = $this->db->query("select * from `tbl_user`");
+        $query = $this->db->query("EXECUTE dbweb.pnsListaActividades '1',''");
 
         return $query->result_array();
     }

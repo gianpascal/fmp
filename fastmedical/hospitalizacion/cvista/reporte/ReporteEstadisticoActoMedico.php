@@ -121,7 +121,7 @@
             </div>
             <div id="YearTre" style="float:left;padding: 25px; width: 50px;">
                 <p style="font-size:12px;">Año : 
-                    <input type="text" id="txtYearTre1"  maxlength="4" size="3" value="2013" onchange="ValidarFechasRangos('txtYearTre1','txtYearTre2',1)">
+                    <input type="text" id="txtYearTre1"  maxlength="4" size="3" value="2018" onchange="ValidarFechasRangos('txtYearTre1','txtYearTre2',1)">
             </div>
             <div id="Trimestral2" style="float:left;padding: 25px; width: 100px;">
                 <p style="font-size:12px;">Final :  
@@ -134,7 +134,7 @@
             </div>
             <div id="YearTre2" style="float:left;padding: 25px; width: 50px;">
                 <p style="font-size:12px;">Año : 
-                    <input type="text" id="txtYearTre2"  maxlength="4" size="3" value="2013" onchange="ValidarFechasRangos('txtYearTre2','txtYearTre1',2)">
+                    <input type="text" id="txtYearTre2"  maxlength="4" size="3" value="2018" onchange="ValidarFechasRangos('txtYearTre2','txtYearTre1',2)">
             </div>
             <div id="Mes" style="float:left;padding: 25px; width: 100px;">
                 <p style="font-size:12px;">Inicio : 
@@ -155,7 +155,7 @@
             </div>
             <div id="Year" style="float:left;padding: 25px; width: 50px;">
                 <p style="font-size:12px;">Año : 
-                    <input type="text" id="txtYear1"  maxlength="4" size="3" value="2013"  onchange="ValidarFechasRangos('txtYear1','txtYear2',1)">
+                    <input type="text" id="txtYear1"  maxlength="4" size="3" value="2018"  onchange="ValidarFechasRangos('txtYear1','txtYear2',1)">
             </div>
             <div id="Mes2" style="float:left;padding: 25px; width: 100px;">
                 <p style="font-size:12px;">Final : 
@@ -176,7 +176,7 @@
             </div>
             <div id="Year2" style="float:left;padding: 25px; width: 50px;">
                 <p style="font-size:12px;">Año : 
-                    <input type="text" id="txtYear2"  maxlength="4" size="3" value="2013" onchange="ValidarFechasRangos('txtYear2','txtYear1',2)">
+                    <input type="text" id="txtYear2"  maxlength="4" size="3" value="2018" onchange="ValidarFechasRangos('txtYear2','txtYear1',2)">
             </div>
             <div id="Semestral" style="float:left;padding: 25px; width: 100px;">
                 <p  style="font-size:12px;">Inicio:  
@@ -187,7 +187,7 @@
             </div>
             <div id="YearSe" style="float:left;padding: 25px; width: 50px;">
                 <p style="font-size:12px;">Año : 
-                    <input type="text" id="txtYearSe1"  maxlength="4" size="3" value="2013" onchange="ValidarFechasRangos('txtYearSe1','txtYearSe2',1)">
+                    <input type="text" id="txtYearSe1"  maxlength="4" size="3" value="2018" onchange="ValidarFechasRangos('txtYearSe1','txtYearSe2',1)">
             </div>
             <div id="Semestral2" style="float:left;padding: 25px; width: 100px;">
                 <p  style="font-size:12px;">Final :  
@@ -198,15 +198,15 @@
             </div>
             <div id="YearSe2" style="float:left;padding: 25px; width: 50px;">
                 <p style="font-size:12px;">Año : 
-                    <input type="text" id="txtYearSe2"  maxlength="4" size="3" value="2013"  onchange="ValidarFechasRangos('txtYearSe2','txtYearSe1',2)">
+                    <input type="text" id="txtYearSe2"  maxlength="4" size="3" value="2018"  onchange="ValidarFechasRangos('txtYearSe2','txtYearSe1',2)">
             </div>
             <div id="Anual" style="float:left;padding: 25px; width: 50px;">
                 <p style="font-size:12px;">Inicio : 
-                    <input type="text" id="txtAnual1"  maxlength="4" size="3" value="2013" onchange="ValidarFechasRangos('txtAnual1','txtAnual2',1)">
+                    <input type="text" id="txtAnual1"  maxlength="4" size="3" value="2018" onchange="ValidarFechasRangos('txtAnual1','txtAnual2',1)">
             </div>
             <div id="Anual2" style="float:left;padding: 25px; width: 50px;">
                 <p style="font-size:12px;">Final: 
-                    <input type="text" id="txtAnual2"  maxlength="4" size="3" value="2013" onchange="ValidarFechasRangos('txtAnual2','txtAnual1',2)">
+                    <input type="text" id="txtAnual2"  maxlength="4" size="3" value="2018" onchange="ValidarFechasRangos('txtAnual2','txtAnual1',2)">
             </div>
             <div style="float:left;width: 100px;">
                 <br><br>
@@ -391,7 +391,7 @@
         <div id="contenedormaestro">
            <!-- <p style="color:white;font-size:14px; font-family: tahoma;background-color:cadetblue;padding: 10px;text-align: center;border:1px solid #66A738;">
                 Para la mejor visualizacion de los graficos se recomienda emplear rangos de 6 en 6. 
-                <br> <b><i>Ejemplo: Diario: 01/01/2013 - 06/01/2013 , Mensual: Enero - Junio. </i></b> 
+                <br> <b><i>Ejemplo: Diario: 01/01/2018 - 06/01/2018 , Mensual: Enero - Junio. </i></b> 
                 <br> Podra seleccionar mas rangos si la cantidad de estados + atencion o Programacion es de 1 a 1.
                 <br> <b><i>Ejemplo: Reservados , Consultas - Reservados , Programados - Atendido.</i></b>-->
             <input type="hidden" id="numeroGraficos" value=50 />
@@ -399,7 +399,7 @@
                 <?php
                 $x = 1;
                 for ($x = 1; $x <= 50; $x++) {
-                    echo "<table border='0' style='border:0px dotted #66A738;padding:5px;border-radius:15px;' cellspacing='0' id='" . contenedorgraficotabla . $x . "' >
+                    echo "<table border='0' style='border:0px dotted #66A738;padding:5px;border-radius:15px;' cellspacing='0' id='contenedorgraficotabla" . $x . "' >
                 <tr><td style='font-size:24;font-family:verdana;color:cadetblue;'><b><center>Gráfico Estadístico Nº " . ((50 - $x) + 1) . "</center></b></td></tr>
                         <tr height='25'>
                 <td>
@@ -413,7 +413,7 @@
                     </tr>
                     <tr>
                     <td>
-                    <div id='" . contenedorGraficos . $x . "' style='float:left;width:580px;height:350px;margin:20px;border:1px solid #A4BED4;'></div>
+                    <div id='contenedorGraficos" . $x . "' style='float:left;width:580px;height:350px;margin:20px;border:1px solid #A4BED4;'></div>
                     </td>
                     <td>
                     <input type='hidden' id='Estados.$x'>
@@ -443,7 +443,7 @@
                     </tr>
                     
                     <tr><td>
-                    <div id=" . contenedorTablaLeyenda . $x . " width='620'height='100' style='border:1px solid #66A738;'></div>
+                    <div id='contenedorTablaLeyenda" . $x . "' width='620'height='100' style='border:1px solid #66A738;'></div>
                     <br>
                     </td>
                     </tr>

@@ -77,7 +77,7 @@ $toolbar3 = new ToollBar();
         ?> 
     </div>
     <div style="float:left; padding-left: 20px; heigth:150px; width: 60px;">
-        <input type="text" id="txtCodAfiliacion" name="txtCodAfiliacion" value="<?php echo utf8_encode($arrayDatosAfiliacion[0][0]); ?>" readonly="" style="display:none; font-size: 16px; width:60px;"/>
+        <input type="text" id="txtCodAfiliacion" name="txtCodAfiliacion" value="<?php echo utf8_encode($arrayDatosAfiliacion[0][0]); ?>" readonly="" style="display:block; font-size: 16px; width:60px;"/>
     </div>
     <div style="float:left; padding-left: 20px; heigth:150px; width: 60px;">
         <input type="text" id="txtCodActoMedico" name="txtCodActoMedico" value="" readonly="" style="display:none; font-size: 16px; width:150px;"/>

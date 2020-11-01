@@ -28,7 +28,7 @@
             </tr>
             <tr>
                 <td width="7%">Nombre</td>
-                <td width="36%"><?php echo ($datos['nombreservicio']); ?></td>
+                <td width="36%"><?php echo utf8_decode($datos['nombreservicio']); ?></td>
                 <td width="17%">C&oacute;digo Segus :</td>
                 <td width="18%"><?php echo $datos["codigosegus"];?></td>
                 <td colspan="2">&nbsp;</td>

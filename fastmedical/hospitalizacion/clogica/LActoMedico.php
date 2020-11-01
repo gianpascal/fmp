@@ -1394,7 +1394,7 @@ class LActoMedico {
         $arreglo = explode("/", $datos["proximacitasugerida"]);
         $datos["proximacitasugerida"] = $arreglo[2] . $arreglo[1] . $arreglo[0];
         $resultado = $o_DActoMedico->guardarAtencionMedicaHC($datos);
-        return utf8_encode($resultado[0]["respuesta"]);
+        return $resultado[0]["respuesta"];
     }
 
     function cambiarEstadoNoAtendido($datos) {
@@ -1840,7 +1840,6 @@ class LActoMedico {
     public function spListaExamenPorServicio($codServicio, $idVersion, $idEstadoDesarrollo, $iCodigoProgramacion) {
         $o_DActoMedico = new DActoMedico();
         $rs = $o_DActoMedico->spListaExamenPorServicio($codServicio, $idVersion, $idEstadoDesarrollo, $iCodigoProgramacion);
-
         foreach ($rs as $indice => $valor) {
             $arrayExamenPorServicio[$rs[$indice]['iIdExamen']] = $rs[$indice];
         }

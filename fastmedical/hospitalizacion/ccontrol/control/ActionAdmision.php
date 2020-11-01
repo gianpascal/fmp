@@ -934,8 +934,8 @@ class ActionAdmision {
         $o_Combo = new Combo($arrayCombo);
         $comboHTML_pais = $o_Combo->getOptionsHTML($pais);
 //$comboHTML_pais='lista pais';
-        $row_ochg = "onchange=\"myajax.Link('../../ccontrol/control/control.php?p1=combo_ubigeo&p2=&p3='+document.getElementById('cb_departamento').value+'&p4='+document.getElementById('cb_provincia').value+'&p5='+document.getElementById('cb_pais').value,'ubigeo');\"";
-        $row_ochg ="onchange=\"actualizarUbigeo('ubigeo')\"";
+        //$row_ochg = "onchange=\"myajax.Link('../../ccontrol/control/control.php?p1=combo_ubigeo&p2=&p3='+document.getElementById('cb_departamento').value+'&p4='+document.getElementById('cb_provincia').value+'&p5='+document.getElementById('cb_pais').value,'ubigeo');\"";
+        $row_ochg= "onchange=actualizaUbigeo('ubigeo');";
         $row_ochg_pais = "onchange=ubigeoPais();";
         $row_ini = "<table><tr><td>Pais*</td><td>Departamento*</td><td>Provincia*</td><td>Distrito*</td></tr><tr><td>";
         $row_med = "</td><td>";
@@ -947,7 +947,7 @@ class ActionAdmision {
         $row_fin_cb = "</select>";
 
         $comboHTML = $row_ini . $row_pais . $comboHTML_pais . $row_fin_cb . $row_med . $row_depa . $comboHTML_01 . $row_fin_cb . $row_med . $row_prov . $comboHTML_02 . $row_fin_cb . $row_med . $row_dist . $comboHTML_03 . $row_fin_cb . $row_fin;
-        return $comboHTML;
+        return utf8_decode($comboHTML);
     }
 
 //Combo del ubigeo de nacimiento, muestra departamento, provincia y distrito.
@@ -970,7 +970,8 @@ class ActionAdmision {
         $comboHTML_pais = $o_Combo->getOptionsHTML($paisNacimiento);
 
         $row_ochg_pais = "onchange=ubigeoPaisNacimiento();";
-        $row_ochg = "onchange=\"myajax.Link('../../ccontrol/control/control.php?p1=combo_nacimiento&p2=&p3='+document.getElementById('cbNac_departamento').value+'&p4='+document.getElementById('cbNac_provincia').value+'&p5='+document.getElementById('cbNac_pais').value,'ubigeo2');\"";
+        $row_ochg= "onchange=actualizaUbigeo2('ubigeo2');";
+        //$row_ochg = "onchange=\"myajax.Link('../../ccontrol/control/control.php?p1=combo_nacimiento&p2=&p3='+document.getElementById('cbNac_departamento').value+'&p4='+document.getElementById('cbNac_provincia').value+'&p5='+document.getElementById('cbNac_pais').value,'ubigeo2');\"";
         $row_ini = "<table><tr><td>Departamento*</td><td>Provincia*</td><td>Distrito*</td></tr><tr><td>";
         $row_med = "</td><td>";
         $row_fin = "</td></tr></table>";
@@ -981,7 +982,7 @@ class ActionAdmision {
         $row_fin_cb = "</select>";
 //$comboHTML = $row_ini . $row_depa . $comboHTML_01 . $row_fin_cb . $row_med . $row_prov . $comboHTML_02 . $row_fin_cb . $row_med . $row_dist . $comboHTML_03 . $row_fin_cb . $row_fin;
         $comboHTML = $row_ini . $row_pais . $comboHTML_pais . $row_fin_cb . $row_med . $row_depa . $comboHTML_01 . $row_fin_cb . $row_med . $row_prov . $comboHTML_02 . $row_fin_cb . $row_med . $row_dist . $comboHTML_03 . $row_fin_cb . $row_fin;
-        return $comboHTML;
+        return utf8_decode($comboHTML);
     }
 
     /* public function listaAnioUbigeo(){

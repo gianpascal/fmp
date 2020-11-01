@@ -63,7 +63,7 @@ class tablaDHTMLX
             foreach ($indice as $campo) {
                 //$filasHTML.="<cell>".trim($fila[$campo])."</cell>";
                 //$filasHTML.="<cell>canción del niño ñano árbol </cell>";
-                $filasHTML .= "<cell>" .utf8_encode(trim($fila[$campo])) . "</cell>";
+                $filasHTML .= "<cell>" .trim($fila[$campo]) . "</cell>";
             }
 //            for($j=0; $j<$columnas;$j++){
             //              $filasHTML.="<cell>".$arrayFilas[$i][$j]."</cell>";
@@ -97,7 +97,7 @@ class tablaDHTMLX
             $tab .= "</column>";
         }
         $tab .= "</head>";
-        $tab = utf8_decode($tab);
+        $tab = ($tab);
 //----------fin cabecera
         foreach ($arrayFilas as $i => $value) {
             $tab .= "<row id='" . $i . "'>";
@@ -171,6 +171,7 @@ class tablaDHTMLX
     {
 //        header("Content-type: text/xml");
         if ($arrayColor == "") {
+            $arrayColor=array();
             foreach ($arrayCabecera as $i => $value) {
                 $arrayColor[$i] = "";
             }

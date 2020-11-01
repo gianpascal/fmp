@@ -7,7 +7,7 @@ $o_ActionTesoreria = new ActionTesoreria();
 require_once("../../ccontrol/control/ActionPersona.php");
 $o_ActionPersona = new ActionPersona();
 $toolbar3 = new ToollBar("left");
-$toolbar3->SetBoton("IMPRIMIR", "IMPRIMIR", "btn", "onclick,onkeypress", "imprimirRecibo('34030340186016')", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/imprimir.png");
+$toolbar3->SetBoton("IMPRIMIR", "IMPRIMIR", "btn", "onclick,onkeypress", "imprimirBoucher()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/imprimir.png");
 $toolbar4 = new ToollBar("left");
 $toolbar4->SetBoton("PAGAR", "PAGAR", "btn", "onclick,onkeypress", "cancelarOrdenesSeleccionadas()", $_SESSION['path_principal'] . "../fastmedical_front/imagen/icono/monedas.jpg");
 $toolbar5 = new ToollBar("left");

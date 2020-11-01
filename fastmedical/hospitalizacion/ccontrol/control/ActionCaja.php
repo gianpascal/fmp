@@ -326,8 +326,8 @@ class ActionCaja {
             12 => "rigth", 
             13 => "center",             
             14 => "center", 
-            );
-       return $o_TablaHtmlx->generaTablaFullCombo($arrayCabecera, $arrayFilas, $arrayTamano, $arrayTipo, $arrayCursor, $arrayHidden, $arrayAling, '');
+            );$arraycolor=array();
+       return $o_TablaHtmlx->generaTablaFullCombo($arrayCabecera, $arrayFilas, $arrayTamano, $arrayTipo, $arrayCursor, $arrayHidden, $arrayAling, $arraycolor);
     
     }
     function aExportarReporteCaja($parametros){

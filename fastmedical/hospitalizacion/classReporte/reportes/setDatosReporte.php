@@ -1536,9 +1536,42 @@ try {
                 //$parametros[""]
                 $setdat->generarMYPDF($atributosReceta, $labelCabecera, $labelDetalle, $labelPie, $datosCabecera, $datosDetalle, $datosPie, $modo, $nombreReporte, $parametros);
                 break;
+            
+            }
+            case "boucherPago": {
+                 require_once('generadorBoucherPago.php');
+                /* ===================================================================================================== */
+                /* =====================================   Todo Los atributos   ======================================== */
+                
+
+                $parametros["PDF_PAGE_FORMAT"] = "BOUCHER_PAGO_1";
+                $parametros["PDF_MARGIN_HEADER"] = 0;
+                $parametros["PDF_MARGIN_FOOTER"] = 0;
+                $parametros["AUTO_PAGE_BREAK"] = false;
+                $parametros["PDF_MARGIN_BOTTOM"] = 0;
+               // $parametros["PDF_PAGE_ORIENTATION"] = "L";
+                $parametros["PDF_MARGIN_LEFT"] = 1;
+                $parametros["PDF_MARGIN_TOP"] = 0;
+                $parametros["PDF_MARGIN_RIGHT"] = 1;
+                $parametros["PRINT_HEADER"] = false;
+                $parametros["PRINT_FOOTER"] = false;
+                $boucher = new generarMYPDF_BoucherPago();
+                $codigo = $_REQUEST["p3"];
+                $orden=$_REQUEST["p2"];
+                require_once("../../clogica/LTesoreria.php");
+                $o_LTesoreria = new LTesoreria();
+                //echo $codigo;
+                $arrayPersona = $o_LTesoreria->datosPersonales($codigo, '');
+               // var_dump($arrayPersona);  
+                $arrayOrdenes = $o_LTesoreria->ldetalleOrden($orden);
+               
+                $boucher->generarPDFBoucher($parametros,$arrayPersona,$arrayOrdenes);
+               // $setdat->generarMYPDF($atributosReceta, $labelCabecera, $labelDetalle, $labelPie, $datosCabecera, $datosDetalle, $datosPie, $modo, $nombreReporte, $parametros);
+
+                break;
             }
     }
 } catch (Exception $e) {
     echo $e->getMessage();
 }
-?>
+

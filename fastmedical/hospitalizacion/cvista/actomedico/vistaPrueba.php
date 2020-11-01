@@ -1,4 +1,4 @@
-<h2 align="center"><?php echo utf8_encode($filaExamen[1]); ?></h2>
+<h2 align="center"><?php echo ($filaExamen[1]); ?></h2>
 <?php
 $idPruebaAux='';
 $numero=count($pruebasExamenes);
@@ -22,7 +22,7 @@ foreach ($pruebasExamenes as $fila){
 
         ?>
         <fieldset style=" margin:10px; width:100%; font-size: 16px;background-color: #FFFFFF;">
-            <legend>&nbsp; <?php echo utf8_encode($nombrePrueba); ?>&nbsp; </legend>
+            <legend>&nbsp; <?php echo ($nombrePrueba); ?>&nbsp; </legend>
 
      <?php
 

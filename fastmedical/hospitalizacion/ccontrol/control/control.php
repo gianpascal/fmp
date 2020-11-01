@@ -4643,7 +4643,7 @@ if (ini_get('memory_limit') == "2048M" && ini_get('max_input_time') == "90000" &
                     $o_ActionActoMedico = new ActionActoMedico();
                     $datos["codigoProgramacion"] = $parametros["p2"];
                     $rs = $o_ActionActoMedico->atencionInmediataActoMedico($datos);
-                    $resultado = utf8_encode($rs[0][0]);
+                    $resultado = ($rs[0][0]);
                     break;
                 }
             case 'tablaProductosTratamientosHC': {

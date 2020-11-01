@@ -1466,7 +1466,7 @@ class LCronograma
             $rs = "1|No se puede programar fechas pasadas,Verifique por favor";
         } else {
             $resultado = $o_Cronograma->grabarProgramacionMedicos($datos);
-            $rs = utf8_encode($resultado[0]["respuesta"]);
+            $rs = $resultado[0]["respuesta"];
         }
         return $rs;
     }

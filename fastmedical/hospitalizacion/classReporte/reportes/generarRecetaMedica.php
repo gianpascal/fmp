@@ -114,7 +114,7 @@ class generarMYPDFRME {
                     $color = $styleCL[$i][4];
                     $pdf->SetTextColor($color[0], $color[1], $color[2]);
                     $pdf->SetFont($styleCL[$i][5], $styleCL[$i][6], $styleCL[$i][7]);
-                    $pdf->MultiCell($styleCL[$i][0], $styleCL[$i][1], $lblCabecera[$i], 0, 'L', 0, 1, $styleCL[$i][3], $styleCL[$i][2], true);
+                    $pdf->MultiCell($styleCL[$i][0], $styleCL[$i][1], utf8_decode($lblCabecera[$i]), 0, 'L', 0, 1, $styleCL[$i][3], $styleCL[$i][2], true);
                 }
             }
         }

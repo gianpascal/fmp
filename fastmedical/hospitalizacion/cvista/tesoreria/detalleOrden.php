@@ -54,4 +54,5 @@
 <div id="resultadoOrdenes" style="width:700px; height:380px; float:left; overflow: auto;">
     <?php echo $o_Html->getTabla(); ?>
     <input type="hidden" id="hdnNroOrdenCompraSeleccionado" name="hdnNroOrdenCompraSeleccionado" value="">
+    <input type="hidden" id="hidNroOrden" name="hidNroOrden" value="">
 </div>

@@ -892,7 +892,7 @@ class ActionActoMedico {
                     $numeroCampos = 1;
                 }
                 $cadena.='<fieldset  style="font-size:15px;">';
-                $cadena.='<legend>' . $nombrePrueba . '</legend>';
+                $cadena.='<legend>' . utf8_decode($nombrePrueba) . '</legend>';
             }
             $iIdTipoDato = $fila[5];
             $estadoRegistro = $fila[16];
@@ -2894,7 +2894,7 @@ class ActionActoMedico {
                 $this->cadenaArbolExamenMedico.="<div style=\"width:98%\">";
                 $this->cadenaArbolExamenMedico.="<a href=\"javascript:;\" onclick=\"javascript:;\">";
                 $this->cadenaArbolExamenMedico.="<div class='cabecerasExamenes' id=\"Div_ExamenMedicoEncabezado_" . $iIdExamen . "\" style=\" width:100% ;height:25px; display:block; border-style:solid; border-width:1px\" onclick=\"javascript:abrirDivSimple('Div_ExamenMedicoCuerpo_" . $iIdExamen . "')\">";
-                $this->cadenaArbolExamenMedico.=$nomExamenMedico;
+                $this->cadenaArbolExamenMedico.= utf8_decode($nomExamenMedico);
                 $this->cadenaArbolExamenMedico.="</div>";
                 $this->cadenaArbolExamenMedico.="</a>";
                 $this->cadenaArbolExamenMedico.="<div id=\"Div_ExamenMedicoCuerpo_" . $iIdExamen . "\" style=\"width:100%; display:block; border-style:solid; border-width:1px\">";
@@ -2915,7 +2915,7 @@ class ActionActoMedico {
             $this->cadenaArbolExamenMedico.="<div style=\"width:98%\">";
             $this->cadenaArbolExamenMedico.="<a href=\"javascript:;\" onclick=\"javascript:;\">";
             $this->cadenaArbolExamenMedico.="<div class='cabecerasExamenes' id=\"Div_ExamenMedicoEncabezado_" . $iIdExamen . "\" style=\"width:100% ;height:25px; display:block; border-style:solid; border-width:1px\" onclick=\"javascript:abrirDivSimple('Div_ExamenMedicoCuerpo_" . $iIdExamen . "')\">";
-            $this->cadenaArbolExamenMedico.=$nomExamenMedico;
+            $this->cadenaArbolExamenMedico.= utf8_decode($nomExamenMedico);
             $this->cadenaArbolExamenMedico.="</div>";
             $this->cadenaArbolExamenMedico.="</a>";
             $this->cadenaArbolExamenMedico.="<div id=\"Div_ExamenMedicoCuerpo_" . $iIdExamen . "\" style=\"width:100%; display:block; border-style:solid; border-width:1px\">";

@@ -2652,7 +2652,7 @@ class TCPDF {
                         case 'CERNET_SANIDAD' : {$pf = array(  160.047,  245.819 ); break;}
 
                         case 'TICKET_ORDEN_MEDICA' : {$pf = array( 212.598, 298.425); break;}
-
+                        case 'BOUCHER_PAGO_1'        : {$pf = array(212, 300); break;}
 			// DEFAULT ISO A4
                         //A4 ...  595.276,  841.890 .. A4 (210x297 mm ; 8.27x11.69 in) inches * 72
 			default: {$pf = array(  595.276,  841.890); break;}

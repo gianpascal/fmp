@@ -38,7 +38,7 @@ class classGeneral {
             /*==================== Fin datos por defecto ===========================*/
             foreach ($atributosReceta as $j => $rec) {
                 if($labelCabecera[$i]["iIdEtiqueta"]==$atributosReceta[$j]["iIdEtiqueta"]) {
-                    switch (utf8_encode($atributosReceta[$j]["Atributo"])) {
+                    switch ($atributosReceta[$j]["Atributo"]) {
                         case "Ancho":
                             if($atributosReceta[$j]["iIdTipo"]==1)
                                 $this->styleCL[$a][0]=$atributosReceta[$j]["vValor"];
@@ -120,7 +120,7 @@ class classGeneral {
            /*====================== Fin datos por defecto ===========================*/
             foreach ($atributosReceta as $j => $rec) {
                 if($labelDetalle[$i]["iIdEtiqueta"]==$atributosReceta[$j]["iIdEtiqueta"]) {
-                    switch (utf8_encode($atributosReceta[$j]["Atributo"])) {
+                    switch ($atributosReceta[$j]["Atributo"]) {
                         case "Ancho":
                             if($atributosReceta[$j]["iIdTipo"]==1)
                                 $this->styleDL[$b][0]=$atributosReceta[$j]["vValor"];
@@ -180,7 +180,7 @@ class classGeneral {
     public  function setLabelPie($labelPie,$atributosReceta) {
         $c=0;
         foreach ($labelPie as $i => $val) {
-            $this->lblPie[$c]= utf8_encode($labelPie[$i]["vNombre"]);
+            $this->lblPie[$c]= $labelPie[$i]["vNombre"];
             /*======================= Datos por defecto =============================*/
             $this->stylePL[$c][0]="50";
             $this->stylePL[$c][1]="5";
@@ -202,7 +202,7 @@ class classGeneral {
 
             foreach ($atributosReceta as $j => $rec) {
                 if($labelPie[$i]["iIdEtiqueta"]==$atributosReceta[$j]["iIdEtiqueta"]) {
-                    switch (utf8_encode($atributosReceta[$j]["Atributo"])) {
+                    switch ($atributosReceta[$j]["Atributo"]) {
                         case "Ancho":
                             if($atributosReceta[$j]["iIdTipo"]==1)
                                 $this->stylePL[$c][0]=$atributosReceta[$j]["vValor"];
