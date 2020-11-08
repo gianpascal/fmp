@@ -453,10 +453,10 @@ class LReporte {
         //print_r($respuesta);
     }
 
-    public function listaExamenesHCGeneral($codProgramacion,$codExamen) {
+    public function listaExamenesHCGeneral($codProgramacion, $codExamen) {
         //var_dump('e');exit;
         $o_DActoMedicoGeneral = new DActoMedico();
-        $resultado = $o_DActoMedicoGeneral->listaExamenesHCGeneral($codProgramacion,$codExamen);
+        $resultado = $o_DActoMedicoGeneral->listaExamenesHCGeneral($codProgramacion, $codExamen);
         //var_dump('<pre>',$resultado);exit();
         return $resultado;
     }
@@ -821,6 +821,75 @@ class LReporte {
             array_push($respuesta[$key], "../../../../fastmedical_front/imagen/icono/editar.png ^ Agregar");
         }
         return $respuesta;
+    }
+
+    public function lListaObjetos() {
+        $o_DReporte = new DReporte();
+        $resultado = $o_DReporte->dListaObjetos();
+        return $resultado;
+    }
+
+    public function lDetalleObjetos($datos) {
+        require_once("../../../pholivo/Conexion.php");
+        $coneccion = Conexion::getInitDsnMSSQLSimedh();
+        $o_DReporte = new DReporte();
+        $resultado = $o_DReporte->dDetalleObjetos($datos);
+        $host = $coneccion['dbhost'];
+        $base = $coneccion['dbname'];
+
+        $path = "/var/www/html/export/$host";
+        if (!file_exists($path)) {
+            mkdir($path, 0777, true);
+        }
+        $path = "/var/www/html/export/$host/$base";
+        if (!file_exists($path)) {
+            mkdir($path, 0777, true);
+        }
+        $esquema=$datos['esquema'];
+        $path = "/var/www/html/export/$host/$base/$esquema";
+        if (!file_exists($path)) {
+            mkdir($path, 0777, true);
+        }
+        $type=$datos['type'];
+        $path = "/var/www/html/export/$host/$base/$esquema/$type";
+        if (!file_exists($path)) {
+            mkdir($path, 0777, true);
+        }
+
+        $ruta = "/var/www/html/export/$host/" . $base . "/" . $datos['esquema'] . "/" . $datos['type'] . "/" . $datos['objeto'] . ".sql";
+        echo $ruta;
+
+        if (file_exists($ruta)) {
+
+            unlink($ruta);
+        }
+
+        $texto = '';
+        $textoTotal = '';
+        if ($archivo = fopen($ruta, "a")) {
+            foreach ($resultado as $key => $value) {
+                if (($value['Text']) != '') {
+                    $texto = ($value['Text']);
+                    $texto = str_replace("CREATE PROCEDURE", "ALTER PROCEDURE", $texto);
+                    $texto = str_replace("CREATE procedure", "ALTER PROCEDURE", $texto);
+                    $texto = str_replace("CREATE Procedure", "ALTER PROCEDURE", $texto);
+                    $texto = str_replace("create procedure", "ALTER PROCEDURE", $texto);
+                    $texto = str_replace("CREATE FUNCTION", "ALTER FUNCTION", $texto);
+                    $texto = str_replace("CREATE function", "ALTER FUNCTION", $texto);
+                    $texto = str_replace("create function", "ALTER FUNCTION", $texto);
+                    $texto = str_replace("CREATE TRIGGER", "ALTER TRIGGER", $texto);
+                    $texto = str_replace("CREATE TRIGGER", "ALTER trigger", $texto);
+                    // fwrite($archivo, $texto.PHP_EOL);
+                    //  echo $value['Text'];
+                    $textoTotal .= $texto;
+                }
+            }
+            fwrite($archivo, $textoTotal . PHP_EOL);
+            fclose($archivo);
+        }
+
+
+        return $resultado;
     }
 
 }

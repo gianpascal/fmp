@@ -675,8 +675,9 @@ class LCronograma
             while ($i <= $resultado[$indice]['iContador']) {
                 if ($i == 0 || $i == 1) {
                     if ($bandera == 1) {
-
-                        $cadena = $cadena . $coma . $dias[date('w', strtotime($resultado[$indice]['dFechaServicio']))] . " " . date('d', strtotime($resultado[$indice]['dFechaServicio'])) . " " . $meses[date('n', strtotime($resultado[$indice]['dFechaServicio'])) - 1] . " " . date('Y', strtotime($resultado[$indice]['dFechaServicio']));
+                        $fechaServicio=date_create_from_format('d/m/Y', $resultado[$indice]['dFechaServicio']);
+                         $cadena = $cadena . $coma . $dias[date('w', $fechaServicio->getTimestamp())] . " " . date('d', $fechaServicio->getTimestamp()) . " " . $meses[date('n', $fechaServicio->getTimestamp()) - 1] . " " . date('Y', $fechaServicio->getTimestamp());
+                        //$cadena = $cadena . $coma . $dias[date('w', strtotime($resultado[$indice]['dFechaServicio']))] . " " . date('d', strtotime($resultado[$indice]['dFechaServicio'])) . " " . $meses[date('n', strtotime($resultado[$indice]['dFechaServicio'])) - 1] . " " . date('Y', strtotime($resultado[$indice]['dFechaServicio']));
                     }
                     $bandera = 0;
                 } else {
@@ -779,7 +780,8 @@ class LCronograma
             $this->idCronograma[$j]['n_horariofinal'] = $resultado[$indice]['n_horariofinal'];
             $this->idCronograma[$j]['tipoambiente'] = $resultado[$indice]['tipoambiente'];
             $this->idCronograma[$j]['isprocedimiento'] = $resultado[$indice]['isprocedimiento'];
-            while ($i <= $resultado[$indice]['dFechaServicio']) {
+          //  while ($i <= $resultado[$indice]['dFechaServicio']) {
+            while ($i <= 0) {    
                 if ($resultado[$indice]['iTiempoAtencion'] == 0) {
                     $cadena = $cadena . $coma . $rspan;
                 } else {
@@ -792,6 +794,7 @@ class LCronograma
         }
 //echo $cadena;
         return "\"" . $cadena . "\"";
+       //return "\"" ."#rspan,CALLE ALBERTO,CALLE ALBERTO,ARROYO GIANCARLO, ,ARROYO GIANCARLO ". "\"";
     }
 
     public function armarMatrizHorarios($horarioinicio, $horariofinal, $tiempoatencion)

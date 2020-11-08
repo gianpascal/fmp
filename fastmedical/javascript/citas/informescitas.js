@@ -45,20 +45,20 @@ function seleccionarFechaCitasInformes(idElemento, cal) {
             var vista = $('selectVista').value;
             switch (vista) {
                 case '1':  //tripo matriz
-                    {
-                        $('btnProximaCIta').show();
-                        $('btnNuevoEmergencia').hide();
-                        regresaracronogramacitas();
-                        $('programacioncitas').style.display = 'block';
-                        $('programacioncitasEmergencia').style.display = "none";
-                        $('btnNuevoEmergencia').hide();
-                        break;
-                    }
+                {
+                    $('btnProximaCIta').show();
+                    $('btnNuevoEmergencia').hide();
+                    regresaracronogramacitas();
+                    $('programacioncitas').style.display = 'block';
+                    $('programacioncitasEmergencia').style.display = "none";
+                    $('btnNuevoEmergencia').hide();
+                    break;
+                }
                 case '2': //tipo detalle
-                    {
-                        mostrarProgramacionEmergenciaInformes(0);
-                        break;
-                    }
+                {
+                    mostrarProgramacionEmergenciaInformes(0);
+                    break;
+                }
 
             }
 
@@ -90,20 +90,20 @@ function accionCalendarioCitasInformes(idAccion, cal) {
                 var vista = $('selectVista').value;
                 switch (vista) {
                     case '1':  //tripo matriz
-                        {
-                            $('btnProximaCIta').show();
-                            $('btnNuevoEmergencia').hide();
-                            regresaracronogramacitas();
-                            $('programacioncitas').style.display = 'block';
-                            $('programacioncitasEmergencia').style.display = "none";
-                            $('btnNuevoEmergencia').hide();
-                            break;
-                        }
+                    {
+                        $('btnProximaCIta').show();
+                        $('btnNuevoEmergencia').hide();
+                        regresaracronogramacitas();
+                        $('programacioncitas').style.display = 'block';
+                        $('programacioncitasEmergencia').style.display = "none";
+                        $('btnNuevoEmergencia').hide();
+                        break;
+                    }
                     case '2': //tipo detalle
-                        {
-                            mostrarProgramacionEmergenciaInformes(0);
-                            break;
-                        }
+                    {
+                        mostrarProgramacionEmergenciaInformes(0);
+                        break;
+                    }
 
                 }
             }
@@ -128,20 +128,20 @@ function refrescaCalendarioCitasInformes(fechaActual) {
                 var vista = $('selectVista').value;
                 switch (vista) {
                     case '1':  //tripo matriz
-                        {
-                            $('btnProximaCIta').show();
-                            $('btnNuevoEmergencia').hide();
-                            regresaracronogramacitas();
-                            $('programacioncitas').style.display = 'block';
-                            $('programacioncitasEmergencia').style.display = "none";
-                            $('btnNuevoEmergencia').hide();
-                            break;
-                        }
+                    {
+                        $('btnProximaCIta').show();
+                        $('btnNuevoEmergencia').hide();
+                        regresaracronogramacitas();
+                        $('programacioncitas').style.display = 'block';
+                        $('programacioncitasEmergencia').style.display = "none";
+                        $('btnNuevoEmergencia').hide();
+                        break;
+                    }
                     case '2': //tipo detalle
-                        {
-                            mostrarProgramacionEmergenciaInformes(0);
-                            break;
-                        }
+                    {
+                        mostrarProgramacionEmergenciaInformes(0);
+                        break;
+                    }
 
                 }
 
@@ -247,20 +247,20 @@ function clickCargaServicio(id, nombrecentrocosto) {
     var vista = $('selectVista').value;
     switch (vista) {
         case '1':  //tripo matriz
-            {
-                $('btnProximaCIta').show();
-                $('btnNuevoEmergencia').hide();
-                regresaracronogramacitas();
-                $('programacioncitas').style.display = 'block';
-                $('programacioncitasEmergencia').style.display = "none";
-                $('btnNuevoEmergencia').hide();
-                break;
-            }
+        {
+            $('btnProximaCIta').show();
+            $('btnNuevoEmergencia').hide();
+            regresaracronogramacitas();
+            $('programacioncitas').style.display = 'block';
+            $('programacioncitasEmergencia').style.display = "none";
+            $('btnNuevoEmergencia').hide();
+            break;
+        }
         case '2': //tipo detalle
-            {
-                mostrarProgramacionEmergenciaInformes(0);
-                break;
-            }
+        {
+            mostrarProgramacionEmergenciaInformes(0);
+            break;
+        }
 
     }
 
@@ -294,8 +294,7 @@ function verCronogramaMedicoMensual(codigo, nombre) {
                 $('btnNuevoEmergencia').show();
                 $('btnProximaCIta').hide();
             }
-        }
-        else {
+        } else {
             alert('La programacion esta bloqueada hasta la fecha ' + dFecha);
         }
     });
@@ -385,8 +384,7 @@ function mostrarProgramacionEmergenciaInformes(cronograma) {
                 $('btnProximaCIta').hide();
 
             }
-        }
-        else {
+        } else {
             alert('La programacion esta bloqueada hasta la fecha ' + dFecha);
         }
         if (colId == 8) {
@@ -677,9 +675,9 @@ function getVinculadosTratamientoPaciente(iid_persona) {
     TablagetVinculadosTratamientoPaciente.setSkin("dhx_skyblue");
     TablagetVinculadosTratamientoPaciente.enableRowsHover(true, 'grid_hover');
     TablagetVinculadosTratamientoPaciente.attachEvent("onRowSelect",
-        function (fil, col) {
+            function (fil, col) {
 
-        }
+            }
     );
 
     //////////para cargador peche////////////////
@@ -753,9 +751,9 @@ function getTratamientoPaciente(iid_persona) {
     TablagetTratamientoPaciente.setSkin("dhx_skyblue");
     TablagetTratamientoPaciente.enableRowsHover(true, 'grid_hover');
     TablagetTratamientoPaciente.attachEvent("onRowSelect",
-        function (fil, col) {
+            function (fil, col) {
 
-        }
+            }
     );
 
     //////////para cargador peche////////////////
@@ -814,9 +812,9 @@ function getTratamientoPaciente2(iid_persona) {
     TablagetTratamientoPaciente2.setSkin("dhx_skyblue");
     TablagetTratamientoPaciente2.enableRowsHover(true, 'grid_hover');
     TablagetTratamientoPaciente2.attachEvent("onRowSelect",
-        function (fil, col) {
+            function (fil, col) {
 
-        }
+            }
     );
 
     //////////para cargador peche////////////////
@@ -954,18 +952,18 @@ function limpiarReservacion() {
     limpiarTablaBuscarPersonas();
 
     $('divDatosPersonaCitasInformes').innerHTML = "<input id=\"hiCodigoPersona\" name =\"hiCodigoPersona\" value=\"\" type=\"hidden\"/><input id=\"hiCodigoPaciente\" type=\"hidden\"/>"
-        + "<div align=\"center\"><font color=\"00028F\" class=\"Estilo9\">Datos del Paciente</font></div>"
-        + "<fieldset style=\"margin:5px;padding:5px;border:none\">"
-        + "<table>"
-        + "<tr><td class=\"Estilo6\">Filiaci&oacute;n Activa</td><td>-----</td></tr>"
-        + "<tr><td class=\"Estilo6\">Apellido Paterno</td><td>-----</td></tr>"
-        + "<tr><td class=\"Estilo6\">Apellido Materno</td><td>-----</td></tr>"
-        + "<tr><td class=\"Estilo6\">Nombres</td><td>-----</td></tr>"
-        + "<tr><td class=\"Estilo6\">N&deg; Documento</td><td>-----</td></tr>"
-        + "<tr><td class=\"Estilo6\">Fecha Nacimiento</td><td>-----</td></tr>"
-        + "</table>"
-        + "</fieldset>"
-        + "";
+            + "<div align=\"center\"><font color=\"00028F\" class=\"Estilo9\">Datos del Paciente</font></div>"
+            + "<fieldset style=\"margin:5px;padding:5px;border:none\">"
+            + "<table>"
+            + "<tr><td class=\"Estilo6\">Filiaci&oacute;n Activa</td><td>-----</td></tr>"
+            + "<tr><td class=\"Estilo6\">Apellido Paterno</td><td>-----</td></tr>"
+            + "<tr><td class=\"Estilo6\">Apellido Materno</td><td>-----</td></tr>"
+            + "<tr><td class=\"Estilo6\">Nombres</td><td>-----</td></tr>"
+            + "<tr><td class=\"Estilo6\">N&deg; Documento</td><td>-----</td></tr>"
+            + "<tr><td class=\"Estilo6\">Fecha Nacimiento</td><td>-----</td></tr>"
+            + "</table>"
+            + "</fieldset>"
+            + "";
 
     $('divNumeroOrdenGenerada2').innerHTML = "<font color=\"RED\">Nro. Orden : </font>";
     ocultaProcedimientos();
@@ -974,26 +972,26 @@ function limpiarReservacion() {
 function limpiarDescripcionCita() {
     //$('hCodigoProgramacion').value='';
     var descripcioncitaLimpia = "<table width=\"100%\" align=\"center\" border=\"0\">"
-        + "<tr>"
-        + "<td width=\"33%\" align=\"center\" class=\"Estilo7\">Persona&nbsp;: -----</td>"
-        + "<td width=\"33%\" align=\"center\" class=\"Estilo7\">Médico&nbsp;: -----</td>"
-        + "<td width=\"33%\" align=\"center\" class=\"Estilo7\">Especialidad&nbsp;: -----</td>"
-        + "</tr>"
-        + "</table>"
-        + "<table width=\"100%\" align=\"center\" border=\"0\">"
-        + "<tr>"
-        + "<td width=\"30%\" align=\"center\" class=\"Estilo7\">Fecha&nbsp;: -----</td>"
-        + "<td width=\"40%\" align=\"center\" class=\"Estilo7\">Ambiente&nbsp;: -----</td>"
-        + "<td width=\"30%\" align=\"center\" class=\"Estilo7\">Hora&nbsp;: -----</td>"
-        + "</tr>"
-        + "</table>"
-        + "<table width=\"100%\" align=\"center\" border=\"0\">"
-        + "<tr>"
-        + "<td width=\"33%\" align=\"center\" >Tipo de Servicio: -----</td>"
-        + "<td width=\"33%\" align=\"center\" >Localización: -----</td>"
-        + "<td width=\"33%\" align=\"center\" >Usuario: -----</td>"
-        + "</tr>"
-        + "</table>";
+            + "<tr>"
+            + "<td width=\"33%\" align=\"center\" class=\"Estilo7\">Persona&nbsp;: -----</td>"
+            + "<td width=\"33%\" align=\"center\" class=\"Estilo7\">Médico&nbsp;: -----</td>"
+            + "<td width=\"33%\" align=\"center\" class=\"Estilo7\">Especialidad&nbsp;: -----</td>"
+            + "</tr>"
+            + "</table>"
+            + "<table width=\"100%\" align=\"center\" border=\"0\">"
+            + "<tr>"
+            + "<td width=\"30%\" align=\"center\" class=\"Estilo7\">Fecha&nbsp;: -----</td>"
+            + "<td width=\"40%\" align=\"center\" class=\"Estilo7\">Ambiente&nbsp;: -----</td>"
+            + "<td width=\"30%\" align=\"center\" class=\"Estilo7\">Hora&nbsp;: -----</td>"
+            + "</tr>"
+            + "</table>"
+            + "<table width=\"100%\" align=\"center\" border=\"0\">"
+            + "<tr>"
+            + "<td width=\"33%\" align=\"center\" >Tipo de Servicio: -----</td>"
+            + "<td width=\"33%\" align=\"center\" >Localización: -----</td>"
+            + "<td width=\"33%\" align=\"center\" >Usuario: -----</td>"
+            + "</tr>"
+            + "</table>";
     $('divNumeroOrdenGenerada1').innerHTML = "<div><font color=\"RED\">Nro. Orden : </font></div>";
     $('divCodigoPersona').innerHTML = "<div><font color=\"BLUE\">Cod. Persona : </font></div>";
     $('divDescripcionCita').innerHTML = descripcioncitaLimpia
@@ -1021,44 +1019,44 @@ function nuevaCita(codigoHora, codigoCronograma, tipocitaprogramada) {
     //myajax.Link(pathLink, "divCronogramaCitasInformes");
     var parametros = "p1=reservarCitaInformesCronograma&p2=" + codigoCronograma;//muestra los datos del cronograma en la capa divCronogramaCitasInformes de citas.php
     contadorCargador++;
-        var idCargador=contadorCargador;
-        new Ajax.Request( pathRequestControl,{
-            method : 'get',
-            asynchronous:true,
-            parameters : parametros,
-            onLoading : cargadorpeche(1,idCargador),
-            onComplete : function(transport){
-                cargadorpeche(0,idCargador);
-                var respuesta = transport.responseText;
-                $('divCronogramaCitasInformes').update(respuesta);
-            }
-        } );
-    
+    var idCargador = contadorCargador;
+    new Ajax.Request(pathRequestControl, {
+        method: 'get',
+        asynchronous: true,
+        parameters: parametros,
+        onLoading: cargadorpeche(1, idCargador),
+        onComplete: function (transport) {
+            cargadorpeche(0, idCargador);
+            var respuesta = transport.responseText;
+            $('divCronogramaCitasInformes').update(respuesta);
+        }
+    });
 
-    
+
+
 
     //pathLink2 = pathRequestControl + "?p1=reservarCitaInformesServicio&p2=" + codigoHora + "&p3=" + codigoCronograma + "&p4=" + tipocitaprogramada;//muestras los datos de la cita en la capa divProgramacionCitasInformes en citas.php
-   // myajax2.Link(pathLink2, "divProgramacionCitasInformes");
-   var parametros1="p1=reservarCitaInformesServicio&p2=" + codigoHora + "&p3=" + codigoCronograma + "&p4=" + tipocitaprogramada;//muestras los datos de la cita en la capa divProgramacionCitasInformes en citas.php
-   contadorCargador++;
-        var idCargador1=contadorCargador;
-        new Ajax.Request( pathRequestControl,{
-            method : 'get',
-            asynchronous:true,
-            parameters : parametros1,
-            onLoading : cargadorpeche(1,idCargador1),
-            onComplete : function(transport){
-                cargadorpeche(0,idCargador1);
-                var respuesta = transport.responseText;
-                $('divProgramacionCitasInformes').update(respuesta);
-            }
-        } )
-    
+    // myajax2.Link(pathLink2, "divProgramacionCitasInformes");
+    var parametros1 = "p1=reservarCitaInformesServicio&p2=" + codigoHora + "&p3=" + codigoCronograma + "&p4=" + tipocitaprogramada;//muestras los datos de la cita en la capa divProgramacionCitasInformes en citas.php
+    contadorCargador++;
+    var idCargador1 = contadorCargador;
+    new Ajax.Request(pathRequestControl, {
+        method: 'get',
+        asynchronous: true,
+        parameters: parametros1,
+        onLoading: cargadorpeche(1, idCargador1),
+        onComplete: function (transport) {
+            cargadorpeche(0, idCargador1);
+            var respuesta = transport.responseText;
+            $('divProgramacionCitasInformes').update(respuesta);
+        }
+    })
 
-    
-        //        path="../../ccontrol/control/control.php?"+parametros;
-        //        myajax2.Link(path,'divResultadoBusqueda');
-        
+
+
+    //        path="../../ccontrol/control/control.php?"+parametros;
+    //        myajax2.Link(path,'divResultadoBusqueda');
+
 }
 /*********************citas Adicionales****************************************/
 function nuevaCitaAdicional(codigoCronograma) {
@@ -1215,16 +1213,16 @@ function validarCitaInformes() {
         }
         var codigoActoMedico = document.getElementById("hcCodigoActoMedico").value;
         var path = "?p1=guardarCitaProgramada&p2=" + codigoCronograma +
-            "&p3=" + codigoPersona +
-            "&p4=" + codigoPaciente +
-            "&p5=" + horaProgramada +
-            "&p6=" + codigoTipoCita +
-            "&p7=" + observacionCita +
-            "&p8=" + codigoServicioProducto +
-            "&p9=" + codigoActoMedico +
-            "&p10=" + tipoProgramacion +
-            "&p11=" + idTratamientoSeleccionado +
-            "&p12=" + tipoUbicacionCita;
+                "&p3=" + codigoPersona +
+                "&p4=" + codigoPaciente +
+                "&p5=" + horaProgramada +
+                "&p6=" + codigoTipoCita +
+                "&p7=" + observacionCita +
+                "&p8=" + codigoServicioProducto +
+                "&p9=" + codigoActoMedico +
+                "&p10=" + tipoProgramacion +
+                "&p11=" + idTratamientoSeleccionado +
+                "&p12=" + tipoUbicacionCita;
         validacion = true;
         if (codigoPersona == "") {
             window.alert("Seleccione una Persona");
@@ -1491,70 +1489,70 @@ function validaredicionCitaInformes(tipoprogramacion) {
         //var estadoatencion = $('hEstadoAtencion').value;
         switch (tipoprogramacion) {
             case '0':
-                {
-                    var idfilaorigen = $("hidfilaorigen").value;
-                    var idcolumnaorigen = $("hidcolumnaorigen").value;
-                    var idfiladestino = $("hidfiladestino").value;
-                    var idcolumnadestino = $("hidcolumnadestino").value;
-                    //mododeejecucion = 1;
-                    $('hMododeejecucion').value = 1;
-                    if ($('hColorSeleccionado').value == "#F0F43A" || $('hColorSeleccionado').value == "#F8A83E") {
-                        if (confirm("¿Esta seguro de editar la cita?")) {
-                            if (idfilaorigen != "" && idcolumnaorigen != "")
-                                $('Div_edicioncita').show();
+            {
+                var idfilaorigen = $("hidfilaorigen").value;
+                var idcolumnaorigen = $("hidcolumnaorigen").value;
+                var idfiladestino = $("hidfiladestino").value;
+                var idcolumnadestino = $("hidcolumnadestino").value;
+                //mododeejecucion = 1;
+                $('hMododeejecucion').value = 1;
+                if ($('hColorSeleccionado').value == "#F0F43A" || $('hColorSeleccionado').value == "#F8A83E") {
+                    if (confirm("¿Esta seguro de editar la cita?")) {
+                        if (idfilaorigen != "" && idcolumnaorigen != "")
+                            $('Div_edicioncita').show();
 
-                        }
+                    }
+                } else {
+                    if (colorceldaseleccionada == "#DEEDF8") {
+                        window.alert("Cita NO posible Editar,el estado es ATENDIDO");
+                        cancelaredicioncitas();
                     } else {
-                        if (colorceldaseleccionada == "#DEEDF8") {
-                            window.alert("Cita NO posible Editar,el estado es ATENDIDO");
-                            cancelaredicioncitas();
-                        } else {
-                            window.alert("Elija celda correcta!!!");
-                            cancelaredicioncitas();
+                        window.alert("Elija celda correcta!!!");
+                        cancelaredicioncitas();
+                    }
+                }
+                break;
+
+            }
+            case '1':
+            {
+                switch (estadoatencion) {
+                    case 'ATENDIDO':
+                        {
+                            window.alert('El paciente ya fue atendido');
+                        }
+                        break;
+                    default:
+                    {
+                        if (estadoatencion == 'RESERVADO' || estadoatencion == 'PAGADO') {
+                            if (confirm("¿Esta seguro de editar la cita?")) {
+                                //window.alert("Elija el cronograma y la celda correspondiente")
+                                $('Div_edicioncita').show();
+                                cerrarVentanaAdicionales();
+                                $("hidfilaorigen").value = 'Adicionales'
+                                $("hidcolumnaorigen").value = $("hcodigocronograma").value;
+                                idfilaorigen = $("hidfilaorigen").value;
+                                idcolumnaorigen = $("hidcolumnaorigen").value;
+                                idfiladestino = $("hidfiladestino").value;
+                                idcolumnadestino = $("hidcolumnadestino").value;
+                                $('hMododeejecucion').value = 1;
+                                if ($('selectVista').value == '2') {
+                                    $('selectVista').value = 1;
+                                    $('programacioncitasEmergencia').hide();
+                                    $('programacioncitas').show();
+
+                                    regresaracronogramacitas();
+                                }
+
+                            } else {
+                                cancelaredicioncitas();
+                            }
                         }
                     }
-                    break;
-
                 }
-            case '1':
-                {
-                    switch (estadoatencion) {
-                        case 'ATENDIDO':
-                            {
-                                window.alert('El paciente ya fue atendido');
-                            }
-                            break;
-                        default:
-                            {
-                                if (estadoatencion == 'RESERVADO' || estadoatencion == 'PAGADO') {
-                                    if (confirm("¿Esta seguro de editar la cita?")) {
-                                        //window.alert("Elija el cronograma y la celda correspondiente")
-                                        $('Div_edicioncita').show();
-                                        cerrarVentanaAdicionales();
-                                        $("hidfilaorigen").value = 'Adicionales'
-                                        $("hidcolumnaorigen").value = $("hcodigocronograma").value;
-                                        idfilaorigen = $("hidfilaorigen").value;
-                                        idcolumnaorigen = $("hidcolumnaorigen").value;
-                                        idfiladestino = $("hidfiladestino").value;
-                                        idcolumnadestino = $("hidcolumnadestino").value;
-                                        $('hMododeejecucion').value = 1;
-                                        if ($('selectVista').value == '2') {
-                                            $('selectVista').value = 1;
-                                            $('programacioncitasEmergencia').hide();
-                                            $('programacioncitas').show();
 
-                                            regresaracronogramacitas();
-                                        }
-
-                                    } else {
-                                        cancelaredicioncitas();
-                                    }
-                                }
-                            }
-                    }
-
-                    break;
-                }
+                break;
+            }
         }
     } else {  //vista detalle
         switch (estadoatencion) {
@@ -1564,14 +1562,14 @@ function validaredicionCitaInformes(tipoprogramacion) {
                 }
                 break;
             default:
-                {
-                    if (estadoatencion == 'RESERVADO' || estadoatencion == 'PAGADO') {
+            {
+                if (estadoatencion == 'RESERVADO' || estadoatencion == 'PAGADO') {
 
-                        ventanaEditarCita();
+                    ventanaEditarCita();
 
 
-                    }
                 }
+            }
         }
 
 
@@ -1798,47 +1796,47 @@ function eliminarCitaInformes() {
         if (confirm("¿Esta seguro de eliminar la cita?")) {
             switch (colorceldaseleccionada) {
                 case "#F0F43A":
-                    {
-                        new Ajax.Request(pathRequestControl, {
-                            method: 'get',
-                            parameters: pathLink,
-                            onLoading: micargador(1),
-                            onComplete: function (transport) {
-                                micargador(0);
-                                var respuesta = transport.responseText;
-                                window.alert(respuesta);
+                {
+                    new Ajax.Request(pathRequestControl, {
+                        method: 'get',
+                        parameters: pathLink,
+                        onLoading: micargador(1),
+                        onComplete: function (transport) {
+                            micargador(0);
+                            var respuesta = transport.responseText;
+                            window.alert(respuesta);
 
-                                //                                restaurarOrdenesTratamientoCita();
+                            //                                restaurarOrdenesTratamientoCita();
 
-                                if (document.getElementById("hOpcionBusqueda").value != "") {
-                                    var fecha = document.getElementById("hFecha").value;
-                                    var opcionBusqueda = document.getElementById("hOpcionBusqueda").value;
-                                    var servicio = document.getElementById("hServicio").value;
-                                    var nombrecentrocosto = document.getElementById("hNombreCentroCosto").value;
-                                    var codigoPersonalSalud = document.getElementById("hCodigoPersonalSalud").value;
-                                    $("hOpcionSede").value = $("cb_filtroSede").value;
-                                    var sede = document.getElementById("hOpcionSede").value;
-                                    if ($('selectVista').value == '2') {
-                                        listarCronogramaMedicoEmergencia($('hcodigocronograma').value);
-                                    } else {
-                                        setCabeceraCronograma(fecha, opcionBusqueda, servicio, nombrecentrocosto, codigoPersonalSalud, sede);
-                                    }
+                            if (document.getElementById("hOpcionBusqueda").value != "") {
+                                var fecha = document.getElementById("hFecha").value;
+                                var opcionBusqueda = document.getElementById("hOpcionBusqueda").value;
+                                var servicio = document.getElementById("hServicio").value;
+                                var nombrecentrocosto = document.getElementById("hNombreCentroCosto").value;
+                                var codigoPersonalSalud = document.getElementById("hCodigoPersonalSalud").value;
+                                $("hOpcionSede").value = $("cb_filtroSede").value;
+                                var sede = document.getElementById("hOpcionSede").value;
+                                if ($('selectVista').value == '2') {
+                                    listarCronogramaMedicoEmergencia($('hcodigocronograma').value);
+                                } else {
+                                    setCabeceraCronograma(fecha, opcionBusqueda, servicio, nombrecentrocosto, codigoPersonalSalud, sede);
                                 }
-
                             }
-                        })
-                        break;
-                    }
+
+                        }
+                    })
+                    break;
+                }
                 case "#F8A83E":
-                    {
-                        window.alert("Cita NO eliminada,el estado es PAGADO");
-                        break;
-                    }
+                {
+                    window.alert("Cita NO eliminada,el estado es PAGADO");
+                    break;
+                }
                 case "#DEEDF8":
-                    {
-                        window.alert("Cita NO eliminada,el estado es ATENDIDO");
-                        break;
-                    }
+                {
+                    window.alert("Cita NO eliminada,el estado es ATENDIDO");
+                    break;
+                }
 
             }
 
@@ -1933,12 +1931,14 @@ function cabeceranombreMedico(index, e) {
     pathLink = "?p1=datosdecronograma&p2=" + idCronograma;
 
     if (idCronograma > 0) {
+        contadorCargador++;
+        var idCargador = contadorCargador;
         new Ajax.Request(pathRequestControl, {
             method: 'get',
             parameters: pathLink,
-            onLoading: micargador(1),
+            onLoading: cargadorpeche(1, idCargador),
             onComplete: function (transport) {
-                micargador(0);
+                cargadorpeche(0, idCargador);
                 respuesta = transport.responseText;
                 //window.alert(respuesta);
                 eval(respuesta);
@@ -2012,8 +2012,8 @@ function limpiaCargaMedicos() {
             cargadorpeche(0, idCargador);
             var respuesta1 = transport.responseText;
             var respuesta1 = "<fieldset id=\"fielBusCronogramaMedico\" style=\"margin:5px;padding:5px;height:180px;\">"
-                + "<legend style=\"text-align:center; font-family:Verdana, Arial, Helvetica, sans-serif;font-size:10px;font-weight:bold;\">Buscar M&eacute;dico</legend>"
-                + respuesta1 + "</fieldset>"
+                    + "<legend style=\"text-align:center; font-family:Verdana, Arial, Helvetica, sans-serif;font-size:10px;font-weight:bold;\">Buscar M&eacute;dico</legend>"
+                    + respuesta1 + "</fieldset>"
             if ($('divBusCronogramaMedico')) {
                 $('divBusCronogramaMedico').update(respuesta1);
             }
@@ -2069,20 +2069,20 @@ function filtro_sede() {
         var vista = $('selectVista').value;
         switch (vista) {
             case '1':  //tripo matriz
-                {
-                    $('btnProximaCIta').show();
-                    $('btnNuevoEmergencia').hide();
-                    regresaracronogramacitas();
-                    $('programacioncitas').style.display = 'block';
-                    $('programacioncitasEmergencia').style.display = "none";
-                    $('btnNuevoEmergencia').hide();
-                    break;
-                }
+            {
+                $('btnProximaCIta').show();
+                $('btnNuevoEmergencia').hide();
+                regresaracronogramacitas();
+                $('programacioncitas').style.display = 'block';
+                $('programacioncitasEmergencia').style.display = "none";
+                $('btnNuevoEmergencia').hide();
+                break;
+            }
             case '2': //tipo detalle
-                {
-                    mostrarProgramacionEmergenciaInformes(0);
-                    break;
-                }
+            {
+                mostrarProgramacionEmergenciaInformes(0);
+                break;
+            }
 
         }
     }
@@ -2095,54 +2095,54 @@ function cambiarEstadoConfirmacionCita() {
         if (confirm("¿Esta seguro de cambiar el estado de la cita?")) {
             switch (colorceldaseleccionada) {
                 case "#DEEDF8":
-                    {
-                        window.alert("La Cita ya fue ATENDIDA");
-                        break;
-                    }
+                {
+                    window.alert("La Cita ya fue ATENDIDA");
+                    break;
+                }
                 default:
-                    {
-                        new Ajax.Request(pathRequestControl, {
-                            method: 'get',
-                            parameters: pathLink,
-                            onLoading: micargador(1),
-                            onComplete: function (transport) {
-                                micargador(0);
-                                respuesta = transport.responseText;
-                                pos1 = respuesta.indexOf("/*");
-                                pos2 = respuesta.indexOf("*/");
-                                if (pos1 != -1 && pos2 != -1) {
-                                    window.alert(respuesta.substring(pos1 + 2, pos2));
-                                } else {
-                                    if (pos1 == -1 && pos2 == -1) {
-                                        window.alert(respuesta);
-                                    }
+                {
+                    new Ajax.Request(pathRequestControl, {
+                        method: 'get',
+                        parameters: pathLink,
+                        onLoading: micargador(1),
+                        onComplete: function (transport) {
+                            micargador(0);
+                            respuesta = transport.responseText;
+                            pos1 = respuesta.indexOf("/*");
+                            pos2 = respuesta.indexOf("*/");
+                            if (pos1 != -1 && pos2 != -1) {
+                                window.alert(respuesta.substring(pos1 + 2, pos2));
+                            } else {
+                                if (pos1 == -1 && pos2 == -1) {
+                                    window.alert(respuesta);
                                 }
-
-                                if (document.getElementById("hOpcionBusqueda").value != "") {
-                                    var fecha = document.getElementById("hFecha").value;
-                                    var opcionBusqueda = document.getElementById("hOpcionBusqueda").value;
-                                    var servicio = document.getElementById("hServicio").value;
-                                    var nombrecentrocosto = document.getElementById("hNombreCentroCosto").value;
-                                    var codigoPersonalSalud = document.getElementById("hCodigoPersonalSalud").value;
-                                    $("hOpcionSede").value = $("cb_filtroSede").value;
-                                    sede = document.getElementById("hOpcionSede").value;
-
-                                }
-                                if ($('selectVista').value == '2') {
-                                    listarCronogramaMedicoEmergencia($('hcodigocronograma').value);
-
-                                } else {
-                                    setCabeceraCronograma(fecha, opcionBusqueda, servicio, nombrecentrocosto, codigoPersonalSalud, sede);
-                                }
-                                $('hCodigoProgramacion').value = '';
-
-
                             }
 
-                        })
+                            if (document.getElementById("hOpcionBusqueda").value != "") {
+                                var fecha = document.getElementById("hFecha").value;
+                                var opcionBusqueda = document.getElementById("hOpcionBusqueda").value;
+                                var servicio = document.getElementById("hServicio").value;
+                                var nombrecentrocosto = document.getElementById("hNombreCentroCosto").value;
+                                var codigoPersonalSalud = document.getElementById("hCodigoPersonalSalud").value;
+                                $("hOpcionSede").value = $("cb_filtroSede").value;
+                                sede = document.getElementById("hOpcionSede").value;
 
-                        break;
-                    }
+                            }
+                            if ($('selectVista').value == '2') {
+                                listarCronogramaMedicoEmergencia($('hcodigocronograma').value);
+
+                            } else {
+                                setCabeceraCronograma(fecha, opcionBusqueda, servicio, nombrecentrocosto, codigoPersonalSalud, sede);
+                            }
+                            $('hCodigoProgramacion').value = '';
+
+
+                        }
+
+                    })
+
+                    break;
+                }
 
             }
         }
@@ -2181,8 +2181,7 @@ function mostrarFormRegistrarTriaje() {
         datos = Base64.encode(datos);
 
         CargarVentana('popupRegistroTriaje', 'Triaje', '../cita/manteTriaje.php?accion=insertar' + '&datos=' + datos, '300', '230', false, true, '', 1, '', 10, 10, 10, 10);
-    }
-    else {
+    } else {
         alert('Seleccione una celda');
     }
 }
@@ -2199,8 +2198,7 @@ function manteTriaje(accion, horaProgramacion, codCronograma) {
 
     if (peso == '' && talla == '' && temp == '' && frecCardiaca == '' && presArterial == '' && frecRespiratoria == '' && satOxigeno == '') {
         alert('Debe ingresar como m\xEDnimo uno de los campos para registrar triaje');
-    }
-    else {
+    } else {
         if ($('unidadTalla').value == 2) {
             //De centimetros convertimos a metros
             talla = parseFloat(talla) / 100;
@@ -2214,18 +2212,18 @@ function manteTriaje(accion, horaProgramacion, codCronograma) {
 
         var data = 'p1=manteTriaje&datos=' + datos + '&accion=' + accion;
         new Ajax.Request(pathRequestControl,
-            {
-                method: 'post',
-                parameters: data,
-                onLoading: function (transport) {
-                    micargador(1);
-                },
-                onComplete: function (transport) {
-                    micargador(0);
-                    alert(transport.responseText);
-                    Windows.close("Div_popupRegistroTriaje");
+                {
+                    method: 'post',
+                    parameters: data,
+                    onLoading: function (transport) {
+                        micargador(1);
+                    },
+                    onComplete: function (transport) {
+                        micargador(0);
+                        alert(transport.responseText);
+                        Windows.close("Div_popupRegistroTriaje");
+                    }
                 }
-            }
         )
     }
 }
@@ -2238,58 +2236,58 @@ function CambiarEstadoNoAtendidoAdicional(vEstado, programacion) {
     }
     switch (vEstado) {
         case 'RESERVADO':
-            {
-                window.alert("Esta Cita no esta atendida,el estado es RESERVADO");
-                break;
-            }
+        {
+            window.alert("Esta Cita no esta atendida,el estado es RESERVADO");
+            break;
+        }
         case "PAGADO":
-            {
-                if (confirm("Esta seguro de Desconfirmar la cita?")) {
-                    var patronModulo = 'desconfirmarCita';
-                    var parametros = '';
-                    parametros += 'p1=' + patronModulo;
-                    parametros += '&p2=' + $('hCodigoProgramacion').value;
-                    new Ajax.Request(pathRequestControl, {
-                        method: 'get',
-                        asynchronous: false,
-                        parameters: parametros,
-                        onLoading: micargador(1),
-                        onComplete: function (transport) {
-                            micargador(0);
-                            respuesta = transport.responseText;
-                            window.alert(respuesta);
-                            regresaracronogramacitas();
-                        }
-                    })
-                }
-                ;
-
-
-                break;
+        {
+            if (confirm("Esta seguro de Desconfirmar la cita?")) {
+                var patronModulo = 'desconfirmarCita';
+                var parametros = '';
+                parametros += 'p1=' + patronModulo;
+                parametros += '&p2=' + $('hCodigoProgramacion').value;
+                new Ajax.Request(pathRequestControl, {
+                    method: 'get',
+                    asynchronous: false,
+                    parameters: parametros,
+                    onLoading: micargador(1),
+                    onComplete: function (transport) {
+                        micargador(0);
+                        respuesta = transport.responseText;
+                        window.alert(respuesta);
+                        regresaracronogramacitas();
+                    }
+                })
             }
+            ;
+
+
+            break;
+        }
         case "ATENDIDO":
-            {
-                if (confirm('\xBFDesea Cambiar el estado de la Cita a NO ATENDIDO?')) {
-                    var patronModulo = 'cambiarEstadoNoAtendido';
-                    var parametros = '';
-                    parametros += 'p1=' + patronModulo;
-                    parametros += '&p2=' + codigoProgramacion;
+        {
+            if (confirm('\xBFDesea Cambiar el estado de la Cita a NO ATENDIDO?')) {
+                var patronModulo = 'cambiarEstadoNoAtendido';
+                var parametros = '';
+                parametros += 'p1=' + patronModulo;
+                parametros += '&p2=' + codigoProgramacion;
 
-                    new Ajax.Request(pathRequestControl, {
-                        method: 'get',
-                        asynchronous: false,
-                        parameters: parametros,
-                        onLoading: micargador(1),
-                        onComplete: function (transport) {
-                            micargador(0);
-                            respuesta = transport.responseText;
-                            window.alert(respuesta);
-                            regresaracronogramacitas();
-                        }
-                    })
-                }
-                break;
+                new Ajax.Request(pathRequestControl, {
+                    method: 'get',
+                    asynchronous: false,
+                    parameters: parametros,
+                    onLoading: micargador(1),
+                    onComplete: function (transport) {
+                        micargador(0);
+                        respuesta = transport.responseText;
+                        window.alert(respuesta);
+                        regresaracronogramacitas();
+                    }
+                })
             }
+            break;
+        }
     }
 }
 function CambiarEstadoNoAtendido() {
@@ -2300,59 +2298,59 @@ function CambiarEstadoNoAtendido() {
     }
     switch (colorceldaseleccionada) {
         case '#F0F43A':
-            {
-                window.alert("Esta Cita no esta atendida,el estado es RESERVADO");
-                break;
-            }
+        {
+            window.alert("Esta Cita no esta atendida,el estado es RESERVADO");
+            break;
+        }
         case "#F8A83E":
-            {
-                if (confirm("Esta seguro de Desconfirmar la cita?")) {
-                    var patronModulo = 'desconfirmarCita';
-                    var parametros = '';
-                    parametros += 'p1=' + patronModulo;
-                    parametros += '&p2=' + codigoProgramacion;
+        {
+            if (confirm("Esta seguro de Desconfirmar la cita?")) {
+                var patronModulo = 'desconfirmarCita';
+                var parametros = '';
+                parametros += 'p1=' + patronModulo;
+                parametros += '&p2=' + codigoProgramacion;
 
-                    new Ajax.Request(pathRequestControl, {
-                        method: 'get',
-                        asynchronous: false,
-                        parameters: parametros,
-                        onLoading: micargador(1),
-                        onComplete: function (transport) {
-                            micargador(0);
-                            respuesta = transport.responseText;
-                            window.alert(respuesta);
-                            regresaracronogramacitas();
-                        }
-                    });
-                }
-                ;
-
-
-                break;
+                new Ajax.Request(pathRequestControl, {
+                    method: 'get',
+                    asynchronous: false,
+                    parameters: parametros,
+                    onLoading: micargador(1),
+                    onComplete: function (transport) {
+                        micargador(0);
+                        respuesta = transport.responseText;
+                        window.alert(respuesta);
+                        regresaracronogramacitas();
+                    }
+                });
             }
+            ;
+
+
+            break;
+        }
         case "#DEEDF8":
-            {
-                if (confirm('\xBFDesea Cambiar el estado de la Cita a NO ATENDIDO?')) {
-                    var patronModulo = 'cambiarEstadoNoAtendido';
-                    var parametros = '';
-                    parametros += 'p1=' + patronModulo;
-                    parametros += '&p2=' + codigoProgramacion;
+        {
+            if (confirm('\xBFDesea Cambiar el estado de la Cita a NO ATENDIDO?')) {
+                var patronModulo = 'cambiarEstadoNoAtendido';
+                var parametros = '';
+                parametros += 'p1=' + patronModulo;
+                parametros += '&p2=' + codigoProgramacion;
 
-                    new Ajax.Request(pathRequestControl, {
-                        method: 'get',
-                        asynchronous: false,
-                        parameters: parametros,
-                        onLoading: micargador(1),
-                        onComplete: function (transport) {
-                            micargador(0);
-                            respuesta = transport.responseText;
-                            window.alert(respuesta);
-                            regresaracronogramacitas();
-                        }
-                    });
-                }
-                break;
+                new Ajax.Request(pathRequestControl, {
+                    method: 'get',
+                    asynchronous: false,
+                    parameters: parametros,
+                    onLoading: micargador(1),
+                    onComplete: function (transport) {
+                        micargador(0);
+                        respuesta = transport.responseText;
+                        window.alert(respuesta);
+                        regresaracronogramacitas();
+                    }
+                });
             }
+            break;
+        }
     }
 }
 
@@ -2365,28 +2363,28 @@ function anularPago() {
 
     switch (colorceldaseleccionada) {
         case "#F8A83E":
-            {
-                if (confirm('¿Desea anular el Pago realizado?')) {
-                    var patronModulo = 'anularPago';
-                    var parametros = '';
-                    parametros += 'p1=' + patronModulo;
-                    parametros += '&p2=' + codigoProgramacion;
+        {
+            if (confirm('¿Desea anular el Pago realizado?')) {
+                var patronModulo = 'anularPago';
+                var parametros = '';
+                parametros += 'p1=' + patronModulo;
+                parametros += '&p2=' + codigoProgramacion;
 
-                    new Ajax.Request(pathRequestControl, {
-                        method: 'get',
-                        asynchronous: false,
-                        parameters: parametros,
-                        onLoading: micargador(1),
-                        onComplete: function (transport) {
-                            micargador(0);
-                            var respuesta = transport.responseText;
-                            window.alert(respuesta);
-                            regresaracronogramacitas();
-                        }
-                    });
-                }
-                break;
+                new Ajax.Request(pathRequestControl, {
+                    method: 'get',
+                    asynchronous: false,
+                    parameters: parametros,
+                    onLoading: micargador(1),
+                    onComplete: function (transport) {
+                        micargador(0);
+                        var respuesta = transport.responseText;
+                        window.alert(respuesta);
+                        regresaracronogramacitas();
+                    }
+                });
             }
+            break;
+        }
     }
 
 }
@@ -2503,8 +2501,7 @@ function buscarSiguienteFecha() {
                         setCabeceraCronograma1(fechaFinal, opcionBusqueda, servicio, hNombreCentroCosto, personal, sede);
                         seleccionarFechaCitasInformes('cal01-' + diaFinal, 'cal01')
                         $('fechaDes').value = 0;
-                    }
-                    else if (n[0] == -1) {
+                    } else if (n[0] == -1) {
                         alert("No hay Programacion Disponible....");
                         x = dias;
                         $('fechaDes').value = 10;
@@ -2513,8 +2510,7 @@ function buscarSiguienteFecha() {
                 }
             })
 
-        }
-        else {
+        } else {
             // x = dias;
         }
     }
@@ -2552,20 +2548,20 @@ function accionCalendarioCitas(idAccion, cal) {
                 var vista = $('selectVista').value;
                 switch (vista) {
                     case '1':  //tripo matriz
-                        {
-                            $('btnProximaCIta').show();
-                            $('btnNuevoEmergencia').hide();
-                            regresaracronogramacitas();
-                            $('programacioncitas').style.display = 'block';
-                            $('programacioncitasEmergencia').style.display = "none";
-                            $('btnNuevoEmergencia').hide();
-                            break;
-                        }
+                    {
+                        $('btnProximaCIta').show();
+                        $('btnNuevoEmergencia').hide();
+                        regresaracronogramacitas();
+                        $('programacioncitas').style.display = 'block';
+                        $('programacioncitasEmergencia').style.display = "none";
+                        $('btnNuevoEmergencia').hide();
+                        break;
+                    }
                     case '2': //tipo detalle
-                        {
-                            mostrarProgramacionEmergenciaInformes(0);
-                            break;
-                        }
+                    {
+                        mostrarProgramacionEmergenciaInformes(0);
+                        break;
+                    }
 
                 }
 
@@ -2594,25 +2590,25 @@ function buscarProximaCita() {
         var nombreSede = "";
         switch (sede) {
             case '0000001464':
-                {
-                    nombreSede = "PROLIMA";
-                    break;
-                }
+            {
+                nombreSede = "PROLIMA";
+                break;
+            }
             case '0000000002':
-                {
-                    nombreSede = "VILLASOL";
-                    break;
-                }
+            {
+                nombreSede = "VILLASOL";
+                break;
+            }
             case '0000000003':
-                {
-                    nombreSede = "TREBOL";
-                    break;
-                }
+            {
+                nombreSede = "TREBOL";
+                break;
+            }
             case '0000000001':
-                {
-                    nombreSede = "HMLO";
-                    break;
-                }
+            {
+                nombreSede = "HMLO";
+                break;
+            }
         }
         var patronModulo = 'buscarProximaCita';
         var parametros = '';
@@ -2697,8 +2693,7 @@ function buscarProximaCita() {
                                     x = contador - 1;
                                     msg = 1;
 
-                                }
-                                else {
+                                } else {
                                     msg = 0;
                                     $('buscarOtro').value = 0;
                                 }
@@ -2712,8 +2707,7 @@ function buscarProximaCita() {
 
             }
         })
-    }
-    else {
+    } else {
         alert("Seleccione fecha actual...");
     }
 }
@@ -3452,8 +3446,7 @@ function eliminarRegistrodePacientes(rId, cInd) {
                             tablaAsignacionMedicoPacientes.cells(i, 1).setValue(nombrePaciente);
                             tablaAsignacionMedicoPacientes.cells(i, 2).setValue('../../../../fastmedical_front/imagen/icono/borrar.png');
                             v = 1;
-                        }
-                        else {
+                        } else {
                             if (v == 0) {
                                 codigoPaciente1 = tablaAsignacionMedicoPacientes.cells(parseInt(m) - 1, 0).getValue();
                             }
@@ -3537,8 +3530,7 @@ function popupDerivarMasivamente() {
     }
     if (n == 0) {
         alert('Seleccione por lo menos a un paciente.');
-    }
-    else {
+    } else {
         var vformname = 'ventanaDerivarMasivamente';
         var vtitle = 'Derivación masiva';
         var vwidth = '700';

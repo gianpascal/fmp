@@ -1682,7 +1682,26 @@ class DReporte extends Adophp {
         return $resultado;
     }
     
-    
+     function dListaObjetos() {
+        parent::ConnectionOpen("pnsObjetoPlsql", "dbweb");
+        parent::SetParameterSP("accion", '1');
+        parent::SetParameterSP("esquema",'');   
+        parent::SetParameterSP("nombre",''); 
+        parent::SetParameterSP("type",''); 
+        $resultadoArray = parent::executeSPArrayX();
+        parent::ConnectionClose();
+        return $resultadoArray;
+    }
+    function dDetalleObjetos($datos) {
+        parent::ConnectionOpen("pnsObjetoPlsql", "dbweb");
+        parent::SetParameterSP("accion", '2');
+        parent::SetParameterSP("esquema",$datos['esquema']); 
+        parent::SetParameterSP("nombre",$datos['objeto']);  
+        parent::SetParameterSP("type",$datos['type']); 
+        $resultadoArray = parent::executeSPArrayX();
+        parent::ConnectionClose();
+        return $resultadoArray;
+    }
     
     
 

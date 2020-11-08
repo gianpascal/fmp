@@ -11783,6 +11783,25 @@ if (ini_get('memory_limit') == "2048M" && ini_get('max_input_time') == "90000" &
                  
                 }  
                 
+               case 'listaObjetos': {
+                    require_once("ActionReporte.php");
+                    header("Content-type:application/json");
+                    $o_ActionReporte = new ActionReporte();
+                    $lista = $o_ActionReporte->aListaObjetos();
+                    $resultado = json_encode($lista);
+
+                    break;
+                }
+            case 'obtenerObjeto': {
+                    require_once("ActionReporte.php");
+                    $o_ActionReporte = new ActionReporte();
+                    $datos["esquema"] = $parametros["p2"];
+                    $datos["objeto"] = $parametros["p3"];
+                    $datos["type"] = $parametros["p4"];
+                    $objeto = $o_ActionReporte->aDetalleObjetos($datos);
+                    $resultado = $datos["type"] . "-" . $datos["esquema"] . "-" . $datos["objeto"];
+                    break;
+                } 
                 
 
             /*             * ************************************************************* */

@@ -3085,6 +3085,18 @@ class ActionReporte {
         return $o_TablaHtmlx->generaTabla($arrayCabecera, $arrayFilas, $arrayTamano, $arrayTipo, $arrayCursor, $arrayHidden, $arrayAling);
     }
 
+    public function aListaObjetos() {
+        $o_LReporte = new LReporte();
+        $respuesta = $o_LReporte->lListaObjetos();
+        return $respuesta;
+    }
+
+    public function aDetalleObjetos($datos) {
+        $o_LReporte = new LReporte();
+        $respuesta = $o_LReporte->lDetalleObjetos($datos);
+
+        return $respuesta;
+    }
 //*******************************************************************************************
 }
 

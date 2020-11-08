@@ -113,15 +113,15 @@ class Conexion
 
     public static function getInitDsnMSSQLAuditoriaWeb()
     {
-        $arrayDsnMSSQL['dbname'] = 'yachayPanel';
+        $arrayDsnMSSQL['dbname'] = 'fastmedical_db';
        // $arrayDsnMSSQL['dbname'] = 'DB_FastMedical';
-        $arrayDsnMSSQL['dbuser'] = 'sa';
+        $arrayDsnMSSQL['dbuser'] = 'admin_sql';
        // $arrayDsnMSSQL['dbuser'] = 'db_admin_fm';
         //$arrayDsnMSSQL['dbpasw'] = 'Dive2018$';
-        $arrayDsnMSSQL['dbpasw'] = '123456';
+        $arrayDsnMSSQL['dbpasw'] = 'Srv347Demo$';
         
         //$arrayDsnMSSQL['dbhost'] = 'GARROYO-L\SQLEXPRESS2017';
-        $arrayDsnMSSQL['dbhost'] = 'localhost';
+        $arrayDsnMSSQL['dbhost'] = 'db-server-fastmedical-demo.database.windows.net,1433';
         
         //    $arrayDsnMSSQL['dbhost'] = 'DESKTOP-FRC01VR\gianp';
         $arrayDsnMSSQL['dbdriv'] = 'SQLSRV';
@@ -130,15 +130,15 @@ class Conexion
 
     public static function getInitDsnMSSQLSimedh()
     {
-        $arrayDsnMSSQL['dbname'] = 'yachay';
+        $arrayDsnMSSQL['dbname'] = 'fastmedical_db';
        // $arrayDsnMSSQL['dbname'] = 'DB_FastMedical';
-        $arrayDsnMSSQL['dbuser'] = 'sa';
+        $arrayDsnMSSQL['dbuser'] = 'admin_sql';
        // $arrayDsnMSSQL['dbuser'] = 'db_admin_fm';
         //$arrayDsnMSSQL['dbpasw'] = 'Dive2018$';
-        $arrayDsnMSSQL['dbpasw'] = '123456';
+        $arrayDsnMSSQL['dbpasw'] = 'Srv347Demo$';
         
         //$arrayDsnMSSQL['dbhost'] = 'GARROYO-L\SQLEXPRESS2017';
-        $arrayDsnMSSQL['dbhost'] = 'localhost';
+        $arrayDsnMSSQL['dbhost'] = 'db-server-fastmedical-demo.database.windows.net,1433';
         
         //    $arrayDsnMSSQL['dbhost'] = 'DESKTOP-FRC01VR\gianp';
         $arrayDsnMSSQL['dbdriv'] = 'SQLSRV';

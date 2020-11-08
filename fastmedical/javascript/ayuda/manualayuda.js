@@ -443,3 +443,55 @@ function capturarPadre(id){
 function cerrarPopap(){
     Windows.close("Div_asignarPadre")
 }
+function listarObjetos() {
+    var patronModulo = 'listaObjetos';
+    var parametros = '';
+    parametros += 'p1=' + patronModulo + '&p2=' + 'todos';
+    contadorCargador++;
+    var idCargador = contadorCargador;
+    new Ajax.Request(pathRequestControl, {
+        method: 'get',
+        parameters: parametros,
+        asynchronous: false,
+        onLoading: cargadorpeche(1, idCargador),
+        onComplete: function (transport) {
+            cargadorpeche(0, idCargador);
+            var objetos = transport.responseJSON
+            procesarObjetos(objetos);
+
+        }
+    });
+}
+function procesarObjetos(objetos) {
+    var i;
+    var total=objetos.length;
+    var avance=0;
+    for (i = 0; i < objetos.length; i++) {
+        avance=100*i/total;
+        obtenerObjeto(objetos[i],avance);
+        
+    }
+}
+function obtenerObjeto(objeto,avance){
+    var patronModulo = 'obtenerObjeto';
+    var parametros = '';
+    parametros += 'p1=' + patronModulo;
+    parametros += '&p2=' + objeto.esquema;
+    parametros += '&p3=' + objeto.objeto;
+    parametros += '&p4=' + objeto.type;
+    contadorCargador++;
+    var idCargador = contadorCargador;
+    new Ajax.Request(pathRequestControl, {
+        method: 'get',
+        parameters: parametros,
+        asynchronous: false,
+        onLoading: cargadorpeche(1, idCargador),
+        onComplete: function (transport) {
+            cargadorpeche(0, idCargador);
+            var respuesta = transport.responseText;
+            //var valor=$('respuesta').value;
+            $('respuesta').update(avance+"%-"+respuesta+'\n');
+            
+        }
+    });
+}
