@@ -398,13 +398,14 @@ function mostrarUsuario() {
     parametros += 'p1=' + patronModulo;
     parametros += '&p2=' + icodigoEmpleado;
     parametros += '&p3=' + document.getElementById("txtCodPer").value.trim();
-
+    contadorCargador++;
+    var idCargador = contadorCargador;
     new Ajax.Request(pathRequestControl, {
         method: 'get',
         parameters: parametros,
-        onLoading: micargador(1),
+        onLoading: cargadorpeche(1, idCargador),
         onComplete: function (transport) {
-            micargador(0);
+            cargadorpeche(0, idCargador);
             respuesta = transport.responseText;
             $('divDerRegistroP').update(respuesta);
             //            desactivarModatidadContrata(1);

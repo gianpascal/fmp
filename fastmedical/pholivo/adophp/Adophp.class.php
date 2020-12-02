@@ -789,7 +789,7 @@ class Adophp {
             case "SQLSRV":
                 //var_dump($this->RecordSet);
                 $numFilas = sqlsrv_num_rows($this->RecordSet);
-                //  echo "Numfilas: $numFilas";
+              // echo "Numfilas: $numFilas";
                 if ($numFilas == 1) {
                     $array[0] = $this->GetRow();
                 } else {
@@ -799,11 +799,16 @@ class Adophp {
                             array_push($array, $f);
                         }
                         $next_result = sqlsrv_next_result($this->RecordSet);
+                        $error = sqlsrv_errors();
+                        if ($error !== null) {
+                            $array['error'][] = $error;
+                        }
                     } while ($next_result);
                 }
 
                 break;
         }
+      //  print_r($array);
         return $array;
         /*
           $this->ExecuteSP();

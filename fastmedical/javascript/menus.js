@@ -191,13 +191,14 @@ function comboCategorias() {
     patronModulo = 'comboCategorias';
     parametros = '';
     parametros += 'p1=' + patronModulo;
-
+    contadorCargador++;
+    var idCargador = contadorCargador;
     new Ajax.Request(pathRequestControl, {
         method: 'get',
         parameters: parametros,
-        onLoading: micargador(1),
+        onLoading: cargadorpeche(1, idCargador),
         onComplete: function (transport) {
-            micargador(0);
+            cargadorpeche(0, idCargador);
             respuesta = transport.responseText;
             $('Contenido').update(respuesta);
             //  mostrarTCategorias();
@@ -210,13 +211,14 @@ function comboAfiliaciones() {
     patronModulo = 'comboAfiliaciones';
     parametros = '';
     parametros += 'p1=' + patronModulo;
-
+contadorCargador++;
+    var idCargador = contadorCargador;
     new Ajax.Request(pathRequestControl, {
         method: 'get',
         parameters: parametros,
-        onLoading: micargador(1),
+        onLoading: cargadorpeche(1, idCargador),
         onComplete: function (transport) {
-            micargador(0);
+            cargadorpeche(0, idCargador);
             respuesta = transport.responseText;
             $('Contenido').update(respuesta);
             //  mostrarTCategorias();
@@ -261,13 +263,14 @@ function registroDatosPersonal() {
     var patronModulo = 'registroDatosPersonal';
     var parametros = '';
     parametros += 'p1=' + patronModulo;
-
+    contadorCargador++;
+    var idCargador = contadorCargador;
     new Ajax.Request(pathRequestControl, {
         method: 'get',
         parameters: parametros,
-        onLoading: micargador(1),
+        onLoading: cargadorpeche(1, idCargador),
         onComplete: function (transport) {
-            micargador(0);
+            cargadorpeche(0, idCargador);
             respuesta = transport.responseText;
             $('Contenido').update(respuesta);
             //verEmpleadoCaducaSuContrato();
@@ -283,13 +286,14 @@ function actualizaCCosto() {
     patronModulo = 'actualizaCCosto';
     parametros = '';
     parametros += 'p1=' + patronModulo;
-
+    contadorCargador++;
+    var idCargador = contadorCargador;
     new Ajax.Request(pathRequestControl, {
         method: 'get',
         parameters: parametros,
-        onLoading: micargador(1),
+        onLoading: cargadorpeche(1, idCargador),
         onComplete: function (transport) {
-            micargador(0);
+            cargadorpeche(0, idCargador);
             respuesta = transport.responseText;
             $('Contenido').update(respuesta);
             //actualizarArbolCCostos();
@@ -323,16 +327,16 @@ function mantenimientoAmbientesFisicos() {
     parametros = 'p1=' + patronModulo;
 
     new Ajax.Request(pathRequestControl,
-        {
-            method: 'get',
-            parameters: parametros,
-            onLoading: micargador(1),
-            onComplete: function (transport) {
-                micargador(0);
-                respuesta = transport.responseText;
-                $('Contenido').update(respuesta);
+            {
+                method: 'get',
+                parameters: parametros,
+                onLoading: micargador(1),
+                onComplete: function (transport) {
+                    micargador(0);
+                    respuesta = transport.responseText;
+                    $('Contenido').update(respuesta);
+                }
             }
-        }
     );
 }
 
@@ -341,17 +345,17 @@ function mantenimientoTurnos() {
     parametros = 'p1=' + patronModulo;
 
     new Ajax.Request(pathRequestControl,
-        {
-            method: 'get',
-            parameters: parametros,
-            onLoading: micargador(1),
-            onComplete: function (transport) {
-                micargador(0);
-                respuesta = transport.responseText;
-                $('Contenido').update(respuesta);
-                cargarTablaTurno();
+            {
+                method: 'get',
+                parameters: parametros,
+                onLoading: micargador(1),
+                onComplete: function (transport) {
+                    micargador(0);
+                    respuesta = transport.responseText;
+                    $('Contenido').update(respuesta);
+                    cargarTablaTurno();
+                }
             }
-        }
     )
 }
 

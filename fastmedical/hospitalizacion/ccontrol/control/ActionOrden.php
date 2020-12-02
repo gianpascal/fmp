@@ -181,9 +181,9 @@ class ActionOrden {
         $contador = 0;
         foreach ($arrayDatosOrden as $value) {
             $contador++;
-            $cadena.=$value[0] . '[]' . $value[1] . '[]' . $value[2] . '[]' . $value[3] . '[]' . $value[4];
+            $cadena .= $value[0] . '[]' . $value[1] . '[]' . $value[2] . '[]' . $value[3] . '[]' . $value[4];
             if ($contador != $numero) {
-                $cadena.="|";
+                $cadena .= "|";
             }
         }
 //        switch ($numero) {
@@ -213,13 +213,13 @@ class ActionOrden {
         echo $arrayDatosAfiliacion;
         //require_once '../../cvista/orden/PopadGenerarOrden.php';
     }
+
     public function aAnularItem($datos) {
         $oLOrden = new LOrden();
         $array = $oLOrden->lAnularItem($datos);
         return utf8_encode($array[0][0]);
         //require_once '../../cvista/orden/PopadGenerarOrden.php';
     }
-    
 
     public function tablaProductosxAfiliacion($afil, $pro) {
         $oLOrden = new LOrden();
@@ -238,12 +238,12 @@ class ActionOrden {
         $oLOrden = new LOrden();
         $o_TablaHtmlx = new tablaDHTMLX();
         $arrayExp = Array();
-        $arrayCabecera = array("0" => "Producto", "1" => "Cantidad", "2" => "Precio", "3" => "Total", "4" => "Accion","5"=>"Código");
-        $arrayTamano = array("0" => "*", "1" => "70", "2" => "70", "3" => "70", "4" => "70","5"=>"*");
-        $arrayTipo = array("0" => "ro", "1" => "ed", "2" => "ed", "3" => "ro", "4" => "img","5"=>"ro");
-        $arrayCursor = array("0" => "default", "1" => "lefth", "2" => "lefth", "3" => "lefth", "4" => "pointer","5"=>"default");
-        $arrayHidden = array("0" => "false", "1" => "false", "2" => "false", "3" => "false", "4" => "false","5"=>"false");
-        $arrayAling = array("0" => "lefth", "1" => "lefth", "2" => "center", "3" => "center", "4" => "center","5"=>"center");
+        $arrayCabecera = array("0" => "Producto", "1" => "Cantidad", "2" => "Precio", "3" => "Total", "4" => "Accion", "5" => "Código");
+        $arrayTamano = array("0" => "*", "1" => "70", "2" => "70", "3" => "70", "4" => "70", "5" => "*");
+        $arrayTipo = array("0" => "ro", "1" => "ed", "2" => "ed", "3" => "ro", "4" => "img", "5" => "ro");
+        $arrayCursor = array("0" => "default", "1" => "lefth", "2" => "lefth", "3" => "lefth", "4" => "pointer", "5" => "default");
+        $arrayHidden = array("0" => "false", "1" => "false", "2" => "false", "3" => "false", "4" => "false", "5" => "false");
+        $arrayAling = array("0" => "lefth", "1" => "lefth", "2" => "center", "3" => "center", "4" => "center", "5" => "center");
         return $o_TablaHtmlx->generaTabla($arrayCabecera, $arrayExp, $arrayTamano, $arrayTipo, $arrayCursor, $arrayHidden, $arrayAling);
     }
 
@@ -389,8 +389,8 @@ class ActionOrden {
         if (isset($arrayDatosComprobante['0']['iActual'])) {
             $nroComprobanteFacturacion = $arrayDatosComprobante['0']['iActual'];
             $nroComprobanteFacturacion = $nroComprobanteFacturacion + 1;
-            $tipoIgv=$arrayDatosComprobante['0']['iIdTipoIgv'];
-            $vSerie=$arrayDatosComprobante['0']['vSerie'];
+            $tipoIgv = $arrayDatosComprobante['0']['iIdTipoIgv'];
+            $vSerie = $arrayDatosComprobante['0']['vSerie'];
         } else {
             $nroComprobanteFacturacion = '';
         }
@@ -398,7 +398,7 @@ class ActionOrden {
         $indFormaPagoSeleccionado = "0001"; //Seleccionamos efectivo por defecto
         $opcionesCboFormaPagoComprobanteFacturacion = $this->listarOpcionesFormasDePago($indFormaPagoSeleccionado);
         $fechaActualServidor = date("d/m/y");
-        
+
         /*
 
           $indTipoComprobanteSeleccionado = "01"; //Seleccionamos Boleta por defecto
@@ -452,15 +452,14 @@ class ActionOrden {
 
         $nroComprobanteFacturacion = "nada";
         $tipoIgv = "nada";
-        $vSerie='nada';
+        $vSerie = 'nada';
 
         if (count($arrayDatos) > 0) {
             foreach ($arrayDatos as $fila) {
                 $nroComprobanteFacturacion = $fila["iActual"];
                 $nroComprobanteFacturacion = $nroComprobanteFacturacion + 1;
                 $tipoIgv = $fila['iIdTipoIgv'];
-                $vSerie=$fila['vSerie'];
-                
+                $vSerie = $fila['vSerie'];
             }
         }
         return "$nroComprobanteFacturacion-$tipoIgv-$vSerie";
@@ -605,11 +604,208 @@ class ActionOrden {
         $comboTipoDocumentos = $o_LPersona->comboTipoDocumento('1');
         require_once("../../cvista/orden/vBuscarAutoriza.php");
     }
-    
-    public function aPagarOrdenes($datos){
+
+    public function aPagarOrdenes($datos) {
         $oLOrden = new LOrden();
         $array = $oLOrden->lPagarOrdenes($datos);
+        $cabecera = $array[0];
+        print_r($array);
+        $cantidad = count($array);
         $respuesta = $array[0][0];
+        //Llamar a facturación electrónica
+        include_once '../../../pholivo/arrayToXml.php';
+
+        $header['fechaTransaccion'] = '2020-11-28 12:47:35'; //date('Y-m-d H:i:s');// '2020-11-06 12:46:41';
+        $header['idEmisor'] = '20147736577';
+        $header['token'] = 'WAGptLMI3VCh12WxSCny/Wp++O4=';
+        $header['transaccion'] = 'enviarComprobanteRequest';
+
+        $comprobanteElectronico['anticipo'] = $cabecera['anticipo'];
+        $comprobanteElectronico['codTipoOperacion'] = $cabecera['codTipoOperacion'];
+        $comprobanteElectronico['codigoEmisor'] = $cabecera['codigoEmisor'];
+        $comprobanteElectronico['codigoTipoDocumentoIdentificacionAdquiriente'] = trim($cabecera['codigoTipoDocumentoIdentificacionAdquiriente']);
+        $comprobanteElectronico['codigoTipoDocumentoIdentificacionEmisor'] = $cabecera['codigoTipoDocumentoIdentificacionEmisor'];
+        $comprobanteElectronico['codigoTipoMoneda'] = $cabecera['codigoTipoMoneda'];
+
+        $comprobanteElectronico['correoElectronicoAdquiriente'] = trim($cabecera['correoElectronicoAdquiriente']);
+
+        $descuentoCargoGlobal['descuentoAfectaIGV'] = trim($cabecera['descuentoAfectaIGV']);
+        $descuentoCargoGlobal['descuentoNoAfectaIGV'] = $cabecera['descuentoNoAfectaIGV'];
+        //$descuentoCargoGlobal['recagoYpropina'] = '27.19';
+
+        $comprobanteElectronico['descuentoCargoGlobal'] = $descuentoCargoGlobal;
+        $comprobanteElectronico['descuentoGlobal'] =trim($cabecera['descuentoGlobal']);
+
+        $direccionAdquiriente['departamento'] = $cabecera['departamentoAdquiriente'];
+        $direccionAdquiriente['direccionDetallada'] = $cabecera['direccionDetalladaAdquiriente'];
+        $direccionAdquiriente['distrito'] = $cabecera['distritoAdquiriente'];
+        $direccionAdquiriente['provincia'] = $cabecera['provienciaAdquiriente'];
+
+        $comprobanteElectronico['direccionAdquiriente'] = $direccionAdquiriente;
+
+        $direccionEmisor['codigoPais'] = $cabecera['codigoPaisEmisor'];
+        $direccionEmisor['codigoSede'] = '';
+        $direccionEmisor['codigoSunatAnexo'] = $cabecera['codigoSunatAnexo'];
+        $direccionEmisor['codigoUbigeo'] = $cabecera['codigoUbigeo'];
+        $direccionEmisor['departamento'] = $cabecera['departamento'];
+        $direccionEmisor['direccionDetallada'] = $cabecera['direccionDetallada'];
+        $direccionEmisor['distrito'] = $cabecera['distrito'];
+        $direccionEmisor['provincia'] = $cabecera['provincia'];
+
+        $comprobanteElectronico['direccionEmisor'] = $direccionEmisor;
+        /*
+          $direccionEntregaBienOPrestaServicio['codigoPais'] = 'PE';
+          $direccionEntregaBienOPrestaServicio['codigoSede'] = 'HCC6';
+          $direccionEntregaBienOPrestaServicio['codigoSunatAnexo'] = '';
+          $direccionEntregaBienOPrestaServicio['codigoUbigeo'] = '030101';
+          $direccionEntregaBienOPrestaServicio['departamento'] = 'APUR�?MAC';
+          $direccionEntregaBienOPrestaServicio['direccionDetallada'] = 'AV. MI CASA NRO. 125';
+          $direccionEntregaBienOPrestaServicio['distrito'] = 'ABANCAY';
+          $direccionEntregaBienOPrestaServicio['provincia'] = 'ABANCAY';
+          $comprobanteElectronico['direccionEntregaBienOPrestaServicio'] = $direccionEntregaBienOPrestaServicio;
+         */
+        $listadoDeEstructuras['nombre'] = 'CAJERO';
+        $listadoDeEstructuras['valor'] = 'USUARIO_VALDITEX';
+        $estructuraVariable['listadoDeEstructuras'][] = $listadoDeEstructuras;
+        $listadoDeEstructuras['nombre'] = 'RECARGO_CONSUMO';
+        $listadoDeEstructuras['valor'] = '27.19';
+        $estructuraVariable['listadoDeEstructuras'][] = $listadoDeEstructuras;
+        $listadoDeEstructuras['nombre'] = 'SEDE';
+        $listadoDeEstructuras['valor'] = 'SEDE ALFA';
+        $estructuraVariable['listadoDeEstructuras'][] = $listadoDeEstructuras;
+        $comprobanteElectronico['estructuraVariable'] = $estructuraVariable;
+
+        $comprobanteElectronico['fechaEmision'] = $cabecera['fechaEmision']; //'2020-11-06';
+        $comprobanteElectronico['fechaVencimiento'] = $cabecera['fechaVencimiento']; //'2020-11-06';
+        //   $comprobanteElectronico['formaPago'] = 'CRE';
+        //   $comprobanteElectronico['gratuito'] = 'false';
+        $comprobanteElectronico['horaEmision'] = $cabecera['horaEmision']; //'12:46:41';
+
+        $identificador['codigoTipoDocumento'] = $cabecera['codigoTipoDocumento']; //'01';
+        $identificador['numeroCorrelativo'] = $cabecera['numeroCorrelativo']; //'10';
+        $identificador['numeroDocumentoIdentificacionEmisor'] = $cabecera['numeroDocumentoIdentificacionEmisor']; //'20553771111';
+        $identificador['serie'] = trim($cabecera['serie']);
+        //$identificador['tipoEmision'] = 'ELE';
+
+        $comprobanteElectronico['identificador'] = $identificador;
+        $comprobanteElectronico['importeTotal'] = $cabecera['importeTotal']; //'169.71';
+        $comprobanteElectronico['indicadorOperacionSujetaDetraccion'] = $cabecera['indicadorOperacionSujetaDetraccion'];
+        //  $comprobanteElectronico['indicadorRetornoEstado'] = 'S';
+        $i = 0;
+        foreach ($array as $key => $value) {
+            if ($i < $cantidad - 1) {
+                $itemsComprobantePagoElectronicoVenta['cantidad'] = $value['cantidad'];//
+               // $itemsComprobantePagoElectronicoVenta['cargoNoAfectaIGV'] = $value[''];//'0.0';
+              //  $itemsComprobantePagoElectronicoVenta['cargoNoAfectaIGVFactor'] =$value[''];//'0';
+                $itemsComprobantePagoElectronicoVenta['codigoProducto'] = $value['codigoProducto'];//'';
+                $itemsComprobantePagoElectronicoVenta['descripcionProducto'] = $value['descripcionProducto'];//'ASDASD';
+              //  $itemsComprobantePagoElectronicoVenta['detalleProducto'] = $value[''];//'';
+             //   $itemsComprobantePagoElectronicoVenta['gratuito'] =$value[''];// 'false';
+                $itemsComprobantePagoElectronicoVenta['importeTotal'] = $value['importeTotal'];//'169.71';
+                $itemsComprobantePagoElectronicoVenta['importeValorVentaItem'] =$value['importeValorVentaItem'];// '143.82';
+
+
+
+
+                $impuestosUnitarios['codigoImpuestoUnitario'] = $value['codigoImpuestoUnitario'];//'1000';
+                $impuestosUnitarios['codigoTipoAfectacionIgv'] = $value['codigoTipoAfectacionIgv'];//'10';
+                $impuestosUnitarios['montoBaseImpuesto'] = $value['montoBaseImpuesto'];//'143.82';
+               // $impuestosUnitarios['montoSubTotalImpuestoUnitario'] = $value['montoSubTotalImpuestoUnitario'];//'25.89';
+                $impuestosUnitarios['montoTotalImpuestoUnitario'] =$value['montoTotalImpuestoUnitario'];// '25.89';
+
+                $itemsComprobantePagoElectronicoVenta['impuestosUnitarios'] = $impuestosUnitarios;
+
+
+                $itemsComprobantePagoElectronicoVenta['numeroOrden'] =$value['numeroOrden'];// '1';
+               // $itemsComprobantePagoElectronicoVenta['precioReferencia'] = $value[''];//'false';
+
+                $preciosUnitarios['codigoTipoPrecio'] = $value['codigoTipoPrecio'];//'01';
+                $preciosUnitarios['montoPrecio'] = $value['montoPrecio'];//'169.71';
+                $itemsComprobantePagoElectronicoVenta['preciosUnitarios'] = $preciosUnitarios;
+
+                $itemsComprobantePagoElectronicoVenta['unidadMedida'] = trim($value['unidadMedida']);//'ZZ';
+                $itemsComprobantePagoElectronicoVenta['valorVentaUnitario'] =$value['valorVentaUnitario'];// '143.82000';
+
+
+                $comprobanteElectronico['itemsComprobantePagoElectronicoVenta'][] = $itemsComprobantePagoElectronicoVenta;
+            }
+            $i++;
+        }
+
+        $comprobanteElectronico['numeroDocumentoIdentificacionAdquiriente'] = $cabecera['numeroDocumentoIdentificacionAdquiriente'];//'20508316985';
+         $comprobanteElectronico['nombresAdquiriente'] = $cabecera['nombresAdquiriente'];
+          $comprobanteElectronico['apellidosAdquiriente'] = $cabecera['apellidosAdquiriente'];
+       // $comprobanteElectronico['observaciones'] = $cabecera[''];'';
+      //  $comprobanteElectronico['precioReferencial'] = 'false';
+      //  $propiedadesAdicionales['codigoPropiedadAdicional'] = $cabecera[''];//'1000';
+      //  $propiedadesAdicionales['descripcionPropiedadAdicional'] = 'CIENTO SETENTA Y UNO CON 01/100 SOLES';
+     //   $comprobanteElectronico['propiedadesAdicionales'] = $propiedadesAdicionales;
+      //  $comprobanteElectronico['razonSocialAdquiriente'] = $cabecera['razonSocialAdquiriente'];//'CONSULTORIA Y ASESORIA EN TECNOLOGIA CONASTEC S.R.L. ';
+        $comprobanteElectronico['razonSocialEmisor'] = 'CONGREG. PADRES OBLATOS SAN JOSE DE ASTI';
+        $comprobanteElectronico['sumatoriaOtrosCargos'] =$cabecera['sumatoriaOtrosCargos'];// '27.19';
+        $comprobanteElectronico['telefonoEmisor'] =$cabecera['telefonoEmisor'];//  '';
+      // $comprobanteElectronico['ticket'] = 'false';
+        $comprobanteElectronico['totalCargoNoAfecta'] = $cabecera['totalCargoNoAfecta'];// '27.19';
+        $comprobanteElectronico['totalIgv'] = $cabecera['totalIgv'];// '21.94';
+        $comprobanteElectronico['totalImpuesto'] = $cabecera['totalImpuesto'];// '21.94';
+        $comprobanteElectronico['totalIsc'] = $cabecera['totalIsc'];// '0.00';
+        $comprobanteElectronico['totalOperacionExportacion'] = $cabecera['totalOperacionExportacion'];// '0.00';
+        $comprobanteElectronico['totalOperacionGratuito'] = $cabecera['totalOperacionGratuito'];// '0.00';
+        $comprobanteElectronico['totalPrecioVenta'] = $cabecera['totalPrecioVenta'];// '143.82';
+        $comprobanteElectronico['totalTributoGratuito'] = $cabecera['totalTributoGratuito'];// '0.00';
+        $comprobanteElectronico['totalValorVenta'] =$cabecera['totalValorVenta'];//  '121.88';
+        $comprobanteElectronico['totalValorVentaOperacionesExoneradas'] = $cabecera['totalValorVentaOperacionesExoneradas'];// '0.00';
+        $comprobanteElectronico['totalValorVentaOperacionesGravadas'] = $cabecera['totalValorVentaOperacionesGravadas'];// '121.88';
+        $comprobanteElectronico['totalValorVentaOperacionesInafectas'] = $cabecera['totalValorVentaOperacionesInafectas'];// '0.00';
+      //  $comprobanteElectronico['usuario'] = $cabecera['telefonoEmisor'];// 'USUARIO_VALDITEX';
+        //$comprobanteElectronico['ventaItinerante'] = $cabecera['telefonoEmisor'];// 'false';
+
+        $enviarComprobante['header'] = $header;
+        $enviarComprobante['comprobanteElectronico'] = $comprobanteElectronico;
+        $data = ArrayToXml::convert($enviarComprobante, 'enviarComprobante', true, 'UTF-8', '1.0', [], true);
+        print_r($data);
+
+
+        $wsdl = 'https://qa.ebis.pe/SfeWeb/services/ws/sfeServicesNetwork.wsdl'; //URL de nuestro servicio soap
+//Basados en la estructura del servicio armamos un array
+        $params = Array(
+            "data" => $data
+        );
+
+        $options = Array(
+            "uri" => $wsdl,
+            "style" => SOAP_RPC,
+            "use" => SOAP_ENCODED,
+            "soap_version" => SOAP_1_1,
+            "cache_wsdl" => WSDL_CACHE_BOTH,
+            "connection_timeout" => 15,
+            "trace" => false,
+            "encoding" => "UTF-8",
+            "exceptions" => false,
+            "stream_context" => stream_context_create(
+                    array(
+                        'ssl' => array(
+                            'verify_peer' => false,
+                            'verify_peer_name' => false,
+                        )
+                    )
+            )
+        );
+
+//Enviamos el Request
+        $soap = new SoapClient($wsdl, $options);
+        $result = $soap->enviarComprobante($params); //Aquí cambiamos dependiendo de la acción del servicio que necesitemos ejecutar
+        var_dump($result);
+
+
+
+
+
+
+
+
+        //////////////////////////////////////////////////
+
         return $respuesta;
     }
 

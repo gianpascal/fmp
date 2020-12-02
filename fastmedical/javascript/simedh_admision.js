@@ -6,33 +6,33 @@ var contadorCargador = 0;
 var arrayEstadosCargador = new Array();
 //var laban=28;
 /*
-function micargador(estado) {
-    $('VentanaTransparente').setStyle({
-        visibility: 'visible'
-    });
-
-    switch (estado) {
-
-        case 0:
-        {
-
-            $('VentanaTransparente').hide();
-            // alert('por aca');
-            break;
-        }
-        case 1:
-        {
-            $('VentanaTransparente').show();
-            break;
-        }
-    }
-}*/
+ function micargador(estado) {
+ $('VentanaTransparente').setStyle({
+ visibility: 'visible'
+ });
+ 
+ switch (estado) {
+ 
+ case 0:
+ {
+ 
+ $('VentanaTransparente').hide();
+ // alert('por aca');
+ break;
+ }
+ case 1:
+ {
+ $('VentanaTransparente').show();
+ break;
+ }
+ }
+ }*/
 function cargadorpeche(estado, id) {
-    
+
     $('VentanaTransparente').setStyle({
         visibility: 'visible'
     });
-    
+
     if (estado == 1) {
         //
         arrayEstadosCargador[id] = 1;
@@ -42,13 +42,13 @@ function cargadorpeche(estado, id) {
         $('overlayPeche').setStyle({
             height: alto + 'px'
         });
-       
+
         $('VentanaTransparente').setStyle({
             display: 'block'
         });
         $('VentanaTransparente').show();
-        
-       // $('VentanaTransparente').show();
+
+        // $('VentanaTransparente').show();
         //alert('ventana trans');
 
     }
@@ -66,7 +66,7 @@ function cargadorpeche(estado, id) {
         if (estadoGeneral == 0) {
             $('VentanaTransparente').hide();
         }
-        
+
     }
 // alert('estado='+estado+'id='+id);
 }
@@ -149,15 +149,15 @@ function popup_datos_complementarios(capa, texto, titulo, chk) {
     var url = '../../ccontrol/control/control.php';
     var data = "p1=form_popup_datos_complementarios&p2=" + capa + "&p3=" + texto + "&p4=" + valor + "&p5=" + titulo + "&p6=" + chk;
     new Ajax.Request(url,
-    {
-        method: 'get',
-        parameters: data,
-        onLoading: micargador(1),
-        onComplete: function(transport) {
-            micargador(0);
-            $(capa).update(transport.responseText);
-        }
-    }
+            {
+                method: 'get',
+                parameters: data,
+                onLoading: micargador(1),
+                onComplete: function (transport) {
+                    micargador(0);
+                    $(capa).update(transport.responseText);
+                }
+            }
     )
 }
 function guardar_persona() {
@@ -183,38 +183,39 @@ function guardar_persona() {
             if (validablancos(obl) && validaOR(arrayOr) && valida_ubigueo()) {
                 if (window.confirm("¿Desea guardar los datos?")) {
                     // alert($('cbNac_pais').value);
+                    contadorCargador++;
+                    var idCargador = contadorCargador;
                     new Ajax.Request(url,
-                    {
-                        method: 'get',
-                        parameters: data,
-                        onLoading: micargador(1),
-                        onComplete: function(transport) {
-                            micargador(0);
-                            mensaje = transport.responseText;
-                            cierraRegistraPersona(funcion, mensaje);
-                        //DatosPersonasAdmision(p_idd);
-                        }
-                    }
+                            {
+                                method: 'get',
+                                parameters: data,
+                                onLoading: cargadorpeche(1, idCargador),
+                                onComplete: function (transport) {
+                                    cargadorpeche(0, idCargador);
+                                    mensaje = transport.responseText;
+                                    cierraRegistraPersona(funcion, mensaje);
+                                    //DatosPersonasAdmision(p_idd);
+                                }
+                            }
                     )
 
 
                 }
             }
-        }
-        else if (chkValida == 1 || accion == 'update') {
+        } else if (chkValida == 1 || accion == 'update') {
             if (window.confirm("¿Desea guardar los datos?")) {
                 new Ajax.Request(url,
-                {
-                    method: 'get',
-                    parameters: data,
-                    onLoading: micargador(1),
-                    onComplete: function(transport) {
-                        micargador(0);
-                        mensaje = transport.responseText;
-                        cierraRegistraPersona(funcion, mensaje);
+                        {
+                            method: 'get',
+                            parameters: data,
+                            onLoading: micargador(1),
+                            onComplete: function (transport) {
+                                micargador(0);
+                                mensaje = transport.responseText;
+                                cierraRegistraPersona(funcion, mensaje);
 
-                    }
-                }
+                            }
+                        }
                 )
 
             }
@@ -237,16 +238,16 @@ function generaHistoria() {
     var url = '../../ccontrol/control/control.php';
     var data = "p1=generar_historia";
     new Ajax.Request(url,
-    {
-        method: 'get',
-        parameters: data,
-        onLoading: micargador(1),
-        onComplete: function(transport) {
-            micargador(0);
-            //$('idHistoria').update(transport.responseText);
-            document.getElementById('txtNroHistoria').value = transport.responseText;
-        }
-    }
+            {
+                method: 'get',
+                parameters: data,
+                onLoading: micargador(1),
+                onComplete: function (transport) {
+                    micargador(0);
+                    //$('idHistoria').update(transport.responseText);
+                    document.getElementById('txtNroHistoria').value = transport.responseText;
+                }
+            }
     );
 
 }
@@ -289,16 +290,16 @@ function DatosPersonasAdmision(iid_persona) {
     contadorCargador++;
     var idCargador = contadorCargador;
     new Ajax.Request(url,
-    {
-        method: 'get',
-        parameters: data,
-       onLoading: cargadorpeche(1, idCargador),
-        onComplete: function (transport) {
-            cargadorpeche(0, idCargador);
-            $('datos_persona').update(transport.responseText);//Coloca el resultado en la capa "DATOS PERSONA"
-            ListaPersonaHospitalizacion(iid_persona);
-        }
-    }
+            {
+                method: 'get',
+                parameters: data,
+                onLoading: cargadorpeche(1, idCargador),
+                onComplete: function (transport) {
+                    cargadorpeche(0, idCargador);
+                    $('datos_persona').update(transport.responseText);//Coloca el resultado en la capa "DATOS PERSONA"
+                    ListaPersonaHospitalizacion(iid_persona);
+                }
+            }
     )
     numDoc = "txtNroDocIdent[1]";
     setTimeout("$(numDoc).focus()", 900);
@@ -309,15 +310,15 @@ function ListaPersonaHospitalizacion(iid_persona) {
     var url = '../../ccontrol/control/control.php';
     var data = 'p1=' + control + '&p2=' + iid_persona;
     new Ajax.Request(url,
-    {
-        method: 'get',
-        parameters: data,
-        onLoading: micargador(1),
-        onComplete: function(transport) {
-            micargador(0);
-            $('idHospitalizacionPersona').update(transport.responseText);
-        }
-    }
+            {
+                method: 'get',
+                parameters: data,
+                onLoading: micargador(1),
+                onComplete: function (transport) {
+                    micargador(0);
+                    $('idHospitalizacionPersona').update(transport.responseText);
+                }
+            }
     )
     numDoc = "txtNroDocIdent[1]";
     setTimeout("$(numDoc).focus()", 900);
@@ -329,12 +330,12 @@ function DatosPersonasLab(iid_persona) {
 function enabled_formulario_adm(op) {
     var read = new Array('txtApellidoPat', 'txtApellidoMat', 'txtNombrePaciente', 'txtTelefono', 'txtCelular', 'txtEmail', 'txtCelular2', 'txtHijos', 'txtNombreTipoVia', 'txtTipoCentroPoblado', 'txtNumero', 'txtManzana', 'txtLote', 'txtKm', 'txtObservaciones', 'txtNroDeHijo', 'vReferencia', 'txtFechaNacimiento');
     //var butt = new Array('btn_GRABAR', 'btn_EDITAR', 'btn_DNI', 'btn_RESTAURAR', 'btn_PERSONALES', 'btn_DATOS', 'btn_FILIACIONES', 'btn_ATENCIONES', 'btn_HUELLA');
-	var butt = new Array('btn_GRABAR', 'btn_EDITAR',  'btn_RESTAURAR', 'btn_PERSONALES', 'btn_DATOS', 'btn_FILIACIONES', 'btn_ATENCIONES');
+    var butt = new Array('btn_GRABAR', 'btn_EDITAR', 'btn_RESTAURAR', 'btn_PERSONALES', 'btn_DATOS', 'btn_FILIACIONES', 'btn_ATENCIONES');
     var desh = new Array('sexo', 'cb_civil', 'cb_instruccion', 'cb_condicion', 'cb_vivienda', 'cb_raza', 'cb_departamento', 'cb_provincia', 'cb_distrito', 'cb_grado_estudio', 'cb_via', 'cb_cpo', 'cbNac_pais', 'cbNac_departamento', 'cbNac_provincia', 'cbNac_distrito', 'cb_tipoInstEduc', 'cb_InstEduc', 'cb_medio_contacto', 'chkValida', 'cb_grupolaboral', 'cb_subgrupolaboral', 'cb_pais');
     switch (op) {
         case 1:
-           // habi = new Array('v', 'f', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v');
-			habi = new Array('v', 'f', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v');
+            // habi = new Array('v', 'f', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v');
+            habi = new Array('v', 'f', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v');
             $('p_acc').update('update');
             buclesMulti('readOnly', read, false);
             buclesMulti('enable', desh, '');
@@ -449,8 +450,7 @@ function validarTipoDatos(opcion, objeto, evento, salto) {
                     $(salto).focus();
                     return false;
                 }
-            }
-            else {
+            } else {
                 return false;
             }
             break;
@@ -460,8 +460,7 @@ function validarTipoDatos(opcion, objeto, evento, salto) {
                     $(salto).focus();
                     return false;
                 }
-            }
-            else {
+            } else {
                 return false;
             }
             break;
@@ -472,8 +471,7 @@ function validarTipoDatos(opcion, objeto, evento, salto) {
                     $(salto).focus();
                     return false;
                 }
-            }
-            else {
+            } else {
                 return false;
             }
             break;
@@ -492,8 +490,7 @@ function validFormSalt(opcion, objeto, evento, salto) {
                     $(salto).focus();
                     return false;
                 }
-            }
-            else {
+            } else {
                 return false;
             }
             break;
@@ -508,8 +505,7 @@ function validFormSalt(opcion, objeto, evento, salto) {
                     $(salto).focus();
                     return false;
                 }
-            }
-            else {
+            } else {
                 return false;
             }
             break;
@@ -524,13 +520,11 @@ function validFormSalt(opcion, objeto, evento, salto) {
                     if (ValidateEmail(objeto.value)) {
                         $(salto).focus();
                         return false;
-                    }
-                    else {
+                    } else {
                         return false;
                     }
                 }
-            }
-            else {
+            } else {
                 $(salto).focus();
                 return true;
             }
@@ -587,8 +581,7 @@ function validFormSaltDNI(tipo, objeto, evento, salto) {
                     $(salto).focus();
                     return false;
                 }
-            }
-            else {
+            } else {
                 return false;
             }
             break;
@@ -603,8 +596,7 @@ function validFormSaltDNI(tipo, objeto, evento, salto) {
                     $(salto).focus();
                     return false;
                 }
-            }
-            else {
+            } else {
                 return false;
             }
             break;
@@ -619,13 +611,11 @@ function validFormSaltDNI(tipo, objeto, evento, salto) {
                     if (ValidateEmail(objeto.value)) {
                         $(salto).focus();
                         return false;
-                    }
-                    else {
+                    } else {
                         return false;
                     }
                 }
-            }
-            else {
+            } else {
                 $(salto).focus();
                 return true;
             }
@@ -669,7 +659,7 @@ function ubigeoPais() {
             asynchronous: false,
             parameters: parametros,
             onLoading: cargadorpeche(1, idCargador),
-            onComplete: function(transport) {
+            onComplete: function (transport) {
                 cargadorpeche(0, idCargador);
                 respuesta = transport.responseText;
                 $('ubigeo').update(respuesta);
@@ -691,7 +681,7 @@ function ubigeoPais() {
             asynchronous: false,
             parameters: parametros,
             onLoading: cargadorpeche(1, idCargador),
-            onComplete: function(transport) {
+            onComplete: function (transport) {
                 cargadorpeche(0, idCargador);
                 respuesta = transport.responseText;
                 $('ubigeo').update(respuesta);
@@ -722,7 +712,7 @@ function ubigeoPaisNacimiento() {
             asynchronous: false,
             parameters: parametros,
             onLoading: cargadorpeche(1, idCargador),
-            onComplete: function(transport) {
+            onComplete: function (transport) {
                 cargadorpeche(0, idCargador);
                 respuesta = transport.responseText;
                 $('ubigeo2').update(respuesta);
@@ -744,7 +734,7 @@ function ubigeoPaisNacimiento() {
             asynchronous: false,
             parameters: parametros,
             onLoading: cargadorpeche(1, idCargador),
-            onComplete: function(transport) {
+            onComplete: function (transport) {
                 cargadorpeche(0, idCargador);
                 respuesta = transport.responseText;
                 $('ubigeo2').update(respuesta);
@@ -827,24 +817,24 @@ function valida_docIdentidad(id) {
         control = 'validaPersonasDocIdentidad';
         data = 'p1=' + control + '&p2=' + tipoDoc + '&p3=' + nroDoc;
         new Ajax.Request(url,
-        {
-            method: 'get',
-            parameters: data,
-            onLoading: micargador(1),
-            onComplete: function(transport) {
-                micargador(0);
-                resultado = transport.responseText;
-                if (resultado > 0) {
-                    mensaje = "El " + getNombreTipoDoc(tipoDoc) + " con numero " + nroDoc + " ya se encuentra registrado.";
-                    document.getElementById("hExisteDocumento").value = 'si';
-                    alert(mensaje);
+                {
+                    method: 'get',
+                    parameters: data,
+                    onLoading: micargador(1),
+                    onComplete: function (transport) {
+                        micargador(0);
+                        resultado = transport.responseText;
+                        if (resultado > 0) {
+                            mensaje = "El " + getNombreTipoDoc(tipoDoc) + " con numero " + nroDoc + " ya se encuentra registrado.";
+                            document.getElementById("hExisteDocumento").value = 'si';
+                            alert(mensaje);
 
-                //$(a).focus();
-                } else {
-                    document.getElementById("hExisteDocumento").value = 'no';
+                            //$(a).focus();
+                        } else {
+                            document.getElementById("hExisteDocumento").value = 'no';
+                        }
+                    }
                 }
-            }
-        }
         )
     }
 }
@@ -858,20 +848,20 @@ function valida_nombre_persona(obj1) {
         control = 'validaPersonasNombres';
         data = 'p1=' + control + '&p2=' + paterno + '&p3=' + materno + '&p4=' + nombres;
         new Ajax.Request(url,
-        {
-            method: 'get',
-            parameters: data,
-            onLoading: micargador(1),
-            onComplete: function(transport) {
-                micargador(0);
-                resultado = transport.responseText;
-                if (resultado > 0) {
-                    alert("Esta persona ya se encuentra registrada");
-                    $(txtNombrePaciente).value = "";
-                    $(txtNombrePaciente).focus();
+                {
+                    method: 'get',
+                    parameters: data,
+                    onLoading: micargador(1),
+                    onComplete: function (transport) {
+                        micargador(0);
+                        resultado = transport.responseText;
+                        if (resultado > 0) {
+                            alert("Esta persona ya se encuentra registrada");
+                            $(txtNombrePaciente).value = "";
+                            $(txtNombrePaciente).focus();
+                        }
+                    }
                 }
-            }
-        }
         )
     }
 }
@@ -886,24 +876,24 @@ function buscar_personasxApellidos() {
     data = 'p1=' + control + '&p2=' + paterno + '&p3=' + materno;
     if (paterno != '' && materno != '' && !$('txtApellidoMat').readOnly && nombres == '' && accion == 'inserted') {
         new Ajax.Request(url,
-        {
-            method: 'get',
-            parameters: data,
-            onLoading: micargador(1),
-            onComplete: function(transport) {
-                micargador(0);
-                resultado = transport.responseText;
-                if (resultado != '') {
-                    $('divNombrePaciente').update(resultado);
-                    $('divNombrePaciente').show();
-                    $('txtNombrePaciente').focus();
-                //$(obj1.id).value = '';
-                //$(obj1.id).focus();
-                //setTimeout("$('divNombrePaciente').hide()",4000);
-                }
+                {
+                    method: 'get',
+                    parameters: data,
+                    onLoading: micargador(1),
+                    onComplete: function (transport) {
+                        micargador(0);
+                        resultado = transport.responseText;
+                        if (resultado != '') {
+                            $('divNombrePaciente').update(resultado);
+                            $('divNombrePaciente').show();
+                            $('txtNombrePaciente').focus();
+                            //$(obj1.id).value = '';
+                            //$(obj1.id).focus();
+                            //setTimeout("$('divNombrePaciente').hide()",4000);
+                        }
 
-            }
-        }
+                    }
+                }
         )
     }
 }
@@ -969,15 +959,15 @@ function listComboAdm(codigo, control, destino) {
     var url = '../../ccontrol/control/control.php';
     var data = 'p1=' + control + '&p2=' + codigo.value;
     new Ajax.Request(url,
-    {
-        method: 'get',
-        parameters: data,
-        onLoading: micargador(1),
-        onComplete: function(transport) {
-            micargador(0);
-            $(destino).update(transport.responseText);
-        }
-    }
+            {
+                method: 'get',
+                parameters: data,
+                onLoading: micargador(1),
+                onComplete: function (transport) {
+                    micargador(0);
+                    $(destino).update(transport.responseText);
+                }
+            }
     )
 }
 
@@ -1008,7 +998,7 @@ function autocompletar(obj1, tipo) {
     control = (tipo == '1' ? 'buscar_personas_admision_porcampo' : 'buscar_personas_admision_pordni');
     maxchar = (tipo == '1' ? '' : '');
     opcion = {
-        script: function(input) {
+        script: function (input) {
             return(url + '?p1=' + control + '&p2=' + paterno + '&p3=' + materno + '&p4=' + tipodoc + '&p5=' + input);
         }
     };
@@ -1020,8 +1010,7 @@ function cambiaValor(chk, obj) {
     accion = $('p_acc').value;
     if (valori == '' & accion == 'update') {
         $(chk).value = 'inserted';
-    }
-    else {
+    } else {
         $(chk).value = accion;
     }
     document.getElementById(chk).checked = true;
@@ -1039,16 +1028,16 @@ function longitud_campo(select, option) {
     var url = '../../ccontrol/control/control.php';
     var data = 'p1=' + control + '&p2=' + select + '&p3=' + id;
     new Ajax.Request(url,
-    {
-        method: 'get',
-        parameters: data,
-        onLoading: micargador(1),
-        onComplete: function(transport) {
-            micargador(0);
-            //alert(transport.responseText);
-            $('txtNroDocIdent1').maxLength = transport.responseText;
-        }
-    }
+            {
+                method: 'get',
+                parameters: data,
+                onLoading: micargador(1),
+                onComplete: function (transport) {
+                    micargador(0);
+                    //alert(transport.responseText);
+                    $('txtNroDocIdent1').maxLength = transport.responseText;
+                }
+            }
     )
 }
 
@@ -1109,32 +1098,32 @@ function agrega_documento_identidad(id, kk) {
     control = 'listaXMLDocumentoIdentidad';
     data = 'p1=' + control + '&p2=' + cadDocs;
     new Ajax.Request(url,
-    {
-        method: 'get',
-        parameters: data,
-        onLoading: micargador(1),
-        onComplete: function(transport) {
-            micargador(0);
-            micargador(0);
-            if (transport.readyState == '4') {
-                xml = transport.responseXML;
-                arrtipodoc = xml.getElementsByTagName('tipodoc');
-                arrnombredoc = xml.getElementsByTagName('nombredoc');
-                a = "cbTipoDoc[" + kk + "]";
-                select = document.getElementById(a);
-                select.options.length = 0;
-                for (var f = 0; f < arrtipodoc.length; f++) {
-                    opt = document.createElement('option');
-                    codigo = arrtipodoc[f].firstChild.nodeValue;
-                    texto = document.createTextNode(arrnombredoc[f].firstChild.nodeValue);
-                    opt.value = codigo;
-                    opt.appendChild(texto)
-                    select.appendChild(opt);
+            {
+                method: 'get',
+                parameters: data,
+                onLoading: micargador(1),
+                onComplete: function (transport) {
+                    micargador(0);
+                    micargador(0);
+                    if (transport.readyState == '4') {
+                        xml = transport.responseXML;
+                        arrtipodoc = xml.getElementsByTagName('tipodoc');
+                        arrnombredoc = xml.getElementsByTagName('nombredoc');
+                        a = "cbTipoDoc[" + kk + "]";
+                        select = document.getElementById(a);
+                        select.options.length = 0;
+                        for (var f = 0; f < arrtipodoc.length; f++) {
+                            opt = document.createElement('option');
+                            codigo = arrtipodoc[f].firstChild.nodeValue;
+                            texto = document.createTextNode(arrnombredoc[f].firstChild.nodeValue);
+                            opt.value = codigo;
+                            opt.appendChild(texto)
+                            select.appendChild(opt);
+                        }
+                        $(txtDoc).focus();
+                    }
                 }
-                $(txtDoc).focus();
             }
-        }
-    }
     )
 }
 function elimina_fila(kk) {
@@ -1175,8 +1164,7 @@ function agrega_filiacion(idAfiliacion, vAfiliacion, bDerHab) {
         myNewCell.innerHTML = "<input type='button' name='btnAgregaDerHab[" + idAfiliacion + "]' id='btnAgregaDerHab[" + idAfiliacion + "]' \n\
                                                     style='background:url(../../../../fastmedical_front/imagen/icono/add_user.png) no-repeat;width:18px;border:0px;background-color:transparent;cursor:pointer;' \n\
                                                     onclick=\"agrega_fila_derhabiente('tblDerHab');ventana_busca_persona('setDatosDerechoHabiente');\" title='Filiacion Derecho Habiente'>";
-    }
-    else {
+    } else {
         myNewCell.innerHTML = "<input type='radio' name='iddafiliacion' value='opción' id='iddafiliacion' checked='checked' onclick=\"\n\
                                                 deshabilita_agrega_fila_derhabiente();\n\
                                                 document.getElementById('dh_filiacion').value ='" + idAfiliacion + "';\n\
@@ -1217,7 +1205,7 @@ function agrega_fila_derhabiente() {
         method: 'get',
         parameters: data,
         onLoading: micargador(1),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             micargador(0);
             xml = transport.responseXML;
             b = "relacion[" + ii + "]";
@@ -1237,17 +1225,17 @@ function agrega_fila_derhabiente() {
                 opt.appendChild(texto)
                 select.appendChild(opt);
             }
-        //resultado = transport.responseText;
-        //alert(resultado);
+            //resultado = transport.responseText;
+            //alert(resultado);
 
-        /*for(var indice in resultado){
+            /*for(var indice in resultado){
              alert('Indice'+indice+'&'+resultado[indice]);
              }*/
         }
     });
 }
 function deshabilita_agrega_fila_derhabiente() {
-/*    radio1 = document.form_detalle.iddafiliacion;
+    /*    radio1 = document.form_detalle.iddafiliacion;
      for(i=0;i<radio1.length;i++){
      id2=radio1[i].value;
      btn="btnAgregaDerHab["+id2+"]";
@@ -1283,10 +1271,9 @@ function habilita_derhabiente() {
 function habilita_filiacion() {
     afiliacion = $('dh_filiacion').value;
     radio1 = document.form_detalle.iddafiliacion;
-    if (typeof(radio1.length) == 'undefined') {
+    if (typeof (radio1.length) == 'undefined') {
         numFiliacion = 1;
-    }
-    else {
+    } else {
         numFiliacion = radio1.length;
     }
     if (numFiliacion > 1) {
@@ -1301,8 +1288,7 @@ function habilita_filiacion() {
                 boton.style.background = id2 == afiliacion ? 'url(../../../../fastmedical_front/imagen/icono/add_user.png) no-repeat' : 'url(../../../../fastmedical_front/imagen/icono/add_user_black.png) no-repeat';
             }
         }
-    }
-    else {
+    } else {
         id2 = radio1.value;
         radio1.disabled = false;
         btn = "btnAgregaDerHab[" + id2 + "]";
@@ -1338,12 +1324,10 @@ function habilitia_docIdentidad(tipo) {
 
             if (tipo == 'cbo') {
                 $(b).disabled = false;
-            }
-            else if (tipo == 'txt') {
+            } else if (tipo == 'txt') {
                 $(a).disabled = false;
                 $(a).readOnly = false;
-            }
-            else {
+            } else {
                 $(b).disabled = false;
                 $(a).disabled = false;
                 $(a).readOnly = false;
@@ -1359,12 +1343,10 @@ function deshabilitia_docIdentidad(tipo) {
         if (document.getElementById(a)) {
             if (tipo == 'cbo') {
                 $(b).disabled = true;
-            }
-            else if (tipo == 'txt') {
+            } else if (tipo == 'txt') {
                 $(a).disabled = true;
                 $(a).readOnly = true;
-            }
-            else {
+            } else {
                 $(b).disabled = true;
                 $(a).disabled = true;
                 $(a).readOnly = true;
@@ -1400,16 +1382,16 @@ function cargar_nombreInstitucion() {
     var url = '../../ccontrol/control/control.php';
     var data = 'p1=' + control + '&p2=' + tipoInstitucion;
     new Ajax.Request(url,
-    {
-        method: 'get',
-        parameters: data,
-        onLoading: micargador(1),
-        onComplete: function(transport) {
-            micargador(0);
-            $('inst_educativa').update(transport.responseText);
-            cargar_gradoDeEstudio();
-        }
-    }
+            {
+                method: 'get',
+                parameters: data,
+                onLoading: micargador(1),
+                onComplete: function (transport) {
+                    micargador(0);
+                    $('inst_educativa').update(transport.responseText);
+                    cargar_gradoDeEstudio();
+                }
+            }
     )
 }
 
@@ -1419,16 +1401,16 @@ function cargar_gradoDeEstudio() {
     var url = '../../ccontrol/control/control.php';
     var data = 'p1=' + control + '&p2=' + tipoInstitucion;
     new Ajax.Request(url,
-    {
-        method: 'get',
-        parameters: data,
-        onLoading: micargador(1),
-        onComplete: function(transport2) {
-            micargador(0);
-            $('grado_estudio').update(transport2.responseText);
-        //alert(transport.responseText);
-        }
-    }
+            {
+                method: 'get',
+                parameters: data,
+                onLoading: micargador(1),
+                onComplete: function (transport2) {
+                    micargador(0);
+                    $('grado_estudio').update(transport2.responseText);
+                    //alert(transport.responseText);
+                }
+            }
     )
 }
 function ValidateEmail(txtEmail) {
@@ -1447,15 +1429,15 @@ function acredita_essalud() {
     url = '../../ccontrol/control/control.php';
     data = 'p1=' + control + '&p2=' + nroDoc;
     new Ajax.Request(url,
-    {
-        method: 'get',
-        parameters: data,
-        onLoading: micargador(1),
-        onComplete: function(transport) {
-            micargador(0);
-            alert(transport.responseText);
-        }
-    }
+            {
+                method: 'get',
+                parameters: data,
+                onLoading: micargador(1),
+                onComplete: function (transport) {
+                    micargador(0);
+                    alert(transport.responseText);
+                }
+            }
     )
 }
 
@@ -1466,15 +1448,15 @@ function leerArchivoEssalud() {
     url = '../../ccontrol/control/control.php';
     data = 'p1=' + control + '&p2=' + nroDoc;
     new Ajax.Request(url,
-    {
-        method: 'get',
-        parameters: data,
-        onLoading: micargador(1),
-        onComplete: function(transport) {
-            micargador(0);
-            alert(transport.responseText);
-        }
-    }
+            {
+                method: 'get',
+                parameters: data,
+                onLoading: micargador(1),
+                onComplete: function (transport) {
+                    micargador(0);
+                    alert(transport.responseText);
+                }
+            }
     )
 }
 
@@ -1505,10 +1487,10 @@ function calendarioHtmlx(id) {
     mCal.setYearsRange(1900, aniolimite);
     mCal.loadUserLanguage('es');
 
-    mCal.attachEvent("onClick", function(date) {
+    mCal.attachEvent("onClick", function (date) {
         var d = new Date(date);
         fecha = d.getDate() + "/" + d.getMonth() + "/" + d.getFullYear();
-    //calculaEdad(fecha);
+        //calculaEdad(fecha);
     });
 
     mCal.draw();
@@ -1543,10 +1525,10 @@ function calendarioHtmlxJorge(id) {
     mCal.setYearsRange(1900, aniolimite);
     mCal.loadUserLanguage('es');
 
-    mCal.attachEvent("onClick", function(date) {
+    mCal.attachEvent("onClick", function (date) {
         var d = new Date(date);
         fecha = d.getDate() + "/" + d.getMonth() + "/" + d.getFullYear();
-        
+
         cargarPuestoEmpleado();
     });
 
@@ -1728,8 +1710,7 @@ function esFechaValida(fecha) {
 function comprobarSiBisisesto(anio) {
     if ((anio % 100 != 0) && ((anio % 4 == 0) || (anio % 400 == 0))) {
         return true;
-    }
-    else {
+    } else {
         return false;
     }
 }
@@ -1871,27 +1852,27 @@ function acreditar(evento, elemento, tipo) {
         tablaAcredita.setSkin("dhx_skyblue");
         tablaAcredita.enableRowsHover(true, 'grid_hover');
 
-        tablaAcredita.attachEvent("onRowSelect", function(rId, cInd) {
+        tablaAcredita.attachEvent("onRowSelect", function (rId, cInd) {
             verPersonaEncontrada(rId, cInd);
 
         });
-        tablaAcredita.attachEvent("onRowDblClicked", function(rId, cInd) {
+        tablaAcredita.attachEvent("onRowDblClicked", function (rId, cInd) {
             acreditarPersona(rId, cInd);
 
         });
         //////////para cargador peche////////////////
         contadorCargador++;
         var idCargador = contadorCargador;
-        tablaAcredita.attachEvent("onXLS", function() {
+        tablaAcredita.attachEvent("onXLS", function () {
             cargadorpeche(1, idCargador);
         });
-        tablaAcredita.attachEvent("onXLE", function() {
+        tablaAcredita.attachEvent("onXLE", function () {
             cargadorpeche(0, idCargador);
             mensajeVacio();
         });
         /////////////fin cargador ///////////////////////
         tablaAcredita.init();
-        tablaAcredita.loadXML(pathRequestControl + '?' + parametros, function() {
+        tablaAcredita.loadXML(pathRequestControl + '?' + parametros, function () {
             var casa;
             var eps;
             for (i = 0; i < tablaAcredita.getRowsNum(); i++) {
@@ -2038,8 +2019,7 @@ function acreditarPersona(rId, cInd) {
 
 
 
-    }
-    else {
+    } else {
         alert(mensaje);
     }
 }
@@ -2056,7 +2036,7 @@ function pruebaEssalud() {
         method: 'get',
         parameters: parametros,
         onLoading: micargador(1),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             micargador(0);
             respuesta = transport.responseText;
             $('tablaResultados').update(respuesta);
@@ -2179,10 +2159,10 @@ function actualizarTablaEssalud() {
         method: 'get',
         parameters: parametros,
         onLoading: micargador(1),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             micargador(0);
             respuesta = transport.responseText;
-        //$('divCoincidencias').update(respuesta);
+            //$('divCoincidencias').update(respuesta);
 
 
         }
@@ -2208,14 +2188,13 @@ function obtenerCoincidencias(apellidoPaterno, apellidoMaterno, primerNombre, se
         method: 'get',
         parameters: parametros,
         onLoading: micargador(1),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             micargador(0);
             var respuesta = transport.responseText;
             var arreglo = respuesta.split("|");
             if (arreglo[0] == '0') {
                 $('divCoincidencias').update(arreglo[1]);
-            }
-            else {
+            } else {
                 window.alert(arreglo[1]);
             }
         }
@@ -2346,7 +2325,7 @@ function registrarPersonaEssalud(rId) {
             method: 'get',
             parameters: parametros,
             onLoading: micargador(1),
-            onComplete: function(transport) {
+            onComplete: function (transport) {
                 micargador(0);
                 var respuesta = transport.responseText;
                 detalleAcredita(respuesta);
@@ -2439,7 +2418,7 @@ function relacionarHmloEssalud(objeto, evento, fila) {
             method: 'get',
             parameters: parametros,
             onLoading: micargador(1),
-            onComplete: function(transport) {
+            onComplete: function (transport) {
                 micargador(0);
                 var respuesta = transport.responseText;
                 arreglo = respuesta.split("|");
@@ -2580,7 +2559,7 @@ function detalleAcredita(codigo) {
         method: 'get',
         parameters: parametros,
         onLoading: micargador(1),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             micargador(0);
             var respuesta = transport.responseText;
             $('dcontenedorDetalle').show();
@@ -2600,11 +2579,11 @@ function filaEncontrada(cadena, codigo) {
         method: 'get',
         parameters: parametros,
         onLoading: micargador(1),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             micargador(0);
             respuesta = transport.responseText;
             $('tablaResultados').update(respuesta);
-        //window.alert('codigo:'+codigo);
+            //window.alert('codigo:'+codigo);
 
         }
     })
@@ -2693,44 +2672,41 @@ function verAtencionesMedicas(evento, elemento, c_cod_per) {
     parametros += 'p1=' + patronModulo;
     parametros += '&p2=' + c_cod_per;
     rTablaAtenciones = new dhtmlXGridObject('resultadoAtenciones');
-    rTablaAtenciones.setImagePath("../../../imagen/dhtmlxgrid/imgs/");  
+    rTablaAtenciones.setImagePath("../../../imagen/dhtmlxgrid/imgs/");
     rTablaAtenciones.setSkin("dhx_skyblue");
     rTablaAtenciones.enableRowsHover(true, 'grid_hover');
     rTablaAtenciones.enableMultiline(true);
-    var header = ["#text_filter","#text_filter","#text_filter","#text_filter","#text_filter","#text_filter","#text_filter","#text_filter","#text_filter"]; 
-    rTablaAtenciones.attachHeader(header); 
-    rTablaAtenciones.attachEvent("onRowSelect", function(rId, cInd) {
-        var vEstado=rTablaAtenciones.cells2(rId,5).getValue();  
-        $('hCodigoProgramacion').value=rTablaAtenciones.cells2(rId,0).getValue();
-        verCronogramaAtencionesMedicas('','',rTablaAtenciones.cells2(rId,6).getValue());             
-        if(cInd==9 && (vEstado=='PAGADO' || vEstado=='ATENDIDO')){                        
+    var header = ["#text_filter", "#text_filter", "#text_filter", "#text_filter", "#text_filter", "#text_filter", "#text_filter", "#text_filter", "#text_filter"];
+    rTablaAtenciones.attachHeader(header);
+    rTablaAtenciones.attachEvent("onRowSelect", function (rId, cInd) {
+        var vEstado = rTablaAtenciones.cells2(rId, 5).getValue();
+        $('hCodigoProgramacion').value = rTablaAtenciones.cells2(rId, 0).getValue();
+        verCronogramaAtencionesMedicas('', '', rTablaAtenciones.cells2(rId, 6).getValue());
+        if (cInd == 9 && (vEstado == 'PAGADO' || vEstado == 'ATENDIDO')) {
             ubicacionImagenes();
         }
     });
     contadorCargador++;
     var idCargador = contadorCargador;
-    rTablaAtenciones.attachEvent("onXLS", function() {
+    rTablaAtenciones.attachEvent("onXLS", function () {
         cargadorpeche(1, idCargador);
     });
-    rTablaAtenciones.attachEvent("onXLE", function() {
+    rTablaAtenciones.attachEvent("onXLE", function () {
         cargadorpeche(0, idCargador);
     });
     rTablaAtenciones.init();
-    rTablaAtenciones.loadXML(pathRequestControl + '?' + parametros, function() {
-        for(var i=0;i<rTablaAtenciones.getRowsNum();i++){           
-            var  bEstado = rTablaAtenciones.cells2(i,5).getValue();
+    rTablaAtenciones.loadXML(pathRequestControl + '?' + parametros, function () {
+        for (var i = 0; i < rTablaAtenciones.getRowsNum(); i++) {
+            var bEstado = rTablaAtenciones.cells2(i, 5).getValue();
             if (bEstado == 'ATENDIDO') {
-                rTablaAtenciones.setRowColor(rTablaAtenciones.getRowId(i), "#DEEDF8");                
-            }
-            else if (bEstado== 'RESERVADO') {
+                rTablaAtenciones.setRowColor(rTablaAtenciones.getRowId(i), "#DEEDF8");
+            } else if (bEstado == 'RESERVADO') {
                 rTablaAtenciones.setRowColor(rTablaAtenciones.getRowId(i), "#F0F43A");
-            }
-            else if (bEstado== 'PAGADO') {
-                rTablaAtenciones.setRowColor(rTablaAtenciones.getRowId(i),"#F8A83E");                
-            }
-            else if (bEstado == 'BLOQUEADO') {
+            } else if (bEstado == 'PAGADO') {
+                rTablaAtenciones.setRowColor(rTablaAtenciones.getRowId(i), "#F8A83E");
+            } else if (bEstado == 'BLOQUEADO') {
                 rTablaAtenciones.setRowColor(rTablaAtenciones.getRowId(i), "#FFB2B2");
-            }           
+            }
         }
     });
     verDatosPaciente(c_cod_per);
@@ -2759,14 +2735,14 @@ function verCronogramaAtencionesMedicas(elemento, evento, cadena) {
     descripcionCita(hora, cronograma, codigoprogramacion);
     refrescaCalendario(miarray[3]);
     //descripcionCita(hora,cronograma,codigoprogramacion);
-    if($('selectVista').value==1){
+    if ($('selectVista').value == 1) {
         regresaracronogramacitas();//
-    }else{
+    } else {
         mostrarProgramacionEmergenciaInformes(cronograma);
-    // listarCronogramaMedicoEmergencia(cronograma);
+        // listarCronogramaMedicoEmergencia(cronograma);
     }
-    
-   
+
+
     $('divAccionesyBotones').show();
     $('divAcciones').hide();
 
@@ -2781,7 +2757,7 @@ function verDatosPaciente(c_cod_per) {
         method: 'get',
         parameters: parametros,
         onLoading: micargador(1),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             micargador(0);
             respuesta1 = transport.responseText;
             miarray = respuesta1.split("|");
@@ -2791,7 +2767,7 @@ function verDatosPaciente(c_cod_per) {
             $('divDocumento').update(miarray[2]);
             $('divFechaNacimiento').update(miarray[4]);
             $('divEdad').update(miarray[5]);
-        //window.alert('codigo:'+codigo);
+            //window.alert('codigo:'+codigo);
 
         }
     })
@@ -2908,7 +2884,7 @@ function cargarTablaAfiliacionesPersona(codPersona) {
     rTablaAfiliaciones.setImagePath("../../../imagen/dhtmlxgrid/imgs/");
     rTablaAfiliaciones.setSkin("dhx_skyblue");
     rTablaAfiliaciones.enableRowsHover(true, 'grid_hover');
-    rTablaAfiliaciones.attachEvent("onRowSelect", function(rId, cInd) {
+    rTablaAfiliaciones.attachEvent("onRowSelect", function (rId, cInd) {
         var CodAutogenerado = rTablaAfiliaciones.cells(rId, 9).getValue();
         // $('autogenerado').value = CodAutogenerado;
         var IdAfil = rTablaAfiliaciones.cells(rId, 0).getValue();
@@ -2923,8 +2899,7 @@ function cargarTablaAfiliacionesPersona(codPersona) {
                     //activarAfiliacionEssalud(CodigoPersona,IdAfil,NumeroAfil);  
                     popadDatosEssalud(CodigoPersona);
                 }
-            }
-            else if (IdAfil == '0002') {
+            } else if (IdAfil == '0002') {
                 if (Estado == 0) {
                     $('DetalleDeuda').show();
                     $('Detalle').hide()
@@ -2933,8 +2908,7 @@ function cargarTablaAfiliacionesPersona(codPersona) {
                     //tablaEstadoDeuda(CodigoPersona,IdAfil,NumeroAfil );
                     verificarExistenciaDBContribuyentePuntual(CodigoPersona);
                 }
-            }
-            else {
+            } else {
                 $('DetalleDeuda').hide();
                 $('Detalle').hide();
                 $('Essalud').hide();
@@ -2952,23 +2926,22 @@ function cargarTablaAfiliacionesPersona(codPersona) {
                 spListaCabeceraCartaEssalud(codPersona);
                 spListaDetalleCartaEssaludPorCabeceraCarta(codPersona);
             }
-        }
-        else if (IdAfil == '0002') {
+        } else if (IdAfil == '0002') {
             $('DetalleDeuda').show();
             verificarExistenciaDBContribuyentePuntual(CodigoPersona);
         }
     });
     contadorCargador++;
     var idCargador = contadorCargador;
-    rTablaAfiliaciones.attachEvent("onXLS", function() {
+    rTablaAfiliaciones.attachEvent("onXLS", function () {
         cargadorpeche(1, idCargador);
     });
-    rTablaAfiliaciones.attachEvent("onXLE", function() {
+    rTablaAfiliaciones.attachEvent("onXLE", function () {
         cargadorpeche(0, idCargador);
     });
     rTablaAfiliaciones.init();
-    rTablaAfiliaciones.loadXML(pathRequestControl + '?' + parametros, function() {
-        });
+    rTablaAfiliaciones.loadXML(pathRequestControl + '?' + parametros, function () {
+    });
 }
 
 
@@ -2981,7 +2954,7 @@ function tablaEstadoDeuda(CodigoPersona) {
     aEstadoDeuda.setImagePath("../../../imagen/dhtmlxgrid/imgs/");
     aEstadoDeuda.setSkin("");
     aEstadoDeuda.enableRowsHover(true, 'grid_hover');
-    aEstadoDeuda.attachEvent("onRowSelect", function(rId, cInd) {
+    aEstadoDeuda.attachEvent("onRowSelect", function (rId, cInd) {
         var Mensaje = aEstadoDeuda.cells(rId, 0).getValue();
         var Resultado = aEstadoDeuda.cells(rId, 1).getValue();
         var Deuda = aEstadoDeuda.cells(rId, 2).getValue();
@@ -2994,8 +2967,7 @@ function tablaEstadoDeuda(CodigoPersona) {
                     if (Deuda == 0) {
                         var CodSimedh = $('txtCodigoPersona').value;
                         guardarRelacionEntreDBSIMIandSIMED(CodSimedh, CodigoPersona);
-                    }
-                    else {
+                    } else {
                         alert("Sin predio no aplica Contribuyente Puntual");
                     }
                     break;
@@ -3007,15 +2979,15 @@ function tablaEstadoDeuda(CodigoPersona) {
     );
     contadorCargador++;
     var idCargador = contadorCargador;
-    aEstadoDeuda.attachEvent("onXLS", function() {
+    aEstadoDeuda.attachEvent("onXLS", function () {
         cargadorpeche(1, idCargador);
     });
-    aEstadoDeuda.attachEvent("onXLE", function() {
+    aEstadoDeuda.attachEvent("onXLE", function () {
         cargadorpeche(0, idCargador);
     });
     aEstadoDeuda.init();
-    aEstadoDeuda.loadXML(pathRequestControl + '?' + parametros, function() {
-        });
+    aEstadoDeuda.loadXML(pathRequestControl + '?' + parametros, function () {
+    });
 }
 
 function spListaPersonaEssalud(codPersona) {
@@ -3029,14 +3001,14 @@ function spListaPersonaEssalud(codPersona) {
     pListaPersonaEssalud.enableRowsHover(true, 'grid_hover');
     contadorCargador++;
     var idCargador = contadorCargador;
-    pListaPersonaEssalud.attachEvent("onXLS", function() {
+    pListaPersonaEssalud.attachEvent("onXLS", function () {
         cargadorpeche(1, idCargador);
     });
-    pListaPersonaEssalud.attachEvent("onXLE", function() {
+    pListaPersonaEssalud.attachEvent("onXLE", function () {
         cargadorpeche(0, idCargador);
     });
     pListaPersonaEssalud.init();
-    pListaPersonaEssalud.loadXML(pathRequestControl + '?' + parametros, function() {
+    pListaPersonaEssalud.loadXML(pathRequestControl + '?' + parametros, function () {
         var casa;
         for (i = 0; i < pListaPersonaEssalud.getRowsNum(); i++) {
             casa = pListaPersonaEssalud.cells(i, 4).getValue();
@@ -3058,10 +3030,10 @@ function spListaDatosEssalud(codPersona) {
     aDatosEssalud.enableRowsHover(true, 'grid_hover');
     contadorCargador++;
     var idCargador = contadorCargador;
-    aDatosEssalud.attachEvent("onXLS", function() {
+    aDatosEssalud.attachEvent("onXLS", function () {
         cargadorpeche(1, idCargador);
     });
-    aDatosEssalud.attachEvent("onXLE", function() {
+    aDatosEssalud.attachEvent("onXLE", function () {
         cargadorpeche(0, idCargador);
     });
     aDatosEssalud.init();
@@ -3079,14 +3051,14 @@ function spListaCabeceraCartaEssalud(codPersona) {
     aCabeceraCartaEssalud.enableRowsHover(true, 'grid_hover');
     contadorCargador++;
     var idCargador = contadorCargador;
-    aCabeceraCartaEssalud.attachEvent("onXLS", function() {
+    aCabeceraCartaEssalud.attachEvent("onXLS", function () {
         cargadorpeche(1, idCargador);
     });
-    aCabeceraCartaEssalud.attachEvent("onXLE", function() {
+    aCabeceraCartaEssalud.attachEvent("onXLE", function () {
         cargadorpeche(0, idCargador);
     });
     aCabeceraCartaEssalud.init();
-    aCabeceraCartaEssalud.loadXML(pathRequestControl + '?' + parametros, function() {
+    aCabeceraCartaEssalud.loadXML(pathRequestControl + '?' + parametros, function () {
         var casa;
         for (i = 0; i < aCabeceraCartaEssalud.getRowsNum(); i++) {
             casa = aCabeceraCartaEssalud.cells(i, 3).getValue();
@@ -3108,14 +3080,14 @@ function spListaDetalleCartaEssaludPorCabeceraCarta(codPersona) {
     aEssaludPorCabeceraCarta.enableRowsHover(true, 'grid_hover');
     contadorCargador++;
     var idCargador = contadorCargador;
-    aEssaludPorCabeceraCarta.attachEvent("onXLS", function() {
+    aEssaludPorCabeceraCarta.attachEvent("onXLS", function () {
         cargadorpeche(1, idCargador);
     });
-    aEssaludPorCabeceraCarta.attachEvent("onXLE", function() {
+    aEssaludPorCabeceraCarta.attachEvent("onXLE", function () {
         cargadorpeche(0, idCargador);
     });
     aEssaludPorCabeceraCarta.init();
-    aEssaludPorCabeceraCarta.loadXML(pathRequestControl + '?' + parametros, function() {
+    aEssaludPorCabeceraCarta.loadXML(pathRequestControl + '?' + parametros, function () {
         var casa;
         for (i = 0; i < aEssaludPorCabeceraCarta.getRowsNum(); i++) {
             casa = aEssaludPorCabeceraCarta.cells(i, 6).getValue();
@@ -3138,7 +3110,7 @@ function activarAfiliacion(CodigoPersona, IdAfil, NumeroAfil) {
         method: 'get',
         parameters: parametros,
         onLoading: micargador(1),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             micargador(0);
             respuesta = transport.responseText;
             $('divmensaje').update("");
@@ -3158,7 +3130,7 @@ function activarAfiliacionEssalud(CodigoPersona, IdAfil, NumeroAfil) {
         method: 'get',
         parameters: parametros,
         onLoading: micargador(1),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             micargador(0);
             respuesta = transport.responseText;
             $('divmensaje').update(respuesta);
@@ -3216,7 +3188,7 @@ function abrirPopadContribuyentePuntualBusquedaRelacionDBSIMI() {
     CargarVentanaPopPap(vformname, vtitle, vwidth, vheight, vcenter, vresizable, vmodal, vstyle, vopacity, vposx1, vposx2, vposy1, vposy2, parametros, posFuncion);
 }
 
-function buscarNombreContribuyente(nombreBuscar){
+function buscarNombreContribuyente(nombreBuscar) {
     $('nombrePersonaBuscar').value = nombreBuscar;
 }
 
@@ -3255,7 +3227,7 @@ function cargarDatosPersona(CodigoSerPro) {
         method: 'get',
         parameters: parametros,
         onLoading: micargador(1),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             micargador(0);
             var respuesta = transport.responseText;
             var arrayRespuesta = respuesta.split('*');
@@ -3282,7 +3254,7 @@ function verificarCodAutogenerado() {
         method: 'get',
         parameters: parametros,
         onLoading: micargador(1),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             micargador(0);
             var respuesta = transport.responseText;
             var arrayRespuesta = respuesta.split('*');
@@ -3321,8 +3293,7 @@ function verificarCodAutogenerado() {
                     Windows.close("Div_FormularioDatosEssalud");
                 }
 
-            }
-            else {
+            } else {
                 //alert("NO entro");
                 $('Ubigeo').value = "150117";
                 $('Desde').value = "";
@@ -3371,8 +3342,7 @@ function GuardarDatosEssalud() {
         parametros += '&p11=' + Sexo;
         parametros += '&p12=' + FechaNac;
         parametros += '&p13=' + CodPer;
-    }
-    else {
+    } else {
         patronModulo = 'InsertarDatosEssalud';
         parametros = '';
         parametros += 'p1=' + patronModulo;
@@ -3393,7 +3363,7 @@ function GuardarDatosEssalud() {
         method: 'get',
         parameters: parametros,
         onLoading: micargador(1),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             micargador(0);
             var respuesta = transport.responseText;
             Windows.close("Div_FormularioDatosEssalud");
@@ -3418,15 +3388,15 @@ function cargarTablaAfiliacionesInactivasPersona(codPer) {
     rTablaAfiliacionesInac.enableRowsHover(true, 'grid_hover');
     contadorCargador++;
     var idCargador = contadorCargador;
-    rTablaAfiliacionesInac.attachEvent("onXLS", function() {
+    rTablaAfiliacionesInac.attachEvent("onXLS", function () {
         cargadorpeche(1, idCargador);
     });
-    rTablaAfiliacionesInac.attachEvent("onXLE", function() {
+    rTablaAfiliacionesInac.attachEvent("onXLE", function () {
         cargadorpeche(0, idCargador);
     });
     rTablaAfiliacionesInac.init();
     rTablaAfiliacionesInac.loadXML(pathRequestControl + '?' + parametros);
-    rTablaAfiliacionesInac.attachEvent("onRowSelect", function(rId, cInd) {
+    rTablaAfiliacionesInac.attachEvent("onRowSelect", function (rId, cInd) {
         var NumeroAfiliacio = rTablaAfiliacionesInac.cells(rId, 2).getValue();
         CodAutogenerado = $('autogenerado').value
         var IdAfil = rTablaAfiliacionesInac.cells(rId, 0).getValue();
@@ -3443,15 +3413,12 @@ function cargarTablaAfiliacionesInactivasPersona(codPer) {
                 $('divmensaje').update("");
                 $('Detalle').hide()
                 $('Essalud').hide();
-            }
-            else {
+            } else {
                 popadDatosEssalud(codPer);
             }
-        }
-        else if (IdAfil == '0002') {
+        } else if (IdAfil == '0002') {
             verificarExistenciaDBContribuyentePuntual(CodigoPersona);
-        }
-        else {
+        } else {
             var nombre = $('divTitulo').value;
             agregarAfiliacionPersona(IdAfil, NumeroAfiliacio, CodigoPersona);
         }
@@ -3469,7 +3436,7 @@ function agregarAfiliacionPersona(IdAfil, NumeroAfiliacio, CodigoPersona) {
         method: 'get',
         parameters: parametros,
         onLoading: micargador(1),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             micargador(0);
             respuesta = transport.responseText;
             Windows.close("Div_AfiliacionesInactivas");
@@ -3491,7 +3458,7 @@ function verificarExistenciaDBContribuyentePuntual(CodigoPersona) {
         method: 'get',
         parameters: parametros,
         onLoading: micargador(1),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             micargador(0);
             respuesta = transport.responseText;
             var respu = respuesta.split("/");
@@ -3504,8 +3471,7 @@ function verificarExistenciaDBContribuyentePuntual(CodigoPersona) {
                 abrirPopadContribuyentePuntualBusquedaRelacionDBSIMI();
                 $('TablaEstadoDeuda').update(' ');
                 $('btn_Quitar Relacion Municipalidad').hide();
-            }
-            else if (respu[0] == 1) {
+            } else if (respu[0] == 1) {
                 cargarTablaDeudaSimi(respu[1]);
                 $('btn_Quitar Relacion Municipalidad').show();
             }
@@ -3525,7 +3491,7 @@ function cargarTablaDeudaSimi(IdPersonaSimi) {
     rTablaDeudaSimi.setImagePath("../../../imagen/dhtmlxgrid/imgs/");
     rTablaDeudaSimi.setSkin("");
     rTablaDeudaSimi.enableRowsHover(true, 'grid_hover');
-    rTablaDeudaSimi.attachEvent("onRowSelect", function(rId, cInd) {
+    rTablaDeudaSimi.attachEvent("onRowSelect", function (rId, cInd) {
         var Mensaje = rTablaDeudaSimi.cells(rId, 0).getValue();
         var Resultado = rTablaDeudaSimi.cells(rId, 1).getValue();
         var Deuda = rTablaDeudaSimi.cells(rId, 2).getValue();
@@ -3546,15 +3512,15 @@ function cargarTablaDeudaSimi(IdPersonaSimi) {
     );
     contadorCargador++;
     var idCargador = contadorCargador;
-    rTablaDeudaSimi.attachEvent("onXLS", function() {
+    rTablaDeudaSimi.attachEvent("onXLS", function () {
         cargadorpeche(1, idCargador);
     });
-    rTablaDeudaSimi.attachEvent("onXLE", function() {
+    rTablaDeudaSimi.attachEvent("onXLE", function () {
         cargadorpeche(0, idCargador);
     });
     rTablaDeudaSimi.init();
-    rTablaDeudaSimi.loadXML(pathRequestControl + '?' + parametros, function() {
-        });
+    rTablaDeudaSimi.loadXML(pathRequestControl + '?' + parametros, function () {
+    });
 }
 
 
@@ -3574,22 +3540,22 @@ function BuscarPersonaDBSIMI(evento) {
         rPersonaDBSIMI.enableRowsHover(true, 'grid_hover');
         contadorCargador++;
         var idCargador = contadorCargador;
-        rPersonaDBSIMI.attachEvent("onXLS", function() {
+        rPersonaDBSIMI.attachEvent("onXLS", function () {
             cargadorpeche(1, idCargador);
         });
-        rPersonaDBSIMI.attachEvent("onXLE", function() {
+        rPersonaDBSIMI.attachEvent("onXLE", function () {
             cargadorpeche(0, idCargador);
         });
-        rPersonaDBSIMI.attachEvent("onRowSelect", function(x, y) {
+        rPersonaDBSIMI.attachEvent("onRowSelect", function (x, y) {
             var codPersonaSIMI = rPersonaDBSIMI.cells(x, 0).getValue();
             if (y == 4) {
                 tablaEstadoDeuda(codPersonaSIMI);
             }
         });
         rPersonaDBSIMI.init();
-        rPersonaDBSIMI.loadXML(pathRequestControl + '?' + parametros, function() {
+        rPersonaDBSIMI.loadXML(pathRequestControl + '?' + parametros, function () {
             // tmn=1;
-            });
+        });
     }
 //    if(numero>3&&tmn==1){
 //        var palabra=$('nombrePersonaBuscar').value;
@@ -3616,7 +3582,7 @@ function     guardarRelacionEntreDBSIMIandSIMED(CodSimedh, CodigoPersona) {
         method: 'get',
         parameters: parametros,
         onLoading: micargador(1),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             micargador(0);
             var respuesta = transport.responseText;
             RegistrarAutoGenerado(CodSimedh);
@@ -3635,7 +3601,7 @@ function   RegistrarAutoGenerado(CodSimedh) {
         method: 'get',
         parameters: parametros,
         onLoading: micargador(1),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             micargador(0);
             var respuesta = transport.responseText;
             Windows.close("Div_AfiliacionesInactivas");
@@ -3658,7 +3624,7 @@ function QuitarRelacion() {
         method: 'get',
         parameters: parametros,
         onLoading: micargador(1),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             micargador(0);
             var respuesta = transport.responseText;
             cargarTablaAfiliacionesPersona(cod);
@@ -3674,8 +3640,7 @@ function QuitarRelacion() {
 function ventanaVerDetalleOrden() {
     if ($("hCodigoPersonaParaCobro") != null) {
         VerDetalleOrden();
-    }
-    else {
+    } else {
         alert('Seleccione un Paciente');
     }
 }
@@ -3737,7 +3702,7 @@ function MostrarDetalleOrden() {
 
     // tablaVerDetalleOrden.loadXML(pathRequestControl+'?'+parametros);  
 
-    tablaVerDetalleOrden.loadXML(pathRequestControl + '?' + parametros, function() {
+    tablaVerDetalleOrden.loadXML(pathRequestControl + '?' + parametros, function () {
         MostrarUsuarioRegistro();
         MostrarUsuarioCofirma();
         MostrarUsuarioPaga();
@@ -3767,8 +3732,8 @@ function MostrarUsuarioRegistro() { // muestra a el usuario que realizo el regis
     tablaMostrarUsuarioRegistro = new dhtmlXGridObject('divUsuarioRegistra');
     tablaMostrarUsuarioRegistro.setImagePath("../../../../fastmedical_front/imagen/icono/");
     tablaMostrarUsuarioRegistro.setSkin("dhx_skyblue");
-    tablaMostrarUsuarioRegistro.attachEvent("onRowSelect", function() {
-        });
+    tablaMostrarUsuarioRegistro.attachEvent("onRowSelect", function () {
+    });
     tablaMostrarUsuarioRegistro.init();
     tablaMostrarUsuarioRegistro.loadXML(pathRequestControl + '?' + parametros);
 }
@@ -3790,26 +3755,26 @@ function MostrarUsuarioCofirma() { // muestra a el usuario que realizo el regist
     tablaMostrarUsuarioCofirma = new dhtmlXGridObject('divUsuarioConfirma');
     tablaMostrarUsuarioCofirma.setImagePath("../../../../fastmedical_front/imagen/icono/");
     tablaMostrarUsuarioCofirma.setSkin("dhx_skyblue");
-    tablaMostrarUsuarioCofirma.attachEvent("onRowSelect", function() {
-        });
+    tablaMostrarUsuarioCofirma.attachEvent("onRowSelect", function () {
+    });
     tablaMostrarUsuarioCofirma.init();
     tablaMostrarUsuarioCofirma.loadXML(pathRequestControl + '?' + parametros);
 }
 
-function MostrarUsuarioPaga(){ // pago en fox
-    var nroOrden=$("hidNroOrden").value;   
-    var patronModulo='MostrarUsuarioPaga';
-    var parametros='';
-    parametros+='p1='+patronModulo;
-    parametros+='&p2='+nroOrden;
-    
+function MostrarUsuarioPaga() { // pago en fox
+    var nroOrden = $("hidNroOrden").value;
+    var patronModulo = 'MostrarUsuarioPaga';
+    var parametros = '';
+    parametros += 'p1=' + patronModulo;
+    parametros += '&p2=' + nroOrden;
+
     tablaMostrarUsuarioPaga = new dhtmlXGridObject('divUsuarioPaga');
     tablaMostrarUsuarioPaga.setImagePath("../../../../fastmedical_front/imagen/icono/");
     tablaMostrarUsuarioPaga.setSkin("dhx_skyblue");
-    tablaMostrarUsuarioPaga.attachEvent("onRowSelect", function(){
-        });
+    tablaMostrarUsuarioPaga.attachEvent("onRowSelect", function () {
+    });
     tablaMostrarUsuarioPaga.init();
-    tablaMostrarUsuarioPaga.loadXML(pathRequestControl+'?'+parametros);  
+    tablaMostrarUsuarioPaga.loadXML(pathRequestControl + '?' + parametros);
 }
 
 function MostrarAtencionInicio() {
@@ -3828,8 +3793,8 @@ function MostrarAtencionInicio() {
     tablaMostrarAtencionInicio = new dhtmlXGridObject('divAtencionInicio');
     tablaMostrarAtencionInicio.setImagePath("../../../../fastmedical_front/imagen/icono/");
     tablaMostrarAtencionInicio.setSkin("dhx_skyblue");
-    tablaMostrarAtencionInicio.attachEvent("onRowSelect", function() {
-        });
+    tablaMostrarAtencionInicio.attachEvent("onRowSelect", function () {
+    });
     tablaMostrarAtencionInicio.init();
     tablaMostrarAtencionInicio.loadXML(pathRequestControl + '?' + parametros);
 }
@@ -3850,8 +3815,8 @@ function MostrarAtencionFin() {
     tablaMostrarAtencionFin = new dhtmlXGridObject('divAtencionFin');
     tablaMostrarAtencionFin.setImagePath("../../../../fastmedical_front/imagen/icono/");
     tablaMostrarAtencionFin.setSkin("dhx_skyblue");
-    tablaMostrarAtencionFin.attachEvent("onRowSelect", function() {
-        });
+    tablaMostrarAtencionFin.attachEvent("onRowSelect", function () {
+    });
     tablaMostrarAtencionFin.init();
     tablaMostrarAtencionFin.loadXML(pathRequestControl + '?' + parametros);
 }
@@ -3867,59 +3832,59 @@ function MostrarReceta() { // muestra la receta del paciente
     tablaMostrarReceta = new dhtmlXGridObject('divVerRecetas');
     tablaMostrarReceta.setImagePath("../../../../fastmedical_front/imagen/icono/");
     tablaMostrarReceta.setSkin("dhx_skyblue");
-    tablaMostrarReceta.attachEvent("onRowSelect", function() {
-        });
+    tablaMostrarReceta.attachEvent("onRowSelect", function () {
+    });
     tablaMostrarReceta.init();
     tablaMostrarReceta.loadXML(pathRequestControl + '?' + parametros);
 }
 
-function actualizaUbigeo(elemento){
-    
-     patronModulo = 'combo_ubigeo';
-        parametros = '';
-        parametros += 'p1=' + patronModulo;
-        parametros += '&p2=' + '';
-        parametros += '&p3=' + document.getElementById('cb_departamento').value;
-        parametros += '&p4=' + document.getElementById('cb_provincia').value;
-        parametros += '&p5=' + document.getElementById('cb_pais').value;
+function actualizaUbigeo(elemento) {
 
-        contadorCargador++;
-        var idCargador = contadorCargador;
-        new Ajax.Request(pathRequestControl, {
-            method: 'get',
-            asynchronous: false,
-            parameters: parametros,
-            onLoading: cargadorpeche(1, idCargador),
-            onComplete: function(transport) {
-                cargadorpeche(0, idCargador);
-                respuesta = transport.responseText;
-                $(elemento).update(respuesta);
-            }
-        })
+    patronModulo = 'combo_ubigeo';
+    parametros = '';
+    parametros += 'p1=' + patronModulo;
+    parametros += '&p2=' + '';
+    parametros += '&p3=' + document.getElementById('cb_departamento').value;
+    parametros += '&p4=' + document.getElementById('cb_provincia').value;
+    parametros += '&p5=' + document.getElementById('cb_pais').value;
+
+    contadorCargador++;
+    var idCargador = contadorCargador;
+    new Ajax.Request(pathRequestControl, {
+        method: 'get',
+        asynchronous: false,
+        parameters: parametros,
+        onLoading: cargadorpeche(1, idCargador),
+        onComplete: function (transport) {
+            cargadorpeche(0, idCargador);
+            respuesta = transport.responseText;
+            $(elemento).update(respuesta);
+        }
+    })
     //$row_ochg = "onchange=\"myajax.Link('../../ccontrol/control/control.php?p1=combo_ubigeo&p2=&p3='+document.getElementById('cb_departamento').value+'&p4='+document.getElementById('cb_provincia').value+'&p5='+document.getElementById('cb_pais').value,'ubigeo');\"";
 }
-function actualizaUbigeo2(elemento){
+function actualizaUbigeo2(elemento) {
 
-     patronModulo = 'combo_ubigeo';
-        parametros = '';
-        parametros += 'p1=' + patronModulo;
-        parametros += '&p2=' + '';
-        parametros += '&p3=' + document.getElementById('cbNac_departamento').value;
-        parametros += '&p4=' + document.getElementById('cbNac_provincia').value;
-        parametros += '&p5=' + document.getElementById('cbNac_pais').value;
+    patronModulo = 'combo_ubigeo';
+    parametros = '';
+    parametros += 'p1=' + patronModulo;
+    parametros += '&p2=' + '';
+    parametros += '&p3=' + document.getElementById('cbNac_departamento').value;
+    parametros += '&p4=' + document.getElementById('cbNac_provincia').value;
+    parametros += '&p5=' + document.getElementById('cbNac_pais').value;
 
-        contadorCargador++;
-        var idCargador = contadorCargador;
-        new Ajax.Request(pathRequestControl, {
-            method: 'get',
-            asynchronous: false,
-            parameters: parametros,
-            onLoading: cargadorpeche(1, idCargador),
-            onComplete: function(transport) {
-                cargadorpeche(0, idCargador);
-                respuesta = transport.responseText;
-                $(elemento).update(respuesta);
-            }
-        })
+    contadorCargador++;
+    var idCargador = contadorCargador;
+    new Ajax.Request(pathRequestControl, {
+        method: 'get',
+        asynchronous: false,
+        parameters: parametros,
+        onLoading: cargadorpeche(1, idCargador),
+        onComplete: function (transport) {
+            cargadorpeche(0, idCargador);
+            respuesta = transport.responseText;
+            $(elemento).update(respuesta);
+        }
+    })
     //$row_ochg = "onchange=\"myajax.Link('../../ccontrol/control/control.php?p1=combo_ubigeo&p2=&p3='+document.getElementById('cb_departamento').value+'&p4='+document.getElementById('cb_provincia').value+'&p5='+document.getElementById('cb_pais').value,'ubigeo');\"";
 }

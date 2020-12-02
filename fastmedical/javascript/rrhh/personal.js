@@ -1689,13 +1689,14 @@ function getCodEmpleado()
     parametros='';
     parametros+='p1='+patronModulo;
     parametros+='&p2='+codigo;
-
+     contadorCargador++;
+    var idCargador = contadorCargador;
     new Ajax.Request(pathRequestControl,{
         method : 'get',
         parameters : parametros,
-        onLoading : micargador(1),
-        onComplete : function(transport){
-            micargador(0);
+         onLoading: cargadorpeche(1, idCargador),
+        onComplete: function (transport) {
+            cargadorpeche(0, idCargador);
             respuesta = transport.responseText;
             var miarray=respuesta.split("|");
             // alert("Sayes");
@@ -1714,12 +1715,14 @@ function mostrarDatosPersonales(){
 
 
     var parametros='';
+    contadorCargador++;
+    var idCargador = contadorCargador;
     new Ajax.Request( path,{
         method : 'get',
         parameters : parametros,
-        onLoading : micargador(1),
-        onComplete : function(transport){
-            micargador(0);
+        onLoading: cargadorpeche(1, idCargador),
+        onComplete: function (transport) {
+            cargadorpeche(0, idCargador);
             getCodEmpleado();
             var respuesta = transport.responseText;
             $('divDerRegistroP').update(respuesta);
@@ -10533,12 +10536,15 @@ function mantenimientoCaja(){
     var parametros='';
     parametros+='p1='+patronModulo;
     parametros+='&p2='+c_cod_per;
+    
+    contadorCargador++;
+    var idCargador = contadorCargador;
     new Ajax.Request(pathRequestControl,{
         method : 'get',
         parameters : parametros,
-        onLoading : micargador(1),
-        onComplete : function(transport){
-            micargador(0);
+        onLoading: cargadorpeche(1, idCargador),
+        onComplete: function (transport) {
+            cargadorpeche(0, idCargador);
             var respuesta = transport.responseText;
             if(trim(respuesta)!==0){
                 $('divDerRegistroP').update(respuesta);

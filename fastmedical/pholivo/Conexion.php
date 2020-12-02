@@ -113,7 +113,7 @@ class Conexion
 
     public static function getInitDsnMSSQLAuditoriaWeb()
     {
-        $arrayDsnMSSQL['dbname'] = 'fastmedical_db';
+        $arrayDsnMSSQL['dbname'] = 'yachay';
        // $arrayDsnMSSQL['dbname'] = 'DB_FastMedical';
         $arrayDsnMSSQL['dbuser'] = 'admin_sql';
        // $arrayDsnMSSQL['dbuser'] = 'db_admin_fm';
@@ -130,7 +130,7 @@ class Conexion
 
     public static function getInitDsnMSSQLSimedh()
     {
-        $arrayDsnMSSQL['dbname'] = 'fastmedical_db';
+        $arrayDsnMSSQL['dbname'] = 'yachay';
        // $arrayDsnMSSQL['dbname'] = 'DB_FastMedical';
         $arrayDsnMSSQL['dbuser'] = 'admin_sql';
        // $arrayDsnMSSQL['dbuser'] = 'db_admin_fm';

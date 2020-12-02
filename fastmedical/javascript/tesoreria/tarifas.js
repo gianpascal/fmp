@@ -91,15 +91,15 @@ function getDetalleProducto(event, html, c_cod_ser_pro) {
     var url = '../../ccontrol/control/control.php';
     var data = 'p1=mostrar_detalle_prod&p2=' + c_cod_ser_pro;
     new Ajax.Request(url,
-    {
-        method: 'get',
-        parameters: data,
-        onLoading: micargador(1),
-        onComplete: function(transport) {
-            micargador(0);
-            $('div_detalleProducto').update(transport.responseText);//Coloca el resultado en la capa "DATOS PERSONA"
-        }
-    }
+            {
+                method: 'get',
+                parameters: data,
+                onLoading: micargador(1),
+                onComplete: function (transport) {
+                    micargador(0);
+                    $('div_detalleProducto').update(transport.responseText);//Coloca el resultado en la capa "DATOS PERSONA"
+                }
+            }
     )
 
 
@@ -138,10 +138,10 @@ function getPrecioServicios() {
         var codigoFiliacion = document.getElementById("hiCodigoFiliacionActiva").value;
         ventana_procedimiento(c_cod_ser_pro, codigoFiliacion);
 
-    //        getVinculadosTratamientoPaciente(document.getElementById('txtcodigoPersona').value);
+        //        getVinculadosTratamientoPaciente(document.getElementById('txtcodigoPersona').value);
 
-    //        var iid_persona=document.getElementById("txtcodigoPersona").value;
-    //        getTratamientoPaciente(iid_persona);
+        //        var iid_persona=document.getElementById("txtcodigoPersona").value;
+        //        getTratamientoPaciente(iid_persona);
 
 
     }
@@ -200,25 +200,25 @@ function getTratamientoPaciente3(iid_persona) {
     TablagetTratamientoPaciente.setSkin("dhx_skyblue");
     TablagetTratamientoPaciente.enableRowsHover(true, 'grid_hover');
     TablagetTratamientoPaciente.attachEvent("onRowSelect",
-        function(fil, col) {
+            function (fil, col) {
 
-        }
-        );
+            }
+    );
 
     //////////para cargador peche////////////////
     contadorCargador++;
     var idCargador = contadorCargador;
-    TablagetTratamientoPaciente.attachEvent("onXLS", function() {
+    TablagetTratamientoPaciente.attachEvent("onXLS", function () {
         cargadorpeche(1, idCargador);
     });
-    TablagetTratamientoPaciente.attachEvent("onXLE", function() {
+    TablagetTratamientoPaciente.attachEvent("onXLE", function () {
         cargadorpeche(0, idCargador);
     });
 
     /////////////fin cargador ///////////////////////
     TablagetTratamientoPaciente.enableMultiline(true);
     TablagetTratamientoPaciente.init();
-    TablagetTratamientoPaciente.loadXML(pathRequestControl + '?' + parametros, function() {
+    TablagetTratamientoPaciente.loadXML(pathRequestControl + '?' + parametros, function () {
 
         if (codigoTipoCita == '0001') {
             //            alert("entro al 0001");
@@ -260,10 +260,10 @@ function ventana_procedimiento(c_cod_ser_pro, codigoFiliacion) {
         cont = cont + 1;
         idnro = "nro" + cont.toString();
     }
-    var cadenaProcedimientos= cadenaP;
+    var cadenaProcedimientos = cadenaP;
     //    alert('continuar...');
     var vformname = 'formSeleccionaServicios';
-    var vtitle = 'Procedimientos' ;
+    var vtitle = 'Procedimientos';
     var vwidth = '690';
     var vheight = '520';
     var vcenter = 't';
@@ -285,7 +285,7 @@ function ventana_procedimiento(c_cod_ser_pro, codigoFiliacion) {
     parametros += '&p4=' + cadenaProcedimientos;
     var posFuncion = 'cargatablaProcedimiento()';
 
-    CargarVentanaPopPapJorge(vformname, vtitle, vwidth, vheight, vcenter, vresizable, vmodal, vstyle, vopacity, vposx1, vposx2, vposy1, vposy2, parametros, posFuncion)   
+    CargarVentanaPopPapJorge(vformname, vtitle, vwidth, vheight, vcenter, vresizable, vmodal, vstyle, vopacity, vposx1, vposx2, vposy1, vposy2, parametros, posFuncion)
 }
 
 function obtieneCadena() {
@@ -366,7 +366,7 @@ function getTarifasProcedimientos(event, opcion) {
             method: 'get',
             parameters: parametros,
             onLoading: micargador(1),
-            onComplete: function(transport) {
+            onComplete: function (transport) {
                 micargador(0);
                 respuesta = transport.responseText;
                 $('resultadoTarifasProcedimientos').update(respuesta);
@@ -416,11 +416,11 @@ function agregarProcedimiento(codigo) {
             method: 'get',
             parameters: parametros,
             onLoading: micargador(1),
-            onComplete: function(transport) {
+            onComplete: function (transport) {
                 micargador(0);
                 respuesta = transport.responseText;
                 $('div_procedimientosSeleccionados').update(respuesta);
-            //document.getElementById("hiCadenaProcedimientos").value="obtiene";
+                //document.getElementById("hiCadenaProcedimientos").value="obtiene";
             }
         })
     }
@@ -440,7 +440,7 @@ function eliminarProcedimientoSeleccionado(codigo) {
     idnro = "nro0";
     aux = 0;
     while (null != document.getElementById(idnro)) {
-        codigoProducto = document.getElementById(idnro).value ;
+        codigoProducto = document.getElementById(idnro).value;
         if (codigoProducto == codigo) {
             aux = 1;
         } else {
@@ -468,7 +468,7 @@ function eliminarProcedimientoSeleccionado(codigo) {
         method: 'get',
         parameters: parametros,
         onLoading: micargador(1),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             micargador(0);
             respuesta = transport.responseText;
             if (cond == 1) {
@@ -476,11 +476,11 @@ function eliminarProcedimientoSeleccionado(codigo) {
             } else {
                 $('divResultadoPrecioServicios').update(respuesta);
             }
-            
 
-        //$('divResultadoPrecioServicios').update(respuesta);
-        //$('divResultadoPrecioServicios').update(respuesta);
-        //document.getElementById("hiCadenaProcedimientos").value="obtiene";
+
+            //$('divResultadoPrecioServicios').update(respuesta);
+            //$('divResultadoPrecioServicios').update(respuesta);
+            //document.getElementById("hiCadenaProcedimientos").value="obtiene";
         }
     })
 
@@ -508,12 +508,12 @@ function cerrarAgregaProcedimiento(opcion) {
                 method: 'get',
                 parameters: parametros,
                 onLoading: micargador(1),
-                onComplete: function(transport) {
+                onComplete: function (transport) {
                     micargador(0);
                     respuesta = transport.responseText;
                     $('divResultadoPrecioServicios').update(respuesta);
-                //$('divResultadoPrecioServicios').update(respuesta);
-                //document.getElementById("hiCadenaProcedimientos").value="obtiene";
+                    //$('divResultadoPrecioServicios').update(respuesta);
+                    //document.getElementById("hiCadenaProcedimientos").value="obtiene";
                 }
             })
 
@@ -550,13 +550,13 @@ function filtroproductos(evento) {
         oTarifas.attachHeader(header);
         contadorCargador++;
         var idCargador = contadorCargador;
-        oTarifas.attachEvent("onXLS", function() {
+        oTarifas.attachEvent("onXLS", function () {
             cargadorpeche(1, idCargador);
         });
-        oTarifas.attachEvent("onXLE", function() {
+        oTarifas.attachEvent("onXLE", function () {
             cargadorpeche(0, idCargador);
         });
-        oTarifas.attachEvent("onRowSelect", function(x, y) {
+        oTarifas.attachEvent("onRowSelect", function (x, y) {
             var bPaquete = oTarifas.cells(x, 4).getValue()
             var idPaquete = oTarifas.cells(x, 0).getValue()
             var nombrePaquete = oTarifas.cells(x, 1).getValue()
@@ -566,14 +566,13 @@ function filtroproductos(evento) {
                 $('contenedorPrecios').update('');
                 $('contenedorStock').update('');
                 abrirPopadConsultaTarifasPaquete();
-            }
-            else {
+            } else {
 
                 detallealmacen(oTarifas.cells(x, 0).getValue());
             }
         });
         oTarifas.init();
-        oTarifas.loadXML(pathRequestControl + '?' + parametros, function() {
+        oTarifas.loadXML(pathRequestControl + '?' + parametros, function () {
             tmn = 1;
         });
     }
@@ -608,10 +607,10 @@ function detallealmacen(cod) {
     rDetalleAlmacen.enableRowsHover(true, 'grid_hover');
     contadorCargador++;
     var idCargador = contadorCargador;
-    rDetalleAlmacen.attachEvent("onXLS", function() {
+    rDetalleAlmacen.attachEvent("onXLS", function () {
         cargadorpeche(0, idCargador);
     });
-    rDetalleAlmacen.attachEvent("onXLE", function() {
+    rDetalleAlmacen.attachEvent("onXLE", function () {
         cargadorpeche(0, idCargador);
     });
     rDetalleAlmacen.init();
@@ -630,10 +629,10 @@ function cargarPrecios(codigopro) {
     cargarPrecios.enableRowsHover(true, 'grid_hover');
     contadorCargador++;
     var idCargador = contadorCargador;
-    cargarPrecios.attachEvent("onXLS", function() {
+    cargarPrecios.attachEvent("onXLS", function () {
         cargadorpeche(0, idCargador);
     });
-    cargarPrecios.attachEvent("onXLE", function() {
+    cargarPrecios.attachEvent("onXLE", function () {
         cargadorpeche(0, idCargador);
     });
     cargarPrecios.init();
@@ -670,7 +669,7 @@ function cargarDatosPopad() {
         asynchronous: false,
         parameters: parametros,
         onLoading: micargador(1),
-        onComplete: function(transport) {
+        onComplete: function (transport) {
             micargador(0);
             $('idPaquete').value = $('idPaqueteAbajo').value;
             $('nombrePaquete').value = $('nombrePaqueteAbajo').value;
@@ -696,14 +695,14 @@ function CargarPaquetes() {
     argarPaquetes.enableRowsHover(true, 'grid_hover');
     contadorCargador++;
     var idCargador = contadorCargador;
-    argarPaquetes.attachEvent("onXLS", function() {
+    argarPaquetes.attachEvent("onXLS", function () {
         cargadorpeche(0, idCargador);
     });
-    argarPaquetes.attachEvent("onXLE", function() {
+    argarPaquetes.attachEvent("onXLE", function () {
         cargadorpeche(0, idCargador);
     });
     argarPaquetes.init();
-    argarPaquetes.loadXML(pathRequestControl + '?' + parametros, function() {
+    argarPaquetes.loadXML(pathRequestControl + '?' + parametros, function () {
         contarTotalPrecio();
     });
 }
@@ -711,7 +710,7 @@ function CargarPaquetes() {
 
 function contarTotalPrecio() {
     var sumar = 0
-    argarPaquetes.forEachRow(function(rId) {
+    argarPaquetes.forEachRow(function (rId) {
         sumar = sumar + parseFloat(argarPaquetes.cells(rId, 4).getValue());
     });
     $('txtTotal').value = 'S/.' + Math.round(sumar * 100) / 100;
@@ -721,61 +720,61 @@ function contarTotalPrecio() {
 function getTarifasProcedimientosProductos(event, opcion) {
     var arreglo = $('hServicio').value.split("|");
     var codigoservicio = arreglo[0];
-       
-    var aux = 0;    
+
+    var aux = 0;
     var afiliacionActiva = document.getElementById('hiCodigoFiliacionActiva').value;
     var nombreProcedimiento = document.getElementById('txtNombreProcedimiento').value;
-    var longitudNombreProcedimiento =nombreProcedimiento.length;
+    var longitudNombreProcedimiento = nombreProcedimiento.length;
     var tecla = event.keyCode
-    if(longitudNombreProcedimiento==3||tecla == 13){
+    if (longitudNombreProcedimiento == 3 || tecla == 13) {
         if (opcion == '01') {
-            aux = 1;           
-        }    
+            aux = 1;
+        }
         if (aux == 1) {
             tmnGetTarifa = 0;
             var patronModulo = 'getTarifasProcedimientosProductos';
-            
-            var parametros='';
-            parametros+='p1='+patronModulo;
-            parametros+='&p2='+afiliacionActiva;
-            parametros+='&p3='+nombreProcedimiento;
-            tablaTarifasProcedimientosProductos=new dhtmlXGridObject('resultadoTarifasProcedimientos');
+
+            var parametros = '';
+            parametros += 'p1=' + patronModulo;
+            parametros += '&p2=' + afiliacionActiva;
+            parametros += '&p3=' + nombreProcedimiento;
+            tablaTarifasProcedimientosProductos = new dhtmlXGridObject('resultadoTarifasProcedimientos');
             tablaTarifasProcedimientosProductos.setImagePath("../../../imagen/dhtmlxgrid/imgs/");
             tablaTarifasProcedimientosProductos.setSkin("dhx_skyblue");
-            tablaTarifasProcedimientosProductos.enableRowsHover(true,'grid_hover');
-            tablaTarifasProcedimientosProductos.attachEvent("onRowSelect", function(rId,cInd){
-                var codigo=tablaTarifasProcedimientosProductos.cells(rId,1).getValue();
-                var nombre=tablaTarifasProcedimientosProductos.cells(rId,2).getValue();
-                var  precio =tablaTarifasProcedimientosProductos.cells(rId,3).getValue();
-                 var bEstadoServicio=validaServicionConProcedimiento(codigoservicio);
+            tablaTarifasProcedimientosProductos.enableRowsHover(true, 'grid_hover');
+            tablaTarifasProcedimientosProductos.attachEvent("onRowSelect", function (rId, cInd) {
+                var codigo = tablaTarifasProcedimientosProductos.cells(rId, 1).getValue();
+                var nombre = tablaTarifasProcedimientosProductos.cells(rId, 2).getValue();
+                var precio = tablaTarifasProcedimientosProductos.cells(rId, 3).getValue();
+                var bEstadoServicio = validaServicionConProcedimiento(codigoservicio);
                 //                if(cInd==5){
-                agregarProcedimientoNuevo(codigo,nombre,precio,bEstadoServicio);
-            //                }
+                agregarProcedimientoNuevo(codigo, nombre, precio, bEstadoServicio);
+                //                }
 
-            });  
+            });
             //////////para cargador peche////////////////
             contadorCargador++;
-            var idCargador=contadorCargador;
-            tablaTarifasProcedimientosProductos.attachEvent("onXLS", function(){
-                cargadorpeche(1,idCargador);
+            var idCargador = contadorCargador;
+            tablaTarifasProcedimientosProductos.attachEvent("onXLS", function () {
+                cargadorpeche(1, idCargador);
             });
-            tablaTarifasProcedimientosProductos.attachEvent("onXLE", function(){
-                cargadorpeche(0,idCargador);
-             
+            tablaTarifasProcedimientosProductos.attachEvent("onXLE", function () {
+                cargadorpeche(0, idCargador);
+
             });
             /////////////fin cargador ///////////////////////
             tablaTarifasProcedimientosProductos.setSkin("dhx_skyblue");
             tablaTarifasProcedimientosProductos.init();
-            tablaTarifasProcedimientosProductos.loadXML(pathRequestControl+'?'+parametros,function(){
-                var m=$("txtIndicador").value
-                if(m==0){
-                    agregarProcedimientoNuevoInicio();    
-                } 
+            tablaTarifasProcedimientosProductos.loadXML(pathRequestControl + '?' + parametros, function () {
+                var m = $("txtIndicador").value
+                if (m == 0) {
+                    agregarProcedimientoNuevoInicio();
+                }
                 tmnGetTarifa = 1;
             });
-        }   
-    }else{
-        if (longitudNombreProcedimiento > 3 && tmnGetTarifa==1) {
+        }
+    } else {
+        if (longitudNombreProcedimiento > 3 && tmnGetTarifa == 1) {
             var palabra = nombreProcedimiento;
             var arrayPalabras = new Array();
             arrayPalabras = palabra.split(" ");
@@ -788,125 +787,125 @@ function getTarifasProcedimientosProductos(event, opcion) {
     }
 
 }
-function agregarProcedimientoNuevo(codigo,nombre,precio,bEstadoServicio){
+function agregarProcedimientoNuevo(codigo, nombre, precio, bEstadoServicio) {
     // bEstadoServicio --> indica si es 1 que se puede agregar procedimientos Obligatorio
-    var  codigoProducto ;
+    var codigoProducto;
     var bEstadoPro;
-    var m=tablaAgregarProcedimientoNuevo.getRowsNum();
+    var m = tablaAgregarProcedimientoNuevo.getRowsNum();
     //    alert(m);
-    if(bEstadoServicio==1){
-        if(m<1){
-            bEstadoPro=0;
-            for(i=0;i<m;i++){
-                codigoProducto = tablaAgregarProcedimientoNuevo.cells(i,0).getValue();  
-                if(codigoProducto==codigo){
-                    bEstadoPro=1;  
+    if (bEstadoServicio == 1) {
+        if (m < 1) {
+            bEstadoPro = 0;
+            for (i = 0; i < m; i++) {
+                codigoProducto = tablaAgregarProcedimientoNuevo.cells(i, 0).getValue();
+                if (codigoProducto == codigo) {
+                    bEstadoPro = 1;
                 }
             }
-            if(bEstadoPro==0){
+            if (bEstadoPro == 0) {
                 //        alert(1);
-                tablaAgregarProcedimientoNuevo.addRow(m, codigo,0);
+                tablaAgregarProcedimientoNuevo.addRow(m, codigo, 0);
                 //        alert(2);
-                tablaAgregarProcedimientoNuevo.cells(m,0).setValue(codigo); 
-                tablaAgregarProcedimientoNuevo.cells(m,1).setValue(nombre); 
-   //             tablaAgregarProcedimientoNuevo.cells(m,2).setValue(precio); 
-                tablaAgregarProcedimientoNuevo.cells(m,2).setValue('<input id="txtPrecio'+i+'" type="txt" title="Precio" size="10" name="grupoPrecio" value="'+precio+'">'); 
-                tablaAgregarProcedimientoNuevo.cells(m,3).setValue('<input id="txtCantidad'+i+'" type="txt" title="Cantidad" size="3" name="grupoMuestra" value="1">');
+                tablaAgregarProcedimientoNuevo.cells(m, 0).setValue(codigo);
+                tablaAgregarProcedimientoNuevo.cells(m, 1).setValue(nombre);
+                //             tablaAgregarProcedimientoNuevo.cells(m,2).setValue(precio); 
+                tablaAgregarProcedimientoNuevo.cells(m, 2).setValue('<input id="txtPrecio' + i + '" type="txt" title="Precio" size="10" name="grupoPrecio" value="' + precio + '">');
+                tablaAgregarProcedimientoNuevo.cells(m, 3).setValue('<input id="txtCantidad' + i + '" type="txt" title="Cantidad" size="3" name="grupoMuestra" value="1">');
                 //        tablaAgregarProcedimientoNuevo.cells(m,5).setValue('<a href="#" onclick=\"javascript:eliminarProcedimientoSeleccionado();\"><img src="../../../../fastmedical_front/imagen/icono/borrar.png" title="Eliminar"/></a>'); 
-                tablaAgregarProcedimientoNuevo.cells(m,5).setValue('../../../../fastmedical_front/imagen/icono/borrar.png');   
-            //        alert(3);
-            }     
-        }      
-    }else {
-        bEstadoPro=0;
-        for(i=0;i<m;i++){
-            codigoProducto = tablaAgregarProcedimientoNuevo.cells(i,0).getValue();  
-            if(codigoProducto==codigo){
-                bEstadoPro=1;  
+                tablaAgregarProcedimientoNuevo.cells(m, 5).setValue('../../../../fastmedical_front/imagen/icono/borrar.png');
+                //        alert(3);
             }
         }
-        if(bEstadoPro==0){
+    } else {
+        bEstadoPro = 0;
+        for (i = 0; i < m; i++) {
+            codigoProducto = tablaAgregarProcedimientoNuevo.cells(i, 0).getValue();
+            if (codigoProducto == codigo) {
+                bEstadoPro = 1;
+            }
+        }
+        if (bEstadoPro == 0) {
             //        alert(1);
-            tablaAgregarProcedimientoNuevo.addRow(m, codigo,0);
+            tablaAgregarProcedimientoNuevo.addRow(m, codigo, 0);
             //        alert(2);
-            tablaAgregarProcedimientoNuevo.cells(m,0).setValue(codigo); 
-            tablaAgregarProcedimientoNuevo.cells(m,1).setValue(nombre); 
+            tablaAgregarProcedimientoNuevo.cells(m, 0).setValue(codigo);
+            tablaAgregarProcedimientoNuevo.cells(m, 1).setValue(nombre);
             //tablaAgregarProcedimientoNuevo.cells(m,2).setValue(precio); 
-            tablaAgregarProcedimientoNuevo.cells(m,2).setValue('<input id="txtPrecio'+i+'" type="txt" title="Precio" size="10" name="grupoPrecio" value="'+precio+'">'); 
-            tablaAgregarProcedimientoNuevo.cells(m,3).setValue('<input id="txtCantidad'+i+'" type="txt" title="Cantidad" size="3" name="grupoMuestra" value="1">');
+            tablaAgregarProcedimientoNuevo.cells(m, 2).setValue('<input id="txtPrecio' + i + '" type="txt" title="Precio" size="10" name="grupoPrecio" value="' + precio + '">');
+            tablaAgregarProcedimientoNuevo.cells(m, 3).setValue('<input id="txtCantidad' + i + '" type="txt" title="Cantidad" size="3" name="grupoMuestra" value="1">');
             //        tablaAgregarProcedimientoNuevo.cells(m,5).setValue('<a href="#" onclick=\"javascript:eliminarProcedimientoSeleccionado();\"><img src="../../../../fastmedical_front/imagen/icono/borrar.png" title="Eliminar"/></a>'); 
-            tablaAgregarProcedimientoNuevo.cells(m,5).setValue('../../../../fastmedical_front/imagen/icono/borrar.png');   
-        //        alert(3);
-        }  
-    }  
+            tablaAgregarProcedimientoNuevo.cells(m, 5).setValue('../../../../fastmedical_front/imagen/icono/borrar.png');
+            //        alert(3);
+        }
+    }
 }
 function agregarProcedimientoNuevoInicio() {
-    
-    $("txtIndicador").value=1;
-    patronModulo = 'agregarProcedimientoNuevoInicio';
-    var parametros='';
-    parametros+='p1='+patronModulo;
 
-    tablaAgregarProcedimientoNuevo=new dhtmlXGridObject('div_procedimientosSeleccionados');
+    $("txtIndicador").value = 1;
+    patronModulo = 'agregarProcedimientoNuevoInicio';
+    var parametros = '';
+    parametros += 'p1=' + patronModulo;
+
+    tablaAgregarProcedimientoNuevo = new dhtmlXGridObject('div_procedimientosSeleccionados');
     tablaAgregarProcedimientoNuevo.setImagePath("../../../imagen/dhtmlxgrid/imgs/");
     tablaAgregarProcedimientoNuevo.setSkin("dhx_skyblue");
-    tablaAgregarProcedimientoNuevo.enableRowsHover(true,'grid_hover');
+    tablaAgregarProcedimientoNuevo.enableRowsHover(true, 'grid_hover');
 
-    tablaAgregarProcedimientoNuevo.attachEvent("onRowSelect", function(rId,cInd){
-        eliminarRegistrodeProcedimiento(rId,cInd);
-    });  
+    tablaAgregarProcedimientoNuevo.attachEvent("onRowSelect", function (rId, cInd) {
+        eliminarRegistrodeProcedimiento(rId, cInd);
+    });
     //////////para cargador peche////////////////
     contadorCargador++;
-    var idCargador=contadorCargador;
-    tablaAgregarProcedimientoNuevo.attachEvent("onXLS", function(){
-        cargadorpeche(1,idCargador);
+    var idCargador = contadorCargador;
+    tablaAgregarProcedimientoNuevo.attachEvent("onXLS", function () {
+        cargadorpeche(1, idCargador);
     });
-    tablaAgregarProcedimientoNuevo.attachEvent("onXLE", function(){
-        cargadorpeche(0,idCargador);
- 
+    tablaAgregarProcedimientoNuevo.attachEvent("onXLE", function () {
+        cargadorpeche(0, idCargador);
+
     });
     /////////////fin cargador ///////////////////////
     tablaAgregarProcedimientoNuevo.setSkin("dhx_skyblue");
     tablaAgregarProcedimientoNuevo.init();
-    tablaAgregarProcedimientoNuevo.loadXML(pathRequestControl+'?'+parametros,function(){
+    tablaAgregarProcedimientoNuevo.loadXML(pathRequestControl + '?' + parametros, function () {
 
-        });
+    });
 
 }
-function eliminarRegistrodeProcedimiento(rId,cInd){
-    if(cInd==5){
-        var m=tablaAgregarProcedimientoNuevo.getRowsNum();
-        if(m==1){
-            tablaAgregarProcedimientoNuevo.deleteRow(rId);    
-        }else{
-            if(m==(rId+1)){
+function eliminarRegistrodeProcedimiento(rId, cInd) {
+    if (cInd == 5) {
+        var m = tablaAgregarProcedimientoNuevo.getRowsNum();
+        if (m == 1) {
+            tablaAgregarProcedimientoNuevo.deleteRow(rId);
+        } else {
+            if (m == (rId + 1)) {
                 tablaAgregarProcedimientoNuevo.deleteRow(rId);
-            }else{
-                for(i=rId;i<m;i++){
-                    var j=parseInt(i)+1;
-                    if(j!=m){
-                        var codigo = tablaAgregarProcedimientoNuevo.cells(j,0).getValue();
-                        var nombre = tablaAgregarProcedimientoNuevo.cells(j,1).getValue();
-                        var precio = tablaAgregarProcedimientoNuevo.cells(j,2).getValue(); 
-                        var cantidad=$('txtCantidad'+j).value;
+            } else {
+                for (i = rId; i < m; i++) {
+                    var j = parseInt(i) + 1;
+                    if (j != m) {
+                        var codigo = tablaAgregarProcedimientoNuevo.cells(j, 0).getValue();
+                        var nombre = tablaAgregarProcedimientoNuevo.cells(j, 1).getValue();
+                        var precio = tablaAgregarProcedimientoNuevo.cells(j, 2).getValue();
+                        var cantidad = $('txtCantidad' + j).value;
 
-                        tablaAgregarProcedimientoNuevo.cells(i,0).setValue(codigo); 
-                        tablaAgregarProcedimientoNuevo.cells(i,1).setValue(nombre); 
+                        tablaAgregarProcedimientoNuevo.cells(i, 0).setValue(codigo);
+                        tablaAgregarProcedimientoNuevo.cells(i, 1).setValue(nombre);
                         //tablaAgregarProcedimientoNuevo.cells(i,2).setValue(precio); 
-                        tablaAgregarProcedimientoNuevo.cells(m,2).setValue('<input id="txtPrecio'+i+'" type="txt" title="Precio" size="10" name="grupoPrecio" value="'+precio+'">'); 
-                        tablaAgregarProcedimientoNuevo.cells(i,3).setValue('<input id="txtCantidad'+i+'" type="txt" title="Cantidad" size="3" name="grupoMuestra" value="'+cantidad+'">');
-                        tablaAgregarProcedimientoNuevo.cells(i,5).setValue('../../../../fastmedical_front/imagen/icono/borrar.png'); 
-                    }else{
-                        tablaAgregarProcedimientoNuevo.deleteRow(m-1);   
+                        tablaAgregarProcedimientoNuevo.cells(m, 2).setValue('<input id="txtPrecio' + i + '" type="txt" title="Precio" size="10" name="grupoPrecio" value="' + precio + '">');
+                        tablaAgregarProcedimientoNuevo.cells(i, 3).setValue('<input id="txtCantidad' + i + '" type="txt" title="Cantidad" size="3" name="grupoMuestra" value="' + cantidad + '">');
+                        tablaAgregarProcedimientoNuevo.cells(i, 5).setValue('../../../../fastmedical_front/imagen/icono/borrar.png');
+                    } else {
+                        tablaAgregarProcedimientoNuevo.deleteRow(m - 1);
                     }
-                } 
-            }        
+                }
+            }
         }
-  
-    // tablaAgregarProcedimientoNuevo.deleteRow(rId);  
-    //  tablaAgregarProcedimientoNuevo.addRow(rId, 'melaa',0);
+
+        // tablaAgregarProcedimientoNuevo.deleteRow(rId);  
+        //  tablaAgregarProcedimientoNuevo.addRow(rId, 'melaa',0);
     }
-   
+
 }
 function cerrarAgregaProcedimientoNuevo(opcion) {
     event = '';
@@ -923,12 +922,14 @@ function cerrarAgregaProcedimientoNuevo(opcion) {
             parametros += '&p4=' + '';
             parametros += '&p5=' + cadena;
             parametros += '&p6=' + 'delete';
+            contadorCargador++;
+            var idCargador = contadorCargador;
             new Ajax.Request(pathRequestControl, {
                 method: 'get',
                 parameters: parametros,
-                onLoading: micargador(1),
-                onComplete: function(transport) {
-                    micargador(0);
+                onLoading: cargadorpeche(1, idCargador),
+                onComplete: function (transport) {
+                    cargadorpeche(0, idCargador);
                     var respuesta = transport.responseText;
                     $('divResultadoPrecioServicios').update(respuesta);
                     obtenerTurnosProcedimientos();
@@ -947,64 +948,64 @@ function cerrarAgregaProcedimientoNuevo(opcion) {
     getVinculadosTratamientoPaciente(document.getElementById('txtcodigoPersona').value);
 
 }
-function obtieneCadenaNueva() {    
-    var m=tablaAgregarProcedimientoNuevo.getRowsNum();
-    cadenaP='';
-    for(i=0;i<m;i++){
-        var  codigoProducto = tablaAgregarProcedimientoNuevo.cells(i,0).getValue();  
-        var  nombreProd = tablaAgregarProcedimientoNuevo.cells(i,1).getValue();  
-       // var  precio = tablaAgregarProcedimientoNuevo.cells(i,2).getValue();
-       var  precio =$('txtPrecio'+i).value;
-        var cantidad=$('txtCantidad'+i).value;
-  
+function obtieneCadenaNueva() {
+    var m = tablaAgregarProcedimientoNuevo.getRowsNum();
+    cadenaP = '';
+    for (i = 0; i < m; i++) {
+        var codigoProducto = tablaAgregarProcedimientoNuevo.cells(i, 0).getValue();
+        var nombreProd = tablaAgregarProcedimientoNuevo.cells(i, 1).getValue();
+        // var  precio = tablaAgregarProcedimientoNuevo.cells(i,2).getValue();
+        var precio = $('txtPrecio' + i).value;
+        var cantidad = $('txtCantidad' + i).value;
+
         cadenaP = cadenaP + codigoProducto + "|";
         cadenaP = cadenaP + nombreProd + "|";
-        cadenaP = cadenaP + precio+ "|";
+        cadenaP = cadenaP + precio + "|";
         cadenaP = cadenaP + cantidad + "gxxxgr";
 
     }
     return cadenaP;
 }
-function cargatablaProcedimiento(){
+function cargatablaProcedimiento() {
     $('txtNombreProcedimiento').focus();
-    var cadenaProcedimientos=$('txtCadena').value;
+    var cadenaProcedimientos = $('txtCadena').value;
     document.getElementById('divResultadoPrecioServicios').innerHTML = '';
-    if(cadenaProcedimientos!=''){
-        
-      agregarProcedimientoNuevoInicio7(cadenaProcedimientos);  
+    if (cadenaProcedimientos != '') {
+
+        agregarProcedimientoNuevoInicio7(cadenaProcedimientos);
 
     }
 }
 
 function agregarProcedimientoNuevoInicio7(cadenaProcedimientos) {
-    
-    $("txtIndicador").value=1;
-    patronModulo = 'agregarProcedimientoNuevoInicio';
-    var parametros='';
-    parametros+='p1='+patronModulo;
 
-    tablaAgregarProcedimientoNuevo=new dhtmlXGridObject('div_procedimientosSeleccionados');
+    $("txtIndicador").value = 1;
+    patronModulo = 'agregarProcedimientoNuevoInicio';
+    var parametros = '';
+    parametros += 'p1=' + patronModulo;
+
+    tablaAgregarProcedimientoNuevo = new dhtmlXGridObject('div_procedimientosSeleccionados');
     tablaAgregarProcedimientoNuevo.setImagePath("../../../imagen/dhtmlxgrid/imgs/");
     tablaAgregarProcedimientoNuevo.setSkin("dhx_skyblue");
-    tablaAgregarProcedimientoNuevo.enableRowsHover(true,'grid_hover');
+    tablaAgregarProcedimientoNuevo.enableRowsHover(true, 'grid_hover');
 
-    tablaAgregarProcedimientoNuevo.attachEvent("onRowSelect", function(rId,cInd){
-        eliminarRegistrodeProcedimiento(rId,cInd);
-    });  
+    tablaAgregarProcedimientoNuevo.attachEvent("onRowSelect", function (rId, cInd) {
+        eliminarRegistrodeProcedimiento(rId, cInd);
+    });
     //////////para cargador peche////////////////
     contadorCargador++;
-    var idCargador=contadorCargador;
-    tablaAgregarProcedimientoNuevo.attachEvent("onXLS", function(){
-        cargadorpeche(1,idCargador);
+    var idCargador = contadorCargador;
+    tablaAgregarProcedimientoNuevo.attachEvent("onXLS", function () {
+        cargadorpeche(1, idCargador);
     });
-    tablaAgregarProcedimientoNuevo.attachEvent("onXLE", function(){
-        cargadorpeche(0,idCargador);
- 
+    tablaAgregarProcedimientoNuevo.attachEvent("onXLE", function () {
+        cargadorpeche(0, idCargador);
+
     });
     /////////////fin cargador ///////////////////////
     tablaAgregarProcedimientoNuevo.setSkin("dhx_skyblue");
     tablaAgregarProcedimientoNuevo.init();
-    tablaAgregarProcedimientoNuevo.loadXML(pathRequestControl+'?'+parametros,function(){
+    tablaAgregarProcedimientoNuevo.loadXML(pathRequestControl + '?' + parametros, function () {
         var arrayPalabras = new Array();
         arrayPalabras = cadenaProcedimientos.split("gxxxgr");
         var numeroPalabras = arrayPalabras.length;
@@ -1012,19 +1013,19 @@ function agregarProcedimientoNuevoInicio7(cadenaProcedimientos) {
             var arrayPalabras1 = new Array();
             arrayPalabras1 = arrayPalabras[i].split("|");
             //                    alert(arrayPalabras1[0]);
-            if(numeroPalabras!=i+1){
-                var y=tablaAgregarProcedimientoNuevo.getRowsNum();
-                tablaAgregarProcedimientoNuevo.addRow(y, '',0);
-                tablaAgregarProcedimientoNuevo.cells(y,0).setValue(arrayPalabras1[0]); 
-                tablaAgregarProcedimientoNuevo.cells(y,1).setValue(arrayPalabras1[1]); 
+            if (numeroPalabras != i + 1) {
+                var y = tablaAgregarProcedimientoNuevo.getRowsNum();
+                tablaAgregarProcedimientoNuevo.addRow(y, '', 0);
+                tablaAgregarProcedimientoNuevo.cells(y, 0).setValue(arrayPalabras1[0]);
+                tablaAgregarProcedimientoNuevo.cells(y, 1).setValue(arrayPalabras1[1]);
                 //tablaAgregarProcedimientoNuevo.cells(y,2).setValue(arrayPalabras1[2]); 
-                tablaAgregarProcedimientoNuevo.cells(y,2).setValue('<input id="txtPrecio'+y+'" type="txt" title="Precio" size="10" name="grupoPrecio" value="'+arrayPalabras1[2]+'">'); 
-                tablaAgregarProcedimientoNuevo.cells(y,3).setValue('<input id="txtCantidad'+y+'" type="txt" title="Cantidad" size="3" name="grupoMuestra" value="'+arrayPalabras1[3]+'">');
-                tablaAgregarProcedimientoNuevo.cells(y,5).setValue('../../../../fastmedical_front/imagen/icono/borrar.png');  
+                tablaAgregarProcedimientoNuevo.cells(y, 2).setValue('<input id="txtPrecio' + y + '" type="txt" title="Precio" size="10" name="grupoPrecio" value="' + arrayPalabras1[2] + '">');
+                tablaAgregarProcedimientoNuevo.cells(y, 3).setValue('<input id="txtCantidad' + y + '" type="txt" title="Cantidad" size="3" name="grupoMuestra" value="' + arrayPalabras1[3] + '">');
+                tablaAgregarProcedimientoNuevo.cells(y, 5).setValue('../../../../fastmedical_front/imagen/icono/borrar.png');
             }
-                  
+
         }
-        $('txtCadena').value='';
+        $('txtCadena').value = '';
 
     });
 
