@@ -816,13 +816,16 @@ function valida_docIdentidad(id) {
         nroDoc = $(a).value;
         control = 'validaPersonasDocIdentidad';
         data = 'p1=' + control + '&p2=' + tipoDoc + '&p3=' + nroDoc;
+
+        contadorCargador++;
+        var idCargador = contadorCargador;
         new Ajax.Request(url,
                 {
                     method: 'get',
                     parameters: data,
-                    onLoading: micargador(1),
+                    onLoading: cargadorpeche(1, idCargador),
                     onComplete: function (transport) {
-                        micargador(0);
+                        cargadorpeche(0, idCargador);
                         resultado = transport.responseText;
                         if (resultado > 0) {
                             mensaje = "El " + getNombreTipoDoc(tipoDoc) + " con numero " + nroDoc + " ya se encuentra registrado.";
@@ -847,13 +850,15 @@ function valida_nombre_persona(obj1) {
     if (paterno != '' && materno != '' && nombres != '' && !$('txtNombrePaciente').readOnly && accion == 'inserted') {
         control = 'validaPersonasNombres';
         data = 'p1=' + control + '&p2=' + paterno + '&p3=' + materno + '&p4=' + nombres;
+        contadorCargador++;
+        var idCargador = contadorCargador;
         new Ajax.Request(url,
                 {
                     method: 'get',
                     parameters: data,
-                    onLoading: micargador(1),
+                    onLoading: cargadorpeche(1, idCargador),
                     onComplete: function (transport) {
-                        micargador(0);
+                        cargadorpeche(0, idCargador);
                         resultado = transport.responseText;
                         if (resultado > 0) {
                             alert("Esta persona ya se encuentra registrada");
